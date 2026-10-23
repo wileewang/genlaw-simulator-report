@@ -131,6 +131,7 @@ fetch("data/report.json").then(response => {
   $("updated-at").dateTime = report.updated_at;
   $("partial-file-count").textContent = report.counts.pending_files_with_component_replays;
   $("component-progress").textContent = `另外 ${report.counts.pending_files_with_component_replays} 份未完成文件中的 ${report.counts.pending_verified_geometry_occurrences} 个原实体，已分别完成实际锯切、独立仿真和原几何采样比对。下方选择“部分构件已验证”可查看全部逐件回放。其余旧代表材料、板件及连接仍待补齐，不增加 16/71 的完整文件覆盖数。`;
+  if (report.counts.pending_drilled_profile_occurrences) $("component-progress").textContent += ` 其中 ${report.counts.pending_drilled_profile_occurrences} 个实例还在锯切后的实际材料上完成了壁孔钻削。`;
   renderRows();renderGrid();selectDemo(state.selected);
   window.genlawReport = Object.freeze({ get state() { return { loaded:true, rows:report.rows.length, filtered:state.shown.length, filter:state.filter, selected:state.selected }; }});
 }).catch(error => {
