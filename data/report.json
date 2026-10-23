@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-24T05:44:39+08:00",
+  "updated_at": "2026-10-24T06:42:41+08:00",
   "report_deadline": "2026-10-25T19:00:00+08:00",
-  "version": "2026.10 / 10",
+  "version": "2026.10 / 11",
   "counts": {
     "files": 71,
     "solid_occurrences": 2475,
@@ -12,8 +12,8 @@
     "basic_files": 12,
     "basic_verified": 4,
     "external_customer_crosschecks": 0,
-    "pending_files_with_component_replays": 20,
-    "pending_verified_geometry_occurrences": 250,
+    "pending_files_with_component_replays": 21,
+    "pending_verified_geometry_occurrences": 251,
     "pending_drilled_profile_occurrences": 7
   },
   "definition": "完整原几何比对＋连续材料链＋本机过程回放；不等同于图纸全部工序完成或上机验收。",
@@ -6169,13 +6169,34 @@
       "tier": 4,
       "tier_name": "大型总装",
       "status": "pending",
-      "category": "待补齐或尚不支持完整链",
-      "scope": "总装必须覆盖全部968个原实体及各自材料链、连接和回放；代表实体通过不能替代。",
-      "evidence_note": "总装必须覆盖全部968个原实体及各自材料链、连接和回放；代表实体通过不能替代。",
-      "next_action": "总装验收后排；可识别的基础子件提前进入同类特征队列",
+      "category": "型材构件：1 / 968 个原实体已验证",
+      "scope": "1 个原实体分别从规格管料完成两端锯切、取件及完整几何采样；其余 967 个原实体和连接尚未完成。",
+      "evidence_note": "共 18 张原面、7,872 个样点、5 个保存状态、6 条运动；保留全部分离余料。旧代表实例仍等待原材料恢复，没有重新下料。",
+      "next_action": "继续逐个核验其余 562 个简单矩管候选；保留 16 个旧锯切代表、C44 车削交接材料和 346 个板件位置。圆管、槽钢及总装连接分别推进；候选数量不计作制造完成数量。",
       "replay": null,
       "external_customer_crosscheck_complete": false,
-      "manufacturing_verified": false
+      "manufacturing_verified": false,
+      "partial_replays": [
+        {
+          "url": "replays/0000-1-0001.html",
+          "bytes": 386746,
+          "source_replay_sha256": "b8116192b1d81f6f58cb2bcadd6cc4a5d9ea1abb802ceae043043fda9de839fc",
+          "public_replay_sha256": "7114f4ee73eca62241a1d5398f7ed5cd0f178dfedbf4350c2a34e500c634f9d2",
+          "states": 5,
+          "moves": 6,
+          "all_saved_states_included": true,
+          "geometry_and_motion_arrays_changed": false,
+          "tolerance_mm": 0.05,
+          "sampled_max_mm": 0.0030849184261695817,
+          "sample_count": 7872,
+          "continuous_maximum_error_proved": false,
+          "manufacturing_verified": false,
+          "equipment_verified": false,
+          "original_solid_index": 1,
+          "original_solid_count": 968,
+          "all_file_solids_tested": false
+        }
+      ]
     },
     {
       "no": 8,
@@ -6282,6 +6303,10 @@
     {
       "name": "0055 独立型材实例",
       "sha256": "fdd6b4093d6ed83789e2f8b2f4d4528f1d53099f1c8715829bdb78e1a23009d3"
+    },
+    {
+      "name": "0000-1 独立型材实例",
+      "sha256": "761cdd2ec47111e2172b2bd3fcda7884ad9f66f37775da8a39bd69a06cd20e5f"
     }
   ]
 }
