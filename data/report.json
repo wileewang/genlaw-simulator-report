@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-24T05:11:50+08:00",
+  "updated_at": "2026-10-24T05:44:39+08:00",
   "report_deadline": "2026-10-25T19:00:00+08:00",
-  "version": "2026.10 / 09",
+  "version": "2026.10 / 10",
   "counts": {
     "files": 71,
     "solid_occurrences": 2475,
@@ -13,8 +13,8 @@
     "basic_verified": 4,
     "external_customer_crosschecks": 0,
     "pending_files_with_component_replays": 20,
-    "pending_verified_geometry_occurrences": 249,
-    "pending_drilled_profile_occurrences": 6
+    "pending_verified_geometry_occurrences": 250,
+    "pending_drilled_profile_occurrences": 7
   },
   "definition": "完整原几何比对＋连续材料链＋本机过程回放；不等同于图纸全部工序完成或上机验收。",
   "tolerance_mm": 0.05,
@@ -5172,10 +5172,10 @@
       "tier": 2,
       "tier_name": "构件组合或弯管",
       "status": "pending",
-      "category": "型材构件：8 / 49 个原实体已验证",
-      "scope": "8 个原实体分别从规格管料完成两端锯切、取件及完整几何采样；其余 41 个原实体和连接尚未完成。",
-      "evidence_note": "共 144 张原面、62,976 个样点、40 个保存状态、48 条运动；保留全部分离余料。旧代表实例仍等待原材料恢复，没有重新下料。",
-      "next_action": "恢复第 9 个原实体的旧锯切材料，并核查第 1、2、3、4、5、6、7、8、14、15、16、17、18、19、20、21、26、27、28、29、30、31、32、33、34、35、36、37、38、39、40、41、42、43、44、45、46、47 个板件的历史范围；各构件完成后再核对整体及连接。 第 48、49 个带孔型材还需核对历史材料及钻孔路线。 第 48 个原实体名义长 6780 mm，超出当前 6000 mm 管料范围，需先确认适用管料。 第 49 个原实体名义长 6780 mm，超出当前 6000 mm 管料范围，需先确认适用管料。",
+      "category": "型材构件：9 / 49 个原实体已验证",
+      "scope": "9 个原实体分别从规格管料完成两端锯切、取件及完整几何采样；其余 40 个原实体和连接尚未完成。 其中 1 个原实体还在同一材料上完成 9 次壁孔钻削。 其中 1 个实例使用 9000 mm 名义管料；供应规格、设备行程与装夹尚未验证。",
+      "evidence_note": "共 180 张原面、108,144 个样点、54 个保存状态、90 条运动；保留全部分离余料。旧代表实例仍等待原材料恢复，没有重新下料。",
+      "next_action": "恢复第 9、48 个原实体的旧锯切或钻孔材料，并核查第 1、2、3、4、5、6、7、8、14、15、16、17、18、19、20、21、26、27、28、29、30、31、32、33、34、35、36、37、38、39、40、41、42、43、44、45、46、47 个板件的历史范围；各构件完成后再核对整体及连接。 第 48 个带孔型材还需核对历史材料及钻孔路线。",
       "replay": null,
       "external_customer_crosscheck_complete": false,
       "manufacturing_verified": false,
@@ -5331,6 +5331,26 @@
           "original_solid_index": 24,
           "original_solid_count": 49,
           "all_file_solids_tested": false
+        },
+        {
+          "url": "replays/0027-0048.html",
+          "bytes": 1751573,
+          "source_replay_sha256": "d99d5722492438ceccb2f7f8b3bc61f9b803188c0b89e1c5126e24e0028a352d",
+          "public_replay_sha256": "1f30a12fc921484f8b56cf8353a3af6fd1ab3503b7bfeef18d2e9026d0eada67",
+          "states": 14,
+          "moves": 42,
+          "all_saved_states_included": true,
+          "geometry_and_motion_arrays_changed": false,
+          "tolerance_mm": 0.05,
+          "sampled_max_mm": 0.03381527719334023,
+          "sample_count": 45168,
+          "continuous_maximum_error_proved": false,
+          "manufacturing_verified": false,
+          "equipment_verified": false,
+          "original_solid_index": 48,
+          "original_solid_count": 49,
+          "all_file_solids_tested": false,
+          "drilling_feeds": 9
         }
       ]
     },
@@ -6253,7 +6273,7 @@
     },
     {
       "name": "0027 独立型材实例",
-      "sha256": "89c87ead2f2ebb5bce43db138ed079420bc6cc1063f31c304906c8fb488c1c12"
+      "sha256": "d7412de392515a5df9a736ac6cd917ee91a017d7a8487f6fe31d7bf948ccbab4"
     },
     {
       "name": "0054 独立型材实例",
