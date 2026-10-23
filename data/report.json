@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-23T22:26:14+08:00",
+  "updated_at": "2026-10-24T00:24:53+08:00",
   "report_deadline": "2026-10-25T19:00:00+08:00",
-  "version": "2026.10 / 01",
+  "version": "2026.10 / 02",
   "counts": {
     "files": 71,
     "solid_occurrences": 2475,
@@ -11,7 +11,9 @@
     "pending_files": 51,
     "basic_files": 12,
     "basic_verified": 4,
-    "external_customer_crosschecks": 0
+    "external_customer_crosschecks": 0,
+    "pending_files_with_component_replays": 1,
+    "pending_verified_geometry_occurrences": 3
   },
   "definition": "完整原几何比对＋连续材料链＋本机过程回放；不等同于图纸全部工序完成或上机验收。",
   "tolerance_mm": 0.05,
@@ -953,13 +955,72 @@
       "tier": 2,
       "tier_name": "构件组合或弯管",
       "status": "pending",
-      "category": "待补齐或尚不支持完整链",
-      "scope": "本检查点未新增整件材料与回放证明；已有工序结果见原生产基线。",
-      "evidence_note": "本检查点未新增整件材料与回放证明；已有工序结果见原生产基线。",
-      "next_action": "优先派发未执行的基础构件；已有构件先核对原材料，连接和新增特征另排",
+      "category": "型材构件：3 / 9 个原实体已验证",
+      "scope": "第 4、7、8 个原实体分别从规格管料完成两端锯切、取件及完整几何采样；其余 6 个原实体和连接尚未完成。",
+      "evidence_note": "三件共 54 张原面、23,616 个样点、15 个保存状态、18 条运动；保留全部分离余料。旧代表实例仍等待原材料恢复，没有重新下料。",
+      "next_action": "恢复原实体序号 0、2、5 的旧锯切材料，并核查三件板料的历史范围；各构件完成后再核对整体及连接。",
       "replay": null,
       "external_customer_crosscheck_complete": false,
-      "manufacturing_verified": false
+      "manufacturing_verified": false,
+      "partial_replays": [
+        {
+          "url": "replays/0035-0003.html",
+          "bytes": 379853,
+          "source_replay_sha256": "ecc5bac03792ecbf562ace94ca2173dc353ca94093dfa5e8af3f16165157f795",
+          "public_replay_sha256": "c6dfdf423995b734ad574f869795b58d891da3a9fa5198e67a67763a872ee94b",
+          "states": 5,
+          "moves": 6,
+          "all_saved_states_included": true,
+          "geometry_and_motion_arrays_changed": false,
+          "tolerance_mm": 0.05,
+          "sampled_max_mm": 0.003084965844009341,
+          "sample_count": 7872,
+          "continuous_maximum_error_proved": false,
+          "manufacturing_verified": false,
+          "equipment_verified": false,
+          "original_solid_index": 3,
+          "original_solid_count": 9,
+          "all_file_solids_tested": false
+        },
+        {
+          "url": "replays/0035-0006.html",
+          "bytes": 380664,
+          "source_replay_sha256": "ffbb420a8fd4de0499c2656971a25acc279c8181ca4024dd8f6d37581ca862c6",
+          "public_replay_sha256": "68a0f3cdf6807c7d1a2bf0b786679dd2bd464440ca13a562d958d52b590790fa",
+          "states": 5,
+          "moves": 6,
+          "all_saved_states_included": true,
+          "geometry_and_motion_arrays_changed": false,
+          "tolerance_mm": 0.05,
+          "sampled_max_mm": 0.0030849658457700563,
+          "sample_count": 7872,
+          "continuous_maximum_error_proved": false,
+          "manufacturing_verified": false,
+          "equipment_verified": false,
+          "original_solid_index": 6,
+          "original_solid_count": 9,
+          "all_file_solids_tested": false
+        },
+        {
+          "url": "replays/0035-0007.html",
+          "bytes": 374193,
+          "source_replay_sha256": "2f5643c10e6e808b61698042f301c9dffc35511fdd0302fbab1208aa2e63779b",
+          "public_replay_sha256": "aaae93b2060c11eaf2d32c6caf6b140155a7dcb3d064cab6c29b77b7899a0070",
+          "states": 5,
+          "moves": 6,
+          "all_saved_states_included": true,
+          "geometry_and_motion_arrays_changed": false,
+          "tolerance_mm": 0.05,
+          "sampled_max_mm": 0.0030849501400118788,
+          "sample_count": 7872,
+          "continuous_maximum_error_proved": false,
+          "manufacturing_verified": false,
+          "equipment_verified": false,
+          "original_solid_index": 7,
+          "original_solid_count": 9,
+          "all_file_solids_tested": false
+        }
+      ]
     },
     {
       "no": 44,
@@ -1402,6 +1463,10 @@
     {
       "name": "按难度交付队列",
       "sha256": "ad8b65ac0f306466423e85679c7aa4495ada4bb28bfc547aaf3553c54e409b1e"
+    },
+    {
+      "name": "0035 三个独立型材实例",
+      "sha256": "1af9cc8f49b4cf2980cdd93def32f04a3fd258231c62823ae02f6931ad788273"
     }
   ]
 }
