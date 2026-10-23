@@ -7,7 +7,8 @@ const megabytes = (value) => (value / 1e6).toFixed(1) + " MB";
 
 function filteredRows() {
   return state.report.rows.filter(row => {
-    const matches = state.filter === "all" || (state.filter === "basic" ? row.tier === 0 : row.status === state.filter);
+    const matches = state.filter === "all" || (state.filter === "basic" ? row.tier === 0
+      : state.filter === "partial" ? Boolean(row.partial_replays?.length) : row.status === state.filter);
     return matches && [row.part, row.name, row.category, row.scope].join(" ").toLowerCase().includes(state.query.toLowerCase());
   });
 }
@@ -24,7 +25,10 @@ function setFilter(filter) {
 
 function renderRows() {
   const rows = state.shown = filteredRows();
-  $("table-count").textContent = `显示 ${rows.length} / 71 份文件 · 证据口径：完整原几何、连续材料与本机回放`;
+  const components = rows.reduce((total, row) => total + (row.partial_replays?.length || 0), 0);
+  $("table-count").textContent = state.filter === "partial"
+    ? `显示 ${rows.length} / 71 份文件 · ${components} 个构件已验证，所在整文件尚未完成`
+    : `显示 ${rows.length} / 71 份文件 · 证据口径：完整原几何、连续材料与本机回放`;
   $("part-table").innerHTML = rows.length ? rows.map(row => {
     const tag = row.status === "verified" ? "teal-tag" : row.status === "retained" ? "amber" : "pending-tag";
     const name = row.name.replace(/^STKJ-MT01-[\d-]+\s*/, "");
@@ -125,6 +129,8 @@ fetch("data/report.json").then(response => {
   const formatted = new Intl.DateTimeFormat("zh-CN", {timeZone:"Asia/Shanghai",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false}).format(new Date(report.updated_at));
   $("updated-at").textContent = formatted + " · 北京时间";
   $("updated-at").dateTime = report.updated_at;
+  $("partial-file-count").textContent = report.counts.pending_files_with_component_replays;
+  $("component-progress").textContent = `另外 ${report.counts.pending_files_with_component_replays} 份未完成文件中的 ${report.counts.pending_verified_geometry_occurrences} 个原实体，已分别完成实际锯切、独立仿真和原几何采样比对。下方选择“部分构件已验证”可查看全部逐件回放。其余旧代表材料、板件及连接仍待补齐，不增加 16/71 的完整文件覆盖数。`;
   renderRows();renderGrid();selectDemo(state.selected);
   window.genlawReport = Object.freeze({ get state() { return { loaded:true, rows:report.rows.length, filtered:state.shown.length, filter:state.filter, selected:state.selected }; }});
 }).catch(error => {
