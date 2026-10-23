@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123c40">
+  <meta name="description" content="GenLaw 制造仿真阶段报告：71 份零件文件的支持范围、16 份真实材料过程回放、当前瓶颈与基础件优先的开发计划。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GenLaw · 制造仿真进展报告">
+  <meta property="og:description" content="当前支持哪些零件？查看实际材料回放、71 份证据清单、技术瓶颈和下一步计划。">
+  <meta property="og:url" content="https://wileewang.github.io/genlaw-simulator-report/">
+  <meta property="og:image" content="https://wileewang.github.io/genlaw-simulator-report/assets/report-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://wileewang.github.io/genlaw-simulator-report/">
+  <title>GenLaw · 制造仿真进展报告</title>
+  <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#overview">跳到报告正文</a>
+  <header class="site-header">
+    <a class="brand" href="#overview" aria-label="GenLaw 报告首页"><img src="assets/mark.svg" width="30" height="30" alt=""><span>GenLaw<span class="brand-divider">/</span><small>制造仿真</small></span></a>
+    <nav aria-label="报告导航"><a href="#replay">过程回放</a><a href="#parts">零件清单</a><a href="#bottlenecks">当前瓶颈</a><a href="#next">下一步</a></nav>
+    <a class="header-link" href="#discussion">讨论议题 <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="hero wrap" id="overview">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> ENGINEERING REVIEW <span class="slash">/</span> 2026.10</p>
+        <h1>制造仿真，<br>走到了哪一步。</h1>
+        <p class="hero-description">从原始零件，到加工程序，再到材料变化。<br>查看已验证的范围、真实过程和下一步开发重点。</p>
+        <div class="hero-actions"><a class="button primary" href="#replay">观看制造过程 <span aria-hidden="true">↗</span></a><a class="text-link" href="#parts">查看全部 71 份清单 <span aria-hidden="true">→</span></a></div>
+        <p class="update">数据快照 <time id="updated-at">2026-10-23 · 北京时间</time><span>汇报截止 10 月 25 日 19:00</span></p>
+      </div>
+      <aside class="hero-summary" aria-labelledby="summary-title">
+        <div class="summary-top"><span class="eyebrow">CURRENT CAPABILITY</span><span class="small-label">阶段结果</span></div>
+        <h2 id="summary-title">基础加工链已有实例跑通，<br>整件制造验收仍需推进。</h2>
+        <p>板件切割与钻孔、车削后钻孔、理想弯管，以及部分组合构件，已有保存材料和回放可查。</p>
+        <div class="coverage-line"><strong>16<span> / 71</span></strong><span>文件具有完整原几何<br>比对与本机回放</span></div>
+        <div class="progress-bar" role="img" aria-label="16 份文件具有完整原几何比对与本机回放，占 71 份的 22.5%"><span></span></div>
+        <p class="summary-note">这是仿真阶段覆盖率。图纸中的焊接、螺纹、工装、物理过程及上机条件仍需分别核验。</p>
+      </aside>
+    </section>
+
+    <section class="metrics wrap" aria-label="核心进度">
+      <div class="metric"><span class="metric-label">原始零件文件</span><div><strong>71</strong><span>份 STEP</span></div><p>共 2,475 次实体出现，含装配重复。</p></div>
+      <div class="metric"><span class="metric-label">完整原几何与本机回放</span><div><strong class="teal">16</strong><span>份文件 · 70 次实体出现</span></div><p>完整比对通过，不等同于制造交付。</p></div>
+      <div class="metric"><span class="metric-label">基础单件档覆盖</span><div><strong>4<span class="denominator"> / 12</span></strong></div><p>其余 8 份优先核对并补齐历史证据。</p></div>
+      <div class="metric"><span class="metric-label">客户件外部交叉验证</span><div><strong>0</strong><span>份已完成</span></div><p>CAMotics / FreeCAD 尚未完成客户件对照。</p></div>
+    </section>
+
+    <section class="section wrap" id="replay">
+      <div class="section-heading"><div><p class="eyebrow">01 / PROCESS REPLAY</p><h2>看材料如何一步步变成零件。</h2></div><p>以下动画来自已保存的真实仿真状态。<br>可播放、逐步查看、旋转视角与检查刀路。</p></div>
+      <div class="demo-tabs" role="tablist" aria-label="代表性制造回放">
+        <button role="tab" aria-selected="true" aria-controls="demo-panel" id="tab-0062" data-demo="0062"><span class="tab-number">01</span><span><strong>安装板</strong><small>切割 → 取件 → 钻孔</small></span><span class="tab-id">0062</span></button>
+        <button role="tab" aria-selected="false" aria-controls="demo-panel" id="tab-0064" data-demo="0064"><span class="tab-number">02</span><span><strong>DN50 法兰</strong><small>车削 → 修整 → 钻孔</small></span><span class="tab-id">0064</span></button>
+        <button role="tab" aria-selected="false" aria-controls="demo-panel" id="tab-0024" data-demo="0024"><span class="tab-number">03</span><span><strong>水位检测管</strong><small>下料 → 理想弯曲</small></span><span class="tab-id">0024</span></button>
+        <button role="tab" aria-selected="false" aria-controls="demo-panel" id="tab-0028" data-demo="0028"><span class="tab-number">04</span><span><strong>升降连接支架</strong><small>型材斜切 → 壁孔加工</small></span><span class="tab-id">0028</span></button>
+      </div>
+      <div class="demo-panel" id="demo-panel" role="tabpanel" aria-labelledby="tab-0062">
+        <div class="demo-bar"><div><span class="status-dot verified"></span><strong id="demo-title">0062 · SK4040 安装板</strong><span id="demo-meta">7 个已保存材料状态</span></div><a id="open-replay" href="replays/0062.html" target="_blank" rel="noopener">独立打开 <span aria-hidden="true">↗</span></a></div>
+        <div class="viewer-container"><p id="viewer-loading" role="status">正在加载实际材料回放…</p><iframe id="replay-frame" title="0062 安装板实际材料过程回放" src="about:blank" loading="lazy" allow="fullscreen"></iframe></div>
+        <div class="demo-caption"><span id="demo-scope">实际板料连续交接；全部原几何采样通过。</span><span>工序状态回放 · 播放间隔不代表实际加工时间</span></div>
+      </div>
+      <p class="section-note">项目内独立仿真已经用于上述材料链核查。这里的动画不代表 CAMotics / FreeCAD 客户件交叉验证已完成，也不代表设备已可直接执行。</p>
+    </section>
+
+    <section class="section parts-section" id="parts"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">02 / SUPPORTED PARTS</p><h2>每一份零件，明确一个状态。</h2></div><p>按完整原几何和材料链统计。<br>历史工序通过数未当作整件完成数。</p></div>
+      <div class="inventory-overview"><div><strong>71 份文件状态图</strong><p>每格代表一份原 STEP。点击可定位零件。</p></div><div id="part-grid" class="part-grid" aria-label="71 份文件状态图"></div><div class="legend"><span><i class="status-dot verified"></i>完整几何链 16</span><span><i class="status-dot retained"></i>停机前缀 4</span><span><i class="status-dot pending"></i>待补齐 51</span></div></div>
+      <div class="table-tools"><div class="filters" role="group" aria-label="按证据状态筛选"><button class="active" data-filter="verified" aria-pressed="true">已有完整几何链 <span>16</span></button><button data-filter="all" aria-pressed="false">全部文件 <span>71</span></button><button data-filter="basic" aria-pressed="false">基础单件 <span>12</span></button><button data-filter="retained" aria-pressed="false">停机前缀 <span>4</span></button></div><label class="search"><span aria-hidden="true">⌕</span><input id="part-search" type="search" placeholder="搜索编号、名称或工艺" aria-label="搜索零件编号、名称或工艺"></label></div>
+      <div class="table-status"><p id="table-count" aria-live="polite">正在加载证据清单…</p><button id="download-csv" class="text-button">下载当前清单 CSV ↓</button></div>
+      <div class="table-scroll"><table><thead><tr><th scope="col">零件 / 文件</th><th scope="col">当前证据</th><th scope="col">覆盖范围与边界</th><th scope="col">回放</th></tr></thead><tbody id="part-table"></tbody></table></div>
+      <div class="count-note"><strong>为什么是 71 份文件、2,475 次实体出现？</strong><p>71 是原始 STEP 文件数量。2,475 是文件内 Solid 出现次数的累计，包含总装重复；其中两个总装各含 968 次。它不是去重后的零件种类数，也不是制造数量。</p></div>
+    </div></section>
+
+    <section class="section wrap" id="bottlenecks">
+      <div class="section-heading"><div><p class="eyebrow">03 / OPEN ISSUES</p><h2>目前卡在哪里。</h2></div><p>将算法问题、算力问题与证据缺口分开处理。<br>复杂件保留现场，基础件继续前进。</p></div>
+      <div class="issue-list">
+        <article class="issue"><span class="issue-no">01</span><div><div class="issue-title"><h3>复杂链轮的材料布尔计算不可靠</h3><span class="tag amber">复杂件暂后排</span></div><p>部分车削与线切割后，原生实体的布尔结果与几何判定出现矛盾。0058 的完整采样最大保守偏差约 13.5913 mm，超过 0.05 mm 判据，未通过。</p><div class="issue-action"><strong>处理方向</strong><span>保留已执行材料和失败记录，隔离几何内核问题。继续做可推进的基础件，不将修复猜测计为通过。</span></div></div></article>
+        <article class="issue"><span class="issue-no">02</span><div><div class="issue-title"><h3>全件高精度外部仿真超出本机合理预算</h3><span class="tag amber">方式需要调整</span></div><p>本机为 4 vCPU、约 16 GB 内存，无可用计算 GPU，也没有额外计算节点。0062 的一次全件 CAMotics 尝试在约 1.5 小时后仍停在 10.41%，未产生有效输出。</p><div class="issue-action"><strong>处理方向</strong><span>采用单任务资源限制、小试件、适合工艺的二维或回转表示及局部验证。超限记录为未验证，正式公差保持 0.05 mm。</span></div></div></article>
+        <article class="issue"><span class="issue-no">03</span><div><div class="issue-title"><h3>部分基础件的历史材料与回放尚未补齐</h3><span class="tag">影响可复核覆盖</span></div><p>基础档剩余 8 份已有历史工序或几何证据，但部分原材料状态和回放不在本机。仅靠汇总通过记录，不能补出完整、可检查的制造链。</p><div class="issue-action"><strong>处理方向</strong><span>优先恢复并核对原程序、材料交接及回放。缺失项明确列出，继续其他材料齐全的基础对象。</span></div></div></article>
+        <article class="issue"><span class="issue-no">04</span><div><div class="issue-title"><h3>几何通过之后，还有图纸工序和物理验证</h3><span class="tag">验收范围待扩展</span></div><p>部分组合件尚未焊接；螺纹、热处理、装夹、碰撞及设备条件尚未全部校核。理想弯曲还不能预测回弹与减薄，接触检查也不能代表焊缝强度。</p><div class="issue-action"><strong>处理方向</strong><span>把图纸要求逐项列入工序和验收条件。新增一个特征，先做控制试件，再覆盖同类零件。</span></div></div></article>
+      </div>
+      <aside class="retrospective"><strong>推进方式的调整</strong><p>前期较多工作集中于复杂链轮的几何内核、材料连续性和证明链，基础件覆盖增长未跟上。当前已改为先完成基础档，同档难例保留后继续其他对象，再逐项增加特征。</p></aside>
+    </section>
+
+    <section class="discussion-section" id="discussion"><div class="wrap discussion-layout"><div><p class="eyebrow">04 / TEAM DISCUSSION</p><h2>这次会上，<br>先对齐三件事。</h2><p>每个议题都对应一个会影响交付顺序的决定。</p></div><ol class="discussion-list"><li><span>01</span><div><h3>首批可交付范围怎么定义？</h3><p>先以基础板件、直切型材和常规回转件形成可复核的加工链；图纸附加工序和设备就绪条件需要明确谁来确认。</p></div></li><li><span>02</span><div><h3>外部交叉验证先核验什么？</h3><p>优先把钻孔等适配工序对照跑通，再扩展到完整流程。局部试件验证、客户工序验证和整件验证应分别记录。</p></div></li><li><span>03</span><div><h3>历史材料与工程条件如何补齐？</h3><p>确认 8 份基础件历史产物的获取路径，并补充刀具、夹具、连接与后处理要求，减少在假设上反复开发。</p></div></li></ol></div></section>
+
+    <section class="section wrap" id="next">
+      <div class="section-heading"><div><p class="eyebrow">05 / NEXT MILESTONES</p><h2>后续按难度推进，按结果验收。</h2></div><p>以可复核的零件和工序为交付单位。<br>每项完成后更新清单和回放。</p></div>
+      <div class="roadmap">
+        <article><div class="roadmap-top"><span class="roadmap-no">M1</span><span class="tag teal-tag">当前优先</span></div><h3>补齐基础单件</h3><p>优先 12 份基础单件及组合中的简单构件，复用已有材料，补齐程序、材料交接和完整回放。</p><div class="acceptance"><small>完成标准</small><p>每份明确通过、缺失特征或受阻原因；通过件具有原几何比对和可播放证据。</p></div></article>
+        <article><div class="roadmap-top"><span class="roadmap-no">M2</span><span class="tag">逐项扩展</span></div><h3>常规附加特征</h3><p>在基础链上补齐沉孔、台阶孔、常规槽和倒角；每个特征先验证控制试件，再推广同类件。</p><div class="acceptance"><small>完成标准</small><p>控制试件及失败检测有效，客户工序连续接续，不回退已执行材料。</p></div></article>
+        <article><div class="roadmap-top"><span class="roadmap-no">M3</span><span class="tag">按依赖推进</span></div><h3>多面加工与连接</h3><p>扩展多面孔、斜切、弯管和连接工序，逐步补充图纸要求、夹具和物理适用边界。</p><div class="acceptance"><small>完成标准</small><p>每个原构件与连接都有对应证据，不以代表构件替代整份文件。</p></div></article>
+        <article><div class="roadmap-top"><span class="roadmap-no">M4</span><span class="tag">后续专项</span></div><h3>复杂特征与总装</h3><p>在基础档推进稳定后，继续齿形、螺纹、刻字、复杂曲面和大型总装。</p><div class="acceptance"><small>完成标准</small><p>先解决已知算法反例，再扩展完整工序；全部实体和余料范围可核查。</p></div></article>
+      </div>
+      <div class="near-term"><div><span class="live-dot"></span><strong>本机可以持续推进的工作</strong></div><p>历史证据整理 · 基础特征与工序代码开发 · 小试件与单工序验证 · 低成本回放和报告更新</p><span>一次一个计算任务，超预算先优化或拆分；不通过降低正式精度换取“完成”。</span></div>
+    </section>
+    <footer class="wrap site-footer"><div><span class="brand footer-brand">GenLaw <small>制造仿真阶段报告</small></span><p>用于研发进度与技术讨论。数据范围、支持边界与未验证事项以本页说明为准。</p></div><div class="footer-links"><a href="data/report.json" download>报告数据 JSON ↓</a><a href="data/replay-manifest.json" download>回放来源摘要 ↓</a><button id="print-report" class="text-button">打印 / 保存 PDF</button></div><p class="footer-bottom">原始几何验收公差 0.05 mm · 对比离散弦差 0.00625 mm · 回放采用 Anatomy 等距视图，开源许可保留在各回放页面中。</p></footer>
+  </main>
+  <noscript><div class="noscript">请启用 JavaScript 以查询零件清单和播放过程。可直接打开 <a href="replays/0062.html">0062 安装板回放</a> 或下载 <a href="data/report.json">报告数据</a>。</div></noscript>
+</body>
+</html>
