@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-24T10:04:10+08:00",
+  "updated_at": "2026-10-24T10:33:14+08:00",
   "report_deadline": "2026-10-25T19:00:00+08:00",
-  "version": "2026.10 / 16",
+  "version": "2026.10 / 17",
   "counts": {
     "files": 71,
     "solid_occurrences": 2475,
@@ -13,7 +13,7 @@
     "basic_verified": 4,
     "external_customer_crosschecks": 0,
     "pending_files_with_component_replays": 22,
-    "pending_verified_geometry_occurrences": 353,
+    "pending_verified_geometry_occurrences": 354,
     "pending_drilled_profile_occurrences": 7
   },
   "definition": "完整原几何比对＋连续材料链＋本机过程回放；不等同于图纸全部工序完成或上机验收。",
@@ -6169,10 +6169,10 @@
       "tier": 4,
       "tier_name": "大型总装",
       "status": "pending",
-      "category": "型材构件：52 / 968 个原实体已验证",
-      "scope": "52 个原实体分别从规格管料完成两端锯切、取件及完整几何采样；其余 916 个原实体和连接尚未完成。",
-      "evidence_note": "共 936 张原面、409,344 个样点、260 个保存状态、312 条运动；保留全部分离余料。旧代表实例仍等待原材料恢复，没有重新下料。",
-      "next_action": "继续逐个核验其余 511 个简单矩管候选；保留 16 个旧锯切代表、C44 车削交接材料和 346 个板件位置。圆管、槽钢及总装连接分别推进；候选数量不计作制造完成数量。",
+      "category": "型材构件：53 / 968 个原实体已验证",
+      "scope": "53 个原实体分别从规格管料完成两端锯切、取件及完整几何采样；其余 915 个原实体和连接尚未完成。 其中 1 个为圆管直切实例，其余 52 个为矩管实例。",
+      "evidence_note": "共 942 张原面、419,400 个样点、265 个保存状态、318 条运动；保留全部分离余料。旧代表实例仍等待原材料恢复，没有重新下料。",
+      "next_action": "继续逐个核验其余 511 个简单矩管候选；保留 16 个旧锯切代表、C44 车削交接材料和 346 个板件位置。圆管、槽钢及总装连接分别推进；候选数量不计作制造完成数量。 圆管另有 10 个历史范围候选，仍须逐个核对实际几何和已有材料。",
       "replay": null,
       "external_customer_crosscheck_complete": false,
       "manufacturing_verified": false,
@@ -7164,6 +7164,25 @@
           "original_solid_index": 466,
           "original_solid_count": 968,
           "all_file_solids_tested": false
+        },
+        {
+          "url": "replays/0000-1-0736.html",
+          "bytes": 349442,
+          "source_replay_sha256": "dadb63a748aa0012c19d5f850b76e7fcf305c11b5e793ff055854a1ae7f338d1",
+          "public_replay_sha256": "530886ae0efd6ebb645a4a5506356293777e7e3c4d5cfe79d76baa23240348fc",
+          "states": 5,
+          "moves": 6,
+          "all_saved_states_included": true,
+          "geometry_and_motion_arrays_changed": false,
+          "tolerance_mm": 0.05,
+          "sampled_max_mm": 0.044256764293124085,
+          "sample_count": 10056,
+          "continuous_maximum_error_proved": false,
+          "manufacturing_verified": false,
+          "equipment_verified": false,
+          "original_solid_index": 736,
+          "original_solid_count": 968,
+          "all_file_solids_tested": false
         }
       ]
     },
@@ -7178,7 +7197,7 @@
       "category": "型材构件：51 / 968 个原实体已验证",
       "scope": "51 个原实体分别从规格管料完成两端锯切、取件及完整几何采样；其余 917 个原实体和连接尚未完成。",
       "evidence_note": "共 918 张原面、401,472 个样点、255 个保存状态、306 条运动；保留全部分离余料。旧代表实例仍等待原材料恢复，没有重新下料。",
-      "next_action": "继续逐个核验其余 512 个简单矩管候选；保留 16 个旧锯切代表、C44 车削交接材料和 346 个板件位置。圆管、槽钢及总装连接分别推进；候选数量不计作制造完成数量。",
+      "next_action": "继续逐个核验其余 512 个简单矩管候选；保留 16 个旧锯切代表、C44 车削交接材料和 346 个板件位置。圆管、槽钢及总装连接分别推进；候选数量不计作制造完成数量。 圆管另有 11 个历史范围候选，仍须逐个核对实际几何和已有材料。",
       "replay": null,
       "external_customer_crosscheck_complete": false,
       "manufacturing_verified": false,
@@ -8246,11 +8265,11 @@
     },
     {
       "name": "0000-1 独立型材实例",
-      "sha256": "ca4eff3ab3735ccca55d12f197efa1d4ccf7375f8ff4b31ec78589bbd48309ee"
+      "sha256": "e712169cce6e99b27cab211270219900b97ec29cfd8f4e60f3bf428b81c2443d"
     },
     {
       "name": "0000-2 独立型材实例",
-      "sha256": "9c04a9cf243994f443f92eba3f4b88e874372cdc77250f4b26078d6bf065ff8d"
+      "sha256": "eef75312a12afab1c52f2662ae4da2088da0208f59462107e00ae0ad65e66560"
     }
   ]
 }
