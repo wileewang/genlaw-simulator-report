@@ -64,7 +64,7 @@
         <div class="demo-caption"><span id="demo-scope">实际板料连续交接；全部原几何采样通过。</span><span>工序状态回放 · 播放间隔不代表实际加工时间</span></div>
       </div>
       <p class="section-note">项目内独立仿真已经用于上述材料链核查。这里的动画不代表 CAMotics / FreeCAD 客户件交叉验证已完成，也不代表设备已可直接执行。</p>
-      <p class="section-note" id="latest-profile-families">10 月 24 日继续覆盖基础矩管：本批新增 32 个原实体，涵盖 □120×120×8 与 □100×100×8 两种截面、120–4,996 mm 成品长度的 11 类组合。两份总装分别有 110/968 和 109/968 个实体完成独立加工、采样与回放。可查看 <a href="replays/0000-1-0132.html" target="_blank" rel="noopener">120 mm 普通矩管</a>、<a href="replays/0000-2-0169.html" target="_blank" rel="noopener">220 mm 普通矩管</a>、<a href="replays/0000-1-0732.html" target="_blank" rel="noopener">4,996 mm 矩管</a>，以及此前的 <a href="replays/0000-1-0960.html" target="_blank" rel="noopener">圆角斜翼槽钢</a>。每件保留全部中间材料和余料；总装整体仍未完成。</p>
+      <p class="section-note" id="latest-profile-families">10 月 24 日继续覆盖基础矩管：本批新增 32 个原实体，涵盖 □120×120×8 与 □100×100×8 两种截面、120–4,996 mm 成品长度的 11 类组合。两份总装分别有 126/968 和 125/968 个实体完成独立加工、采样与回放。可查看 <a href="replays/0000-1-0137.html" target="_blank" rel="noopener">120 mm 普通矩管</a>、<a href="replays/0000-2-0171.html" target="_blank" rel="noopener">220 mm 普通矩管</a>、<a href="replays/0000-1-0733.html" target="_blank" rel="noopener">4,996 mm 矩管</a>，以及此前的 <a href="replays/0000-1-0960.html" target="_blank" rel="noopener">圆角斜翼槽钢</a>。每件保留全部中间材料和余料；总装整体仍未完成。</p>
       <p class="section-note" id="component-progress">部分文件已完成独立构件的实际锯切与几何比对。下方选择“部分构件已验证”可查看逐件回放；整文件进度仍按完整材料链单独统计。</p>
     </section>
 
@@ -81,11 +81,12 @@
       <div class="section-heading"><div><p class="eyebrow">03 / OPEN ISSUES</p><h2>目前卡在哪里。</h2></div><p>将算法问题、算力问题与证据缺口分开处理。<br>复杂件保留现场，基础件继续前进。</p></div>
       <div class="issue-list">
         <article class="issue"><span class="issue-no">01</span><div><div class="issue-title"><h3>复杂链轮的材料布尔计算不可靠</h3><span class="tag amber">复杂件暂后排</span></div><p>部分车削与线切割后，原生实体的布尔结果与几何判定出现矛盾。0058 的完整采样最大保守偏差约 13.5913 mm，超过 0.05 mm 判据，未通过。</p><div class="issue-action"><strong>处理方向</strong><span>保留已执行材料和失败记录，隔离几何内核问题。继续做可推进的基础件，不将修复猜测计为通过。</span></div></div></article>
-        <article class="issue"><span class="issue-no">02</span><div><div class="issue-title"><h3>全件高精度外部仿真超出本机合理预算</h3><span class="tag amber">方式需要调整</span></div><p>本机为 4 vCPU、约 16 GB 内存，无可用计算 GPU，也没有额外计算节点。0062 的一次全件 CAMotics 尝试在约 1.5 小时后仍停在 10.41%，未产生有效输出。此前 32 个普通矩管实例（两种截面，成品长度 120–4,996 mm）的项目内加工仿真计算为 15.9–19.3 秒，峰值约 672 MiB，均使用单 CPU。此前 21 个圆管实例的加工仿真为 16.2–17.6 秒、峰值约 672 MiB，同样使用单 CPU。此前 29 个槽钢实例的加工仿真为 14.1–15.0 秒、峰值约 668 MiB。本批 32 个矩管实例为 15.6–21.0 秒、峰值约 669 MiB，同样使用单 CPU。每件原图审查与工单准备平均 25.6 秒，回放核验与接收平均 16.9 秒；三阶段合计平均 59.5 秒/实例，这些时间也计入实际推进成本。</p><div class="issue-action"><strong>处理方向</strong><span>采用单任务资源限制、小试件、适合工艺的二维或回转表示及局部验证。超限记录为未验证，正式公差保持 0.05 mm。</span></div></div></article>
+        <article class="issue"><span class="issue-no">02</span><div><div class="issue-title"><h3>全件高精度外部仿真超出本机合理预算</h3><span class="tag amber">方式需要调整</span></div><p>本机为 4 vCPU、约 16 GB 内存，无可用计算 GPU，也没有额外计算节点。0062 的一次全件 CAMotics 尝试在约 1.5 小时后仍停在 10.41%，未产生有效输出。此前 32 个普通矩管实例（两种截面，成品长度 120–4,996 mm）的项目内加工仿真计算为 15.9–19.3 秒，峰值约 672 MiB，均使用单 CPU。此前 21 个圆管实例的加工仿真为 16.2–17.6 秒、峰值约 672 MiB，同样使用单 CPU。此前 29 个槽钢实例的加工仿真为 14.1–15.0 秒、峰值约 668 MiB。本批 32 个矩管实例为 16.3–18.4 秒、峰值约 671 MiB，同样使用单 CPU。每件原图审查与工单准备平均 23.9 秒，回放核验与接收平均 16.9 秒；三阶段合计平均 58.2 秒/实例，这些时间也计入实际推进成本。</p><div class="issue-action"><strong>处理方向</strong><span>采用单任务资源限制、小试件、适合工艺的二维或回转表示及局部验证。超限记录为未验证，正式公差保持 0.05 mm。</span></div></div></article>
         <article class="issue"><span class="issue-no">03</span><div><div class="issue-title"><h3>部分基础件的历史材料与回放尚未补齐</h3><span class="tag">影响可复核覆盖</span></div><p>基础档剩余 8 份已有历史工序或几何证据，但部分原材料状态和回放不在本机。部分侧板、底板组合的旧代表型材和板件材料链也待恢复；仅靠汇总通过记录，不能补出完整、可检查的制造链。</p><div class="issue-action"><strong>处理方向</strong><span>优先恢复并核对原程序、材料交接及回放。缺失项明确列出，继续其他材料齐全的基础对象。</span></div></div></article>
         <article class="issue"><span class="issue-no">04</span><div><div class="issue-title"><h3>几何通过之后，还有图纸工序和物理验证</h3><span class="tag">验收范围待扩展</span></div><p>部分组合件尚未焊接；螺纹、热处理、装夹、碰撞及设备条件尚未全部校核。理想弯曲还不能预测回弹与减薄，接触检查也不能代表焊缝强度。</p><div class="issue-action"><strong>处理方向</strong><span>把图纸要求逐项列入工序和验收条件。新增一个特征，先做控制试件，再覆盖同类零件。</span></div></div></article>
       </div>
       <p class="section-note" id="inventory-reuse-finding">10 月 24 日的清查记录复用试验未通过一致性检查：在同一总装中分类另一个候选后，45 个实例的边界框读数发生变化，最大约 0.0193 mm，体积和面数记录未变。该优化未用于客户加工，当前仍逐件完整清查；后续提速需要处理共享读图状态，并继续实时核对材料登记。</p>
+      <p class="section-note" id="inventory-volume-once">本批保留逐实例完整清查，仅将同一实体的重复体积计算减为一次。两份总装共 1,936 个清查记录与原实现逐字段一致；两次控制清查分别节省约 1.7 秒和 1.5 秒。这不是端到端提速比例，也没有跨候选缓存。32 个新实例随后各自完成实际材料仿真与接收。</p>
       <aside class="retrospective"><strong>推进方式的调整</strong><p>前期较多工作集中于复杂链轮的几何内核、材料连续性和证明链，基础件覆盖增长未跟上。当前已改为先完成基础档，同档难例保留后继续其他对象，再逐项增加特征。</p></aside>
       <p class="section-note">10 月 23 日补充：两个独立手写盲孔、通孔小试件已完成 CAMotics 对照，全部预定网格样点均通过 0.05 mm 判据，漏孔反例被拒绝。单次计算约 0.5–11.4 秒、峰值内存约 628 MiB。此次仅验证小试件，客户件外部完整对照仍为 0，16/71 覆盖计数不变。</p>
     </section>
@@ -95,12 +96,12 @@
     <section class="section wrap" id="next">
       <div class="section-heading"><div><p class="eyebrow">05 / NEXT MILESTONES</p><h2>后续按难度推进，按结果验收。</h2></div><p>以可复核的零件和工序为交付单位。<br>每项完成后更新清单和回放。</p></div>
       <div class="roadmap">
-        <article><div class="roadmap-top"><span class="roadmap-no">M1</span><span class="tag teal-tag">当前优先</span></div><h3>补齐基础单件</h3><p>优先 12 份基础单件及组合中的简单构件，复用已有材料，补齐程序、材料交接和完整回放。</p><div class="acceptance"><small>完成标准</small><p>每份明确通过、缺失特征或受阻原因；通过件具有原几何比对和可播放证据。</p></div></article>
+        <article><div class="roadmap-top"><span class="roadmap-no">M1</span><span class="tag teal-tag">当前优先</span></div><h3>覆盖材料齐全的基础件</h3><p>先逐件推进已有规则的普通型材和材料齐全的基础单件，完成程序、连续材料验证与回放。缺少历史产物的 8 份基础件单列依赖，待恢复后接续。</p><div class="acceptance"><small>完成标准</small><p>每份明确通过、缺失特征或受阻原因；通过件具有原几何比对和可播放证据。</p></div></article>
         <article><div class="roadmap-top"><span class="roadmap-no">M2</span><span class="tag">逐项扩展</span></div><h3>常规附加特征</h3><p>在基础链上补齐沉孔、台阶孔、常规槽和倒角；每个特征先验证控制试件，再推广同类件。</p><div class="acceptance"><small>完成标准</small><p>控制试件及失败检测有效，客户工序连续接续，不回退已执行材料。</p></div></article>
         <article><div class="roadmap-top"><span class="roadmap-no">M3</span><span class="tag">按依赖推进</span></div><h3>多面加工与连接</h3><p>扩展多面孔、斜切、弯管和连接工序，逐步补充图纸要求、夹具和物理适用边界。</p><div class="acceptance"><small>完成标准</small><p>每个原构件与连接都有对应证据，不以代表构件替代整份文件。</p></div></article>
         <article><div class="roadmap-top"><span class="roadmap-no">M4</span><span class="tag">后续专项</span></div><h3>复杂特征与总装</h3><p>在基础档推进稳定后，继续齿形、螺纹、刻字、复杂曲面和大型总装。</p><div class="acceptance"><small>完成标准</small><p>先解决已知算法反例，再扩展完整工序；全部实体和余料范围可核查。</p></div></article>
       </div>
-      <div class="near-term"><div><span class="live-dot"></span><strong>本机可以持续推进的工作</strong></div><p>历史证据整理 · 基础特征与工序代码开发 · 小试件与单工序验证 · 低成本回放和报告更新</p><span>一次一个计算任务，超预算先优化或拆分；不通过降低正式精度换取“完成”。</span></div>
+      <div class="near-term"><div><span class="live-dot"></span><strong>本机可以持续推进的工作</strong></div><p>基础型材逐件验证 · 常规特征小试件开发 · 适配工序的轻量外部对照 · 动画回放与报告更新</p><span>一次一个计算任务，超预算先优化或拆分；不通过降低正式精度换取“完成”。</span></div>
     </section>
     <footer class="wrap site-footer"><div><span class="brand footer-brand">GenLaw <small>制造仿真阶段报告</small></span><p>用于研发进度与技术讨论。数据范围、支持边界与未验证事项以本页说明为准。</p></div><div class="footer-links"><a href="data/report.json" download>报告数据 JSON ↓</a><a href="data/replay-manifest.json" download>回放来源摘要 ↓</a><button id="print-report" class="text-button">打印 / 保存 PDF</button></div><p class="footer-bottom">原始几何验收公差 0.05 mm · 对比离散弦差 0.00625 mm · 回放采用 Anatomy 等距视图，开源许可保留在各回放页面中。</p></footer>
   </main>
