@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-25T13:33:08+08:00",
+  "updated_at": "2026-10-25T14:06:24+08:00",
   "report_deadline": "2026-10-25T19:00:00+08:00",
-  "version": "2026.10 / 36",
+  "version": "2026.10 / 37",
   "counts": {
     "files": 71,
     "solid_occurrences": 2475,
@@ -31,7 +31,28 @@
     "controller_dialect": "genlaw.cartesian-axial.v1",
     "controller_execution_verified": false,
     "equipment_verified": false,
-    "nc_ready": false
+    "nc_ready": false,
+    "configured_axial_jobs": {
+      "accepted_cases": [
+        "two-holes",
+        "decimal",
+        "continuation"
+      ],
+      "replay_urls": [
+        "examples/axial-two-holes.html",
+        "examples/axial-decimal.html",
+        "examples/axial-continuation.html"
+      ],
+      "independent_target_input": true,
+      "actual_material_continuation": true,
+      "pure_refusal_controls": 14,
+      "material_negative_cases": [
+        "wrong-hole",
+        "blocked-second"
+      ],
+      "customer_files_completed_added": 0,
+      "customer_external_crosschecks_added": 0
+    }
   },
   "rows": [
     {
@@ -107,7 +128,7 @@
       "category": "圆板切割与钻孔",
       "scope": "从板料获得圆板并加工孔，保留实际中间材料。",
       "evidence_note": "本轮全部原实体的连续实际材料、完整边界采样和四模式回放通过；工装、物性及设备未验证。",
-      "next_action": "首个真实单件复核对象：沿用已有实际材料，补工艺与设备约束、生产入口和适配外部验证；水刀与钻孔分别核验。",
+      "next_action": "首个真实单件复核对象：原 PDF 标注 304、倒角及表面处理要求；49 份已有文件核对不变。补坐标变换、夹具、刀长、控制器与图纸工艺验收，沿用已有材料；水刀与钻孔分别核验。",
       "replay": {
         "url": "replays/0050.html",
         "bytes": 1075186,
@@ -18289,6 +18310,10 @@
     {
       "name": "单孔参考设备适配案例",
       "sha256": "fee45eb44a6cae3fac330732d49fb3d0ef66774ec2d3a8159d676c6df2f095b6"
+    },
+    {
+      "name": "配置作业、多孔与实际材料续加工",
+      "sha256": "d68c2d8a64c6d056e247eb0448a783ad5b604df09b7004c90e66c3bb8b97d4d9"
     },
     {
       "name": "0035 独立型材实例",
