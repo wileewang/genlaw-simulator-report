@@ -1,0 +1,133 @@
+{
+  "schema": "genlaw.retained-axial-reference.v1",
+  "part": "0050",
+  "machine": {
+    "schema": "genlaw.machine-profile.v1",
+    "id": "0050-reference-cartesian-with-stationary-G43",
+    "source_kind": "reference",
+    "units": "mm",
+    "kinematics": "cartesian_xyz_fixed_tool_z",
+    "controller_dialect": "genlaw.cartesian-axial.stationary-g43.v1",
+    "tool_change_model": "stationary_manual",
+    "trajectory_model": "linear_segments_without_dynamics",
+    "capabilities": [
+      "axial_drilling"
+    ],
+    "axes": {
+      "X": {
+        "min_mm": 0,
+        "max_mm": 300,
+        "max_feed_mm_min": 1000
+      },
+      "Y": {
+        "min_mm": 0,
+        "max_mm": 200,
+        "max_feed_mm_min": 1000
+      },
+      "Z": {
+        "min_mm": 0,
+        "max_mm": 180,
+        "max_feed_mm_min": 500
+      }
+    },
+    "spindle_rpm": [
+      100,
+      6000
+    ],
+    "max_path_feed_mm_min": 1000
+  },
+  "tool": {
+    "kind": "conical_tip_rotary",
+    "radius": 5.499999999999993,
+    "flute": 33.50473340465157,
+    "holder_radius": 8.499999999999993,
+    "holder_length": 30.0,
+    "center_cutting": true,
+    "role": "primary_hole",
+    "tip_length": 3.3047334046515773,
+    "number": 1,
+    "gauge_length_mm": 75
+  },
+  "setup": {
+    "g54_mm": [
+      100,
+      80,
+      20
+    ],
+    "initial_axes_mm": [
+      100,
+      80,
+      107
+    ],
+    "safe_z_mm": 12,
+    "additional_offsets_mm": [
+      0,
+      0,
+      0
+    ],
+    "work_rotation_degrees": 0
+  },
+  "work_to_cad": [
+    [
+      -0.9891765099647792,
+      -0.14673047445536694,
+      0.0,
+      45.38154938842246
+    ],
+    [
+      0.14673047445536677,
+      -0.9891765099647782,
+      0.0,
+      33.65725089459447
+    ],
+    [
+      0.0,
+      0.0,
+      0.999999999999999,
+      7.999999999999983
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "material": {
+    "designation": "304",
+    "source": "original PDF title-block text",
+    "condition": "unknown",
+    "physics_model": "geometry_only"
+  },
+  "fixture_recipe": {
+    "kind": "paired_top_and_bottom_contact_pads",
+    "frame": "original_CAD",
+    "x_intervals": [
+      [
+        -30,
+        -22
+      ],
+      [
+        22,
+        30
+      ]
+    ],
+    "y_interval": [
+      -5,
+      5
+    ],
+    "depth_mm": 4,
+    "contact_z_source": "horizontal planes of retained incoming material"
+  },
+  "assumptions": [
+    "Reference machine travel and G54 are proposed, not measured.",
+    "75 mm gauge length is a reference input, not a recovered historical tool measurement.",
+    "Contact pads are a proposed geometric fixture; clamping force and stability unverified."
+  ],
+  "historical_fixture_claimed": false,
+  "cutting_parameters_qualified": false,
+  "whole_route_checked": false,
+  "manufacturing_verified": false,
+  "equipment_verified": false,
+  "nc_ready": false
+}
