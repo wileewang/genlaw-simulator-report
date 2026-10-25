@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-25T14:43:35+08:00",
+  "updated_at": "2026-10-25T15:18:13+08:00",
   "report_deadline": "2026-10-25T19:00:00+08:00",
-  "version": "2026.10 / 38",
+  "version": "2026.10 / 39",
   "counts": {
     "files": 71,
     "solid_occurrences": 2475,
@@ -66,6 +66,65 @@
       "controller_execution_verified": false,
       "manufacturing_verified": false,
       "nc_ready": false
+    },
+    "retained_customer_route": {
+      "status": "reference_route_admitted",
+      "accepted": true,
+      "mode": "admit-retained-route",
+      "material_execution": false,
+      "material_states_recomputed": false,
+      "production_entry_admission": true,
+      "production_execution_integrated": false,
+      "controller_execution_verified": false,
+      "equipment_verified": false,
+      "workholding_verified": false,
+      "manufacturing_verified": false,
+      "whole_route_checked": false,
+      "nc_ready": false,
+      "customer_files_completed_added": 0,
+      "customer_external_crosschecks_added": 0,
+      "material_states": 4,
+      "waterjet_moves": 320,
+      "drilling_moves": 4,
+      "actual_material_handoff_byte_identical": true,
+      "original_material_unchanged": true,
+      "protected_original_files": 49,
+      "retained_scrap_components": 1,
+      "complete_recorded_motion_replay_bound": true,
+      "manual_transfer_motion_verified": false,
+      "native_drilling_clearance_reused": true,
+      "original_geometry_evidence_reused": true,
+      "CAD_loaded": false,
+      "unresolved": [
+        "real_controller_and_device_validation",
+        "manual_transfer_and_workholding_stability",
+        "material_specific_process_parameters",
+        "full_machine_geometry_collision",
+        "drawing_chamfers_deburring_and_surface_treatment",
+        "external_whole_route_crosscheck"
+      ],
+      "waterjet_controls": 40,
+      "route_refusal_controls": 16,
+      "waterjet_fixture_clearance_checks": 1918,
+      "retained_world_coordinate_checks": 1914,
+      "replay_world_coordinate_checks": 1944,
+      "control_seconds": 0.6541943780030124,
+      "control_peak_rss_bytes": 23334912,
+      "cpu_affinity": [
+        0
+      ],
+      "nice": 10,
+      "archive_members": 56,
+      "archive_bytes": 81787,
+      "archive_sha256": "83a282409113358c9b320043303444788426e497ec6abd21d52c0df9a346fad7",
+      "all_archive_members_read_back": true,
+      "runtime_closed": true,
+      "part": "0050",
+      "scope": "retained_route_reference_admission",
+      "replay_url": "replays/0050.html",
+      "drilling_reference_url": "examples/0050-reference.html",
+      "waterjet_configuration_url": "examples/0050-waterjet-reference.json",
+      "audit_url": "examples/0050-route-audit.json"
     }
   },
   "rows": [
@@ -142,7 +201,7 @@
       "category": "圆板切割与钻孔",
       "scope": "从板料获得圆板并加工孔，保留实际中间材料。",
       "evidence_note": "本轮全部原实体的连续实际材料、完整边界采样和四模式回放通过；工装、物性及设备未验证。",
-      "next_action": "钻孔工序已完成参考坐标、行程和装夹干涉复核，49 份原文件不变；真实设备仍未验证。继续补水刀/取件工序约束、生产入口、外部对照，以及 PDF 的 304、C1、去毛刺和表面处理验收。",
+      "next_action": "水刀与钻孔参考约束、实际取件交接和已保存路线的生产入口验收通过，49 份原文件不变。新试件继续补配置驱动的整条路线执行；本件仍需人工转运/装夹、真实控制器、外部对照及 PDF 的 304、C1、去毛刺和表面处理验收。",
       "replay": {
         "url": "replays/0050.html",
         "bytes": 1075186,
@@ -18332,6 +18391,10 @@
     {
       "name": "0050 保存材料的参考设备复核",
       "sha256": "cabedf4936dd190d6798576710e761c5ac6aa50fcc408923c95dc5239b88908d"
+    },
+    {
+      "name": "0050 水刀/取件/钻孔参考路线验收",
+      "sha256": "c3b2b31784dea0c6e26128f3b663e79905fe4ae046d91a35c327ef6a16666f40"
     },
     {
       "name": "0035 独立型材实例",
