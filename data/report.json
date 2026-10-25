@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-25T15:18:13+08:00",
+  "updated_at": "2026-10-25T17:56:48+08:00",
   "report_deadline": "2026-10-25T19:00:00+08:00",
-  "version": "2026.10 / 39",
+  "version": "2026.10 / 40",
   "counts": {
     "files": 71,
     "solid_occurrences": 2475,
@@ -125,6 +125,100 @@
       "drilling_reference_url": "examples/0050-reference.html",
       "waterjet_configuration_url": "examples/0050-waterjet-reference.json",
       "audit_url": "examples/0050-route-audit.json"
+    },
+    "configured_plate_routes": {
+      "status": "configured_plate_route_controls_passed",
+      "scope": "reference_sheet_waterjet_pick_drill_route",
+      "accepted_cases": [
+        "two-holes",
+        "decimal"
+      ],
+      "retained_failure_cases": [
+        "blocked-second",
+        "wrong-pick"
+      ],
+      "preflight_rejections": [
+        "short-machine"
+      ],
+      "total_material_states": 16,
+      "total_recorded_moves": 44,
+      "actual_material_handoff_byte_identical": true,
+      "independent_target_input": true,
+      "native_component_pick": true,
+      "stage_specific_fixtures": true,
+      "machine_nc_controls": 28,
+      "waterjet_nc_controls": 40,
+      "input_reentry_controls": 17,
+      "material_verification_checks": 7,
+      "browser_checks": 7,
+      "material_reexecution": false,
+      "registered_customer_work_order": false,
+      "customer_files_completed_added": 0,
+      "customer_external_crosschecks_added": 0,
+      "manufacturing_verified": false,
+      "equipment_verified": false,
+      "workholding_verified": false,
+      "controller_execution_verified": false,
+      "material_physics_verified": false,
+      "manual_transfer_motion_verified": false,
+      "nc_ready": false,
+      "cases": {
+        "two-holes": {
+          "status": "geometry_checked",
+          "material_states": 5,
+          "recorded_moves": 14,
+          "waterjet_moves": 7,
+          "drilling_moves": 7,
+          "drilling_cut_moves": 2,
+          "target_geometry_checked": true,
+          "native_pick": true,
+          "url": "examples/plate-route-two-holes.html",
+          "source_presentation_sha256": "8af77f6c5533f1109154acb64e5e79fd7ce5eaef9b1cf8edaba9c55c099d7e3f",
+          "public_replay_sha256": "5938eb1c4185293af2506b911cd9477993a3589483c30be49ed2de57e914758c"
+        },
+        "decimal": {
+          "status": "geometry_checked",
+          "material_states": 4,
+          "recorded_moves": 11,
+          "waterjet_moves": 7,
+          "drilling_moves": 4,
+          "drilling_cut_moves": 1,
+          "target_geometry_checked": true,
+          "native_pick": true,
+          "url": "examples/plate-route-decimal.html",
+          "source_presentation_sha256": "75779ffc8819da7ca9f40071c604a754c88a8d69724237a559ea741ac98ce486",
+          "public_replay_sha256": "a8d8f4ee785de3de138a953b05ccc79eace2e9c55c80caf21ecc78bb924e928b"
+        },
+        "blocked-second": {
+          "status": "stopped",
+          "material_states": 5,
+          "recorded_moves": 12,
+          "waterjet_moves": 7,
+          "drilling_moves": 5,
+          "drilling_cut_moves": 1,
+          "target_geometry_checked": false,
+          "native_pick": true,
+          "url": "examples/plate-route-blocked-second.html",
+          "source_presentation_sha256": "c631d23122885232d91af7d2a561eed9da33096b58bd26a339197b0d90e7aa58",
+          "public_replay_sha256": "e6d15ee593b08eecee48c2c106a7883865b7179d6245732e77a892ae5759c072"
+        },
+        "wrong-pick": {
+          "status": "stopped",
+          "material_states": 2,
+          "recorded_moves": 7,
+          "waterjet_moves": 7,
+          "drilling_moves": 0,
+          "drilling_cut_moves": 0,
+          "target_geometry_checked": false,
+          "native_pick": false,
+          "url": "examples/plate-route-wrong-pick.html",
+          "source_presentation_sha256": "4f555d7b287960334a02908854d8ab68a7951ead25d53a1057789c859284ac35",
+          "public_replay_sha256": "f345cea18f930652bed825d5e9877f62bb9ede5655c57436d213aa95d4dd4c19"
+        }
+      },
+      "summary_url": "examples/plate-route-summary.json",
+      "case_kind": "synthetic_reference",
+      "customer_counts_unchanged": true
     }
   },
   "rows": [
@@ -201,7 +295,7 @@
       "category": "圆板切割与钻孔",
       "scope": "从板料获得圆板并加工孔，保留实际中间材料。",
       "evidence_note": "本轮全部原实体的连续实际材料、完整边界采样和四模式回放通过；工装、物性及设备未验证。",
-      "next_action": "水刀与钻孔参考约束、实际取件交接和已保存路线的生产入口验收通过，49 份原文件不变。新试件继续补配置驱动的整条路线执行；本件仍需人工转运/装夹、真实控制器、外部对照及 PDF 的 304、C1、去毛刺和表面处理验收。",
+      "next_action": "水刀与钻孔参考约束、实际取件交接和已保存路线的生产入口验收通过，49 份原文件不变。新合成板件已完成配置驱动的参考路线；本件继续补外部钻孔对照和客户派工整合，人工转运/装夹、真实控制器及 PDF 的 304、C1、去毛刺和表面处理仍待验收。",
       "replay": {
         "url": "replays/0050.html",
         "bytes": 1075186,
@@ -18395,6 +18489,10 @@
     {
       "name": "0050 水刀/取件/钻孔参考路线验收",
       "sha256": "c3b2b31784dea0c6e26128f3b663e79905fe4ae046d91a35c327ef6a16666f40"
+    },
+    {
+      "name": "配置板件参考路线与失败材料保留",
+      "sha256": "de5e9a9226ca11273b912a15f32448060521beda8c0076a4237a35234ab45c8b"
     },
     {
       "name": "0035 独立型材实例",
