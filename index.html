@@ -31,7 +31,7 @@
         <h1>制造仿真，<br>走到了哪一步。</h1>
         <p class="hero-description">从原始零件，到加工程序，再到材料变化。<br>查看已验证的范围、真实过程和下一步开发重点。</p>
         <div class="hero-actions"><a class="button primary" href="#replay">观看制造过程 <span aria-hidden="true">↗</span></a><a class="text-link" href="#parts">查看全部 71 份清单 <span aria-hidden="true">→</span></a></div>
-        <p class="update">数据快照 <time id="updated-at">2026-10-24 · 北京时间</time><span>汇报截止 10 月 25 日 19:00</span></p>
+        <p class="update">数据快照 <time id="updated-at">2026-10-25 · 北京时间</time><span>汇报截止 10 月 25 日 19:00</span></p>
       </div>
       <aside class="hero-summary" aria-labelledby="summary-title">
         <div class="summary-top"><span class="eyebrow">CURRENT CAPABILITY</span><span class="small-label">阶段结果</span></div>
@@ -64,7 +64,8 @@
         <div class="demo-caption"><span id="demo-scope">实际板料连续交接；全部原几何采样通过。</span><span>工序状态回放 · 播放间隔不代表实际加工时间</span></div>
       </div>
       <p class="section-note">项目内独立仿真已经用于上述材料链核查。这里的动画不代表 CAMotics / FreeCAD 客户件交叉验证已完成，也不代表设备已可直接执行。</p>
-      <p class="section-note" id="latest-profile-families">10 月 25 日继续覆盖基础矩管：本批新增 32 个原实体，涵盖 □120×120×8 与 □100×100×8 两种截面、120–3,800 mm 成品长度的 5 类组合。两份总装分别有 318/968 和 317/968 个实体完成独立加工、采样与回放。可查看 <a href="replays/0000-1-0271.html" target="_blank" rel="noopener">120 mm 普通矩管</a>、<a href="replays/0000-2-0200.html" target="_blank" rel="noopener">220 mm 普通矩管</a>、<a href="replays/0000-1-0352.html" target="_blank" rel="noopener">3,800 mm 矩管</a>，以及此前的 <a href="replays/0000-1-0960.html" target="_blank" rel="noopener">圆角斜翼槽钢</a>。每件保留全部中间材料和余料；总装整体仍未完成。</p>
+      <aside class="retrospective" id="reference-case"><strong>最新开发案例：单孔 × 两份机床配置</strong><p>30 × 20 × 5 mm 板坯加工一个通孔。同一份输出代码在标准参考配置上通过，在短 X 行程配置上被拒绝；28 项代码与设备约束控制、3 项材料反例检查通过。实际加工保留 2 个材料状态、4 条运动，单核计算约 5.55 秒、峰值约 537 MiB。<a href="examples/single-hole.html" target="_blank" rel="noopener">打开单孔过程回放 ↗</a> · <a href="examples/single-hole-machine.json">标准参考配置</a> · <a href="examples/single-hole-short-machine.json">短行程配置</a></p><p>这是合成开发用例，使用明确的参考控制器子集，尚未完成真实控制器或设备验证。材料牌号为声明的场景输入，切削参数未作物理确认；客户完整文件数仍为 16/71，客户整件外部对照仍为 0。</p></aside>
+      <p class="section-note" id="latest-profile-families">此前总装批次新增 32 个矩管原实体，涵盖 □120×120×8 与 □100×100×8 两种截面、120–3,800 mm 成品长度的 5 类组合。两份总装分别有 318/968 和 317/968 个实体完成独立加工、采样与回放。可查看 <a href="replays/0000-1-0271.html" target="_blank" rel="noopener">120 mm 普通矩管</a>、<a href="replays/0000-2-0200.html" target="_blank" rel="noopener">220 mm 普通矩管</a>、<a href="replays/0000-1-0352.html" target="_blank" rel="noopener">3,800 mm 矩管</a>，以及此前的 <a href="replays/0000-1-0960.html" target="_blank" rel="noopener">圆角斜翼槽钢</a>。每件保留全部中间材料和余料；总装整体仍未完成，后续扩批已后排。</p>
       <p class="section-note" id="component-progress">部分文件已完成独立构件的实际锯切与几何比对。下方选择“部分构件已验证”可查看逐件回放；整文件进度仍按完整材料链单独统计。</p>
     </section>
 
@@ -89,7 +90,7 @@
       <p class="section-note" id="inventory-volume-once">已验证的清查优化只在同一实体内复用一次体积值，仍保留逐实例完整清查。原控制试验的两份总装共 1,936 个清查记录与原实现逐字段一致；两次清查分别节省约 1.7 秒和 1.5 秒。这不是端到端提速比例，也没有跨候选缓存。本批沿用相同实现，每个新实例仍独立完成实际材料仿真与接收。</p>
       <p class="section-note" id="split-finish-current">本批32个实例各实际加工一次，130次受限阶段尝试中128次正常结束。第14、29件准备超时现场保留，核验保存审查后才首次加工；此前材料未变。准备、加工、回放和接收分别保留记录，每件仍完整清查原图及实时材料登记。完成后，20个独立任务验证44项重复执行拒绝。启动前短暂观察CPU负载并选择其中一核，保持单任务、单CPU和原有内存及时限。只读输入可以共享，实际材料分别保存。</p>
       <p class="section-note" id="finish-interruption-note">10 月 24 日此前一批 32 个矩管在收尾时发生两次信号中断（约 5.7 秒和 4.1 秒）及一次 45 秒超时。加工成果与已完成回放均保留，只补未完成的回放或接收，32 个实例各加工一次。最后三件分开运行回放和接收，各保留 45 秒上限。两次信号中断的来源尚未查明，该批统计已计入全部尝试，历史记录保留。</p>
-      <aside class="retrospective"><strong>推进方式的调整</strong><p>前期较多工作集中于复杂链轮的几何内核、材料连续性和证明链，基础件覆盖增长未跟上。当前已改为先完成基础档，同档难例保留后继续其他对象，再逐项增加特征。</p></aside>
+      <aside class="retrospective"><strong>推进方式的调整</strong><p>前期先后投入复杂链轮和总装重复实例，完整单件与设备适配没有同步推进。现在以单特征开发用例起步，再验证真实独立单件，逐项增加特征、多次装夹和组合关系。总装批量扩覆盖与清查提速后排；设备配置、最终代码、材料变化和真实上机分别记录验证范围。</p></aside>
       <p class="section-note">10 月 23 日补充：两个独立手写盲孔、通孔小试件已完成 CAMotics 对照，全部预定网格样点均通过 0.05 mm 判据，漏孔反例被拒绝。单次计算约 0.5–11.4 秒、峰值内存约 628 MiB。此次仅验证小试件，客户件外部完整对照仍为 0，16/71 覆盖计数不变。</p>
       <p class="section-note" id="retained-history-storage">本批共享只读保护清单，逐件审查单独保存。保护清单与审查引用实际占约 3.77 MB，比每件一份等价展开清单少写约 116.0 MB；64份工单的历史说明引用另少写约 237.4 MB。上述是新输出的格式比较，没有删除旧档，材料状态仍独立保存。本批归档前新增独立输出约 204.1 MB，排除既有只读输入；当时磁盘余量约 6.28 GB。后续继续按存储预算逐件推进。</p>
     </section>
@@ -99,12 +100,12 @@
     <section class="section wrap" id="next">
       <div class="section-heading"><div><p class="eyebrow">05 / NEXT MILESTONES</p><h2>后续按难度推进，按结果验收。</h2></div><p>以可复核的零件和工序为交付单位。<br>每项完成后更新清单和回放。</p></div>
       <div class="roadmap">
-        <article><div class="roadmap-top"><span class="roadmap-no">M1</span><span class="tag teal-tag">当前优先</span></div><h3>覆盖材料齐全的基础件</h3><p>先逐件推进已有规则的普通型材和材料齐全的基础单件，完成程序、连续材料验证与回放。缺少历史产物的 8 份基础件单列依赖，待恢复后接续。</p><div class="acceptance"><small>完成标准</small><p>每份明确通过、缺失特征或受阻原因；通过件具有原几何比对和可播放证据。</p></div></article>
+        <article><div class="roadmap-top"><span class="roadmap-no">M1</span><span class="tag teal-tag">当前优先</span></div><h3>单件闭环与设备适配</h3><p>先固定毛坯、材料、刀具和装夹，完成单孔参考案例。随后复核 0050 等真实独立单件，补工艺、设备和外部验证。设备档案可替换，新增控制器或运动结构通过适配模块扩展。</p><div class="acceptance"><small>完成标准</small><p>同一案例换设备配置能得到正确的接受或拒绝；最终 NC、连续材料、几何结果与回放相互对应。参考配置与真实设备验证分别标注。</p></div></article>
         <article><div class="roadmap-top"><span class="roadmap-no">M2</span><span class="tag">逐项扩展</span></div><h3>常规附加特征</h3><p>在基础链上补齐沉孔、台阶孔、常规槽和倒角；每个特征先验证控制试件，再推广同类件。</p><div class="acceptance"><small>完成标准</small><p>控制试件及失败检测有效，客户工序连续接续，不回退已执行材料。</p></div></article>
         <article><div class="roadmap-top"><span class="roadmap-no">M3</span><span class="tag">按依赖推进</span></div><h3>多面加工与连接</h3><p>扩展多面孔、斜切、弯管和连接工序，逐步补充图纸要求、夹具和物理适用边界。</p><div class="acceptance"><small>完成标准</small><p>每个原构件与连接都有对应证据，不以代表构件替代整份文件。</p></div></article>
         <article><div class="roadmap-top"><span class="roadmap-no">M4</span><span class="tag">后续专项</span></div><h3>复杂特征与总装</h3><p>在基础档推进稳定后，继续齿形、螺纹、刻字、复杂曲面和大型总装。</p><div class="acceptance"><small>完成标准</small><p>先解决已知算法反例，再扩展完整工序；全部实体和余料范围可核查。</p></div></article>
       </div>
-      <div class="near-term"><div><span class="live-dot"></span><strong>本机可以持续推进的工作</strong></div><p>基础型材逐件验证 · 常规特征小试件开发 · 适配工序的轻量外部对照 · 动画回放与报告更新</p><span>一次一个计算任务，超预算先优化或拆分；不通过降低正式精度换取“完成”。</span></div>
+      <div class="near-term"><div><span class="live-dot"></span><strong>本机可以持续推进的工作</strong></div><p>单件与设备约束验证 · 常规特征小试件开发 · 适配工序的轻量外部对照 · 动画回放与报告更新</p><span>一次一个计算任务，超预算先优化或拆分；不通过降低正式精度换取“完成”。</span></div>
     </section>
     <footer class="wrap site-footer"><div><span class="brand footer-brand">GenLaw <small>制造仿真阶段报告</small></span><p>用于研发进度与技术讨论。数据范围、支持边界与未验证事项以本页说明为准。</p></div><div class="footer-links"><a href="data/report.json" download>报告数据 JSON ↓</a><a href="data/replay-manifest.json" download>回放来源摘要 ↓</a><button id="print-report" class="text-button">打印 / 保存 PDF</button></div><p class="footer-bottom">原始几何验收公差 0.05 mm · 对比离散弦差 0.00625 mm · 回放采用 Anatomy 等距视图，开源许可保留在各回放页面中。</p></footer>
   </main>

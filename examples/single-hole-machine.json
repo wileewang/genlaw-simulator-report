@@ -1,0 +1,35 @@
+{
+  "schema": "genlaw.machine-profile.v1",
+  "id": "reference-xyz-300",
+  "source_kind": "reference",
+  "units": "mm",
+  "kinematics": "cartesian_xyz_fixed_tool_z",
+  "controller_dialect": "genlaw.cartesian-axial.v1",
+  "tool_change_model": "stationary_manual",
+  "trajectory_model": "linear_segments_without_dynamics",
+  "capabilities": [
+    "axial_drilling"
+  ],
+  "axes": {
+    "X": {
+      "min_mm": 0,
+      "max_mm": 300,
+      "max_feed_mm_min": 1000
+    },
+    "Y": {
+      "min_mm": 0,
+      "max_mm": 200,
+      "max_feed_mm_min": 1000
+    },
+    "Z": {
+      "min_mm": 0,
+      "max_mm": 100,
+      "max_feed_mm_min": 500
+    }
+  },
+  "spindle_rpm": [
+    100,
+    6000
+  ],
+  "max_path_feed_mm_min": 1000
+}
