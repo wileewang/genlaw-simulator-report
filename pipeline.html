@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173a42">
+  <meta name="description" content="从 CadQuery 零件与制造要求，到工艺 Agent、CAM 编程、G-code 仿真和几何验收：查看四个模块的职责、数据传递与失败反馈。">
+  <meta property="og:title" content="GenLaw · 自动制造 Pipeline">
+  <meta property="og:description" content="一张图看清 Agent、程序和制造数据如何协作。拟定架构，尚待整链集成。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://wileewang.github.io/genlaw-simulator-report/assets/manufacturing-pipeline.png">
+  <link rel="canonical" href="https://wileewang.github.io/genlaw-simulator-report/pipeline.html">
+  <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
+  <title>GenLaw · 自动制造 Pipeline</title>
+  <style>
+    :root{color-scheme:light;--ink:#173a42;--muted:#526b74;--line:#d8e3e5;--green:#087e7c}
+    *{box-sizing:border-box}body{margin:0;background:#f5f8fa;color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI","Noto Sans CJK SC","Microsoft YaHei",sans-serif}a{color:var(--green);text-underline-offset:4px}button,a{touch-action:manipulation}a:focus-visible,button:focus-visible,summary:focus-visible,.diagram-scroll:focus-visible{outline:3px solid #7250b1;outline-offset:4px}
+    .wrap{max-width:1560px;padding:0 32px;margin:auto}.top{border-bottom:1px solid var(--line);background:#fff}.top-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}.brand{display:flex;gap:12px;align-items:center;font-weight:750;text-decoration:none;color:var(--ink);font-size:20px}.brand small{font-size:14px;font-weight:400;color:var(--muted)}.back{font-size:14px;white-space:nowrap}
+    .hero{padding-top:48px;padding-bottom:24px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:650;color:var(--muted);margin:0 0 10px}h1{font-size:clamp(28px,3.3vw,44px);line-height:1.3;letter-spacing:-1px;margin:0 0 16px}.lead{max-width:970px;margin:0;color:var(--muted);font-size:18px}.status{display:inline-block;font-size:13px;border:1px solid #ead8c3;color:#956022;background:#fff0da;padding:4px 12px;border-radius:30px;margin:18px 0 0}
+    .diagram-shell{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 10px 36px #173a4206}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:15px 20px;border-bottom:1px solid var(--line)}.toolbar p{margin:0;font-size:14px;color:var(--muted)}.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.action{background:white;border:1px solid #cbd9dd;border-radius:8px;padding:8px 12px;color:var(--ink);font:inherit;font-size:13px;font-weight:600;line-height:1.4;text-decoration:none;cursor:pointer}.action:hover{background:#edf8f5;border-color:var(--green)}.action[aria-pressed=true]{background:#e3f2ef;border-color:var(--green)}
+    figure{margin:0}.diagram-scroll{overflow:auto;overscroll-behavior-x:contain;background:#f5f8fa}.diagram-scroll img{width:100%;height:auto;display:block;min-width:1120px}.diagram-scroll.expanded img{width:1680px;max-width:none}.diagram-scroll.fit img{min-width:0;width:100%}figcaption{padding:14px 20px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+    .detail-head{margin:36px 0 16px;font-size:22px}.modules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.module{background:white;border:1px solid var(--line);border-radius:12px;padding:20px}.module h3{font-size:17px;margin:0 0 10px}.module p{font-size:14px;color:var(--muted);margin:0 0 12px}.module p:last-child{margin:0}.role{font-size:12px;font-weight:600;border-radius:5px;padding:3px 7px;display:inline-block;margin:0 0 12px;background:#edf8f5;color:var(--green)}.role.agent{color:#7250b1;background:#f3eefb}.module code{font-size:12px;overflow-wrap:anywhere}.contract{border-left:3px solid #cddde3;padding-left:12px}.scope-note{padding:20px 24px;background:#eaf1fa;border-radius:12px;font-size:14px;margin-top:20px}.scope-note p{margin:0 0 8px}.scope-note p:last-child{margin:0}.footer{padding-top:32px;padding-bottom:32px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer p{margin:0}
+    @media(max-width:1000px){.modules{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:640px){.wrap{padding-left:18px;padding-right:18px}.top-inner{min-height:66px}.brand small{display:none}.hero{padding-top:32px}.lead{font-size:16px}.toolbar{padding:14px}.toolbar p{width:100%}.actions{gap:7px}.action{padding:9px 10px}.modules{grid-template-columns:1fr}.module{padding:18px}.scope-note{padding:18px}.diagram-shell{border-radius:12px}.footer{display:block}.footer p+p{margin-top:8px}}
+    @media print{.top,.hero,.toolbar,.modules,.detail-head,.scope-note,.footer,figcaption{display:none}.wrap{padding:0;max-width:none}.diagram-shell{border:0;box-shadow:none}.diagram-scroll{overflow:visible}.diagram-scroll img,.diagram-scroll.expanded img,.diagram-scroll.fit img{width:100%;min-width:0}.diagram-shell{break-inside:avoid}@page{size:A3 landscape;margin:8mm}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap top-inner"><a class="brand" href="./"><img src="assets/mark.svg" width="28" height="28" alt="">GenLaw <small>/ 制造自动化</small></a><a class="back" href="./">返回进展报告 ↗</a></div></header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">ARCHITECTURE / DATA FLOW</p>
+      <h1 id="page-title">Agent 决定加工方案，程序生成与检验。</h1>
+      <p class="lead">从 CadQuery 零件和制造要求出发，沿四个环节走到 G-code 与几何报告。图中标出了每一步做什么、交出什么，以及失败之后如何返回修改。</p>
+      <p class="status">拟定架构 · 尚未完成整链集成</p>
+    </section>
+    <section class="diagram-shell" aria-label="制造流程图">
+      <div class="toolbar"><p>从左向右阅读；手机可左右滑动，或选择适应屏幕。</p><div class="actions"><button class="action" id="fit" type="button" aria-pressed="false" hidden>适应屏幕</button><button class="action" id="expand" type="button" aria-pressed="false" hidden>放大查看</button><a class="action" href="assets/manufacturing-pipeline.svg" target="_blank" rel="noopener">打开原图 ↗</a><a class="action" href="assets/manufacturing-pipeline.svg" download="GenLaw-制造流程图.svg">下载 SVG ↓</a><a class="action" href="assets/manufacturing-pipeline.png" download="GenLaw-制造流程图.png">下载 PNG ↓</a></div></div>
+      <figure>
+        <div class="diagram-scroll" id="diagram" tabindex="0" role="region" aria-label="可横向滚动的完整流程图">
+          <img src="assets/manufacturing-pipeline.svg" width="1680" height="1184" alt="拟定制造流程：上游模型绑定几何与要求，输出制造输入包；工艺 Agent 生成 JSON 工艺卡，程序校验；适配器生成 CAM Job，FreeCAD CAM 与后处理输出含实际来料的最终 NC 仿真包；独立 NC 仿真生成剩余材料，程序对照不可改写的原始 CAD 与要求验收，输出几何报告和回放。资源库提供毛坯、设备、刀具、夹具和规则；失败证据回传工艺 Agent。">
+        </div>
+        <figcaption>紫色为 Agent / 模型，绿色为程序，蓝色为数据，橙色为失败反馈。第 03 环节的 NC 仿真包由适配程序汇总，包含最终代码和执行所需的实际材料、工具及坐标信息。</figcaption>
+      </figure>
+    </section>
+    <h2 class="detail-head">四个模块的职责</h2>
+    <section class="modules" aria-label="模块职责与接口">
+      <article class="module"><span class="role agent">上游模型 + 程序校验</span><h3>01 · 几何与要求绑定</h3><p>模型理解标注，将孔、面、基准等特征关联到制造要求；程序确认引用存在、单位一致，避免关联到错误几何。</p><p class="contract">输出：① CAD / STEP 与特征、要求 JSON。采用模型版本与稳定 ID，不能只依赖易变的面序号。</p></article>
+      <article class="module"><span class="role agent">工艺 Agent + 程序校验</span><h3>02 · 工艺规划与校验</h3><p>资源库提供可用设备和工具；Agent 选择毛坯、装夹、工序顺序与参数。程序检查数据结构、关联和支持范围，错误回传 Agent。</p><p class="contract">输出：② 结构化工艺卡。JSON 是数据源，给人看的工艺卡表格或 PDF 由它生成。</p></article>
+      <article class="module"><span class="role">程序 / CAM 适配</span><h3>03 · CAM 编程与后处理</h3><p>需要开发的适配器将工艺卡映射为 ③ CAM Job。<a href="https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/CAM_scripting.md">FreeCAD CAM</a> 负责刀路计算，<a href="https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/CAM_Post.md">对应后处理器</a> 输出目标控制器的代码。</p><p class="contract">输出：④ NC 仿真包。实际来料是原始毛坯或上道工序保留材料，不能拿目标零件当毛坯。</p></article>
+      <article class="module"><span class="role">独立执行 + 几何验收程序</span><h3>04 · 仿真与几何验收</h3><p>仿真读取最终 G-code，生成 ⑤ 剩余材料和执行记录。验收读取原始目标与公差，按特征和整体几何检查过切、欠切及尺寸位置。</p><p class="contract">输出：⑥ 报告与回放。未支持的指令、未完成执行或精度不足必须明确记录；需要时返回“不可判定”。</p></article>
+    </section>
+    <aside class="scope-note" aria-label="方案适用范围">
+      <p><strong>首个集成范围：</strong>从简单单件、固定刀轴的已支持工序开始。<a href="https://camotics.org/manual.html">CAMotics</a> 可作为受限三轴 NC 仿真候选；实际来料表示与指令支持需验证，不能默认它能承接任意中间毛坯、多次装夹或所有设备。</p>
+      <p><strong>验收边界：</strong>原始 CAD 和要求独立保存，Agent 调整工艺卡时不能放宽验收标准。粗糙度用于工艺规划，当前几何验收标记为“未验证”；设备运动学、碰撞及真实控制器验证需按所选后端的能力另行接入。</p>
+    </aside>
+  </main>
+  <footer class="wrap footer"><p>GenLaw · 架构讨论图 · 2026-10-25</p><p>查看实际支持范围与已保存回放：<a href="./">制造仿真进展报告 →</a></p></footer>
+  <script>
+    (()=>{
+      const diagram=document.getElementById('diagram');
+      const fit=document.getElementById('fit');
+      const expand=document.getElementById('expand');
+      fit.hidden=expand.hidden=false;
+      function select(mode){
+        diagram.classList.toggle('fit',mode==='fit');
+        diagram.classList.toggle('expanded',mode==='expanded');
+        fit.setAttribute('aria-pressed',String(mode==='fit'));
+        expand.setAttribute('aria-pressed',String(mode==='expanded'));
+        diagram.scrollLeft=0;
+      }
+      fit.addEventListener('click',()=>select('fit'));
+      expand.addEventListener('click',()=>select('expanded'));
+    })();
+  </script>
+</body>
+</html>

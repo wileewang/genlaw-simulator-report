@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1184" viewBox="0 0 1680 1184" role="img" aria-labelledby="title description">
+<title id="title">从零件 CAD 到几何验收：Agent 与程序如何协作</title>
+<desc id="description">拟定架构，尚未完成整链集成。四个主环节：上游模型绑定几何与要求；工艺 Agent 生成 JSON 工艺卡，由程序校验；适配器转换为 CAM Job，FreeCAD CAM 与后处理生成最终 G-code；独立 NC 仿真生成剩余材料，由程序对照不可改写的原始 CAD 和要求验收。资源库提供毛坯、设备、刀具、夹具及工艺规则。失败证据回传工艺 Agent。粗糙度仅用于工艺规划，目前不作几何仿真通过结论。</desc>
+<defs>
+  <marker id="flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L8 5L0 9Z" fill="#173a42"/></marker>
+  <marker id="data" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L8 5L0 9Z" fill="#3568a0"/></marker>
+  <marker id="feedback" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L8 5L0 9Z" fill="#ad6528"/></marker>
+</defs>
+<g font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC','Droid Sans Fallback',sans-serif">
+<rect x="0" y="0" width="1680" height="1184" rx="0" fill="#f5f8fa" stroke="none" />
+<text x="48" y="52" font-size="15" font-weight="600" fill="#526b74" letter-spacing="1.5">GENLAW  /  MANUFACTURING PIPELINE</text>
+<text x="48" y="100" font-size="36" font-weight="700" fill="#173a42" >从零件 CAD 到几何验收</text>
+<rect x="1178" y="32" width="454" height="28" rx="14" fill="#fff0da" stroke="none" />
+<text x="1405.0" y="51" font-size="14" font-weight="600" fill="#956022" text-anchor="middle">拟定架构 · 待完成整链集成</text>
+<rect x="1120" y="86" width="12" height="12" rx="3" fill="#7250b1" stroke="none" />
+<text x="1142" y="98" font-size="16" font-weight="400" fill="#526b74" >Agent / 模型</text>
+<rect x="1306" y="86" width="12" height="12" rx="3" fill="#087e7c" stroke="none" />
+<text x="1328" y="98" font-size="16" font-weight="400" fill="#526b74" >程序</text>
+<rect x="1430" y="86" width="12" height="12" rx="3" fill="#3568a0" stroke="none" />
+<text x="1452" y="98" font-size="16" font-weight="400" fill="#526b74" >传递数据</text>
+<rect x="48" y="150" width="360" height="112" rx="16" fill="white" stroke="#d8e3e5" />
+<text x="72" y="184" font-size="19" font-weight="600" fill="#173a42" >起点：上游已有输入</text>
+<text x="72" y="216" font-size="18" font-weight="400" fill="#173a42" >CadQuery 零件几何</text>
+<text x="72" y="242" font-size="17" font-weight="400" fill="#526b74" >公差 · 粗糙度 · 材料等制造要求</text>
+<rect x="456" y="150" width="1176" height="112" rx="16" fill="#edf3fa" stroke="#d3deeb" />
+<text x="480" y="184" font-size="20" font-weight="700" fill="#3568a0" >制造资源库</text>
+<rect x="638" y="163" width="204" height="28" rx="14" fill="#dce8f7" stroke="none" />
+<text x="740.0" y="182" font-size="14" font-weight="600" fill="#3568a0" text-anchor="middle">程序查询 / 工厂提供</text>
+<text x="480" y="217" font-size="19" font-weight="400" fill="#173a42" >毛坯 / 材料档案  ·  设备与控制器  ·  刀具 / 刀柄  ·  夹具  ·  工艺规则</text>
+<text x="480" y="243" font-size="17" font-weight="400" fill="#526b74" >尚未取得实际设备资料时，使用明确标注的参考配置；换设备时匹配能力、后处理与 NC 解释。</text>
+<path d="M228 262V318" fill="none" stroke="#3568a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#data)"/>
+<text x="242" y="296" font-size="15" font-weight="400" fill="#526b74" >几何 + 要求</text>
+<path d="M636 262V318" fill="none" stroke="#3568a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#data)"/>
+<text x="650" y="296" font-size="15" font-weight="400" fill="#526b74" >选型与约束</text>
+<path d="M1044 262V318" fill="none" stroke="#3568a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#data)"/>
+<text x="1058" y="296" font-size="15" font-weight="400" fill="#526b74" >刀具与后处理</text>
+<path d="M1452 262V318" fill="none" stroke="#3568a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#data)"/>
+<text x="1466" y="296" font-size="15" font-weight="400" fill="#526b74" >设备与仿真配置</text>
+<rect x="48" y="324" width="360" height="430" rx="16" fill="white" stroke="#d8e3e5" />
+<text x="72" y="362" font-size="22" font-weight="700" fill="#3568a0" >01</text>
+<text x="114" y="362" font-size="23" font-weight="700" fill="#173a42" >几何与要求绑定</text>
+<text x="72" y="387" font-size="15" font-weight="400" fill="#526b74" >上游新增</text>
+<rect x="72" y="402" width="312" height="76" rx="10" fill="#f3eefb" stroke="none" />
+<rect x="72" y="414" width="4" height="52" rx="2" fill="#7250b1" stroke="none" />
+<text x="88" y="431" font-size="18" font-weight="600" fill="#173a42" >模型：关联特征与制造要求</text>
+<text x="88" y="458" font-size="15" font-weight="400" fill="#526b74" >理解标注，提出面 / 孔 / 基准的关联</text>
+<path d="M228 479V493" fill="none" stroke="#173a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#flow)"/>
+<rect x="72" y="496" width="312" height="76" rx="10" fill="#edf8f5" stroke="none" />
+<rect x="72" y="508" width="4" height="52" rx="2" fill="#087e7c" stroke="none" />
+<text x="88" y="525" font-size="18" font-weight="600" fill="#173a42" >程序：检查关联是否有效</text>
+<text x="88" y="552" font-size="15" font-weight="400" fill="#526b74" >稳定引用 · 单位 · 几何一致性</text>
+<rect x="72" y="594" width="312" height="138" rx="10" fill="#f0f5fb" stroke="none" />
+<text x="88" y="624" font-size="19" font-weight="700" fill="#3568a0" >① 制造输入包</text>
+<text x="88" y="655" font-size="15" font-weight="400" fill="#526b74" >CAD / STEP + 特征与要求 JSON</text>
+<text x="88" y="682" font-size="15" font-weight="400" fill="#526b74" >模型版本 · 单位 · 坐标与基准</text>
+<text x="88" y="709" font-size="15" font-weight="400" fill="#526b74" >feature_id ↔ requirement_id</text>
+<rect x="456" y="324" width="360" height="430" rx="16" fill="white" stroke="#d8e3e5" />
+<text x="480" y="362" font-size="22" font-weight="700" fill="#3568a0" >02</text>
+<text x="522" y="362" font-size="23" font-weight="700" fill="#173a42" >工艺规划与校验</text>
+<text x="480" y="387" font-size="15" font-weight="400" fill="#526b74" >Agent + 程序</text>
+<rect x="480" y="402" width="312" height="76" rx="10" fill="#f3eefb" stroke="none" />
+<rect x="480" y="414" width="4" height="52" rx="2" fill="#7250b1" stroke="none" />
+<text x="496" y="431" font-size="18" font-weight="600" fill="#173a42" >工艺 Agent：生成加工方案</text>
+<text x="496" y="458" font-size="15" font-weight="400" fill="#526b74" >选择毛坯、装夹、工序、刀具与参数</text>
+<path d="M636 479V493" fill="none" stroke="#173a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#flow)"/>
+<rect x="480" y="496" width="312" height="76" rx="10" fill="#edf8f5" stroke="none" />
+<rect x="480" y="508" width="4" height="52" rx="2" fill="#087e7c" stroke="none" />
+<text x="496" y="525" font-size="18" font-weight="600" fill="#173a42" >程序：校验结构与能力</text>
+<text x="496" y="552" font-size="15" font-weight="400" fill="#526b74" >检查引用、参数范围和设备支持项</text>
+<rect x="480" y="594" width="312" height="138" rx="10" fill="#f0f5fb" stroke="none" />
+<text x="496" y="624" font-size="19" font-weight="700" fill="#3568a0" >② 结构化工艺卡 · JSON</text>
+<text x="496" y="655" font-size="15" font-weight="400" fill="#526b74" >毛坯 · 装夹 / 工件坐标 · 有序工序</text>
+<text x="496" y="682" font-size="15" font-weight="400" fill="#526b74" >特征 / 刀具 ID · 深度 · 余量 · 切削参数</text>
+<text x="496" y="709" font-size="15" font-weight="400" fill="#526b74" >关联 requirement_id · 版本</text>
+<rect x="864" y="324" width="360" height="430" rx="16" fill="white" stroke="#d8e3e5" />
+<text x="888" y="362" font-size="22" font-weight="700" fill="#3568a0" >03</text>
+<text x="930" y="362" font-size="23" font-weight="700" fill="#173a42" >CAM 编程与后处理</text>
+<text x="888" y="387" font-size="15" font-weight="400" fill="#526b74" >程序</text>
+<rect x="888" y="402" width="312" height="76" rx="10" fill="#edf8f5" stroke="none" />
+<rect x="888" y="414" width="4" height="52" rx="2" fill="#087e7c" stroke="none" />
+<text x="904" y="431" font-size="18" font-weight="600" fill="#173a42" >适配器：工艺卡 → ③ CAM Job</text>
+<text x="904" y="458" font-size="15" font-weight="400" fill="#526b74" >映射 CAD 特征、刀具、工序与坐标</text>
+<path d="M1044 479V493" fill="none" stroke="#173a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#flow)"/>
+<rect x="888" y="496" width="312" height="76" rx="10" fill="#edf8f5" stroke="none" />
+<rect x="888" y="508" width="4" height="52" rx="2" fill="#087e7c" stroke="none" />
+<text x="904" y="525" font-size="18" font-weight="600" fill="#173a42" >FreeCAD CAM + 对应后处理</text>
+<text x="904" y="552" font-size="15" font-weight="400" fill="#526b74" >计算刀路 → 生成控制器方言 NC</text>
+<rect x="888" y="594" width="312" height="138" rx="10" fill="#f0f5fb" stroke="none" />
+<text x="904" y="624" font-size="19" font-weight="700" fill="#3568a0" >④ NC 仿真包</text>
+<text x="904" y="655" font-size="15" font-weight="400" fill="#526b74" >最终 G-code + 实际来料几何</text>
+<text x="904" y="682" font-size="15" font-weight="400" fill="#526b74" >刀具 / 刀柄 · 夹具 · 坐标与装夹</text>
+<text x="904" y="709" font-size="15" font-weight="400" fill="#526b74" >控制器方言 · 设备配置 · 仿真精度</text>
+<rect x="1272" y="324" width="360" height="430" rx="16" fill="white" stroke="#d8e3e5" />
+<text x="1296" y="362" font-size="22" font-weight="700" fill="#3568a0" >04</text>
+<text x="1338" y="362" font-size="23" font-weight="700" fill="#173a42" >仿真与几何验收</text>
+<text x="1296" y="387" font-size="15" font-weight="400" fill="#526b74" >程序</text>
+<rect x="1296" y="402" width="312" height="76" rx="10" fill="#edf8f5" stroke="none" />
+<rect x="1296" y="414" width="4" height="52" rx="2" fill="#087e7c" stroke="none" />
+<text x="1312" y="431" font-size="18" font-weight="600" fill="#173a42" >独立 NC 材料去除仿真</text>
+<text x="1312" y="458" font-size="15" font-weight="400" fill="#526b74" >⑤ 剩余材料 · 执行轨迹 · 执行状态</text>
+<path d="M1452 479V493" fill="none" stroke="#173a42" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#flow)"/>
+<rect x="1296" y="496" width="312" height="76" rx="10" fill="#edf8f5" stroke="none" />
+<rect x="1296" y="508" width="4" height="52" rx="2" fill="#087e7c" stroke="none" />
+<text x="1312" y="525" font-size="18" font-weight="600" fill="#173a42" >几何验收程序</text>
+<text x="1312" y="552" font-size="15" font-weight="400" fill="#526b74" >对照原始 CAD、基准与制造公差</text>
+<rect x="1296" y="594" width="312" height="138" rx="10" fill="#f0f5fb" stroke="none" />
+<text x="1312" y="624" font-size="19" font-weight="700" fill="#3568a0" >⑥ 几何报告 + 过程回放</text>
+<text x="1312" y="655" font-size="15" font-weight="400" fill="#526b74" >过切 / 欠切 · 尺寸与位置偏差</text>
+<text x="1312" y="682" font-size="15" font-weight="400" fill="#526b74" >逐项：通过 / 不通过 / 不可判定</text>
+<text x="1312" y="709" font-size="15" font-weight="400" fill="#526b74" >关联工序 / 特征 · 证据 · 回放数据</text>
+<path d="M413 661H450" fill="none" stroke="#173a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#flow)"/>
+<path d="M821 661H858" fill="none" stroke="#173a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#flow)"/>
+<path d="M1229 661H1266" fill="none" stroke="#173a42" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#flow)"/>
+<path d="M228 754V832" fill="none" stroke="#3568a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#data)"/>
+<text x="245" y="794" font-size="15" font-weight="400" fill="#3568a0" >保留原始输入</text>
+<rect x="48" y="838" width="1584" height="84" rx="16" fill="#eaf1fa" stroke="#ccdaed" />
+<text x="72" y="870" font-size="21" font-weight="700" fill="#3568a0" >原始验收基准：CAD / 模型版本 / 坐标与基准 / 特征绑定 / 公差与要求</text>
+<text x="72" y="900" font-size="18" font-weight="400" fill="#526b74" >CAM 读取原几何；验收直接读取原始要求。工艺 Agent 可以修改方案，不能改写验收基准。</text>
+<path d="M1044 838V759" fill="none" stroke="#3568a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#data)"/>
+<text x="1060" y="801" font-size="15" font-weight="400" fill="#3568a0" >原几何 / 特征</text>
+<path d="M1452 838V759" fill="none" stroke="#3568a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#data)"/>
+<text x="1468" y="801" font-size="15" font-weight="400" fill="#3568a0" >独立验收基准</text>
+<rect x="48" y="958" width="1584" height="114" rx="16" fill="#fff5e9" stroke="#ead8c3" />
+<text x="72" y="991" font-size="19" font-weight="700" fill="#ad6528" >失败反馈 → 回到第 02 环节</text>
+<text x="72" y="1030" font-size="19" font-weight="600" fill="#173a42" >校验 / 仿真 / 验收失败</text>
+<text x="435" y="1030" font-size="19" font-weight="600" fill="#173a42" >定位与失败证据</text>
+<text x="735" y="1030" font-size="19" font-weight="600" fill="#173a42" >工艺 Agent 修改工艺卡</text>
+<text x="1192" y="1030" font-size="19" font-weight="600" fill="#173a42" >重新生成 NC 并仿真</text>
+<path d="M310 1024H413" fill="none" stroke="#ad6528" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#feedback)" stroke-dasharray="7 6"/>
+<path d="M610 1024H713" fill="none" stroke="#ad6528" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#feedback)" stroke-dasharray="7 6"/>
+<path d="M992 1024H1170" fill="none" stroke="#ad6528" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#feedback)" stroke-dasharray="7 6"/>
+<text x="72" y="1055" font-size="16" font-weight="400" fill="#526b74" >反馈保留工序 / 特征 ID、误差位置和日志；仿真未完整执行或精度不足时，不能标成几何通过。</text>
+<text x="48" y="1121" font-size="16" font-weight="700" fill="#526b74" >边界</text>
+<text x="107" y="1121" font-size="17" font-weight="400" fill="#526b74" >粗糙度参与工艺规划，当前几何验收标为“未验证”；合格的几何结果不等于真实设备已验证。</text>
+<text x="48" y="1157" font-size="16" font-weight="400" fill="#526b74" >本图为模块与数据接口设计，未表示所有模块已实现或已接通。</text>
+<text x="1632" y="1157" font-size="14" font-weight="400" fill="#526b74" text-anchor="end">GENLAW · 2026.10</text>
+</g></svg>
