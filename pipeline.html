@@ -3,53 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#183e43">
-  <meta name="description" content="用 Anatomy 动画看懂零件、工艺 Agent、CAM、去料仿真与几何验收，并查看当前开发缺口。">
-  <meta property="og:title" content="GenLaw · 从零件到加工验证">
-  <meta property="og:description" content="五个步骤，一条制造流程。Anatomy 流程示意与待开发模块。">
+  <meta name="theme-color" content="#193d46">
+  <meta name="description" content="制造自动化的系统架构：上游输入、工艺 Agent、程序校验、CAM 与仿真适配器、外部计算工具及几何验收。">
+  <meta property="og:title" content="GenLaw · 制造自动化系统架构">
+  <meta property="og:description" content="模块边界、接口数据和待开发内容，一张图看清。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://wileewang.github.io/genlaw-simulator-report/assets/manufacturing-pipeline.png">
+  <meta property="og:image" content="https://wileewang.github.io/genlaw-simulator-report/assets/manufacturing-pipeline.png?v=system-1">
   <link rel="canonical" href="https://wileewang.github.io/genlaw-simulator-report/pipeline.html">
   <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
-  <link rel="stylesheet" href="assets/pipeline.css">
-  <script type="module" src="assets/pipeline-player.mjs"></script>
-  <title>GenLaw · 从零件到加工验证</title>
+  <link rel="stylesheet" href="assets/pipeline.css?v=system-1">
+  <title>GenLaw · 制造自动化系统架构</title>
 </head>
 <body>
-  <header class="top wrap"><a class="brand" href="./"><img src="assets/mark.svg" width="28" height="28" alt="">GenLaw <span>/ 制造流程</span></a><a href="./" class="back">实际进展 ↗</a></header>
+  <header class="top wrap"><a class="brand" href="./"><img src="assets/mark.svg" width="28" height="28" alt="">GenLaw <span>/ 系统设计</span></a><a href="./" class="back">查看实际进展 ↗</a></header>
   <main class="wrap">
-    <section class="hero"><div><p class="eyebrow">MANUFACTURING / ANATOMY</p><h1>让一个零件，走完整个流程。</h1><p class="subtitle">Agent 决定怎么做，程序计算与验证。</p></div><span class="scope-badge">流程示意 · 尚未整链贯通</span></section>
-    <section class="player" aria-label="Anatomy 制造流程动画">
-      <div class="player-head"><span><i class="dot purple"></i>模型 / Agent <i class="dot green"></i>程序</span><span class="hint">点击步骤查看 · 手机可横滑</span></div>
-      <div id="scene-scroll" class="scene-scroll" tabindex="0" aria-label="可横向滚动的流程示意图">
-        <div id="scene" class="scene"><img src="assets/manufacturing-pipeline.svg" width="1320" height="510" alt="零件与要求 → 工艺 Agent → CAM 编程 → 去料仿真 → 几何验收。资源输入与失败反馈连接各环节。前三环节待开发或接入，后两环节已有基础。"></div>
-      </div>
-      <nav class="steps" aria-label="选择流程步骤">
-        <button type="button" data-step="0" aria-current="step" disabled><span>01</span>零件与要求</button>
-        <button type="button" data-step="1" disabled><span>02</span>工艺 Agent</button>
-        <button type="button" data-step="2" disabled><span>03</span>CAM 编程</button>
-        <button type="button" data-step="3" disabled><span>04</span>去料仿真</button>
-        <button type="button" data-step="4" disabled><span>05</span>几何验收</button>
-      </nav>
-      <div class="transport"><button id="play" type="button" class="play" disabled>▶ 播放流程</button><button id="restart" type="button" class="restart" aria-label="回到第一步" disabled>↺ 重置</button><input id="timeline" type="range" min="0" max="25000" value="0" step="100" aria-label="流程动画进度" disabled><output id="counter" for="timeline">01 / 05</output><label class="failure"><input id="failed" type="checkbox" disabled>看失败反馈</label></div>
-      <div class="readout" aria-live="polite"><div><small>输入</small><strong id="input">CadQuery + 标注</strong></div><span class="arrow">→</span><div><small id="owner">上游模型</small><strong id="action">几何特征 ↔ 制造要求</strong></div><span class="arrow">→</span><div><small>输出</small><strong id="output">几何 + 绑定要求</strong></div></div>
-      <p class="illustration-note">预设形状与运动，仅说明流程；不是实际加工结果。</p>
-      <noscript><p class="load-note">当前为静态示意图。启用 JavaScript 后可播放、拖动进度和查看失败反馈。</p></noscript>
-      <p id="load-error" class="load-note" hidden>动画暂未加载；可查看上方静态图，或刷新重试。</p>
+    <section class="hero"><div><p class="eyebrow">SYSTEM ARCHITECTURE</p><h1>制造自动化系统架构</h1><p>Agent 负责规划；程序负责适配、计算与校验。</p></div><span class="badge">设计方案 · 尚未整链接通</span></section>
+    <section class="diagram" aria-label="系统模块与数据流">
+      <div class="toolbar"><div class="legend"><span><i class="agent"></i>模型 / Agent</span><span><i class="program"></i>程序</span><span><i class="tool"></i>现成工具</span></div><div class="actions"><button type="button" id="fit" aria-pressed="true" hidden>适应屏幕</button><button type="button" id="zoom" aria-pressed="false" hidden>放大查看</button><a href="assets/manufacturing-pipeline.svg?v=system-1" target="_blank" rel="noopener">打开原图 ↗</a><a href="assets/manufacturing-pipeline.png?v=system-1" download="GenLaw-系统架构.png">下载 PNG ↓</a></div></div>
+      <figure><div class="graph" id="graph" tabindex="0" aria-label="系统架构图；放大后可横向滚动"><img src="assets/manufacturing-pipeline.svg?v=system-1" width="1620" height="940" alt="上游绑定 CAD 与制造要求。我们的系统：工艺 Agent → 工艺卡校验 → CAM 适配器 → 仿真适配器 → 几何验收 → 报告与回放。CAM 适配器调用 FreeCAD CAM 与设备后处理；仿真适配器调用独立仿真引擎。资源库供各模块读取，原始 CAD 和要求直接用于只读验收。失败证据返回工艺 Agent。各模块标注当前开发缺口。"></div><figcaption>黑色箭头：模块间的数据。蓝色箭头：资源读取、工具调用与返回。橙色回线：失败反馈。</figcaption></figure>
     </section>
-    <section class="development" aria-labelledby="development-title">
-      <div class="section-head"><h2 id="development-title">现在缺什么，要开发什么？</h2><span>按 01 → 05 接通</span></div>
-      <p class="available"><span>可复用</span>限定工序去料 · 材料接续 · 基础几何比对 · Anatomy 回放</p>
-      <div class="gaps">
-        <article data-gap="0" class="gap selected"><span class="gap-no">01 / 上游增加</span><h3>特征与要求绑定</h3><p>几何特征 ↔ 公差 / 粗糙度<br>补稳定引用与绑定校验</p></article>
-        <article data-gap="1" class="gap"><span class="gap-no">02 / 待建立</span><h3>工艺 Agent</h3><p>Agent + JSON 工艺卡<br>资源库 + 参数 / 能力校验</p></article>
-        <article data-gap="2" class="gap"><span class="gap-no">03 / 待接入</span><h3>FreeCAD CAM</h3><p>工艺卡 → CAM Job 适配<br>接目标设备后处理</p></article>
-        <article data-gap="3" class="gap"><span class="gap-no">04 / 有基础，待扩展</span><h3>独立外部仿真</h3><p>最终 NC + 实际来料接入<br>客户整件外部对照仍为 0</p></article>
-        <article data-gap="4" class="gap"><span class="gap-no">05 / 有基础，待扩展</span><h3>验收与反馈闭环</h3><p>按特征公差逐项验收<br>失败证据自动回传 Agent</p></article>
-      </div>
-      <div class="next"><strong>先打通一个简单单孔件</strong><span>绑定要求 → 工艺卡 → CAM → NC → 外部仿真 → 几何报告</span></div>
-    </section>
+    <details class="development"><summary>查看模块状态与开发清单 <span>6 项</span></summary><div class="table-scroll"><table><thead><tr><th scope="col">模块</th><th scope="col">现有基础</th><th scope="col">需要补齐</th></tr></thead><tbody>
+      <tr><th scope="row">上游绑定</th><td>CadQuery 几何输入</td><td>稳定特征引用、制造要求绑定与校验</td></tr>
+      <tr><th scope="row">制造资源</th><td>限定工序的参考配置</td><td>统一原料、设备、刀具、夹具与工艺规则</td></tr>
+      <tr><th scope="row">工艺规划</th><td>限定工序规则</td><td>工艺 Agent、JSON 工艺卡、参数与能力校验</td></tr>
+      <tr><th scope="row">CAM 适配</th><td>自研限定 NC 生成</td><td>工艺卡 → FreeCAD CAM Job → 设备后处理</td></tr>
+      <tr><th scope="row">仿真适配</th><td>限定工序去料；外部引擎仅小控制验证</td><td>最终 NC、实际来料与配置接入；客户整件外部验证</td></tr>
+      <tr><th scope="row">验收与反馈</th><td>基础几何比对、材料接续与回放</td><td>按特征公差验收、精度判定、失败证据回传</td></tr>
+    </tbody></table></div><p class="scope">CAMotics 是受限三轴候选后端，具体指令与来料支持需验证；粗糙度、真实设备另行验证。</p></details>
   </main>
-  <footer class="wrap footer"><p>粗糙度、真实设备另行验证。<a href="./">查看已验证范围 ↗</a></p><p><a href="assets/manufacturing-pipeline.svg" download>下载示意图 SVG</a><a href="assets/manufacturing-pipeline.png" download>PNG</a><a href="https://github.com/wheresryan22/anatomy">Anatomy</a> · <a href="assets/anatomy/LICENSE">MIT</a></p></footer>
+  <footer class="wrap footer"><span>GenLaw · 系统设计讨论</span><a href="assets/manufacturing-pipeline.svg?v=system-1" download="GenLaw-系统架构.svg">下载 SVG</a></footer>
+  <script>
+    (()=>{
+      const graph=document.getElementById('graph'),fit=document.getElementById('fit'),zoom=document.getElementById('zoom');
+      fit.hidden=zoom.hidden=false;
+      function setZoom(value){graph.classList.toggle('zoomed',value);fit.setAttribute('aria-pressed',String(!value));zoom.setAttribute('aria-pressed',String(value));graph.scrollLeft=0;}
+      fit.addEventListener('click',()=>setZoom(false));zoom.addEventListener('click',()=>setZoom(true));
+    })();
+  </script>
 </body>
 </html>
