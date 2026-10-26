@@ -8,10 +8,10 @@
   <meta property="og:title" content="GenLaw · 制造自动化系统架构">
   <meta property="og:description" content="模块边界、接口数据和待开发内容，一张图看清。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://wileewang.github.io/genlaw-simulator-report/assets/manufacturing-pipeline.png?v=system-1">
+  <meta property="og:image" content="https://wileewang.github.io/genlaw-simulator-report/assets/manufacturing-pipeline.png?v=system-2">
   <link rel="canonical" href="https://wileewang.github.io/genlaw-simulator-report/pipeline.html">
   <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
-  <link rel="stylesheet" href="assets/pipeline.css?v=system-1">
+  <link rel="stylesheet" href="assets/pipeline.css?v=system-2">
   <title>GenLaw · 制造自动化系统架构</title>
 </head>
 <body>
@@ -19,8 +19,8 @@
   <main class="wrap">
     <section class="hero"><div><p class="eyebrow">SYSTEM ARCHITECTURE</p><h1>制造自动化系统架构</h1><p>Agent 负责规划；程序负责适配、计算与校验。</p></div><span class="badge">设计方案 · 尚未整链接通</span></section>
     <section class="diagram" aria-label="系统模块与数据流">
-      <div class="toolbar"><div class="legend"><span><i class="agent"></i>模型 / Agent</span><span><i class="program"></i>程序</span><span><i class="tool"></i>现成工具</span></div><div class="actions"><button type="button" id="fit" aria-pressed="true" hidden>适应屏幕</button><button type="button" id="zoom" aria-pressed="false" hidden>放大查看</button><a href="assets/manufacturing-pipeline.svg?v=system-1" target="_blank" rel="noopener">打开原图 ↗</a><a href="assets/manufacturing-pipeline.png?v=system-1" download="GenLaw-系统架构.png">下载 PNG ↓</a></div></div>
-      <figure><div class="graph" id="graph" tabindex="0" aria-label="系统架构图；放大后可横向滚动"><img src="assets/manufacturing-pipeline.svg?v=system-1" width="1620" height="940" alt="上游绑定 CAD 与制造要求。我们的系统：工艺 Agent → 工艺卡校验 → CAM 适配器 → 仿真适配器 → 几何验收 → 报告与回放。CAM 适配器调用 FreeCAD CAM 与设备后处理；仿真适配器调用独立仿真引擎。资源库供各模块读取，原始 CAD 和要求直接用于只读验收。失败证据返回工艺 Agent。各模块标注当前开发缺口。"></div><figcaption>黑色箭头：模块间的数据。蓝色箭头：资源读取、工具调用与返回。橙色回线：失败反馈。</figcaption></figure>
+      <div class="toolbar"><div class="legend"><span><i class="agent"></i>模型 / Agent</span><span><i class="program"></i>程序</span><span><i class="tool"></i>现成工具</span></div><div class="actions"><button type="button" id="fit" aria-pressed="true" hidden>适应屏幕</button><button type="button" id="zoom" aria-pressed="false" hidden>放大查看</button><a href="assets/manufacturing-pipeline.svg?v=system-2" target="_blank" rel="noopener">打开原图 ↗</a><a href="assets/manufacturing-pipeline.png?v=system-2" download="GenLaw-系统架构.png">下载 PNG ↓</a></div></div>
+      <figure><div class="graph" id="graph" tabindex="0" aria-label="系统架构图；放大后可横向滚动"><img src="assets/manufacturing-pipeline.svg?v=system-2" width="1620" height="940" alt="上游绑定 CAD 与制造要求。我们的系统：工艺 Agent → 工艺卡校验 → CAM 适配器 → 仿真适配器 → 几何验收 → 报告与回放。CAM 适配器调用 FreeCAD CAM 与设备后处理；仿真适配器调用独立仿真引擎。资源库供各模块读取，原始 CAD 和要求直接用于只读验收。失败证据返回工艺 Agent。各模块标注当前开发缺口。"></div><figcaption>黑色箭头：模块间的数据。蓝色箭头：资源读取、工具调用与返回。橙色回线：失败反馈。</figcaption></figure>
     </section>
     <details class="development"><summary>查看模块状态与开发清单 <span>6 项</span></summary><div class="table-scroll"><table><thead><tr><th scope="col">模块</th><th scope="col">现有基础</th><th scope="col">需要补齐</th></tr></thead><tbody>
       <tr><th scope="row">上游绑定</th><td>CadQuery 几何输入</td><td>稳定特征引用、制造要求绑定与校验</td></tr>
@@ -31,7 +31,7 @@
       <tr><th scope="row">验收与反馈</th><td>基础几何比对、材料接续与回放</td><td>按特征公差验收、精度判定、失败证据回传</td></tr>
     </tbody></table></div><p class="scope">CAMotics 是受限三轴候选后端，具体指令与来料支持需验证；粗糙度、真实设备另行验证。</p></details>
   </main>
-  <footer class="wrap footer"><span>GenLaw · 系统设计讨论</span><a href="assets/manufacturing-pipeline.svg?v=system-1" download="GenLaw-系统架构.svg">下载 SVG</a></footer>
+  <footer class="wrap footer"><span>GenLaw · 系统设计讨论</span><a href="assets/manufacturing-pipeline.svg?v=system-2" download="GenLaw-系统架构.svg">下载 SVG</a></footer>
   <script>
     (()=>{
       const graph=document.getElementById('graph'),fit=document.getElementById('fit'),zoom=document.getElementById('zoom');
