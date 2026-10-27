@@ -15,7 +15,7 @@
     {
       "name": "FreeCAD CAM",
       "status_label": "钻孔与 NC 输出通过",
-      "summary": "创建原生 Job 与 Drilling，使用内置 LinuxCNC 后处理输出 G81 钻孔程序。",
+      "summary": "创建钻孔刀路，用 FreeCAD 自带的 NC 导出脚本生成 G81 钻孔程序，再交给 CAMotics 执行。",
       "measurement": "约 1–2.4 秒 · 峰值最高 297 MiB",
       "record": "freecad-cam-03",
       "first_call_record": "freecad-cam-01"
@@ -147,5 +147,18 @@
       "title": "CAMotics supported scope",
       "url": "https://camotics.org/"
     }
-  ]
+  ],
+  "execution_chain": [
+    "FreeCAD CAM",
+    "NC",
+    "CAMotics"
+  ],
+  "execution_note": "本次实际运行：FreeCAD CAM → NC → CAMotics。LinuxCNC 只是所选 NC 导出脚本的名称来源，本次没有安装或运行 LinuxCNC 软件。",
+  "linuxcnc_role": {
+    "postprocessor": "FreeCAD bundled linuxcnc_post",
+    "description": "FreeCAD 内置的后处理脚本，把刀路转换成 LinuxCNC 风格的 NC；它不是 LinuxCNC 控制器 / 仿真软件。",
+    "software_installed": false,
+    "software_executed": false,
+    "material_removal_engine": "CAMotics"
+  }
 }
