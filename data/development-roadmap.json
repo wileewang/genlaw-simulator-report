@@ -3,7 +3,7 @@
   "updated_at": "2026-10-27",
   "route_status": "accepted_by_user",
   "current_stage": "01",
-  "current_activity": "integration_todo_and_sample_plan",
+  "current_activity": "reference_resource_start_and_inventory_intake",
   "design_only": true,
   "five_axis_supported": false,
   "principle": "固定条件，每次增加一个难度维度；每个阶段都交付可追溯的完整验证结果。",
@@ -43,9 +43,9 @@
     "through_hole": true,
     "material": "6061-T6（沿用开发案例标签；切削参数未作物理确认）",
     "baseline": {"title": "已保存的单孔参考案例", "url": "examples/single-hole.html", "scope": "固定刀轴 XYZ、项目自定义参考指令子集；不能转记为五轴或 LinuxCNC 已通过"},
-    "proposed_device": "建议以 XYZ + A/C 转台式五轴作为首个参考结构；第一阶段 A/C 保持固定。",
-    "proposed_controller": "LinuxCNC 参考语义作为候选，需先核对 NC 解释接口与运行方式；尚未接入。",
-    "technical_choices_status": "proposed_not_user_selected",
+    "proposed_device": "R0 采用 XYZ + A/C 转台式五轴作为开发参考结构；第一阶段 A/C 固定，真实设备待按清单映射。",
+    "proposed_controller": "R0 先采用 LinuxCNC 参考语义，需核对后处理、NC 解释和运行方式；尚未接入，不代表实际设备控制器。",
+    "technical_choices_status": "development_reference_defined_real_machine_pending",
     "actions": [
       {"name": "固定输入和正确答案", "text": "引用原毛坯、独立目标、刀具和夹具；工艺卡人工确认。明确孔径、孔位、贯穿及外形保持的验收规则。"},
       {"name": "验证现成工具能否接通", "text": "评估 FreeCAD CAM → 最终 NC → CAMotics：核对指令、毛坯、刀具、坐标、精度和资源预算。先复用算法，再补适配。"},
@@ -88,7 +88,7 @@
     ],
     "linuxcnc_role": "LinuxCNC 可用于所选控制器语义与机床运动验证；它不独立完成材料去除和 CAD 几何验收，也不代表其他控制器兼容。",
     "later": [
-      {"id": "F1", "title": "选定参考机床与运动验证工具", "text": "固定五轴结构、旋转中心、轴限位、零点和刀长；评估 LinuxCNC 对照方式，并补已建模的行程 / 干涉检查。"},
+      {"id": "F1", "title": "补齐参考机床与运动验证", "text": "R0 参考结构已定义；启用旋转前补齐旋转中心、方向、轴限位、零点和刀长，评估 LinuxCNC 对照方式及行程 / 干涉检查。"},
       {"id": "F2", "title": "增加基础特征与 3+2", "text": "按路线逐项增加孔、槽、台阶、型腔，再验证旋转定位及工序间真实材料连续性。"},
       {"id": "F3", "title": "选型并验证五轴联动后端", "text": "连续五轴需要另行验证 CAM、后处理及去料引擎；CAMotics 不支持五轴，FreeCAD 当前路线不能直接承诺联动能力。"}
     ],
@@ -116,6 +116,36 @@
     "ownership": "你提供或确认真实需求与资源；我们整理输入规范、生成受控试件、接工具、开发通用能力并维护回归验收。设备资源档案可供多个零件复用。",
     "gate": "同类零件应只更换输入数据即可运行；出现新的加工特征、控制器、机床结构或验收要求时，再新增相应能力。",
     "missing_data": "没有真实设备资料也能先做参考配置开发，但结果只代表参考配置；未知信息保持待补，不能推断成真实设备或材料已验证。"
+  },
+  "resource_start": {
+    "id": "R0-fixed-axis-single-hole",
+    "status": "reference_start_defined_integration_pending",
+    "inventory_status": "awaiting_equipment_spreadsheet_path",
+    "selected_real_device": null,
+    "title": "起步资源 R0：一块料、一把刀、一次装夹",
+    "summary": "先固定一套开发参考资源，接通单孔的加工编程与几何检验；拿到设备清单后，再映射第一台真实设备。",
+    "resources": [
+      {"label": "设备结构", "value": "以 XYZ + A/C 转台式五轴为开发参考；起步只用 XYZ，A/C 保持零姿态。旋转中心、方向和限位在启用旋转前单独确定并验收。"},
+      {"label": "控制器", "value": "先采用 LinuxCNC 参考语义，验证 FreeCAD 对应后处理及最终 NC。它是开发参照，后续按实际设备控制器另做适配。"},
+      {"label": "毛坯与材料", "value": "沿用 30 × 20 × 5 mm 长方体，6061-T6 开发标签；先做几何仿真，切削参数与材料物理尚未确认。"},
+      {"label": "刀具", "value": "只用一把 Φ4 mm 钻头；沿用有限圆锥尖 / 圆柱刀体及刀柄模型，记录刃长和刀长。第一步不增加自动换刀。"},
+      {"label": "夹具", "value": "使用现有左右双钳口参考几何，一次装夹，孔下方留钻尖穿透空间；后续再补真实夹具及完整干涉检查。"},
+      {"label": "坐标与工序", "value": "毫米、一个工件坐标系 G54；从顶面钻一个 Φ4 通孔，中心为 (15,10) mm。对照原始 CAD 检查孔径、孔位、贯穿和外轮廓。"}
+    ],
+    "basis": "沿用已保存单孔案例的毛坯、刀具和装夹定义；新的 LinuxCNC / FreeCAD / 外部去料整链尚未验证。设备结构是开发选择，并非从工厂清单确认的型号。",
+    "selection_rules": [
+      "先按工艺类型分组，再在同一组中按轴系、控制器、资料完整程度和典型零件选择代表设备。",
+      "首台优先选资料齐全、能完成简单单件、控制器语义与后处理可核对的设备。",
+      "同类设备先复用参数和接口；不同控制器、机床结构或工艺分别增加适配和验收。"
+    ],
+    "progression": [
+      {"name": "R0：固定资源", "text": "单孔、单刀、单次装夹。先接通现成工具和几何验收。"},
+      {"name": "R1：增加刀具与工序", "text": "逐项增加铣刀、孔 / 槽 / 台阶 / 型腔；增加刀具后再验证换刀、刀长和刀柄。"},
+      {"name": "R2：启用旋转轴", "text": "同一参考结构上先做 3+2，再做连续五轴；分别验证坐标、运动、去料与干涉。"},
+      {"name": "R3：覆盖实际设备", "text": "逐台映射清单中的控制器和参数；不同工艺另开能力分支，不能用五轴铣削通过代替车削、磨削等支持。"}
+    ],
+    "inventory_plan": "设备清单全部纳入长期覆盖范围。逐台记录：资料建档、工艺卡支持、NC 生成、NC 语义 / 运动、材料去除、几何验收和设备对照；非 NC 设备单列工序与验证方式。",
+    "inventory_missing": "尚未定位用户所述设备 .xls，已请求完整路径。收到后保留表中原名称，整理设备分组、首台候选及缺失参数；在此之前不宣称已覆盖清单设备。"
   },
   "notes": [
     "阶段 01–03 是五轴联动的前置里程碑，阶段 04 在声明范围内验收后才可声称对应联动支持。",
