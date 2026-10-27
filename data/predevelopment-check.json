@@ -1,0 +1,151 @@
+{
+  "schema": "genlaw.predevelopment-tool-check.v1",
+  "recorded_at": "2026-10-27T09:35:13.910774+00:00",
+  "status": "small_case_tools_runnable",
+  "headline": "本机可以运行起步所需的工具。",
+  "summary": "FreeCAD 建模、CAM 出码、CAMotics 去料均完成单核实测。接下来评估 S1 候选试件，再开发工艺卡适配与完整几何验收。",
+  "checks": [
+    {
+      "name": "FreeCAD 1.1.4",
+      "status_label": "建模与导出通过",
+      "summary": "无界面启动，生成独立目标 CAD，导出 STEP / BREP。",
+      "measurement": "0.65 秒 · 约 96 MiB",
+      "record": "freecad-core-01"
+    },
+    {
+      "name": "FreeCAD CAM",
+      "status_label": "钻孔与 NC 输出通过",
+      "summary": "创建原生 Job 与 Drilling，使用内置 LinuxCNC 后处理输出 G81 钻孔程序。",
+      "measurement": "约 1–2.4 秒 · 峰值最高 297 MiB",
+      "record": "freecad-cam-03",
+      "first_call_record": "freecad-cam-01"
+    },
+    {
+      "name": "CAMotics",
+      "status_label": "执行 NC 与去料通过",
+      "summary": "直接执行最终 NC，从完整毛坯去料；0.025 mm 网格，保存 461,320 个三角形的实际结果。",
+      "measurement": "4.62 秒 · 约 512 MiB",
+      "record": "camotics-fine-01"
+    }
+  ],
+  "hardware_summary": "4 vCPU / 15.63 GiB 内存。每项原生计算限制为单任务、单 CPU、2 GiB、60 秒；本次最大观测内存约 512 MiB。仅使用 CPU，无需计算 GPU。",
+  "limits": [
+    "这是一个固定刀轴、单刀、单孔的工具运行预检；生产用工艺卡适配器与自动流程尚未实现。",
+    "独立原始 CAD 已保存；本轮仅检查输出非空、体积减少等基本完整性，尚未完成逐项公差、完整边界误差与错误案例验收。",
+    "采用参考 G54 零平移和零刀长补偿；未验证非零偏置、真实海德汉 / FANUC 控制器、夹具干涉、实际材料切削参数或粗糙度。",
+    "本轮以命令行无界面方式运行；未进行交互式桌面、大模型、多任务并行或五轴性能测试。",
+    "原 R0 30×20×5 mm 在 0.05 mm 网格下约 2400 万格，仍超过现有网格预算；S1 单独记录，不替代原目标。"
+  ],
+  "measurements": {
+    "freecad-core-01": {
+      "success": true,
+      "seconds": 0.6468881740001962,
+      "peak_observed_group_rss_bytes": 100184064,
+      "cpu_affinity": [
+        1
+      ],
+      "wall_limit_seconds": 60
+    },
+    "freecad-cam-01": {
+      "success": true,
+      "seconds": 2.420635899004992,
+      "peak_observed_group_rss_bytes": 311541760,
+      "cpu_affinity": [
+        1
+      ],
+      "wall_limit_seconds": 60
+    },
+    "freecad-cam-02": {
+      "success": true,
+      "seconds": 1.049993666994851,
+      "peak_observed_group_rss_bytes": 204410880,
+      "cpu_affinity": [
+        1
+      ],
+      "wall_limit_seconds": 60
+    },
+    "freecad-cam-03": {
+      "success": true,
+      "seconds": 1.1564930620079394,
+      "peak_observed_group_rss_bytes": 202579968,
+      "cpu_affinity": [
+        3
+      ],
+      "wall_limit_seconds": 60
+    },
+    "camotics-coarse-01": {
+      "success": true,
+      "seconds": 1.051487669989001,
+      "peak_observed_group_rss_bytes": 89677824,
+      "cpu_affinity": [
+        1
+      ],
+      "wall_limit_seconds": 60
+    },
+    "camotics-fine-01": {
+      "success": true,
+      "seconds": 4.616510617997847,
+      "peak_observed_group_rss_bytes": 536981504,
+      "cpu_affinity": [
+        2
+      ],
+      "wall_limit_seconds": 60
+    },
+    "fine-output-inspection-01": {
+      "success": true,
+      "seconds": 3.4715517510048812,
+      "peak_observed_group_rss_bytes": 13860864,
+      "cpu_affinity": [
+        1
+      ],
+      "wall_limit_seconds": 30.0
+    }
+  },
+  "geometry_acceptance_pass": false,
+  "production_adapter_implemented": false,
+  "five_axis_supported": false,
+  "real_machine_verified": false,
+  "case_selection_status": "proposed_for_user_review",
+  "historical_r0_superseded": false,
+  "nc_sha256": "c6871367e3135c9ed3d45ff9e04fb335fc499a5d688589ba5cbb7286e0000b36",
+  "original_target_sha256": "56d8e9e29dc98dac54add8b310ad43cd900842c22ee7aa8e5b75ef6dfa15c71a",
+  "simulated_mesh_sha256": "4680f7055a581fa4cce0d30895fb8fe409ae9e4834d4549a8a78cd93ddf296b7",
+  "simulation_sanity": {
+    "file": "fine.stl",
+    "geometric_acceptance": "not_performed",
+    "triangles": 461320,
+    "bytes": 23066084,
+    "sha256": "4680f7055a581fa4cce0d30895fb8fe409ae9e4834d4549a8a78cd93ddf296b7",
+    "bounds": {
+      "min": [
+        -9.765625145519152e-05,
+        9.765625145519152e-05,
+        -1.500097632408142
+      ],
+      "max": [
+        8.000097274780273,
+        6.000097751617432,
+        -9.765625145519152e-05
+      ]
+    },
+    "signed_volume_mm3": 67.28647040785417,
+    "absolute_signed_volume_mm3": 67.28647040785417,
+    "declared_stock_volume_mm3": 72,
+    "analytic_target_volume_mm3": 67.28761101961531,
+    "mesh_is_nonempty_and_has_less_volume_than_stock": true,
+    "watertightness_and_full_boundary_accuracy_verified": false,
+    "note": "Volume is a sanity measurement, not proof of hole placement, topology or tolerance."
+  },
+  "postprocessor_arguments": "--no-show-editor --no-tlo --precision 5",
+  "artifact_links_html": "<a href=\"downloads/s1-predevelopment/target.step\" download>下载候选 CAD（STEP）↓</a><a href=\"downloads/s1-predevelopment/reference.nc\" download>下载工具验证 NC ↓</a>",
+  "sources": [
+    {
+      "title": "FreeCAD 1.1.4 official release",
+      "url": "https://github.com/FreeCAD/FreeCAD/releases/tag/1.1.4"
+    },
+    {
+      "title": "CAMotics supported scope",
+      "url": "https://camotics.org/"
+    }
+  ]
+}
