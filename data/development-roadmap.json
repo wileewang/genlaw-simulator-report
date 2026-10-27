@@ -3,7 +3,7 @@
   "updated_at": "2026-10-27",
   "route_status": "accepted_by_user",
   "current_stage": "01",
-  "current_activity": "reference_resource_start_and_inventory_intake",
+  "current_activity": "equipment_inventory_review_and_fixed_axis_start",
   "design_only": true,
   "five_axis_supported": false,
   "principle": "固定条件，每次增加一个难度维度；每个阶段都交付可追溯的完整验证结果。",
@@ -43,7 +43,7 @@
     "through_hole": true,
     "material": "6061-T6（沿用开发案例标签；切削参数未作物理确认）",
     "baseline": {"title": "已保存的单孔参考案例", "url": "examples/single-hole.html", "scope": "固定刀轴 XYZ、项目自定义参考指令子集；不能转记为五轴或 LinuxCNC 已通过"},
-    "proposed_device": "R0 采用 XYZ + A/C 转台式五轴作为开发参考结构；第一阶段 A/C 固定，真实设备待按清单映射。",
+    "proposed_device": "固定刀轴 XYZ 起步；实际五轴适配以清单中的龙门机型为目标，具体轴链待补，原 A/C 转台仅作参考。",
     "proposed_controller": "R0 先采用 LinuxCNC 参考语义，需核对后处理、NC 解释和运行方式；尚未接入，不代表实际设备控制器。",
     "technical_choices_status": "development_reference_defined_real_machine_pending",
     "actions": [
@@ -120,19 +120,19 @@
   "resource_start": {
     "id": "R0-fixed-axis-single-hole",
     "status": "reference_start_defined_integration_pending",
-    "inventory_status": "awaiting_equipment_spreadsheet_path",
+    "inventory_status": "read_97_records_device_configuration_pending",
     "selected_real_device": null,
     "title": "起步资源 R0：一块料、一把刀、一次装夹",
-    "summary": "先固定一套开发参考资源，接通单孔的加工编程与几何检验；拿到设备清单后，再映射第一台真实设备。",
+    "summary": "设备清单已读取：先用固定刀轴单孔接通工具；实际五轴适配以清单中的龙门设备为目标，补齐控制器和轴链后落实具体配置。",
     "resources": [
-      {"label": "设备结构", "value": "以 XYZ + A/C 转台式五轴为开发参考；起步只用 XYZ，A/C 保持零姿态。旋转中心、方向和限位在启用旋转前单独确定并验收。"},
+      {"label": "设备结构", "value": "起步只用固定刀轴 XYZ。实际五轴适配按清单中的龙门机型准备，旋转轴结构、中心、方向与限位待补；原 A/C 转台仅保留作运动学参考。"},
       {"label": "控制器", "value": "先采用 LinuxCNC 参考语义，验证 FreeCAD 对应后处理及最终 NC。它是开发参照，后续按实际设备控制器另做适配。"},
       {"label": "毛坯与材料", "value": "沿用 30 × 20 × 5 mm 长方体，6061-T6 开发标签；先做几何仿真，切削参数与材料物理尚未确认。"},
       {"label": "刀具", "value": "只用一把 Φ4 mm 钻头；沿用有限圆锥尖 / 圆柱刀体及刀柄模型，记录刃长和刀长。第一步不增加自动换刀。"},
       {"label": "夹具", "value": "使用现有左右双钳口参考几何，一次装夹，孔下方留钻尖穿透空间；后续再补真实夹具及完整干涉检查。"},
       {"label": "坐标与工序", "value": "毫米、一个工件坐标系 G54；从顶面钻一个 Φ4 通孔，中心为 (15,10) mm。对照原始 CAD 检查孔径、孔位、贯穿和外轮廓。"}
     ],
-    "basis": "沿用已保存单孔案例的毛坯、刀具和装夹定义；新的 LinuxCNC / FreeCAD / 外部去料整链尚未验证。设备结构是开发选择，并非从工厂清单确认的型号。",
+    "basis": "沿用已保存单孔案例的毛坯、刀具和装夹定义；新工具整链尚未验证。设备表确认有五轴龙门机型，但未给出控制器和具体轴链，不能套用此前转台参考配置。",
     "selection_rules": [
       "先按工艺类型分组，再在同一组中按轴系、控制器、资料完整程度和典型零件选择代表设备。",
       "首台优先选资料齐全、能完成简单单件、控制器语义与后处理可核对的设备。",
@@ -145,7 +145,7 @@
       {"name": "R3：覆盖实际设备", "text": "逐台映射清单中的控制器和参数；不同工艺另开能力分支，不能用五轴铣削通过代替车削、磨削等支持。"}
     ],
     "inventory_plan": "设备清单全部纳入长期覆盖范围。逐台记录：资料建档、工艺卡支持、NC 生成、NC 语义 / 运动、材料去除、几何验收和设备对照；非 NC 设备单列工序与验证方式。",
-    "inventory_missing": "尚未定位用户所述设备 .xls，已请求完整路径。收到后保留表中原名称，整理设备分组、首台候选及缺失参数；在此之前不宣称已覆盖清单设备。"
+    "inventory_missing": "已读取《设备 - 脱敏.xls》。两表分别有 30 / 97 条记录，30 条描述均在后一表有对应项；先以 97 条记录整理覆盖清单，不能相加为 127 台独立设备。表中精度不替代零件公差；控制器、轴链和工装数据仍待补。"
   },
   "notes": [
     "阶段 01–03 是五轴联动的前置里程碑，阶段 04 在声明范围内验收后才可声称对应联动支持。",
