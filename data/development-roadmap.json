@@ -43,7 +43,7 @@
     "through_hole": true,
     "material": "6061-T6（沿用开发案例标签；切削参数未作物理确认）",
     "baseline": {"title": "已保存的单孔参考案例", "url": "examples/single-hole.html", "scope": "固定刀轴 XYZ、项目自定义参考指令子集；不能转记为五轴或 LinuxCNC 已通过"},
-    "proposed_device": "固定刀轴 XYZ 起步；实际五轴适配以清单中的龙门机型为目标，具体轴链待补，原 A/C 转台仅作参考。",
+    "proposed_device": "固定刀轴 XYZ 起步；首台真实候选优先核对 G3020-5L 的 iTNC530 + B/C 双摆头配置，实际年款、头型与轴链尚未确认。",
     "proposed_controller": "R0 先采用 LinuxCNC 参考语义，需核对后处理、NC 解释和运行方式；尚未接入，不代表实际设备控制器。",
     "technical_choices_status": "development_reference_defined_real_machine_pending",
     "actions": [
@@ -120,19 +120,19 @@
   "resource_start": {
     "id": "R0-fixed-axis-single-hole",
     "status": "reference_start_defined_integration_pending",
-    "inventory_status": "read_97_records_device_configuration_pending",
+    "inventory_status": "read_97_records_public_model_research_complete_unit_configuration_pending",
     "selected_real_device": null,
     "title": "起步资源 R0：一块料、一把刀、一次装夹",
     "summary": "设备清单已读取：先用固定刀轴单孔接通工具；实际五轴适配以清单中的龙门设备为目标，补齐控制器和轴链后落实具体配置。",
     "resources": [
-      {"label": "设备结构", "value": "起步只用固定刀轴 XYZ。实际五轴适配按清单中的龙门机型准备，旋转轴结构、中心、方向与限位待补；原 A/C 转台仅保留作运动学参考。"},
+      {"label": "设备结构", "value": "起步只用固定刀轴 XYZ。真实五轴候选按龙门双摆头准备：G3020 旧款 B/C，DCM 五轴 U 头 B/C；实际头型、旋转中心、方向与限位待核对。"},
       {"label": "控制器", "value": "先采用 LinuxCNC 参考语义，验证 FreeCAD 对应后处理及最终 NC。它是开发参照，后续按实际设备控制器另做适配。"},
       {"label": "毛坯与材料", "value": "沿用 30 × 20 × 5 mm 长方体，6061-T6 开发标签；先做几何仿真，切削参数与材料物理尚未确认。"},
       {"label": "刀具", "value": "只用一把 Φ4 mm 钻头；沿用有限圆锥尖 / 圆柱刀体及刀柄模型，记录刃长和刀长。第一步不增加自动换刀。"},
       {"label": "夹具", "value": "使用现有左右双钳口参考几何，一次装夹，孔下方留钻尖穿透空间；后续再补真实夹具及完整干涉检查。"},
       {"label": "坐标与工序", "value": "毫米、一个工件坐标系 G54；从顶面钻一个 Φ4 通孔，中心为 (15,10) mm。对照原始 CAD 检查孔径、孔位、贯穿和外轮廓。"}
     ],
-    "basis": "沿用已保存单孔案例的毛坯、刀具和装夹定义；新工具整链尚未验证。设备表确认有五轴龙门机型，但未给出控制器和具体轴链，不能套用此前转台参考配置。",
+    "basis": "沿用已保存单孔案例的毛坯、刀具和装夹定义；新工具整链尚未验证。已找到厂家系列配置，实际设备仍须核对年款和选件；原 A/C 转台只作运动学参考。",
     "selection_rules": [
       "先按工艺类型分组，再在同一组中按轴系、控制器、资料完整程度和典型零件选择代表设备。",
       "首台优先选资料齐全、能完成简单单件、控制器语义与后处理可核对的设备。",
@@ -145,7 +145,49 @@
       {"name": "R3：覆盖实际设备", "text": "逐台映射清单中的控制器和参数；不同工艺另开能力分支，不能用五轴铣削通过代替车削、磨削等支持。"}
     ],
     "inventory_plan": "设备清单全部纳入长期覆盖范围。逐台记录：资料建档、工艺卡支持、NC 生成、NC 语义 / 运动、材料去除、几何验收和设备对照；非 NC 设备单列工序与验证方式。",
-    "inventory_missing": "已读取《设备 - 脱敏.xls》。两表分别有 30 / 97 条记录，30 条描述均在后一表有对应项；先以 97 条记录整理覆盖清单，不能相加为 127 台独立设备。表中精度不替代零件公差；控制器、轴链和工装数据仍待补。"
+    "inventory_missing": "已读取《设备 - 脱敏.xls》，先以 97 条记录整理覆盖清单；另一表 30 条描述均有对应项，不相加为 127 台。两款五轴型号的公开资料已查到，实际控制器、铣头与标定参数仍待核对。",
+    "machine_research": {
+      "reviewed_at": "2026-10-27",
+      "status": "public_model_configurations_found_actual_units_unconfirmed",
+      "summary": "已查到：G3020 旧款资料为 iTNC530 + B/C 双摆头；DCM2740 系列为 FANUC 31i-B 等可选控制配置，须区分分度头与五轴联动头。",
+      "boundary": "以下是公开型号 / 系列资料，不是两台实际设备的出厂配置或标定数据。控制器版本、选件和铣头应按设备编号核对。",
+      "machines": [
+        {
+          "name": "APEC G3020-5L（亚太菁英）",
+          "actual_unit_verified": false,
+          "fields": [
+            {"label": "控制器", "value": "历史 G 系列样本：海德汉 iTNC530 标配，西门子 840D 选配。香港工贸署公开型号记录也列有 G3020-5L + iTNC530。"},
+            {"label": "旋转结构", "value": "历史样本为 XYZ + B/C 叉式双摆头，两根旋转轴都在刀具头：B 倾摆、C 回转。样本角度 B ±105°、C ±200°，仅作该样本参考。"},
+            {"label": "版本差异", "value": "现行厂家 G 页介绍写 B/C，推荐铣头规格却列 A/C、A ±125° / C ±360°。资料存在头型或版本差异，不能把当前规格直接套到清单中的旧型号。"}
+          ],
+          "sources": [
+            {"name": "APEC 原厂 G 样本 · PDF 第 4–6 页（经销平台镜像）", "url": "https://static.machinetools.com/uploads/2204643/05-1_G_Series_catalogue-English-130903.pdf#page=4"},
+            {"name": "工贸署公开型号记录 · G3020-5L / iTNC530", "url": "https://www.stc.tid.gov.hk/english/hksarsys/files/Negative_List.pdf"},
+            {"name": "APEC 现行 G 系列 · 头型差异", "url": "https://www.apeccnc.com/products-detail/ProductG/"}
+          ]
+        },
+        {
+          "name": "DOOSAN DCM2740（现 DN Solutions）",
+          "actual_unit_verified": false,
+          "fields": [
+            {"label": "控制器", "value": "2016 版 DCM 样本第 21 页：FANUC 31i-B 标配，海德汉 iTNC530 / 西门子 840D 选配。后续 DCM II 样本另列 TNC640 选项，不能据此确定本机年款与配置。"},
+            {"label": "旋转结构", "value": "U frame 五轴联动配置采用 B/C 万能头，两根旋转轴都在刀具侧；F frame 附件包含分度头，不等同于连续五轴联动。另有 W 横梁升降直线轴，不能把 W 当旋转轴。"},
+            {"label": "待核对", "value": "设备表只写 DCM2740；完整后缀、年款、实际铣头和五轴控制选件待确认。旧样本 3,000 rpm 重切削 U 头为 B ±110° / C ±190°，不能外推到其他铣头。"}
+          ],
+          "sources": [
+            {"name": "Doosan 原厂 DCM 样本 · 第 10–11、21 页（经销商镜像）", "url": "https://dematec.pl/wp-content/uploads/2018/01/dcm-series-english.pdf#page=11"},
+            {"name": "DN Solutions DCM II 样本 · 第 8、16 页（经销商镜像）", "url": "https://www.mato-gmbh.com/downloads/DCM_II_series.pdf#page=16"}
+          ]
+        }
+      ],
+      "unit_confirmation": [
+        "铭牌：制造商、完整型号、出厂年份、设备编号；控制器系统页：型号、软件版本及五轴 / TCP 选件。",
+        "铣头型号及机床轴图：B/C 或 A/C、旋转中心、正方向、零位、轴序和限位；精确值来自设备手册 / 参数与标定。",
+        "该设备已验证的 NC 样例、后处理说明、刀长 / 工件坐标及换头约定。"
+      ],
+      "development_choice": "建议优先核对 G3020-5L 的旧款 iTNC530 + B/C 双摆头配置，作为首台真实设备候选。R0 仍先完成固定刀轴单孔；LinuxCNC 只保留独立开发参照，实际控制器 NC 语义和五轴后处理另行验证。"
+    },
+    "preferred_real_device_candidate": "APEC G3020-5L (iTNC530 + B/C reference; actual configuration unconfirmed)"
   },
   "notes": [
     "阶段 01–03 是五轴联动的前置里程碑，阶段 04 在声明范围内验收后才可声称对应联动支持。",
