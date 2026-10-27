@@ -1,0 +1,207 @@
+{
+  "schema": "genlaw.development-route.v1",
+  "scope": [
+    "programming",
+    "verification"
+  ],
+  "part_selection_owner": "Codex, delegated by user",
+  "input": "自构造 CAD + 固定测试工艺卡",
+  "output": "实际加工后几何 + 与原始 CAD 的对比 + 逐项验证状态",
+  "baseline": {
+    "part": "S1 偏心通孔薄板",
+    "stock": "8 × 6 × 1.5 mm 矩形毛坯",
+    "material": "6061-T6，首阶段仅作材料标签",
+    "machine": "通用 XYZ 开发参考；旋转轴暂不启用",
+    "controller": "毫米、绝对坐标、G54 的参考 NC 子集",
+    "tool": "φ2 / 118° 钻头",
+    "fixture": "通用双侧夹爪，底部让刀；夹持力与干涉尚未验收"
+  },
+  "stages": [
+    {
+      "id": "s1",
+      "number": "01",
+      "title": "单孔完整链路",
+      "case_name": "偏心通孔薄板",
+      "status": "measured",
+      "status_label": "已有实测 · 阶段验收待补",
+      "headline": "用一个孔，接通编程、去料与几何对照。",
+      "part": "8 × 6 × 1.5 mm；φ2 通孔；孔心 (3, 2)",
+      "material": "6061-T6 标签 · 矩形毛坯",
+      "resources": "通用 XYZ、参考 NC、单钻头、单次装夹",
+      "new_programming": [
+        "创建 FreeCAD CAM 钻孔任务",
+        "使用后处理导出真实 NC"
+      ],
+      "new_verification": [
+        "从完整毛坯执行 NC 并保存几何",
+        "计算体积 IoU，回放真实去料状态"
+      ],
+      "remaining": [
+        "固定工艺卡的自动解析与统一适配",
+        "孔径 / 孔位 / 贯穿的逐项公差验收",
+        "改错 NC 的整链反例与夹具检查"
+      ],
+      "changes": "先固定材料、设备和装夹，只验证一个通孔。",
+      "shape": "single-hole",
+      "gate": "工艺卡与 CAD 能驱动整链；正常与错误案例均有结果，几何误差判据明确。"
+    },
+    {
+      "id": "s2",
+      "number": "02",
+      "title": "孔系与尺寸变化",
+      "case_name": "双孔薄板",
+      "status": "next",
+      "status_label": "下一阶段",
+      "headline": "从一个孔，扩展到有顺序的多个孔。",
+      "part": "8 × 6 × 1.5 mm；两个 φ2 孔，孔心 (2, 2) / (5.5, 4)",
+      "material": "沿用 6061-T6 与矩形毛坯",
+      "resources": "沿用 XYZ、同一刀具和装夹",
+      "new_programming": [
+        "工艺卡列出多个孔特征",
+        "验证孔序、深度和钻孔循环"
+      ],
+      "new_verification": [
+        "检查漏孔、错孔位与未钻通",
+        "单独评估尺寸放大带来的资源消耗"
+      ],
+      "remaining": [
+        "先实现双孔，再增加盲孔与尺寸变体"
+      ],
+      "changes": "先增加孔数量；放大尺寸作为独立变体，不同时增加资源复杂度。",
+      "shape": "two-holes",
+      "gate": "多孔位置与深度均正确，错误工序可追踪到具体孔；放大用例必须先通过资源准入。"
+    },
+    {
+      "id": "s3",
+      "number": "03",
+      "title": "槽、台阶与型腔",
+      "case_name": "圆角单槽薄板",
+      "status": "planned",
+      "status_label": "待开发",
+      "headline": "逐一补齐基础铣削特征。",
+      "part": "8 × 6 × 1.5 mm；先做 4 × 2 × 0.5 mm 圆角槽，内角 R0.5",
+      "material": "沿用 6061-T6 与矩形毛坯",
+      "resources": "新增一把平底铣刀，仍为单刀 / 单装夹",
+      "new_programming": [
+        "增加槽、台阶和型腔的 CAM 映射",
+        "逐项定义切深、进退刀和余量"
+      ],
+      "new_verification": [
+        "比较侧壁、底面和外轮廓",
+        "检出过切、残留和错误深度"
+      ],
+      "remaining": [
+        "槽 → 台阶 → 型腔，分别通过后再组合"
+      ],
+      "changes": "增加特征类型和刀具形状，保持设备与材料不变。",
+      "shape": "slot",
+      "gate": "每种特征都有正常与错误案例，独立 CAD / 几何误差与材料结果对应。"
+    },
+    {
+      "id": "s4",
+      "number": "04",
+      "title": "换刀与多工序",
+      "case_name": "型腔＋通孔组合件",
+      "status": "planned",
+      "status_label": "待开发",
+      "headline": "让上一道工序的真实剩料进入下一道。",
+      "part": "沿用小型薄板，先铣浅腔，再钻通孔",
+      "material": "沿用同一材料与来料",
+      "resources": "两把刀具，增加换刀与非零刀长 / 坐标配置",
+      "new_programming": [
+        "组合铣削和钻削工序",
+        "绑定换刀、刀长、工件原点与最终 NC"
+      ],
+      "new_verification": [
+        "连续传递实际剩余材料",
+        "检查错误刀具、偏置及已建模夹具干涉"
+      ],
+      "remaining": [
+        "先验证单次装夹中的多工序"
+      ],
+      "changes": "增加工序与刀具资源；零件仍保持简单。",
+      "shape": "pocket-hole",
+      "gate": "工序顺序、材料连续性与偏置语义正确；改变一个配置能产生可解释的验收差异。"
+    },
+    {
+      "id": "s5",
+      "number": "05",
+      "title": "3+2 与多装夹",
+      "case_name": "多面钻孔方块",
+      "status": "planned",
+      "status_label": "待开发",
+      "headline": "先定位，再沿固定刀轴加工。",
+      "part": "简单方块，在不同朝向的面上加工孔",
+      "material": "沿用已验证材料，按预算选择尺寸",
+      "resources": "引入参考 B/C 旋转轴、定位与装夹变换",
+      "new_programming": [
+        "分方向创建工序与定位指令",
+        "映射旋转中心、轴序和设备后处理"
+      ],
+      "new_verification": [
+        "验证定位、坐标和多面剩料",
+        "扩展或接入支持多方向加工的去料能力"
+      ],
+      "remaining": [
+        "3+2 单独验收，不等同于连续五轴"
+      ],
+      "changes": "增加加工方向与设备运动能力，几何保持简单。",
+      "shape": "multi-face",
+      "gate": "定位和加工分别有独立对照，多方向工序间材料连续，不能只看旋转动画。"
+    },
+    {
+      "id": "s6",
+      "number": "06",
+      "title": "连续五轴",
+      "case_name": "简单曲面试件",
+      "status": "planned",
+      "status_label": "待研发",
+      "headline": "在简单形状上验证连续变化的刀轴。",
+      "part": "小型缓变曲面 / 斜面试件，先采用短刀路",
+      "material": "沿用已验证材料",
+      "resources": "明确的五轴轴链、TCP / 刀长约定和控制器",
+      "new_programming": [
+        "评估 FreeCAD 扩展或其他五轴 CAM 后端",
+        "实现连续刀轴刀路与设备 NC 后处理"
+      ],
+      "new_verification": [
+        "评估 CAMotics 内核扩展或替代引擎",
+        "实现多轴 NC 解释与连续扫掠去料"
+      ],
+      "remaining": [
+        "先用已知短 NC 独立验证仿真，再接自动出码"
+      ],
+      "changes": "新增五轴软件能力；不以旋转轴动画代替去料验证。",
+      "shape": "surface",
+      "gate": "姿态、运动、去料和已建模干涉均可独立检查，误差和支持范围明确。"
+    },
+    {
+      "id": "s7",
+      "number": "07",
+      "title": "拓宽资源与真实单件",
+      "case_name": "匹配已支持特征的真实单件",
+      "status": "planned",
+      "status_label": "后续扩展",
+      "headline": "把已验证能力迁移到更多资源和真实零件。",
+      "part": "先选一个简单真实单件，再增加复杂曲面与多次装夹",
+      "material": "从铝材逐步扩展到碳钢、不锈钢与其他毛坯形式",
+      "resources": "逐台映射实际设备、控制器、刀具与夹具",
+      "new_programming": [
+        "复用接口，增加设备 / 控制器配置",
+        "补充不同材料与工艺的参数规则"
+      ],
+      "new_verification": [
+        "保持原 CAD 和逐项要求的独立验收",
+        "记录设备对照、材料物理等未验证边界"
+      ],
+      "remaining": [
+        "组成单件稳定后，再进入组装件"
+      ],
+      "changes": "每次只增加一种设备、材料或零件复杂度，避免同时更换全部条件。",
+      "shape": "real-part",
+      "gate": "每一项支持声明都有对应零件、资源配置和结果；几何通过不能推断材料切削性能。"
+    }
+  ],
+  "progression_rule": "先固定资源、增加基础特征；再增加刀具 / 装夹与轴数；最后扩展材料和真实设备。",
+  "old_report_retired": true
+}

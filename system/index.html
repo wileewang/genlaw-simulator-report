@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>系统设计 · GenLaw</title><meta name="description" content="GenLaw 系统设计与加工编程、仿真检验的开发路线。查看每个阶段的输入、实际加工结果和几何对比。">
+<meta name="color-scheme" content="light"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js" defer></script></head><body>
+<a class="skip" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../index.html" aria-label="GenLaw 主页"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13Z" fill="#172a40"/><path d="m22 11-6-3-7 4v8l7 4 7-4v-5h-8v4h4l-3 1.7-3-1.7v-5l3-1.7 4 2Z" fill="#fff"/></svg>GenLaw<small>DESIGN → VERIFY</small></a><nav class="nav" aria-label="主导航"><a href="../index.html">主页</a><a href="../system/" aria-current="page">系统设计</a><a href="../system/development/">开发路线</a></nav></div></header>
+<main id="main" class="wrap"><nav class="crumb" aria-label="面包屑"><a href="../index.html">GenLaw</a><span aria-hidden="true">/</span><strong aria-current="page">系统设计</strong></nav>
+    <div class="page-head"><div class="eyebrow">SYSTEM DESIGN</div><h1>四个模块，一条验证链路。</h1><p>几何识别建立零件定义，工艺规划决定做法；加工编程和仿真检验把计划变成可检查的结果。</p></div>
+    <section class="section" aria-label="系统模块与数据流"><div class="system-flow"><a class="flow-step " href="#interface-geometry" data-open-contract="geometry"><span class="number">上游</span><h3>几何识别</h3><p class="question">零件是什么？</p><div class="io-line"><span>输入</span><strong>零件视图</strong></div><div class="io-line"><span>输出</span><strong>CAD + 已关联的制造要求</strong></div><div class="engine">多模态模型 / Agent + CAD 构建程序</div></a><a class="flow-step " href="#interface-planning" data-open-contract="planning"><span class="number">模块 1</span><h3>工艺规划</h3><p class="question">怎样加工？</p><div class="io-line"><span>输入</span><strong>CAD + 制造要求 + 资源</strong></div><div class="io-line"><span>输出</span><strong>工艺卡</strong></div><div class="engine">Agent 制定工艺 + 程序检查</div></a><a class="flow-step focus" href="#interface-programming" data-open-contract="programming"><span class="number">模块 2</span><h3>加工编程</h3><p class="question">生成哪些指令？</p><div class="io-line"><span>输入</span><strong>工艺卡 + CAD + 资源配置</strong></div><div class="io-line"><span>输出</span><strong>最终 NC + 加工配置</strong></div><div class="engine">适配程序 + FreeCAD CAM + 后处理</div></a><a class="flow-step focus" href="#interface-verification" data-open-contract="verification"><span class="number">模块 3</span><h3>仿真检验</h3><p class="question">加工结果对吗？</p><div class="io-line"><span>输入</span><strong>最终 NC + 加工配置 + 原始 CAD</strong></div><div class="io-line"><span>输出</span><strong>加工后几何 + 对比报告 + 回放</strong></div><div class="engine">CAMotics 去料 + 程序几何对比</div></a></div>
+    <div class="resource-rail"><strong>共享资源配置 → 规划 / 编程 / 检验</strong><div class="rail-items"><span>毛坯与材料</span><span>设备与控制器</span><span>刀具与刀柄</span><span>夹具与坐标</span></div></div>
+    <p class="invariant">原始 CAD 与已关联要求贯穿后续模块，作为最终对比基准。检验结果反馈给编程或工艺规划。点击模块可查看接口。</p></section>
+    <section class="section scope-callout"><div><div class="eyebrow">CURRENT SCOPE</div><h3>当前开发：加工编程 + 仿真检验</h3><p>先用我们自构造的 CAD 和固定测试工艺卡开发。工艺规划先定义接口，Agent 实现后接入。</p><div class="flow-caption">工艺卡 + CAD → FreeCAD CAM → 最终 NC → CAMotics 去料 → 原始 CAD 对比</div></div><a class="btn primary" href="development/">进入开发路线 <span class="arrow" aria-hidden="true">↗</span></a></section>
+    <section class="section" id="interfaces"><div class="section-head"><h2>模块接口</h2><p>设计定义 · 尚未全部实现为可执行适配器</p></div><div class="panel"><div class="contract-tabs" role="tablist" aria-label="选择模块接口"><button id="tab-geometry" role="tab" data-contract-tab="geometry" aria-controls="interface-geometry" aria-selected="true" tabindex="0">几何识别</button><button id="tab-planning" role="tab" data-contract-tab="planning" aria-controls="interface-planning" aria-selected="false" tabindex="-1">工艺规划</button><button id="tab-programming" role="tab" data-contract-tab="programming" aria-controls="interface-programming" aria-selected="false" tabindex="-1">加工编程</button><button id="tab-verification" role="tab" data-contract-tab="verification" aria-controls="interface-verification" aria-selected="false" tabindex="-1">仿真检验</button></div><section class="contract-body" id="interface-geometry" role="tabpanel" aria-labelledby="tab-geometry" ><div class="contract-title"><h3>几何识别</h3><span class="pill "><span class="dot" aria-hidden="true"></span>上游模块 · 接口定义</span></div><p class="contract-desc">从零件视图重建 CAD，把尺寸、公差、粗糙度等要求关联到对应的面、边或特征。</p><div class="contract-columns"><div><h4>输入 / INPUT</h4><div class="field"><code>part_views</code><p>图像 / 图纸视图及其视向、来源与比例信息</p></div><div class="field"><code>context</code><p>单位、已知尺寸、可用材料标注等辅助信息</p></div></div><div><h4>输出 / OUTPUT</h4><div class="field"><code>cad_ref</code><p>原始 CAD 文件 / CadQuery 及对应导出几何，含版本、单位、坐标系、哈希</p></div><div class="field"><code>features</code><p>稳定的特征 ID 与当前 CAD 实体的映射</p></div><div class="field"><code>requirements</code><p>要求类型、数值、公差、单位、关联特征和来源标注</p></div><div class="field"><code>issues</code><p>识别歧义、缺失信息与待确认项</p></div></div></div><details><summary>展开接口示例 · JSON</summary><pre><code>{
+  &quot;schema&quot;: &quot;genlaw.geometry-packet.v0&quot;,
+  &quot;cad_ref&quot;: {
+    &quot;path&quot;: &quot;target.step&quot;,
+    &quot;revision&quot;: &quot;s1-v1&quot;,
+    &quot;units&quot;: &quot;mm&quot;,
+    &quot;sha256&quot;: &quot;&lt;artifact hash&gt;&quot;
+  },
+  &quot;features&quot;: [
+    {
+      &quot;id&quot;: &quot;F_HOLE_1&quot;,
+      &quot;kind&quot;: &quot;through_hole&quot;,
+      &quot;entity_ref&quot;: &quot;&lt;CAD revision + face/feature binding&gt;&quot;
+    }
+  ],
+  &quot;requirements&quot;: [
+    {
+      &quot;id&quot;: &quot;R_DIAMETER&quot;,
+      &quot;feature_id&quot;: &quot;F_HOLE_1&quot;,
+      &quot;kind&quot;: &quot;diameter&quot;,
+      &quot;nominal_mm&quot;: 2,
+      &quot;tolerance_mm&quot;: 0.05,
+      &quot;source&quot;: {
+        &quot;view_id&quot;: &quot;top&quot;,
+        &quot;annotation_id&quot;: &quot;D1&quot;
+      },
+      &quot;binding_status&quot;: &quot;bound&quot;
+    }
+  ],
+  &quot;issues&quot;: []
+}</code></pre></details></section><section class="contract-body" id="interface-planning" role="tabpanel" aria-labelledby="tab-planning" hidden><div class="contract-title"><h3>工艺规划</h3><span class="pill "><span class="dot" aria-hidden="true"></span>接口先行 · Agent 后置</span></div><p class="contract-desc">选择毛坯、设备、装夹、刀具、工序和参数。当前由固定测试工艺卡提供下游输入。</p><div class="contract-columns"><div><h4>输入 / INPUT</h4><div class="field"><code>geometry_packet</code><p>上游 CAD、特征与已关联要求，原始版本保持不变</p></div><div class="field"><code>available_resources</code><p>可用毛坯 / 材料、机床 / 控制器、刀具与夹具</p></div></div><div><h4>输出 / OUTPUT</h4><div class="field"><code>process_card</code><p>有序工序、装夹、资源引用和加工参数</p></div><div class="field"><code>review</code><p>测试卡 / 人工审核 / Agent 生成等来源状态</p></div><div class="field"><code>issues</code><p>缺项、资源不匹配或工艺不支持的原因</p></div></div></div><details><summary>展开接口示例 · JSON</summary><pre><code>{
+  &quot;schema&quot;: &quot;genlaw.process-card.v0&quot;,
+  &quot;card_id&quot;: &quot;S1-TEST-v1&quot;,
+  &quot;part_ref&quot;: &quot;target.step@s1-v1&quot;,
+  &quot;resource_profile&quot;: &quot;R-XYZ-01&quot;,
+  &quot;setups&quot;: [
+    {
+      &quot;id&quot;: &quot;S1&quot;,
+      &quot;work_offset&quot;: &quot;G54&quot;,
+      &quot;origin_mm&quot;: [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  &quot;operations&quot;: [
+    {
+      &quot;id&quot;: &quot;OP10&quot;,
+      &quot;type&quot;: &quot;drilling&quot;,
+      &quot;setup_id&quot;: &quot;S1&quot;,
+      &quot;tool_id&quot;: &quot;T1&quot;,
+      &quot;feature_id&quot;: &quot;F_HOLE_1&quot;,
+      &quot;parameters&quot;: {
+        &quot;hole_xy_mm&quot;: [
+          3,
+          2
+        ],
+        &quot;final_tip_z_mm&quot;: -2.200860619,
+        &quot;feed_mm_min&quot;: 60,
+        &quot;spindle_rpm&quot;: 1000
+      }
+    }
+  ],
+  &quot;review&quot;: {
+    &quot;origin&quot;: &quot;synthetic_test_fixture&quot;,
+    &quot;production_approved&quot;: false
+  }
+}</code></pre></details></section><section class="contract-body" id="interface-programming" role="tabpanel" aria-labelledby="tab-programming" hidden><div class="contract-title"><h3>加工编程</h3><span class="pill current"><span class="dot" aria-hidden="true"></span>当前开发范围</span></div><p class="contract-desc">把工艺卡映射成 CAM 任务，计算刀路，再按选定控制器规则导出最终 NC。</p><div class="contract-columns"><div><h4>输入 / INPUT</h4><div class="field"><code>process_card</code><p>有序工序、刀具、装夹、坐标与参数</p></div><div class="field"><code>cad_ref</code><p>原始 CAD；同一版本也传递给仿真验收</p></div><div class="field"><code>resource_profile</code><p>设备能力、NC 方言、毛坯、工具 / 夹具几何</p></div></div><div><h4>输出 / OUTPUT</h4><div class="field"><code>nc_ref</code><p>最终 NC 文件及其哈希、后处理器版本</p></div><div class="field"><code>machining_config</code><p>解析后的毛坯、刀具、坐标变换、控制器语义与夹具</p></div><div class="field"><code>provenance</code><p>工艺卡、CAD、CAM 软件与配置版本的绑定</p></div><div class="field"><code>issues</code><p>不支持工序、超出能力、单位或引用错误</p></div></div></div><details><summary>展开接口示例 · JSON</summary><pre><code>{
+  &quot;schema&quot;: &quot;genlaw.machining-job.v0&quot;,
+  &quot;job_id&quot;: &quot;S1-JOB-01&quot;,
+  &quot;nc_ref&quot;: {
+    &quot;path&quot;: &quot;reference.nc&quot;,
+    &quot;sha256&quot;: &quot;&lt;final NC hash&gt;&quot;
+  },
+  &quot;target_ref&quot;: &quot;target.step@s1-v1&quot;,
+  &quot;process_card_ref&quot;: &quot;S1-TEST-v1&quot;,
+  &quot;machining_config_ref&quot;: &quot;R-XYZ-01&quot;,
+  &quot;implementation&quot;: {
+    &quot;cam&quot;: &quot;FreeCAD CAM&quot;,
+    &quot;postprocessor&quot;: &quot;FreeCAD bundled linuxcnc_post&quot;,
+    &quot;linuxcnc_runtime_required&quot;: false
+  }
+}</code></pre></details></section><section class="contract-body" id="interface-verification" role="tabpanel" aria-labelledby="tab-verification" hidden><div class="contract-title"><h3>仿真检验</h3><span class="pill current"><span class="dot" aria-hidden="true"></span>当前开发范围</span></div><p class="contract-desc">从真实声明的毛坯执行 NC，保存剩余材料，并在同一坐标系下与原始 CAD 比较。</p><div class="contract-columns"><div><h4>输入 / INPUT</h4><div class="field"><code>nc_ref</code><p>模块 2 导出的同一份最终 NC</p></div><div class="field"><code>machining_config</code><p>实际毛坯、刀具、装夹 / 坐标与所需控制器语义</p></div><div class="field"><code>target_ref / requirements</code><p>未经改写的目标 CAD 与制造要求</p></div></div><div><h4>输出 / OUTPUT</h4><div class="field"><code>result_geometry</code><p>实际加工后的实体 / 网格，注明数据格式</p></div><div class="field"><code>metrics</code><p>体积 IoU、过切 / 欠切等指标及计算方法 / 精度</p></div><div class="field"><code>requirement_results</code><p>逐项要求的通过、失败、未验证或不可判定状态</p></div><div class="field"><code>replay / provenance</code><p>保存的加工状态、轨迹、NC / 配置 / 结果哈希与错误反馈</p></div></div></div><details><summary>展开接口示例 · JSON</summary><pre><code>{
+  &quot;schema&quot;: &quot;genlaw.verification-result.v0&quot;,
+  &quot;job_id&quot;: &quot;S1-JOB-01&quot;,
+  &quot;result_ref&quot;: &quot;simulated.stl&quot;,
+  &quot;metrics&quot;: {
+    &quot;volume_iou&quot;: &quot;&lt;measured value&gt;&quot;,
+    &quot;method&quot;: &quot;&lt;numeric method and resolution&gt;&quot;
+  },
+  &quot;requirement_results&quot;: [
+    {
+      &quot;id&quot;: &quot;R_DIAMETER&quot;,
+      &quot;status&quot;: &quot;not_verified&quot;
+    }
+  ],
+  &quot;replay_ref&quot;: &quot;frames.json&quot;,
+  &quot;physical_process_verified&quot;: false
+}</code></pre></details></section></div></section>
+    <section class="section"><details><summary>通用接口约定与完整定义</summary><ul class="rules"><li>CAD 与制造要求的原始版本贯穿整条流程。</li><li>文件引用包含版本与哈希；单位、坐标和刀长语义必须一致。</li><li>工艺卡可以来自固定测试输入、人工或未来的 Agent，使用同一接口。</li><li>不支持、缺信息或精度不足时显式返回状态，不能自动视为通过。</li><li>几何指标不代替粗糙度、材料物理、夹紧力或真实机床验证。</li></ul><p class="input-note">当前参考案例调用 FreeCAD 自带的 linuxcnc_post 导出 NC。它是后处理器名称；此链路没有安装或运行 LinuxCNC。</p><p style="margin-top:14px"><a class="link" href="../data/system.json" download>下载完整接口设计 JSON ↓</a></p></details></section></main>
+<footer class="footer wrap"><div>GenLaw · 系统设计与开发记录</div><div>更新于 2026.10.27 <span aria-hidden="true"> · </span><a href="../system/development/s1/">当前阶段 S1 ↗</a></div></footer></body></html>

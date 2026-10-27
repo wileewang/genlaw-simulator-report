@@ -1,0 +1,292 @@
+{
+  "schema": "genlaw.system-design.v1",
+  "title": "系统设计",
+  "module_numbering": "Geometry recognition is upstream; retain process planning as module 1, programming as module 2 and verification as module 3.",
+  "contract_status": "design_definitions_not_production_validators",
+  "modules": [
+    {
+      "id": "geometry",
+      "number": "上游",
+      "name": "几何识别",
+      "question": "零件是什么？",
+      "input": "零件视图",
+      "output": "CAD + 已关联的制造要求",
+      "implementation": "多模态模型 / Agent + CAD 构建程序",
+      "status": "上游模块 · 接口定义",
+      "current": false,
+      "description": "从零件视图重建 CAD，把尺寸、公差、粗糙度等要求关联到对应的面、边或特征。",
+      "inputs": [
+        [
+          "part_views",
+          "图像 / 图纸视图及其视向、来源与比例信息"
+        ],
+        [
+          "context",
+          "单位、已知尺寸、可用材料标注等辅助信息"
+        ]
+      ],
+      "outputs": [
+        [
+          "cad_ref",
+          "原始 CAD 文件 / CadQuery 及对应导出几何，含版本、单位、坐标系、哈希"
+        ],
+        [
+          "features",
+          "稳定的特征 ID 与当前 CAD 实体的映射"
+        ],
+        [
+          "requirements",
+          "要求类型、数值、公差、单位、关联特征和来源标注"
+        ],
+        [
+          "issues",
+          "识别歧义、缺失信息与待确认项"
+        ]
+      ],
+      "example": {
+        "schema": "genlaw.geometry-packet.v0",
+        "cad_ref": {
+          "path": "target.step",
+          "revision": "s1-v1",
+          "units": "mm",
+          "sha256": "<artifact hash>"
+        },
+        "features": [
+          {
+            "id": "F_HOLE_1",
+            "kind": "through_hole",
+            "entity_ref": "<CAD revision + face/feature binding>"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "R_DIAMETER",
+            "feature_id": "F_HOLE_1",
+            "kind": "diameter",
+            "nominal_mm": 2,
+            "tolerance_mm": 0.05,
+            "source": {
+              "view_id": "top",
+              "annotation_id": "D1"
+            },
+            "binding_status": "bound"
+          }
+        ],
+        "issues": []
+      }
+    },
+    {
+      "id": "planning",
+      "number": "模块 1",
+      "name": "工艺规划",
+      "question": "怎样加工？",
+      "input": "CAD + 制造要求 + 资源",
+      "output": "工艺卡",
+      "implementation": "Agent 制定工艺 + 程序检查",
+      "status": "接口先行 · Agent 后置",
+      "current": false,
+      "description": "选择毛坯、设备、装夹、刀具、工序和参数。当前由固定测试工艺卡提供下游输入。",
+      "inputs": [
+        [
+          "geometry_packet",
+          "上游 CAD、特征与已关联要求，原始版本保持不变"
+        ],
+        [
+          "available_resources",
+          "可用毛坯 / 材料、机床 / 控制器、刀具与夹具"
+        ]
+      ],
+      "outputs": [
+        [
+          "process_card",
+          "有序工序、装夹、资源引用和加工参数"
+        ],
+        [
+          "review",
+          "测试卡 / 人工审核 / Agent 生成等来源状态"
+        ],
+        [
+          "issues",
+          "缺项、资源不匹配或工艺不支持的原因"
+        ]
+      ],
+      "example": {
+        "schema": "genlaw.process-card.v0",
+        "card_id": "S1-TEST-v1",
+        "part_ref": "target.step@s1-v1",
+        "resource_profile": "R-XYZ-01",
+        "setups": [
+          {
+            "id": "S1",
+            "work_offset": "G54",
+            "origin_mm": [
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "operations": [
+          {
+            "id": "OP10",
+            "type": "drilling",
+            "setup_id": "S1",
+            "tool_id": "T1",
+            "feature_id": "F_HOLE_1",
+            "parameters": {
+              "hole_xy_mm": [
+                3,
+                2
+              ],
+              "final_tip_z_mm": -2.200860619,
+              "feed_mm_min": 60,
+              "spindle_rpm": 1000
+            }
+          }
+        ],
+        "review": {
+          "origin": "synthetic_test_fixture",
+          "production_approved": false
+        }
+      }
+    },
+    {
+      "id": "programming",
+      "number": "模块 2",
+      "name": "加工编程",
+      "question": "生成哪些指令？",
+      "input": "工艺卡 + CAD + 资源配置",
+      "output": "最终 NC + 加工配置",
+      "implementation": "适配程序 + FreeCAD CAM + 后处理",
+      "status": "当前开发范围",
+      "current": true,
+      "description": "把工艺卡映射成 CAM 任务，计算刀路，再按选定控制器规则导出最终 NC。",
+      "inputs": [
+        [
+          "process_card",
+          "有序工序、刀具、装夹、坐标与参数"
+        ],
+        [
+          "cad_ref",
+          "原始 CAD；同一版本也传递给仿真验收"
+        ],
+        [
+          "resource_profile",
+          "设备能力、NC 方言、毛坯、工具 / 夹具几何"
+        ]
+      ],
+      "outputs": [
+        [
+          "nc_ref",
+          "最终 NC 文件及其哈希、后处理器版本"
+        ],
+        [
+          "machining_config",
+          "解析后的毛坯、刀具、坐标变换、控制器语义与夹具"
+        ],
+        [
+          "provenance",
+          "工艺卡、CAD、CAM 软件与配置版本的绑定"
+        ],
+        [
+          "issues",
+          "不支持工序、超出能力、单位或引用错误"
+        ]
+      ],
+      "example": {
+        "schema": "genlaw.machining-job.v0",
+        "job_id": "S1-JOB-01",
+        "nc_ref": {
+          "path": "reference.nc",
+          "sha256": "<final NC hash>"
+        },
+        "target_ref": "target.step@s1-v1",
+        "process_card_ref": "S1-TEST-v1",
+        "machining_config_ref": "R-XYZ-01",
+        "implementation": {
+          "cam": "FreeCAD CAM",
+          "postprocessor": "FreeCAD bundled linuxcnc_post",
+          "linuxcnc_runtime_required": false
+        }
+      }
+    },
+    {
+      "id": "verification",
+      "number": "模块 3",
+      "name": "仿真检验",
+      "question": "加工结果对吗？",
+      "input": "最终 NC + 加工配置 + 原始 CAD",
+      "output": "加工后几何 + 对比报告 + 回放",
+      "implementation": "CAMotics 去料 + 程序几何对比",
+      "status": "当前开发范围",
+      "current": true,
+      "description": "从真实声明的毛坯执行 NC，保存剩余材料，并在同一坐标系下与原始 CAD 比较。",
+      "inputs": [
+        [
+          "nc_ref",
+          "模块 2 导出的同一份最终 NC"
+        ],
+        [
+          "machining_config",
+          "实际毛坯、刀具、装夹 / 坐标与所需控制器语义"
+        ],
+        [
+          "target_ref / requirements",
+          "未经改写的目标 CAD 与制造要求"
+        ]
+      ],
+      "outputs": [
+        [
+          "result_geometry",
+          "实际加工后的实体 / 网格，注明数据格式"
+        ],
+        [
+          "metrics",
+          "体积 IoU、过切 / 欠切等指标及计算方法 / 精度"
+        ],
+        [
+          "requirement_results",
+          "逐项要求的通过、失败、未验证或不可判定状态"
+        ],
+        [
+          "replay / provenance",
+          "保存的加工状态、轨迹、NC / 配置 / 结果哈希与错误反馈"
+        ]
+      ],
+      "example": {
+        "schema": "genlaw.verification-result.v0",
+        "job_id": "S1-JOB-01",
+        "result_ref": "simulated.stl",
+        "metrics": {
+          "volume_iou": "<measured value>",
+          "method": "<numeric method and resolution>"
+        },
+        "requirement_results": [
+          {
+            "id": "R_DIAMETER",
+            "status": "not_verified"
+          }
+        ],
+        "replay_ref": "frames.json",
+        "physical_process_verified": false
+      }
+    }
+  ],
+  "shared_resources": [
+    "毛坯与材料",
+    "设备与控制器",
+    "刀具与刀柄",
+    "夹具与坐标"
+  ],
+  "rules": [
+    "CAD 与制造要求的原始版本贯穿整条流程。",
+    "文件引用包含版本与哈希；单位、坐标和刀长语义必须一致。",
+    "工艺卡可以来自固定测试输入、人工或未来的 Agent，使用同一接口。",
+    "不支持、缺信息或精度不足时显式返回状态，不能自动视为通过。",
+    "几何指标不代替粗糙度、材料物理、夹紧力或真实机床验证。"
+  ],
+  "development_scope": [
+    "programming",
+    "verification"
+  ]
+}

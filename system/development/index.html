@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>开发路线与进度 · GenLaw</title><meta name="description" content="GenLaw 系统设计与加工编程、仿真检验的开发路线。查看每个阶段的输入、实际加工结果和几何对比。">
+<meta name="color-scheme" content="light"><link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css">
+<script src="../../assets/site.js" defer></script></head><body>
+<a class="skip" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../../index.html" aria-label="GenLaw 主页"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13Z" fill="#172a40"/><path d="m22 11-6-3-7 4v8l7 4 7-4v-5h-8v4h4l-3 1.7-3-1.7v-5l3-1.7 4 2Z" fill="#fff"/></svg>GenLaw<small>DESIGN → VERIFY</small></a><nav class="nav" aria-label="主导航"><a href="../../index.html">主页</a><a href="../../system/">系统设计</a><a href="../../system/development/" aria-current="page">开发路线</a></nav></div></header>
+<main id="main" class="wrap"><nav class="crumb" aria-label="面包屑"><a href="../../index.html">GenLaw</a><span aria-hidden="true">/</span><a href="../">系统设计</a><span aria-hidden="true">/</span><strong aria-current="page">开发路线</strong></nav>
+    <div class="page-head"><div class="eyebrow">DEVELOPMENT / MODULES 2 & 3</div><h1>先完成一个简单件，<br>再逐项拓宽能力。</h1><p>这条路线针对加工编程与仿真检验。测试零件由我们选择并构造，固定资源后增加特征，再逐步引入更多设备、材料和装夹。</p></div>
+    <section class="section"><div class="section-head"><h2>起点：固定三类条件</h2><p>自构造 CAD + 固定测试工艺卡 → 实际加工后几何 + 对比</p></div>
+    <div class="baseline-grid"><article class="baseline"><span class="n">01 / 零件</span><h3>偏心单通孔</h3><p><strong>8 × 6 × 1.5 mm，φ2 通孔</strong><br>简单单件；偏心孔便于发现方向与坐标错误。小体积适合本机轻量验证。</p></article>
+    <article class="baseline"><span class="n">02 / 原材料</span><h3>矩形铝板毛坯</h3><p><strong>6061-T6 · 统一坐标与尺寸</strong><br>当前仅记录材料标签、检验几何去料。材料切削性能与粗糙度另行验证。</p></article>
+    <article class="baseline"><span class="n">03 / 设备资源</span><h3>通用 XYZ 参考配置</h3><p><strong>参考 NC 子集 · φ2 钻头</strong><br>规划双侧夹爪、底部让刀；夹具几何与干涉尚未进入当前实测。</p><details><summary>设备与控制器边界</summary><dl class="small-spec"><dt>坐标</dt><dd>毫米、绝对坐标、G54 零偏置</dd><dt>刀长</dt><dd>当前参考案例零补偿</dd><dt>设备</dt><dd>三轴软件参考，未映射真实机床</dd><dt>扩展</dt><dd>逐步引入刀柄、夹具、旋转轴与真实控制器</dd></dl></details></article></div></section>
+    <section class="section"><div class="route-intro"><div><h2>七个阶段，逐步验证</h2><p>每个阶段都可打开，查看新增功能、测试输入、结果与剩余工作。</p></div><span class="pill current"><span class="dot" aria-hidden="true"></span>当前在 S1 · 先补齐阶段验收</span></div><div class="route-list"><a class="route-card measured" href="s1/"><span class="route-number">01</span><span class="route-thumb"><svg viewBox="0 0 260 190" role="img" aria-label="偏心通孔薄板示意">
+      <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
+      <path d="M30 87 150 135 150 153 30 105Z" fill="#6d8eaf" stroke="#557a9e" stroke-width=".8"/>
+      <path d="M150 135 210 93 210 111 150 153Z" fill="#4f7196" stroke="#486b8f" stroke-width=".8"/>
+      <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
+      <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0ZM2,2a1,1 0 1 0 2,0a1,1 0 1 0 -2,0Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
+      </svg></span><div><div class="route-title"><h3>单孔完整链路</h3><span class="pill done"><span class="dot" aria-hidden="true"></span>已有实测 · 阶段验收待补</span></div><p class="route-case">偏心通孔薄板 · 先固定材料、设备和装夹，只验证一个通孔。</p><div class="stage-work"><div><b>编程</b>创建 FreeCAD CAM 钻孔任务</div><div><b>检验</b>从完整毛坯执行 NC 并保存几何</div></div></div><span class="route-arrow" aria-hidden="true">↗</span></a><a class="route-card next" href="s2/"><span class="route-number">02</span><span class="route-thumb"><svg viewBox="0 0 260 190" role="img" aria-label="双孔薄板示意">
+      <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
+      <path d="M30 87 150 135 150 153 30 105Z" fill="#6d8eaf" stroke="#557a9e" stroke-width=".8"/>
+      <path d="M150 135 210 93 210 111 150 153Z" fill="#4f7196" stroke="#486b8f" stroke-width=".8"/>
+      <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
+      <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0ZM1,2a1,1 0 1 0 2,0a1,1 0 1 0 -2,0ZM4.5,4a1,1 0 1 0 2,0a1,1 0 1 0 -2,0Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
+      </svg></span><div><div class="route-title"><h3>孔系与尺寸变化</h3><span class="pill blue"><span class="dot" aria-hidden="true"></span>下一阶段</span></div><p class="route-case">双孔薄板 · 先增加孔数量；放大尺寸作为独立变体，不同时增加资源复杂度。</p><div class="stage-work"><div><b>编程</b>工艺卡列出多个孔特征</div><div><b>检验</b>检查漏孔、错孔位与未钻通</div></div></div><span class="route-arrow" aria-hidden="true">↗</span></a><a class="route-card planned" href="s3/"><span class="route-number">03</span><span class="route-thumb"><svg viewBox="0 0 260 190" role="img" aria-label="圆角单槽薄板示意">
+      <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
+      <path d="M30 87 150 135 150 153 30 105Z" fill="#6d8eaf" stroke="#557a9e" stroke-width=".8"/>
+      <path d="M150 135 210 93 210 111 150 153Z" fill="#4f7196" stroke="#486b8f" stroke-width=".8"/>
+      <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
+      <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0ZM2.5,2 H5.5 Q6,2 6,2.5 V3.5 Q6,4 5.5,4 H2.5 Q2,4 2,3.5 V2.5 Q2,2 2.5,2Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
+      </svg></span><div><div class="route-title"><h3>槽、台阶与型腔</h3><span class="pill "><span class="dot" aria-hidden="true"></span>待开发</span></div><p class="route-case">圆角单槽薄板 · 增加特征类型和刀具形状，保持设备与材料不变。</p><div class="stage-work"><div><b>编程</b>增加槽、台阶和型腔的 CAM 映射</div><div><b>检验</b>比较侧壁、底面和外轮廓</div></div></div><span class="route-arrow" aria-hidden="true">↗</span></a><a class="route-card planned" href="s4/"><span class="route-number">04</span><span class="route-thumb"><svg viewBox="0 0 260 190" role="img" aria-label="型腔＋通孔组合件示意">
+      <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
+      <path d="M30 87 150 135 150 153 30 105Z" fill="#6d8eaf" stroke="#557a9e" stroke-width=".8"/>
+      <path d="M150 135 210 93 210 111 150 153Z" fill="#4f7196" stroke="#486b8f" stroke-width=".8"/>
+      <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
+      <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0ZM2.5,2 H5.5 Q6,2 6,2.5 V3.5 Q6,4 5.5,4 H2.5 Q2,4 2,3.5 V2.5 Q2,2 2.5,2Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
+      <ellipse cx="120" cy="90" rx="10" ry="6" fill="#405974"/></svg></span><div><div class="route-title"><h3>换刀与多工序</h3><span class="pill "><span class="dot" aria-hidden="true"></span>待开发</span></div><p class="route-case">型腔＋通孔组合件 · 增加工序与刀具资源；零件仍保持简单。</p><div class="stage-work"><div><b>编程</b>组合铣削和钻削工序</div><div><b>检验</b>连续传递实际剩余材料</div></div></div><span class="route-arrow" aria-hidden="true">↗</span></a><a class="route-card planned" href="s5/"><span class="route-number">05</span><span class="route-thumb"><svg viewBox="0 0 260 190" role="img" aria-label="多面钻孔方块示意">
+      <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
+      <path d="M30 87 150 135 150 180 30 132Z" fill="#6d8eaf" stroke="#557a9e" stroke-width=".8"/>
+      <path d="M150 135 210 93 210 138 150 180Z" fill="#4f7196" stroke="#486b8f" stroke-width=".8"/>
+      <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
+      <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
+      <ellipse cx="177" cy="132" rx="8" ry="13" transform="rotate(28 177 132)" fill="#334e6c"/><ellipse cx="70" cy="125" rx="8" ry="13" transform="rotate(-28 70 125)" fill="#334e6c"/></svg></span><div><div class="route-title"><h3>3+2 与多装夹</h3><span class="pill "><span class="dot" aria-hidden="true"></span>待开发</span></div><p class="route-case">多面钻孔方块 · 增加加工方向与设备运动能力，几何保持简单。</p><div class="stage-work"><div><b>编程</b>分方向创建工序与定位指令</div><div><b>检验</b>验证定位、坐标和多面剩料</div></div></div><span class="route-arrow" aria-hidden="true">↗</span></a><a class="route-card planned" href="s6/"><span class="route-number">06</span><span class="route-thumb"><svg viewBox="0 0 260 190" role="img" aria-label="简单曲面试件示意">
+      <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
+      <path d="M30 87 150 135 150 153 30 105Z" fill="#6d8eaf" stroke="#557a9e" stroke-width=".8"/>
+      <path d="M150 135 210 93 210 111 150 153Z" fill="#4f7196" stroke="#486b8f" stroke-width=".8"/>
+      <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
+      <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
+      <path d="M30 87Q95 36 150 135L210 93Q150 5 90 45Z" fill="#89a5c3" stroke="#567a9e"/><path d="M45 78Q105 38 165 125M60 66Q122 31 181 112M75 55Q136 21 195 102" fill="none" stroke="#d4e1ed" stroke-width="1.3"/></svg></span><div><div class="route-title"><h3>连续五轴</h3><span class="pill "><span class="dot" aria-hidden="true"></span>待研发</span></div><p class="route-case">简单曲面试件 · 新增五轴软件能力；不以旋转轴动画代替去料验证。</p><div class="stage-work"><div><b>编程</b>评估 FreeCAD 扩展或其他五轴 CAM 后端</div><div><b>检验</b>评估 CAMotics 内核扩展或替代引擎</div></div></div><span class="route-arrow" aria-hidden="true">↗</span></a><a class="route-card planned" href="s7/"><span class="route-number">07</span><span class="route-thumb"><svg viewBox="0 0 260 190" role="img" aria-label="匹配已支持特征的真实单件示意">
+      <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
+      <path d="M30 87 150 135 150 153 30 105Z" fill="#6d8eaf" stroke="#557a9e" stroke-width=".8"/>
+      <path d="M150 135 210 93 210 111 150 153Z" fill="#4f7196" stroke="#486b8f" stroke-width=".8"/>
+      <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
+      <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0ZM2,2a1,1 0 1 0 2,0a1,1 0 1 0 -2,0Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
+      </svg></span><div><div class="route-title"><h3>拓宽资源与真实单件</h3><span class="pill "><span class="dot" aria-hidden="true"></span>后续扩展</span></div><p class="route-case">匹配已支持特征的真实单件 · 每次只增加一种设备、材料或零件复杂度，避免同时更换全部条件。</p><div class="stage-work"><div><b>编程</b>复用接口，增加设备 / 控制器配置</div><div><b>检验</b>保持原 CAD 和逐项要求的独立验收</div></div></div><span class="route-arrow" aria-hidden="true">↗</span></a></div><p class="route-note">已有实测不等于阶段完成。S2–S7 为开发计划；连续五轴需要新增 CAM / 去料能力，当前未实现。每次运行前检查本机资源，不做整批重计算。</p></section></main>
+<footer class="footer wrap"><div>GenLaw · 系统设计与开发记录</div><div>更新于 2026.10.27 <span aria-hidden="true"> · </span><a href="../../system/development/s1/">当前阶段 S1 ↗</a></div></footer></body></html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S1 · 单孔完整链路 · GenLaw</title><meta name="description" content="GenLaw 系统设计与加工编程、仿真检验的开发路线。查看每个阶段的输入、实际加工结果和几何对比。">
+<meta name="color-scheme" content="light"><link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css">
+<script src="../../../assets/site.js" defer></script><script type="importmap">{"imports":{"three":"../../../assets/vendor/three/three.module.js"}}</script><script type="module" src="../../../assets/viewer.js"></script></head><body>
+<a class="skip" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../../../index.html" aria-label="GenLaw 主页"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13Z" fill="#172a40"/><path d="m22 11-6-3-7 4v8l7 4 7-4v-5h-8v4h4l-3 1.7-3-1.7v-5l3-1.7 4 2Z" fill="#fff"/></svg>GenLaw<small>DESIGN → VERIFY</small></a><nav class="nav" aria-label="主导航"><a href="../../../index.html">主页</a><a href="../../../system/">系统设计</a><a href="../../../system/development/" aria-current="page">开发路线</a></nav></div></header>
+<main id="main" class="wrap"><nav class="crumb" aria-label="面包屑"><a href="../../../index.html">GenLaw</a><span aria-hidden="true">/</span><a href="../../">系统设计</a><span aria-hidden="true">/</span><a href="../">开发路线</a><span aria-hidden="true">/</span><strong aria-current="page">S1 单孔完整链路</strong></nav><div class="page-head"><div class="eyebrow">STAGE 01 / DEVELOPMENT</div><div class="page-head-row"><h1>单孔完整链路</h1><span class="pill done"><span class="dot" aria-hidden="true"></span>已有实测 · 阶段验收待补</span></div><p>用一个孔，接通编程、去料与几何对照。</p></div><section class="section"><div class="section-head"><h2>本阶段已接通的能力</h2></div><div class="feature-grid"><article class="feature"><div class="eyebrow">MODULE 2</div><h3>加工编程</h3><ul><li>创建 FreeCAD CAM 钻孔任务</li><li>使用后处理导出真实 NC</li></ul></article><article class="feature"><div class="eyebrow">MODULE 3</div><h3>仿真检验</h3><ul><li>从完整毛坯执行 NC 并保存几何</li><li>计算体积 IoU，回放真实去料状态</li></ul></article></div></section>
+    <section class="section" id="result"><div class="section-head"><h2>实例：偏心通孔薄板</h2><p>单刀 · 单次装夹 · 固定刀轴</p></div><div class="case-spec"><span>8 × 6 × 1.5 mm</span><span>φ2 通孔 · 孔心 (3, 2)</span><span>FreeCAD CAM → CAMotics</span></div>
+    <div class="viewer" data-case-viewer data-mode="compare" data-assets="../../../cases/s1/">
+    <div class="viewer-toolbar"><div class="segments" aria-label="三维视图模式"><button data-view-mode="compare" aria-pressed="true">并排对比</button><button data-view-mode="overlay" aria-pressed="false">同坐标叠加</button><button data-view-mode="replay" aria-pressed="false">加工回放</button></div><span class="hint">拖动旋转 · 滚轮缩放</span><button class="icon-button" data-reset aria-label="重置三维视角" title="重置视角">↺</button></div>
+    <div class="canvas-wrap"><div class="view-divider"></div><div class="view-labels"><div class="view-label target"><span class="dot"></span><b>目标 CAD</b></div><div class="view-label actual"><span class="dot"></span><b>仿真加工后 · 实际网格</b></div></div><div class="viewer-status" role="status">载入几何…</div><div class="viewer-loading">正在载入目标 CAD 与完整仿真网格…</div></div>
+    <div class="replay-controls" hidden><button class="btn small" data-play>播放</button><input type="range" min="0" max="4" step="1" value="0" aria-label="选择加工状态"><span class="frame-caption">毛坯 · 未加工</span></div>
+    <div class="fallback" hidden><svg viewBox="0 0 260 190" role="img" aria-label="偏心通孔设计示意，非实际仿真结果">
+      <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
+      <path d="M30 87 150 135 150 153 30 105Z" fill="#6d8eaf" stroke="#557a9e" stroke-width=".8"/>
+      <path d="M150 135 210 93 210 111 150 153Z" fill="#4f7196" stroke="#486b8f" stroke-width=".8"/>
+      <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
+      <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0ZM2,2a1,1 0 1 0 2,0a1,1 0 1 0 -2,0Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
+      </svg><p>当前浏览器未能显示三维结果。上方仅为设计示意，实际几何可在下方下载。</p></div>
+    <div class="viewer-note">目标为原始 CAD 的显示网格；结果为 CAMotics 实际去料网格。回放使用 3 个真实中间帧（0.05 mm）与最终结果（0.025 mm），逐帧展示；播放节奏不代表加工节拍。</div></div>
+    <noscript><p class="input-note">启用 JavaScript 可查看三维对比与回放；指标和源文件下载不受影响。</p></noscript>
+    <div class="metrics-grid"><article class="iou-card"><div class="eyebrow">MEASURED / VOLUME IoU</div><div class="value">99.9753<span>%</span></div><p>目标与实际结果的交集体积 ÷ 并集体积</p><div class="iou-bar"><span style="width:99.9753%"></span></div><p>几何数值估计 · 尚未完成逐项公差验收</p></article>
+    <article class="measurement"><dl><div><dt>原始 CAD 体积</dt><dd>67.287611 <small>mm³</small></dd></div><div><dt>仿真结果体积</dt><dd>67.286470 <small>mm³</small></dd></div><div><dt>欠切 / 多余材料</dt><dd>0.007731 <small>mm³</small></dd></div><div><dt>过切 / 缺失材料</dt><dd>0.008872 <small>mm³</small></dd></div></dl><p class="explain">比较原始 CAD 与完整的 461,320 个仿真三角面，保持同一坐标，不做事后配准。仿真分辨率为 0.025 mm；指标包含离散误差。</p></article></div>
+    <details><summary>IoU 怎么计算，检验到了什么？</summary><div class="provenance"><p>使用实际 STL 的闭合截面，与经原始 BREP 核对的“长方体减通孔”解析截面求交并，沿高度分段积分。显示用的 CAD 网格不参与测量。当前方法仅适用于此类 S1 几何，尚未通用化到任意零件。</p><p>加密前后的 IoU 差约 1.47 × 10⁻⁸，这是数值稳定性检查，不是严格误差上界。相同几何、同体积错位、完全分离、未钻孔、同体积错孔位 5 个对照均符合预期；错孔位对照的 IoU 约为 97.78%。这些是比较算法对照，错误 NC 的整链测试仍待补。</p><p>已检验整体几何重合；孔径、孔位和贯穿要求的逐项公差判定，以及夹具干涉、粗糙度、材料物理尚未验收。</p></div></details></section>
+    <section class="section" id="inputs"><div class="section-head"><h2>测试输入与输出文件</h2><p>每个结果都能追溯到同一份 CAD、NC 和仿真配置</p></div><div class="input-grid"><article class="input-card"><div class="head"><h3>固定测试工艺卡</h3><span class="pill "><span class="dot" aria-hidden="true"></span>S1-TEST-v1</span></div><table class="spec-table"><tbody><tr><th>几何基准</th><td>8 × 6 × 1.5 mm；φ2 通孔，孔心 (3, 2)</td></tr><tr><th>毛坯 / 材料</th><td>同尺寸矩形毛坯 / 6061-T6 标签</td></tr><tr><th>装夹 / 原点</th><td>单次装夹；顶面 Z=0，左下角 X=Y=0，G54</td></tr><tr><th>工序 OP10</th><td>T1 φ2、118° 钻头；G81 钻通</td></tr><tr><th>切削参数</th><td>1,000 rpm；60 mm/min</td></tr><tr><th>位置参数</th><td>刀尖终点 Z=-2.20086；R=1，安全高 2，清空高 3 mm</td></tr><tr><th>刀长配置</th><td>导出 --no-tlo；仿真零刀长补偿</td></tr></tbody></table><p class="input-note">这张卡记录已执行 FreeCAD 脚本的固定参数。当前脚本尚未通过通用适配器读取此 JSON；“工艺卡 → 自动建 CAM 任务”是下一项开发。参数用于软件基准，不代表已批准的真实机床工艺。</p><details><summary>展开工艺卡 JSON</summary><pre><code>{
+  &quot;schema&quot;: &quot;genlaw.process-card.v0&quot;,
+  &quot;card_id&quot;: &quot;S1-TEST-v1&quot;,
+  &quot;case_id&quot;: &quot;s1&quot;,
+  &quot;part_ref&quot;: {
+    &quot;path&quot;: &quot;target.step&quot;,
+    &quot;revision&quot;: &quot;s1-v1&quot;,
+    &quot;sha256&quot;: &quot;643a38d842d172b1866875c435e738e220f8155a57d23099c98e5d8aa195e4cb&quot;,
+    &quot;units&quot;: &quot;mm&quot;
+  },
+  &quot;resource_profile&quot;: &quot;R-XYZ-01&quot;,
+  &quot;setups&quot;: [
+    {
+      &quot;id&quot;: &quot;S1&quot;,
+      &quot;work_offset&quot;: &quot;G54&quot;,
+      &quot;origin_mm&quot;: [
+        0,
+        0,
+        0
+      ],
+      &quot;rotation_degrees&quot;: [
+        0,
+        0,
+        0
+      ],
+      &quot;stock_bounds_mm&quot;: {
+        &quot;min&quot;: [
+          0,
+          0,
+          -1.5
+        ],
+        &quot;max&quot;: [
+          8,
+          6,
+          0
+        ]
+      }
+    }
+  ],
+  &quot;operations&quot;: [
+    {
+      &quot;id&quot;: &quot;OP10&quot;,
+      &quot;type&quot;: &quot;drilling&quot;,
+      &quot;setup_id&quot;: &quot;S1&quot;,
+      &quot;tool_id&quot;: &quot;T1&quot;,
+      &quot;feature_id&quot;: &quot;F_HOLE_1&quot;,
+      &quot;parameters&quot;: {
+        &quot;hole_xy_mm&quot;: [
+          3,
+          2
+        ],
+        &quot;diameter_mm&quot;: 2,
+        &quot;through&quot;: true,
+        &quot;final_tip_z_mm&quot;: -2.2008606190275604,
+        &quot;feed_mm_min&quot;: 60,
+        &quot;spindle_rpm&quot;: 1000,
+        &quot;retract_plane_mm&quot;: 1,
+        &quot;safe_height_mm&quot;: 2,
+        &quot;clearance_height_mm&quot;: 3,
+        &quot;cycle&quot;: &quot;G81&quot;,
+        &quot;cycle_return&quot;: &quot;G98&quot;
+      }
+    }
+  ],
+  &quot;review&quot;: {
+    &quot;origin&quot;: &quot;synthetic_test_fixture_parameter_record&quot;,
+    &quot;production_approved&quot;: false,
+    &quot;generic_adapter_consumed_this_json&quot;: false,
+    &quot;note&quot;: &quot;Records the fixed parameters used by the executed FreeCAD script. Generic process-card ingestion is still to be developed.&quot;
+  }
+}</code></pre></details></article><article class="input-card"><div class="head"><h3>查看与下载</h3><span class="muted">↓</span></div><div class="download-list"><a class="download" href="../../../cases/s1/target.step" download><span>目标 CAD<small style="display:block">STEP · 原始设计</small></span><span aria-hidden="true">↓</span></a><a class="download" href="../../../cases/s1/process-card.json" download><span>测试工艺卡<small style="display:block">JSON · 固定参数记录</small></span><span aria-hidden="true">↓</span></a><a class="download" href="../../../cases/s1/reference.nc" download><span>FreeCAD 最终 NC<small style="display:block">G-code · 实际仿真输入</small></span><span aria-hidden="true">↓</span></a><a class="download" href="../../../cases/s1/simulated.stl.gz" download><span>仿真加工后形状<small style="display:block">STL.gz · 完整三角网格</small></span><span aria-hidden="true">↓</span></a><a class="download" href="../../../cases/s1/metrics.json" download><span>几何对比报告<small style="display:block">JSON · IoU / 方法 / 对照</small></span><span aria-hidden="true">↓</span></a><a class="download" href="../../../cases/s1/s1-inputs.zip" download><span>可下载的测试输入<small style="display:block">ZIP · CAD / NC / 配置 / 参数</small></span><span aria-hidden="true">↓</span></a></div><p class="input-note">加工结果保存为三角网格，不是重建的参数化 CAD。资源配置同时记录了尚未验证的刀柄、夹具和材料物理。</p><a class="link" href="../../../cases/s1/resources.json" download>查看资源配置 JSON ↗</a></article></div></section>
+    <section class="section pending"><h3>进入下一阶段前，还需补齐</h3><div class="pending-list"><span>固定工艺卡的自动解析与统一适配</span><span>孔径 / 孔位 / 贯穿的逐项公差验收</span><span>改错 NC 的整链反例与夹具检查</span></div></section>
+    <details><summary>计算环境、来源与可追溯信息</summary><div class="provenance"><p>FreeCAD 1.1.4 / CAMotics 1.2，使用本机已验证的工具。当前使用 FreeCAD 自带 linuxcnc_post 导出 NC；没有运行 LinuxCNC。最终 NC 与最终去料网格复用已保存结果，没有重算原最终加工。</p><dl><dt>目标 BREP SHA-256</dt><dd><code>56d8e9e29dc98dac54add8b310ad43cd900842c22ee7aa8e5b75ef6dfa15c71a</code></dd><dt>最终 NC SHA-256</dt><dd><code>c6871367e3135c9ed3d45ff9e04fb335fc499a5d688589ba5cbb7286e0000b36</code></dd><dt>实际 STL SHA-256</dt><dd><code>4680f7055a581fa4cce0d30895fb8fe409ae9e4834d4549a8a78cd93ddf296b7</code></dd></dl><p>本次几何对比：单核约 17 秒、峰值约 261 MiB；中间帧每帧约 1 秒、84 MiB。计算前检查容量，计算任务限定单核、2 GiB 和 60 秒。前序本机预检中，FreeCAD CAM 约 2.4 秒、297 MiB；最终 CAMotics 约 4.6 秒、512 MiB。</p><p><a class="link" href="../../../cases/s1/frames.json" download>中间状态与来源 ↓</a> · <a class="link" href="../../../cases/s1/simulation.camotics" download>可移植仿真配置 ↓</a></p></div></details>
+    <nav class="stage-nav" aria-label="阶段导航"><a href="../">← 返回开发路线</a><a href="../s2/">下一阶段：孔系与尺寸变化 →</a></nav></main>
+<footer class="footer wrap"><div>GenLaw · 系统设计与开发记录</div><div>更新于 2026.10.27 <span aria-hidden="true"> · </span><a href="../../../system/development/s1/">当前阶段 S1 ↗</a></div></footer></body></html>

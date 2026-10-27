@@ -1,0 +1,170 @@
+{
+  "schema": "genlaw.sectional-iou.v1",
+  "status": "measured_numerical_estimate",
+  "case_id": "s1",
+  "iou": 0.9997532870087849,
+  "iou_percent": 99.97532870087849,
+  "method": "STL cross-section polygons integrated over all vertex-height intervals with 3-point Gauss quadrature; independent analytic CAD section",
+  "units": "mm",
+  "registration": "none; same declared G54 / CAD frame",
+  "actual_mesh": {
+    "source_sha256": "4680f7055a581fa4cce0d30895fb8fe409ae9e4834d4549a8a78cd93ddf296b7",
+    "raw_triangles": 461320,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 461320,
+    "vertices": 230662,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 67.28647040785417,
+    "bounds": {
+      "min": [
+        -9.765625145519152e-05,
+        9.765625145519152e-05,
+        -1.500097632408142
+      ],
+      "max": [
+        8.000097274780273,
+        6.000097751617432,
+        -9.765625145519152e-05
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "source": "step2gcode_demo/out_predevelopment_s1/target.brep",
+    "sha256": "56d8e9e29dc98dac54add8b310ad43cd900842c22ee7aa8e5b75ef6dfa15c71a",
+    "valid_single_solid": true,
+    "volume_mm3": 67.2876110196153,
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "surfaces": [
+      {
+        "type": "Plane",
+        "area": 9.0
+      },
+      {
+        "type": "Plane",
+        "area": 12.0
+      },
+      {
+        "type": "Plane",
+        "area": 44.858407346410196
+      },
+      {
+        "type": "Plane",
+        "area": 12.0
+      },
+      {
+        "type": "Plane",
+        "area": 44.858407346410196
+      },
+      {
+        "type": "Plane",
+        "area": 9.0
+      },
+      {
+        "type": "Cylinder",
+        "area": 9.42477796076938,
+        "radius": 1.0,
+        "center": [
+          3.0,
+          2.0,
+          -1.5
+        ],
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ],
+    "reference_class": "axis_aligned_box_minus_one_z_through_cylinder",
+    "hole_center_xy": [
+      3.0,
+      2.0
+    ],
+    "hole_radius_mm": 1.0,
+    "display_triangles": 5044,
+    "display_tessellation_deflection_mm": 0.001,
+    "reference_for_iou": "Analytic box and cylinder verified against this immutable BREP; display mesh is not used for measurement."
+  },
+  "volumes": {
+    "actual_volume_mm3": 67.28647033675665,
+    "target_volume_mm3": 67.28761148164484,
+    "intersection_mm3": 67.27873959161295,
+    "union_mm3": 67.29534222678856,
+    "iou": 0.9997532870087849,
+    "quadrature_order": 3
+  },
+  "coarser_check": {
+    "actual_volume_mm3": 67.28647033634363,
+    "target_volume_mm3": 67.28761286773316,
+    "intersection_mm3": 67.27874078063779,
+    "union_mm3": 67.29534242343898,
+    "iou": 0.9997533017560601,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 2
+  },
+  "absolute_iou_refinement_difference": 1.474727528982811e-08,
+  "section_levels": 91,
+  "section_evaluations": 450,
+  "section_roundoff_quantization_mm": 1e-08,
+  "circle_polygon_segments": 8192,
+  "circle_max_sag_mm": 7.353428210787882e-08,
+  "excess_material_mm3": 0.007730745143703643,
+  "missing_material_mm3": 0.008871890031898033,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    },
+    {
+      "case": "same_volume_wrong_hole_reference",
+      "iou": 0.977788534123146,
+      "pass": true,
+      "scope": "comparison sensitivity only; original CAD retained unchanged"
+    }
+  ],
+  "seconds_inside_worker": 16.686484960999223,
+  "numerical_stability_is_not_certified_error_bound": true,
+  "full_tolerance_acceptance": false,
+  "roughness_or_material_physics_verified": false,
+  "original_cad_unchanged": true,
+  "scope": "S1 prismatic CAD reference only; not a generic multi-axis geometry validator",
+  "display_mesh": {
+    "representation": "exact indexed float32 vertices and original triangles",
+    "decimation": false
+  }
+}

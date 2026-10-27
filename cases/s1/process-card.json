@@ -1,0 +1,71 @@
+{
+  "schema": "genlaw.process-card.v0",
+  "card_id": "S1-TEST-v1",
+  "case_id": "s1",
+  "part_ref": {
+    "path": "target.step",
+    "revision": "s1-v1",
+    "sha256": "643a38d842d172b1866875c435e738e220f8155a57d23099c98e5d8aa195e4cb",
+    "units": "mm"
+  },
+  "resource_profile": "R-XYZ-01",
+  "setups": [
+    {
+      "id": "S1",
+      "work_offset": "G54",
+      "origin_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "stock_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          0
+        ]
+      }
+    }
+  ],
+  "operations": [
+    {
+      "id": "OP10",
+      "type": "drilling",
+      "setup_id": "S1",
+      "tool_id": "T1",
+      "feature_id": "F_HOLE_1",
+      "parameters": {
+        "hole_xy_mm": [
+          3,
+          2
+        ],
+        "diameter_mm": 2,
+        "through": true,
+        "final_tip_z_mm": -2.2008606190275604,
+        "feed_mm_min": 60,
+        "spindle_rpm": 1000,
+        "retract_plane_mm": 1,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "cycle": "G81",
+        "cycle_return": "G98"
+      }
+    }
+  ],
+  "review": {
+    "origin": "synthetic_test_fixture_parameter_record",
+    "production_approved": false,
+    "generic_adapter_consumed_this_json": false,
+    "note": "Records the fixed parameters used by the executed FreeCAD script. Generic process-card ingestion is still to be developed."
+  }
+}
