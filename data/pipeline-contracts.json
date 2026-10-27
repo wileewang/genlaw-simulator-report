@@ -2,6 +2,7 @@
   "schema": "genlaw.pipeline-design.v1",
   "design_only": true,
   "end_to_end_implemented": false,
+  "implementation_scope": "以下 FreeCAD 详细接口保留为早期参考设计；五轴联动 CAM 与仿真后端尚未选定，以 development-roadmap.json 的已确认路线为准。",
   "hierarchy": {
     "default_level": 1,
     "upstream": {"text": "零件 CAD + 已关联的制造要求", "module_refs": ["01"]},
@@ -23,10 +24,10 @@
         "input": "工艺卡 + CAD",
         "output": "G-code + 加工配置", "output_detail": "对应设备的指令，以及刀具、坐标等配置",
         "implementation": "程序调用 CAM 与设备后处理器",
-        "gap": "工艺卡到 CAM 的接入、设备后处理验证待完成。",
+        "gap": "五轴 CAM 后端待选型；工艺卡接入与设备后处理需验证。",
         "children": [
           {"name": "建立加工任务", "input": "工艺卡 + CAD", "output": "CAM Job（任务对象）", "implementation": "我们的程序把工艺卡转成 CAM 任务", "module_refs": ["04"]},
-          {"name": "计算刀路", "input": "CAM 任务", "output": "内部刀路", "implementation": "调用现成的 FreeCAD CAM", "module_refs": ["05"]},
+          {"name": "计算刀路", "input": "CAM 任务", "output": "内部刀路", "implementation": "调用 CAM 后端；五轴联动工具待选型", "module_refs": ["05"]},
           {"name": "生成设备代码", "input": "内部刀路 + 控制器配置", "output": "最终 G-code", "implementation": "设备后处理器转换指令格式", "module_refs": ["06"]}
         ]
       },
@@ -191,6 +192,7 @@
     "本文件定义拟定接口；不是已经实现的运行时 Schema。",
     "CAM Job 是 FreeCAD 的任务对象；内部刀路是计算结果；G-code 是经过后处理的最终控制器指令。",
     "CAM 任务转换、刀路计算和后处理是不同逻辑步骤；编排程序负责调用它们并传递返回值。",
-    "现成软件的支持范围需按版本、工序、指令、来料和设备分别验证。"
+    "现成软件的支持范围需按版本、工序、指令、来料和设备分别验证。",
+    "已确认先单孔、基础特征、3+2、五轴联动、复杂单件的路线；具体五轴机型与控制器仍是待核对的技术选择。"
   ]
 }

@@ -5,13 +5,13 @@
   <title>GenLaw · 分层看系统</title>
   <meta name="description" content="先看工艺规划、加工编程、仿真检验三个核心模块；点开其中一块，再看下一层的输入、输出与实现方式。">
   <meta property="og:title" content="GenLaw · 第一层：三个核心模块"><meta property="og:description" content="工艺规划产出工艺卡，加工编程产出 G-code，仿真检验产出几何报告。">
-  <meta property="og:type" content="website"><meta property="og:image" content="https://wileewang.github.io/genlaw-simulator-report/assets/manufacturing-pipeline.png?v=layers-1">
-  <link rel="canonical" href="https://wileewang.github.io/genlaw-simulator-report/pipeline.html"><link rel="icon" href="assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/pipeline.css?v=layers-1">
+  <meta property="og:type" content="website"><meta property="og:image" content="https://wileewang.github.io/genlaw-simulator-report/assets/manufacturing-pipeline.png?v=layers-2">
+  <link rel="canonical" href="https://wileewang.github.io/genlaw-simulator-report/pipeline.html"><link rel="icon" href="assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/pipeline.css?v=layers-2">
 </head>
 <body>
-  <header class="top wrap"><a class="brand" href="./"><img src="assets/mark.svg" width="28" height="28" alt="">GenLaw <span>/ 系统设计</span></a><a href="./" class="back">实际进展 ↗</a></header>
+  <header class="top wrap"><a class="brand" href="./"><img src="assets/mark.svg" width="28" height="28" alt="">GenLaw <span>/ 系统设计</span></a><a href="roadmap.html?v=roadmap-1" class="back">开发路线 ↗</a></header>
   <main class="wrap">
-    <section class="hero"><div class="hero-line"><p class="eyebrow">系统 / 第一层</p><span class="badge">设计方案 · 整链待接通</span></div><h1>先看三个核心模块。</h1><p>每块只看输入、输出和实现方式。点开其中一块，再看第二层。</p></section>
+    <section class="hero"><div class="hero-line"><p class="eyebrow">系统 / 第一层</p><span class="badge">设计方案 · 整链待接通</span></div><h1>先看三个核心模块。</h1><p>每块只看输入、输出和实现方式。点开其中一块，再看第二层。</p><p><a href="roadmap.html?v=roadmap-1">已确认开发路线：从单孔到五轴联动 ↗</a></p></section>
     <div class="upstream"><span>上游输入</span><strong>零件 CAD + 已关联的制造要求</strong><small>公差、粗糙度等已关联到具体孔、面等特征</small></div>
     <section class="stages" aria-label="第一层：三个核心模块"><article class="stage" id="planning" style="--accent:#7756a7" aria-labelledby="planning-title">
     <div class="stage-top"><span class="number">01</span><h2 id="planning-title">工艺规划</h2></div>
@@ -26,7 +26,7 @@
     <p class="purpose">把工艺变成设备指令</p>
     <dl class="contract"><div class="input"><dt>输入</dt><dd>工艺卡 + CAD</dd></div><div class="output"><dt>输出</dt><dd>G-code + 加工配置<small>对应设备的指令，以及刀具、坐标等配置</small></dd></div><div class="implementation"><dt>实现方式</dt><dd>程序调用 CAM 与设备后处理器</dd></div></dl>
     <details class="next-layer" name="stage-layer"><summary><span>展开第二层</span><span class="close-label">收起第二层</span><span class="summary-mark" aria-hidden="true">＋</span></summary>
-      <div class="children"><p class="layer-label">第二层 / 加工编程</p><ol><li><h3>建立加工任务</h3><p class="child-flow"><span>工艺卡 + CAD</span><span class="arrow" aria-hidden="true">↓</span><strong>CAM Job（任务对象）</strong></p><p class="child-implementation">我们的程序把工艺卡转成 CAM 任务</p></li><li><h3>计算刀路</h3><p class="child-flow"><span>CAM 任务</span><span class="arrow" aria-hidden="true">↓</span><strong>内部刀路</strong></p><p class="child-implementation">调用现成的 FreeCAD CAM</p></li><li><h3>生成设备代码</h3><p class="child-flow"><span>内部刀路 + 控制器配置</span><span class="arrow" aria-hidden="true">↓</span><strong>最终 G-code</strong></p><p class="child-implementation">设备后处理器转换指令格式</p></li></ol><p class="gap"><b>当前待做</b>工艺卡到 CAM 的接入、设备后处理验证待完成。</p></div>
+      <div class="children"><p class="layer-label">第二层 / 加工编程</p><ol><li><h3>建立加工任务</h3><p class="child-flow"><span>工艺卡 + CAD</span><span class="arrow" aria-hidden="true">↓</span><strong>CAM Job（任务对象）</strong></p><p class="child-implementation">我们的程序把工艺卡转成 CAM 任务</p></li><li><h3>计算刀路</h3><p class="child-flow"><span>CAM 任务</span><span class="arrow" aria-hidden="true">↓</span><strong>内部刀路</strong></p><p class="child-implementation">调用 CAM 后端；五轴联动工具待选型</p></li><li><h3>生成设备代码</h3><p class="child-flow"><span>内部刀路 + 控制器配置</span><span class="arrow" aria-hidden="true">↓</span><strong>最终 G-code</strong></p><p class="child-implementation">设备后处理器转换指令格式</p></li></ol><p class="gap"><b>当前待做</b>五轴 CAM 后端待选型；工艺卡接入与设备后处理需验证。</p></div>
     </details>
   </article>
 <article class="stage" id="verification" style="--accent:#087d79" aria-labelledby="verification-title">
@@ -39,7 +39,7 @@
   </article></section>
     <aside class="shared"><strong>共同资料</strong><p>原料、设备、刀具、夹具资料；原始 CAD 与制造要求贯穿全程。</p></aside>
     <p class="feedback"><span aria-hidden="true">↶</span> 检验失败：把原因返回工艺规划，调整后重新生成代码并检验。</p>
-    <details class="downloads"><summary>下载这一层的示意图</summary><div><a href="assets/manufacturing-pipeline.svg?v=layers-1" target="_blank" rel="noopener">打开示意图 ↗</a><a href="assets/manufacturing-pipeline.svg?v=layers-1" download="GenLaw-第一层.svg">SVG</a><a href="assets/manufacturing-pipeline.png?v=layers-1" download="GenLaw-第一层.png">PNG</a><a href="data/pipeline-contracts.json?v=layers-1" download="GenLaw-分层接口设计.json">完整接口定义</a></div></details>
+    <details class="downloads"><summary>下载这一层的示意图</summary><div><a href="assets/manufacturing-pipeline.svg?v=layers-2" target="_blank" rel="noopener">打开示意图 ↗</a><a href="assets/manufacturing-pipeline.svg?v=layers-2" download="GenLaw-第一层.svg">SVG</a><a href="assets/manufacturing-pipeline.png?v=layers-2" download="GenLaw-第一层.png">PNG</a><a href="data/pipeline-contracts.json?v=layers-2" download="GenLaw-分层接口设计.json">完整接口定义</a></div></details>
     <p class="scope-note">本轮检验范围是几何；粗糙度可以作为工艺输入，尚不由几何仿真判定。</p>
   </main>
   <footer class="wrap footer"><span>GenLaw · 逐层展开系统</span><span>Agent：模型做决策；程序：代码执行明确规则。</span></footer>

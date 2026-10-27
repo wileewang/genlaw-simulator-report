@@ -1,0 +1,72 @@
+{
+  "schema": "genlaw.development-roadmap.v1",
+  "updated_at": "2026-10-27",
+  "route_status": "accepted_by_user",
+  "current_stage": "01",
+  "current_activity": "first_step_analysis",
+  "design_only": true,
+  "five_axis_supported": false,
+  "principle": "固定条件，每次增加一个难度维度；每个阶段都交付可追溯的完整验证结果。",
+  "scope": [
+    {"label": "零件", "value": "单件、单个实体"},
+    {"label": "设备", "value": "一台参考五轴机床、一个控制器"},
+    {"label": "原料", "value": "长方体块料、一种材料牌号"},
+    {"label": "工装", "value": "一次装夹、少量固定刀具"},
+    {"label": "验收", "value": "几何与已建模的碰撞"}
+  ],
+  "stages": [
+    {"id": "01", "name": "单孔完整流程", "short": "旋转轴固定，先加工一个孔", "status": "当前分析", "work": "人工确认工艺卡，生成最终 NC，从明确毛坯仿真并对照原始 CAD，展示保存的结果。", "gate": "正常案例通过；错误孔、未钻通、超行程和已建模碰撞能被识别；NC、材料、验收与回放相互对应。"},
+    {"id": "02", "name": "基础特征", "short": "孔 → 槽 → 台阶 → 型腔", "status": "待推进", "work": "保持设备、材料和装夹方案，逐项增加特征，再验证组合特征。", "gate": "每个新特征都有正常与错误案例；前序工序的真实剩余材料连续传递。"},
+    {"id": "03", "name": "3+2 多方向", "short": "先转到指定角度，再固定加工", "status": "待推进", "work": "由 NC 驱动旋转定位，核对坐标转换、旋转过程与各方向的加工结果。", "gate": "旋转后的刀具 / 工件位置正确，定位路径与切削分别检查；仍不称为五轴联动。"},
+    {"id": "04", "name": "五轴联动", "short": "切削中连续改变刀具方向", "status": "待推进", "work": "从小试件、短路径开始，验证刀轴持续变化时的运动、去料和干涉。", "gate": "完整路径和姿态有独立对照，去料误差可界定，错误姿态与干涉案例能够拒绝。"},
+    {"id": "05", "name": "复杂单件", "short": "多次装夹、曲面、公差逐项增加", "status": "待推进", "work": "分别增加多次装夹、更复杂的曲面和更严格的要求，再组合成完整单件。", "gate": "整件工序、材料、误差与未验证要求都有明确记录，不能用局部通过替代整件验收。"}
+  ],
+  "expansion": [
+    {"name": "更多毛坯", "text": "块料 → 已加工来料 → 更复杂的初始形状。"},
+    {"name": "更多设备", "text": "同类设备换参数 → 不同控制器 → 不同五轴结构。"},
+    {"name": "更多材料", "text": "逐种补充切削参数与适用依据；材料物理单独验证。"},
+    {"name": "组装件", "text": "先验证组成单件，再增加配合、装配干涉与公差累积检查。"}
+  ],
+  "common_gates": [
+    "正常样例能通过，故意加入的错误能被发现。",
+    "结果追溯到最终 NC、实际来料、刀具 / 装夹 / 设备配置和原始 CAD。",
+    "给出计算精度与支持范围；精度不足或指令不支持时显式报告。",
+    "每级先用小试件，再选匹配能力的真实单件；现有 71 份图纸作为验收案例库。"
+  ],
+  "first_step": {
+    "title": "把已有单孔案例整理成首个验收任务",
+    "status": "方案分析；新路线尚未执行",
+    "sample_status": "沿用历史合成案例的几何规格，不计入客户覆盖",
+    "stock_mm": [30, 20, 5],
+    "hole_diameter_mm": 4,
+    "hole_center_xy_mm": [15, 10],
+    "through_hole": true,
+    "material": "6061-T6（沿用开发案例标签；切削参数未作物理确认）",
+    "baseline": {"title": "已保存的单孔参考案例", "url": "examples/single-hole.html", "scope": "固定刀轴 XYZ、项目自定义参考指令子集；不能转记为五轴或 LinuxCNC 已通过"},
+    "proposed_device": "建议以 XYZ + A/C 转台式五轴作为首个参考结构；第一阶段 A/C 保持固定。",
+    "proposed_controller": "LinuxCNC 参考语义作为候选，需先核对 NC 解释接口与运行方式；尚未接入。",
+    "technical_choices_status": "proposed_not_user_selected",
+    "actions": [
+      {"name": "固定输入和正确答案", "text": "引用原毛坯、独立目标、刀具和夹具；工艺卡人工确认。明确孔径、孔位、贯穿及外形保持的验收规则。"},
+      {"name": "核对设备与程序接口", "text": "定义五轴结构、零点和刀长；确定最终 NC 的解释方式，让旋转轴固定时与已有 XYZ 基线对得上。"},
+      {"name": "列出通过与拒绝案例", "text": "正常孔，以及错孔、未钻通、超行程、夹具干涉等反例，分别定义预期结果和需要保存的证据。"}
+    ],
+    "deliverables": ["首个验收任务定义", "机床 / 控制器接口清单", "正常与错误案例清单"],
+    "gaps": ["五轴参考配置及所选控制器尚未接入", "旧案例的采样比较需要补充逐项几何判据与误差说明", "独立执行对照及新结果回放需要衔接"],
+    "next_implementation": "先实现机床配置与 NC 运动解释的最小接口，用零旋转姿态与已有 XYZ 基线对照；之后才启动新材料去料验证。",
+    "geometry_acceptance": "拟以 0.05 mm 作为开发样例几何比较尺度；逐项尺寸 / 孔位规则与计算误差仍须明确。旧采样通过不等于完整连续边界误差已证明。"
+  },
+  "notes": [
+    "阶段 01–03 是五轴联动的前置里程碑，阶段 04 在声明范围内验收后才可声称对应联动支持。",
+    "先用人工确认的工艺卡打通加工编程与仿真检验，再接入工艺 Agent。",
+    "毛坯形状影响去料几何；材料牌号、切削力、变形和粗糙度等另有验证要求。",
+    "CAMotics 不支持五轴；FreeCAD 的现有方案不能直接承诺五轴联动闭环。CAM 与去料后端需按阶段选型并验证。",
+    "本机开发保持小试件、短程序和受限资源；增加模型规模前先验证功能与误差。"
+  ],
+  "sources": [
+    {"name": "LinuxCNC 五轴运动学与参考机型", "url": "https://linuxcnc.org/docs/stable/html/motion/5-axis-kinematics.html"},
+    {"name": "FreeCAD 多轴路线说明", "url": "https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/CAM_Development_Roadmap.md"},
+    {"name": "FreeCAD 多轴仿真问题", "url": "https://github.com/FreeCAD/FreeCAD/issues/29758"},
+    {"name": "CAMotics 支持范围", "url": "https://camotics.org/"}
+  ]
+}
