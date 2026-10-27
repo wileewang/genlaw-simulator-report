@@ -1,0 +1,202 @@
+{
+  "schema": "genlaw.extension-design.v0",
+  "status": "design_defined_runtime_not_implemented",
+  "principle": "零件集合影响能力开发优先级；统一接口、原始数据与验收约定持续复用。",
+  "scope": "模块2加工编程、模块3仿真检验内部的扩展设计；不增加一级系统模块。",
+  "layers": [
+    {
+      "name": "统一数据与流程",
+      "text": "CAD、制造要求、工艺卡、资源配置和结果约定持续复用；格式变更带版本与迁移。"
+    },
+    {
+      "name": "可替换的工艺与工具",
+      "text": "编程、设备后处理、去料/成形、几何检验各有适配接口。FreeCAD 与 CAMotics 是首批实现。"
+    },
+    {
+      "name": "可核对的支持范围",
+      "text": "分别记录每一步支持的工序、坐标/指令、材料表示与精度；执行前检查整条链是否具备能力。"
+    }
+  ],
+  "change_cases": [
+    {
+      "change": "新尺寸、孔位或数量",
+      "extension": "使用已有能力，换 CAD 与工艺卡参数",
+      "acceptance": "在已验证范围内运行；超尺寸、精度或资源预算明确返回缺项。"
+    },
+    {
+      "change": "新的特征组合",
+      "extension": "复用工序，增加编排与实际剩料交接",
+      "acceptance": "验证顺序、换刀、坐标与工序间材料连续性。"
+    },
+    {
+      "change": "新机床或控制器",
+      "extension": "同类机床换配置；新轴链或 NC 方言增加适配器",
+      "acceptance": "后处理与 NC 解释分别验证，不能仅换机床名称。"
+    },
+    {
+      "change": "新工艺，例如车削",
+      "extension": "增加编程、仿真后端及所需检验项",
+      "acceptance": "沿用公共接口和结果页；新算法仍须开发与独立验证。"
+    }
+  ],
+  "contracts": [
+    {
+      "name": "GeometryPacket",
+      "fields": [
+        "cad_ref: 原文件、版本、哈希、单位、坐标",
+        "features / requirements: 稳定关联、原始标注与不确定项"
+      ],
+      "rule": "引擎内部面编号不直接充当长期特征ID；转换后的网格不替换原始验收CAD。"
+    },
+    {
+      "name": "OperationPlan",
+      "fields": [
+        "operation.type + version: 工艺类型与版本",
+        "parameters: 类型对应的参数、工序依赖、目标特征",
+        "resources: 来料、刀具、刀柄、装夹、设备与控制器引用"
+      ],
+      "rule": "工序类型可扩展，禁止按零件文件名或71份清单编号选择实现。外购、预成形与加工明确分流。"
+    },
+    {
+      "name": "ProgramArtifact",
+      "fields": [
+        "program_ref: 类型、方言、单位、文件哈希",
+        "resolved_config: 实际设备、坐标和刀长约定",
+        "provenance: 工艺卡、CAD、适配器、引擎与后处理版本"
+      ],
+      "rule": "当前NC主线保留最终NC；非NC工艺将来使用明确的其他程序类型。FreeCAD Job 属于适配器内部产物。"
+    },
+    {
+      "name": "MaterialState",
+      "fields": [
+        "geometry_ref: 实体/网格等表示与版本",
+        "frame / units / precision: 坐标、单位与表示误差",
+        "material_ref / parent_state / operation_ref: 材料、前一状态和来源工序"
+      ],
+      "rule": "不同后端交换实际材料状态；格式转换声明误差和可支持范围，禁止从目标CAD重造中间材料。"
+    },
+    {
+      "name": "VerificationResult",
+      "fields": [
+        "geometry_metrics: IoU、过切/欠切等指标与适用方法",
+        "requirement_results: 逐项通过、失败、未验证或不可判定",
+        "evidence_refs: 程序、材料、资源、比较器和回放来源"
+      ],
+      "rule": "检验接口与引擎分离；局部精度不足时不能仅凭整体IoU判通过。"
+    }
+  ],
+  "adapter_roles": [
+    [
+      "CAM adapter",
+      "工序、CAD、资源 → 刀路/工艺程序；FreeCAD Job 不向上游泄漏"
+    ],
+    [
+      "Machine / post adapter",
+      "刀路与资源 → 目标方言的最终NC；设备参数与后处理分开记录"
+    ],
+    [
+      "Simulation adapter",
+      "最终程序与配置、实际来料 → 实际加工状态；保留控制器语义和材料来源"
+    ],
+    [
+      "Verification adapter",
+      "原始CAD/要求 + 实际结果 → 适用指标和逐项判定"
+    ]
+  ],
+  "capability_manifest": {
+    "fields": [
+      "provider_id / version / role",
+      "operation_types_and_versions",
+      "controller_semantics_and_axis_chain",
+      "input_output_geometry_formats",
+      "stock_and_tool_geometry_types",
+      "qualified_parameter_and_precision_ranges",
+      "execution_resource_limits",
+      "qualification_status / evidence_refs"
+    ],
+    "qualification_statuses": [
+      "declared",
+      "prototype",
+      "qualified_in_explicit_scope"
+    ],
+    "policy": "只有编程、后处理、仿真和所需检验都在已验证范围内，才能声明该任务受支持；单步有能力不等于整链受支持。",
+    "failure_states": [
+      "unsupported_capability",
+      "missing_information",
+      "out_of_qualified_range",
+      "resource_limit",
+      "indeterminate_verification"
+    ],
+    "failure_payload": [
+      "stage",
+      "missing_capability_or_field",
+      "affected_operation_or_requirement",
+      "required_extension_or_input"
+    ]
+  },
+  "intake_flow": [
+    "提取所需能力",
+    "匹配整链支持范围",
+    "复用配置或新增适配",
+    "运行新旧验收用例"
+  ],
+  "compatibility": [
+    "接口版本化，新增类型明确声明；旧卡片通过有记录的迁移保持可追溯。",
+    "工艺特有参数使用有类型的扩展区，核心不假定只有铣削、Z向刀轴、矩形毛坯或单一网格。",
+    "几何变换、单位、刀长与坐标由配置明确传递，不能依赖工具隐含默认值。",
+    "统一输入输出不意味着统一所有物理模型；新增成形或材料物理允许独立求解器。"
+  ],
+  "shared_acceptance": [
+    "新尺寸/孔位等变体由数据驱动，主流程没有零件编号分支。",
+    "新组合保持实际剩料连续，单位、坐标与要求绑定一致。",
+    "不支持的工艺、设备语义或精度在执行前报告；检验不足时返回不可判定。",
+    "新增能力通过小型独立正常/错误案例，同时保留旧能力的回归结果。"
+  ],
+  "proof_milestones": [
+    {
+      "when": "S1 首个适配",
+      "proof": "固定测试卡经统一入口调用现有FreeCAD/CAMotics；换孔位等参数不改主流程；能力缺项可定位。",
+      "status": "待实现"
+    },
+    {
+      "when": "S2–S4 特征与组合",
+      "proof": "补参数变体、独立保留用例、组合顺序与材料交接；检查已有案例回归。",
+      "status": "待实现"
+    },
+    {
+      "when": "首次新增工艺 / 替换后端",
+      "proof": "第二个真实适配器沿同一接口交付实际结果；接口桩只能验证协议，不能计作工艺支持。",
+      "status": "待实现"
+    },
+    {
+      "when": "新控制器 / 轴链",
+      "proof": "分别验证生成和解释语义、坐标与运动；不能把同一个错误的生成和仿真相互印证。",
+      "status": "待实现"
+    }
+  ],
+  "roadmap_policy": {
+    "stable_foundation": "从S1开始贯穿各阶段，不等到S7再考虑接口扩展。",
+    "current_mainline": "S1–S7 是当前铣钻主线的推进顺序；新增工艺可以按依赖从相应阶段分出。",
+    "prioritization": "通用性、覆盖收益、风险与成本共同决定先做哪项；71份资料是验证样本之一。",
+    "sampling": "小型单特征 → 参数变体/错误案例 → 特征组合 → 独立真实样本；按能力选样，逐项控制资源预算。",
+    "branch_examples": [
+      {
+        "name": "板材 / 型材下料",
+        "depends": "复用工艺卡、资源、状态与检验接口，补毛坯和切割工艺。",
+        "status": "待开发"
+      },
+      {
+        "name": "车削 / 螺纹",
+        "depends": "复用流程与结果，新增编程和去料能力，以及对应特征验收。",
+        "status": "待开发"
+      },
+      {
+        "name": "齿形 / 成形 / 其他工艺",
+        "depends": "按需求接入专用算法或引擎，并保留各自支持边界。",
+        "status": "待评估"
+      }
+    ]
+  },
+  "limits": "目标是将修改集中在适配器、配置和必要的版本演进，并用测试证明兼容；不承诺任何新零件都无需算法开发或永远无需调整公共接口。",
+  "current_implementation": "现有S1为固定参数脚本与已保存实测结果。通用工艺卡解析、能力注册/匹配、插件运行框架及扩展验收尚未实现；本文件是设计约束。"
+}

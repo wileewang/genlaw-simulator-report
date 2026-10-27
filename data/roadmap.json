@@ -37,13 +37,14 @@
         "计算体积 IoU，回放真实去料状态"
       ],
       "remaining": [
-        "固定工艺卡的自动解析与统一适配",
+        "工艺卡统一入口、能力检查与工具适配器",
         "孔径 / 孔位 / 贯穿的逐项公差验收",
         "改错 NC 的整链反例与夹具检查"
       ],
       "changes": "先固定材料、设备和装夹，只验证一个通孔。",
       "shape": "single-hole",
-      "gate": "工艺卡与 CAD 能驱动整链；正常与错误案例均有结果，几何误差判据明确。"
+      "gate": "工艺卡与 CAD 能驱动整链；正常与错误案例均有结果，几何误差判据明确。 参数变体通过数据驱动，缺失能力在执行前定位；满足公共扩展验收。",
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
     },
     {
       "id": "s2",
@@ -69,7 +70,8 @@
       ],
       "changes": "先增加孔数量；放大尺寸作为独立变体，不同时增加资源复杂度。",
       "shape": "two-holes",
-      "gate": "多孔位置与深度均正确，错误工序可追踪到具体孔；放大用例必须先通过资源准入。"
+      "gate": "多孔位置与深度均正确，错误工序可追踪到具体孔；放大用例必须先通过资源准入。",
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
     },
     {
       "id": "s3",
@@ -95,7 +97,8 @@
       ],
       "changes": "增加特征类型和刀具形状，保持设备与材料不变。",
       "shape": "slot",
-      "gate": "每种特征都有正常与错误案例，独立 CAD / 几何误差与材料结果对应。"
+      "gate": "每种特征都有正常与错误案例，独立 CAD / 几何误差与材料结果对应。",
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
     },
     {
       "id": "s4",
@@ -121,7 +124,8 @@
       ],
       "changes": "增加工序与刀具资源；零件仍保持简单。",
       "shape": "pocket-hole",
-      "gate": "工序顺序、材料连续性与偏置语义正确；改变一个配置能产生可解释的验收差异。"
+      "gate": "工序顺序、材料连续性与偏置语义正确；改变一个配置能产生可解释的验收差异。",
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
     },
     {
       "id": "s5",
@@ -147,7 +151,8 @@
       ],
       "changes": "增加加工方向与设备运动能力，几何保持简单。",
       "shape": "multi-face",
-      "gate": "定位和加工分别有独立对照，多方向工序间材料连续，不能只看旋转动画。"
+      "gate": "定位和加工分别有独立对照，多方向工序间材料连续，不能只看旋转动画。",
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
     },
     {
       "id": "s6",
@@ -173,7 +178,8 @@
       ],
       "changes": "新增五轴软件能力；不以旋转轴动画代替去料验证。",
       "shape": "surface",
-      "gate": "姿态、运动、去料和已建模干涉均可独立检查，误差和支持范围明确。"
+      "gate": "姿态、运动、去料和已建模干涉均可独立检查，误差和支持范围明确。",
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
     },
     {
       "id": "s7",
@@ -199,9 +205,13 @@
       ],
       "changes": "每次只增加一种设备、材料或零件复杂度，避免同时更换全部条件。",
       "shape": "real-part",
-      "gate": "每一项支持声明都有对应零件、资源配置和结果；几何通过不能推断材料切削性能。"
+      "gate": "每一项支持声明都有对应零件、资源配置和结果；几何通过不能推断材料切削性能。",
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
     }
   ],
-  "progression_rule": "先固定资源、增加基础特征；再增加刀具 / 装夹与轴数；最后扩展材料和真实设备。",
-  "old_report_retired": true
+  "progression_rule": "先从S1建立最小公共接口与能力检查，再在铣钻主线逐项增加特征；按需求加入下料、车削等分支，扩展时保留旧能力验收。",
+  "old_report_retired": true,
+  "extension_design_ref": "extension-design.json",
+  "extension_acceptance_required_for_each_stage": true,
+  "route_kind": "current_milling_drilling_mainline_with_extensible_process_branches"
 }
