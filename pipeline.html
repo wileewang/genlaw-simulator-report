@@ -2,114 +2,46 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#193d46">
-  <title>GenLaw · 模块输入、实现与输出</title>
-  <meta name="description" content="逐个定义制造系统模块的输入、内部实现和输出，明确模型 / Agent、我们写的程序与现成软件的分工。">
-  <meta property="og:title" content="GenLaw · 每个模块输入什么、怎么实现、输出什么">
-  <meta property="og:description" content="工艺卡 → CAM Job → 内部刀路 → G-code → 仿真 → 几何验收，逐步定义接口。">
-  <meta property="og:type" content="website"><meta property="og:image" content="https://wileewang.github.io/genlaw-simulator-report/assets/manufacturing-pipeline.png?v=contracts-1">
-  <link rel="canonical" href="https://wileewang.github.io/genlaw-simulator-report/pipeline.html"><link rel="icon" href="assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/pipeline.css?v=contracts-1">
+  <title>GenLaw · 分层看系统</title>
+  <meta name="description" content="先看工艺规划、加工编程、仿真检验三个核心模块；点开其中一块，再看下一层的输入、输出与实现方式。">
+  <meta property="og:title" content="GenLaw · 第一层：三个核心模块"><meta property="og:description" content="工艺规划产出工艺卡，加工编程产出 G-code，仿真检验产出几何报告。">
+  <meta property="og:type" content="website"><meta property="og:image" content="https://wileewang.github.io/genlaw-simulator-report/assets/manufacturing-pipeline.png?v=layers-1">
+  <link rel="canonical" href="https://wileewang.github.io/genlaw-simulator-report/pipeline.html"><link rel="icon" href="assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/pipeline.css?v=layers-1">
 </head>
 <body>
-  <header class="top wrap"><a class="brand" href="./"><img src="assets/mark.svg" width="28" height="28" alt="">GenLaw <span>/ 系统定义</span></a><a href="./" class="back">实际进展 ↗</a></header>
+  <header class="top wrap"><a class="brand" href="./"><img src="assets/mark.svg" width="28" height="28" alt="">GenLaw <span>/ 系统设计</span></a><a href="./" class="back">实际进展 ↗</a></header>
   <main class="wrap">
-    <section class="hero"><p class="eyebrow">MODULE CONTRACTS</p><h1>输入什么，怎么实现，输出什么。</h1><p>每一行定义一个模块。顺着 01 → 10 阅读，就是整条链。</p><span class="badge">接口设计稿 · 尚未整链贯通</span></section>
-    <div class="types" aria-label="三类实现方式"><div class="agent"><strong>模型 / Agent</strong><span>调用模型作解释和工艺决策</span></div><div class="program"><strong>我们写的程序</strong><span>用代码做校验、转换、调用与比较</span></div><div class="software"><strong>现成软件</strong><span>复用 FreeCAD、仿真引擎的算法</span></div></div>
-    <nav class="flow" aria-label="跳到对应阶段"><a href="#m01">01 定义输入</a><span>→</span><a href="#m02">02–03 工艺规划</a><span>→</span><a href="#m04">04–06 生成代码</a><span>→</span><a href="#m07">07–09 仿真验收</a><span>→</span><a href="#m10">10 展示结果</a></nav>
-    <aside class="cam-key"><strong>先分清三个东西</strong><span><b>CAM Job</b>：加工任务对象</span><i>→</i><span><b>内部刀路</b>：计算出的运动</span><i>→</i><span><b>G-code</b>：后处理后的控制器指令</span></aside>
-    <section class="modules" aria-label="十个主步骤的输入输出"><article class="module agent" id="m01" aria-labelledby="name01">
-    <div class="module-name"><span class="number">01</span><h3 id="name01">几何与要求绑定</h3><span class="status">待上游补齐</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>D0：CadQuery / CAD + 制造要求</strong><p>孔、面、基准及公差 / 粗糙度标注</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">上游模型 + 校验程序</span><strong>模型判断每条要求对应哪个特征</strong><p>程序校验引用、模型版本和单位</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>D1：零件输入包</strong><p>CAD + 特征 ID + 已绑定的要求</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>模型引用与版本、单位、坐标</li><li>features：特征 ID 与几何引用</li><li>requirements：要求 ID、特征 ID、公差、基准、粗糙度</li></ul></div><div><h4>失败时</h4><p>无法唯一关联的标注返回待确认，不能编造绑定。</p><h4>需要开发</h4><p>增加稳定特征引用、绑定输出及独立校验。</p></div></div></details>
+    <section class="hero"><div class="hero-line"><p class="eyebrow">系统 / 第一层</p><span class="badge">设计方案 · 整链待接通</span></div><h1>先看三个核心模块。</h1><p>每块只看输入、输出和实现方式。点开其中一块，再看第二层。</p></section>
+    <div class="upstream"><span>上游输入</span><strong>零件 CAD + 已关联的制造要求</strong><small>公差、粗糙度等已关联到具体孔、面等特征</small></div>
+    <section class="stages" aria-label="第一层：三个核心模块"><article class="stage" id="planning" style="--accent:#7756a7" aria-labelledby="planning-title">
+    <div class="stage-top"><span class="number">01</span><h2 id="planning-title">工艺规划</h2></div>
+    <p class="purpose">决定怎么加工</p>
+    <dl class="contract"><div class="input"><dt>输入</dt><dd>CAD + 制造要求 + 可用资源</dd></div><div class="output"><dt>输出</dt><dd>工艺卡<small>毛坯、工序、装夹、刀具与参数</small></dd></div><div class="implementation"><dt>实现方式</dt><dd>Agent 做决策，程序校验</dd></div></dl>
+    <details class="next-layer" name="stage-layer"><summary><span>展开第二层</span><span class="close-label">收起第二层</span><span class="summary-mark" aria-hidden="true">＋</span></summary>
+      <div class="children"><p class="layer-label">第二层 / 工艺规划</p><ol><li><h3>制定工艺</h3><p class="child-flow"><span>零件与要求 + 资源</span><span class="arrow" aria-hidden="true">↓</span><strong>候选工艺卡</strong></p><p class="child-implementation">Agent 选择工序、资源和参数</p></li><li><h3>校验工艺</h3><p class="child-flow"><span>候选工艺卡</span><span class="arrow" aria-hidden="true">↓</span><strong>已校验工艺卡 / 错误</strong></p><p class="child-implementation">程序检查字段、参数和设备能力</p></li></ol><p class="gap"><b>当前待做</b>工艺 Agent 与统一工艺卡待开发。</p></div>
+    </details>
   </article>
-<article class="module agent" id="m02" aria-labelledby="name02">
-    <div class="module-name"><span class="number">02</span><h3 id="name02">工艺规划 Agent</h3><span class="status">待开发</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>D1：零件输入包 + R：资源档案</strong><p>可用原料、设备、刀具和夹具</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">模型 / Agent</span><strong>选择毛坯、装夹、工序顺序</strong><p>选择刀具、余量、进给和转速</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>D2：工艺卡 JSON</strong><p>有序工序及各工序的资源和参数</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>plan_id / version、源模型版本</li><li>毛坯、设备、装夹及工件坐标</li><li>operations：工序、特征 ID、刀具 ID、参数、要求 ID</li></ul></div><div><h4>失败时</h4><p>资源或工艺信息不足时输出缺项；此阶段结果尚未通过程序校验。</p><h4>需要开发</h4><p>开发工艺 Agent、工艺卡规范及资源查询工具。</p></div></div></details>
+<article class="stage" id="programming" style="--accent:#3977aa" aria-labelledby="programming-title">
+    <div class="stage-top"><span class="number">02</span><h2 id="programming-title">加工编程</h2></div>
+    <p class="purpose">把工艺变成设备指令</p>
+    <dl class="contract"><div class="input"><dt>输入</dt><dd>工艺卡 + CAD</dd></div><div class="output"><dt>输出</dt><dd>G-code + 加工配置<small>对应设备的指令，以及刀具、坐标等配置</small></dd></div><div class="implementation"><dt>实现方式</dt><dd>程序调用 CAM 与设备后处理器</dd></div></dl>
+    <details class="next-layer" name="stage-layer"><summary><span>展开第二层</span><span class="close-label">收起第二层</span><span class="summary-mark" aria-hidden="true">＋</span></summary>
+      <div class="children"><p class="layer-label">第二层 / 加工编程</p><ol><li><h3>建立加工任务</h3><p class="child-flow"><span>工艺卡 + CAD</span><span class="arrow" aria-hidden="true">↓</span><strong>CAM Job（任务对象）</strong></p><p class="child-implementation">我们的程序把工艺卡转成 CAM 任务</p></li><li><h3>计算刀路</h3><p class="child-flow"><span>CAM 任务</span><span class="arrow" aria-hidden="true">↓</span><strong>内部刀路</strong></p><p class="child-implementation">调用现成的 FreeCAD CAM</p></li><li><h3>生成设备代码</h3><p class="child-flow"><span>内部刀路 + 控制器配置</span><span class="arrow" aria-hidden="true">↓</span><strong>最终 G-code</strong></p><p class="child-implementation">设备后处理器转换指令格式</p></li></ol><p class="gap"><b>当前待做</b>工艺卡到 CAM 的接入、设备后处理验证待完成。</p></div>
+    </details>
   </article>
-<article class="module program" id="m03" aria-labelledby="name03">
-    <div class="module-name"><span class="number">03</span><h3 id="name03">工艺卡校验</h3><span class="status">有局部规则，需统一</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>D2：工艺卡 + D1：原始要求</strong><p>R：设备、刀具、夹具及能力约束</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">我们写的规则程序</span><strong>检查字段、引用、单位与参数范围</strong><p>检查选定设备是否支持这些工序</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>D3：已校验工艺卡</strong><p>或：错误清单 → 工艺 Agent</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>冻结的工艺卡及其版本</li><li>校验所用资源版本、检查结果</li><li>errors：工序 ID、字段、错误代码、原因</li></ul></div><div><h4>失败时</h4><p>校验失败时不进入 CAM；字段和能力检查通过不等于制造已经合格。</p><h4>需要开发</h4><p>统一 Schema、引用、参数与能力校验，形成可回传错误。</p></div></div></details>
-  </article>
-<article class="module program" id="m04" aria-labelledby="name04">
-    <div class="module-name"><span class="number">04</span><h3 id="name04">CAM 任务转换</h3><span class="status">待开发 / 接入</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>D3：已校验工艺卡 + 原始 CAD</strong><p>R：刀具、设备及装夹参数</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">我们写的 Python 程序</span><strong>把工序映射成 FreeCAD 操作对象</strong><p>创建 Job、工具与坐标设置</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>D4：FreeCAD CAM Job</strong><p>模型、毛坯、工具、操作的任务对象</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>模型 / 毛坯引用、装夹坐标</li><li>工具控制器、切削参数、操作顺序</li><li>特征引用与操作参数</li></ul></div><div><h4>失败时</h4><p>未支持的工序或失效的几何引用必须拒绝。</p><h4>需要开发</h4><p>实现工艺卡到 FreeCAD Job 的映射与版本适配；转换程序本身不计算刀路。</p></div></div></details>
-  </article>
-<article class="module software" id="m05" aria-labelledby="name05">
-    <div class="module-name"><span class="number">05</span><h3 id="name05">刀路计算</h3><span class="status">软件现成，待集成</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>D4：CAM Job</strong><p>已选定的模型、刀具、工序和参数</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">现成软件：FreeCAD CAM</span><strong>调用 FreeCAD 的加工算法</strong><p>计算切削路径及进退刀等移动</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>D5：FreeCAD 内部刀路</strong><p>移动、进给、转速等内部命令</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>各操作的 Path 命令</li><li>移动路径、进给、转速及工具等信息</li></ul></div><div><h4>失败时</h4><p>刀路生成失败时保留日志并终止该次生成。</p><h4>需要开发</h4><p>接入并验证所选版本和工序的自动调用，不重写其刀路算法。</p><a class="source" href="https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/CAM_Job.md">工具官方说明 ↗</a></div></div></details>
-  </article>
-<article class="module software" id="m06" aria-labelledby="name06">
-    <div class="module-name"><span class="number">06</span><h3 id="name06">设备后处理</h3><span class="status">需按控制器验证</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>D5：内部刀路 + 目标控制器配置</strong><p>单位、工件坐标、刀补与换刀约定</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">现成后处理程序 + 设备适配</span><strong>按控制器方言转换和格式化命令</strong><p>生成程序起止、换刀等指令</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>D6：最终 G-code 文件</strong><p>附控制器、后处理器与配置版本</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>program.nc 的引用与哈希</li><li>控制器方言、后处理器及其版本</li><li>所用机床 / 坐标 / 刀具配置引用</li></ul></div><div><h4>失败时</h4><p>缺少适配后处理器或遇到不支持的命令时，不能声称可上机。</p><h4>需要开发</h4><p>选择或修改后处理器，验证目标控制器语义。</p><a class="source" href="https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/CAM_Post.md">工具官方说明 ↗</a></div></div></details>
-  </article>
-<article class="module program" id="m07" aria-labelledby="name07">
-    <div class="module-name"><span class="number">07</span><h3 id="name07">仿真输入准备</h3><span class="status">有局部接口，需扩展</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>D6：最终 NC + 实际来料几何</strong><p>刀具、夹具、坐标、方言与精度</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">我们写的适配程序</span><strong>检查后端是否支持本次输入</strong><p>转换配置并组装完整仿真作业</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>D7：仿真作业包</strong><p>NC、来料、工具及后端执行配置</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>最终 NC 与实际毛坯 / 上道工序材料引用</li><li>工具、夹具、坐标变换和控制器方言</li><li>后端版本、精度、请求的检查及支持范围</li></ul></div><div><h4>失败时</h4><p>不支持的来料或指令需拒绝或列为未验证，不能用目标零件替代来料。</p><h4>需要开发</h4><p>统一后端接口，适配实际材料、坐标与指令支持。</p></div></div></details>
-  </article>
-<article class="module software" id="m08" aria-labelledby="name08">
-    <div class="module-name"><span class="number">08</span><h3 id="name08">NC 去料仿真</h3><span class="status">外部仅小控制验证</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>D7：仿真作业包</strong><p>本后端已支持的 NC、来料和刀具</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">仿真引擎，如 CAMotics</span><strong>解释最终 NC 并执行对应运动</strong><p>计算工具运动造成的材料去除</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>D8：仿真结果包</strong><p>剩余材料、执行记录、错误与精度</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>最终剩余材料几何</li><li>执行完成标志、错误、未支持指令</li><li>分辨率及后端支持的轨迹 / 中间状态；缺项显式记录</li></ul></div><div><h4>失败时</h4><p>未完整执行或所需检查不受支持，必须向后续验收报告。</p><h4>需要开发</h4><p>完成客户工序 / 整件对照；由适配程序归一化结果，不假设所有后端都输出完整轨迹。</p><a class="source" href="https://camotics.org/manual.html">工具官方说明 ↗</a></div></div></details>
-  </article>
-<article class="module program" id="m09" aria-labelledby="name09">
-    <div class="module-name"><span class="number">09</span><h3 id="name09">几何验收</h3><span class="status">有基础，需按公差扩展</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>D8：剩余材料与执行记录</strong><p>B：只读原目标、基准和公差</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">我们写的几何比较程序</span><strong>先检查执行完整性与计算精度</strong><p>再检查过切、欠切、尺寸和位置</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>D9：逐项几何验收报告</strong><p>通过 / 不通过 / 不可判定及证据</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>要求 ID、实测值、允许范围、计算误差</li><li>过切 / 欠切位置与差异几何</li><li>未验证要求；粗糙度不由纯几何仿真判定</li></ul></div><div><h4>失败时</h4><p>失败证据回传规划环节；精度不足返回不可判定，不能修改原始公差使结果通过。</p><h4>需要开发</h4><p>补按特征公差验收、精度判定和结构化失败证据。</p></div></div></details>
-  </article>
-<article class="module program" id="m10" aria-labelledby="name10">
-    <div class="module-name"><span class="number">10</span><h3 id="name10">报告与回放</h3><span class="status">已有基础，需接新结果</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>D8：材料状态 / 轨迹 + D9：验收</strong><p>工艺卡与本次运行记录</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">展示程序 + Anatomy</span><strong>组织报告、差异位置和过程视图</strong><p>展示后端实际保存的状态</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>D10：网页报告 / 动画</strong><p>可查看、定位和追溯的运行结果</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>验收报告页面、差异视图</li><li>材料状态、轨迹与工序的对应关系</li></ul></div><div><h4>失败时</h4><p>缺少中间状态时明确显示可用范围，不补画成已执行过程。</p><h4>需要开发</h4><p>把新 CAM / 仿真后端的结果接到已有报告和回放。</p></div></div></details>
+<article class="stage" id="verification" style="--accent:#087d79" aria-labelledby="verification-title">
+    <div class="stage-top"><span class="number">03</span><h2 id="verification-title">仿真检验</h2></div>
+    <p class="purpose">检查加工后的几何是否合格</p>
+    <dl class="contract"><div class="input"><dt>输入</dt><dd>G-code + 加工配置 + 实际毛坯<small>对照原始 CAD 与制造要求</small></dd></div><div class="output"><dt>输出</dt><dd>几何检验报告 + 回放<small>合格与否、差异位置、已有的过程记录</small></dd></div><div class="implementation"><dt>实现方式</dt><dd>仿真引擎去料，程序比较几何</dd></div></dl>
+    <details class="next-layer" name="stage-layer"><summary><span>展开第二层</span><span class="close-label">收起第二层</span><span class="summary-mark" aria-hidden="true">＋</span></summary>
+      <div class="children"><p class="layer-label">第二层 / 仿真检验</p><ol><li><h3>执行加工仿真</h3><p class="child-flow"><span>G-code + 来料 + 加工配置</span><span class="arrow" aria-hidden="true">↓</span><strong>剩余材料 + 执行记录</strong></p><p class="child-implementation">程序准备输入，调用支持该工序的仿真引擎</p></li><li><h3>比较几何</h3><p class="child-flow"><span>剩余材料 / 记录 + 原始 CAD / 要求</span><span class="arrow" aria-hidden="true">↓</span><strong>几何验收结果</strong></p><p class="child-implementation">程序检查执行完整性、过切、欠切与公差</p></li><li><h3>展示结果</h3><p class="child-flow"><span>验收结果 + 保存的过程记录</span><span class="arrow" aria-hidden="true">↓</span><strong>报告 + 可用过程回放</strong></p><p class="child-implementation">展示程序与 Anatomy</p></li></ol><p class="gap"><b>当前待做</b>已有局部仿真与回放；新链路集成、按公差验收待补齐。</p></div>
+    </details>
   </article></section>
-    <section class="support" aria-labelledby="support-title"><h2 id="support-title">三个支撑模块</h2><p>给主流程提供资源、独立验收基准与调用控制。</p><article class="module program" id="mA" aria-labelledby="nameA">
-    <div class="module-name"><span class="number">A</span><h3 id="nameA">资源档案</h3><span class="status">有参考配置，需统一</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>工厂设备、刀具、夹具及原料资料</strong><p>工艺规则与适用范围</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">配置 / 数据库 + 查询程序</span><strong>保存版本、单位、能力和限制</strong><p>按 ID 查询并解析所需资源</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>R：版本化的资源记录</strong><p>供规划、校验、CAM 与仿真读取</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>machine / controller / tool / fixture / stock / rules</li></ul></div><div><h4>失败时</h4><p>资料缺失要显式返回，不能从零件几何推断出真实设备。</p><h4>需要开发</h4><p>统一资源类型与查询接口；区分参考配置和实际设备资料。</p></div></div></details>
-  </article>
-<article class="module program" id="mB" aria-labelledby="nameB">
-    <div class="module-name"><span class="number">B</span><h3 id="nameB">原始验收基准</h3><span class="status">有原目标保留，需扩展</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>上游已校验的 D1 零件输入包</strong><p>原始 CAD、基准与绑定要求</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">只读存储与版本管理程序</span><strong>固定模型版本、引用与哈希</strong><p>让后续验收独立读取原始要求</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>B：不可由工艺 Agent 改写的快照</strong><p>目标几何 + 公差 / 基准 / 要求</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>源模型版本、目标几何引用、原始要求及绑定</li></ul></div><div><h4>失败时</h4><p>版本不一致时拒绝比较，要求变更应创建新的上游版本。</p><h4>需要开发</h4><p>将原始几何与语义制造要求绑定为统一验收快照。</p></div></div></details>
-  </article>
-<article class="module program" id="mC" aria-labelledby="nameC">
-    <div class="module-name"><span class="number">C</span><h3 id="nameC">任务编排与回传</h3><span class="status">有限定路线，需通用化</span></div>
-    <div class="field"><span class="field-label">输入</span><strong>任务请求、各模块状态与错误</strong><p>工艺卡、仿真和验收结果</p></div>
-    <div class="field implementation"><span class="field-label">内部实现</span><span class="kind">我们写的流程控制程序</span><strong>按依赖调用、传递结果、记录版本</strong><p>遇错停止；按错误类型反馈重试</p></div>
-    <div class="field"><span class="field-label">输出</span><strong>运行记录 / 停止原因 / 修改请求</strong><p>可修正的工艺问题返回 Agent</p></div>
-    <details class="module-details"><summary>展开：字段、异常与待开发项</summary><div class="details-grid"><div><h4>输出包括</h4><ul><li>run_id、输入与代码 / 配置版本、每步状态、日志</li><li>失败阶段、错误代码、特征 / 工序 ID、证据、重试上限</li></ul></div><div><h4>失败时</h4><p>绑定问题回上游，工艺问题回规划；不能无限重试或悄悄放宽验收标准。</p><h4>需要开发</h4><p>统一任务状态、错误路由、重试策略和全链记录。</p></div></div></details>
-  </article></section>
-    <details class="overview"><summary>查看整页接口图 / 下载定义</summary><div class="downloads"><a href="assets/manufacturing-pipeline.svg?v=contracts-1" target="_blank" rel="noopener">打开原图 ↗</a><a href="assets/manufacturing-pipeline.svg?v=contracts-1" download="GenLaw-模块输入输出.svg">下载 SVG</a><a href="assets/manufacturing-pipeline.png?v=contracts-1" download="GenLaw-模块输入输出.png">下载 PNG</a><a href="data/pipeline-contracts.json?v=contracts-1" download="GenLaw-拟定模块接口.json">下载接口定义 JSON</a></div><div class="overview-scroll"><img src="assets/manufacturing-pipeline.svg?v=contracts-1" width="1600" height="1200" alt="十个主步骤和三个支撑模块的输入、内部实现、输出及开发状态对照图。"></div></details>
-    <p class="scope-note">后端的指令、来料与设备支持需分别验证。粗糙度不由纯几何仿真判定；缺少的轨迹或中间状态须显式记录。</p>
+    <aside class="shared"><strong>共同资料</strong><p>原料、设备、刀具、夹具资料；原始 CAD 与制造要求贯穿全程。</p></aside>
+    <p class="feedback"><span aria-hidden="true">↶</span> 检验失败：把原因返回工艺规划，调整后重新生成代码并检验。</p>
+    <details class="downloads"><summary>下载这一层的示意图</summary><div><a href="assets/manufacturing-pipeline.svg?v=layers-1" target="_blank" rel="noopener">打开示意图 ↗</a><a href="assets/manufacturing-pipeline.svg?v=layers-1" download="GenLaw-第一层.svg">SVG</a><a href="assets/manufacturing-pipeline.png?v=layers-1" download="GenLaw-第一层.png">PNG</a><a href="data/pipeline-contracts.json?v=layers-1" download="GenLaw-分层接口设计.json">完整接口定义</a></div></details>
+    <p class="scope-note">本轮检验范围是几何；粗糙度可以作为工艺输入，尚不由几何仿真判定。</p>
   </main>
-  <footer class="wrap footer"><span>GenLaw · 逻辑模块与拟定接口</span><span>“程序”就是我们编写的代码；Agent 指调用模型做决策的模块。</span></footer>
+  <footer class="wrap footer"><span>GenLaw · 逐层展开系统</span><span>Agent：模型做决策；程序：代码执行明确规则。</span></footer>
 </body>
 </html>

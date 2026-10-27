@@ -2,6 +2,49 @@
   "schema": "genlaw.pipeline-design.v1",
   "design_only": true,
   "end_to_end_implemented": false,
+  "hierarchy": {
+    "default_level": 1,
+    "upstream": {"text": "零件 CAD + 已关联的制造要求", "module_refs": ["01"]},
+    "shared": {"text": "原料、设备、刀具、夹具资料；原始 CAD 与制造要求贯穿全程。", "module_refs": ["A", "B", "C"]},
+    "stages": [
+      {
+        "id": "planning", "number": "01", "name": "工艺规划", "purpose": "决定怎么加工",
+        "input": "CAD + 制造要求 + 可用资源",
+        "output": "工艺卡", "output_detail": "毛坯、工序、装夹、刀具与参数",
+        "implementation": "Agent 做决策，程序校验",
+        "gap": "工艺 Agent 与统一工艺卡待开发。",
+        "children": [
+          {"name": "制定工艺", "input": "零件与要求 + 资源", "output": "候选工艺卡", "implementation": "Agent 选择工序、资源和参数", "module_refs": ["02"]},
+          {"name": "校验工艺", "input": "候选工艺卡", "output": "已校验工艺卡 / 错误", "implementation": "程序检查字段、参数和设备能力", "module_refs": ["03"]}
+        ]
+      },
+      {
+        "id": "programming", "number": "02", "name": "加工编程", "purpose": "把工艺变成设备指令",
+        "input": "工艺卡 + CAD",
+        "output": "G-code + 加工配置", "output_detail": "对应设备的指令，以及刀具、坐标等配置",
+        "implementation": "程序调用 CAM 与设备后处理器",
+        "gap": "工艺卡到 CAM 的接入、设备后处理验证待完成。",
+        "children": [
+          {"name": "建立加工任务", "input": "工艺卡 + CAD", "output": "CAM Job（任务对象）", "implementation": "我们的程序把工艺卡转成 CAM 任务", "module_refs": ["04"]},
+          {"name": "计算刀路", "input": "CAM 任务", "output": "内部刀路", "implementation": "调用现成的 FreeCAD CAM", "module_refs": ["05"]},
+          {"name": "生成设备代码", "input": "内部刀路 + 控制器配置", "output": "最终 G-code", "implementation": "设备后处理器转换指令格式", "module_refs": ["06"]}
+        ]
+      },
+      {
+        "id": "verification", "number": "03", "name": "仿真检验", "purpose": "检查加工后的几何是否合格",
+        "input": "G-code + 加工配置 + 实际毛坯",
+        "input_detail": "对照原始 CAD 与制造要求",
+        "output": "几何检验报告 + 回放", "output_detail": "合格与否、差异位置、已有的过程记录",
+        "implementation": "仿真引擎去料，程序比较几何",
+        "gap": "已有局部仿真与回放；新链路集成、按公差验收待补齐。",
+        "children": [
+          {"name": "执行加工仿真", "input": "G-code + 来料 + 加工配置", "output": "剩余材料 + 执行记录", "implementation": "程序准备输入，调用支持该工序的仿真引擎", "module_refs": ["07", "08"]},
+          {"name": "比较几何", "input": "剩余材料 / 记录 + 原始 CAD / 要求", "output": "几何验收结果", "implementation": "程序检查执行完整性、过切、欠切与公差", "module_refs": ["09"]},
+          {"name": "展示结果", "input": "验收结果 + 保存的过程记录", "output": "报告 + 可用过程回放", "implementation": "展示程序与 Anatomy", "module_refs": ["10"]}
+        ]
+      }
+    ]
+  },
   "implementation_types": {
     "agent": "调用大模型作解释或工艺决策，并输出结构化结果",
     "program": "我们编写的确定性程序，执行校验、转换、调用和比较",
