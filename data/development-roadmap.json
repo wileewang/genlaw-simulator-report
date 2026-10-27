@@ -3,7 +3,7 @@
   "updated_at": "2026-10-27",
   "route_status": "accepted_by_user",
   "current_stage": "01",
-  "current_activity": "first_step_analysis",
+  "current_activity": "integration_todo_and_sample_plan",
   "design_only": true,
   "five_axis_supported": false,
   "principle": "固定条件，每次增加一个难度维度；每个阶段都交付可追溯的完整验证结果。",
@@ -34,7 +34,7 @@
     "每级先用小试件，再选匹配能力的真实单件；现有 71 份图纸作为验收案例库。"
   ],
   "first_step": {
-    "title": "把已有单孔案例整理成首个验收任务",
+    "title": "先接通单孔案例的 CAM 与几何检验",
     "status": "方案分析；新路线尚未执行",
     "sample_status": "沿用历史合成案例的几何规格，不计入客户覆盖",
     "stock_mm": [30, 20, 5],
@@ -48,25 +48,89 @@
     "technical_choices_status": "proposed_not_user_selected",
     "actions": [
       {"name": "固定输入和正确答案", "text": "引用原毛坯、独立目标、刀具和夹具；工艺卡人工确认。明确孔径、孔位、贯穿及外形保持的验收规则。"},
-      {"name": "核对设备与程序接口", "text": "定义五轴结构、零点和刀长；确定最终 NC 的解释方式，让旋转轴固定时与已有 XYZ 基线对得上。"},
-      {"name": "列出通过与拒绝案例", "text": "正常孔，以及错孔、未钻通、超行程、夹具干涉等反例，分别定义预期结果和需要保存的证据。"}
+      {"name": "验证现成工具能否接通", "text": "评估 FreeCAD CAM → 最终 NC → CAMotics：核对指令、毛坯、刀具、坐标、精度和资源预算。先复用算法，再补适配。"},
+      {"name": "补齐验收与反例", "text": "比较最终材料与独立原始 CAD，检出错孔、未钻通和外形损坏；行程、夹具干涉另接支持的检查，未实现就明确标注。"}
     ],
-    "deliverables": ["首个验收任务定义", "机床 / 控制器接口清单", "正常与错误案例清单"],
-    "gaps": ["五轴参考配置及所选控制器尚未接入", "旧案例的采样比较需要补充逐项几何判据与误差说明", "独立执行对照及新结果回放需要衔接"],
-    "next_implementation": "先实现机床配置与 NC 运动解释的最小接口，用零旋转姿态与已有 XYZ 基线对照；之后才启动新材料去料验证。",
+    "deliverables": ["首个验收任务与正常 / 错误案例", "CAM 与仿真工具兼容性、精度和资源评估", "工艺卡到工具的最小适配方案"],
+    "gaps": ["FreeCAD CAM 尚未与工艺卡、最终 NC 验证整链接通", "CAMotics 候选需核对实际 NC、来料与计算精度；不负责完整机床 / 夹具碰撞", "已有几何比较与回放需接入新结果，补逐项要求及误差判定", "五轴 CAM 与去料后端待选型；LinuxCNC 仅为运动验证候选"],
+    "next_implementation": "先用人工确认的单孔工艺卡验证 FreeCAD CAM 与材料去除仿真器的兼容性，再实现最小调用适配及几何验收。已有自写钻孔 NC 生成器保留作测试基线。",
     "geometry_acceptance": "拟以 0.05 mm 作为开发样例几何比较尺度；逐项尺寸 / 孔位规则与计算误差仍须明确。旧采样通过不等于完整连续边界误差已证明。"
+  },
+  "development_todo": {
+    "status": "planned_not_implemented",
+    "approach": "我们开发工艺 Agent、数据接口、校验、适配和验收；刀路与材料去除优先复用现成工具。",
+    "sequence": "起步先用人工确认的工艺卡接通模块 2、3；通过后接 Agent，再逐级增加加工范围。",
+    "modules": [
+      {
+        "id": "planning", "number": "01", "name": "工艺卡生成", "tool": "Agent + 我们的校验程序",
+        "items": [
+          {"id": "P1", "title": "统一工艺卡和资源格式", "phase": "起步", "state": "待开发", "detail": "明确 CAD / 特征引用、工序、毛坯、设备、装夹、刀具和参数，标明资料来源及缺项。"},
+          {"id": "P2", "title": "补齐参数与能力校验", "phase": "起步", "state": "有基础，待统一", "detail": "检查字段、单位、引用、刀具与设备能力；不支持的工序返回具体原因。"},
+          {"id": "P3", "title": "接入 Agent 生成和修正", "phase": "随后", "state": "待开发", "detail": "先以人工确认工艺卡为基准，再让 Agent 查询资源、输出工艺卡并根据校验 / 仿真错误修正；不能改写原始要求。"}
+        ]
+      },
+      {
+        "id": "programming", "number": "02", "name": "NC 代码生成", "tool": "FreeCAD CAM + 设备后处理器",
+        "items": [
+          {"id": "C1", "title": "工艺卡转换成 CAM 任务", "phase": "起步", "state": "待集成", "detail": "开发 FreeCAD 调用适配，先映射单孔工序、CAD、毛坯、刀具和坐标；记录软件版本。"},
+          {"id": "C2", "title": "验证目标控制器后处理", "phase": "起步", "state": "待验证", "detail": "复用相应后处理器，核对最终 NC 的单位、坐标、刀长、循环和换刀语义。不能把自定义钻孔代码当作真实控制器已通过。"},
+          {"id": "C3", "title": "导出 NC 与配套加工配置", "phase": "起步", "state": "待集成", "detail": "绑定 NC、实际毛坯、工具、夹具、坐标和设备版本，交给模块 3；同类新零件只换输入，不写专用生成器。"}
+        ]
+      },
+      {
+        "id": "verification", "number": "03", "name": "仿真检验", "tool": "材料去除引擎 + 我们的几何验收",
+        "items": [
+          {"id": "V1", "title": "接入最终 NC 的去料仿真", "phase": "起步", "state": "待集成", "detail": "先评估 CAMotics 的固定刀轴范围：从实际毛坯执行最终 NC，保存剩余材料；先检查精度、指令支持与计算预算。"},
+          {"id": "V2", "title": "按原始 CAD 和公差验收", "phase": "起步", "state": "有基础，待扩展", "detail": "在已知坐标和基准下检查过切、欠切、孔径与孔位，计入计算误差；精度不足返回不可判定。纯几何不判定粗糙度。"},
+          {"id": "V3", "title": "接通错误反馈与真实回放", "phase": "起步", "state": "有基础，待接入", "detail": "正常案例通过，故意改错的 NC 能被拒绝；把差异位置和原因反馈给规划，网页只展示实际保存的轨迹与材料。"}
+        ]
+      }
+    ],
+    "linuxcnc_role": "LinuxCNC 可用于所选控制器语义与机床运动验证；它不独立完成材料去除和 CAD 几何验收，也不代表其他控制器兼容。",
+    "later": [
+      {"id": "F1", "title": "选定参考机床与运动验证工具", "text": "固定五轴结构、旋转中心、轴限位、零点和刀长；评估 LinuxCNC 对照方式，并补已建模的行程 / 干涉检查。"},
+      {"id": "F2", "title": "增加基础特征与 3+2", "text": "按路线逐项增加孔、槽、台阶、型腔，再验证旋转定位及工序间真实材料连续性。"},
+      {"id": "F3", "title": "选型并验证五轴联动后端", "text": "连续五轴需要另行验证 CAM、后处理及去料引擎；CAMotics 不支持五轴，FreeCAD 当前路线不能直接承诺联动能力。"}
+    ],
+    "completion": "上述是待办清单，尚未代表工具整链接通。每项完成须有可复现结果和错误案例；已有局部能力按新接口重新验收。"
+  },
+  "sample_plan": {
+    "status": "recommended_not_required_volume",
+    "title": "先要有代表性的资料，不需要先收集很多零件",
+    "summary": "建议从 1 个简单真实单件 + 1 份共用设备资源档案开始。先从现有 71 份图纸筛选，缺少制造要求再补充；不用重新整理一大批 CAD 才开工。",
+    "steps": [
+      {"name": "现在：受控小试件", "text": "我们建立单孔、错孔、未钻通等正常 / 错误案例；用明确标注的参考设备配置开发接口与校验。"},
+      {"name": "首轮真实验证：1 个单件", "text": "选择与当前能力匹配的简单零件，补齐要求、毛坯与装夹；使用同一套程序验证，而非按零件写专用代码。"},
+      {"name": "每增加能力：补代表件", "text": "建议每类新特征先选 1–3 个真实件，并留独立验收件；这只是起步建议，不能据此宣称覆盖所有零件。"}
+    ],
+    "per_part": [
+      "CAD / CadQuery 和版本、单位；已有 STEP 可直接复用。",
+      "制造要求：尺寸、公差、基准、粗糙度及对应孔 / 面；已有图纸或上游绑定结果均可，未绑定项单独标出。",
+      "材料、实际毛坯形状 / 尺寸与装夹要求；没有既定方案时交规划选择，选定后才执行仿真。"
+    ],
+    "shared_resources": [
+      "一台参考或真实机床：型号、轴系、行程、控制器和版本；五轴再补旋转中心、方向及 TCP 等约定。",
+      "可用刀具 / 刀柄、夹具及必要几何尺寸，坐标与刀长设置规则。",
+      "如已有：经过确认的工艺卡、NC、手册和切削参数依据，用于独立对照。"
+    ],
+    "ownership": "你提供或确认真实需求与资源；我们整理输入规范、生成受控试件、接工具、开发通用能力并维护回归验收。设备资源档案可供多个零件复用。",
+    "gate": "同类零件应只更换输入数据即可运行；出现新的加工特征、控制器、机床结构或验收要求时，再新增相应能力。",
+    "missing_data": "没有真实设备资料也能先做参考配置开发，但结果只代表参考配置；未知信息保持待补，不能推断成真实设备或材料已验证。"
   },
   "notes": [
     "阶段 01–03 是五轴联动的前置里程碑，阶段 04 在声明范围内验收后才可声称对应联动支持。",
     "先用人工确认的工艺卡打通加工编程与仿真检验，再接入工艺 Agent。",
     "毛坯形状影响去料几何；材料牌号、切削力、变形和粗糙度等另有验证要求。",
     "CAMotics 不支持五轴；FreeCAD 的现有方案不能直接承诺五轴联动闭环。CAM 与去料后端需按阶段选型并验证。",
+    "LinuxCNC 是可选的 NC 解释 / 机床运动验证工具；材料去除和最终几何验收需要另外实现或集成。",
     "本机开发保持小试件、短程序和受限资源；增加模型规模前先验证功能与误差。"
   ],
   "sources": [
     {"name": "LinuxCNC 五轴运动学与参考机型", "url": "https://linuxcnc.org/docs/stable/html/motion/5-axis-kinematics.html"},
     {"name": "FreeCAD 多轴路线说明", "url": "https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/CAM_Development_Roadmap.md"},
     {"name": "FreeCAD 多轴仿真问题", "url": "https://github.com/FreeCAD/FreeCAD/issues/29758"},
-    {"name": "CAMotics 支持范围", "url": "https://camotics.org/"}
+    {"name": "CAMotics 支持范围", "url": "https://camotics.org/"},
+    {"name": "FreeCAD CAM Job 与加工配置", "url": "https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/CAM_Job.md"},
+    {"name": "FreeCAD 后处理与 NC 输出", "url": "https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/CAM_Post.md"}
   ]
 }
