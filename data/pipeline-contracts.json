@@ -2,7 +2,7 @@
   "schema": "genlaw.pipeline-design.v1",
   "design_only": true,
   "end_to_end_implemented": false,
-  "implementation_scope": "起步候选为 Agent 工艺卡、FreeCAD CAM 编程、材料去除引擎与几何验收。LinuxCNC 仅为可选的 NC / 机床运动验证工具。工具整链尚未接通，五轴 CAM 与去料后端仍待选型；待办及样本计划见 development-roadmap.json。",
+  "implementation_scope": "按零件选用与流程模块两个维度开发。当前用固定测试工艺卡、FreeCAD CAM 与 CAMotics 接通几何验证；工艺 Agent 后置。五轴刀路与五轴去料的源码扩展 / 后端集成已列入计划；LinuxCNC 不是必需依赖。",
   "hierarchy": {
     "default_level": 1,
     "upstream": {"text": "零件 CAD + 已关联的制造要求", "module_refs": ["01"]},
@@ -12,8 +12,8 @@
         "id": "planning", "number": "01", "name": "工艺规划", "purpose": "决定怎么加工",
         "input": "CAD + 制造要求 + 可用资源",
         "output": "工艺卡", "output_detail": "毛坯、工序、装夹、刀具与参数",
-        "implementation": "Agent 做决策，程序校验",
-        "gap": "统一工艺卡、资源和校验规则待开发；起步用人工确认卡，模块 2、3 稳定后接 Agent。",
+        "implementation": "先定义接口；Agent 实现后置",
+        "gap": "接口和固定测试卡草案已记录，校验与下游适配待实现；Agent 暂缓，当前不要求用户先提供真实工艺卡。",
         "children": [
           {"name": "制定工艺", "input": "零件与要求 + 资源", "output": "候选工艺卡", "implementation": "Agent 选择工序、资源和参数", "module_refs": ["02"]},
           {"name": "校验工艺", "input": "候选工艺卡", "output": "已校验工艺卡 / 错误", "implementation": "程序检查字段、参数和设备能力", "module_refs": ["03"]}
@@ -23,11 +23,11 @@
         "id": "programming", "number": "02", "name": "加工编程", "purpose": "把工艺变成设备指令",
         "input": "工艺卡 + CAD",
         "output": "G-code + 加工配置", "output_detail": "对应设备的指令，以及刀具、坐标等配置",
-        "implementation": "程序调用 CAM 与设备后处理器",
-        "gap": "先开发 FreeCAD CAM 适配与 NC / 配置导出，验证固定刀轴后处理；连续五轴另行选型。",
+        "implementation": "起步：FreeCAD CAM + 后处理",
+        "gap": "先接 FreeCAD CAM 的固定刀轴 NC；五轴刀路与设备后处理另列研发项，评估扩展现有源码或接入五轴后端。",
         "children": [
           {"name": "建立加工任务", "input": "工艺卡 + CAD", "output": "CAM Job（任务对象）", "implementation": "我们的程序把工艺卡转成 CAM 任务", "module_refs": ["04"]},
-          {"name": "计算刀路", "input": "CAM 任务", "output": "内部刀路", "implementation": "调用 CAM 后端；五轴联动工具待选型", "module_refs": ["05"]},
+          {"name": "计算刀路", "input": "CAM 任务", "output": "内部刀路", "implementation": "调用 FreeCAD CAM；五轴算法扩展 / 后端集成待开发", "module_refs": ["05"]},
           {"name": "生成设备代码", "input": "内部刀路 + 控制器配置", "output": "最终 G-code", "implementation": "设备后处理器转换指令格式", "module_refs": ["06"]}
         ]
       },
@@ -36,8 +36,8 @@
         "input": "G-code + 加工配置 + 实际毛坯",
         "input_detail": "对照原始 CAD 与制造要求",
         "output": "几何检验报告 + 回放", "output_detail": "合格与否、差异位置、已有的过程记录",
-        "implementation": "仿真引擎去料，程序比较几何",
-        "gap": "固定刀轴先评估 CAMotics，接入原始 CAD / 公差验收与回放；LinuxCNC 可另验机床运动，不能替代去料与几何验收。",
+        "implementation": "起步：CAMotics + 几何验收",
+        "gap": "先接 CAMotics 固定刀轴去料与独立 CAD 验收；五轴 NC 解释、连续去料与干涉另列研发项，评估扩展 CAMotics 或替换引擎。LinuxCNC 仅可选。",
         "children": [
           {"name": "执行加工仿真", "input": "G-code + 来料 + 加工配置", "output": "剩余材料 + 执行记录", "implementation": "程序准备输入，调用支持该工序的仿真引擎", "module_refs": ["07", "08"]},
           {"name": "比较几何", "input": "剩余材料 / 记录 + 原始 CAD / 要求", "output": "几何验收结果", "implementation": "程序检查执行完整性、过切、欠切与公差", "module_refs": ["09"]},
@@ -63,14 +63,14 @@
       "development": "增加稳定特征引用、绑定输出及独立校验。"
     },
     {
-      "id": "02", "name": "工艺规划 Agent", "kind": "agent", "implementation": "模型 / Agent", "status": "待开发",
+      "id": "02", "name": "工艺规划 Agent", "kind": "agent", "implementation": "模型 / Agent", "status": "暂缓实现；接口先定义",
       "input": ["D1：零件输入包 + R：资源档案", "可用原料、设备、刀具和夹具"],
       "logic": ["选择毛坯、装夹、工序顺序", "选择刀具、余量、进给和转速"],
       "output": ["D2：工艺卡 JSON", "有序工序及各工序的资源和参数"],
       "consumes": ["D1", "R"], "produces": "D2",
       "fields": ["plan_id / version、源模型版本", "毛坯、设备、装夹及工件坐标", "operations：工序、特征 ID、刀具 ID、参数、要求 ID"],
       "failure": "资源或工艺信息不足时输出缺项；此阶段结果尚未通过程序校验。",
-      "development": "开发工艺 Agent、工艺卡规范及资源查询工具。"
+      "development": "先定义工艺卡输入输出与资源引用，Agent 实现后置；首轮采用固定测试卡。"
     },
     {
       "id": "03", "name": "工艺卡校验", "kind": "program", "implementation": "我们写的规则程序", "status": "有局部规则，需统一",
@@ -100,7 +100,7 @@
       "consumes": ["D4"], "produces": "D5",
       "fields": ["各操作的 Path 命令", "移动路径、进给、转速及工具等信息"],
       "failure": "刀路生成失败时保留日志并终止该次生成。",
-      "development": "接入并验证所选版本和工序的自动调用，不重写其刀路算法。",
+      "development": "起步复用并验证 FreeCAD 的已有刀路算法；五轴阶段评估并实现刀轴姿态、连续路径等能力，可二次开发源码或接入其他后端。",
       "source": "https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/CAM_Job.md"
     },
     {
@@ -132,7 +132,7 @@
       "consumes": ["D7"], "produces": "D8",
       "fields": ["最终剩余材料几何", "执行完成标志、错误、未支持指令", "分辨率及后端支持的轨迹 / 中间状态；缺项显式记录"],
       "failure": "未完整执行或所需检查不受支持，必须向后续验收报告。",
-      "development": "先验证单孔的最终 NC 与实际毛坯，再推广真实单件；归一化结果并核对误差，不假设后端具备完整轨迹或机床碰撞能力。",
+      "development": "起步验证固定刀轴最终 NC、毛坯与几何误差。五轴阶段评估 CAMotics 内核扩展或其他引擎，补多轴 NC 解释、变化姿态的连续去料与已建模干涉；实际能力分别验收。",
       "source": "https://camotics.org/manual.html"
     },
     {
