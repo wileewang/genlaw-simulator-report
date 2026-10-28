@@ -1,0 +1,73 @@
+{
+  "schema": "genlaw.resource-profile.v0",
+  "id": "R-XYZ-01",
+  "units": "mm",
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "machine": {
+    "kind": "generic_XYZ_reference",
+    "active_axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "rotary_axes": [],
+    "real_machine_qualified": false
+  },
+  "controller": {
+    "kind": "reference_NC_subset",
+    "postprocessor": "FreeCAD bundled Path.Post.scripts.linuxcnc_post",
+    "post_arguments": [
+      "--no-tlo"
+    ],
+    "linuxcnc_runtime_required": false,
+    "work_offset": "G54",
+    "work_offset_translation_mm": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_compensation_mm": 0
+  },
+  "tools": [
+    {
+      "id": "T1",
+      "diameter_mm": 2,
+      "tip_angle_degrees": 118,
+      "cad_tool_length_mm": 20,
+      "camotics_cutting_geometry": {
+        "shape": "conical",
+        "length_mm": 0.6008606190275603,
+        "diameter_mm": 2
+      },
+      "holder_geometry_verified": false
+    }
+  ],
+  "fixture": {
+    "planned_type": "generic_two_side_jaws_with_bottom_clearance",
+    "present_in_executed_camotics_job": false,
+    "collision_checked": false,
+    "holding_force_checked": false
+  },
+  "simulation": {
+    "engine": "CAMotics 1.2",
+    "resolution_mm": 0.025,
+    "intermediate_frame_resolution_mm": 0.05,
+    "stock_grid_cells": 4608000
+  }
+}

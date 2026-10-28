@@ -23,7 +23,7 @@
       "title": "单孔完整链路",
       "case_name": "偏心通孔薄板",
       "status": "measured",
-      "status_label": "已有实测 · 阶段验收待补",
+      "status_label": "已有软件实测 · 输入待工艺审阅",
       "headline": "用一个孔，接通编程、去料与几何对照。",
       "part": "8 × 6 × 1.5 mm；φ2 通孔；孔心 (3, 2)",
       "material": "6061-T6 标签 · 矩形毛坯",
@@ -37,6 +37,7 @@
         "计算体积 IoU，回放真实去料状态"
       ],
       "remaining": [
+        "审阅已冻结 CAD / PDF 工艺卡，处理 Domain Gap",
         "工艺卡统一入口、能力检查与工具适配器",
         "孔径 / 孔位 / 贯穿的逐项公差验收",
         "改错 NC 的整链反例与夹具检查"
@@ -213,5 +214,18 @@
   "old_report_retired": true,
   "extension_design_ref": "extension-design.json",
   "extension_acceptance_required_for_each_stage": true,
-  "route_kind": "current_milling_drilling_mainline_with_extensible_process_branches"
+  "route_kind": "current_milling_drilling_mainline_with_extensible_process_branches",
+  "input_review_policy": {
+    "status": "awaiting_process_engineer_review",
+    "package_id": "S1-REVIEW-20261028-r2",
+    "review_format": "printable_pdf",
+    "sequence": [
+      "构造并冻结 CAD/工艺卡/资源",
+      "工艺师傅审阅",
+      "处理语义和现场差异，另存修订版",
+      "确认输入后再开展对应验证"
+    ],
+    "new_manufacturing_validation_started": false,
+    "note": "现有 S1 探针结果保留；S2–S7 仍未构造输入。"
+  }
 }
