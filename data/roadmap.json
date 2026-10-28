@@ -92,31 +92,36 @@
       "number": "03",
       "title": "槽、台阶与型腔",
       "case_name": "圆角单槽薄板",
-      "status": "planned",
-      "status_label": "待开发",
-      "headline": "逐一补齐基础铣削特征。",
+      "status": "measured",
+      "status_label": "圆角单槽 4 例实测 · 其余特征待开发",
+      "headline": "先完成圆角单槽，再逐项扩展台阶、开放轮廓与一般型腔。",
       "part": "8 × 6 × 1.5 mm；先做 4 × 2 × 0.5 mm 圆角槽，内角 R0.5",
       "material": "沿用 6061-T6 与矩形毛坯",
       "resources": "新增一把平底铣刀，仍为单刀 / 单装夹",
       "new_programming": [
-        "增加槽、台阶和型腔的 CAM 映射",
-        "逐项定义切深、进退刀和余量"
+        "绑定原 CAD 槽底，调用 FreeCAD 原生 PocketShape",
+        "独立检查刀路范围、切深顺序、进给与每层覆盖，NC 不重写"
       ],
       "new_verification": [
-        "比较侧壁、底面和外轮廓",
-        "检出过切、残留和错误深度"
+        "四例槽轮廓、深度与底面检查通过",
+        "浅铣、过深与错位反例均检出"
       ],
       "remaining": [
-        "槽 → 台阶 → 型腔，分别通过后再组合"
+        "台阶 → 开放轮廓 → 更一般型腔，分别验证后再组合",
+        "补齐真实工艺卡的资源与原尺寸计算方案"
       ],
-      "changes": "增加特征类型和刀具形状，保持设备与材料不变。",
+      "changes": "新增 φ1 平底铣刀与四个圆角槽组合，XYZ、毛坯与材料标签保持；不代表 S3 全部完成。",
       "shape": "slot",
       "gate": "每种特征都有正常与错误案例，独立 CAD / 几何误差与材料结果对应。",
       "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
       "new_preparation": [
-        "关联槽、台阶、型腔与余量",
-        "明确铣刀、进退刀和切深约束"
-      ]
+        "将 P1 槽绑定到工艺卡工步、要求与资源",
+        "显式指定平底铣刀、切深、步距与 CAM 曲线精度"
+      ],
+      "preparation_status": "圆角单槽输入已测",
+      "programming_status": "原生分层铣槽已测",
+      "verification_status": "4 正常例 + 3 反例已测",
+      "results_ref": "results/S3-POCKET-RESULTS-20261029-r2/summary.json"
     },
     {
       "id": "s4",

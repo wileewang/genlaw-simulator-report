@@ -1,0 +1,60 @@
+{
+  "schema": "genlaw.preparation-input.v4",
+  "id": "S3-POCKET-wider-r2",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "f63a9370a0c30a5986296d1bd439957ec4806b4504496b3d0a00ad003d67ddc3"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "cb19b39139d8b0308e37ab75e67f352e633086e8a5e973217688f40f35d3a03f"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "6682288133881d66842e83937b67a26e3013cea8e5db47746c53a2f90d682ccd"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "e7301d7691d87a78691cdd4e5176670906dd4c007cd268e9ab39701dedf99f74"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "381b8bb8f8cf044b6bdbe499cb8d2bb5e8f7acf21c0c1b3558a7d2b496991a94"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "69d7dbcfe158162a90bcbe90274e3724d22a1ef6c819b5efc38ccad71b6517a2"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "5cad1166d26d305ca1df413bfafd7468ab6fb006103cc7c02f3541fb9dc22c3d"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "e050f2a061cb459bb40f34e8efe8ce76aeb6395a7449b71a987e75019c8c9e4a"
+    }
+  },
+  "capability": "rounded_pocket_xy"
+}

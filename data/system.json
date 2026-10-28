@@ -2,7 +2,7 @@
   "schema": "genlaw.system-design.v3",
   "title": "系统设计",
   "module_numbering": "1 几何识别；2 工艺规划；3 加工准备；4 NC 生成；5 仿真检验。旧模块 2 加工编程拆为新模块 3 / 4。",
-  "contract_status": "limited_single_and_pattern_drilling_chains_measured",
+  "contract_status": "limited_drilling_and_single_pocket_chains_measured",
   "modules": [
     {
       "id": "geometry",
@@ -166,9 +166,9 @@
       "input": "工艺卡 + CAD + 资源",
       "output": "可执行加工方案",
       "implementation": "规则程序 + 资源库",
-      "status": "孔系 / 盲孔入口已测",
+      "status": "钻孔 / 圆角槽入口已测",
       "current": true,
-      "description": "读取已核对的结构化工艺卡，核对来源、CAD、逐孔工步及资源；输出按卡片顺序执行的方案，缺项与冲突显式返回。已测单孔和同刀通孔孔系，纸质卡自动识别尚待接入。",
+      "description": "读取已核对的结构化工艺卡，绑定 CAD、工步、要求和资源；钻孔与圆角单槽已有用例，缺项和冲突显式返回。纸质卡自动识别尚待接入。",
       "inputs": [
         [
           "process_plan",
@@ -226,9 +226,9 @@
       "input": "执行方案 + CAD",
       "output": "最终 NC + 加工配置",
       "implementation": "FreeCAD CAM + 后处理",
-      "status": "孔序与逐孔深度出码已测",
+      "status": "钻孔 / 分层铣槽出码已测",
       "current": true,
-      "description": "重新读取原始 CAD，逐孔核对并绑定 FreeCAD CAM 操作；按卡片顺序生成最终 NC，再检查完整指令、刀具、孔位与深度。当前限单孔及同刀通孔孔系。",
+      "description": "重新读取原 CAD，调用 FreeCAD 原生 Drilling 或 PocketShape；检查最终 NC 的位置、深度、刀具与参数，铣槽另检查分层与覆盖。当前限已列出的具体组合。",
       "inputs": [
         [
           "execution_plan",
@@ -271,9 +271,9 @@
       "input": "最终 NC + 加工配置 + 原始 CAD",
       "output": "加工后几何 + 逐项检验 + 覆盖范围",
       "implementation": "CAMotics + 几何比较",
-      "status": "孔系 / 盲孔及反例已测",
+      "status": "钻孔 / 圆角槽及反例已测",
       "current": true,
-      "description": "修补后的完整 CAMotics 执行最终 NC；比较原 CAD 与实际剩料，逐孔测量孔径、孔心和贯穿，错误可定位到具体孔。S1 / S2 均有正常与错误实例；制造验收待依据，粗糙度尚未测量。",
+      "description": "完整 CAMotics 执行最终 NC，与原 CAD 比较实际剩料；分别检查孔特征或槽轮廓、深度和底面。S1 / S2 / S3 单槽有正常与错误用例；制造验收依据仍待补齐。",
       "inputs": [
         [
           "nc_ref / execution_plan",
@@ -388,5 +388,6 @@
   "preparation_status_ref": "preparation-status.json",
   "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json",
   "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json",
-  "pattern_evidence_ref": "results/S2-PATTERN-RESULTS-20261028-r1/summary.json"
+  "pattern_evidence_ref": "results/S2-PATTERN-RESULTS-20261028-r1/summary.json",
+  "pocket_evidence_ref": "results/S3-POCKET-RESULTS-20261029-r2/summary.json"
 }

@@ -153,11 +153,24 @@
           ]
         },
         {
+          "id": "rounded-pocket",
+          "name": "封闭圆角单槽",
+          "status": "sample_cases_measured",
+          "label": "4 例已实测",
+          "scope": "8×6×1.5 mm 来料，R0.5；4×2×0.5 基准、深 0.75、槽心偏移与宽 2.5 四个组合。非任意轮廓或连续参数范围。",
+          "stages": [
+            "s3"
+          ],
+          "evidence_paths": [
+            "results/S3-POCKET-RESULTS-20261029-r2/summary.json"
+          ]
+        },
+        {
           "id": "milling-features",
-          "name": "槽 / 台阶 / 型腔",
+          "name": "台阶 / 开放轮廓 / 一般型腔",
           "status": "planned",
           "label": "待开发",
-          "scope": "分别验收后再组合，保留原设备与材料。",
+          "scope": "圆角单槽另有四例结果；其他铣削特征分别验收后再组合。",
           "stages": [
             "s3"
           ],
@@ -234,13 +247,25 @@
           "evidence_paths": []
         },
         {
+          "id": "flat-endmill-reference",
+          "name": "XYZ / 单平底铣刀 / 参考 NC",
+          "status": "sample_cases_measured",
+          "label": "S3 四例配置已测",
+          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层铣槽。刀柄与夹具干涉未验证。",
+          "stages": [
+            "s3"
+          ],
+          "evidence_paths": [
+            "results/S3-POCKET-RESULTS-20261029-r2/summary.json"
+          ]
+        },
+        {
           "id": "milling-tools",
-          "name": "铣刀 / 换刀 / 非零偏置",
+          "name": "换刀 / 非零偏置",
           "status": "planned",
           "label": "待开发",
-          "scope": "先单铣刀，再换刀与刀长、坐标配置。",
+          "scope": "扩展换刀、刀长、工件坐标与多工序连接。",
           "stages": [
-            "s3",
             "s4"
           ],
           "evidence_paths": []
@@ -282,14 +307,16 @@
           "scope": "8×6×1.5、8×6×1.0 与 10×7.5×1.5 mm 矩形坯有具体用例；放大例精度 0.03 mm，其余 0.025 mm。不是连续尺寸范围。",
           "stages": [
             "s1",
-            "s2"
+            "s2",
+            "s3"
           ],
           "evidence_paths": [
             "verification/S1-VERIFY-20261028-r1/summary.json",
             "cases/s1/simulation.camotics",
             "cases/s1/metrics.json",
             "runs/S1-CHAIN-20261028-r3/simulation.camotics",
-            "results/S2-PATTERN-RESULTS-20261028-r1/summary.json"
+            "results/S2-PATTERN-RESULTS-20261028-r1/summary.json",
+            "results/S3-POCKET-RESULTS-20261029-r2/summary.json"
           ],
           "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json",
           "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
@@ -302,10 +329,12 @@
           "scope": "尚无材料切削性能或粗糙度验收。",
           "stages": [
             "s1",
-            "s2"
+            "s2",
+            "s3"
           ],
           "evidence_paths": [
-            "cases/s1/resources.json"
+            "cases/s1/resources.json",
+            "results/S3-POCKET-RESULTS-20261029-r2/summary.json"
           ]
         },
         {
@@ -334,7 +363,7 @@
     }
   ],
   "progression": [
-    "S1 四例回归通过；S2 四例通孔孔系与三个反例已测，继续补盲孔，再进入基础铣削。",
+    "S1 / S2 钻孔已有结果；S3 圆角单槽四例通过，继续扩展台阶、开放轮廓和一般型腔。",
     "沿单孔 → 孔系 → 铣削特征 → 多工序 → 3+2 → 连续五轴推进。",
     "真实单件、新设备、新毛坯或材料按依赖接入，每次只改变一类条件。"
   ],
