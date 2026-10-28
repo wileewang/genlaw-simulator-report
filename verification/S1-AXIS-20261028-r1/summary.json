@@ -1,0 +1,190 @@
+{
+  "schema": "genlaw.axis-investigation.v1",
+  "id": "S1-AXIS-20261028-r1",
+  "status": "source_numerical_defect_and_native_grid_artifact_reproduced",
+  "normal_cases": [
+    {
+      "case": "baseline",
+      "mesh_sha256": "dee43cfe80f6dd12832c36b543de5fc49f7dcce177741e37b8f05b1439a1d1b8",
+      "closed_axis_components": 1,
+      "axis_component_volume_mm3": 1.2435071768857949e-12,
+      "maximum_diameter_mm": 0.00019550323486328125,
+      "exact_rational_intersections_agree": true,
+      "original_through_status": "indeterminate"
+    },
+    {
+      "case": "diameter",
+      "mesh_sha256": "1a2adec0d899a9950f474dc970a019497840473e66c12fe8573f076da417cad2",
+      "closed_axis_components": 1,
+      "axis_component_volume_mm3": 1.2431277117723114e-12,
+      "maximum_diameter_mm": 0.00019550323486328125,
+      "exact_rational_intersections_agree": true,
+      "original_through_status": "indeterminate"
+    },
+    {
+      "case": "position",
+      "mesh_sha256": "4ac2c76308841c9017431612644199b72e1bba2b6091a79198f10d0a96a83173",
+      "closed_axis_components": 1,
+      "axis_component_volume_mm3": 1.2442658755904233e-12,
+      "maximum_diameter_mm": 0.00019550323486328125,
+      "exact_rational_intersections_agree": true,
+      "original_through_status": "indeterminate"
+    },
+    {
+      "case": "thickness",
+      "mesh_sha256": "44d2255d3c60e574fa721466aeafdae8a85704ede8627b4c4917cd21a2c87b01",
+      "closed_axis_components": 8,
+      "axis_component_volume_mm3": 3.5126925942664553e-09,
+      "maximum_diameter_mm": 0.00019550323486328125,
+      "exact_rational_intersections_agree": true,
+      "original_through_status": "numeric_fail"
+    }
+  ],
+  "native_controls": [
+    {
+      "nc_sha256": "82dff4ea69c1741aa0cc0799030791f10f77279e3ebd68e3be8ec2e508f4fb58",
+      "config_sha256": "e108c3d83d0446271883bef803bae0a2ceff06b727601cd6610c30b9f6891f6c",
+      "engine_sha256": "2fbb2f4a62dc2029f1bcf077d39724b86d3b7b126224de367dc5ea0f18d186e9",
+      "mesh_sha256": "7859ae274346ddd10c64913f34c208ac07ecfd4d7407189b1e109eaaf7c5302d",
+      "case": "aligned-025",
+      "resolution_mm": 0.025,
+      "stock_x_phase_shift_mm": 0,
+      "axis_components": 8,
+      "axis_component_volume_mm3": 3.512692594266456e-09,
+      "axis_hits": 16,
+      "component_max_diameter_mm": 0.00019550323486328125,
+      "production_approved": false,
+      "test_only_local_stock": true
+    },
+    {
+      "nc_sha256": "82dff4ea69c1741aa0cc0799030791f10f77279e3ebd68e3be8ec2e508f4fb58",
+      "config_sha256": "2184eea0fd993fe81615205cb4b3fb7d9637459c8ed94d8b45446129464417a7",
+      "engine_sha256": "2fbb2f4a62dc2029f1bcf077d39724b86d3b7b126224de367dc5ea0f18d186e9",
+      "mesh_sha256": "1211f36f0402b853af81ba6ca0d03a0dc796547d9d97039fecd52187154c3368",
+      "case": "aligned-0125",
+      "resolution_mm": 0.0125,
+      "stock_x_phase_shift_mm": 0,
+      "axis_components": 17,
+      "axis_component_volume_mm3": 3.650142818429119e-10,
+      "axis_hits": 34,
+      "component_max_diameter_mm": 9.775161743164062e-05,
+      "production_approved": false,
+      "test_only_local_stock": true
+    },
+    {
+      "nc_sha256": "82dff4ea69c1741aa0cc0799030791f10f77279e3ebd68e3be8ec2e508f4fb58",
+      "config_sha256": "54f88e9f2b130a2fab8ce884f01a137f63c4dab5756d5fea941867bd47556211",
+      "engine_sha256": "2fbb2f4a62dc2029f1bcf077d39724b86d3b7b126224de367dc5ea0f18d186e9",
+      "mesh_sha256": "f10ce72a3f99ad6a91ad32e23a6b744d41a361ba575384e1d7929692476f6306",
+      "case": "shifted-025",
+      "resolution_mm": 0.025,
+      "stock_x_phase_shift_mm": 0.0125,
+      "axis_components": 0,
+      "axis_component_volume_mm3": 0,
+      "axis_hits": 0,
+      "component_max_diameter_mm": 0,
+      "production_approved": false,
+      "test_only_local_stock": true
+    }
+  ],
+  "source_comparison": {
+    "schema": "genlaw.conic-source-regression.v1",
+    "status": "source_defect_reproduced_proposed_branch_passes",
+    "source_commit": "a26af50604877e3c863091103b6667b207fa79ad",
+    "scope": "Compiled upstream depth() with type-only test harness; not a rebuilt CAMotics executable.",
+    "original_binary_sha256": "2d764ff6a3d85ce734a4a1d63e0d50039ccf3c78579ff3f6d9dcbfdc3359809a",
+    "proposed_binary_sha256": "b771d607281a927c39931a61b9219a2dcbe0457c52468c93757004af41cb8020",
+    "vertical_cases": 1861,
+    "original_disagreements": 139,
+    "proposed_disagreements": 0,
+    "nonvertical_unchanged_cases": 64,
+    "installed_engine_modified": false,
+    "original_expected_cut_but_negative_discriminant": 129
+  },
+  "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "source_commit": "a26af50604877e3c863091103b6667b207fa79ad",
+  "installed_engine_sha256": "2fbb2f4a62dc2029f1bcf077d39724b86d3b7b126224de367dc5ea0f18d186e9",
+  "evidence_chain": [
+    "Saved STL contains isolated closed axis components; exact rational intersections confirm them.",
+    "Compiled upstream conical sweep rejects analytically inside points; a negative near-zero discriminant reproduces the error.",
+    "Same NC and installed engine reproduce the thin-plate islands in a small crop. Halving mesh step halves island width; half-cell stock shift removes the sampled islands.",
+    "An analytic pure-Z branch passes the source-level oracle and leaves tested nonvertical behavior unchanged."
+  ],
+  "source_native_correlation_limit": "Source-level cases and mesh sampling are not point-for-point identical: meshing/time interpolation and binary rounding differ. The proposed patch has not yet been validated inside the complete engine.",
+  "proposed_fix": "Analytic vertical swept-frustum cross section before the general quadratic branch.",
+  "installed_engine_modified": false,
+  "patched_complete_engine_tested": false,
+  "original_acceptance_results_changed": false,
+  "production_approved": false,
+  "next": "Integrate the source patch in a bounded build environment, rerun the unchanged four NC/config inputs and negative controls, then decide through-hole statuses.",
+  "resources": [
+    {
+      "stage": "docs/checkpoints/2026-10-28/axis-investigation-01/baseline-mesh-resources.json",
+      "seconds": 1.5749346659868024,
+      "peak_rss_mib": 232.30078125
+    },
+    {
+      "stage": "docs/checkpoints/2026-10-28/axis-investigation-01/diameter-mesh-resources.json",
+      "seconds": 1.4676874830038287,
+      "peak_rss_mib": 258.0703125
+    },
+    {
+      "stage": "docs/checkpoints/2026-10-28/axis-investigation-01/position-mesh-resources.json",
+      "seconds": 1.5734988469921518,
+      "peak_rss_mib": 258.73046875
+    },
+    {
+      "stage": "docs/checkpoints/2026-10-28/axis-investigation-01/thickness-mesh-resources.json",
+      "seconds": 1.3644428559928201,
+      "peak_rss_mib": 224.5390625
+    },
+    {
+      "stage": "docs/checkpoints/2026-10-28/axis-investigation-01/compile-original-resources.json",
+      "seconds": 0.6294365919893607,
+      "peak_rss_mib": 71.54296875
+    },
+    {
+      "stage": "docs/checkpoints/2026-10-28/axis-investigation-01/compile-proposed-resources.json",
+      "seconds": 0.6292206470097881,
+      "peak_rss_mib": 54.5546875
+    },
+    {
+      "stage": "docs/checkpoints/2026-10-28/axis-investigation-01/conic-regression-resources.json",
+      "seconds": 0.4202447950083297,
+      "peak_rss_mib": 37.8359375
+    },
+    {
+      "stage": "validation/runs/S1-AXIS-CONTROLS-20261028-r1/shifted-025/camotics-resources.json",
+      "seconds": 0.8397309580177534,
+      "peak_rss_mib": 56.53515625
+    },
+    {
+      "stage": "validation/runs/S1-AXIS-CONTROLS-20261028-r1/shifted-025/diagnose-resources.json",
+      "seconds": 0.42010685900459066,
+      "peak_rss_mib": 48.16796875
+    },
+    {
+      "stage": "validation/runs/S1-AXIS-CONTROLS-20261028-r1/aligned-0125/camotics-resources.json",
+      "seconds": 2.832604472991079,
+      "peak_rss_mib": 303.41015625
+    },
+    {
+      "stage": "validation/runs/S1-AXIS-CONTROLS-20261028-r1/aligned-0125/diagnose-resources.json",
+      "seconds": 0.9443967730039731,
+      "peak_rss_mib": 166.68359375
+    },
+    {
+      "stage": "validation/runs/S1-AXIS-CONTROLS-20261028-r1/aligned-025/camotics-resources.json",
+      "seconds": 0.8410072419792414,
+      "peak_rss_mib": 56.6015625
+    },
+    {
+      "stage": "validation/runs/S1-AXIS-CONTROLS-20261028-r1/aligned-025/diagnose-resources.json",
+      "seconds": 0.42077695598709397,
+      "peak_rss_mib": 48.34765625
+    }
+  ],
+  "native_camotics_runs": 3,
+  "new_freecad_runs": 0,
+  "raw_meshes_modified": false
+}

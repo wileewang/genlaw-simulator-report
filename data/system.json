@@ -271,9 +271,9 @@
       "input": "最终 NC + 加工配置 + 原始 CAD",
       "output": "加工后几何 + 逐项检验 + 覆盖范围",
       "implementation": "CAMotics + 几何比较",
-      "status": "逐项测量 · 贯穿待排查",
+      "status": "轴线数值缺陷已复现",
       "current": true,
-      "description": "S1 以 CAMotics 执行最终 NC，比较原 CAD 与实际去料网格；孔径、孔心与轴向线已有数值检查，轴线信号待排查。未给制造验收条件时返回待依据，粗糙度尚不能测量。",
+      "description": "S1 以 CAMotics 执行最终 NC，比较原 CAD 与实际去料网格；孔径、孔心与轴向线已有数值检查，已定位锥形扫掠的轴线数值缺陷，完整引擎修补待回归。未给制造验收条件时返回待依据，粗糙度尚不能测量。",
       "inputs": [
         [
           "nc_ref / execution_plan",
@@ -343,7 +343,8 @@
           "physical_process"
         ]
       },
-      "implemented_result_ref": "verification/S1-VERIFY-20261028-r1/summary.json"
+      "implemented_result_ref": "verification/S1-VERIFY-20261028-r1/summary.json",
+      "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json"
     }
   ],
   "shared_resources": [

@@ -110,7 +110,7 @@
           "name": "单通孔",
           "status": "sample_cases_measured",
           "label": "4 例已测 · 未验收",
-          "scope": "固定 8×6 mm，(孔径,孔心,厚度) 四例：(2,(3,2),1.5)、(2.5,(3,2),1.5)、(2,(4,3),1.5)、(2,(3,2),1.0)。轴向贯穿有未解决信号；不是连续参数范围。",
+          "scope": "固定 8×6 mm，(孔径,孔心,厚度) 四例：(2,(3,2),1.5)、(2.5,(3,2),1.5)、(2,(4,3),1.5)、(2,(3,2),1.0)。轴线数值缺陷已复现，完整引擎修补待回归；不是连续参数范围。",
           "stages": [
             "s1"
           ],
@@ -121,7 +121,8 @@
           ],
           "preparation_evidence_ref": "data/preparation-status.json",
           "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json",
-          "verification_evidence_ref": "verification/S1-VERIFY-20261028-r1/summary.json"
+          "verification_evidence_ref": "verification/S1-VERIFY-20261028-r1/summary.json",
+          "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json"
         },
         {
           "id": "hole-pattern",
@@ -259,7 +260,7 @@
           "name": "矩形完整毛坯",
           "status": "sample_cases_measured",
           "label": "两种板厚已测",
-          "scope": "8×6×1.5 mm 和 8×6×1.0 mm 矩形坯已完成去料测量；贯穿有待排查项，不表示连续尺寸范围合格。",
+          "scope": "8×6×1.5 mm 和 8×6×1.0 mm 矩形坯已完成去料测量；轴线数值缺陷待引擎修补回归，不表示连续尺寸范围合格。",
           "stages": [
             "s1"
           ],
@@ -268,7 +269,8 @@
             "cases/s1/simulation.camotics",
             "cases/s1/metrics.json",
             "runs/S1-CHAIN-20261028-r3/simulation.camotics"
-          ]
+          ],
+          "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json"
         },
         {
           "id": "al6061-label",
@@ -309,7 +311,7 @@
     }
   ],
   "progression": [
-    "S1 四个单孔用例已测量；优先排查轴线信号、补工艺验收依据，再进入 S2。",
+    "S1 四例已测量；轴线数值缺陷已复现，先集成引擎修补并回归原例，再进入 S2。",
     "沿单孔 → 孔系 → 铣削特征 → 多工序 → 3+2 → 连续五轴推进。",
     "真实单件、新设备、新毛坯或材料按依赖接入，每次只改变一类条件。"
   ],

@@ -15,8 +15,8 @@
       "title": "单孔完整链路",
       "case_name": "偏心通孔薄板",
       "status": "measured",
-      "status_label": "4 例已测 · 贯穿待排查",
-      "headline": "孔径、孔位、板厚三个独立变体已跑完整链路；先查轴线残留信号，再扩展孔系。",
+      "status_label": "4 例已测 · 引擎修补待回归",
+      "headline": "轴线异常已复现为锥形扫掠数值问题；下一步集成修补并复跑原输入。",
       "part": "8 × 6 × 1.5 mm；φ2 通孔；孔心 (3, 2)",
       "material": "6061-T6 标签 · 矩形毛坯",
       "resources": "通用 XYZ、参考 NC、单钻头、单次装夹",
@@ -26,10 +26,10 @@
       ],
       "new_verification": [
         "新增 11 层孔径 / 孔心及 9 条轴向线检查，保留制造要求待补状态",
-        "错孔位与未钻通对照均检出；四个正常几何用例的轴线信号待排查"
+        "错孔位与未钻通对照均检出；轴线数值缺陷已用原 STL、源函数和局部仿真复现"
       ],
       "remaining": [
-        "排查轴线残留 / 交点退化，做受限局部精度对照",
+        "集成垂直锥形扫掠修补，回归原四例及错孔位 / 未钻通对照",
         "工艺师傅确认装夹、参数及制造验收依据",
         "补夹具 / 刀柄模型；解决当前发现后再推进 S2"
       ],
@@ -44,7 +44,7 @@
       "baseline_id": "B0-S1-XYZ-AL",
       "preparation_status": "首版入口已验证",
       "programming_status": "执行方案驱动已实测",
-      "verification_status": "逐项测量已有待排查项"
+      "verification_status": "轴线缺陷已定位 · 修补待回归"
     },
     {
       "id": "s2",
@@ -257,5 +257,6 @@
   "baseline_ref": "development-baseline.json#/active_baseline_id",
   "support_catalog_ref": "development-baseline.json#/support_dimensions",
   "preparation_status_ref": "preparation-status.json",
-  "feature_verification_ref": "verification/S1-VERIFY-20261028-r1/summary.json"
+  "feature_verification_ref": "verification/S1-VERIFY-20261028-r1/summary.json",
+  "axis_investigation_ref": "verification/S1-AXIS-20261028-r1/summary.json"
 }
