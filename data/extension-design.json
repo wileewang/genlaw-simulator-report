@@ -1,5 +1,5 @@
 {
-  "schema": "genlaw.extension-design.v0",
+  "schema": "genlaw.extension-design.v1",
   "status": "design_defined_runtime_not_implemented",
   "principle": "零件集合影响能力开发优先级；统一接口、原始数据与验收约定持续复用。",
   "scope": "模块2加工编程、模块3仿真检验内部的扩展设计；不增加一级系统模块。",
@@ -49,20 +49,30 @@
       "rule": "引擎内部面编号不直接充当长期特征ID；转换后的网格不替换原始验收CAD。"
     },
     {
-      "name": "OperationPlan",
+      "name": "ProcessPlan",
       "fields": [
-        "operation.type + version: 工艺类型与版本",
-        "parameters: 类型对应的参数、工序依赖、目标特征",
-        "resources: 来料、刀具、刀柄、装夹、设备与控制器引用"
+        "document / provenance: 原卡、版次、页码/字段与引用资料",
+        "operations / steps: 工序、工步、目标特征、装夹约束、条件与依赖",
+        "requirements / resources: 最终与中间要求、资源约束、缺项及审阅状态"
       ],
-      "rule": "工序类型可扩展，禁止按零件文件名或71份清单编号选择实现。外购、预成形与加工明确分流。"
+      "rule": "工艺意图与执行参数分开；原卡指定值是约束。保留条件分支与一坯多件语义，未实现类型明确返回不支持，禁止按零件编号分流。"
+    },
+    {
+      "name": "ExecutionPlan",
+      "fields": [
+        "selected_steps / scope: 已选分支、工步、前置条件与执行/检验范围",
+        "resolved_config: 实际来料、资源版本、刀具、坐标、控制器和参数",
+        "parameter_provenance / decisions: 卡片约束、资源事实、推导依据和待决问题"
+      ],
+      "rule": "由规则与资源在工艺约束内落实，冻结后交 CAM；缺关键数据或冲突时阻止对应执行，改变工艺意图须返回规划端。"
     },
     {
       "name": "ProgramArtifact",
       "fields": [
         "program_ref: 类型、方言、单位、文件哈希",
         "resolved_config: 实际设备、坐标和刀长约定",
-        "provenance: 工艺卡、CAD、适配器、引擎与后处理版本"
+        "provenance: 工艺卡、CAD、适配器、引擎与后处理版本",
+        "execution_plan_ref / step_map: 冻结方案及工步与程序段绑定"
       ],
       "rule": "当前NC主线保留最终NC；非NC工艺将来使用明确的其他程序类型。FreeCAD Job 属于适配器内部产物。"
     },
@@ -71,24 +81,30 @@
       "fields": [
         "geometry_ref: 实体/网格等表示与版本",
         "frame / units / precision: 坐标、单位与表示误差",
-        "material_ref / parent_state / operation_ref: 材料、前一状态和来源工序"
+        "material_ref / parent_state / operation_ref: 材料、前一状态和来源工序",
+        "workpiece_lineage: 来料、分支、拆分及产出件来源"
       ],
-      "rule": "不同后端交换实际材料状态；格式转换声明误差和可支持范围，禁止从目标CAD重造中间材料。"
+      "rule": "不同后端交换实际材料状态；格式转换声明误差和可支持范围，禁止从目标CAD重造中间材料。 一坯多件须记录拆分来源；当前 S1 只验证单来料单件。"
     },
     {
       "name": "VerificationResult",
       "fields": [
         "geometry_metrics: IoU、过切/欠切等指标与适用方法",
         "requirement_results: 逐项通过、失败、未验证或不可判定",
-        "evidence_refs: 程序、材料、资源、比较器和回放来源"
+        "evidence_refs: 程序、材料、资源、比较器和回放来源",
+        "scope / coverage: 已执行工步、中间/最终检验、未验证步骤及外部证据状态"
       ],
-      "rule": "检验接口与引擎分离；局部精度不足时不能仅凭整体IoU判通过。"
+      "rule": "检验接口与引擎分离；局部精度不足时不能仅凭整体IoU判通过。 局部几何通过不等于整卡完成；缺中间或最终验收依据返回未验证/不可判定。"
     }
   ],
   "adapter_roles": [
     [
+      "工艺输入与执行方案解析",
+      "原卡/结构化意图 → 核对后的工艺 → 执行方案；参数保留依据，需改工艺时返回模块 1 / 工艺师傅"
+    ],
+    [
       "CAM adapter",
-      "工序、CAD、资源 → 刀路/工艺程序；FreeCAD Job 不向上游泄漏"
+      "冻结的执行方案 + CAD → 刀路/工艺程序；FreeCAD Job 是模块 2 内部产物"
     ],
     [
       "Machine / post adapter",
@@ -100,7 +116,7 @@
     ],
     [
       "Verification adapter",
-      "原始CAD/要求 + 实际结果 → 适用指标和逐项判定"
+      "原始 CAD / 最终要求、独立中间要求 + 实际结果 → 指标、逐项判定与工步覆盖"
     ]
   ],
   "capability_manifest": {
@@ -125,7 +141,8 @@
       "missing_information",
       "out_of_qualified_range",
       "resource_limit",
-      "indeterminate_verification"
+      "indeterminate_verification",
+      "conflicting_information"
     ],
     "failure_payload": [
       "stage",
@@ -144,18 +161,21 @@
     "接口版本化，新增类型明确声明；旧卡片通过有记录的迁移保持可追溯。",
     "工艺特有参数使用有类型的扩展区，核心不假定只有铣削、Z向刀轴、矩形毛坯或单一网格。",
     "几何变换、单位、刀长与坐标由配置明确传递，不能依赖工具隐含默认值。",
-    "统一输入输出不意味着统一所有物理模型；新增成形或材料物理允许独立求解器。"
+    "统一输入输出不意味着统一所有物理模型；新增成形或材料物理允许独立求解器。",
+    "ProcessPlan / ExecutionPlan 细化原 OperationPlan 设计；旧 S1 参数卡须显式映射，迁移程序尚未实现。"
   ],
   "shared_acceptance": [
     "新尺寸/孔位等变体由数据驱动，主流程没有零件编号分支。",
     "新组合保持实际剩料连续，单位、坐标与要求绑定一致。",
     "不支持的工艺、设备语义或精度在执行前报告；检验不足时返回不可判定。",
-    "新增能力通过小型独立正常/错误案例，同时保留旧能力的回归结果。"
+    "新增能力通过小型独立正常/错误案例，同时保留旧能力的回归结果。",
+    "工艺卡约束与派生参数来源可追溯；缺项和资料冲突在受影响阶段拦截，不复用历史案例默认值。",
+    "工步与最终/中间要求分别报告；非几何或未支持步骤不被误计为整卡完成。"
   ],
   "proof_milestones": [
     {
       "when": "S1 首个适配",
-      "proof": "固定测试卡经统一入口调用现有FreeCAD/CAMotics；换孔位等参数不改主流程；能力缺项可定位。",
+      "proof": "经审阅的 S1 工艺意图通过核对、执行方案解析接入 FreeCAD/CAMotics；完整输入、缺项、冲突分别处理，换孔位等变体不改主流程。",
       "status": "待实现"
     },
     {
@@ -198,5 +218,6 @@
     ]
   },
   "limits": "目标是将修改集中在适配器、配置和必要的版本演进，并用测试证明兼容；不承诺任何新零件都无需算法开发或永远无需调整公共接口。",
-  "current_implementation": "现有S1为固定参数脚本与已保存实测结果。通用工艺卡解析、能力注册/匹配、插件运行框架及扩展验收尚未实现；本文件是设计约束。"
+  "current_implementation": "现有 S1 为固定参数脚本与已保存结果。工艺意图入口、执行方案解析、PDF 识别、能力匹配及新接口验收均待实现；本文件不代表新增制造通过。",
+  "process_handoff_ref": "process-handoff.json"
 }

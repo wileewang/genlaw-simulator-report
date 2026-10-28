@@ -1,0 +1,90 @@
+{
+  "schema": "genlaw.process-handoff-design.v0",
+  "status": "design_defined_runtime_not_implemented",
+  "runtime_implemented": false,
+  "scope": "模块 2 内部细化；四个一级模块及模块 2 / 3 的开发范围保持。",
+  "basis": "有限抽查三份真实板类工艺规程、共十三页；归纳工艺表达，尚未证明全部来料兼容。",
+  "principle": "工艺卡表达要做什么和约束；加工编程将其落实为有依据、可执行的方案，再交给 CAM。",
+  "entry_points": [
+    "Agent / 人工结构化卡 → 直接接入工艺意图",
+    "现有 PDF / 纸质卡 → 模型提取候选内容 → 核对后接入"
+  ],
+  "steps": [
+    {
+      "id": "normalize",
+      "name": "整理并核对工艺",
+      "input": "工艺卡 + CAD / 要求 + 引用资料",
+      "output": "结构化工艺意图 + 问题清单",
+      "implementation": "程序校验；PDF 可由模型辅助提取",
+      "detail": "保留工序、工步、装夹、条件分支与原文位置；核对零件、版次、单位和特征关联。"
+    },
+    {
+      "id": "resolve",
+      "name": "形成可执行加工方案",
+      "input": "工艺意图 + 资源 + 已验证的能力",
+      "output": "明确的执行方案 + 参数依据",
+      "implementation": "规则程序 + 资源库 + CAM 能力",
+      "detail": "在工艺约束内确定刀具、坐标、循环、深度和切削参数；影响工艺路线或质量要求的选择返回规划端。"
+    },
+    {
+      "id": "generate",
+      "name": "生成并核对 NC",
+      "input": "冻结的执行方案 + 同版 CAD",
+      "output": "最终 NC + 同一份加工配置",
+      "implementation": "适配程序 + FreeCAD CAM + 后处理",
+      "detail": "生成刀路和目标方言 NC，记录所用资源与版本；交给模块 3 从声明的来料开始仿真。"
+    }
+  ],
+  "example": {
+    "intent": "钻 φ2 通孔，孔位及要求引用原 CAD / 图纸。",
+    "resolution": "结合毛坯厚度、钻头几何、装夹与控制器，确定刀尖终点、坐标、循环和参数；工艺师傅不必在卡上逐条写 G-code。",
+    "missing": "关键数据缺失或资料冲突时，输出具体问题和责任环节，不套用 S1 历史转速、进给或深度。"
+  },
+  "contracts": [
+    {
+      "name": "ProcessPlan / 工艺意图",
+      "text": "文档标识、版次和来源；原 CAD / 最终要求引用；工序 → 工步、装夹约束、工序间要求、依赖及条件分支；缺项与审阅状态。卡上明确指定的刀具和参数也是约束，不能擅自覆盖。"
+    },
+    {
+      "name": "ExecutionPlan / 执行方案",
+      "text": "已选择的分支与工步、实际来料、资源版本、工具几何、坐标变换和控制器语义、已确定参数及依据、执行与检验范围、前置条件；冻结后才能调用 CAM。"
+    },
+    {
+      "name": "ProgramArtifact / 程序产物",
+      "text": "最终 NC 与哈希、ExecutionPlan 引用、实际加工配置、工步与程序段的关联、适配器及 CAM / 后处理版本。FreeCAD Job 是内部产物。"
+    },
+    {
+      "name": "VerificationResult / 检验结果",
+      "text": "实际材料状态与来源、工步覆盖范围、最终 / 中间要求的逐项状态、IoU 等几何指标、未验证步骤和所缺外部证据；局部几何通过不能标记整张工艺卡完成。"
+    }
+  ],
+  "parameter_ownership": [
+    ["卡上明确规定", "作为约束传递；修改须回到工艺规划或工艺师傅。"],
+    ["资源提供", "引用有版本的毛坯、设备、刀具、夹具及坐标配置。"],
+    ["程序 / CAM 推导", "记录依据、输入、规则或引擎版本；只能在已定义的工艺与能力范围内选择。"],
+    ["无法确定", "明确缺什么、影响哪步、交给谁处理；不得静默补默认值。"]
+  ],
+  "issue_contract": {
+    "fields": ["code", "source_ref", "affected_operations_or_requirements", "blocked_stage", "required_input_or_decision", "owner"],
+    "states": ["missing_information", "conflicting_information", "unsupported_capability", "ready_for_declared_scope"],
+    "readiness_rule": "缺关键执行数据阻止对应 NC 生成；缺验收依据阻止对应质量判定。范围和前置条件必须明确，软件就绪与工艺批准分别记录。"
+  },
+  "material_and_verification": [
+    "保留一坯一件 / 一坯多件及分支来源。首版仅实现单来料、单件、单装夹；批量拆分与复杂分支另行开发。",
+    "上道实际剩料传给下道，换装夹保留坐标变换；原始目标 CAD 不用于重造中间材料。",
+    "中间要求在对应工步检查，需要独立的要求或中间目标；最终结果始终对比原始目标 CAD。",
+    "去毛刺、热处理、表面处理、人工检验等保留在工艺路线中；按当前能力标为未验证或关联外部证据，不能静默跳过。",
+    "仅仿真部分工步时，明确范围与实际来料依据；后续依赖未满足，不能沿用错误材料继续或声称整件完成。"
+  ],
+  "migration": {
+    "historical_card": "S1 的 genlaw.process-card.v0 是已执行固定脚本的参数记录，保持原文件。",
+    "new_contract": "新的 ProcessPlan / ExecutionPlan 为设计草案，尚无运行时解析器、校验器或迁移程序。",
+    "policy": "旧卡如需接入，另建有来源和差异记录的映射；不得仅改 schema 名称便宣称已兼容真实卡。"
+  },
+  "first_delivery": [
+    "以单孔 S1 人工整理一份接近现场表达的工艺卡，关联原 CAD、要求与资源，完成输入审阅。",
+    "只实现单工序的结构化入口、必要字段核对与执行参数解析；保留原卡和参数来源。",
+    "用完整输入、缺项和资料冲突三个小案例核对处理结果，再接 FreeCAD CAM / CAMotics 及几何验收。",
+    "PDF 自动识别、复杂条件分支、一坯多件、多次装夹按路线逐步补入。"
+  ]
+}

@@ -27,3 +27,15 @@
 .review-part h2{margin:10px 0 16px}.review-drawing{padding:24px;background:#fff;border:1px solid var(--line);border-radius:16px}
 .review-drawing img{display:block;width:100%;height:auto;margin:10px 0 20px}.review-drawing .link{display:block;text-align:right}
 @media(max-width:720px){.review-downloads{padding:20px}.review-downloads .pill{margin-top:12px}.review-part{grid-template-columns:1fr;gap:22px}.review-drawing{padding:12px}.review-downloads .actions{display:grid}.review-downloads .btn{width:100%}}
+.handoff-entry{display:flex;flex-wrap:wrap;gap:8px 24px;margin:17px 0;color:var(--muted);font-size:12px}
+.handoff-grid .baseline{position:relative;display:flex;flex-direction:column}
+.handoff-grid .baseline:not(:last-child):after{content:'→';position:absolute;right:-17px;top:50%;z-index:1;color:var(--blue);background:var(--bg,#f7f9fc);font-size:18px}
+.handoff-grid h3{font-size:18px}
+.handoff-io{margin:15px 0;flex:1}
+.handoff-io small{display:block;font-size:10px;color:var(--muted);margin-top:9px}
+.handoff-io p{margin-top:3px;color:var(--ink,#172a40)}
+.handoff-engine{font-size:11px;color:var(--blue);padding-top:12px;border-top:1px solid var(--line)}
+.handoff-feedback{display:flex;gap:8px 22px;flex-wrap:wrap;margin-top:12px;padding:15px 18px;border:1px solid #e6d8ca;border-radius:9px;background:#faf6f1;color:#7b6856;font-size:12px}
+.handoff-example{font-size:13px;line-height:1.9;color:var(--muted);margin:20px 0}
+.handoff-example strong{color:var(--ink,#172a40)}
+@media(max-width:720px){.handoff-grid .baseline:not(:last-child):after{content:'↓';right:calc(50% - 6px);top:auto;bottom:-19px}.handoff-grid{gap:24px}.handoff-entry{display:grid;font-size:11px}.handoff-example{font-size:12px}#process-handoff .pill{margin-top:10px}}

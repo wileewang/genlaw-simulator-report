@@ -1,5 +1,5 @@
 {
-  "schema": "genlaw.system-design.v1",
+  "schema": "genlaw.system-design.v2",
   "title": "系统设计",
   "module_numbering": "Geometry recognition is upstream; retain process planning as module 1, programming as module 2 and verification as module 3.",
   "contract_status": "design_definitions_not_production_validators",
@@ -64,15 +64,22 @@
             "feature_id": "F_HOLE_1",
             "kind": "diameter",
             "nominal_mm": 2,
-            "tolerance_mm": 0.05,
+            "tolerance_mm": null,
             "source": {
               "view_id": "top",
               "annotation_id": "D1"
             },
-            "binding_status": "bound"
+            "binding_status": "bound",
+            "acceptance_status": "pending_review"
           }
         ],
-        "issues": []
+        "issues": [
+          {
+            "code": "missing_information",
+            "field": "R_DIAMETER.tolerance_mm",
+            "effect": "直径公差尚待工艺审阅，名义尺寸不是验收公差。"
+          }
+        ]
       }
     },
     {
@@ -81,11 +88,11 @@
       "name": "工艺规划",
       "question": "怎样加工？",
       "input": "CAD + 制造要求 + 资源",
-      "output": "工艺卡",
+      "output": "工艺意图 / 工艺卡",
       "implementation": "Agent 制定工艺 + 程序检查",
       "status": "接口先行 · Agent 后置",
       "current": false,
-      "description": "选择毛坯、设备、装夹、刀具、工序和参数。当前由固定测试工艺卡提供下游输入。",
+      "description": "Agent 决定工艺路线、工序/工步、装夹与质量约束，引用原 CAD 和最终要求。明确指定的刀具或参数也作为约束；设备执行细节由模块 2 在这些约束内落实。当前先用人工结构化卡，Agent 实现后置。",
       "inputs": [
         [
           "geometry_packet",
@@ -98,56 +105,57 @@
       ],
       "outputs": [
         [
-          "process_card",
-          "有序工序、装夹、资源引用和加工参数"
+          "process_plan",
+          "工艺卡的结构化表达：工序/工步、资源与装夹约束、中间要求、条件与依赖"
         ],
         [
-          "review",
-          "测试卡 / 人工审核 / Agent 生成等来源状态"
+          "review / provenance",
+          "原文、来源位置、版次、审阅及决策状态；保留原 CAD / 最终要求引用"
         ],
         [
           "issues",
-          "缺项、资源不匹配或工艺不支持的原因"
+          "缺项、冲突或尚无法确定的工艺决策"
         ]
       ],
       "example": {
-        "schema": "genlaw.process-card.v0",
-        "card_id": "S1-TEST-v1",
-        "part_ref": "target.step@s1-v1",
-        "resource_profile": "R-XYZ-01",
-        "setups": [
-          {
-            "id": "S1",
-            "work_offset": "G54",
-            "origin_mm": [
-              0,
-              0,
-              0
-            ]
-          }
-        ],
+        "schema": "genlaw.process-plan.v0",
+        "example_status": "design_only_not_executable",
+        "plan_id": "S1-INTENT-DRAFT",
+        "geometry_ref": "target.step@s1-v1",
+        "final_requirements_ref": "original-requirements@pending-review",
         "operations": [
           {
             "id": "OP10",
             "type": "drilling",
-            "setup_id": "S1",
-            "tool_id": "T1",
-            "feature_id": "F_HOLE_1",
-            "parameters": {
-              "hole_xy_mm": [
-                3,
-                2
-              ],
-              "final_tip_z_mm": -2.200860619,
-              "feed_mm_min": 60,
-              "spindle_rpm": 1000
-            }
+            "setup_constraints": "单次装夹；实际定位与夹具待确认",
+            "steps": [
+              {
+                "id": "OP10.1",
+                "intent": "钻 φ2 通孔",
+                "feature_id": "F_HOLE_1",
+                "requirement_refs": [
+                  "R_DIAMETER"
+                ],
+                "source_ref": "synthetic-card@draft/OP10.1"
+              }
+            ]
           }
         ],
         "review": {
-          "origin": "synthetic_test_fixture",
+          "origin": "manual_structured_draft",
+          "input_suitability_approved": false,
           "production_approved": false
-        }
+        },
+        "issues": [
+          {
+            "code": "missing_information",
+            "fields": [
+              "setup",
+              "resource_profile",
+              "acceptance_requirements"
+            ]
+          }
+        ]
       }
     },
     {
@@ -155,57 +163,67 @@
       "number": "模块 2",
       "name": "加工编程",
       "question": "生成哪些指令？",
-      "input": "工艺卡 + CAD + 资源配置",
+      "input": "工艺意图 + CAD + 资源配置",
       "output": "最终 NC + 加工配置",
-      "implementation": "适配程序 + FreeCAD CAM + 后处理",
-      "status": "当前开发范围",
+      "implementation": "核对与解析程序 + FreeCAD CAM + 后处理",
+      "status": "固定案例已跑通 · 通用入口待开发",
       "current": true,
-      "description": "把工艺卡映射成 CAM 任务，计算刀路，再按选定控制器规则导出最终 NC。",
+      "description": "先核对工艺卡及引用资料，再按规则、资源和 CAM 能力落实可执行加工方案，最后生成 NC。PDF 识别可由模型辅助；缺关键数据、冲突或改工艺的决策返回规划端，不能直接把文字卡交给 CAM。",
       "inputs": [
         [
-          "process_card",
-          "有序工序、刀具、装夹、坐标与参数"
+          "process_plan",
+          "结构化工艺意图；已有 PDF / 纸质卡先提取并核对，保留原文与版本"
         ],
         [
-          "cad_ref",
-          "原始 CAD；同一版本也传递给仿真验收"
+          "geometry_packet",
+          "原始 CAD / 已关联最终要求；识别缺项与冲突，不覆盖原始定义"
         ],
         [
-          "resource_profile",
-          "设备能力、NC 方言、毛坯、工具 / 夹具几何"
+          "resource_profile / capabilities",
+          "有版本的毛坯、设备/方言、刀具/夹具、坐标及已验证能力范围"
         ]
       ],
       "outputs": [
         [
-          "nc_ref",
-          "最终 NC 文件及其哈希、后处理器版本"
+          "execution_plan",
+          "已确定的工步、资源、坐标、加工参数及其依据；声明执行范围与前置条件"
         ],
         [
-          "machining_config",
-          "解析后的毛坯、刀具、坐标变换、控制器语义与夹具"
+          "nc_ref / machining_config",
+          "最终 NC 及哈希，绑定同一执行方案和实际加工配置"
         ],
         [
           "provenance",
-          "工艺卡、CAD、CAM 软件与配置版本的绑定"
+          "原卡/引用资料位置、CAD、参数来源、CAM/后处理及配置版本"
         ],
         [
-          "issues",
-          "不支持工序、超出能力、单位或引用错误"
+          "issues / readiness",
+          "缺项、冲突、不支持或在声明范围内就绪；注明受影响工步、阶段与处理方"
         ]
       ],
       "example": {
-        "schema": "genlaw.machining-job.v0",
-        "job_id": "S1-JOB-01",
-        "nc_ref": {
-          "path": "reference.nc",
-          "sha256": "<final NC hash>"
-        },
-        "target_ref": "target.step@s1-v1",
-        "process_card_ref": "S1-TEST-v1",
-        "machining_config_ref": "R-XYZ-01",
-        "implementation": {
+        "schema": "genlaw.programming-response.v0",
+        "example_status": "design_only_not_runtime_output",
+        "process_plan_ref": "S1-INTENT-DRAFT",
+        "status": "missing_information",
+        "execution_plan_ref": null,
+        "nc_ref": null,
+        "machining_config_ref": null,
+        "issues": [
+          {
+            "code": "missing_information",
+            "affected_operations": [
+              "OP10"
+            ],
+            "field": "setup.fixture_and_work_frame",
+            "blocked_stage": "nc_generation",
+            "owner": "resource_configuration / process_planning",
+            "required_input": "确认装夹和工件坐标；不得套用历史 S1 的零偏置。"
+          }
+        ],
+        "planned_implementation": {
           "cam": "FreeCAD CAM",
-          "postprocessor": "FreeCAD bundled linuxcnc_post",
+          "postprocessor": "selected_by_controller_profile",
           "linuxcnc_runtime_required": false
         }
       }
@@ -216,41 +234,45 @@
       "name": "仿真检验",
       "question": "加工结果对吗？",
       "input": "最终 NC + 加工配置 + 原始 CAD",
-      "output": "加工后几何 + 对比报告 + 回放",
+      "output": "加工后几何 + 逐项检验 + 覆盖范围",
       "implementation": "CAMotics 去料 + 程序几何对比",
       "status": "当前开发范围",
       "current": true,
-      "description": "从真实声明的毛坯执行 NC，保存剩余材料，并在同一坐标系下与原始 CAD 比较。",
+      "description": "按同一 NC 和配置从声明的实际来料去料，保存材料来源与工序间状态；在有独立依据时检查中间要求，最终对比原 CAD。报告已验证工步、未验证步骤和质量项；局部几何通过不代表整张工艺卡完成。",
       "inputs": [
         [
-          "nc_ref",
-          "模块 2 导出的同一份最终 NC"
+          "nc_ref / execution_plan",
+          "模块 2 的同一份最终 NC、工步关联、执行和检验范围"
         ],
         [
-          "machining_config",
-          "实际毛坯、刀具、装夹 / 坐标与所需控制器语义"
+          "machining_config / incoming_state",
+          "实际来料、刀具、装夹/坐标与控制器语义；多工序传递实际剩料"
         ],
         [
           "target_ref / requirements",
-          "未经改写的目标 CAD 与制造要求"
+          "原始 CAD / 最终要求、独立中间要求及所需外部资料"
         ]
       ],
       "outputs": [
         [
-          "result_geometry",
-          "实际加工后的实体 / 网格，注明数据格式"
+          "result_geometry / material_states",
+          "实际加工实体/网格、数据格式、精度、材料来源及工序交接"
         ],
         [
           "metrics",
-          "体积 IoU、过切 / 欠切等指标及计算方法 / 精度"
+          "体积 IoU、过切/欠切等几何指标及方法/精度"
         ],
         [
           "requirement_results",
-          "逐项要求的通过、失败、未验证或不可判定状态"
+          "最终与中间要求分别返回通过、失败、未验证或不可判定"
+        ],
+        [
+          "scope / coverage",
+          "计划工步、已执行/未执行及未验证项；整卡完成状态与局部结果分开"
         ],
         [
           "replay / provenance",
-          "保存的加工状态、轨迹、NC / 配置 / 结果哈希与错误反馈"
+          "实际加工状态、轨迹、NC/配置/结果版本与错误反馈"
         ]
       ],
       "example": {
@@ -268,7 +290,19 @@
           }
         ],
         "replay_ref": "frames.json",
-        "physical_process_verified": false
+        "physical_process_verified": false,
+        "example_status": "design_only",
+        "scope": {
+          "simulated_operations": [
+            "OP10"
+          ],
+          "verification": "geometric_subset",
+          "whole_process_card_complete": false
+        },
+        "unverified_requirements": [
+          "surface_roughness",
+          "physical_process"
+        ]
       }
     }
   ],
@@ -281,15 +315,20 @@
   "rules": [
     "CAD 与制造要求的原始版本贯穿整条流程。",
     "文件引用包含版本与哈希；单位、坐标和刀长语义必须一致。",
-    "工艺卡可以来自固定测试输入、人工或未来的 Agent，使用同一接口。",
+    "工艺意图可来自人工结构化卡、未来 Agent 或经核对的纸质卡；与 CAM 执行方案分开建模。",
     "不支持、缺信息或精度不足时显式返回状态，不能自动视为通过。",
     "几何指标不代替粗糙度、材料物理、夹紧力或真实机床验证。",
     "模块2/3按明确适配接口扩展，执行前匹配整链能力，新增能力须通过新旧用例验收。",
-    "外部纸质工艺卡保留原文、版次与字段位置，按有版本的字段和语义映射转为内部输入；缺项不得静默填默认值。"
+    "外部纸质工艺卡保留原文、版次与字段位置，按有版本的字段和语义映射转为内部输入；缺项不得静默填默认值。",
+    "加工参数逐项注明来自工艺卡、资源配置或程序/CAM推导；影响工艺路线或要求的修改返回规划端。",
+    "原始最终要求与工序中间要求分开；外部通知单、缺项和冲突有来源、影响范围与处理方。",
+    "执行前声明支持范围和必要前置条件，执行后报告工步与要求的覆盖；局部几何通过不等于整卡完成。",
+    "历史 S1 参数记录保持不变，新的工艺意图/执行方案仅为接口设计，迁移和运行时校验待实现。"
   ],
   "development_scope": [
     "programming",
     "verification"
   ],
-  "extension_design_ref": "extension-design.json"
+  "extension_design_ref": "extension-design.json",
+  "process_handoff_ref": "process-handoff.json"
 }
