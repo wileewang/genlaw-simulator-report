@@ -1,6 +1,6 @@
 {
   "schema": "genlaw.process-handoff-design.v1",
-  "status": "limited_preparation_prototype_checked",
+  "status": "limited_single_hole_software_chain_measured",
   "runtime_implemented": false,
   "scope": "五个一级模块中的加工准备、NC 生成与仿真检验；当前从已有工艺卡和 CAD 接入。",
   "basis": "有限抽查三份真实板类工艺规程、共十三页；归纳工艺表达，尚未证明全部来料兼容。",
@@ -117,7 +117,14 @@
   "implemented_components": [
     "source_bound_manual_transcription_intake",
     "single_hole_resource_resolution",
-    "missing_conflict_and_scope_reports"
+    "missing_conflict_and_scope_reports",
+    "execution_plan_to_FreeCAD_CAM",
+    "native_CAD_recheck",
+    "final_NC_consistency_guard",
+    "same_NC_CAMotics_execution",
+    "native_CAD_volume_comparison"
   ],
-  "preparation_status_ref": "preparation-status.json"
+  "preparation_status_ref": "preparation-status.json",
+  "runtime_implementation_scope": "受限单孔参考链路已实现；完整接口范围、工艺批准与质量验收未完成。",
+  "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json"
 }

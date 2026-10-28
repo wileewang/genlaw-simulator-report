@@ -2,7 +2,7 @@
   "schema": "genlaw.system-design.v3",
   "title": "系统设计",
   "module_numbering": "1 几何识别；2 工艺规划；3 加工准备；4 NC 生成；5 仿真检验。旧模块 2 加工编程拆为新模块 3 / 4。",
-  "contract_status": "design_contracts_with_limited_preparation_prototype",
+  "contract_status": "limited_single_hole_software_chain_measured",
   "modules": [
     {
       "id": "geometry",
@@ -226,9 +226,9 @@
       "input": "执行方案 + CAD",
       "output": "最终 NC + 加工配置",
       "implementation": "FreeCAD CAM + 后处理",
-      "status": "固定案例已实测",
+      "status": "执行方案驱动已实测",
       "current": true,
-      "description": "将冻结的可执行方案和同版 CAD 映射为 FreeCAD CAM 任务，计算刀路并按控制器配置后处理，输出绑定同一方案的最终 NC 和加工配置。缺项回到加工准备；工艺改变返回工艺规划或师傅。",
+      "description": "受限单通孔：重新读取原始 CAD 并核对特征，将执行方案映射到 FreeCAD CAM 和后处理，再检查最终 NC。更多特征与设备适配待扩展。",
       "inputs": [
         [
           "execution_plan",
@@ -271,9 +271,9 @@
       "input": "最终 NC + 加工配置 + 原始 CAD",
       "output": "加工后几何 + 逐项检验 + 覆盖范围",
       "implementation": "CAMotics + 几何比较",
-      "status": "单例几何已实测",
+      "status": "同一 NC 去料已实测",
       "current": true,
-      "description": "按同一 NC 和配置从声明的实际来料去料，保存材料来源与工序间状态；在有独立依据时检查中间要求，最终对比原 CAD。报告已验证工步、未验证步骤和质量项；局部几何通过不代表整张工艺卡完成。",
+      "description": "S1 新链路从毛坯执行完整 NC，再与原始 CAD 比对；已跑错孔位反例。逐项公差、夹具及材料物理仍待验收。",
       "inputs": [
         [
           "nc_ref / execution_plan",
@@ -379,5 +379,6 @@
       "planning"
     ]
   },
-  "preparation_status_ref": "preparation-status.json"
+  "preparation_status_ref": "preparation-status.json",
+  "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json"
 }

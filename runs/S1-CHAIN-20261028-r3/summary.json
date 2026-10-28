@@ -1,0 +1,80 @@
+{
+  "schema": "genlaw.chain-milestone.v1",
+  "status": "software_chain_measured",
+  "run_id": "S1-CHAIN-20261028-r3",
+  "input_package": "S1-PREP-20261028-r1",
+  "input_variant": "input-software-reference.json",
+  "tests_passed": 54,
+  "iou_percent": 99.97532870087849,
+  "nc_sha256": "73744e8ebff36d0b95536b24c523c08df4eb6ba315ee2f82962e102f8463a7c9",
+  "controls": {
+    "schema": "genlaw.chain-controls.v1",
+    "status": "passed",
+    "baseline_run": "S1-CHAIN-20261028-r3",
+    "missing_input": "blocked_before_native_CAM",
+    "conflict_input": "blocked_before_native_CAM",
+    "feed_variant": {
+      "feed_mm_min": 30,
+      "nc_sha256": "4b8db21017b79712d2a00168b9e82e5d7a727828db6edbc5442bc71754209840",
+      "generated_by_freecad": true,
+      "material_simulation_run": false
+    },
+    "wrong_nc": {
+      "guard_rejected": true,
+      "geometry_control_executed": true,
+      "resolution_mm": 0.05,
+      "iou_percent": 95.64827393165231,
+      "center_error_mm": [
+        0.5000000024241783,
+        0.5000000024241783,
+        0.5000000024241783
+      ]
+    },
+    "new_replay_frames": 3,
+    "production_approved": false
+  },
+  "resources": {
+    "freecad": {
+      "seconds": 1.1531425129796844,
+      "peak_rss_mib": 201.5078125,
+      "cpu_count": 1,
+      "limit_seconds": 60
+    },
+    "camotics": {
+      "seconds": 4.614844830997754,
+      "peak_rss_mib": 523.07421875,
+      "cpu_count": 1,
+      "limit_seconds": 60
+    },
+    "measure": {
+      "seconds": 16.758669770002598,
+      "peak_rss_mib": 258.26171875,
+      "cpu_count": 1,
+      "limit_seconds": 60
+    }
+  },
+  "implemented": [
+    "checked_process_plan_to_execution_plan",
+    "native_cad_feature_binding",
+    "FreeCAD_CAM_from_execution_plan",
+    "final_NC_trace_validation",
+    "CAMotics_same_NC_removal",
+    "CAD_volume_IoU",
+    "new_NC_replay_frames"
+  ],
+  "pending": [
+    "process_engineer_review",
+    "acceptance_criteria_and_tolerance_judgments",
+    "fixture_holder_collisions",
+    "PDF_automatic_recognition",
+    "wider_single_hole_parameter_domain"
+  ],
+  "source_pdf_automatically_recognized": false,
+  "production_approved": false,
+  "full_tolerance_acceptance": false,
+  "whole_process_card_complete": false,
+  "material_physics_verified": false,
+  "new_native_run": true,
+  "input_scope": "Synthetic manually transcribed card plus explicitly selected software resource configuration.",
+  "initial_attempts": "r1: FreeCAD command loader entry corrected. r2: volume IoU valid; optional slice observation corrected to avoid exact vertex heights. r3: final complete run; failed attempts retained privately."
+}

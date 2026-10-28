@@ -15,24 +15,24 @@
       "title": "单孔完整链路",
       "case_name": "偏心通孔薄板",
       "status": "measured",
-      "status_label": "加工准备首版 · NC 适配待接",
-      "headline": "起始点：单孔、单刀、单装夹；工艺卡入口已建立。",
+      "status_label": "单孔软件链路已实测",
+      "headline": "工艺卡与资源已驱动三步链路；下一步补逐项验收与单孔几何变体。",
       "part": "8 × 6 × 1.5 mm；φ2 通孔；孔心 (3, 2)",
       "material": "6061-T6 标签 · 矩形毛坯",
       "resources": "通用 XYZ、参考 NC、单钻头、单次装夹",
       "new_programming": [
-        "创建 FreeCAD CAM 钻孔任务",
-        "使用后处理导出真实 NC"
+        "由执行方案驱动 FreeCAD CAM，重新核对原生 CAD 孔特征",
+        "检查完整 NC 与执行方案一致，进给参数变体已验证"
       ],
       "new_verification": [
-        "从完整毛坯执行 NC 并保存几何",
-        "计算体积 IoU，回放真实去料状态"
+        "CAMotics 执行本次最终 NC；保存几何、IoU 与去料回放",
+        "错孔位 NC 被入口拦截，专用反例仿真显示约 0.5 mm 偏差"
       ],
       "remaining": [
-        "补齐工艺师傅待审的装夹/坐标、切削参数和验收条件",
-        "执行方案 → FreeCAD CAM 适配，并重新核对原 CAD 特征绑定",
-        "同一最终 NC / 配置 → CAMotics → 孔径、孔位、贯穿验收",
-        "补错误 NC、夹具检查及独立参数变体；保留原始基准"
+        "工艺师傅确认装夹/坐标、切削参数和验收依据",
+        "孔径、孔位、贯穿的逐项测量与公差判定",
+        "独立孔径 / 孔位 / 厚度变体及未钻通反例",
+        "夹具 / 刀柄建模；随后扩展孔系"
       ],
       "changes": "先固定材料、设备和装夹，只验证一个通孔。",
       "shape": "single-hole",
@@ -43,7 +43,9 @@
         "已验证完整输入、缺项、冲突及参数来源"
       ],
       "baseline_id": "B0-S1-XYZ-AL",
-      "preparation_status": "首版入口已验证"
+      "preparation_status": "首版入口已验证",
+      "programming_status": "执行方案驱动已实测",
+      "verification_status": "新 NC 去料已实测"
     },
     {
       "id": "s2",

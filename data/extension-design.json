@@ -1,6 +1,6 @@
 {
   "schema": "genlaw.extension-design.v2",
-  "status": "design_defined_runtime_not_implemented",
+  "status": "limited_single_hole_chain_implemented_general_framework_pending",
   "principle": "零件集合影响能力开发优先级；统一接口、原始数据与验收约定持续复用。",
   "scope": "加工准备、NC 生成、仿真检验三个一级模块的扩展设计。",
   "layers": [
@@ -218,6 +218,6 @@
     ]
   },
   "limits": "目标是将修改集中在适配器、配置和必要的版本演进，并用测试证明兼容；不承诺任何新零件都无需算法开发或永远无需调整公共接口。",
-  "current_implementation": "加工准备已有人工核对结构化卡的单孔首版及完整/缺项/冲突检查。S1 NC / 去料结果仍来自历史固定脚本；新执行方案到 NC 的适配、能力注册和逐项验收待实现。",
+  "current_implementation": "单孔工艺输入已驱动加工准备 → FreeCAD CAM → 同一 NC 的 CAMotics 去料 → CAD 几何比对。缺项/冲突拦截、进给变体和错孔位 NC 已检查；通用能力注册、更多几何与逐项公差验收待实现。",
   "process_handoff_ref": "process-handoff.json"
 }

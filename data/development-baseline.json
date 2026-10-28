@@ -21,7 +21,7 @@
           "name": "偏心单通孔薄板",
           "visual": "single-hole",
           "spec": "8 × 6 × 1.5 mm · φ2 通孔",
-          "status": "固定案例几何实测",
+          "status": "单孔输入链路已实测",
           "reason": "单特征、单装夹；偏心孔便于检查坐标。",
           "limit": "工艺卡与制造要求待审阅。",
           "capability_ids": [
@@ -86,7 +86,8 @@
       "evidence_paths": [
         "cases/s1/metrics.json",
         "cases/s1/resources.json",
-        "cases/s1/target.step"
+        "cases/s1/target.step",
+        "runs/S1-CHAIN-20261028-r3/summary.json"
       ],
       "review_package_id": "S1-REVIEW-20261028-r2"
     }
@@ -108,14 +109,16 @@
           "name": "单通孔",
           "status": "single_case_measured",
           "label": "单例实测",
-          "scope": "S1 固定几何；加工准备首版已验证，通用 NC 入口与公差待补。",
+          "scope": "S1 单孔工艺输入链路已实测；孔位错误 NC 和进给变体已检查，公差与更宽几何范围待补。",
           "stages": [
             "s1"
           ],
           "evidence_paths": [
-            "cases/s1/metrics.json"
+            "cases/s1/metrics.json",
+            "runs/S1-CHAIN-20261028-r3/metrics.json"
           ],
-          "preparation_evidence_ref": "data/preparation-status.json"
+          "preparation_evidence_ref": "data/preparation-status.json",
+          "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json"
         },
         {
           "id": "hole-pattern",
@@ -190,7 +193,8 @@
           ],
           "evidence_paths": [
             "cases/s1/reference.nc",
-            "cases/s1/resources.json"
+            "cases/s1/resources.json",
+            "runs/S1-CHAIN-20261028-r3/program.nc"
           ]
         },
         {
@@ -257,7 +261,8 @@
           ],
           "evidence_paths": [
             "cases/s1/simulation.camotics",
-            "cases/s1/metrics.json"
+            "cases/s1/metrics.json",
+            "runs/S1-CHAIN-20261028-r3/simulation.camotics"
           ]
         },
         {
@@ -299,7 +304,7 @@
     }
   ],
   "progression": [
-    "先完成 S1 的加工准备、NC 生成和几何检验接口。",
+    "S1 三步软件链路已接通；补齐逐项验收和独立单孔几何变体。",
     "沿单孔 → 孔系 → 铣削特征 → 多工序 → 3+2 → 连续五轴推进。",
     "真实单件、新设备、新毛坯或材料按依赖接入，每次只改变一类条件。"
   ],
