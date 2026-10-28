@@ -1,0 +1,33 @@
+--- a/src/camotics/sim/ConicSweep.cpp
++++ b/src/camotics/sim/ConicSweep.cpp
+@@ -67,6 +67,30 @@
+     return sqr(Px - Ax) + sqr(Py - Ay) <= sqr(radius) ? 1 : -1;
+   }
+ 
++  // A horizontal cylinder sweep is a finite capsule in each supported XY
++  // section. Compare distances directly instead of subtracting nearly equal
++  // quadratic terms at tangent tool paths. Such cancellation can leave false
++  // internal material sheets even when the two cutter envelopes exactly meet.
++  // Extended precision is used for the comparison, without enlarging the tool
++  // or changing the surface / simulation resolution.
++  if (Az == Bz && rt == rb && 0 < l) {
++    const long double dx = (long double)Bx - Ax;
++    const long double dy = (long double)By - Ay;
++    const long double px = (long double)Px - Ax;
++    const long double py = (long double)Py - Ay;
++    const long double length2 = dx * dx + dy * dy;
++    const long double projection = px * dx + py * dy;
++    const long double radius2 = (long double)rb * rb;
++    if (projection <= 0) return px * px + py * py <= radius2 ? 1 : -1;
++    if (projection >= length2) {
++      const long double qx = (long double)Px - Bx;
++      const long double qy = (long double)Py - By;
++      return qx * qx + qy * qy <= radius2 ? 1 : -1;
++    }
++    const long double cross = px * dy - py * dx;
++    return cross * cross <= radius2 * length2 ? 1 : -1;
++  }
++
+   // epsilon * beta^2 + gamma * beta + rho = 0
+   double epsilon = sqr(Bx - Ax) + sqr(By - Ay) - sqr(Tm * (Bz - Az));
+ 

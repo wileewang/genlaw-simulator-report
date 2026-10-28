@@ -166,7 +166,7 @@
       "input": "工艺卡 + CAD + 资源",
       "output": "可执行加工方案",
       "implementation": "规则程序 + 资源库",
-      "status": "钻孔 / 槽 / 台阶入口已测",
+      "status": "孔 / 槽 / 台阶 / 平面区域入口已测",
       "current": true,
       "description": "读取已核对录入的工艺卡，绑定 CAD、工步、要求和资源；缺项与冲突显式返回。纸质卡自动识别待接入。",
       "inputs": [
@@ -228,7 +228,7 @@
       "implementation": "FreeCAD CAM + 后处理",
       "status": "钻孔 / 基础铣削出码已测",
       "current": true,
-      "description": "独立读取原 CAD，调用 FreeCAD Drilling 或 PocketShape；检查刀具、参数、切深与覆盖，台阶另检查开口边延伸和台肩避让。当前限已列出的具体组合。",
+      "description": "独立读取原 CAD，调用 FreeCAD Drilling 或 PocketShape；检查刀具、参数、切深、保留区域和逐层覆盖。当前限已列出的具体用例。",
       "inputs": [
         [
           "execution_plan",
@@ -271,9 +271,9 @@
       "input": "最终 NC + 加工配置 + 原始 CAD",
       "output": "加工后几何 + 逐项检验 + 覆盖范围",
       "implementation": "CAMotics + 几何比较",
-      "status": "孔 / 槽 / 台阶及反例已测",
+      "status": "孔与平面铣削及反例已测",
       "current": true,
-      "description": "CAMotics 执行同一 NC，与原 CAD 比较实际剩料，再逐项测量。S1 / S2 与 S3 槽 / 台阶有结果；制造验收依据仍待补齐。",
+      "description": "CAMotics 执行同一 NC，与原 CAD 比较实际剩料。先看 IoU 与形状，再逐项检查孔、轮廓、深度、底面、岛台和开口。制造验收依据仍待补齐。",
       "inputs": [
         [
           "nc_ref / execution_plan",
@@ -390,5 +390,6 @@
   "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json",
   "pattern_evidence_ref": "results/S2-PATTERN-RESULTS-20261028-r1/summary.json",
   "pocket_evidence_ref": "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
-  "step_evidence_ref": "results/S3-STEP-RESULTS-20261029-r1/summary.json"
+  "step_evidence_ref": "results/S3-STEP-RESULTS-20261029-r1/summary.json",
+  "region_evidence_ref": "results/S3-REGION-RESULTS-20261029-r1/summary.json"
 }

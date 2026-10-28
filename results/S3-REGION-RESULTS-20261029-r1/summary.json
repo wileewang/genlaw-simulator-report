@@ -1,0 +1,1084 @@
+{
+  "schema": "genlaw.stage-results.v1",
+  "id": "S3-REGION-RESULTS-20261029-r1",
+  "stage_id": "s3",
+  "title": "凹形槽、岛台与开口槽",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "specification": {
+        "id": "baseline",
+        "name": "凹形 L 槽",
+        "description": "两条宽 2 的圆角槽在左下交汇；外包络 X1–7、Y1–5，内角按 CAD，圆角 R0.5。",
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ],
+        "depth_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_floor",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "depth_mm": 0.5,
+            "floor_face": "Face13",
+            "profile": {
+              "outer": [
+                {
+                  "start": [
+                    1.0,
+                    1.5
+                  ],
+                  "end": [
+                    1.0,
+                    4.5
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    1.0,
+                    4.5
+                  ],
+                  "end": [
+                    1.5,
+                    5.0
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    1.5,
+                    4.5
+                  ],
+                  "direction": "cw"
+                },
+                {
+                  "start": [
+                    1.5,
+                    5.0
+                  ],
+                  "end": [
+                    2.5,
+                    5.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    2.5,
+                    5.0
+                  ],
+                  "end": [
+                    3.0,
+                    4.5
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    2.5,
+                    4.5
+                  ],
+                  "direction": "cw"
+                },
+                {
+                  "start": [
+                    3.0,
+                    4.5
+                  ],
+                  "end": [
+                    3.0,
+                    3.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    3.0,
+                    3.0
+                  ],
+                  "end": [
+                    6.5,
+                    3.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    6.5,
+                    3.0
+                  ],
+                  "end": [
+                    7.0,
+                    2.5
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    6.5,
+                    2.5
+                  ],
+                  "direction": "cw"
+                },
+                {
+                  "start": [
+                    7.0,
+                    2.5
+                  ],
+                  "end": [
+                    7.0,
+                    1.5
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    7.0,
+                    1.5
+                  ],
+                  "end": [
+                    6.5,
+                    1.0
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    6.5,
+                    1.5
+                  ],
+                  "direction": "cw"
+                },
+                {
+                  "start": [
+                    6.5,
+                    1.0
+                  ],
+                  "end": [
+                    1.5,
+                    1.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    1.5,
+                    1.0
+                  ],
+                  "end": [
+                    1.0,
+                    1.5
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    1.5,
+                    1.5
+                  ],
+                  "direction": "cw"
+                }
+              ],
+              "islands": []
+            },
+            "open_edge_groups": []
+          }
+        ],
+        "order": [
+          "P1"
+        ]
+      },
+      "iou_percent": 99.96604396122297,
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_pass",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "8308669c0316e667d24d4444d0ecdbd70aa9cc2241011400fe2ea3eb033c3644",
+      "measured_profile_deviation_mm": 0.026521185341387178,
+      "measured_floor": {
+        "probe_count": 25,
+        "complete": true,
+        "open_through_count": 0,
+        "depth_band_mm": [
+          0.50009763,
+          0.50009763
+        ],
+        "flatness_range_mm": 0.0,
+        "minimum_remaining_floor_mm": 1.0
+      },
+      "executed_feature_order": [
+        "P1"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 7.211963,
+          "label": "早期去料",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "36662af0b97bca41b74ce09743c8609aedafa05c0567970ae7d2ed718bfd94e7",
+          "nc_sha256": "f25622e09ca3bde56eb4f6eb70cc8842592b46533ac3b9433b5197dcbad0cb78",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "55043f50f944f4506efe15ecbdd8905c774100785280a0d51167f6ba4a6a466c",
+          "watertight": true,
+          "volume_mm3": 70.72921440791022,
+          "triangles": 115816
+        },
+        {
+          "index": 2,
+          "time_seconds": 15.86632,
+          "label": "分层加工",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "cc5a64380ad055ad9f8aa4e961b92f0d69573a998cec54985c112e3c18af4204",
+          "nc_sha256": "f25622e09ca3bde56eb4f6eb70cc8842592b46533ac3b9433b5197dcbad0cb78",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "563b1d47611106edb96d2139a7aef32ba56cbe38b667ce14d6affa5756390bad",
+          "watertight": true,
+          "volume_mm3": 68.09453758926865,
+          "triangles": 116944
+        },
+        {
+          "index": 3,
+          "time_seconds": 24.520676,
+          "label": "接近完成",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "5b435e304dec861871886e171f75d9a656dcdf07d5f5f18fc9b794f242865721",
+          "nc_sha256": "f25622e09ca3bde56eb4f6eb70cc8842592b46533ac3b9433b5197dcbad0cb78",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "c5ce3b00795c937ea71517773b684989396c8b0c43e32eacc3c518258e889c57",
+          "watertight": true,
+          "volume_mm3": 65.76472593993398,
+          "triangles": 120904
+        }
+      ]
+    },
+    {
+      "id": "island",
+      "specification": {
+        "id": "island",
+        "name": "保留圆形岛台",
+        "description": "X1–7、Y1–5 的圆角槽，R0.5；保留中心 (4,3)、半径 0.65 的圆形岛台至来料顶面。",
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ],
+        "depth_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_floor",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "depth_mm": 0.5,
+            "floor_face": "Face10",
+            "profile": {
+              "outer": [
+                {
+                  "start": [
+                    1.0,
+                    1.5
+                  ],
+                  "end": [
+                    1.0,
+                    4.5
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    1.0,
+                    4.5
+                  ],
+                  "end": [
+                    1.5,
+                    5.0
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    1.5,
+                    4.5
+                  ],
+                  "direction": "cw"
+                },
+                {
+                  "start": [
+                    1.5,
+                    5.0
+                  ],
+                  "end": [
+                    6.5,
+                    5.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    6.5,
+                    5.0
+                  ],
+                  "end": [
+                    7.0,
+                    4.5
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    6.5,
+                    4.5
+                  ],
+                  "direction": "cw"
+                },
+                {
+                  "start": [
+                    7.0,
+                    4.5
+                  ],
+                  "end": [
+                    7.0,
+                    1.5
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    7.0,
+                    1.5
+                  ],
+                  "end": [
+                    6.5,
+                    1.0
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    6.5,
+                    1.5
+                  ],
+                  "direction": "cw"
+                },
+                {
+                  "start": [
+                    6.5,
+                    1.0
+                  ],
+                  "end": [
+                    1.5,
+                    1.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    1.5,
+                    1.0
+                  ],
+                  "end": [
+                    1.0,
+                    1.5
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    1.5,
+                    1.5
+                  ],
+                  "direction": "cw"
+                }
+              ],
+              "islands": [
+                [
+                  {
+                    "kind": "circle",
+                    "center": [
+                      4.0,
+                      3.0
+                    ],
+                    "radius_mm": 0.65
+                  }
+                ]
+              ]
+            },
+            "open_edge_groups": []
+          }
+        ],
+        "order": [
+          "P1"
+        ]
+      },
+      "iou_percent": 99.93587620506248,
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_pass",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "island_retention": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "8308669c0316e667d24d4444d0ecdbd70aa9cc2241011400fe2ea3eb033c3644",
+      "measured_profile_deviation_mm": 0.018453921492131476,
+      "measured_floor": {
+        "probe_count": 25,
+        "complete": true,
+        "open_through_count": 0,
+        "depth_band_mm": [
+          0.50009763,
+          0.50009763
+        ],
+        "flatness_range_mm": 0.0,
+        "minimum_remaining_floor_mm": 1.0
+      },
+      "executed_feature_order": [
+        "P1"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 18.098943,
+          "label": "早期去料",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "10284df669c056dc8efbc98cbcbe184bd83d6244a268a2f99d5cd7695066f4ca",
+          "nc_sha256": "588ca2f5861ce726f2bed00098ccf12e6d64296cc57b98e5030a79be8dfb514b",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "945b0bec7c3155109275454a74410175d3cb1cc768534aecca9e6203a51c7934",
+          "watertight": true,
+          "volume_mm3": 69.98225538844454,
+          "triangles": 116896
+        },
+        {
+          "index": 2,
+          "time_seconds": 39.817674,
+          "label": "分层加工",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "39cd77558c57a4e53db3310f56530f3a5dee9db07577eeb62b473b5156b1ae74",
+          "nc_sha256": "588ca2f5861ce726f2bed00098ccf12e6d64296cc57b98e5030a79be8dfb514b",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "102f0e6b2ebb3ec93d2111438bc326bdeff6f159122f4dcc75a9cd10960d6c59",
+          "watertight": true,
+          "volume_mm3": 66.1992144987474,
+          "triangles": 118984
+        },
+        {
+          "index": 3,
+          "time_seconds": 61.536405,
+          "label": "接近完成",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "cd7ff9b0337d563af19f0478fbdc8729209649a3830ec35e81d92d8111f1de46",
+          "nc_sha256": "588ca2f5861ce726f2bed00098ccf12e6d64296cc57b98e5030a79be8dfb514b",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "ee5360c674d565d9a9f2fe609dede4e31a688a3352fb3402d4196ed06c6c8737",
+          "watertight": true,
+          "volume_mm3": 63.14796735848807,
+          "triangles": 123164
+        }
+      ]
+    },
+    {
+      "id": "open-mouth",
+      "specification": {
+        "id": "open-mouth",
+        "name": "单侧开口槽",
+        "description": "槽从 X3 延伸至 X8 外缘，Y1–5，左端圆角 R0.5；仅 X+ 边开口，另外三侧保留。",
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ],
+        "depth_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_floor",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "depth_mm": 0.5,
+            "floor_face": "Face1",
+            "profile": {
+              "outer": [
+                {
+                  "start": [
+                    3.5,
+                    1.0
+                  ],
+                  "end": [
+                    8.0,
+                    1.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    8.0,
+                    1.0
+                  ],
+                  "end": [
+                    8.0,
+                    5.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    8.0,
+                    5.0
+                  ],
+                  "end": [
+                    3.5,
+                    5.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    3.5,
+                    5.0
+                  ],
+                  "end": [
+                    3.0,
+                    4.5
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    3.5,
+                    4.5
+                  ],
+                  "direction": "ccw"
+                },
+                {
+                  "start": [
+                    3.0,
+                    4.5
+                  ],
+                  "end": [
+                    3.0,
+                    1.5
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    3.0,
+                    1.5
+                  ],
+                  "end": [
+                    3.5,
+                    1.0
+                  ],
+                  "kind": "arc",
+                  "center": [
+                    3.5,
+                    1.5
+                  ],
+                  "direction": "ccw"
+                }
+              ],
+              "islands": []
+            },
+            "open_edge_groups": [
+              [
+                6
+              ]
+            ]
+          }
+        ],
+        "order": [
+          "P1"
+        ]
+      },
+      "iou_percent": 99.96835389747028,
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_pass",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "open_edge_clearance": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "8308669c0316e667d24d4444d0ecdbd70aa9cc2241011400fe2ea3eb033c3644",
+      "measured_profile_deviation_mm": 0.009609600000000107,
+      "measured_floor": {
+        "probe_count": 25,
+        "complete": true,
+        "open_through_count": 0,
+        "depth_band_mm": [
+          0.50009763,
+          0.50009763
+        ],
+        "flatness_range_mm": 0.0,
+        "minimum_remaining_floor_mm": 1.0
+      },
+      "executed_feature_order": [
+        "P1"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 15.249166,
+          "label": "早期去料",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "d8d5a78fc5b5d6682aa585f3acda597e96b74848a63644dcc192444c4a2adcd0",
+          "nc_sha256": "35ec560ecd2a00eb819f4c6db61270d2cfe2cf2b375cdcb6dc972b1de5b56971",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "fd86251a827e28ffb4287819355e7121cd2b22043e8cdf20e933179fc3d24917",
+          "watertight": true,
+          "volume_mm3": 69.85565573998845,
+          "triangles": 114064
+        },
+        {
+          "index": 2,
+          "time_seconds": 33.548165,
+          "label": "分层加工",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "03fe728aaae04d6917c350511dcdbb19d3bc6021fb408194d77e8329f6064cc0",
+          "nc_sha256": "35ec560ecd2a00eb819f4c6db61270d2cfe2cf2b375cdcb6dc972b1de5b56971",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "dedf8cefbd0d99edc2883b1d42e8029b40f115f6849ac9123df20a53526fb796",
+          "watertight": true,
+          "volume_mm3": 66.43187483734218,
+          "triangles": 116064
+        },
+        {
+          "index": 3,
+          "time_seconds": 51.847164,
+          "label": "接近完成",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "c78c4b5420c3e1074e0e0325e6e55d32a90a9024d9399d4556cc77c03d8d0ccb",
+          "nc_sha256": "35ec560ecd2a00eb819f4c6db61270d2cfe2cf2b375cdcb6dc972b1de5b56971",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "bf3d6a6d598af80eddd6519405aea79fef2c75af1cd04cd8c9401483e7cf4752",
+          "watertight": true,
+          "volume_mm3": 63.69098329613286,
+          "triangles": 116364
+        }
+      ]
+    },
+    {
+      "id": "channel",
+      "specification": {
+        "id": "channel",
+        "name": "两端开口通槽",
+        "description": "沿 X 方向从 X0 至 X8，槽宽 2、Y2–4；两端开口，保留两条侧壁。通槽指两端贯通，底部仍保留。",
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ],
+        "depth_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_floor",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "depth_mm": 0.5,
+            "floor_face": "Face1",
+            "profile": {
+              "outer": [
+                {
+                  "start": [
+                    0.0,
+                    2.0
+                  ],
+                  "end": [
+                    0.0,
+                    4.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    0.0,
+                    4.0
+                  ],
+                  "end": [
+                    8.0,
+                    4.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    8.0,
+                    4.0
+                  ],
+                  "end": [
+                    8.0,
+                    2.0
+                  ],
+                  "kind": "line"
+                },
+                {
+                  "start": [
+                    8.0,
+                    2.0
+                  ],
+                  "end": [
+                    0.0,
+                    2.0
+                  ],
+                  "kind": "line"
+                }
+              ],
+              "islands": []
+            },
+            "open_edge_groups": [
+              [
+                1
+              ],
+              [
+                3
+              ]
+            ]
+          }
+        ],
+        "order": [
+          "P1"
+        ]
+      },
+      "iou_percent": 99.97037530957587,
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_pass",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "open_edge_clearance": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "8308669c0316e667d24d4444d0ecdbd70aa9cc2241011400fe2ea3eb033c3644",
+      "measured_profile_deviation_mm": 0.009609600000000107,
+      "measured_floor": {
+        "probe_count": 25,
+        "complete": true,
+        "open_through_count": 0,
+        "depth_band_mm": [
+          0.50009763,
+          0.50009763
+        ],
+        "flatness_range_mm": 0.0,
+        "minimum_remaining_floor_mm": 1.0
+      },
+      "executed_feature_order": [
+        "P1"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 11.875,
+          "label": "早期去料",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "2ae5ec92ae790f0b10648d23bafb196d0d61c0c3fcff56c8a3267937158f33f2",
+          "nc_sha256": "f14c766c2ddea2f49dc0f0c2a32d99e68b992bfbcd1a906e4edc84e97e291196",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "66de20ff0d3b0499a4bde849b1294e7e82fd3414b25ed98705b011c7fbff020f",
+          "watertight": true,
+          "volume_mm3": 69.01580857824823,
+          "triangles": 115240
+        },
+        {
+          "index": 2,
+          "time_seconds": 26.125,
+          "label": "分层加工",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "0efef026cb906ff2d4d69d3505c95650b86152a2afd929ae13caa1c568ae559f",
+          "nc_sha256": "f14c766c2ddea2f49dc0f0c2a32d99e68b992bfbcd1a906e4edc84e97e291196",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "19be6b0fe5bf825e4bd8a237357501cfb5d52177bb5f9e18f84fc23a63656a50",
+          "watertight": true,
+          "volume_mm3": 67.97683326706445,
+          "triangles": 115096
+        },
+        {
+          "index": 3,
+          "time_seconds": 40.375,
+          "label": "接近完成",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "b853f4a2621b6ffd4e439e2adfbbc2bb0355f0e9176895a783b5e666fef00aee",
+          "nc_sha256": "f14c766c2ddea2f49dc0f0c2a32d99e68b992bfbcd1a906e4edc84e97e291196",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "5989a8caaa0a1c5458b48ff51fb5961217721b66ebdf616ba1faa4acbf939994",
+          "watertight": true,
+          "volume_mm3": 64.73388970541744,
+          "triangles": 117600
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "too-shallow",
+      "parent_case": "baseline",
+      "affected_feature": "P1",
+      "guard_rejected": true,
+      "iou_percent": 94.19749977601086,
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_fail",
+          "cut_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "verifier_sha256": "8308669c0316e667d24d4444d0ecdbd70aa9cc2241011400fe2ea3eb033c3644",
+      "regression_expectation_met": true,
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "wrong-position",
+      "parent_case": "baseline",
+      "affected_feature": "P1",
+      "guard_rejected": true,
+      "iou_percent": 96.90516493269583,
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_fail",
+          "cut_depth": "numeric_fail",
+          "floor_geometry": "numeric_fail"
+        }
+      },
+      "verifier_sha256": "8308669c0316e667d24d4444d0ecdbd70aa9cc2241011400fe2ea3eb033c3644",
+      "regression_expectation_met": true,
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "removed-island",
+      "parent_case": "island",
+      "affected_feature": "P1",
+      "guard_rejected": true,
+      "iou_percent": 98.87321389737752,
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_fail",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "island_retention": "numeric_fail"
+        }
+      },
+      "verifier_sha256": "8308669c0316e667d24d4444d0ecdbd70aa9cc2241011400fe2ea3eb033c3644",
+      "regression_expectation_met": true,
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "closed-mouth",
+      "parent_case": "open-mouth",
+      "affected_feature": "P1",
+      "guard_rejected": true,
+      "iou_percent": 95.07039663728621,
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_fail",
+          "cut_depth": "numeric_fail",
+          "floor_geometry": "numeric_fail",
+          "open_edge_clearance": "numeric_fail"
+        }
+      },
+      "verifier_sha256": "8308669c0316e667d24d4444d0ecdbd70aa9cc2241011400fe2ea3eb033c3644",
+      "regression_expectation_met": true,
+      "resolution_mm": 0.025
+    }
+  ],
+  "resources": [
+    {
+      "case": "baseline",
+      "stage": "camotics-resources",
+      "seconds": 5.13297491602134,
+      "peak_rss_mib": 508.71875
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-plan-resources",
+      "seconds": 1.2594294699956663,
+      "peak_rss_mib": 264.984375
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-resources",
+      "seconds": 11.202310255990596,
+      "peak_rss_mib": 259.953125
+    },
+    {
+      "case": "baseline",
+      "stage": "freecad-resources",
+      "seconds": 1.8914427239797078,
+      "peak_rss_mib": 222.2265625
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-software-resources",
+      "seconds": 12.136335665010847,
+      "peak_rss_mib": 267.96875
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-features-resources",
+      "seconds": 12.030841808009427,
+      "peak_rss_mib": 268.11328125
+    },
+    {
+      "case": "island",
+      "stage": "camotics-resources",
+      "seconds": 6.093737326998962,
+      "peak_rss_mib": 510.5078125
+    },
+    {
+      "case": "island",
+      "stage": "measure-plan-resources",
+      "seconds": 1.2594911210180726,
+      "peak_rss_mib": 268.91015625
+    },
+    {
+      "case": "island",
+      "stage": "measure-resources",
+      "seconds": 12.04419007798424,
+      "peak_rss_mib": 269.1953125
+    },
+    {
+      "case": "island",
+      "stage": "freecad-resources",
+      "seconds": 1.9880877120012883,
+      "peak_rss_mib": 237.65234375
+    },
+    {
+      "case": "island",
+      "stage": "verify-software-resources",
+      "seconds": 19.36470656999154,
+      "peak_rss_mib": 272.0390625
+    },
+    {
+      "case": "island",
+      "stage": "verify-features-resources",
+      "seconds": 20.247205071005737,
+      "peak_rss_mib": 271.92578125
+    },
+    {
+      "case": "open-mouth",
+      "stage": "camotics-resources",
+      "seconds": 5.131567409000127,
+      "peak_rss_mib": 507.90625
+    },
+    {
+      "case": "open-mouth",
+      "stage": "measure-plan-resources",
+      "seconds": 1.1521784339856822,
+      "peak_rss_mib": 257.3984375
+    },
+    {
+      "case": "open-mouth",
+      "stage": "measure-resources",
+      "seconds": 10.255872073001228,
+      "peak_rss_mib": 257.625
+    },
+    {
+      "case": "open-mouth",
+      "stage": "freecad-resources",
+      "seconds": 1.2558308349980507,
+      "peak_rss_mib": 212.8046875
+    },
+    {
+      "case": "open-mouth",
+      "stage": "verify-software-resources",
+      "seconds": 6.071306647994788,
+      "peak_rss_mib": 238.7890625
+    },
+    {
+      "case": "open-mouth",
+      "stage": "verify-features-resources",
+      "seconds": 6.070516690000659,
+      "peak_rss_mib": 259.91015625
+    },
+    {
+      "case": "channel",
+      "stage": "camotics-resources",
+      "seconds": 5.0315054550010245,
+      "peak_rss_mib": 498.51171875
+    },
+    {
+      "case": "channel",
+      "stage": "measure-plan-resources",
+      "seconds": 1.1517636129865423,
+      "peak_rss_mib": 259.19140625
+    },
+    {
+      "case": "channel",
+      "stage": "measure-resources",
+      "seconds": 10.152878873981535,
+      "peak_rss_mib": 259.2265625
+    },
+    {
+      "case": "channel",
+      "stage": "freecad-resources",
+      "seconds": 1.0462695639871527,
+      "peak_rss_mib": 205.72265625
+    },
+    {
+      "case": "channel",
+      "stage": "verify-software-resources",
+      "seconds": 3.7713949870085344,
+      "peak_rss_mib": 261.44140625
+    },
+    {
+      "case": "channel",
+      "stage": "verify-features-resources",
+      "seconds": 3.5563863750139717,
+      "peak_rss_mib": 261.4921875
+    }
+  ],
+  "input_archive": "S3-REGION-20261029-r2",
+  "run_archive": "S3-REGION-SUITE-20261029-r2",
+  "replay_archive": "S3-REGION-REPLAY-20261029-r1",
+  "input_manifest_sha256": "f09b1d3db636146c5060a35069219ddeeebde1f17b286c899962dcaa625b76a0",
+  "suite_summary_sha256": "ba05971792b2a6223591538dee4283ae7da1dfd6f7058fc6d23c7c2a63f88655",
+  "tests_passed": 185,
+  "normal_cases_passed": 4,
+  "negative_controls_detected": 4,
+  "new_features": [
+    "共用 CAD 平面区域接口",
+    "保留岛台与单侧 / 两端开口",
+    "水平圆柱扫掠数值修正"
+  ],
+  "remaining": [
+    "面铣、铣孔与多工序衔接",
+    "真实工艺卡的资源与原尺寸计算方案"
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "blind_holes_verified": false,
+  "planar_floor_verified": true,
+  "legacy_compatibility_ref": "legacy-compatibility.json",
+  "legacy_compatibility_sha256": "8f2417ed222e14386b4dd8375052a6995f1cab5d20bcb7c955caa84b223b741c",
+  "native_cad_guard_ref": "native-cad-guard.json",
+  "native_cad_guard_sha256": "ab4e26488a0513e6428fec21367a945c53e2ed814f120461604918611558da9f",
+  "engine_build_ref": "engine-build.json",
+  "engine_build_sha256": "152473f86f52597ed2ed1524d99fc7f45d5220c7c52445f8514ad86851bd25e6",
+  "engine_regression_ref": "engine-regression.json",
+  "engine_regression_sha256": "92acc860ef40d5b0c4eb5c8864f3496b38fe4bdff37512b5b106d7f91e73f1d8",
+  "engine_control_ref": "engine-control.json",
+  "engine_control_sha256": "9be065e1c7c9c168ea6b07c4b9f1265db8a706ebc0f3099e46ce072d490a0857",
+  "source_regression_ref": "source-regression.json",
+  "source_regression_sha256": "a5c48fad706aedf770e7d6d4d9ebd63c6871cbcfe2606019d30fd584fe2cc6a3",
+  "sampling_scope": "11 retained-material contour sections, 25 floor probes, 7 per open segment and 5 per island; two-cell guard; not continuous GD&T.",
+  "scope_qualification": "Four single-depth planar regions with line/circular boundaries; no spline, arbitrary surface, multiple setups or complete S3 scope."
+}

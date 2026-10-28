@@ -1,0 +1,43 @@
+{
+  "schema": "genlaw.software-geometry-policy.v6",
+  "cad_sha256": "b8b00b9fc72e90c4f652ba233302a67f8b0b7cacac6ea17cfbad3aa71d05db62",
+  "production_approved": false,
+  "features": {
+    "P1": {
+      "contour_xy": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_retained_contours",
+        "max_deviation_mm": 0.1
+      },
+      "cut_depth": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_floor_depth",
+        "min_mm": 0.4,
+        "max_mm": 0.6
+      },
+      "floor_geometry": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_flat_floor",
+        "max_flatness_mm": 0.1,
+        "min_remaining_floor_mm": 0.1
+      },
+      "island_retention": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_preserved_island_top",
+        "max_top_deviation_mm": 0.1
+      }
+    }
+  }
+}

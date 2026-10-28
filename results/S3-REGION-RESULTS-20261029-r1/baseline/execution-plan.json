@@ -1,0 +1,355 @@
+{
+  "schema": "genlaw.execution-plan.v6",
+  "capability": "planar_floor_xy",
+  "input_id": "S3-REGION-baseline-r2",
+  "mode": "software_geometry_reference",
+  "source_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "0d9be620836482963a43e5a817f0283cd380cf539249c0b109d14ae48328c3d5"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "9094b781897760482ebbac9135e013cc372734bb7a9b6c6660c5b99374580085"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "3864f8d81c1116f81b186ce7ea2407caba5526374a60cd274442a85cdd11e0fd"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "7f086055b2785bd1a78d7de19f858a391870a8c052c31941c8f9c940a8a6a1a4"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "be54e42e9a62b19efaf300eb253fc885a8786270fdbd36524ada87d3dafe4faa"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "ea1a7f898f6fb5dac776f50c16986bc4784ec876f2df8d6e91a687484b4f813b"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "84e5e19602b02d42ee971e1d520fa5ed359c20f3fb1770afdb6d90ecf076af41"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "a0d245abd79bb2d6ff5d62f3d63ad471d65885b602f8df0ee021012fc7600a62"
+    }
+  },
+  "cad_ref": {
+    "path": "target.brep",
+    "sha256": "9094b781897760482ebbac9135e013cc372734bb7a9b6c6660c5b99374580085"
+  },
+  "cad_observation_ref": {
+    "path": "geometry-observation.json",
+    "sha256": "7f086055b2785bd1a78d7de19f858a391870a8c052c31941c8f9c940a8a6a1a4"
+  },
+  "operations": [
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "region_milling",
+      "feature_id": "P1",
+      "geometry": {
+        "id": "P1",
+        "kind": "planar_floor",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "depth_mm": 0.5,
+        "floor_face": "Face13",
+        "profile": {
+          "outer": [
+            {
+              "start": [
+                1.0,
+                1.5
+              ],
+              "end": [
+                1.0,
+                4.5
+              ],
+              "kind": "line"
+            },
+            {
+              "start": [
+                1.0,
+                4.5
+              ],
+              "end": [
+                1.5,
+                5.0
+              ],
+              "kind": "arc",
+              "center": [
+                1.5,
+                4.5
+              ],
+              "direction": "cw"
+            },
+            {
+              "start": [
+                1.5,
+                5.0
+              ],
+              "end": [
+                2.5,
+                5.0
+              ],
+              "kind": "line"
+            },
+            {
+              "start": [
+                2.5,
+                5.0
+              ],
+              "end": [
+                3.0,
+                4.5
+              ],
+              "kind": "arc",
+              "center": [
+                2.5,
+                4.5
+              ],
+              "direction": "cw"
+            },
+            {
+              "start": [
+                3.0,
+                4.5
+              ],
+              "end": [
+                3.0,
+                3.0
+              ],
+              "kind": "line"
+            },
+            {
+              "start": [
+                3.0,
+                3.0
+              ],
+              "end": [
+                6.5,
+                3.0
+              ],
+              "kind": "line"
+            },
+            {
+              "start": [
+                6.5,
+                3.0
+              ],
+              "end": [
+                7.0,
+                2.5
+              ],
+              "kind": "arc",
+              "center": [
+                6.5,
+                2.5
+              ],
+              "direction": "cw"
+            },
+            {
+              "start": [
+                7.0,
+                2.5
+              ],
+              "end": [
+                7.0,
+                1.5
+              ],
+              "kind": "line"
+            },
+            {
+              "start": [
+                7.0,
+                1.5
+              ],
+              "end": [
+                6.5,
+                1.0
+              ],
+              "kind": "arc",
+              "center": [
+                6.5,
+                1.5
+              ],
+              "direction": "cw"
+            },
+            {
+              "start": [
+                6.5,
+                1.0
+              ],
+              "end": [
+                1.5,
+                1.0
+              ],
+              "kind": "line"
+            },
+            {
+              "start": [
+                1.5,
+                1.0
+              ],
+              "end": [
+                1.0,
+                1.5
+              ],
+              "kind": "arc",
+              "center": [
+                1.5,
+                1.5
+              ],
+              "direction": "cw"
+            }
+          ],
+          "islands": []
+        },
+        "open_edge_groups": []
+      },
+      "final_z_mm": -0.5
+    }
+  ],
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "tool": {
+    "id": "T1",
+    "kind": "flat_endmill",
+    "center_cutting": true,
+    "diameter_mm": 1,
+    "cutting_length_mm": 5,
+    "length_mm": 20,
+    "basis": "Explicit synthetic test tool, not a qualified physical tool or holder."
+  },
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "Explicit software-only zero transform; real clamping excluded."
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "parameters": {
+    "spindle_rpm": 3000.0,
+    "feed_mm_min": 120.0,
+    "plunge_mm_min": 60.0,
+    "step_down_mm": 0.25,
+    "step_over_percent": 50.0,
+    "safe_height_mm": 2.0,
+    "clearance_height_mm": 3.0,
+    "path_tolerance_mm": 0.001,
+    "edge_extension_mm": 0.0
+  },
+  "strategy": {
+    "clearing_pattern": "Offset",
+    "cut_mode": "Climb",
+    "start_at": "Center",
+    "entry": "vertical_center_cutting",
+    "keep_tool_down": false,
+    "radial_allowance_mm": 0,
+    "axial_allowance_mm": 0,
+    "edge_extension_mode": "declared_native_stock_edge_groups",
+    "extension_corners": true
+  },
+  "parameter_provenance": {
+    "spindle_rpm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "feed_mm_min": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "plunge_mm_min": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "step_down_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "step_over_percent": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "safe_height_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "clearance_height_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "path_tolerance_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "edge_extension_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit native stock-opening extension; zero for a closed CAD floor."
+    }
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Explicit 0.025 mm numerical grid, same stock and unchanged 5,000,000-cell budget as the preceding small through-hole cases."
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "requirements_ref": {
+    "path": "requirements.json",
+    "sha256": "ea1a7f898f6fb5dac776f50c16986bc4784ec876f2df8d6e91a687484b4f813b"
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false
+}

@@ -179,11 +179,24 @@
           ]
         },
         {
+          "id": "planar-floor",
+          "name": "凹形槽 / 岛台 / 开口槽",
+          "status": "sample_cases_measured",
+          "label": "4 个具体用例已测",
+          "scope": "同一深度 0.5 mm：L 槽、圆形岛台、单侧开口、两端开口各一例；直线 / 圆弧、平底和直壁。非任意型腔或连续参数范围。",
+          "stages": [
+            "s3/region"
+          ],
+          "evidence_paths": [
+            "results/S3-REGION-RESULTS-20261029-r1/summary.json"
+          ]
+        },
+        {
           "id": "milling-features",
-          "name": "开放轮廓 / 一般型腔",
+          "name": "面铣 / 铣孔 / 其他型腔",
           "status": "planned",
           "label": "待开发",
-          "scope": "圆角槽与外缘台阶已有结果；新增铣削特征分别验收后再组合。",
+          "scope": "继续扩展面铣、铣孔和更一般曲面；不同特征先单独验收再组合。",
           "stages": [
             "s3"
           ],
@@ -263,15 +276,17 @@
           "id": "flat-endmill-reference",
           "name": "XYZ / 单平底铣刀 / 参考 NC",
           "status": "sample_cases_measured",
-          "label": "S3 八例配置已测",
-          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层槽 / 台阶。刀柄与夹具干涉未验证。",
+          "label": "S3 十二例配置已测",
+          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层槽、台阶、岛台与开口。刀柄与夹具干涉未验证。",
           "stages": [
             "s3",
-            "s3/step"
+            "s3/step",
+            "s3/region"
           ],
           "evidence_paths": [
             "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
-            "results/S3-STEP-RESULTS-20261029-r1/summary.json"
+            "results/S3-STEP-RESULTS-20261029-r1/summary.json",
+            "results/S3-REGION-RESULTS-20261029-r1/summary.json"
           ]
         },
         {
@@ -333,7 +348,8 @@
             "runs/S1-CHAIN-20261028-r3/simulation.camotics",
             "results/S2-PATTERN-RESULTS-20261028-r1/summary.json",
             "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
-            "results/S3-STEP-RESULTS-20261029-r1/summary.json"
+            "results/S3-STEP-RESULTS-20261029-r1/summary.json",
+            "results/S3-REGION-RESULTS-20261029-r1/summary.json"
           ],
           "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json",
           "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
@@ -353,7 +369,8 @@
           "evidence_paths": [
             "cases/s1/resources.json",
             "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
-            "results/S3-STEP-RESULTS-20261029-r1/summary.json"
+            "results/S3-STEP-RESULTS-20261029-r1/summary.json",
+            "results/S3-REGION-RESULTS-20261029-r1/summary.json"
           ]
         },
         {
@@ -382,7 +399,7 @@
     }
   ],
   "progression": [
-    "S1 / S2 钻孔已有结果；S3 圆角单槽四例通过，继续扩展台阶、开放轮廓和一般型腔。",
+    "S1 / S2 钻孔已有结果；S3 圆角槽、台阶和平面轮廓共十二例通过，继续扩展面铣、铣孔和多工序。",
     "沿单孔 → 孔系 → 铣削特征 → 多工序 → 3+2 → 连续五轴推进。",
     "真实单件、新设备、新毛坯或材料按依赖接入，每次只改变一类条件。"
   ],
