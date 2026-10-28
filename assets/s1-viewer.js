@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from './vendor/three/OrbitControls.js';
+import { meshBuffer } from './mesh-data.js';
 
 const root = document.querySelector('[data-s1-viewer]');
 if (root) start().catch(fail);
@@ -62,8 +63,7 @@ async function start() {
     const compressed = delivery?.encoding === 'gzip' && typeof DecompressionStream === 'function';
     const r = await fetch(new URL(compressed ? delivery.path : path, siteBase));
     if (!r.ok) throw Error('Geometry unavailable: ' + path);
-    const buffer = compressed ?
-      await new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer() : await r.arrayBuffer();
+    const buffer = await meshBuffer(r);
     if (delivery) {
       if (buffer.byteLength !== delivery.decoded_bytes) throw Error('Incomplete geometry: ' + path);
       if (globalThis.crypto?.subtle) {

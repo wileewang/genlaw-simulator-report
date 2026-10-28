@@ -1,0 +1,60 @@
+{
+  "schema": "genlaw.preparation-input.v8",
+  "id": "S3-HELIX-baseline-r2",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "038043222f2efd3ce74dde96fbcc617b1b33d9011af1f4d6c3977a8b944318ba"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "c3a10644c795b7e4bb31991453c639e4d16f4dc886e0120f1dd835efa996aabd"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "418d599e1a23ecde8db58cb6afa09a35560e074e978bbd3134340aaa7f24a886"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "254525b95b96bc4b33354225b2dd5be6f02ed878142ad7d12608d6d5b86cea1b"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "13a5f683b1388640b4c98aebad875d412171ce6f23189aea42f2acf4b76997e8"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "2b580147b2ea6068e1f905a6b1df6281e2923fa61d1b6dde4eda1aa0145a451b"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "603d429b34993f0ad5fa8a3061e57544418a210ca8fb836a163922bce12217c1"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "0f8b64082a496c41160ba041c02bbc3e0b5d3f8fd7be743dbb9bb491543f6911"
+    }
+  },
+  "capability": "helical_hole_milling_xy"
+}

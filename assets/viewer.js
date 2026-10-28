@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from './vendor/three/OrbitControls.js';
+import { meshBuffer } from './mesh-data.js';
 
 const root = document.querySelector('[data-case-viewer]');
 if (root) start().catch(fail);
@@ -61,7 +62,8 @@ async function start() {
   async function geometry(name) {
     const response = await fetch(base + name);
     if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
-    const buffer = await response.arrayBuffer(), header = new DataView(buffer);
+    const buffer = await meshBuffer(response), header = new DataView(buffer);
+    if (buffer.byteLength < 16) throw new Error('Incomplete mesh');
     if (new TextDecoder().decode(new Uint8Array(buffer, 0, 8)) !== 'GLWMESH1') throw new Error('Unknown mesh format');
     const vertices = header.getUint32(8, true), faces = header.getUint32(12, true);
     if (buffer.byteLength !== 16 + vertices * 12 + faces * 12) throw new Error('Incomplete mesh');

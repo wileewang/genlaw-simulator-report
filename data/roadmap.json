@@ -91,42 +91,45 @@
       "id": "s3",
       "number": "03",
       "title": "槽、台阶与型腔",
-      "case_name": "圆角槽、台阶、平面轮廓与面铣",
+      "case_name": "圆角槽、台阶、平面轮廓、面铣与铣孔",
       "status": "measured",
-      "status_label": "16 个铣削用例实测 · 继续扩展",
-      "headline": "新增四例面铣减薄；逐例查看 IoU、CAD 对比与实际加工回放。",
+      "status_label": "20 个铣削用例实测 · 继续扩展",
+      "headline": "新增四例螺旋铣孔；逐例查看 IoU、CAD 对比与实际加工回放。",
       "part": "8 × 6 × 1.5 mm；先做 4 × 2 × 0.5 mm 圆角槽，内角 R0.5",
       "material": "沿用 6061-T6 与矩形毛坯",
       "resources": "新增一把平底铣刀，仍为单刀 / 单装夹",
       "new_programming": [
         "FreeCAD 原生 PocketShape；同一平面区域接口支持凹形、保留岛台和显式开口边",
         "NC 原样检查：保留区域避让、切深、进给、平面圆弧与逐层覆盖",
-        "原生 MillFace + 显式毛坯：分层铣至目标顶面"
+        "原生 MillFace + 显式毛坯：分层铣至目标顶面",
+        "原生 Helix：显式螺距、入刀、贯穿余量与径向清料；NC 保持原文"
       ],
       "new_verification": [
-        "四组共 16 例正常结果，检查各自轮廓、深度、底面或顶面与厚度",
-        "14 个几何反例检出；面铣新增少铣、多铣和边缘漏铣检查"
+        "五组共 20 例正常结果，检查各自轮廓、深度、底面、厚度或通孔几何",
+        "18 个几何反例检出；铣孔新增孔径不足、错孔位、未贯穿与中心留料检查"
       ],
       "remaining": [
-        "铣孔与多工序衔接",
+        "多工序来料、坐标与刀具衔接",
         "真实卡资源和原尺寸计算；曲面、换刀与多装夹继续按路线推进"
       ],
-      "changes": "沿用 XYZ 与材料标签；从槽、台阶和平面轮廓扩展到面铣，显式增加来料厚度。每类仍是具体用例，不是连续支持范围。",
+      "changes": "沿用 XYZ 与材料标签；从槽、台阶、平面轮廓到面铣和螺旋铣孔。每类都是具体用例，尚无连续参数范围。",
       "shape": "slot",
       "gate": "每种特征都有正常与错误案例，独立 CAD / 几何误差与材料结果对应。",
       "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
       "new_preparation": [
         "将 CAD 加工面、岛台与开口边绑定工步、要求和资源",
         "显式指定刀具、分层、步距与开口延伸；未知曲线或缺项先拦截",
-        "面铣分开定义来料和目标尺寸；保留原 CAD 坐标与底面"
+        "面铣分开定义来料和目标尺寸；保留原 CAD 坐标与底面",
+        "保留工艺卡的铣孔意图，明确小于孔径的平底铣刀与孔内快速移动规则"
       ],
-      "preparation_status": "孔 / 槽 / 台阶 / 轮廓 / 面铣已测",
-      "programming_status": "PocketShape 与 MillFace 已测",
-      "verification_status": "16 正常例 + 14 反例已测",
+      "preparation_status": "孔 / 槽 / 台阶 / 轮廓 / 面铣 / 铣孔已测",
+      "programming_status": "PocketShape、MillFace 与 Helix 已测",
+      "verification_status": "20 正常例 + 18 反例已测",
       "results_ref": "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
       "step_results_ref": "results/S3-STEP-RESULTS-20261029-r1/summary.json",
       "region_results_ref": "results/S3-REGION-RESULTS-20261029-r1/summary.json",
-      "facing_results_ref": "results/S3-FACING-RESULTS-20261029-r1/summary.json"
+      "facing_results_ref": "results/S3-FACING-RESULTS-20261029-r1/summary.json",
+      "helix_results_ref": "results/S3-HELIX-RESULTS-20261029-r1/summary.json"
     },
     {
       "id": "s4",
@@ -281,33 +284,33 @@
   "axis_investigation_ref": "verification/S1-AXIS-20261028-r1/summary.json",
   "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json",
   "next_step": {
-    "title": "平面轮廓已测，接近多工序与真实工艺卡",
+    "title": "单特征已有结果，下一步衔接多工序",
     "items": [
       [
-        "冻结下一组输入",
-        "面铣与铣孔：仍先存档工艺卡、CAD 和资源"
+        "冻结组合输入",
+        "面铣 + 铣孔：存档同一工艺卡、原 CAD 与逐工步来料状态"
       ],
       [
         "衔接工序",
-        "逐步加入换刀、来料状态连续与组合检验"
+        "检查坐标、刀具、依赖和前后剩料，逐步增加换刀与轮廓"
       ],
       [
         "保留真实尺寸",
-        "先解决真实连接板的计算预算和资源缺项，再验证整卡"
+        "解决真实连接板的计算预算和资源缺项，再验证整卡"
       ]
     ],
     "links": [
       [
+        "s3/helix/",
+        "查看新增螺旋铣孔"
+      ],
+      [
+        "s3/facing/",
+        "面铣减薄"
+      ],
+      [
         "s3/region/",
-        "查看新增平面轮廓"
-      ],
-      [
-        "s3/step/",
-        "外缘台阶"
-      ],
-      [
-        "s3/",
-        "圆角单槽"
+        "平面轮廓"
       ]
     ]
   }
