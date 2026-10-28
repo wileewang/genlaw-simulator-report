@@ -15,8 +15,8 @@
       "title": "单孔完整链路",
       "case_name": "偏心通孔薄板",
       "status": "measured",
-      "status_label": "单孔软件链路已实测",
-      "headline": "工艺卡与资源已驱动三步链路；下一步补逐项验收与单孔几何变体。",
+      "status_label": "4 例已测 · 贯穿待排查",
+      "headline": "孔径、孔位、板厚三个独立变体已跑完整链路；先查轴线残留信号，再扩展孔系。",
       "part": "8 × 6 × 1.5 mm；φ2 通孔；孔心 (3, 2)",
       "material": "6061-T6 标签 · 矩形毛坯",
       "resources": "通用 XYZ、参考 NC、单钻头、单次装夹",
@@ -25,16 +25,15 @@
         "检查完整 NC 与执行方案一致，进给参数变体已验证"
       ],
       "new_verification": [
-        "CAMotics 执行本次最终 NC；保存几何、IoU 与去料回放",
-        "错孔位 NC 被入口拦截，专用反例仿真显示约 0.5 mm 偏差"
+        "新增 11 层孔径 / 孔心及 9 条轴向线检查，保留制造要求待补状态",
+        "错孔位与未钻通对照均检出；四个正常几何用例的轴线信号待排查"
       ],
       "remaining": [
-        "工艺师傅确认装夹/坐标、切削参数和验收依据",
-        "孔径、孔位、贯穿的逐项测量与公差判定",
-        "独立孔径 / 孔位 / 厚度变体及未钻通反例",
-        "夹具 / 刀柄建模；随后扩展孔系"
+        "排查轴线残留 / 交点退化，做受限局部精度对照",
+        "工艺师傅确认装夹、参数及制造验收依据",
+        "补夹具 / 刀柄模型；解决当前发现后再推进 S2"
       ],
-      "changes": "先固定材料、设备和装夹，只验证一个通孔。",
+      "changes": "固定材料和设备，独立改变孔径、孔位或厚度；四个具体组合已测量，未形成连续支持范围。",
       "shape": "single-hole",
       "gate": "经审阅的已有工艺卡的结构化意图、CAD 与资源经核对和参数解析驱动整链；缺项/冲突明确拦截，参数依据可查。正常/错误 NC 与参数变体有实际结果，几何判据明确；报告工步和要求覆盖，满足公共扩展验收。",
       "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
@@ -45,7 +44,7 @@
       "baseline_id": "B0-S1-XYZ-AL",
       "preparation_status": "首版入口已验证",
       "programming_status": "执行方案驱动已实测",
-      "verification_status": "新 NC 去料已实测"
+      "verification_status": "逐项测量已有待排查项"
     },
     {
       "id": "s2",
@@ -54,7 +53,7 @@
       "case_name": "双孔薄板",
       "status": "next",
       "status_label": "下一阶段",
-      "headline": "从一个孔，扩展到有顺序的多个孔。",
+      "headline": "待 S1 轴向检查问题处理后，从一个孔扩展到有顺序的多个孔。",
       "part": "8 × 6 × 1.5 mm；两个 φ2 孔，孔心 (2, 2) / (5.5, 4)",
       "material": "沿用 6061-T6 与矩形毛坯",
       "resources": "沿用 XYZ、同一刀具和装夹",
@@ -257,5 +256,6 @@
   "process_handoff_ref": "process-handoff.json",
   "baseline_ref": "development-baseline.json#/active_baseline_id",
   "support_catalog_ref": "development-baseline.json#/support_dimensions",
-  "preparation_status_ref": "preparation-status.json"
+  "preparation_status_ref": "preparation-status.json",
+  "feature_verification_ref": "verification/S1-VERIFY-20261028-r1/summary.json"
 }

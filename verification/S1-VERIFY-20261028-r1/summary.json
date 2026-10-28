@@ -1,0 +1,371 @@
+{
+  "schema": "genlaw.feature-milestone.v1",
+  "id": "S1-VERIFY-20261028-r1",
+  "status": "measured_with_open_findings",
+  "tests_passed": 72,
+  "input_archive": "S1-FEATURES-20261028-r1",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "specification": {
+        "diameter_mm": 2,
+        "center_xy_mm": [
+          3,
+          2
+        ],
+        "thickness_mm": 1.5
+      },
+      "iou_percent": 99.97532870087849,
+      "diameter": {
+        "radial_band_mm": [
+          1.9996285231131237,
+          2.0001963358528974
+        ],
+        "fit_range_mm": [
+          1.9999042543901306,
+          1.9999100234327158
+        ]
+      },
+      "max_center_deviation_mm": 4.756649332601728e-06,
+      "through": {
+        "clear_count": 8,
+        "probe_count": 9,
+        "blocked_count": 0,
+        "indeterminate_count": 1,
+        "max_ray_material_span_mm": 0.00019532999999993805,
+        "observation": "indeterminate_at_mesh_resolution"
+      },
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "indeterminate"
+      },
+      "requirement_statuses": {
+        "diameter": "pending_criteria",
+        "position_xy": "pending_criteria",
+        "through": "pending_criteria",
+        "surface_roughness": "unsupported_measurement"
+      },
+      "production_approved": false
+    },
+    {
+      "id": "diameter",
+      "specification": {
+        "id": "diameter",
+        "changed_dimension": "hole_diameter",
+        "diameter_mm": 2.5,
+        "center_xy_mm": [
+          3,
+          2
+        ],
+        "thickness_mm": 1.5
+      },
+      "iou_percent": 99.97438768018316,
+      "diameter": {
+        "radial_band_mm": [
+          2.499695893279466,
+          2.500194509505683
+        ],
+        "fit_range_mm": [
+          2.499897017747846,
+          2.499898569901913
+        ]
+      },
+      "max_center_deviation_mm": 5.773889853425718e-06,
+      "through": {
+        "clear_count": 8,
+        "probe_count": 9,
+        "blocked_count": 0,
+        "indeterminate_count": 1,
+        "max_ray_material_span_mm": 0.0001952599999999194,
+        "observation": "indeterminate_at_mesh_resolution"
+      },
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "indeterminate"
+      },
+      "requirement_statuses": {
+        "diameter": "pending_criteria",
+        "position_xy": "pending_criteria",
+        "through": "pending_criteria",
+        "surface_roughness": "unsupported_measurement"
+      },
+      "production_approved": false
+    },
+    {
+      "id": "position",
+      "specification": {
+        "id": "position",
+        "changed_dimension": "hole_center",
+        "diameter_mm": 2,
+        "center_xy_mm": [
+          4,
+          3
+        ],
+        "thickness_mm": 1.5
+      },
+      "iou_percent": 99.97534625601178,
+      "diameter": {
+        "radial_band_mm": [
+          1.999629866498302,
+          2.0001954620808426
+        ],
+        "fit_range_mm": [
+          1.999907451964709,
+          1.99990976464044
+        ]
+      },
+      "max_center_deviation_mm": 4.796740231767636e-06,
+      "through": {
+        "clear_count": 8,
+        "probe_count": 9,
+        "blocked_count": 0,
+        "indeterminate_count": 1,
+        "max_ray_material_span_mm": 0.00019532999999993805,
+        "observation": "indeterminate_at_mesh_resolution"
+      },
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "indeterminate"
+      },
+      "requirement_statuses": {
+        "diameter": "pending_criteria",
+        "position_xy": "pending_criteria",
+        "through": "pending_criteria",
+        "surface_roughness": "unsupported_measurement"
+      },
+      "production_approved": false
+    },
+    {
+      "id": "thickness",
+      "specification": {
+        "id": "thickness",
+        "changed_dimension": "plate_thickness",
+        "diameter_mm": 2,
+        "center_xy_mm": [
+          3,
+          2
+        ],
+        "thickness_mm": 1.0
+      },
+      "iou_percent": 99.96637881579203,
+      "diameter": {
+        "radial_band_mm": [
+          1.9996271898553455,
+          2.000197312023129
+        ],
+        "fit_range_mm": [
+          1.999904377669748,
+          1.999919138744827
+        ]
+      },
+      "max_center_deviation_mm": 4.756649332601728e-06,
+      "through": {
+        "clear_count": 8,
+        "probe_count": 9,
+        "blocked_count": 1,
+        "indeterminate_count": 0,
+        "max_ray_material_span_mm": 0.11738275999999992,
+        "observation": "blocked_material_detected"
+      },
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "numeric_fail"
+      },
+      "requirement_statuses": {
+        "diameter": "pending_criteria",
+        "position_xy": "pending_criteria",
+        "through": "pending_criteria",
+        "surface_roughness": "unsupported_measurement"
+      },
+      "production_approved": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "wrong-position",
+      "specification": {
+        "diameter_mm": 2,
+        "center_xy_mm": [
+          3,
+          2
+        ],
+        "thickness_mm": 1.5
+      },
+      "iou_percent": 95.64827393165231,
+      "diameter": {
+        "radial_band_mm": [
+          1.9990660282765196,
+          2.000391205786057
+        ],
+        "fit_range_mm": [
+          1.9997297416647195,
+          1.9997332379498545
+        ]
+      },
+      "max_center_deviation_mm": 0.5000000023102888,
+      "through": {
+        "clear_count": 9,
+        "probe_count": 9,
+        "blocked_count": 0,
+        "indeterminate_count": 0,
+        "max_ray_material_span_mm": 0,
+        "observation": "axial_rays_clear"
+      },
+      "software_statuses": {
+        "diameter": "indeterminate",
+        "position_xy": "numeric_fail",
+        "through": "numeric_pass"
+      },
+      "requirement_statuses": {
+        "diameter": "pending_criteria",
+        "position_xy": "pending_criteria",
+        "through": "pending_criteria",
+        "surface_roughness": "unsupported_measurement"
+      },
+      "production_approved": false
+    },
+    {
+      "id": "not-through",
+      "specification": {
+        "diameter_mm": 2,
+        "center_xy_mm": [
+          3,
+          2
+        ],
+        "thickness_mm": 1.5
+      },
+      "iou_percent": 95.92684894778883,
+      "diameter": null,
+      "max_center_deviation_mm": null,
+      "through": {
+        "clear_count": 0,
+        "probe_count": 9,
+        "blocked_count": 9,
+        "indeterminate_count": 0,
+        "max_ray_material_span_mm": 0.6518063299999999,
+        "observation": "blocked_material_detected"
+      },
+      "software_statuses": {
+        "diameter": "not_measurable",
+        "position_xy": "not_measurable",
+        "through": "numeric_fail"
+      },
+      "requirement_statuses": {
+        "diameter": "pending_criteria",
+        "position_xy": "pending_criteria",
+        "through": "pending_criteria",
+        "surface_roughness": "unsupported_measurement"
+      },
+      "production_approved": false
+    }
+  ],
+  "resources": [
+    {
+      "case": "diameter",
+      "step": "camotics-resources.json",
+      "seconds": 4.719179306994192,
+      "peak_rss_mib": 517.47265625
+    },
+    {
+      "case": "diameter",
+      "step": "measure-resources.json",
+      "seconds": 14.5721916249895,
+      "peak_rss_mib": 253.7578125
+    },
+    {
+      "case": "diameter",
+      "step": "freecad-resources.json",
+      "seconds": 1.1531650940014515,
+      "peak_rss_mib": 204.015625
+    },
+    {
+      "case": "diameter",
+      "step": "verify-software-resources.json",
+      "seconds": 2.096716666012071,
+      "peak_rss_mib": 258.1953125
+    },
+    {
+      "case": "diameter",
+      "step": "verify-features-resources.json",
+      "seconds": 2.093437283008825,
+      "peak_rss_mib": 258.09375
+    },
+    {
+      "case": "position",
+      "step": "camotics-resources.json",
+      "seconds": 4.6201232059975155,
+      "peak_rss_mib": 507.76171875
+    },
+    {
+      "case": "position",
+      "step": "measure-resources.json",
+      "seconds": 15.194227739004418,
+      "peak_rss_mib": 258.2421875
+    },
+    {
+      "case": "position",
+      "step": "freecad-resources.json",
+      "seconds": 1.1532822139852215,
+      "peak_rss_mib": 203.06640625
+    },
+    {
+      "case": "position",
+      "step": "verify-software-resources.json",
+      "seconds": 2.09519510800601,
+      "peak_rss_mib": 258.96484375
+    },
+    {
+      "case": "position",
+      "step": "verify-features-resources.json",
+      "seconds": 2.0970380329818,
+      "peak_rss_mib": 259.01953125
+    },
+    {
+      "case": "thickness",
+      "step": "camotics-resources.json",
+      "seconds": 3.1438938390056137,
+      "peak_rss_mib": 359.421875
+    },
+    {
+      "case": "thickness",
+      "step": "measure-resources.json",
+      "seconds": 15.954772919008974,
+      "peak_rss_mib": 212.27734375
+    },
+    {
+      "case": "thickness",
+      "step": "freecad-resources.json",
+      "seconds": 1.1533030279970262,
+      "peak_rss_mib": 203.23046875
+    },
+    {
+      "case": "thickness",
+      "step": "verify-software-resources.json",
+      "seconds": 2.0970014589838684,
+      "peak_rss_mib": 231.46484375
+    },
+    {
+      "case": "thickness",
+      "step": "verify-features-resources.json",
+      "seconds": 2.0976314159925096,
+      "peak_rss_mib": 231.45703125
+    }
+  ],
+  "new_complete_chains": 3,
+  "baseline_reused": true,
+  "new_wrong_nc_simulations": 1,
+  "wrong_position_simulation_reused": true,
+  "engineering_requirements": "No numerical manufacturing acceptance values were supplied; remain pending. Roughness unsupported.",
+  "software_policy": "Only developer-defined diameter +/-0.1 mm, center deviation <=0.1 mm, nine clear axial rays. Two grid cells guard numerical decisions; not certified uncertainty.",
+  "finding": "All nominal examples have an axis-only residual signal. Baseline, diameter and position are indeterminate; 1.0 mm plate fails the declared axial-ray test. Rays one grid cell away are clear in the thin-plate diagnostic.",
+  "next": "Investigate axis residual / degenerate intersections and CAMotics tool sweep, then use bounded local precision controls before claiming through-hole support or advancing S2.",
+  "production_approved": false,
+  "full_tolerance_acceptance": false,
+  "whole_process_card_complete": false,
+  "numerical_measurement_is_not_GDT": true,
+  "source_code_sha256": "ea07f92456fbca97b706f80ffdeca879bc13a278c2a6a08d91657cea604b60a0"
+}

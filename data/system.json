@@ -271,9 +271,9 @@
       "input": "最终 NC + 加工配置 + 原始 CAD",
       "output": "加工后几何 + 逐项检验 + 覆盖范围",
       "implementation": "CAMotics + 几何比较",
-      "status": "同一 NC 去料已实测",
+      "status": "逐项测量 · 贯穿待排查",
       "current": true,
-      "description": "S1 新链路从毛坯执行完整 NC，再与原始 CAD 比对；已跑错孔位反例。逐项公差、夹具及材料物理仍待验收。",
+      "description": "S1 以 CAMotics 执行最终 NC，比较原 CAD 与实际去料网格；孔径、孔心与轴向线已有数值检查，轴线信号待排查。未给制造验收条件时返回待依据，粗糙度尚不能测量。",
       "inputs": [
         [
           "nc_ref / execution_plan",
@@ -308,6 +308,10 @@
         [
           "replay / provenance",
           "实际加工状态、轨迹、NC/配置/结果版本与错误反馈"
+        ],
+        [
+          "feature_observations / software_regression",
+          "受限单孔逐项观测与独立软件测试条件；不将测试阈值写入制造要求"
         ]
       ],
       "example": {
@@ -338,7 +342,8 @@
           "surface_roughness",
           "physical_process"
         ]
-      }
+      },
+      "implemented_result_ref": "verification/S1-VERIFY-20261028-r1/summary.json"
     }
   ],
   "shared_resources": [

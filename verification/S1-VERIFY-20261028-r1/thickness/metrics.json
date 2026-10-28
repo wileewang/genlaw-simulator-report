@@ -1,0 +1,147 @@
+{
+  "schema": "genlaw.sectional-iou.v2",
+  "status": "measured_numerical_estimate",
+  "iou": 0.9996637881579202,
+  "iou_percent": 99.96637881579203,
+  "volumes": {
+    "actual_volume_mm3": 44.85650084572136,
+    "target_volume_mm3": 44.85840765442992,
+    "intersection_mm3": 44.84991217854654,
+    "union_mm3": 44.86499632160473,
+    "iou": 0.9996637881579202,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 0.006588667174817431,
+  "missing_material_mm3": 0.008495475883378845,
+  "actual_mesh": {
+    "source_sha256": "44d2255d3c60e574fa721466aeafdae8a85704ede8627b4c4917cd21a2c87b01",
+    "raw_triangles": 403872,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 403872,
+    "vertices": 201952,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 44.85650089210959,
+    "bounds": {
+      "min": [
+        -9.765625145519152e-05,
+        9.765625145519152e-05,
+        -1.000097632408142
+      ],
+      "max": [
+        8.000097274780273,
+        6.000097751617432,
+        -9.765625145519152e-05
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "schema": "genlaw.native-binding.v1",
+    "status": "verified",
+    "cad_sha256": "e4df88235e0114fa3810e5bbf7cc95f867d53b5fd591b7702735085b7c18c2a3",
+    "reference_class": "axis_aligned_box_minus_one_z_through_cylinder",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "volume_mm3": 44.8584073464102,
+    "valid_single_solid": true,
+    "hole_center_xy": [
+      3.0,
+      2.0
+    ],
+    "hole_radius_mm": 1.0,
+    "cylinder_face": "Face7",
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "reference_for_iou": "Analytic box minus cylinder checked by native BREP boolean difference."
+  },
+  "native_geometry_sha256": "eaaae802309f02727e07cbc384a21f6b75245ee1b835f41f8fd3d4112e4ea38c",
+  "absolute_iou_refinement_difference": 1.4331507314224723e-08,
+  "section_levels": 86,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "section_hole_observations": [
+    {
+      "requested_z_mm": -0.9,
+      "z_mm": -0.9154508479795073,
+      "interior_loops": 1,
+      "area_mm2": 3.1413219016438325,
+      "area_equivalent_diameter_mm": 1.9999138151219389,
+      "centroid_xy_mm": [
+        2.9999999999216063,
+        1.9999999983712098
+      ],
+      "center_error_mm": 1.6306756693021046e-09
+    },
+    {
+      "requested_z_mm": -0.5,
+      "z_mm": -0.49906746579284644,
+      "interior_loops": 1,
+      "area_mm2": 3.1413072694933635,
+      "area_equivalent_diameter_mm": 1.9999091573576504,
+      "centroid_xy_mm": [
+        2.9999963793820323,
+        2.000001013468146
+      ],
+      "center_error_mm": 3.7597861841316144e-06
+    },
+    {
+      "requested_z_mm": -0.09999999999999998,
+      "z_mm": -0.0954119320525731,
+      "interior_loops": 1,
+      "area_mm2": 3.1413053157645714,
+      "area_equivalent_diameter_mm": 1.9999085354381159,
+      "centroid_xy_mm": [
+        2.999996066406769,
+        2.0000010628618656
+      ],
+      "center_error_mm": 4.0746571700574885e-06
+    }
+  ],
+  "method": "Closed STL cross-sections, all vertex-height intervals, 3-point Gauss integration against native-checked analytic CAD section.",
+  "registration": "none; same CAD/G54 coordinates",
+  "full_tolerance_acceptance": false,
+  "production_approved": false,
+  "limits": [
+    "Numerical estimate, not a certified error bound.",
+    "Section diameters are area-equivalent, not a GD&T acceptance.",
+    "Three interior slices do not certify through-hole or roughness acceptance."
+  ]
+}

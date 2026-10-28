@@ -97,7 +97,8 @@
     "metadata_only": "仅记录配置或标签；相应能力未验证",
     "pending": "当前待补齐",
     "planned": "计划扩展；无制造验证结果",
-    "qualified_scope": "已在明确范围内验证；必须关联独立案例和验收证据"
+    "qualified_scope": "已在明确范围内验证；必须关联独立案例和验收证据",
+    "sample_cases_measured": "若干具体组合已测量；有待排查项或待验收条件，不等于连续范围支持"
   },
   "support_dimensions": [
     {
@@ -107,18 +108,20 @@
         {
           "id": "single-hole",
           "name": "单通孔",
-          "status": "single_case_measured",
-          "label": "单例实测",
-          "scope": "S1 单孔工艺输入链路已实测；孔位错误 NC 和进给变体已检查，公差与更宽几何范围待补。",
+          "status": "sample_cases_measured",
+          "label": "4 例已测 · 未验收",
+          "scope": "固定 8×6 mm，(孔径,孔心,厚度) 四例：(2,(3,2),1.5)、(2.5,(3,2),1.5)、(2,(4,3),1.5)、(2,(3,2),1.0)。轴向贯穿有未解决信号；不是连续参数范围。",
           "stages": [
             "s1"
           ],
           "evidence_paths": [
+            "system/development/s1/verification/",
             "cases/s1/metrics.json",
             "runs/S1-CHAIN-20261028-r3/metrics.json"
           ],
           "preparation_evidence_ref": "data/preparation-status.json",
-          "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json"
+          "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json",
+          "verification_evidence_ref": "verification/S1-VERIFY-20261028-r1/summary.json"
         },
         {
           "id": "hole-pattern",
@@ -185,13 +188,14 @@
         {
           "id": "xyz-reference",
           "name": "XYZ / 单钻头 / 参考 NC",
-          "status": "single_case_measured",
-          "label": "单例实测",
-          "scope": "固定刀轴、G54 零偏置、参考钻孔指令。",
+          "status": "sample_cases_measured",
+          "label": "4 例参考配置已测",
+          "scope": "固定刀轴、G54 零偏置、参考钻孔指令；φ2 / φ2.5 钻头用于四个具体软件用例，未适配真实机床。",
           "stages": [
             "s1"
           ],
           "evidence_paths": [
+            "verification/S1-VERIFY-20261028-r1/summary.json",
             "cases/s1/reference.nc",
             "cases/s1/resources.json",
             "runs/S1-CHAIN-20261028-r3/program.nc"
@@ -253,13 +257,14 @@
         {
           "id": "box-stock",
           "name": "矩形完整毛坯",
-          "status": "single_case_measured",
-          "label": "几何单例实测",
-          "scope": "仅 S1 尺寸；扩大尺寸前检查计算预算。",
+          "status": "sample_cases_measured",
+          "label": "两种板厚已测",
+          "scope": "8×6×1.5 mm 和 8×6×1.0 mm 矩形坯已完成去料测量；贯穿有待排查项，不表示连续尺寸范围合格。",
           "stages": [
             "s1"
           ],
           "evidence_paths": [
+            "verification/S1-VERIFY-20261028-r1/summary.json",
             "cases/s1/simulation.camotics",
             "cases/s1/metrics.json",
             "runs/S1-CHAIN-20261028-r3/simulation.camotics"
@@ -304,7 +309,7 @@
     }
   ],
   "progression": [
-    "S1 三步软件链路已接通；补齐逐项验收和独立单孔几何变体。",
+    "S1 四个单孔用例已测量；优先排查轴线信号、补工艺验收依据，再进入 S2。",
     "沿单孔 → 孔系 → 铣削特征 → 多工序 → 3+2 → 连续五轴推进。",
     "真实单件、新设备、新毛坯或材料按依赖接入，每次只改变一类条件。"
   ],

@@ -1,0 +1,32 @@
+{
+  "schema": "genlaw.software-geometry-policy.v1",
+  "cad_sha256": "6342832206d21cd9b07319d37d44c88c2377dd97537097d5bc8665ca9c780a1a",
+  "production_approved": false,
+  "rules": {
+    "diameter": {
+      "schema": "genlaw.numeric-acceptance.v1",
+      "units": "mm",
+      "scope": "software_regression",
+      "basis": "Developer-defined software regression bounds only; not a manufacturing tolerance or approval.",
+      "method": "sampled_radial_diameter_band",
+      "min_mm": 1.9,
+      "max_mm": 2.1
+    },
+    "position_xy": {
+      "schema": "genlaw.numeric-acceptance.v1",
+      "units": "mm",
+      "scope": "software_regression",
+      "basis": "Developer-defined software regression bounds only; not a manufacturing tolerance or approval.",
+      "method": "sampled_center_radial_deviation",
+      "max_deviation_mm": 0.1
+    },
+    "through": {
+      "schema": "genlaw.numeric-acceptance.v1",
+      "units": "mm",
+      "scope": "software_regression",
+      "basis": "Developer-defined software regression bounds only; not a manufacturing tolerance or approval.",
+      "method": "axial_probe_clear",
+      "require_clear_probes": 9
+    }
+  }
+}
