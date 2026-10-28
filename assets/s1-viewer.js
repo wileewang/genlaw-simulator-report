@@ -58,8 +58,21 @@ async function start() {
   const qa = window.__S1_VIEWER__ = { ready: false, caseId: null, frameIndex: 0, mode, playing: false, renderCount: 0, rendererCount: 1 };
 
   async function geometry(path) {
-    const r = await fetch(new URL(path, siteBase)); if (!r.ok) throw Error('Geometry unavailable: ' + path);
-    const buffer = await r.arrayBuffer(), h = new DataView(buffer);
+    const delivery = config.geometry_transport?.[path];
+    const compressed = delivery?.encoding === 'gzip' && typeof DecompressionStream === 'function';
+    const r = await fetch(new URL(compressed ? delivery.path : path, siteBase));
+    if (!r.ok) throw Error('Geometry unavailable: ' + path);
+    const buffer = compressed ?
+      await new Response(r.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer() : await r.arrayBuffer();
+    if (delivery) {
+      if (buffer.byteLength !== delivery.decoded_bytes) throw Error('Incomplete geometry: ' + path);
+      if (globalThis.crypto?.subtle) {
+        const digest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',buffer)),
+          byte => byte.toString(16).padStart(2,'0')).join('');
+        if (digest !== delivery.decoded_sha256) throw Error('Geometry integrity mismatch: ' + path);
+      }
+    }
+    const h = new DataView(buffer);
     if (buffer.byteLength < 16 || new TextDecoder().decode(new Uint8Array(buffer,0,8)) !== 'GLWMESH1') throw Error('Invalid geometry');
     const nv = h.getUint32(8,true), nf = h.getUint32(12,true);
     if (!nv || nf > 500000 || buffer.byteLength !== 16 + nv*12 + nf*12) throw Error('Geometry exceeds supported budget');
@@ -117,9 +130,15 @@ async function start() {
     center.set(...low.map((v,i)=>(v+high[i])/2));
     grids.forEach(g => g.position.set(center.x,center.y,low[2]-.2));
     const stock = new THREE.BoxGeometry(...low.map((v,i)=>high[i]-v)); stock.translate(...center.toArray()); owned.push(stock);
-    frames.push(stock); targetMesh.geometry = await geometry(entry.target_mesh);
-    actualMesh.geometry = await geometry(entry.actual_mesh);
-    for (const f of entry.frames) frames.push(await geometry(f.mesh));
+    frames.push(stock);
+    const paths = [entry.target_mesh,entry.actual_mesh,...entry.frames.map(f=>f.mesh)], loaded = [];
+    // At most two downloads at once, and only the selected case is retained.
+    for (let i=0;i<paths.length;i+=2) {
+      loading.textContent = `正在载入加工状态… ${i} / ${paths.length}`;
+      loaded.push(...await Promise.all(paths.slice(i,i+2).map(geometry)));
+    }
+    [targetMesh.geometry,actualMesh.geometry] = loaded;
+    frames.push(...loaded.slice(2));
     frames.push(actualMesh.geometry);
     captions = ['毛坯 · 未加工', ...entry.frames.map((f,i)=>`${f.label || ['钻入','继续钻削','接近贯穿'][i]} · ${f.time_seconds.toFixed(2)} s`), '完成 · 最终结果'];
     frame = 0; qa.frameIndex = 0; slider.value = '0'; slider.max = String(frames.length-1);
