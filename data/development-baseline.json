@@ -1,0 +1,113 @@
+{
+  "schema": "genlaw.development-baseline.v0",
+  "active_baseline_id": "B0-S1-XYZ-AL",
+  "current_modules": ["preparation", "programming", "verification"],
+  "baselines": [
+    {
+      "id": "B0-S1-XYZ-AL",
+      "label": "B0 · S1 软件起点",
+      "status": "software_reference_pending_process_review",
+      "input_approved": false,
+      "production_approved": false,
+      "stage": "s1",
+      "dimensions": [
+        {
+          "id": "part",
+          "label": "起始零件",
+          "name": "偏心单通孔薄板",
+          "visual": "single-hole",
+          "spec": "8 × 6 × 1.5 mm · φ2 通孔",
+          "status": "固定案例几何实测",
+          "reason": "单特征、单装夹；偏心孔便于检查坐标。",
+          "limit": "工艺卡与制造要求待审阅。",
+          "capability_ids": ["single-hole"]
+        },
+        {
+          "id": "equipment",
+          "label": "起始设备资源",
+          "name": "通用 XYZ 软件参考",
+          "visual": "machine",
+          "spec": "固定刀轴 · 单钻头 · 参考 NC",
+          "status": "固定配置已实测",
+          "reason": "先固定轴数、刀具和控制器语义。",
+          "limit": "夹具待建模；真实机床尚未适配。",
+          "capability_ids": ["xyz-reference", "fixture-holder"]
+        },
+        {
+          "id": "material",
+          "label": "起始毛坯与材料",
+          "name": "6061-T6 矩形板坯",
+          "visual": "stock",
+          "spec": "8 × 6 × 1.5 mm · 完整毛坯",
+          "status": "几何去料 · 材料仅标签",
+          "reason": "简单毛坯，控制本机计算量。",
+          "limit": "切削性能与粗糙度尚未验证。",
+          "capability_ids": ["box-stock", "al6061-label"]
+        }
+      ],
+      "resource_details": [
+        ["控制器", "参考 NC 子集；FreeCAD linuxcnc_post 导出，不运行 LinuxCNC"],
+        ["坐标", "毫米、绝对坐标、G54 零偏置；顶面 Z=0"],
+        ["刀具", "φ2 / 118° 钻头；当前固定测试零刀长补偿"],
+        ["夹具", "拟双侧夹爪、底部让刀；几何与干涉尚未验收"],
+        ["几何基准", "保留原 STEP / BREP；小尺寸为软件基准，实际加工适用性待审"],
+        ["来料资料", "现有 CAD 与真实工艺卡先核对配对、版次和要求；不假定已一一对应"]
+      ],
+      "evidence_paths": ["cases/s1/metrics.json", "cases/s1/resources.json", "cases/s1/target.step"],
+      "review_package_id": "S1-REVIEW-20261028-r2"
+    }
+  ],
+  "status_definitions": {
+    "single_case_measured": "固定案例实测；尚未证明通用支持",
+    "metadata_only": "仅记录配置或标签；相应能力未验证",
+    "pending": "当前待补齐",
+    "planned": "计划扩展；无制造验证结果",
+    "qualified_scope": "已在明确范围内验证；必须关联独立案例和验收证据"
+  },
+  "support_dimensions": [
+    {
+      "id": "parts",
+      "name": "零件特征",
+      "items": [
+        {"id": "single-hole", "name": "单通孔", "status": "single_case_measured", "label": "单例实测", "scope": "仅 S1 固定几何与参数；通用入口、公差待补。", "stages": ["s1"], "evidence_paths": ["cases/s1/metrics.json"]},
+        {"id": "hole-pattern", "name": "孔系 / 盲孔", "status": "planned", "label": "待开发", "scope": "先增加孔数量，再逐项改变位置、深度。", "stages": ["s2"], "evidence_paths": []},
+        {"id": "milling-features", "name": "槽 / 台阶 / 型腔", "status": "planned", "label": "待开发", "scope": "分别验收后再组合，保留原设备与材料。", "stages": ["s3"], "evidence_paths": []},
+        {"id": "combined-features", "name": "多工序组合", "status": "planned", "label": "待开发", "scope": "换刀与工序间实际剩料连续。", "stages": ["s4"], "evidence_paths": []},
+        {"id": "multi-face-surface", "name": "多面 / 简单曲面", "status": "planned", "label": "待研发", "scope": "先 3+2 定位，再连续五轴。", "stages": ["s5", "s6"], "evidence_paths": []},
+        {"id": "real-part", "name": "配对的真实单件", "status": "pending", "label": "待选定 / 核对", "scope": "能力匹配后即可接入；装配资料先取单个实例。", "stages": ["s7"], "evidence_paths": []}
+      ]
+    },
+    {
+      "id": "equipment",
+      "name": "设备与工具",
+      "items": [
+        {"id": "xyz-reference", "name": "XYZ / 单钻头 / 参考 NC", "status": "single_case_measured", "label": "单例实测", "scope": "固定刀轴、G54 零偏置、参考钻孔指令。", "stages": ["s1"], "evidence_paths": ["cases/s1/reference.nc", "cases/s1/resources.json"]},
+        {"id": "fixture-holder", "name": "夹具 / 刀柄", "status": "pending", "label": "待建模 / 验收", "scope": "补让刀空间、几何与已建模干涉检查。", "stages": ["s1", "s4"], "evidence_paths": []},
+        {"id": "milling-tools", "name": "铣刀 / 换刀 / 非零偏置", "status": "planned", "label": "待开发", "scope": "先单铣刀，再换刀与刀长、坐标配置。", "stages": ["s3", "s4"], "evidence_paths": []},
+        {"id": "rotary-axes", "name": "3+2 / 连续五轴", "status": "planned", "label": "待研发", "scope": "需要明确轴链、控制器与相应 CAM / 去料能力。", "stages": ["s5", "s6"], "evidence_paths": []},
+        {"id": "real-machine", "name": "真实设备 / 控制器", "status": "planned", "label": "待逐台适配", "scope": "已有设备清单作为候选；先核实具体配置与语义。", "stages": ["s7"], "evidence_paths": []}
+      ]
+    },
+    {
+      "id": "materials",
+      "name": "毛坯与材料",
+      "items": [
+        {"id": "box-stock", "name": "矩形完整毛坯", "status": "single_case_measured", "label": "几何单例实测", "scope": "仅 S1 尺寸；扩大尺寸前检查计算预算。", "stages": ["s1"], "evidence_paths": ["cases/s1/simulation.camotics", "cases/s1/metrics.json"]},
+        {"id": "al6061-label", "name": "6061-T6", "status": "metadata_only", "label": "仅材料标签", "scope": "尚无材料切削性能或粗糙度验收。", "stages": ["s1"], "evidence_paths": ["cases/s1/resources.json"]},
+        {"id": "other-stock", "name": "其他板坯 / 棒料 / 型材", "status": "planned", "label": "待扩展", "scope": "按工艺增加来料形状、余量及相应加工能力。", "stages": ["s7"], "evidence_paths": []},
+        {"id": "other-materials", "name": "钢 / 不锈钢 / 其他材料", "status": "planned", "label": "待扩展", "scope": "先补可靠参数与资源；几何通过不代表材料性能通过。", "stages": ["s7"], "evidence_paths": []}
+      ]
+    }
+  ],
+  "progression": [
+    "先完成 S1 的加工准备、NC 生成和几何检验接口。",
+    "沿单孔 → 孔系 → 铣削特征 → 多工序 → 3+2 → 连续五轴推进。",
+    "真实单件、新设备、新毛坯或材料按依赖接入，每次只改变一类条件。"
+  ],
+  "update_policy": {
+    "baseline": "新增或改变起始条件时另建基线 ID，保留原基线与证据，再更新 active_baseline_id。",
+    "capabilities": "每个条目独立更新状态、适用范围、阶段和结果链接；单例实测不自动升级为范围已验证。",
+    "qualified_scope": "必须有独立正常/错误案例、明确参数/精度/资源范围和逐项验收证据。",
+    "material_claims": "材料标签、几何去料与材料物理分别记录，不互相替代。"
+  }
+}

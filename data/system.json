@@ -1,18 +1,18 @@
 {
-  "schema": "genlaw.system-design.v2",
+  "schema": "genlaw.system-design.v3",
   "title": "系统设计",
-  "module_numbering": "Geometry recognition is upstream; retain process planning as module 1, programming as module 2 and verification as module 3.",
+  "module_numbering": "1 几何识别；2 工艺规划；3 加工准备；4 NC 生成；5 仿真检验。旧模块 2 加工编程拆为新模块 3 / 4。",
   "contract_status": "design_definitions_not_production_validators",
   "modules": [
     {
       "id": "geometry",
-      "number": "上游",
+      "number": "模块 1",
       "name": "几何识别",
       "question": "零件是什么？",
       "input": "零件视图",
       "output": "CAD + 已关联的制造要求",
-      "implementation": "多模态模型 / Agent + CAD 构建程序",
-      "status": "上游模块 · 接口定义",
+      "implementation": "模型 + CAD 程序",
+      "status": "暂缓开发",
       "current": false,
       "description": "从零件视图重建 CAD，把尺寸、公差、粗糙度等要求关联到对应的面、边或特征。",
       "inputs": [
@@ -84,15 +84,15 @@
     },
     {
       "id": "planning",
-      "number": "模块 1",
+      "number": "模块 2",
       "name": "工艺规划",
       "question": "怎样加工？",
       "input": "CAD + 制造要求 + 资源",
-      "output": "工艺意图 / 工艺卡",
-      "implementation": "Agent 制定工艺 + 程序检查",
-      "status": "接口先行 · Agent 后置",
+      "output": "工艺卡",
+      "implementation": "Agent（后续）",
+      "status": "暂缓开发",
       "current": false,
-      "description": "Agent 决定工艺路线、工序/工步、装夹与质量约束，引用原 CAD 和最终要求。明确指定的刀具或参数也作为约束；设备执行细节由模块 2 在这些约束内落实。当前先用人工结构化卡，Agent 实现后置。",
+      "description": "根据 CAD、制造要求与可用资源确定工序、工步、装夹和质量约束。当前沿用已有工艺卡，本模块暂缓；具体执行方案由加工准备落实。",
       "inputs": [
         [
           "geometry_packet",
@@ -159,69 +159,94 @@
       }
     },
     {
-      "id": "programming",
-      "number": "模块 2",
-      "name": "加工编程",
-      "question": "生成哪些指令？",
-      "input": "工艺意图 + CAD + 资源配置",
-      "output": "最终 NC + 加工配置",
-      "implementation": "核对与解析程序 + FreeCAD CAM + 后处理",
-      "status": "固定案例已跑通 · 通用入口待开发",
+      "id": "preparation",
+      "number": "模块 3",
+      "name": "加工准备",
+      "question": "把工艺落实为执行方案",
+      "input": "工艺卡 + CAD + 资源",
+      "output": "可执行加工方案",
+      "implementation": "规则程序 + 资源库",
+      "status": "待开发",
       "current": true,
-      "description": "先核对工艺卡及引用资料，再按规则、资源和 CAM 能力落实可执行加工方案，最后生成 NC。PDF 识别可由模型辅助；缺关键数据、冲突或改工艺的决策返回规划端，不能直接把文字卡交给 CAM。",
+      "description": "核对已有工艺卡、CAD、要求和引用资料，在工艺约束内落实资源、坐标及加工参数，形成可执行方案。PDF 可由模型辅助提取候选内容；首版人工结构化。缺关键数据、冲突或改变工艺的决策返回处理。",
       "inputs": [
         [
           "process_plan",
-          "结构化工艺意图；已有 PDF / 纸质卡先提取并核对，保留原文与版本"
+          "已有卡或未来 Agent 输出的工艺意图，含工序/工步及原文来源"
         ],
         [
           "geometry_packet",
-          "原始 CAD / 已关联最终要求；识别缺项与冲突，不覆盖原始定义"
+          "配对且同版本的 CAD、特征及制造要求"
         ],
         [
-          "resource_profile / capabilities",
-          "有版本的毛坯、设备/方言、刀具/夹具、坐标及已验证能力范围"
+          "resources / capabilities",
+          "毛坯、设备/控制器、刀具/夹具、坐标与已验证能力范围"
         ]
       ],
       "outputs": [
         [
           "execution_plan",
-          "已确定的工步、资源、坐标、加工参数及其依据；声明执行范围与前置条件"
-        ],
-        [
-          "nc_ref / machining_config",
-          "最终 NC 及哈希，绑定同一执行方案和实际加工配置"
-        ],
-        [
-          "provenance",
-          "原卡/引用资料位置、CAD、参数来源、CAM/后处理及配置版本"
+          "已明确的工步、资源、坐标、参数与依据、执行及检验范围"
         ],
         [
           "issues / readiness",
-          "缺项、冲突、不支持或在声明范围内就绪；注明受影响工步、阶段与处理方"
+          "缺项、冲突、不支持或声明范围内就绪；标明处理方和受影响工步"
         ]
       ],
       "example": {
-        "schema": "genlaw.programming-response.v0",
-        "example_status": "design_only_not_runtime_output",
+        "schema": "genlaw.execution-preparation-response.v0",
+        "example_status": "design_only",
         "process_plan_ref": "S1-INTENT-DRAFT",
         "status": "missing_information",
-        "execution_plan_ref": null,
-        "nc_ref": null,
-        "machining_config_ref": null,
+        "execution_plan": null,
         "issues": [
           {
-            "code": "missing_information",
-            "affected_operations": [
-              "OP10"
-            ],
             "field": "setup.fixture_and_work_frame",
-            "blocked_stage": "nc_generation",
-            "owner": "resource_configuration / process_planning",
-            "required_input": "确认装夹和工件坐标；不得套用历史 S1 的零偏置。"
+            "owner": "resource_configuration / process_engineer",
+            "effect": "缺关键装夹/坐标信息，不能进入 NC 生成。"
           }
+        ]
+      }
+    },
+    {
+      "id": "programming",
+      "number": "模块 4",
+      "name": "NC 生成",
+      "question": "把方案变成机床指令",
+      "input": "执行方案 + CAD",
+      "output": "最终 NC + 加工配置",
+      "implementation": "FreeCAD CAM + 后处理",
+      "status": "固定案例已实测",
+      "current": true,
+      "description": "将冻结的可执行方案和同版 CAD 映射为 FreeCAD CAM 任务，计算刀路并按控制器配置后处理，输出绑定同一方案的最终 NC 和加工配置。缺项回到加工准备；工艺改变返回工艺规划或师傅。",
+      "inputs": [
+        [
+          "execution_plan",
+          "加工准备已核对并明确的工步、资源、坐标、参数和范围"
         ],
-        "planned_implementation": {
+        [
+          "cad_ref",
+          "同版本原始 CAD；仿真检验保留相同目标引用"
+        ]
+      ],
+      "outputs": [
+        [
+          "nc_ref / machining_config",
+          "最终 NC 及哈希、实际毛坯/刀具/夹具/坐标与控制器配置"
+        ],
+        [
+          "provenance / issues",
+          "执行方案、工步与程序段绑定，CAM/后处理版本及生成错误"
+        ]
+      ],
+      "example": {
+        "schema": "genlaw.program-artifact.v0",
+        "example_status": "design_only",
+        "execution_plan_ref": "<frozen plan + hash>",
+        "target_ref": "<original CAD + hash>",
+        "nc_ref": "<generated NC + hash>",
+        "machining_config_ref": "<resolved config + hash>",
+        "implementation": {
           "cam": "FreeCAD CAM",
           "postprocessor": "selected_by_controller_profile",
           "linuxcnc_runtime_required": false
@@ -230,19 +255,19 @@
     },
     {
       "id": "verification",
-      "number": "模块 3",
+      "number": "模块 5",
       "name": "仿真检验",
       "question": "加工结果对吗？",
       "input": "最终 NC + 加工配置 + 原始 CAD",
       "output": "加工后几何 + 逐项检验 + 覆盖范围",
-      "implementation": "CAMotics 去料 + 程序几何对比",
-      "status": "当前开发范围",
+      "implementation": "CAMotics + 几何比较",
+      "status": "单例几何已实测",
       "current": true,
       "description": "按同一 NC 和配置从声明的实际来料去料，保存材料来源与工序间状态；在有独立依据时检查中间要求，最终对比原 CAD。报告已验证工步、未验证步骤和质量项；局部几何通过不代表整张工艺卡完成。",
       "inputs": [
         [
           "nc_ref / execution_plan",
-          "模块 2 的同一份最终 NC、工步关联、执行和检验范围"
+          "模块 4 的同一份最终 NC、工步关联、执行和检验范围"
         ],
         [
           "machining_config / incoming_state",
@@ -318,17 +343,30 @@
     "工艺意图可来自人工结构化卡、未来 Agent 或经核对的纸质卡；与 CAM 执行方案分开建模。",
     "不支持、缺信息或精度不足时显式返回状态，不能自动视为通过。",
     "几何指标不代替粗糙度、材料物理、夹紧力或真实机床验证。",
-    "模块2/3按明确适配接口扩展，执行前匹配整链能力，新增能力须通过新旧用例验收。",
+    "加工准备、NC生成和仿真检验按明确适配接口扩展，执行前匹配整链能力，新增能力须通过新旧用例验收。",
     "外部纸质工艺卡保留原文、版次与字段位置，按有版本的字段和语义映射转为内部输入；缺项不得静默填默认值。",
     "加工参数逐项注明来自工艺卡、资源配置或程序/CAM推导；影响工艺路线或要求的修改返回规划端。",
     "原始最终要求与工序中间要求分开；外部通知单、缺项和冲突有来源、影响范围与处理方。",
     "执行前声明支持范围和必要前置条件，执行后报告工步与要求的覆盖；局部几何通过不等于整卡完成。",
-    "历史 S1 参数记录保持不变，新的工艺意图/执行方案仅为接口设计，迁移和运行时校验待实现。"
+    "历史 S1 参数记录保持不变，新的工艺意图/执行方案仅为接口设计，迁移和运行时校验待实现。",
+    "当前跳过几何识别和工艺规划，从已有卡与 CAD 进入加工准备；所有支持声明按基线、适用范围和证据更新。"
   ],
   "development_scope": [
+    "preparation",
     "programming",
     "verification"
   ],
   "extension_design_ref": "extension-design.json",
-  "process_handoff_ref": "process-handoff.json"
+  "process_handoff_ref": "process-handoff.json",
+  "current_input": "已有工艺卡 + CAD + 制造要求 + 资源配置；先核对配对与版本。",
+  "baseline_ref": "development-baseline.json",
+  "input_sources": {
+    "existing_cad": "现有 CAD 文件与保留的 S1 软件基准",
+    "process_cards": "已收到的真实工艺卡；先人工结构化并审阅",
+    "pairing_status": "真实卡与 CAD 的配对、版次和要求尚未全量核对",
+    "deferred": [
+      "geometry",
+      "planning"
+    ]
+  }
 }

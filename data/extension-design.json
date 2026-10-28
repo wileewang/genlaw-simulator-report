@@ -1,8 +1,8 @@
 {
-  "schema": "genlaw.extension-design.v1",
+  "schema": "genlaw.extension-design.v2",
   "status": "design_defined_runtime_not_implemented",
   "principle": "零件集合影响能力开发优先级；统一接口、原始数据与验收约定持续复用。",
-  "scope": "模块2加工编程、模块3仿真检验内部的扩展设计；不增加一级系统模块。",
+  "scope": "加工准备、NC 生成、仿真检验三个一级模块的扩展设计。",
   "layers": [
     {
       "name": "统一数据与流程",
@@ -99,12 +99,12 @@
   ],
   "adapter_roles": [
     [
-      "工艺输入与执行方案解析",
-      "原卡/结构化意图 → 核对后的工艺 → 执行方案；参数保留依据，需改工艺时返回模块 1 / 工艺师傅"
+      "加工准备",
+      "已有工艺卡、CAD 和资源 → 核对并落实执行方案；改变工艺返回工艺规划或师傅"
     ],
     [
-      "CAM adapter",
-      "冻结的执行方案 + CAD → 刀路/工艺程序；FreeCAD Job 是模块 2 内部产物"
+      "CAM / NC 生成",
+      "冻结的执行方案 + CAD → 刀路与程序；FreeCAD Job 为内部产物"
     ],
     [
       "Machine / post adapter",
@@ -196,9 +196,9 @@
   ],
   "roadmap_policy": {
     "stable_foundation": "从S1开始贯穿各阶段，不等到S7再考虑接口扩展。",
-    "current_mainline": "S1–S7 是当前铣钻主线的推进顺序；新增工艺可以按依赖从相应阶段分出。",
+    "current_mainline": "S1–S6 为特征与轴数主线；S7 是贯穿主线的资源/真实单件扩展入口，不要求等五轴之后。",
     "prioritization": "通用性、覆盖收益、风险与成本共同决定先做哪项；71份资料是验证样本之一。",
-    "sampling": "小型单特征 → 参数变体/错误案例 → 特征组合 → 独立真实样本；按能力选样，逐项控制资源预算。",
+    "sampling": "保留 S1 软件基准；已有卡/CAD先配对审阅。按能力选择简单单件、参数变体与错误例，再增加特征、资源和独立真实样本。",
     "branch_examples": [
       {
         "name": "板材 / 型材下料",
@@ -218,6 +218,6 @@
     ]
   },
   "limits": "目标是将修改集中在适配器、配置和必要的版本演进，并用测试证明兼容；不承诺任何新零件都无需算法开发或永远无需调整公共接口。",
-  "current_implementation": "现有 S1 为固定参数脚本与已保存结果。工艺意图入口、执行方案解析、PDF 识别、能力匹配及新接口验收均待实现；本文件不代表新增制造通过。",
+  "current_implementation": "S1 只有固定参数的 NC / 去料 / 几何实测；加工准备、通用 NC 入口与逐项验收仍待实现。五模块为架构定义，不代表功能已全部实现。",
   "process_handoff_ref": "process-handoff.json"
 }

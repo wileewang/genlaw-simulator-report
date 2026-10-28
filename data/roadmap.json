@@ -1,21 +1,13 @@
 {
-  "schema": "genlaw.development-route.v1",
+  "schema": "genlaw.development-route.v2",
   "scope": [
+    "preparation",
     "programming",
     "verification"
   ],
   "part_selection_owner": "Codex, delegated by user",
-  "input": "自构造 CAD + 经工艺审阅的工艺意图卡 + 明确资源；历史 S1 固定参数结果保留",
+  "input": "已有工艺卡 + CAD / 要求 + 资源；保留 S1 软件起点，真实卡/CAD须核对配对和版本。",
   "output": "实际加工后几何 + 与原始 CAD 的对比 + 逐项验证状态",
-  "baseline": {
-    "part": "S1 偏心通孔薄板",
-    "stock": "8 × 6 × 1.5 mm 矩形毛坯",
-    "material": "6061-T6，首阶段仅作材料标签",
-    "machine": "通用 XYZ 开发参考；旋转轴暂不启用",
-    "controller": "毫米、绝对坐标、G54 的参考 NC 子集",
-    "tool": "φ2 / 118° 钻头",
-    "fixture": "通用双侧夹爪，底部让刀；夹持力与干涉尚未验收"
-  },
   "stages": [
     {
       "id": "s1",
@@ -24,7 +16,7 @@
       "case_name": "偏心通孔薄板",
       "status": "measured",
       "status_label": "已有软件实测 · 输入待工艺审阅",
-      "headline": "用一个孔，接通编程、去料与几何对照。",
+      "headline": "起始点：单孔、单刀、单装夹；先补齐加工准备。",
       "part": "8 × 6 × 1.5 mm；φ2 通孔；孔心 (3, 2)",
       "material": "6061-T6 标签 · 矩形毛坯",
       "resources": "通用 XYZ、参考 NC、单钻头、单次装夹",
@@ -44,8 +36,13 @@
       ],
       "changes": "先固定材料、设备和装夹，只验证一个通孔。",
       "shape": "single-hole",
-      "gate": "经审阅的工艺意图、CAD 与资源经核对和参数解析驱动整链；缺项/冲突明确拦截，参数依据可查。正常/错误 NC 与参数变体有实际结果，几何判据明确；报告工步和要求覆盖，满足公共扩展验收。",
-      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
+      "gate": "经审阅的已有工艺卡的结构化意图、CAD 与资源经核对和参数解析驱动整链；缺项/冲突明确拦截，参数依据可查。正常/错误 NC 与参数变体有实际结果，几何判据明确；报告工步和要求覆盖，满足公共扩展验收。",
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
+      "new_preparation": [
+        "核对工艺卡、CAD 与要求的对应关系",
+        "落实单工序参数来源，处理缺项与冲突"
+      ],
+      "baseline_id": "B0-S1-XYZ-AL"
     },
     {
       "id": "s2",
@@ -72,7 +69,11 @@
       "changes": "先增加孔数量；放大尺寸作为独立变体，不同时增加资源复杂度。",
       "shape": "two-holes",
       "gate": "多孔位置与深度均正确，错误工序可追踪到具体孔；放大用例必须先通过资源准入。",
-      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
+      "new_preparation": [
+        "关联多个孔及加工顺序",
+        "区分通孔、盲孔与成品深度"
+      ]
     },
     {
       "id": "s3",
@@ -99,7 +100,11 @@
       "changes": "增加特征类型和刀具形状，保持设备与材料不变。",
       "shape": "slot",
       "gate": "每种特征都有正常与错误案例，独立 CAD / 几何误差与材料结果对应。",
-      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
+      "new_preparation": [
+        "关联槽、台阶、型腔与余量",
+        "明确铣刀、进退刀和切深约束"
+      ]
     },
     {
       "id": "s4",
@@ -126,7 +131,11 @@
       "changes": "增加工序与刀具资源；零件仍保持简单。",
       "shape": "pocket-hole",
       "gate": "工序顺序、材料连续性与偏置语义正确；改变一个配置能产生可解释的验收差异。",
-      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
+      "new_preparation": [
+        "解析工序依赖、换刀与坐标",
+        "明确各步实际来料与中间要求"
+      ]
     },
     {
       "id": "s5",
@@ -153,7 +162,11 @@
       "changes": "增加加工方向与设备运动能力，几何保持简单。",
       "shape": "multi-face",
       "gate": "定位和加工分别有独立对照，多方向工序间材料连续，不能只看旋转动画。",
-      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
+      "new_preparation": [
+        "绑定装夹、旋转中心与轴链",
+        "核对不同方向的工艺和坐标"
+      ]
     },
     {
       "id": "s6",
@@ -180,17 +193,21 @@
       "changes": "新增五轴软件能力；不以旋转轴动画代替去料验证。",
       "shape": "surface",
       "gate": "姿态、运动、去料和已建模干涉均可独立检查，误差和支持范围明确。",
-      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
+      "new_preparation": [
+        "明确刀轴、TCP 与控制器语义",
+        "检查整链五轴能力和参数范围"
+      ]
     },
     {
       "id": "s7",
       "number": "07",
-      "title": "拓宽资源与真实单件",
+      "title": "资源与真实单件扩展",
       "case_name": "匹配已支持特征的真实单件",
       "status": "planned",
-      "status_label": "后续扩展",
-      "headline": "把已验证能力迁移到更多资源和真实零件。",
-      "part": "先选一个简单真实单件，再增加复杂曲面与多次装夹",
+      "status_label": "贯穿主线 · 待开发",
+      "headline": "已有能力满足时即可接入，无须等到五轴之后。",
+      "part": "从现有 CAD / 工艺卡中配对简单单件；组装资料先选独立实例",
       "material": "从铝材逐步扩展到碳钢、不锈钢与其他毛坯形式",
       "resources": "逐台映射实际设备、控制器、刀具与夹具",
       "new_programming": [
@@ -202,15 +219,21 @@
         "记录设备对照、材料物理等未验证边界"
       ],
       "remaining": [
-        "组成单件稳定后，再进入组装件"
+        "先配对卡片、CAD、版次和要求；按已验证能力选择单件",
+        "每次新增资源单独验证，并回归原基线"
       ],
-      "changes": "每次只增加一种设备、材料或零件复杂度，避免同时更换全部条件。",
+      "changes": "并行扩展入口：每次只新增一种零件特征、毛坯/材料或设备配置。",
       "shape": "real-part",
       "gate": "每一项支持声明都有对应零件、资源配置和结果；几何通过不能推断材料切削性能。",
-      "extension_acceptance_ref": "extension-design.json#/shared_acceptance"
+      "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
+      "new_preparation": [
+        "配对真实卡、CAD、版次和要求",
+        "新增资源与材料参数须有来源"
+      ],
+      "lane": "cross_cutting"
     }
   ],
-  "progression_rule": "先从S1建立最小公共接口与能力检查，再在铣钻主线逐项增加特征；按需求加入下料、车削等分支，扩展时保留旧能力验收。",
+  "progression_rule": "保留基线，每次只增加一类能力；S1–S6 推进特征和轴数，S7 的新资源/真实单件按已有能力随时接入，不等待五轴。",
   "old_report_retired": true,
   "extension_design_ref": "extension-design.json",
   "extension_acceptance_required_for_each_stage": true,
@@ -226,7 +249,9 @@
       "确认输入后再开展对应验证"
     ],
     "new_manufacturing_validation_started": false,
-    "note": "现有 S1 探针结果保留；S2–S7 仍未构造输入。"
+    "note": "S1 固定软件结果与冻结审阅包保留；已有真实卡/CAD先核对配对，S2–S7 的新验证输入尚待构造或选定。"
   },
-  "process_handoff_ref": "process-handoff.json"
+  "process_handoff_ref": "process-handoff.json",
+  "baseline_ref": "development-baseline.json#/active_baseline_id",
+  "support_catalog_ref": "development-baseline.json#/support_dimensions"
 }

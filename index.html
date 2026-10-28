@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>从零件视图到制造验证 · GenLaw</title><meta name="description" content="GenLaw 系统设计与加工编程、仿真检验的开发路线。查看每个阶段的输入、实际加工结果和几何对比。">
-<meta name="color-scheme" content="light"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css">
-<script src="assets/site.js" defer></script></head><body>
+<title>从工艺卡与 CAD 到制造验证 · GenLaw</title><meta name="description" content="GenLaw 五模块设计，以及加工准备、NC 生成、仿真检验的起始点与支持范围。">
+<meta name="color-scheme" content="light"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css?v=919233d80d"><link rel="stylesheet" href="assets/overview.css?v=4951a46663">
+<script src="assets/site.js?v=9e504ac0c0" defer></script></head><body>
 <a class="skip" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="index.html" aria-label="GenLaw 主页"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13Z" fill="#172a40"/><path d="m22 11-6-3-7 4v8l7 4 7-4v-5h-8v4h4l-3 1.7-3-1.7v-5l3-1.7 4 2Z" fill="#fff"/></svg>GenLaw<small>DESIGN → VERIFY</small></a><nav class="nav" aria-label="主导航"><a href="index.html" aria-current="page">主页</a><a href="system/">系统设计</a><a href="system/development/">开发路线</a></nav></div></header>
 <main id="main" class="wrap">
     <section class="hero"><div><div class="eyebrow">GENLAW / SYSTEM & DEVELOPMENT</div>
-    <h1>从零件视图，<br>到可验证的加工结果。</h1><p class="lead">识别几何与制造要求，形成工艺，生成 NC，再从毛坯仿真加工，与原始 CAD 对照。</p>
+    <h1>从工艺卡与 CAD，<br>到可验证的加工结果。</h1><p class="lead">先落实加工方案，生成 NC，再从毛坯仿真加工，与原始 CAD 对照。</p>
     <div class="actions"><a class="btn primary" href="system/">查看系统设计 <span class="arrow" aria-hidden="true">↗</span></a><a class="btn" href="system/development/">开发路线 <span aria-hidden="true">→</span></a></div>
-    <div class="hero-note"><span class="dot"></span>当前聚焦：模块 2 加工编程 · 模块 3 仿真检验</div></div>
+    <div class="hero-note"><span class="dot"></span>当前聚焦：加工准备 → NC 生成 → 仿真检验</div></div>
     <a class="hero-visual" href="system/development/s1/" aria-label="查看 S1 偏心通孔薄板的实际结果"><div class="visual-top"><span>S1 / 偏心通孔薄板 · 示意</span><span class="pill done"><span class="dot" aria-hidden="true"></span>已有实测</span></div>
     <svg viewBox="0 0 260 190" role="img" aria-label="零件示意">
       <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
@@ -17,7 +17,7 @@
       <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
       <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0ZM2,2a1,1 0 1 0 2,0a1,1 0 1 0 -2,0Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
       <g fill="#667d95" font-size="9" font-family="system-ui"><path d="m27 119 118 47m-120-51 0 8m118 39 0 8" stroke="#a5b4c5" fill="none"/><text x="75" y="155" transform="rotate(22 75 155)">8 mm</text><path d="m163 166 59-41m-63 39 8 4m51-45 8 4" stroke="#a5b4c5" fill="none"/><text x="198" y="160" transform="rotate(-34 198 160)">6 mm</text><path d="m115 74 31-48h43" stroke="#8aa0b7" fill="none"/><text x="152" y="21">φ2 通孔</text></g></svg><div class="visual-bottom"><div><small>实际仿真网格 vs. 原始 CAD</small><strong>99.9753% <small style="display:inline">体积 IoU</small></strong></div><span class="link">查看三维结果 ↗</span></div></a></section>
-    <section class="entrances" aria-label="站点入口"><a class="entrance" href="system/"><div class="eyebrow">01 / ARCHITECTURE</div><div class="row"><h2>系统设计</h2><span class="arrow" aria-hidden="true">↗</span></div><p>四个主要模块。看清每一步接收什么、输出什么，以及由 Agent 还是程序实现。</p></a>
-    <a class="entrance" href="system/development/"><div class="eyebrow">02 / WITHIN THE SYSTEM</div><div class="row"><h2>开发路线与进度</h2><span class="arrow" aria-hidden="true">↗</span></div><p>系统设计下的开发子页。从简单单件出发，逐步增加特征、轴数与资源。</p></a></section>
-    <section class="latest"><div><strong>当前结果：单孔 NC → 去料 → 几何对比</strong><p>查看固定测试工艺卡、目标 CAD、实际加工网格和去料回放。工艺卡自动适配与公差验收待补齐。</p></div><a class="btn small" href="system/development/s1/">打开阶段结果 →</a></section></main>
+    <section class="entrances" aria-label="站点入口"><a class="entrance" href="system/"><div class="eyebrow">01 / ARCHITECTURE</div><div class="row"><h2>系统设计</h2><span class="arrow" aria-hidden="true">↗</span></div><p>五个模块，当前先做后三步。用流程图看清输入、输出与实现方式。</p></a>
+    <a class="entrance" href="system/development/"><div class="eyebrow">02 / WITHIN THE SYSTEM</div><div class="row"><h2>开发路线与进度</h2><span class="arrow" aria-hidden="true">↗</span></div><p>明确起始零件、设备与材料，持续记录支持范围和扩展进度。</p></a></section>
+    <section class="latest"><div><strong>当前结果：单孔 NC → 去料 → 几何对比</strong><p>查看固定测试工艺卡、目标 CAD、实际加工网格和去料回放。加工准备、通用适配与公差验收待补齐。</p></div><a class="btn small" href="system/development/s1/">打开阶段结果 →</a></section></main>
 <footer class="footer wrap"><div>GenLaw · 系统设计与开发记录</div><div>更新于 2026.10.28 <span aria-hidden="true"> · </span><a href="system/development/s1/">当前阶段 S1 ↗</a></div></footer></body></html>
