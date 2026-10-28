@@ -192,11 +192,24 @@
           ]
         },
         {
+          "id": "top-facing",
+          "name": "面铣减薄",
+          "status": "sample_cases_measured",
+          "label": "4 个具体用例已测",
+          "scope": "8×6 mm 占地；1.5→1、1.5→0.75、3→2 mm 及非零 CAD 坐标。来料与成品独立，保留同一底面。非任意余量或曲面。",
+          "stages": [
+            "s3/facing"
+          ],
+          "evidence_paths": [
+            "results/S3-FACING-RESULTS-20261029-r1/summary.json"
+          ]
+        },
+        {
           "id": "milling-features",
-          "name": "面铣 / 铣孔 / 其他型腔",
+          "name": "铣孔 / 其他型腔",
           "status": "planned",
           "label": "待开发",
-          "scope": "继续扩展面铣、铣孔和更一般曲面；不同特征先单独验收再组合。",
+          "scope": "继续扩展铣孔和更一般曲面；不同特征先单独验收再组合。",
           "stages": [
             "s3"
           ],
@@ -276,17 +289,19 @@
           "id": "flat-endmill-reference",
           "name": "XYZ / 单平底铣刀 / 参考 NC",
           "status": "sample_cases_measured",
-          "label": "S3 十二例配置已测",
-          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层槽、台阶、岛台与开口。刀柄与夹具干涉未验证。",
+          "label": "S3 十六例配置已测",
+          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层槽、台阶、岛台、开口和面铣。刀柄与夹具干涉未验证。",
           "stages": [
             "s3",
             "s3/step",
-            "s3/region"
+            "s3/region",
+            "s3/facing"
           ],
           "evidence_paths": [
             "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
             "results/S3-STEP-RESULTS-20261029-r1/summary.json",
-            "results/S3-REGION-RESULTS-20261029-r1/summary.json"
+            "results/S3-REGION-RESULTS-20261029-r1/summary.json",
+            "results/S3-FACING-RESULTS-20261029-r1/summary.json"
           ]
         },
         {
@@ -333,13 +348,14 @@
           "id": "box-stock",
           "name": "矩形完整毛坯",
           "status": "sample_cases_measured",
-          "label": "3 种尺寸组合已测",
-          "scope": "8×6×1.5、8×6×1.0 与 10×7.5×1.5 mm 矩形坯有具体用例；放大例精度 0.03 mm，其余 0.025 mm。不是连续尺寸范围。",
+          "label": "4 种尺寸组合已测",
+          "scope": "8×6×1.5、8×6×1.0、10×7.5×1.5 与 8×6×3 mm 来料；网格分别在用例中显式指定为 0.025、0.03 或 0.04 mm。面铣来料与成品独立；不是连续尺寸范围。",
           "stages": [
             "s1",
             "s2",
             "s3",
-            "s3/step"
+            "s3/step",
+            "s3/facing"
           ],
           "evidence_paths": [
             "verification/S1-VERIFY-20261028-r1/summary.json",
@@ -349,7 +365,8 @@
             "results/S2-PATTERN-RESULTS-20261028-r1/summary.json",
             "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
             "results/S3-STEP-RESULTS-20261029-r1/summary.json",
-            "results/S3-REGION-RESULTS-20261029-r1/summary.json"
+            "results/S3-REGION-RESULTS-20261029-r1/summary.json",
+            "results/S3-FACING-RESULTS-20261029-r1/summary.json"
           ],
           "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json",
           "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
@@ -364,13 +381,15 @@
             "s1",
             "s2",
             "s3",
-            "s3/step"
+            "s3/step",
+            "s3/facing"
           ],
           "evidence_paths": [
             "cases/s1/resources.json",
             "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
             "results/S3-STEP-RESULTS-20261029-r1/summary.json",
-            "results/S3-REGION-RESULTS-20261029-r1/summary.json"
+            "results/S3-REGION-RESULTS-20261029-r1/summary.json",
+            "results/S3-FACING-RESULTS-20261029-r1/summary.json"
           ]
         },
         {
@@ -399,7 +418,7 @@
     }
   ],
   "progression": [
-    "S1 / S2 钻孔已有结果；S3 圆角槽、台阶和平面轮廓共十二例通过，继续扩展面铣、铣孔和多工序。",
+    "S1 / S2 钻孔已有结果；S3 槽、台阶、轮廓和面铣共十六例通过，继续扩展铣孔和多工序。",
     "沿单孔 → 孔系 → 铣削特征 → 多工序 → 3+2 → 连续五轴推进。",
     "真实单件、新设备、新毛坯或材料按依赖接入，每次只改变一类条件。"
   ],

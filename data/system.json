@@ -2,7 +2,7 @@
   "schema": "genlaw.system-design.v3",
   "title": "系统设计",
   "module_numbering": "1 几何识别；2 工艺规划；3 加工准备；4 NC 生成；5 仿真检验。旧模块 2 加工编程拆为新模块 3 / 4。",
-  "contract_status": "limited_drilling_closed_pocket_and_edge_step_chains_measured",
+  "contract_status": "limited_drilling_and_planar_milling_chains_measured",
   "modules": [
     {
       "id": "geometry",
@@ -166,7 +166,7 @@
       "input": "工艺卡 + CAD + 资源",
       "output": "可执行加工方案",
       "implementation": "规则程序 + 资源库",
-      "status": "孔 / 槽 / 台阶 / 平面区域入口已测",
+      "status": "钻孔与平面铣削入口已测",
       "current": true,
       "description": "读取已核对录入的工艺卡，绑定 CAD、工步、要求和资源；缺项与冲突显式返回。纸质卡自动识别待接入。",
       "inputs": [
@@ -228,7 +228,7 @@
       "implementation": "FreeCAD CAM + 后处理",
       "status": "钻孔 / 基础铣削出码已测",
       "current": true,
-      "description": "独立读取原 CAD，调用 FreeCAD Drilling 或 PocketShape；检查刀具、参数、切深、保留区域和逐层覆盖。当前限已列出的具体用例。",
+      "description": "独立读取原 CAD，调用 FreeCAD Drilling、PocketShape 或 MillFace；显式设置来料，检查刀具、切深、参数和逐层覆盖。当前限已列出的具体用例。",
       "inputs": [
         [
           "execution_plan",
@@ -273,7 +273,7 @@
       "implementation": "CAMotics + 几何比较",
       "status": "孔与平面铣削及反例已测",
       "current": true,
-      "description": "CAMotics 执行同一 NC，与原 CAD 比较实际剩料。先看 IoU 与形状，再逐项检查孔、轮廓、深度、底面、岛台和开口。制造验收依据仍待补齐。",
+      "description": "CAMotics 执行同一 NC，与原 CAD 比较实际剩料。先看 IoU 与形状，再按特征检查孔、轮廓、深度、顶底面和厚度。制造验收依据仍待补齐。",
       "inputs": [
         [
           "nc_ref / execution_plan",
@@ -391,5 +391,6 @@
   "pattern_evidence_ref": "results/S2-PATTERN-RESULTS-20261028-r1/summary.json",
   "pocket_evidence_ref": "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
   "step_evidence_ref": "results/S3-STEP-RESULTS-20261029-r1/summary.json",
-  "region_evidence_ref": "results/S3-REGION-RESULTS-20261029-r1/summary.json"
+  "region_evidence_ref": "results/S3-REGION-RESULTS-20261029-r1/summary.json",
+  "facing_evidence_ref": "results/S3-FACING-RESULTS-20261029-r1/summary.json"
 }

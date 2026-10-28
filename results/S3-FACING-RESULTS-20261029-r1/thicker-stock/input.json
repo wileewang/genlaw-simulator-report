@@ -1,0 +1,60 @@
+{
+  "schema": "genlaw.preparation-input.v7",
+  "id": "S3-FACING-thicker-stock-r1",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "明确输入单独声明的矩形来料尺寸、材料标签及原 CAD 坐标；不代表现场验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "276302e328a9e79782672c73032673d24e540fe056fdba3ff41b408e752941f2"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "bb1c9cfbda18861a382b4fb6268deb98fa1e59718260fff9539503bec4576d6a"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "fdd348bc6dee94acde72a9fd1e59aa3bd87b9a8b56ec65e2c10efc2c7ec0aece"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "462d203a666c3e315c9115b58eebc9fb8c1fb99920d900b19a0ac2ca69479942"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "a4da5e1c6e77674564aba30bd6a2fa7fc00f963c202489923586b91bba58e405"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "d1daa917659314c4d19391549912b73151e02d2111df73f72a4644fa814d6085"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "4ee0a99b21cc744dd2682e41c4c47193911ce3e361e25642e32fa4311bc879dd"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "7c1cb522961a593fc89b264c4ed44b8750538fda272c3705349fa749f9fcaa43"
+    }
+  },
+  "capability": "top_facing_xy"
+}

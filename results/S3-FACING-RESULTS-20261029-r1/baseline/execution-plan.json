@@ -1,0 +1,223 @@
+{
+  "schema": "genlaw.execution-plan.v7",
+  "capability": "top_facing_xy",
+  "input_id": "S3-FACING-baseline-r1",
+  "mode": "software_geometry_reference",
+  "source_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "fa61ff4e61ce7fe5774281843e10e2453e475d915f8c771648aba152d57c2537"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "542404bf6cfce4ab0119d10e677b03e348437589e1ad19ba8aea8d0517293c2d"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "8e60e508fbc92057db12d08e5ba69ff66714125c8fc2c083fb57758b4c598f2c"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "f1e03461e1c4e059c58c9294f8cc0f4b186c0ecd8732acc45e9afdd53f81cafb"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "6a06abfde1033677a0d730f3997b4100862d653b992c8ff261a0ddde8a8ad7d3"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "327f8866b5725ff5a9ef7dfac14adbb75889b7f0e6e377e7d40d1e7423825b6d"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "a1c8ba6228e357bb3a3426a2c232c676e8acdada4a1edb5eb22ab434c85eab3d"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "08e3c5a503bd17724ac293ea8595b9f419046942263dfe1d9e913a5290ff3752"
+    }
+  },
+  "cad_ref": {
+    "path": "target.brep",
+    "sha256": "542404bf6cfce4ab0119d10e677b03e348437589e1ad19ba8aea8d0517293c2d"
+  },
+  "cad_observation_ref": {
+    "path": "geometry-observation.json",
+    "sha256": "f1e03461e1c4e059c58c9294f8cc0f4b186c0ecd8732acc45e9afdd53f81cafb"
+  },
+  "operations": [
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "face_milling",
+      "feature_id": "P1",
+      "geometry": {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face6",
+        "top_z_mm": -0.5,
+        "thickness_mm": 1.0,
+        "bounds_xy_mm": {
+          "min": [
+            0.0,
+            0.0
+          ],
+          "max": [
+            8.0,
+            6.0
+          ]
+        }
+      },
+      "final_z_mm": -0.5,
+      "removal_depth_mm": 0.5
+    }
+  ],
+  "target_bounds_mm": {
+    "min": [
+      0.0,
+      0.0,
+      -1.5
+    ],
+    "max": [
+      8.0,
+      6.0,
+      -0.5
+    ]
+  },
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "tool": {
+    "id": "T1",
+    "kind": "flat_endmill",
+    "center_cutting": true,
+    "diameter_mm": 1,
+    "cutting_length_mm": 5,
+    "length_mm": 20,
+    "basis": "Explicit synthetic test tool, not a qualified physical tool or holder."
+  },
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "Explicit software-only zero transform; real clamping excluded."
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "parameters": {
+    "spindle_rpm": 3000.0,
+    "feed_mm_min": 120.0,
+    "plunge_mm_min": 60.0,
+    "step_down_mm": 0.25,
+    "step_over_percent": 50.0,
+    "safe_height_mm": 2.0,
+    "clearance_height_mm": 3.0,
+    "path_tolerance_mm": 0.001
+  },
+  "strategy": {
+    "clearing_pattern": "Offset",
+    "cut_mode": "Climb",
+    "start_at": "Center",
+    "entry": "vertical_center_cutting",
+    "keep_tool_down": false,
+    "radial_allowance_mm": 0,
+    "axial_allowance_mm": 0,
+    "boundary_shape": "Boundbox",
+    "clear_edges": true,
+    "exclude_raised_areas": false
+  },
+  "parameter_provenance": {
+    "spindle_rpm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "feed_mm_min": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "plunge_mm_min": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "step_down_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "step_over_percent": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "safe_height_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "clearance_height_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "path_tolerance_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    }
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Explicit grid selected before NC under the unchanged 5,000,000-cell budget; no physical-part scaling."
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "明确输入单独声明的矩形来料尺寸、材料标签及原 CAD 坐标；不代表现场验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "requirements_ref": {
+    "path": "requirements.json",
+    "sha256": "327f8866b5725ff5a9ef7dfac14adbb75889b7f0e6e377e7d40d1e7423825b6d"
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false
+}
