@@ -1,0 +1,110 @@
+{
+  "schema": "genlaw.camotics-build.v1",
+  "id": "1.2.0-genlaw-axis-r1",
+  "binary": "engines/camotics/releases/1.2.0-genlaw-axis-r1/camsim",
+  "binary_sha256": "7a217a0493fddd618324a3bc219c6d8af58ca320e40f68d461dfac4770a1d6fd",
+  "version_output": "1.2",
+  "patched_vertical_conic_sweep": true,
+  "complete_nc_material_removal_engine": true,
+  "build_features": {
+    "gui": false,
+    "tpl": false,
+    "openssl": false,
+    "event_http_service": false,
+    "nc_interpreter": true,
+    "sweep_and_surface": true,
+    "binary_stl": true
+  },
+  "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "compile_options": "num_jobs=1 debug=0 optimize=0 ccflags=-O2 strict=0 cxxstd=c++11",
+  "upstreams": [
+    {
+      "project": "CAMotics",
+      "commit": "a26af50604877e3c863091103b6667b207fa79ad",
+      "url": "https://codeload.github.com/CauldronDevelopmentLLC/CAMotics/tar.gz/a26af50604877e3c863091103b6667b207fa79ad",
+      "archive_sha256": "5027d84d22fe0752ca641e67d2ee67ccc6906420af83bc357ef24d156c57f2d2",
+      "source_directory": "engines/camotics/source"
+    },
+    {
+      "project": "cbang",
+      "commit": "e231d612a6fbb3424b7b211d08bb367f6d9ca0f8",
+      "url": "https://codeload.github.com/CauldronDevelopmentLLC/cbang/tar.gz/e231d612a6fbb3424b7b211d08bb367f6d9ca0f8",
+      "archive_sha256": "039a21f03a2b63e12e60e01379dc4d3fc2bb957043b6819e1e555a1d185c450b",
+      "source_directory": "engines/camotics/vendor/cbang"
+    }
+  ],
+  "modified_source_files": [
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/SConstruct",
+      "upstream_sha256": "9a1cb28ba8f11285e8de7c817f033e665a3e19adebead26909bbf374ca022907",
+      "modified_sha256": "d864702678ce66ba80a4d9c92868a662a98904b970d4fdb142cf4909f04cfd04"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/sim/ConicSweep.cpp",
+      "upstream_sha256": "fbc00eb1b5f274d929c59338145da2f054569e831ab1309dd36f2652b61d5dab",
+      "modified_sha256": "a156d384b528ac481df7b0cdcf45e8b46a3b17ca4ac9979279032eeabc0102e4"
+    },
+    {
+      "project": "cbang",
+      "path": "engines/camotics/vendor/cbang/SConstruct",
+      "upstream_sha256": "41f127481c48592209795a4e4e08118117a1ecc9d6da4e67f352acf13b50f3e3",
+      "modified_sha256": "e24b79fbab814fa6117af8b7c9008609711a2beb4b98563f74f12c0230247d81"
+    },
+    {
+      "project": "cbang",
+      "path": "engines/camotics/vendor/cbang/config/__init__.py",
+      "upstream_sha256": "2b76b71801120c8aa00b6efda31a2b2dbd08e70c0a901b16ac2c145523b11192",
+      "modified_sha256": "40e908f74315eae0e89a1d5c39828de8a936f78845975f1c9cb616f6be5af543"
+    },
+    {
+      "project": "cbang",
+      "path": "engines/camotics/vendor/cbang/config/build_info/__init__.py",
+      "upstream_sha256": "4b132af6b94ec706f23c16fbd0fa1b23343f322a6811867c1b79a2445ec45688",
+      "modified_sha256": "b65928f1f975f291bcd01e4f3d977959d162c6946defbda39ec176c665a99b26"
+    }
+  ],
+  "library_directories": [
+    "engines/camotics/.work/sysroot/usr/lib/x86_64-linux-gnu"
+  ],
+  "linked_libraries": [
+    {
+      "path": "/lib/x86_64-linux-gnu/libstdc++.so.6",
+      "sha256": "ff0825e113603c3866680d5d52216bc6d8eedf3a59f52a0aef67ff01994db128",
+      "inside_workspace": false
+    },
+    {
+      "path": "/lib/x86_64-linux-gnu/libexpat.so.1",
+      "sha256": "683e2e41db14581194bf1f6616e95a8f02cd4ab599f0fba807e46325ec01d21f",
+      "inside_workspace": false
+    },
+    {
+      "path": "/lib/x86_64-linux-gnu/libm.so.6",
+      "sha256": "3dd5511ae94785c9f921429b0f2b2f7aabb461b6f0e6de6dfdbef15f24bdfee6",
+      "inside_workspace": false
+    },
+    {
+      "path": "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "sha256": "fc9d43b2f6c20e53b009238f767c5b949d202389e20de9e202ea684b4ba3729a",
+      "inside_workspace": false
+    },
+    {
+      "path": "/lib/x86_64-linux-gnu/libc.so.6",
+      "sha256": "b2cf6c33b74d2f22543b7a469a75b538911e690f769d0b238843a49465b83793",
+      "inside_workspace": false
+    },
+    {
+      "path": "/lib64/ld-linux-x86-64.so.2",
+      "sha256": "41daf7836f7fce21a40ca63a00c5caf21b05a35a76ccc075d86f1716212cdf01",
+      "inside_workspace": false
+    }
+  ],
+  "source_manifest_sha256": "c63aac71a4969feddb606f6b50b07f7b8d90423938024a17ae33a9e528e5badc",
+  "build_script_sha256": {
+    "build.py": "5025b3875d7f5403ed4dd9f5e452f17324b99f9e3c8d6bf752c6fc40c39c7218",
+    "build_chunk.py": "8719d094683e85e420d53b8cd45908a466ab4989b3beafd7d57b96ac20f4693b"
+  },
+  "numerical_patch_sha256": "2d08e76b6558f5934824dd531bce4783ff52a0ccd81f8a5c9a6e8c1080895df0",
+  "production_approved": false
+}

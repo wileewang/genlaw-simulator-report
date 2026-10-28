@@ -273,7 +273,7 @@
       "implementation": "CAMotics + 几何比较",
       "status": "轴线数值缺陷已复现",
       "current": true,
-      "description": "S1 以 CAMotics 执行最终 NC，比较原 CAD 与实际去料网格；孔径、孔心与轴向线已有数值检查，已定位锥形扫掠的轴线数值缺陷，完整引擎修补待回归。未给制造验收条件时返回待依据，粗糙度尚不能测量。",
+      "description": "S1 以 CAMotics 执行最终 NC，比较原 CAD 与实际去料网格；孔径、孔心与轴向线已有数值检查，完整引擎已修补轴线数值缺陷，四例软件检查通过，两个错误 NC 仍检出。未给制造验收条件时返回待依据，粗糙度尚不能测量。",
       "inputs": [
         [
           "nc_ref / execution_plan",
@@ -386,5 +386,6 @@
     ]
   },
   "preparation_status_ref": "preparation-status.json",
-  "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json"
+  "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json",
+  "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
 }

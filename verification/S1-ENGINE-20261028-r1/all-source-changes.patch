@@ -1,0 +1,77 @@
+--- a/source/SConstruct
++++ b/source/SConstruct
+@@ -236,6 +236,7 @@
+ # Build other programs
+ docs = ('README.md', 'LICENSE', 'COPYING', 'CHANGELOG.md')
+ progs = 'gcodetool planner'
++if not env['with_gui']: progs += ' camsim'
+ if env['with_tpl']: progs += ' tplang'
+ 
+ for prog in progs.split():
+--- a/source/src/camotics/sim/ConicSweep.cpp
++++ b/source/src/camotics/sim/ConicSweep.cpp
+@@ -55,6 +55,17 @@
+ 
+   // Check z-height
+   if (Pz < min(Az, Bz) || max(Az, Bz) + l < Pz) return -1;
++
++  // Pure Z translation has an analytic swept-frustum cross section.
++  // Avoid the repeated quadratic root on the tool axis: cancellation in
++  // gamma^2 - epsilon*rho can otherwise reject points inside the sweep.
++  if (Ax == Bx && Ay == By && 0 < l) {
++    const double hMin = max(0.0, Pz - max(Az, Bz));
++    const double hMax = min(l, Pz - min(Az, Bz));
++    if (hMax < hMin) return -1;
++    const double radius = rb + Tm * (Tm < 0 ? hMin : hMax);
++    return sqr(Px - Ax) + sqr(Py - Ay) <= sqr(radius) ? 1 : -1;
++  }
+ 
+   // epsilon * beta^2 + gamma * beta + rho = 0
+   double epsilon = sqr(Bx - Ax) + sqr(By - Ay) - sqr(Tm * (Bz - Az));
+--- a/vendor/cbang/SConstruct
++++ b/vendor/cbang/SConstruct
+@@ -60,7 +60,8 @@
+ Export('env conf')
+ for lib in 'zlib bzip2 sqlite3 expat boost libevent re2 libyaml'.split():
+     if lib in disable_local: continue
+-    if not env.CBConfigEnabled(lib) or lib in force_local:
++    config_name = {'libevent': 'event', 'expat': 'XML'}.get(lib, lib)
++    if not env.CBConfigEnabled(config_name) or lib in force_local:
+         Default(SConscript('src/%s/SConscript' % lib,
+                            variant_dir = 'build/' + lib))
+ 
+--- a/vendor/cbang/config/__init__.py
++++ b/vendor/cbang/config/__init__.py
+@@ -277,7 +277,7 @@
+ updated_csig = set()
+ 
+ 
+-def decider_hack(dep, target, prev_ni):
++def decider_hack(dep, target, prev_ni, repo_node=None):
+     from SCons.Util import MD5signature
+ 
+     #print('%s ?= %s %s' % (dep, target, prev_ni.csig))
+--- a/vendor/cbang/config/build_info/__init__.py
++++ b/vendor/cbang/config/build_info/__init__.py
+@@ -5,6 +5,7 @@
+ import sys
+ from platform import release
+ import subprocess
++import os
+ from SCons.Script import *
+ 
+ 
+@@ -89,8 +90,11 @@
+         '    info.add(category, "Date",      __DATE__);\n'
+         '    info.add(category, "Time",      __TIME__);\n')
+ 
+-    revision, branch = svn_get_info()
+-    if revision is None: revision, branch = git_get_info()
++    revision = os.environ.get('GENLAW_UPSTREAM_REVISION')
++    branch = 'genlaw-local-build'
++    if revision is None:
++        revision, branch = svn_get_info()
++        if revision is None: revision, branch = git_get_info()
+ 
+     if revision is not None:
+         contents += (

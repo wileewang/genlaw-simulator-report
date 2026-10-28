@@ -15,8 +15,8 @@
       "title": "单孔完整链路",
       "case_name": "偏心通孔薄板",
       "status": "measured",
-      "status_label": "4 例已测 · 引擎修补待回归",
-      "headline": "轴线异常已复现为锥形扫掠数值问题；下一步集成修补并复跑原输入。",
+      "status_label": "4 例软件回归通过 · 未作制造验收",
+      "headline": "完整 CAMotics 引擎已修补并切换；原四例检查通过，错孔位和未钻通反例仍检出。",
       "part": "8 × 6 × 1.5 mm；φ2 通孔；孔心 (3, 2)",
       "material": "6061-T6 标签 · 矩形毛坯",
       "resources": "通用 XYZ、参考 NC、单钻头、单次装夹",
@@ -26,12 +26,13 @@
       ],
       "new_verification": [
         "新增 11 层孔径 / 孔心及 9 条轴向线检查，保留制造要求待补状态",
-        "错孔位与未钻通对照均检出；轴线数值缺陷已用原 STL、源函数和局部仿真复现"
+        "错孔位与未钻通对照均检出；轴线数值缺陷已用原 STL、源函数和局部仿真复现",
+        "本地构建完整 CAMotics，修补纯 Z 锥形扫掠；原四例与两反例重新去料并检验"
       ],
       "remaining": [
-        "集成垂直锥形扫掠修补，回归原四例及错孔位 / 未钻通对照",
         "工艺师傅确认装夹、参数及制造验收依据",
-        "补夹具 / 刀柄模型；解决当前发现后再推进 S2"
+        "补夹具 / 刀柄模型，明确未验证边界",
+        "下一阶段扩展双孔：先冻结工艺卡与 CAD，再扩展准备、NC 生成与检验"
       ],
       "changes": "固定材料和设备，独立改变孔径、孔位或厚度；四个具体组合已测量，未形成连续支持范围。",
       "shape": "single-hole",
@@ -44,7 +45,7 @@
       "baseline_id": "B0-S1-XYZ-AL",
       "preparation_status": "首版入口已验证",
       "programming_status": "执行方案驱动已实测",
-      "verification_status": "轴线缺陷已定位 · 修补待回归"
+      "verification_status": "完整引擎已回归 · 制造依据待补"
     },
     {
       "id": "s2",
@@ -258,5 +259,6 @@
   "support_catalog_ref": "development-baseline.json#/support_dimensions",
   "preparation_status_ref": "preparation-status.json",
   "feature_verification_ref": "verification/S1-VERIFY-20261028-r1/summary.json",
-  "axis_investigation_ref": "verification/S1-AXIS-20261028-r1/summary.json"
+  "axis_investigation_ref": "verification/S1-AXIS-20261028-r1/summary.json",
+  "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
 }

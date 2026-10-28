@@ -109,12 +109,13 @@
           "id": "single-hole",
           "name": "单通孔",
           "status": "sample_cases_measured",
-          "label": "4 例已测 · 未验收",
-          "scope": "固定 8×6 mm，(孔径,孔心,厚度) 四例：(2,(3,2),1.5)、(2.5,(3,2),1.5)、(2,(4,3),1.5)、(2,(3,2),1.0)。轴线数值缺陷已复现，完整引擎修补待回归；不是连续参数范围。",
+          "label": "4 例软件回归通过",
+          "scope": "固定 8×6 mm，(孔径,孔心,厚度) 四例：(2,(3,2),1.5)、(2.5,(3,2),1.5)、(2,(4,3),1.5)、(2,(3,2),1.0)。完整引擎修补后四例孔径、孔位及轴向线测试通过；不是连续参数范围。",
           "stages": [
             "s1"
           ],
           "evidence_paths": [
+            "system/development/s1/verification/engine/",
             "system/development/s1/verification/",
             "cases/s1/metrics.json",
             "runs/S1-CHAIN-20261028-r3/metrics.json"
@@ -122,7 +123,8 @@
           "preparation_evidence_ref": "data/preparation-status.json",
           "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json",
           "verification_evidence_ref": "verification/S1-VERIFY-20261028-r1/summary.json",
-          "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json"
+          "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json",
+          "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
         },
         {
           "id": "hole-pattern",
@@ -260,7 +262,7 @@
           "name": "矩形完整毛坯",
           "status": "sample_cases_measured",
           "label": "两种板厚已测",
-          "scope": "8×6×1.5 mm 和 8×6×1.0 mm 矩形坯已完成去料测量；轴线数值缺陷待引擎修补回归，不表示连续尺寸范围合格。",
+          "scope": "8×6×1.5 mm 和 8×6×1.0 mm 矩形坯在四个具体单孔用例完成新引擎回归；不表示连续尺寸范围或制造验收合格。",
           "stages": [
             "s1"
           ],
@@ -270,7 +272,8 @@
             "cases/s1/metrics.json",
             "runs/S1-CHAIN-20261028-r3/simulation.camotics"
           ],
-          "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json"
+          "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json",
+          "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
         },
         {
           "id": "al6061-label",
