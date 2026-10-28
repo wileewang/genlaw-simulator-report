@@ -1,0 +1,160 @@
+{
+  "schema": "genlaw.preparation-result.v1",
+  "adapter": "genlaw.preparation.single-hole.v1",
+  "status": "conflicting_information",
+  "execution_plan": null,
+  "issues": [
+    {
+      "code": "conflicting_information",
+      "field": "process_plan/OP10.2/constraints/diameter_mm",
+      "message": "工艺指定孔径与 CAD 不一致。",
+      "severity": "blocking",
+      "blocked_stage": "nc_generation",
+      "owner": "process_engineer"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/R_DIAMETER/acceptance",
+      "message": "验收要求待确认；不能用整体 IoU 代替。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "process_engineer"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/R_POSITION/acceptance",
+      "message": "验收要求待确认；不能用整体 IoU 代替。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "process_engineer"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/R_THROUGH/acceptance",
+      "message": "验收要求待确认；不能用整体 IoU 代替。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "process_engineer"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/R_ROUGHNESS/acceptance",
+      "message": "验收要求待确认；不能用整体 IoU 代替。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "process_engineer"
+    },
+    {
+      "code": "unverified_scope",
+      "field": "review",
+      "message": "工艺输入尚未作生产批准；当前只处理明确的软件参考范围。",
+      "severity": "notice",
+      "blocked_stage": null,
+      "owner": "process_engineer"
+    }
+  ],
+  "coverage": [
+    {
+      "operation_id": "OP05",
+      "step_id": "OP05.1",
+      "type": "incoming_inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.1",
+      "type": "setup",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "drilling",
+      "status": "selected_for_preparation"
+    },
+    {
+      "operation_id": "OP20",
+      "step_id": "OP20.1",
+      "type": "deburring",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP30",
+      "step_id": "OP30.1",
+      "type": "inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP35",
+      "step_id": "OP35.1",
+      "type": "postprocess",
+      "status": "not_verified"
+    }
+  ],
+  "requirement_readiness": [
+    {
+      "id": "R_DIAMETER",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "R_POSITION",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "R_THROUGH",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "R_ROUGHNESS",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    }
+  ],
+  "input_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "4b9084d73592b859ca774e71bbed5d44e8c4895a92f3e7794a6dc5e94d14f5f4"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "56d8e9e29dc98dac54add8b310ad43cd900842c22ee7aa8e5b75ef6dfa15c71a"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "643a38d842d172b1866875c435e738e220f8155a57d23099c98e5d8aa195e4cb"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "34daea4b5e260a2c396f6691fa6af2cb86009fd54d64736d7393da8691e13f29"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "f241cf245193495272fa875e55cbe75a56e8e0a2c52aa72c3a4dcda1c4a6a347"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "82f16fb4c61bfe17699ed3a045de4400fb9d1c29ce6fd912337a586139ededc0"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "0da4512ce8130bd53e4041de4d34a46ba1d44064d0aa8d3432f2a6ed4a089ef5"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "44d6bc5f86964a41ff7031d3920f53253198d49f7902319e8c22e872c9e7e6b3"
+    },
+    "historical_parameters": {
+      "path": "historical-parameters.json",
+      "sha256": "2c80d7dcd0ce419cd7b215177a0d2f153f1080d5dd986bca961f8f7827724de6"
+    }
+  },
+  "source_pdf_automatically_recognized": false,
+  "cad_native_geometry_reparsed_this_run": false,
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "input_id": "S1-CONFLICT-CONTROL",
+  "input_manifest_sha256": "a80631c63601a2f0863a5cc88240a2d6e1fa8addc9ce34a1c1ab4f336d82a310"
+}

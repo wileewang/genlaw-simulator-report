@@ -2,7 +2,7 @@
   "schema": "genlaw.system-design.v3",
   "title": "系统设计",
   "module_numbering": "1 几何识别；2 工艺规划；3 加工准备；4 NC 生成；5 仿真检验。旧模块 2 加工编程拆为新模块 3 / 4。",
-  "contract_status": "design_definitions_not_production_validators",
+  "contract_status": "design_contracts_with_limited_preparation_prototype",
   "modules": [
     {
       "id": "geometry",
@@ -166,9 +166,9 @@
       "input": "工艺卡 + CAD + 资源",
       "output": "可执行加工方案",
       "implementation": "规则程序 + 资源库",
-      "status": "待开发",
+      "status": "首版入口已验证",
       "current": true,
-      "description": "核对已有工艺卡、CAD、要求和引用资料，在工艺约束内落实资源、坐标及加工参数，形成可执行方案。PDF 可由模型辅助提取候选内容；首版人工结构化。缺关键数据、冲突或改变工艺的决策返回处理。",
+      "description": "已实现人工核对后结构化卡片的单孔入口，核对源文件、工步、CAD 观察及资源，返回缺项/冲突或软件范围内的执行方案。当前复用已有原生 CAD 观察；PDF 自动识别、重新解析 CAD 和通用 NC 适配尚未接通。",
       "inputs": [
         [
           "process_plan",
@@ -194,18 +194,28 @@
         ]
       ],
       "example": {
-        "schema": "genlaw.execution-preparation-response.v0",
-        "example_status": "design_only",
-        "process_plan_ref": "S1-INTENT-DRAFT",
+        "schema": "genlaw.preparation-result.v1",
         "status": "missing_information",
         "execution_plan": null,
         "issues": [
           {
-            "field": "setup.fixture_and_work_frame",
-            "owner": "resource_configuration / process_engineer",
-            "effect": "缺关键装夹/坐标信息，不能进入 NC 生成。"
+            "code": "missing_information",
+            "field": "resources/setup",
+            "message": "需要补齐该字段，未使用默认值。",
+            "severity": "blocking",
+            "blocked_stage": "nc_generation",
+            "owner": "input_maintenance"
+          },
+          {
+            "code": "missing_information",
+            "field": "resources/cutting_presets",
+            "message": "需要唯一且有依据的钻削参数配置；不会套用历史 S1 默认值。",
+            "severity": "blocking",
+            "blocked_stage": "nc_generation",
+            "owner": "input_maintenance"
           }
-        ]
+        ],
+        "production_approved": false
       }
     },
     {
@@ -348,7 +358,7 @@
     "加工参数逐项注明来自工艺卡、资源配置或程序/CAM推导；影响工艺路线或要求的修改返回规划端。",
     "原始最终要求与工序中间要求分开；外部通知单、缺项和冲突有来源、影响范围与处理方。",
     "执行前声明支持范围和必要前置条件，执行后报告工步与要求的覆盖；局部几何通过不等于整卡完成。",
-    "历史 S1 参数记录保持不变，新的工艺意图/执行方案仅为接口设计，迁移和运行时校验待实现。",
+    "历史 S1 参数记录保持不变，新的工艺意图/执行方案已有单孔受限解析首版；旧卡自动迁移与通用 NC 适配仍未实现。",
     "当前跳过几何识别和工艺规划，从已有卡与 CAD 进入加工准备；所有支持声明按基线、适用范围和证据更新。"
   ],
   "development_scope": [
@@ -368,5 +378,6 @@
       "geometry",
       "planning"
     ]
-  }
+  },
+  "preparation_status_ref": "preparation-status.json"
 }

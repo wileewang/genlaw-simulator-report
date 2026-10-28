@@ -1,10 +1,10 @@
 {
   "schema": "genlaw.process-handoff-design.v1",
-  "status": "design_defined_runtime_not_implemented",
+  "status": "limited_preparation_prototype_checked",
   "runtime_implemented": false,
   "scope": "五个一级模块中的加工准备、NC 生成与仿真检验；当前从已有工艺卡和 CAD 接入。",
   "basis": "有限抽查三份真实板类工艺规程、共十三页；归纳工艺表达，尚未证明全部来料兼容。",
-  "principle": "工艺卡表达要做什么和约束；加工编程将其落实为有依据、可执行的方案，再交给 CAM。",
+  "principle": "工艺卡表达加工内容与约束；加工准备落实可执行方案，再交给 NC 生成。",
   "entry_points": [
     "当前：已有工艺卡 + 配对 CAD / 要求 + 资源；先人工核对和结构化",
     "后续：Agent 工艺卡或 PDF 模型辅助提取，沿用同一入口"
@@ -105,7 +105,7 @@
   ],
   "migration": {
     "historical_card": "S1 的 genlaw.process-card.v0 是已执行固定脚本的参数记录，保持原文件。",
-    "new_contract": "新的 ProcessPlan / ExecutionPlan 为设计草案，尚无运行时解析器、校验器或迁移程序。",
+    "new_contract": "已有 ProcessPlan / ExecutionPlan v1 的受限单孔入口和程序检查；旧卡自动迁移与新执行方案到 NC 的适配尚未接通。",
     "policy": "旧卡如需接入，另建有来源和差异记录的映射；不得仅改 schema 名称便宣称已兼容真实卡。"
   },
   "first_delivery": [
@@ -113,5 +113,11 @@
     "只实现单工序的结构化入口、必要字段核对与执行参数解析；保留原卡和参数来源。",
     "用完整输入、缺项和资料冲突三个小案例核对处理结果，再接 FreeCAD CAM / CAMotics 及几何验收。",
     "PDF 自动识别、复杂条件分支、一坯多件、多次装夹按路线逐步补入。"
-  ]
+  ],
+  "implemented_components": [
+    "source_bound_manual_transcription_intake",
+    "single_hole_resource_resolution",
+    "missing_conflict_and_scope_reports"
+  ],
+  "preparation_status_ref": "preparation-status.json"
 }
