@@ -1,0 +1,55 @@
+"""Explicit feature contracts shared by preparation; unknown capabilities fail closed.
+
+V4 retains its original closed-pocket contract. V5 adds named planar features
+without requiring each later feature to duplicate source and resource checks.
+"""
+from .preparation import InputError,number,vector
+from .pocket_geometry import POCKET
+from .step_geometry import STEP
+
+
+CONTRACTS={
+ 'rounded_pocket_xy':{'version':'v4','adapter':'genlaw.preparation.rounded-pocket.v1','reference':POCKET,
+   'kind':'rounded_rectangular_pocket','operation':'pocket_milling',
+   'dimensions':['width_mm','height_mm','corner_radius_mm','depth_mm'],
+   'fields':{'id','kind','axis','center_xy_mm','width_mm','height_mm','corner_radius_mm','depth_mm'},'extra_parameters':[],
+   'extra_strategy':{}},
+ 'edge_step_xy':{'version':'v5','adapter':'genlaw.preparation.edge-step.v1','reference':STEP,
+   'kind':'edge_step','operation':'step_milling','dimensions':['side','shoulder_coordinate_mm','depth_mm'],
+   'fields':{'id','kind','axis','side','shoulder_coordinate_mm','depth_mm'},'extra_parameters':['edge_extension_mm'],
+   'extra_strategy':{'edge_extension_mode':'all_three_open_stock_edges','extension_corners':True}}
+}
+
+
+def contract_for(manifest):
+    contract=CONTRACTS.get(manifest.get('capability'))
+    if contract is None or manifest.get('schema')!='genlaw.preparation-input.'+contract['version']:
+        raise InputError('unsupported_capability','capability','该输入版本与加工能力组合尚未实现。')
+    return contract
+
+
+def validate_feature(contract,feature,bounds):
+    if set(feature)!=contract['fields'] or feature.get('kind')!=contract['kind'] or vector(feature.get('axis'),'axis')!=[0,0,1]:
+        raise InputError('unsupported_capability','feature','未知轮廓、方向或几何字段不能忽略。')
+    low=vector(bounds.get('min'),'bounds/min');high=vector(bounds.get('max'),'bounds/max')
+    depth=number(feature['depth_mm'],'depth_mm',True)
+    if any(a>=b for a,b in zip(low,high)) or depth>=high[2]-low[2]:
+        raise InputError('conflicting_information','depth_mm','该铣削特征必须保留底部。')
+    if contract['kind']=='rounded_rectangular_pocket':
+        xy=vector(feature['center_xy_mm'],'center_xy_mm',2)
+        w,h,r=[number(feature[k],k,True) for k in ['width_mm','height_mm','corner_radius_mm']]
+        if 2*r>=min(w,h):raise InputError('unsupported_capability','corner_radius_mm','当前圆角矩形要求内角半径小于半短边；胶囊形另行验收。')
+        if not all(low[i]<xy[i]-size/2 and xy[i]+size/2<high[i] for i,size in enumerate([w,h])):
+            raise InputError('unsupported_capability','feature','该适配器只接受封闭槽。')
+    else:
+        if feature['side'] not in ('X+','X-','Y+','Y-'):raise InputError('unsupported_capability','side','台阶须明确沿 X 或 Y 的哪一侧开口。')
+        coordinate=number(feature['shoulder_coordinate_mm'],'shoulder_coordinate_mm');axis='XY'.index(feature['side'][0])
+        if not low[axis]<coordinate<high[axis]:raise InputError('conflicting_information','shoulder_coordinate_mm','台肩必须位于来料内部。')
+    return low,high,depth
+
+
+def required_nominals(contract,feature):
+    if contract['kind']=='rounded_rectangular_pocket':
+        return {'profile_xy':{k:feature[k] for k in ['center_xy_mm','width_mm','height_mm','corner_radius_mm']},'pocket_depth':feature['depth_mm'],'floor_geometry':'flat'}
+    return {'shoulder_position':{k:feature[k] for k in ['side','shoulder_coordinate_mm']},'step_depth':feature['depth_mm'],'floor_geometry':'flat',
+            'edge_clearance':{'open_stock_edges':3,'depth_mm':feature['depth_mm']}}

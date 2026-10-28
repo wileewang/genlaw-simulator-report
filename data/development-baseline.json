@@ -166,11 +166,24 @@
           ]
         },
         {
+          "id": "edge-step",
+          "name": "外缘台阶",
+          "status": "sample_cases_measured",
+          "label": "4 例已实测",
+          "scope": "8×6×1.5 mm 来料，X+ 基准 / 加深 / 加宽与 Y+ 台阶四个组合；每例三条开口边延伸。非任意侧或连续参数范围。",
+          "stages": [
+            "s3/step"
+          ],
+          "evidence_paths": [
+            "results/S3-STEP-RESULTS-20261029-r1/summary.json"
+          ]
+        },
+        {
           "id": "milling-features",
-          "name": "台阶 / 开放轮廓 / 一般型腔",
+          "name": "开放轮廓 / 一般型腔",
           "status": "planned",
           "label": "待开发",
-          "scope": "圆角单槽另有四例结果；其他铣削特征分别验收后再组合。",
+          "scope": "圆角槽与外缘台阶已有结果；新增铣削特征分别验收后再组合。",
           "stages": [
             "s3"
           ],
@@ -250,13 +263,15 @@
           "id": "flat-endmill-reference",
           "name": "XYZ / 单平底铣刀 / 参考 NC",
           "status": "sample_cases_measured",
-          "label": "S3 四例配置已测",
-          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层铣槽。刀柄与夹具干涉未验证。",
+          "label": "S3 八例配置已测",
+          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层槽 / 台阶。刀柄与夹具干涉未验证。",
           "stages": [
-            "s3"
+            "s3",
+            "s3/step"
           ],
           "evidence_paths": [
-            "results/S3-POCKET-RESULTS-20261029-r2/summary.json"
+            "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
+            "results/S3-STEP-RESULTS-20261029-r1/summary.json"
           ]
         },
         {
@@ -308,7 +323,8 @@
           "stages": [
             "s1",
             "s2",
-            "s3"
+            "s3",
+            "s3/step"
           ],
           "evidence_paths": [
             "verification/S1-VERIFY-20261028-r1/summary.json",
@@ -316,7 +332,8 @@
             "cases/s1/metrics.json",
             "runs/S1-CHAIN-20261028-r3/simulation.camotics",
             "results/S2-PATTERN-RESULTS-20261028-r1/summary.json",
-            "results/S3-POCKET-RESULTS-20261029-r2/summary.json"
+            "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
+            "results/S3-STEP-RESULTS-20261029-r1/summary.json"
           ],
           "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json",
           "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
@@ -330,11 +347,13 @@
           "stages": [
             "s1",
             "s2",
-            "s3"
+            "s3",
+            "s3/step"
           ],
           "evidence_paths": [
             "cases/s1/resources.json",
-            "results/S3-POCKET-RESULTS-20261029-r2/summary.json"
+            "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
+            "results/S3-STEP-RESULTS-20261029-r1/summary.json"
           ]
         },
         {

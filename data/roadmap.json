@@ -91,37 +91,38 @@
       "id": "s3",
       "number": "03",
       "title": "槽、台阶与型腔",
-      "case_name": "圆角单槽薄板",
+      "case_name": "圆角槽与外缘台阶",
       "status": "measured",
-      "status_label": "圆角单槽 4 例实测 · 其余特征待开发",
-      "headline": "先完成圆角单槽，再逐项扩展台阶、开放轮廓与一般型腔。",
+      "status_label": "槽 / 台阶各 4 例实测 · 继续扩展",
+      "headline": "闭合槽和外缘台阶已有结果，继续扩展开放轮廓与一般型腔。",
       "part": "8 × 6 × 1.5 mm；先做 4 × 2 × 0.5 mm 圆角槽，内角 R0.5",
       "material": "沿用 6061-T6 与矩形毛坯",
       "resources": "新增一把平底铣刀，仍为单刀 / 单装夹",
       "new_programming": [
-        "绑定原 CAD 槽底，调用 FreeCAD 原生 PocketShape",
-        "独立检查刀路范围、切深顺序、进给与每层覆盖，NC 不重写"
+        "FreeCAD 原生 PocketShape 分层铣削；台阶绑定三条开口边延伸",
+        "NC 原样检查：台肩避让、切深、进给、直线 / 平面圆弧与每层覆盖"
       ],
       "new_verification": [
-        "四例槽轮廓、深度与底面检查通过",
-        "浅铣、过深与错位反例均检出"
+        "槽 / 台阶各四例，逐项检查轮廓或台肩、深度与底面",
+        "七个反例检出；新增外缘余料检查"
       ],
       "remaining": [
-        "台阶 → 开放轮廓 → 更一般型腔，分别验证后再组合",
-        "补齐真实工艺卡的资源与原尺寸计算方案"
+        "开放轮廓 → 更一般型腔，分别验证后再组合",
+        "面铣、铣孔与多工序；补齐真实卡资源及原尺寸计算方案"
       ],
-      "changes": "新增 φ1 平底铣刀与四个圆角槽组合，XYZ、毛坯与材料标签保持；不代表 S3 全部完成。",
+      "changes": "单刀 XYZ：圆角槽与外缘台阶各四个组合。材料标签与来料保持；其余 S3 范围继续扩展。",
       "shape": "slot",
       "gate": "每种特征都有正常与错误案例，独立 CAD / 几何误差与材料结果对应。",
       "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
       "new_preparation": [
-        "将 P1 槽绑定到工艺卡工步、要求与资源",
-        "显式指定平底铣刀、切深、步距与 CAM 曲线精度"
+        "将槽或台阶绑定工步、制造要求与资源",
+        "显式指定铣刀、分层、步距；台阶增加开口边延伸策略"
       ],
-      "preparation_status": "圆角单槽输入已测",
-      "programming_status": "原生分层铣槽已测",
-      "verification_status": "4 正常例 + 3 反例已测",
-      "results_ref": "results/S3-POCKET-RESULTS-20261029-r2/summary.json"
+      "preparation_status": "槽 / 台阶输入已测",
+      "programming_status": "封闭槽 / 开口台阶已测",
+      "verification_status": "8 正常例 + 7 反例已测",
+      "results_ref": "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
+      "step_results_ref": "results/S3-STEP-RESULTS-20261029-r1/summary.json"
     },
     {
       "id": "s4",
@@ -274,5 +275,32 @@
   "preparation_status_ref": "preparation-status.json",
   "feature_verification_ref": "verification/S1-VERIFY-20261028-r1/summary.json",
   "axis_investigation_ref": "verification/S1-AXIS-20261028-r1/summary.json",
-  "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
+  "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json",
+  "next_step": {
+    "title": "槽 / 台阶已测，继续扩展基础铣削",
+    "items": [
+      [
+        "冻结下一组输入",
+        "开放轮廓或一般型腔：先存档卡片、CAD 与资源"
+      ],
+      [
+        "扩展编程与检查",
+        "保持原 CAD 绑定，检查刀路与实际余料"
+      ],
+      [
+        "接近真实工艺卡",
+        "逐步补面铣、铣孔、多工序和原尺寸计算"
+      ]
+    ],
+    "links": [
+      [
+        "s3/",
+        "查看圆角槽结果"
+      ],
+      [
+        "s3/step/",
+        "查看外缘台阶结果"
+      ]
+    ]
+  }
 }

@@ -1,0 +1,1898 @@
+{
+  "schema": "genlaw.cam-result.v1",
+  "status": "generated_and_checked",
+  "native_cad_binding": {
+    "schema": "genlaw.native-binding.v5",
+    "status": "verified",
+    "cad_sha256": "fa90425bdf755510746ad5a9446c1212f1f5d32e98c98a5caede1f76985dfbdf",
+    "reference_class": "axis_aligned_box_minus_one_z_open_edge_step",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "volume_mm3": 57.0,
+    "valid_single_solid": true,
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "features": [
+      {
+        "id": "S1",
+        "kind": "edge_step",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "side": "X+",
+        "shoulder_coordinate_mm": 3,
+        "depth_mm": 0.5
+      }
+    ],
+    "reference_for_iou": "Native stock-minus-step subtraction checked against original union-of-slabs CAD.",
+    "step_floor_face": "Face5",
+    "open_stock_edges": [
+      "Edge15",
+      "Edge13",
+      "Edge16"
+    ],
+    "retained_shoulder_edge": "Edge7"
+  },
+  "nc_sha256": "eb0baac1c2d746be53db141b71bd463b99fdb3158cbf79a238e52d0ca4c6611b",
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "gui_up": false,
+  "postprocessor": "FreeCAD bundled linuxcnc_post",
+  "post_arguments": "--no-show-editor --no-tlo --precision 5",
+  "native_path_sha256": "28d6431539c35fd443fe4a1b9d9dd97ee7d389961b97222e28e9bede28c748fa",
+  "operation_bindings": [
+    {
+      "step_id": "OP10.2",
+      "feature_id": "S1",
+      "cam_operation": "Pocket",
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face5"
+          ]
+        }
+      ],
+      "open_edge_extensions": [
+        "Face5:Wire[15,13,16]"
+      ],
+      "extension_length_mm": 1.0
+    }
+  ],
+  "parameters": {
+    "step_down_mm": 0.25,
+    "step_over_percent": 50,
+    "final_depth_mm": -0.5,
+    "start_at": "Center",
+    "pattern": "Offset",
+    "geometry_tolerance_mm": 0.001,
+    "native_area_parameters": "{'Tolerance': 1e-07, 'FitArcs': True, 'Simplify': False, 'CleanDistance': 0.0, 'Accuracy': 0.001, 'Unit': 1.0, 'MinArcPoints': 4, 'MaxArcPoints': 100, 'ClipperScale': 10000000.0, 'Fill': 0, 'Coplanar': 0, 'Reorient': True, 'Outline': False, 'Explode': False, 'OpenMode': 0, 'Deflection': 0.001, 'SubjectFill': 0, 'ClipFill': 0, 'Offset': 0.0, 'ExtraPass': 0, 'Stepover': 0.0, 'LastStepover': 0.0, 'JoinType': 0, 'EndType': 0, 'MiterLimit': 2.0, 'RoundPrecision': 0.0, 'PocketMode': 2, 'ToolRadius': 0.5, 'PocketExtraOffset': 0.0, 'PocketStepover': 0.5, 'PocketLastStepover': 0.0, 'FromCenter': True, 'Angle': 45.0, 'AngleShift': 0.0, 'Shift': 0.0, 'Thicken': False, 'SectionCount': -1, 'Stepdown': 1.0, 'SectionOffset': 0.0, 'SectionTolerance': 1e-06, 'SectionMode': 2, 'Project': False}"
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "nc_check": {
+    "status": "checked_declared_milling_envelope",
+    "executable_blocks": 119,
+    "post_decimal_places": 5,
+    "text_modified": false,
+    "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+    "step_map": [
+      {
+        "step_id": "OP10.2",
+        "feature_id": "S1",
+        "first_executable_block": 6,
+        "last_executable_block": 116
+      }
+    ],
+    "cutting_moves": 72,
+    "arc_moves": 4,
+    "cutting_levels_mm": [
+      -0.25,
+      -0.5
+    ],
+    "path_envelope_allowance_mm": 0.00202,
+    "feed_time_seconds": 114.06634689390955,
+    "rapid_time_not_included": true,
+    "motion_trace": [
+      {
+        "block": 6,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          null
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 7,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 8,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          6.25,
+          1.75,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 9,
+        "motion": "G0",
+        "start": [
+          6.25,
+          1.75,
+          3.0
+        ],
+        "end": [
+          6.25,
+          1.75,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 10,
+        "motion": "G1",
+        "start": [
+          6.25,
+          1.75,
+          2.0
+        ],
+        "end": [
+          6.25,
+          1.75,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2.25
+      },
+      {
+        "block": 11,
+        "motion": "G1",
+        "start": [
+          6.25,
+          1.75,
+          -0.25
+        ],
+        "end": [
+          6.25,
+          4.25,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 3.5
+      },
+      {
+        "block": 12,
+        "motion": "G1",
+        "start": [
+          6.25,
+          4.25,
+          -0.25
+        ],
+        "end": [
+          5.75,
+          4.25,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 3.75
+      },
+      {
+        "block": 13,
+        "motion": "G1",
+        "start": [
+          5.75,
+          4.25,
+          -0.25
+        ],
+        "end": [
+          5.75,
+          1.75,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 5.0
+      },
+      {
+        "block": 14,
+        "motion": "G1",
+        "start": [
+          5.75,
+          1.75,
+          -0.25
+        ],
+        "end": [
+          6.25,
+          1.75,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 5.25
+      },
+      {
+        "block": 15,
+        "motion": "G0",
+        "start": [
+          6.25,
+          1.75,
+          -0.25
+        ],
+        "end": [
+          6.25,
+          1.75,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 5.25
+      },
+      {
+        "block": 16,
+        "motion": "G0",
+        "start": [
+          6.25,
+          1.75,
+          3.0
+        ],
+        "end": [
+          6.5,
+          1.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 5.25
+      },
+      {
+        "block": 17,
+        "motion": "G0",
+        "start": [
+          6.5,
+          1.5,
+          3.0
+        ],
+        "end": [
+          6.5,
+          1.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 5.25
+      },
+      {
+        "block": 18,
+        "motion": "G1",
+        "start": [
+          6.5,
+          1.5,
+          2.0
+        ],
+        "end": [
+          6.5,
+          1.5,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 7.5
+      },
+      {
+        "block": 19,
+        "motion": "G1",
+        "start": [
+          6.5,
+          1.5,
+          -0.25
+        ],
+        "end": [
+          6.5,
+          4.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 9.0
+      },
+      {
+        "block": 20,
+        "motion": "G1",
+        "start": [
+          6.5,
+          4.5,
+          -0.25
+        ],
+        "end": [
+          5.5,
+          4.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 9.5
+      },
+      {
+        "block": 21,
+        "motion": "G1",
+        "start": [
+          5.5,
+          4.5,
+          -0.25
+        ],
+        "end": [
+          5.5,
+          1.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 11.0
+      },
+      {
+        "block": 22,
+        "motion": "G1",
+        "start": [
+          5.5,
+          1.5,
+          -0.25
+        ],
+        "end": [
+          6.5,
+          1.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 11.5
+      },
+      {
+        "block": 23,
+        "motion": "G0",
+        "start": [
+          6.5,
+          1.5,
+          -0.25
+        ],
+        "end": [
+          6.5,
+          1.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 11.5
+      },
+      {
+        "block": 24,
+        "motion": "G0",
+        "start": [
+          6.5,
+          1.5,
+          3.0
+        ],
+        "end": [
+          7.0,
+          1.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 11.5
+      },
+      {
+        "block": 25,
+        "motion": "G0",
+        "start": [
+          7.0,
+          1.0,
+          3.0
+        ],
+        "end": [
+          7.0,
+          1.0,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 11.5
+      },
+      {
+        "block": 26,
+        "motion": "G1",
+        "start": [
+          7.0,
+          1.0,
+          2.0
+        ],
+        "end": [
+          7.0,
+          1.0,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 13.75
+      },
+      {
+        "block": 27,
+        "motion": "G1",
+        "start": [
+          7.0,
+          1.0,
+          -0.25
+        ],
+        "end": [
+          7.0,
+          5.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 15.75
+      },
+      {
+        "block": 28,
+        "motion": "G1",
+        "start": [
+          7.0,
+          5.0,
+          -0.25
+        ],
+        "end": [
+          5.0,
+          5.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 16.75
+      },
+      {
+        "block": 29,
+        "motion": "G1",
+        "start": [
+          5.0,
+          5.0,
+          -0.25
+        ],
+        "end": [
+          5.0,
+          1.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 18.75
+      },
+      {
+        "block": 30,
+        "motion": "G1",
+        "start": [
+          5.0,
+          1.0,
+          -0.25
+        ],
+        "end": [
+          7.0,
+          1.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 19.75
+      },
+      {
+        "block": 31,
+        "motion": "G0",
+        "start": [
+          7.0,
+          1.0,
+          -0.25
+        ],
+        "end": [
+          7.0,
+          1.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 19.75
+      },
+      {
+        "block": 32,
+        "motion": "G0",
+        "start": [
+          7.0,
+          1.0,
+          3.0
+        ],
+        "end": [
+          7.5,
+          0.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 19.75
+      },
+      {
+        "block": 33,
+        "motion": "G0",
+        "start": [
+          7.5,
+          0.5,
+          3.0
+        ],
+        "end": [
+          7.5,
+          0.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 19.75
+      },
+      {
+        "block": 34,
+        "motion": "G1",
+        "start": [
+          7.5,
+          0.5,
+          2.0
+        ],
+        "end": [
+          7.5,
+          0.5,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 22.0
+      },
+      {
+        "block": 35,
+        "motion": "G1",
+        "start": [
+          7.5,
+          0.5,
+          -0.25
+        ],
+        "end": [
+          7.5,
+          5.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 24.5
+      },
+      {
+        "block": 36,
+        "motion": "G1",
+        "start": [
+          7.5,
+          5.5,
+          -0.25
+        ],
+        "end": [
+          4.5,
+          5.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 26.0
+      },
+      {
+        "block": 37,
+        "motion": "G1",
+        "start": [
+          4.5,
+          5.5,
+          -0.25
+        ],
+        "end": [
+          4.5,
+          0.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 28.5
+      },
+      {
+        "block": 38,
+        "motion": "G1",
+        "start": [
+          4.5,
+          0.5,
+          -0.25
+        ],
+        "end": [
+          7.5,
+          0.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 30.0
+      },
+      {
+        "block": 39,
+        "motion": "G0",
+        "start": [
+          7.5,
+          0.5,
+          -0.25
+        ],
+        "end": [
+          7.5,
+          0.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 30.0
+      },
+      {
+        "block": 40,
+        "motion": "G0",
+        "start": [
+          7.5,
+          0.5,
+          3.0
+        ],
+        "end": [
+          7.97818,
+          0.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 30.0
+      },
+      {
+        "block": 41,
+        "motion": "G0",
+        "start": [
+          7.97818,
+          0.0,
+          3.0
+        ],
+        "end": [
+          7.97818,
+          0.0,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 30.0
+      },
+      {
+        "block": 42,
+        "motion": "G1",
+        "start": [
+          7.97818,
+          0.0,
+          2.0
+        ],
+        "end": [
+          7.97818,
+          0.0,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 32.25
+      },
+      {
+        "block": 43,
+        "motion": "G1",
+        "start": [
+          7.97818,
+          0.0,
+          -0.25
+        ],
+        "end": [
+          7.99909,
+          0.00091,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 32.260464896081665
+      },
+      {
+        "block": 44,
+        "motion": "G1",
+        "start": [
+          7.99909,
+          0.00091,
+          -0.25
+        ],
+        "end": [
+          8.0,
+          0.02182,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 32.27092979216333
+      },
+      {
+        "block": 45,
+        "motion": "G1",
+        "start": [
+          8.0,
+          0.02182,
+          -0.25
+        ],
+        "end": [
+          8.0,
+          5.97818,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 35.24910979216333
+      },
+      {
+        "block": 46,
+        "motion": "G1",
+        "start": [
+          8.0,
+          5.97818,
+          -0.25
+        ],
+        "end": [
+          7.99909,
+          5.99909,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 35.259574688244996
+      },
+      {
+        "block": 47,
+        "motion": "G1",
+        "start": [
+          7.99909,
+          5.99909,
+          -0.25
+        ],
+        "end": [
+          7.97818,
+          6.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 35.27003958432666
+      },
+      {
+        "block": 48,
+        "motion": "G1",
+        "start": [
+          7.97818,
+          6.0,
+          -0.25
+        ],
+        "end": [
+          4.0,
+          6.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 37.25912958432666
+      },
+      {
+        "block": 49,
+        "motion": "G1",
+        "start": [
+          4.0,
+          6.0,
+          -0.25
+        ],
+        "end": [
+          4.0,
+          0.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 40.25912958432666
+      },
+      {
+        "block": 50,
+        "motion": "G1",
+        "start": [
+          4.0,
+          0.0,
+          -0.25
+        ],
+        "end": [
+          7.97818,
+          0.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 42.248219584326655
+      },
+      {
+        "block": 51,
+        "motion": "G0",
+        "start": [
+          7.97818,
+          0.0,
+          -0.25
+        ],
+        "end": [
+          7.97818,
+          0.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 42.248219584326655
+      },
+      {
+        "block": 52,
+        "motion": "G0",
+        "start": [
+          7.97818,
+          0.0,
+          3.0
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 42.248219584326655
+      },
+      {
+        "block": 53,
+        "motion": "G0",
+        "start": [
+          3.5,
+          -0.5,
+          3.0
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 42.248219584326655
+      },
+      {
+        "block": 54,
+        "motion": "G1",
+        "start": [
+          3.5,
+          -0.5,
+          2.0
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 44.498219584326655
+      },
+      {
+        "block": 55,
+        "motion": "G1",
+        "start": [
+          3.5,
+          -0.5,
+          -0.25
+        ],
+        "end": [
+          7.98909,
+          -0.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 46.74276458432666
+      },
+      {
+        "block": 56,
+        "motion": "G3",
+        "start": [
+          7.98909,
+          -0.5,
+          -0.25
+        ],
+        "end": [
+          8.5,
+          0.01091,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 47.146151515640724
+      },
+      {
+        "block": 57,
+        "motion": "G1",
+        "start": [
+          8.5,
+          0.01091,
+          -0.25
+        ],
+        "end": [
+          8.5,
+          5.98909,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 50.13524151564072
+      },
+      {
+        "block": 58,
+        "motion": "G3",
+        "start": [
+          8.5,
+          5.98909,
+          -0.25
+        ],
+        "end": [
+          7.98909,
+          6.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 50.53862844695479
+      },
+      {
+        "block": 59,
+        "motion": "G1",
+        "start": [
+          7.98909,
+          6.5,
+          -0.25
+        ],
+        "end": [
+          3.5,
+          6.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 52.78317344695479
+      },
+      {
+        "block": 60,
+        "motion": "G1",
+        "start": [
+          3.5,
+          6.5,
+          -0.25
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 56.28317344695479
+      },
+      {
+        "block": 61,
+        "motion": "G0",
+        "start": [
+          3.5,
+          -0.5,
+          -0.25
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 56.28317344695479
+      },
+      {
+        "block": 62,
+        "motion": "G0",
+        "start": [
+          3.5,
+          -0.5,
+          3.0
+        ],
+        "end": [
+          6.25,
+          1.75,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 56.28317344695479
+      },
+      {
+        "block": 63,
+        "motion": "G0",
+        "start": [
+          6.25,
+          1.75,
+          3.0
+        ],
+        "end": [
+          6.25,
+          1.75,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 56.28317344695479
+      },
+      {
+        "block": 64,
+        "motion": "G1",
+        "start": [
+          6.25,
+          1.75,
+          2.0
+        ],
+        "end": [
+          6.25,
+          1.75,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 58.78317344695479
+      },
+      {
+        "block": 65,
+        "motion": "G1",
+        "start": [
+          6.25,
+          1.75,
+          -0.5
+        ],
+        "end": [
+          6.25,
+          4.25,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 60.03317344695479
+      },
+      {
+        "block": 66,
+        "motion": "G1",
+        "start": [
+          6.25,
+          4.25,
+          -0.5
+        ],
+        "end": [
+          5.75,
+          4.25,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 60.28317344695479
+      },
+      {
+        "block": 67,
+        "motion": "G1",
+        "start": [
+          5.75,
+          4.25,
+          -0.5
+        ],
+        "end": [
+          5.75,
+          1.75,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 61.53317344695479
+      },
+      {
+        "block": 68,
+        "motion": "G1",
+        "start": [
+          5.75,
+          1.75,
+          -0.5
+        ],
+        "end": [
+          6.25,
+          1.75,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 61.78317344695479
+      },
+      {
+        "block": 69,
+        "motion": "G0",
+        "start": [
+          6.25,
+          1.75,
+          -0.5
+        ],
+        "end": [
+          6.25,
+          1.75,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 61.78317344695479
+      },
+      {
+        "block": 70,
+        "motion": "G0",
+        "start": [
+          6.25,
+          1.75,
+          3.0
+        ],
+        "end": [
+          6.5,
+          1.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 61.78317344695479
+      },
+      {
+        "block": 71,
+        "motion": "G0",
+        "start": [
+          6.5,
+          1.5,
+          3.0
+        ],
+        "end": [
+          6.5,
+          1.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 61.78317344695479
+      },
+      {
+        "block": 72,
+        "motion": "G1",
+        "start": [
+          6.5,
+          1.5,
+          2.0
+        ],
+        "end": [
+          6.5,
+          1.5,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 64.28317344695479
+      },
+      {
+        "block": 73,
+        "motion": "G1",
+        "start": [
+          6.5,
+          1.5,
+          -0.5
+        ],
+        "end": [
+          6.5,
+          4.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 65.78317344695479
+      },
+      {
+        "block": 74,
+        "motion": "G1",
+        "start": [
+          6.5,
+          4.5,
+          -0.5
+        ],
+        "end": [
+          5.5,
+          4.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 66.28317344695479
+      },
+      {
+        "block": 75,
+        "motion": "G1",
+        "start": [
+          5.5,
+          4.5,
+          -0.5
+        ],
+        "end": [
+          5.5,
+          1.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 67.78317344695479
+      },
+      {
+        "block": 76,
+        "motion": "G1",
+        "start": [
+          5.5,
+          1.5,
+          -0.5
+        ],
+        "end": [
+          6.5,
+          1.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 68.28317344695479
+      },
+      {
+        "block": 77,
+        "motion": "G0",
+        "start": [
+          6.5,
+          1.5,
+          -0.5
+        ],
+        "end": [
+          6.5,
+          1.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 68.28317344695479
+      },
+      {
+        "block": 78,
+        "motion": "G0",
+        "start": [
+          6.5,
+          1.5,
+          3.0
+        ],
+        "end": [
+          7.0,
+          1.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 68.28317344695479
+      },
+      {
+        "block": 79,
+        "motion": "G0",
+        "start": [
+          7.0,
+          1.0,
+          3.0
+        ],
+        "end": [
+          7.0,
+          1.0,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 68.28317344695479
+      },
+      {
+        "block": 80,
+        "motion": "G1",
+        "start": [
+          7.0,
+          1.0,
+          2.0
+        ],
+        "end": [
+          7.0,
+          1.0,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 70.78317344695479
+      },
+      {
+        "block": 81,
+        "motion": "G1",
+        "start": [
+          7.0,
+          1.0,
+          -0.5
+        ],
+        "end": [
+          7.0,
+          5.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 72.78317344695479
+      },
+      {
+        "block": 82,
+        "motion": "G1",
+        "start": [
+          7.0,
+          5.0,
+          -0.5
+        ],
+        "end": [
+          5.0,
+          5.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 73.78317344695479
+      },
+      {
+        "block": 83,
+        "motion": "G1",
+        "start": [
+          5.0,
+          5.0,
+          -0.5
+        ],
+        "end": [
+          5.0,
+          1.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 75.78317344695479
+      },
+      {
+        "block": 84,
+        "motion": "G1",
+        "start": [
+          5.0,
+          1.0,
+          -0.5
+        ],
+        "end": [
+          7.0,
+          1.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 76.78317344695479
+      },
+      {
+        "block": 85,
+        "motion": "G0",
+        "start": [
+          7.0,
+          1.0,
+          -0.5
+        ],
+        "end": [
+          7.0,
+          1.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 76.78317344695479
+      },
+      {
+        "block": 86,
+        "motion": "G0",
+        "start": [
+          7.0,
+          1.0,
+          3.0
+        ],
+        "end": [
+          7.5,
+          0.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 76.78317344695479
+      },
+      {
+        "block": 87,
+        "motion": "G0",
+        "start": [
+          7.5,
+          0.5,
+          3.0
+        ],
+        "end": [
+          7.5,
+          0.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 76.78317344695479
+      },
+      {
+        "block": 88,
+        "motion": "G1",
+        "start": [
+          7.5,
+          0.5,
+          2.0
+        ],
+        "end": [
+          7.5,
+          0.5,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 79.28317344695479
+      },
+      {
+        "block": 89,
+        "motion": "G1",
+        "start": [
+          7.5,
+          0.5,
+          -0.5
+        ],
+        "end": [
+          7.5,
+          5.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 81.78317344695479
+      },
+      {
+        "block": 90,
+        "motion": "G1",
+        "start": [
+          7.5,
+          5.5,
+          -0.5
+        ],
+        "end": [
+          4.5,
+          5.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 83.28317344695479
+      },
+      {
+        "block": 91,
+        "motion": "G1",
+        "start": [
+          4.5,
+          5.5,
+          -0.5
+        ],
+        "end": [
+          4.5,
+          0.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 85.78317344695479
+      },
+      {
+        "block": 92,
+        "motion": "G1",
+        "start": [
+          4.5,
+          0.5,
+          -0.5
+        ],
+        "end": [
+          7.5,
+          0.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 87.28317344695479
+      },
+      {
+        "block": 93,
+        "motion": "G0",
+        "start": [
+          7.5,
+          0.5,
+          -0.5
+        ],
+        "end": [
+          7.5,
+          0.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 87.28317344695479
+      },
+      {
+        "block": 94,
+        "motion": "G0",
+        "start": [
+          7.5,
+          0.5,
+          3.0
+        ],
+        "end": [
+          7.97818,
+          0.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 87.28317344695479
+      },
+      {
+        "block": 95,
+        "motion": "G0",
+        "start": [
+          7.97818,
+          0.0,
+          3.0
+        ],
+        "end": [
+          7.97818,
+          0.0,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 87.28317344695479
+      },
+      {
+        "block": 96,
+        "motion": "G1",
+        "start": [
+          7.97818,
+          0.0,
+          2.0
+        ],
+        "end": [
+          7.97818,
+          0.0,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 89.78317344695479
+      },
+      {
+        "block": 97,
+        "motion": "G1",
+        "start": [
+          7.97818,
+          0.0,
+          -0.5
+        ],
+        "end": [
+          7.99909,
+          0.00091,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 89.79363834303645
+      },
+      {
+        "block": 98,
+        "motion": "G1",
+        "start": [
+          7.99909,
+          0.00091,
+          -0.5
+        ],
+        "end": [
+          8.0,
+          0.02182,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 89.8041032391181
+      },
+      {
+        "block": 99,
+        "motion": "G1",
+        "start": [
+          8.0,
+          0.02182,
+          -0.5
+        ],
+        "end": [
+          8.0,
+          5.97818,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 92.7822832391181
+      },
+      {
+        "block": 100,
+        "motion": "G1",
+        "start": [
+          8.0,
+          5.97818,
+          -0.5
+        ],
+        "end": [
+          7.99909,
+          5.99909,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 92.79274813519976
+      },
+      {
+        "block": 101,
+        "motion": "G1",
+        "start": [
+          7.99909,
+          5.99909,
+          -0.5
+        ],
+        "end": [
+          7.97818,
+          6.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 92.80321303128142
+      },
+      {
+        "block": 102,
+        "motion": "G1",
+        "start": [
+          7.97818,
+          6.0,
+          -0.5
+        ],
+        "end": [
+          4.0,
+          6.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 94.79230303128142
+      },
+      {
+        "block": 103,
+        "motion": "G1",
+        "start": [
+          4.0,
+          6.0,
+          -0.5
+        ],
+        "end": [
+          4.0,
+          0.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 97.79230303128142
+      },
+      {
+        "block": 104,
+        "motion": "G1",
+        "start": [
+          4.0,
+          0.0,
+          -0.5
+        ],
+        "end": [
+          7.97818,
+          0.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 99.78139303128143
+      },
+      {
+        "block": 105,
+        "motion": "G0",
+        "start": [
+          7.97818,
+          0.0,
+          -0.5
+        ],
+        "end": [
+          7.97818,
+          0.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 99.78139303128143
+      },
+      {
+        "block": 106,
+        "motion": "G0",
+        "start": [
+          7.97818,
+          0.0,
+          3.0
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 99.78139303128143
+      },
+      {
+        "block": 107,
+        "motion": "G0",
+        "start": [
+          3.5,
+          -0.5,
+          3.0
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 99.78139303128143
+      },
+      {
+        "block": 108,
+        "motion": "G1",
+        "start": [
+          3.5,
+          -0.5,
+          2.0
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 102.28139303128143
+      },
+      {
+        "block": 109,
+        "motion": "G1",
+        "start": [
+          3.5,
+          -0.5,
+          -0.5
+        ],
+        "end": [
+          7.98909,
+          -0.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 104.52593803128143
+      },
+      {
+        "block": 110,
+        "motion": "G3",
+        "start": [
+          7.98909,
+          -0.5,
+          -0.5
+        ],
+        "end": [
+          8.5,
+          0.01091,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 104.92932496259549
+      },
+      {
+        "block": 111,
+        "motion": "G1",
+        "start": [
+          8.5,
+          0.01091,
+          -0.5
+        ],
+        "end": [
+          8.5,
+          5.98909,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 107.91841496259549
+      },
+      {
+        "block": 112,
+        "motion": "G3",
+        "start": [
+          8.5,
+          5.98909,
+          -0.5
+        ],
+        "end": [
+          7.98909,
+          6.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 108.32180189390955
+      },
+      {
+        "block": 113,
+        "motion": "G1",
+        "start": [
+          7.98909,
+          6.5,
+          -0.5
+        ],
+        "end": [
+          3.5,
+          6.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 110.56634689390955
+      },
+      {
+        "block": 114,
+        "motion": "G1",
+        "start": [
+          3.5,
+          6.5,
+          -0.5
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 114.06634689390955
+      },
+      {
+        "block": 115,
+        "motion": "G0",
+        "start": [
+          3.5,
+          -0.5,
+          -0.5
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 114.06634689390955
+      },
+      {
+        "block": 116,
+        "motion": "G0",
+        "start": [
+          3.5,
+          -0.5,
+          3.0
+        ],
+        "end": [
+          3.5,
+          -0.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 114.06634689390955
+      }
+    ],
+    "final_uncovered_profile_mm2": 0.0,
+    "open_edge_semantics": "Tool may leave bounded stock footprint; retained shoulder offset by cutter radius remains protected."
+  },
+  "execution_plan_sha256": "49e8cd852065b902e358d9f642dcfebea452bc418b21d4ec231ad9053fdf737e"
+}

@@ -112,7 +112,12 @@ async function start() {
     }
     schedule();
   }
-  function reset() { camera.position.set(15,-12,12); controls.target.copy(center); controls.update(); schedule(); }
+  function reset() {
+    const position = active?.camera_position || [15,-12,12];
+    if (!Array.isArray(position) || position.length !== 3 || !position.every(Number.isFinite)) throw Error('Invalid camera position');
+    camera.position.set(...position); controls.target.copy(center); controls.update();
+    qa.cameraResetPosition = position.slice(); schedule();
+  }
   function enabled(value) {
     select.disabled = !value;
     root.querySelectorAll('button,input').forEach(e => e.disabled = !value);

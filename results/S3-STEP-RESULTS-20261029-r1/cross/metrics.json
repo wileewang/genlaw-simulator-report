@@ -1,0 +1,147 @@
+{
+  "schema": "genlaw.sectional-iou.v2",
+  "status": "measured_numerical_estimate",
+  "iou": 0.9997165820080066,
+  "iou_percent": 99.97165820080066,
+  "volumes": {
+    "actual_volume_mm3": 59.996927740257476,
+    "target_volume_mm3": 60.0000000000001,
+    "intersection_mm3": 59.98996034302612,
+    "union_mm3": 60.006967397231456,
+    "iou": 0.9997165820080066,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 0.006967397231356642,
+  "missing_material_mm3": 0.010039656973980016,
+  "actual_mesh": {
+    "source_sha256": "c26e94a9d82f57ca9603bbd7047ea493a62f543d341af3d1b6547a436a9fe326",
+    "raw_triangles": 439756,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 439756,
+    "vertices": 219880,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 59.99692780229888,
+    "bounds": {
+      "min": [
+        -9.765625145519152e-05,
+        9.765625145519152e-05,
+        -1.500097632408142
+      ],
+      "max": [
+        8.000097274780273,
+        6.000097751617432,
+        -9.765625145519152e-05
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "schema": "genlaw.native-binding.v5",
+    "status": "verified",
+    "cad_sha256": "e757fc8c7681051c32a2abb7cebc054ee128002beb3b29e868cc9a5295d90f42",
+    "reference_class": "axis_aligned_box_minus_one_z_open_edge_step",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "volume_mm3": 60.0,
+    "valid_single_solid": true,
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "features": [
+      {
+        "id": "S1",
+        "kind": "edge_step",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "side": "Y+",
+        "shoulder_coordinate_mm": 3,
+        "depth_mm": 0.5
+      }
+    ],
+    "reference_for_iou": "Native stock-minus-step subtraction checked against original union-of-slabs CAD.",
+    "step_floor_face": "Face1",
+    "open_stock_edges": [
+      "Edge1",
+      "Edge2",
+      "Edge3"
+    ],
+    "retained_shoulder_edge": "Edge4"
+  },
+  "native_geometry_sha256": "501866076858f715b70d2529263744b758a44e65920d8c3a2df2a07da96eca05",
+  "absolute_iou_refinement_difference": 2.576416857635877e-11,
+  "section_levels": 64,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "method": "Closed STL cross-sections, all vertex-height intervals, 3-point Gauss integration against native-checked analytic CAD section.",
+  "registration": "none; same CAD/G54 coordinates",
+  "full_tolerance_acceptance": false,
+  "production_approved": false,
+  "limits": [
+    "Numerical estimate, not a certified error bound.",
+    "Open-step section topology is descriptive, not manufacturing acceptance.",
+    "Use the separate shoulder, floor and near-edge measurements for step acceptance."
+  ],
+  "reference_sections": "Box stock minus an open edge step above its original CAD floor; CAD critical heights included.",
+  "reference_source_code_sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b",
+  "step_reference_source_code_sha256": "a4bf2fb738c106e9c62b1fc0897eebd22f38c3115dfcb713b164113f4e62e31a",
+  "section_topology_observations": [
+    {
+      "requested_z_mm": -1.35,
+      "z_mm": -1.3404508826673847,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": -0.75,
+      "z_mm": -0.7404508588255267,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": -0.1499999999999999,
+      "z_mm": -0.140450853402517,
+      "interior_loops": 0,
+      "holes": []
+    }
+  ]
+}

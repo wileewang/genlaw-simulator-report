@@ -1,0 +1,162 @@
+{
+  "schema": "genlaw.pipeline-run.v1",
+  "status": "software_chain_measured",
+  "input_sha256": "667123f511f8141923469b5d17748e610c22ee9fe5c628f635cc50dbe267b40a",
+  "input_id": "S3-STEP-wider-r2",
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "native_stages": [
+    "freecad_cam",
+    "camotics"
+  ],
+  "source_code_sha256": {
+    "pocket_nc.py": "8c868f902300cac9f0151698a5457b2eca91c1c2aa6aee23e1771cb85fcdd942",
+    "run.py": "1acbc398367b06e7095ef78fa8a5dcdc2062c692664b86c85490f19f4794c7a1",
+    "measurement.py": "9e253ca7591a33f90d77906bad979374f441de0420c13bbbba0334abe1a681b9",
+    "step_geometry.py": "a4bf2fb738c106e9c62b1fc0897eebd22f38c3115dfcb713b164113f4e62e31a",
+    "preparation.py": "b63d39a622d9129e6a57f1d3c2cb33382dec0fc457aefec77043111bdaca2598",
+    "programming.py": "19df47bb2a87bbc94a15de05a39270aa7221196007489dffcaf65a39771e871b",
+    "verification.py": "469f0cfc108821d1126ac518adb4515a833aab33944051c75f986edd95640513",
+    "milling_features.py": "e82d211571524551960cdfd779488b372925c1245d82aef39492dea6980b66fe",
+    "simulation_engine.py": "ca8b49d1cbc3bfac38044c4cd0250a9b413f9cb3d3fcccba5360bd3ab1884ba8",
+    "milling_preparation.py": "e938da76458af0ab5c225741d101eb837d4a078a7e64be9d8071820744a02fa7",
+    "step_verification.py": "11ad6c14346909a665bda8a8b0b3045e41e144b9ab6b0c4cee605521398274a6",
+    "drilling_geometry.py": "6e968a057ad2e3da32de6ea5b9457b74ab05b6a4fd6dff573797f98b97be6f29",
+    "measure_worker.py": "f32578aa2e0969a9d909a281d87b10439ea53e818f5ce14e70e7f0cfd67bb971",
+    "milling_nc.py": "56c3ed6538568c7603d16f3f668e3203306b6d0905e9fd0092ac7f058a8de5d3",
+    "step_cam.py": "a7b8221dda315baf4efc98abcaaab6556ed768132b7107ae87165e5de502d24b",
+    "pocket_preparation.py": "6d134300fbcd946c49e960abc0cdf86c2fbb814b4ab8ae1d76870214733acc80",
+    "pocket_geometry.py": "8cef161bd05c1e3871839c94b9cdcecba8c2627b59043ad2c2312b81590f3a4f",
+    "pocket_cam.py": "f11722da9598dc67c18d2452e1f609340c773fa76f555c0d12fc1d0fd234b16b",
+    "blind_verification.py": "e3ab08dd86b14dd235573397df26469145944b23db4e589a2f629568f582207a",
+    "step_nc.py": "90ca75f07651805849f892276aa73f80325a9cb6a73c237e085340cf7db6caf1",
+    "native_planar_cam.py": "e630d6c52f76316cc4fe343bcdbd09f9ed4ade4ebc6ada0ed011e39464398d74",
+    "pocket_verification.py": "0e67e8a24508bb6595d18b0b503b9deb4bc6f3f27627de4f42f9320aee697e4b",
+    "__init__.py": "efa8f59200b1bd9b267b22368099635da387e3a7061c628450c7d861b1ed2e1c",
+    "freecad_worker.py": "2473b6205e7965cd52c451d449d45ebce8bfafa341b379acbf637fc098a8b4c6",
+    "reference_sections.py": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+  },
+  "execution_plan_sha256": "49e8cd852065b902e358d9f642dcfebea452bc418b21d4ec231ad9053fdf737e",
+  "nc_sha256": "eb0baac1c2d746be53db141b71bd463b99fdb3158cbf79a238e52d0ca4c6611b",
+  "simulation_config_sha256": "3a08ba1887a35af375b5c502aad7b92ef2e6257dd61f580caa478ad24df0dd17",
+  "mesh_sha256": "808c055e6f6124fd572af036d3aaf49c22cf51dca8e460a964e462ae8c117e26",
+  "iou": 0.9996987863941694,
+  "iou_percent": 99.96987863941695,
+  "requirement_readiness": [
+    {
+      "id": "S1-shoulder_position",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "S1-step_depth",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "S1-floor_geometry",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "S1-edge_clearance",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "S1-surface_roughness",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    }
+  ],
+  "coverage": [
+    {
+      "operation_id": "OP05",
+      "step_id": "OP05.1",
+      "type": "incoming_inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.1",
+      "type": "setup",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "step_milling",
+      "status": "software_geometry_measured"
+    },
+    {
+      "operation_id": "OP20",
+      "step_id": "OP20.1",
+      "type": "deburring",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP30",
+      "step_id": "OP30.1",
+      "type": "inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP35",
+      "step_id": "OP35.1",
+      "type": "postprocess",
+      "status": "not_verified"
+    }
+  ],
+  "full_tolerance_acceptance": false,
+  "source_pdf_automatically_recognized": false,
+  "metrics_sha256": "9d668c65ae6ac5b575abbd3d35dbafb857f57bf3f114bf6a99fea336d4c5e2a0",
+  "feature_verification_sha256": "86a40558f903b2e95cac18c27bc95f1dc64541400553f5cd021353f4fcc7ba80",
+  "requirement_checks": [
+    {
+      "id": "S1-shoulder_position",
+      "feature_id": "S1",
+      "kind": "shoulder_position",
+      "nominal": {
+        "side": "X+",
+        "shoulder_coordinate_mm": 3
+      },
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "S1-step_depth",
+      "feature_id": "S1",
+      "kind": "step_depth",
+      "nominal": 0.5,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "S1-floor_geometry",
+      "feature_id": "S1",
+      "kind": "floor_geometry",
+      "nominal": "flat",
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "S1-edge_clearance",
+      "feature_id": "S1",
+      "kind": "edge_clearance",
+      "nominal": {
+        "open_stock_edges": 3,
+        "depth_mm": 0.5
+      },
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "S1-surface_roughness",
+      "feature_id": "S1",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness, material physics or general GD&T evaluator."
+    }
+  ]
+}
