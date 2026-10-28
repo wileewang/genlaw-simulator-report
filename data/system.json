@@ -2,7 +2,7 @@
   "schema": "genlaw.system-design.v3",
   "title": "系统设计",
   "module_numbering": "1 几何识别；2 工艺规划；3 加工准备；4 NC 生成；5 仿真检验。旧模块 2 加工编程拆为新模块 3 / 4。",
-  "contract_status": "limited_single_hole_software_chain_measured",
+  "contract_status": "limited_single_and_pattern_drilling_chains_measured",
   "modules": [
     {
       "id": "geometry",
@@ -166,9 +166,9 @@
       "input": "工艺卡 + CAD + 资源",
       "output": "可执行加工方案",
       "implementation": "规则程序 + 资源库",
-      "status": "首版入口已验证",
+      "status": "单孔 / 孔系入口已测",
       "current": true,
-      "description": "已实现人工核对后结构化卡片的单孔入口，核对源文件、工步、CAD 观察及资源，返回缺项/冲突或软件范围内的执行方案。当前复用已有原生 CAD 观察；PDF 自动识别、重新解析 CAD 和通用 NC 适配尚未接通。",
+      "description": "读取已核对的结构化工艺卡，核对来源、CAD、逐孔工步及资源；输出按卡片顺序执行的方案，缺项与冲突显式返回。已测单孔和同刀通孔孔系，纸质卡自动识别尚待接入。",
       "inputs": [
         [
           "process_plan",
@@ -226,9 +226,9 @@
       "input": "执行方案 + CAD",
       "output": "最终 NC + 加工配置",
       "implementation": "FreeCAD CAM + 后处理",
-      "status": "执行方案驱动已实测",
+      "status": "按卡片孔序出码已测",
       "current": true,
-      "description": "受限单通孔：重新读取原始 CAD 并核对特征，将执行方案映射到 FreeCAD CAM 和后处理，再检查最终 NC。更多特征与设备适配待扩展。",
+      "description": "重新读取原始 CAD，逐孔核对并绑定 FreeCAD CAM 操作；按卡片顺序生成最终 NC，再检查完整指令、刀具、孔位与深度。当前限单孔及同刀通孔孔系。",
       "inputs": [
         [
           "execution_plan",
@@ -271,9 +271,9 @@
       "input": "最终 NC + 加工配置 + 原始 CAD",
       "output": "加工后几何 + 逐项检验 + 覆盖范围",
       "implementation": "CAMotics + 几何比较",
-      "status": "轴线数值缺陷已复现",
+      "status": "单孔 / 孔系及反例已测",
       "current": true,
-      "description": "S1 以 CAMotics 执行最终 NC，比较原 CAD 与实际去料网格；孔径、孔心与轴向线已有数值检查，完整引擎已修补轴线数值缺陷，四例软件检查通过，两个错误 NC 仍检出。未给制造验收条件时返回待依据，粗糙度尚不能测量。",
+      "description": "修补后的完整 CAMotics 执行最终 NC；比较原 CAD 与实际剩料，逐孔测量孔径、孔心和贯穿，错误可定位到具体孔。S1 / S2 均有正常与错误实例；制造验收待依据，粗糙度尚未测量。",
       "inputs": [
         [
           "nc_ref / execution_plan",
@@ -343,7 +343,7 @@
           "physical_process"
         ]
       },
-      "implemented_result_ref": "verification/S1-VERIFY-20261028-r1/summary.json",
+      "implemented_result_ref": "results/S2-PATTERN-RESULTS-20261028-r1/summary.json",
       "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json"
     }
   ],
@@ -364,7 +364,7 @@
     "加工参数逐项注明来自工艺卡、资源配置或程序/CAM推导；影响工艺路线或要求的修改返回规划端。",
     "原始最终要求与工序中间要求分开；外部通知单、缺项和冲突有来源、影响范围与处理方。",
     "执行前声明支持范围和必要前置条件，执行后报告工步与要求的覆盖；局部几何通过不等于整卡完成。",
-    "历史 S1 参数记录保持不变，新的工艺意图/执行方案已有单孔受限解析首版；旧卡自动迁移与通用 NC 适配仍未实现。",
+    "历史输入与结果保持不变；单孔和同刀通孔孔系已有实际执行记录，旧卡自动迁移及任意特征适配仍未实现。",
     "当前跳过几何识别和工艺规划，从已有卡与 CAD 进入加工准备；所有支持声明按基线、适用范围和证据更新。"
   ],
   "development_scope": [
@@ -387,5 +387,6 @@
   },
   "preparation_status_ref": "preparation-status.json",
   "execution_evidence_ref": "runs/S1-CHAIN-20261028-r3/summary.json",
-  "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
+  "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json",
+  "pattern_evidence_ref": "results/S2-PATTERN-RESULTS-20261028-r1/summary.json"
 }

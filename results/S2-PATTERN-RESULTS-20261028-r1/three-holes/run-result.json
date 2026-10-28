@@ -1,0 +1,252 @@
+{
+  "schema": "genlaw.pipeline-run.v1",
+  "status": "software_chain_measured",
+  "input_sha256": "66e85696fbd4d49f674ac6e0c5eb72bc9362211f9a44ac2bd7670ea8cb55f77f",
+  "input_id": "S2-three-holes-r2",
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "native_stages": [
+    "freecad_cam",
+    "camotics"
+  ],
+  "source_code_sha256": {
+    "run.py": "07f03be93b56a383095be2df34a26fd871beb39ed29ddc808ff7890051505995",
+    "preparation.py": "1cbd7d5110753221fec23cb935c7aa5017d3d58b7cd04f0617d4a68f3dd764f2",
+    "programming.py": "9502ea7bec969ef396928aea385cbd89ff78e3e4c96b39cbd49cbbfc839c2771",
+    "verification.py": "296c690b25131f9372bf20e0a32375292906ec76dc4c4dee6ec256ca19e896ca",
+    "simulation_engine.py": "ca8b49d1cbc3bfac38044c4cd0250a9b413f9cb3d3fcccba5360bd3ab1884ba8",
+    "drilling_geometry.py": "c54656d623fce29f01120944d8a5dcc0c46eb44cdbec9ccb9d244cc9e22cadd6",
+    "measure_worker.py": "4f969988145692217a0f367e8480b91ab0c20bb49cb271e558cf81b1a66246db",
+    "__init__.py": "efa8f59200b1bd9b267b22368099635da387e3a7061c628450c7d861b1ed2e1c",
+    "freecad_worker.py": "2ad59d120eed69a4d3ab7fba291369d9a8a7263761c40e40367b4a94a8f55c65"
+  },
+  "execution_plan_sha256": "6f77cc67cc7232401b322d69541379f10cb12f8f23d2e0b98b82c5cc3a6c36c9",
+  "nc_sha256": "d4bdeb8fe37d8db70b361269539ba2c945a91c1bc334e2374b1339613abd8947",
+  "simulation_config_sha256": "7d95487b8b2a1e5fef55aa78c0aa8bbac4e0ac5e9ef100651c9f2649c0bfa8ac",
+  "mesh_sha256": "4ff103fed0bbcc7b586661ddac0a57a6622315c3fe60b4c297ce5d48eccc6836",
+  "iou": 0.999689895791705,
+  "iou_percent": 99.9689895791705,
+  "requirement_readiness": [
+    {
+      "id": "H1-diameter",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H1-position_xy",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H1-through",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H1-surface_roughness",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H2-diameter",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H2-position_xy",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H2-through",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H2-surface_roughness",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H3-diameter",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H3-position_xy",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H3-through",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H3-surface_roughness",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    }
+  ],
+  "coverage": [
+    {
+      "operation_id": "OP05",
+      "step_id": "OP05.1",
+      "type": "incoming_inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.1",
+      "type": "setup",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "drilling",
+      "status": "software_geometry_measured"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.3",
+      "type": "drilling",
+      "status": "software_geometry_measured"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.4",
+      "type": "drilling",
+      "status": "software_geometry_measured"
+    },
+    {
+      "operation_id": "OP20",
+      "step_id": "OP20.1",
+      "type": "deburring",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP30",
+      "step_id": "OP30.1",
+      "type": "inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP35",
+      "step_id": "OP35.1",
+      "type": "postprocess",
+      "status": "not_verified"
+    }
+  ],
+  "full_tolerance_acceptance": false,
+  "source_pdf_automatically_recognized": false,
+  "metrics_sha256": "777dc0ab3146e44e4582538adc3bc2a4cffbfb1f2ae377b980cd57e7e3ec832a",
+  "feature_verification_sha256": "09f2f6bdf86da671a6337e75d40965953c6c90bf7572a40d7761779942fbdd58",
+  "requirement_checks": [
+    {
+      "id": "H1-diameter",
+      "feature_id": "H1",
+      "kind": "diameter",
+      "nominal": 2,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H1-position_xy",
+      "feature_id": "H1",
+      "kind": "position_xy",
+      "nominal": [
+        2,
+        2
+      ],
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H1-through",
+      "feature_id": "H1",
+      "kind": "through",
+      "nominal": true,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H1-surface_roughness",
+      "feature_id": "H1",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness/material or general GD&T evaluator."
+    },
+    {
+      "id": "H2-diameter",
+      "feature_id": "H2",
+      "kind": "diameter",
+      "nominal": 2,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H2-position_xy",
+      "feature_id": "H2",
+      "kind": "position_xy",
+      "nominal": [
+        5.5,
+        4
+      ],
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H2-through",
+      "feature_id": "H2",
+      "kind": "through",
+      "nominal": true,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H2-surface_roughness",
+      "feature_id": "H2",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness/material or general GD&T evaluator."
+    },
+    {
+      "id": "H3-diameter",
+      "feature_id": "H3",
+      "kind": "diameter",
+      "nominal": 2,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H3-position_xy",
+      "feature_id": "H3",
+      "kind": "position_xy",
+      "nominal": [
+        5.5,
+        1.5
+      ],
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H3-through",
+      "feature_id": "H3",
+      "kind": "through",
+      "nominal": true,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H3-surface_roughness",
+      "feature_id": "H3",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness/material or general GD&T evaluator."
+    }
+  ]
+}

@@ -86,7 +86,7 @@ async function start() {
   function pause() { clearInterval(timer); timer = null; play.textContent = '播放'; qa.playing = false; }
   function showFrame(i) {
     frame = i; qa.frameIndex = i; slider.value = String(i); replayMesh.geometry = frames[i];
-    caption.textContent = captions[i]; status.textContent = `${active.name} · 状态 ${i+1} / 5`; schedule();
+    caption.textContent = captions[i]; status.textContent = `${active.name} · 状态 ${i+1} / ${frames.length}`; schedule();
   }
   function setMode(value) {
     pause(); mode = value; qa.mode = value; root.dataset.mode = value;
@@ -107,7 +107,7 @@ async function start() {
   }
   async function loadCase(id, requestedMode) {
     const entry = config.cases.find(e => e.id === id); if (!entry) throw Error('Unknown case');
-    if (qa.ready && active?.id === id) { setMode(requestedMode); return; }
+    if (qa.ready && active?.id === id) { setMode(entry.frames.length ? requestedMode : 'compare'); return; }
     pause(); qa.ready = false; enabled(false); loading.hidden = false;
     // Release prior geometry before loading the next case. Keep one renderer.
     targetMesh.geometry = actualMesh.geometry = replayMesh.geometry = empty;
@@ -121,11 +121,18 @@ async function start() {
     actualMesh.geometry = await geometry(entry.actual_mesh);
     for (const f of entry.frames) frames.push(await geometry(f.mesh));
     frames.push(actualMesh.geometry);
-    captions = ['毛坯 · 未加工', ...entry.frames.map((f,i)=>`${['钻入','继续钻削','接近贯穿'][i]} · ${f.time_seconds.toFixed(2)} s`), '完成 · 最终结果'];
-    frame = 0; qa.caseId = id; qa.stockThicknessMm = high[2]-low[2]; qa.frameCount = frames.length;
+    captions = ['毛坯 · 未加工', ...entry.frames.map((f,i)=>`${f.label || ['钻入','继续钻削','接近贯穿'][i]} · ${f.time_seconds.toFixed(2)} s`), '完成 · 最终结果'];
+    frame = 0; qa.frameIndex = 0; slider.value = '0'; slider.max = String(frames.length-1);
+    qa.caseId = id; qa.stockThicknessMm = high[2]-low[2]; qa.frameCount = frames.length;
     qa.iouPercent = entry.iou_percent; qa.ownedGeometryCount = owned.length;
     root.querySelector('.fallback img').src = new URL(entry.thumbnail,siteBase);
-    reset(); setMode(requestedMode); enabled(true); loading.hidden = true; qa.ready = true;
+    const resolutionNote = root.querySelector('[data-resolution-note]');
+    if (resolutionNote) resolutionNote.textContent = entry.frames.length ?
+      `同一 NC 的真实去料状态。中间帧 0.05 mm，最终结果 ${entry.resolution_mm} mm；播放速度仅作展示。` :
+      `此反例保留最终去料结果，分辨率 ${entry.resolution_mm} mm。`;
+    reset(); setMode(entry.frames.length ? requestedMode : 'compare'); enabled(true);
+    root.querySelector('[data-s1-mode=replay]').disabled = !entry.frames.length;
+    loading.hidden = true; qa.ready = true;
   }
   function requestCase(id,value=mode) {
     serial = serial.then(()=>loadCase(id,value)).catch(error=>{ pause(); fail(error); });

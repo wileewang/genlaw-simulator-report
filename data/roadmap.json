@@ -32,7 +32,7 @@
       "remaining": [
         "工艺师傅确认装夹、参数及制造验收依据",
         "补夹具 / 刀柄模型，明确未验证边界",
-        "下一阶段扩展双孔：先冻结工艺卡与 CAD，再扩展准备、NC 生成与检验"
+        "保留四例基线；新增孔系功能后的四条完整链路回归通过。"
       ],
       "changes": "固定材料和设备，独立改变孔径、孔位或厚度；四个具体组合已测量，未形成连续支持范围。",
       "shape": "single-hole",
@@ -52,31 +52,36 @@
       "number": "02",
       "title": "孔系与尺寸变化",
       "case_name": "双孔薄板",
-      "status": "next",
-      "status_label": "下一阶段",
-      "headline": "待 S1 轴向检查问题处理后，从一个孔扩展到有顺序的多个孔。",
+      "status": "partially_measured",
+      "status_label": "4 例孔系已测 · 盲孔待补",
+      "headline": "双孔、逆序、三孔与尺寸变体已完成；逐孔检出漏孔、错位和未贯穿。",
       "part": "8 × 6 × 1.5 mm；两个 φ2 孔，孔心 (2, 2) / (5.5, 4)",
       "material": "沿用 6061-T6 与矩形毛坯",
       "resources": "沿用 XYZ、同一刀具和装夹",
       "new_programming": [
-        "工艺卡列出多个孔特征",
-        "验证孔序、深度和钻孔循环"
+        "每个孔绑定独立 FreeCAD CAM 操作，保持卡片顺序",
+        "核对完整 NC 的孔序、孔位、刀具、深度和参数"
       ],
       "new_verification": [
-        "检查漏孔、错孔位与未钻通",
-        "单独评估尺寸放大带来的资源消耗"
+        "四例逐孔检查通过，三个反例定位到 H2",
+        "放大例使用显式 0.03 mm 网格，预算不变；S1 回归通过"
       ],
       "remaining": [
-        "先实现双孔，再增加盲孔与尺寸变体"
+        "盲孔的 CAD、深度定义、编程与底部检验",
+        "配对并核对真实工艺卡、CAD、制造要求和资源"
       ],
-      "changes": "先增加孔数量；放大尺寸作为独立变体，不同时增加资源复杂度。",
+      "changes": "已测双孔、逆序、三孔及 10×7.5 mm 尺寸变体；下一步增加盲孔。",
       "shape": "two-holes",
       "gate": "多孔位置与深度均正确，错误工序可追踪到具体孔；放大用例必须先通过资源准入。",
       "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
       "new_preparation": [
-        "关联多个孔及加工顺序",
-        "区分通孔、盲孔与成品深度"
-      ]
+        "按工艺卡顺序绑定每个孔、工步和要求",
+        "检查孔间依赖、资源与显式仿真精度"
+      ],
+      "preparation_status": "多孔绑定已实测",
+      "programming_status": "按工步孔序出码已实测",
+      "verification_status": "4 正常例 + 3 反例已测",
+      "results_ref": "results/S2-PATTERN-RESULTS-20261028-r1/summary.json"
     },
     {
       "id": "s3",
@@ -246,13 +251,13 @@
     "package_id": "S1-REVIEW-20261028-r2",
     "review_format": "printable_pdf",
     "sequence": [
-      "构造并冻结 CAD/工艺卡/资源",
-      "工艺师傅审阅",
-      "处理语义和现场差异，另存修订版",
-      "确认输入后再开展对应验证"
+      "构造并冻结 CAD / PDF 工艺卡 / 资源",
+      "按用户授权开展软件开发与回归，工艺审阅状态独立保留",
+      "工艺师傅核对现场语义与适用性",
+      "有反馈时另存修订版，再开展对应验证"
     ],
     "new_manufacturing_validation_started": false,
-    "note": "S1 固定软件结果与冻结审阅包保留；已有真实卡/CAD先核对配对，S2–S7 的新验证输入尚待构造或选定。"
+    "note": "S1 原审阅包保留；S2 四套 CAD / PDF 工艺卡已冻结并完成软件验证，尚未取得工艺师傅签审或生产批准。"
   },
   "process_handoff_ref": "process-handoff.json",
   "baseline_ref": "development-baseline.json#/active_baseline_id",

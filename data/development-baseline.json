@@ -128,14 +128,16 @@
         },
         {
           "id": "hole-pattern",
-          "name": "孔系 / 盲孔",
-          "status": "planned",
-          "label": "待开发",
-          "scope": "先增加孔数量，再逐项改变位置、深度。",
+          "name": "通孔孔系",
+          "status": "sample_cases_measured",
+          "label": "4 例已测 · 盲孔待补",
+          "scope": "双孔、逆序、三孔和尺寸变体；同一直径、同一刀具与装夹。三个反例逐孔检出；不代表任意孔系。",
           "stages": [
             "s2"
           ],
-          "evidence_paths": []
+          "evidence_paths": [
+            "results/S2-PATTERN-RESULTS-20261028-r1/summary.json"
+          ]
         },
         {
           "id": "milling-features",
@@ -192,16 +194,18 @@
           "id": "xyz-reference",
           "name": "XYZ / 单钻头 / 参考 NC",
           "status": "sample_cases_measured",
-          "label": "4 例参考配置已测",
-          "scope": "固定刀轴、G54 零偏置、参考钻孔指令；φ2 / φ2.5 钻头用于四个具体软件用例，未适配真实机床。",
+          "label": "S1 / S2 配置已测",
+          "scope": "固定刀轴、G54 零偏置、参考钻孔指令；S1 单孔与 S2 同刀多孔已测，未适配真实机床。",
           "stages": [
-            "s1"
+            "s1",
+            "s2"
           ],
           "evidence_paths": [
             "verification/S1-VERIFY-20261028-r1/summary.json",
             "cases/s1/reference.nc",
             "cases/s1/resources.json",
-            "runs/S1-CHAIN-20261028-r3/program.nc"
+            "runs/S1-CHAIN-20261028-r3/program.nc",
+            "results/S2-PATTERN-RESULTS-20261028-r1/summary.json"
           ]
         },
         {
@@ -261,16 +265,18 @@
           "id": "box-stock",
           "name": "矩形完整毛坯",
           "status": "sample_cases_measured",
-          "label": "两种板厚已测",
-          "scope": "8×6×1.5 mm 和 8×6×1.0 mm 矩形坯在四个具体单孔用例完成新引擎回归；不表示连续尺寸范围或制造验收合格。",
+          "label": "3 种尺寸组合已测",
+          "scope": "8×6×1.5、8×6×1.0 与 10×7.5×1.5 mm 矩形坯有具体用例；放大例精度 0.03 mm，其余 0.025 mm。不是连续尺寸范围。",
           "stages": [
-            "s1"
+            "s1",
+            "s2"
           ],
           "evidence_paths": [
             "verification/S1-VERIFY-20261028-r1/summary.json",
             "cases/s1/simulation.camotics",
             "cases/s1/metrics.json",
-            "runs/S1-CHAIN-20261028-r3/simulation.camotics"
+            "runs/S1-CHAIN-20261028-r3/simulation.camotics",
+            "results/S2-PATTERN-RESULTS-20261028-r1/summary.json"
           ],
           "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json",
           "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
@@ -282,7 +288,8 @@
           "label": "仅材料标签",
           "scope": "尚无材料切削性能或粗糙度验收。",
           "stages": [
-            "s1"
+            "s1",
+            "s2"
           ],
           "evidence_paths": [
             "cases/s1/resources.json"
@@ -314,7 +321,7 @@
     }
   ],
   "progression": [
-    "S1 四例已测量；轴线数值缺陷已复现，先集成引擎修补并回归原例，再进入 S2。",
+    "S1 四例回归通过；S2 四例通孔孔系与三个反例已测，继续补盲孔，再进入基础铣削。",
     "沿单孔 → 孔系 → 铣削特征 → 多工序 → 3+2 → 连续五轴推进。",
     "真实单件、新设备、新毛坯或材料按依赖接入，每次只改变一类条件。"
   ],

@@ -1,0 +1,157 @@
+{
+  "schema": "genlaw.process-plan.v1",
+  "id": "S2-three-holes-CARD-r1",
+  "cad_sha256": "503e8f08009cf3cb2b210df25bae38d1afcb1abc35395d77cc32e67c257119a4",
+  "origin": "developer_authored_synthetic_paper_card",
+  "transcription": {
+    "status": "checked_against_source",
+    "reviewer_role": "developer_transcription",
+    "production_review": false
+  },
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "external_documents": [],
+  "operations": [
+    {
+      "id": "OP05",
+      "name": "来料核对",
+      "steps": [
+        {
+          "id": "OP05.1",
+          "type": "incoming_inspection",
+          "text": "核对来料外形、厚度、材料状态及版本；确认等大毛坯前提。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP05.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP10",
+      "name": "钻",
+      "steps": [
+        {
+          "id": "OP10.1",
+          "type": "setup",
+          "text": "按确认后的定位基准与装夹方案找正；建立 CAD 与工件坐标的对应关系。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.1"
+          }
+        },
+        {
+          "id": "OP10.2",
+          "type": "drilling",
+          "text": "钻 H1：在 (2, 2) 加工 φ2 通孔，贯穿 1.5 mm 板厚。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.2"
+          },
+          "feature_id": "H1",
+          "depends_on": [
+            "OP05.1",
+            "OP10.1"
+          ],
+          "constraints": {
+            "diameter_mm": 2,
+            "through": true
+          }
+        },
+        {
+          "id": "OP10.3",
+          "type": "drilling",
+          "text": "钻 H2：在 (5.5, 4) 加工 φ2 通孔，贯穿 1.5 mm 板厚。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.3"
+          },
+          "feature_id": "H2",
+          "depends_on": [
+            "OP05.1",
+            "OP10.1",
+            "OP10.2"
+          ],
+          "constraints": {
+            "diameter_mm": 2,
+            "through": true
+          }
+        },
+        {
+          "id": "OP10.4",
+          "type": "drilling",
+          "text": "钻 H3：在 (5.5, 1.5) 加工 φ2 通孔，贯穿 1.5 mm 板厚。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.4"
+          },
+          "feature_id": "H3",
+          "depends_on": [
+            "OP05.1",
+            "OP10.1",
+            "OP10.3"
+          ],
+          "constraints": {
+            "diameter_mm": 2,
+            "through": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP20",
+      "name": "去毛刺",
+      "steps": [
+        {
+          "id": "OP20.1",
+          "type": "deburring",
+          "text": "孔口/外缘是否处理及是否倒角，由制造要求决定，尺寸待审。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP20.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP30",
+      "name": "检验",
+      "steps": [
+        {
+          "id": "OP30.1",
+          "type": "inspection",
+          "text": "按批准的 CAD 与要求逐项检验孔径、孔位、贯穿和外形。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP30.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP35",
+      "name": "后续处置",
+      "steps": [
+        {
+          "id": "OP35.1",
+          "type": "postprocess",
+          "text": "是否需要清洗、标识、包装，由实际交付要求决定。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP35.1"
+          }
+        }
+      ]
+    }
+  ]
+}
