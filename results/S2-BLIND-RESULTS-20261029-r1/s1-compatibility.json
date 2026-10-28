@@ -1,0 +1,97 @@
+{
+  "schema": "genlaw.s1-compatibility.v1",
+  "status": "passed",
+  "new_complete_chains": 4,
+  "existing_negative_meshes_rechecked": 2,
+  "cases": [
+    {
+      "id": "baseline",
+      "new_complete_chain": true,
+      "iou_percent": 99.97534453562862,
+      "previous_iou_percent": 99.97534453562862,
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "numeric_pass"
+      },
+      "regression_expectation_met": true
+    },
+    {
+      "id": "diameter",
+      "new_complete_chain": true,
+      "iou_percent": 99.97438478402793,
+      "previous_iou_percent": 99.97438478402793,
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "numeric_pass"
+      },
+      "regression_expectation_met": true
+    },
+    {
+      "id": "position",
+      "new_complete_chain": true,
+      "iou_percent": 99.97534456384761,
+      "previous_iou_percent": 99.97534456384761,
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "numeric_pass"
+      },
+      "regression_expectation_met": true
+    },
+    {
+      "id": "thickness",
+      "new_complete_chain": true,
+      "iou_percent": 99.96644226007425,
+      "previous_iou_percent": 99.96644226007425,
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "numeric_pass"
+      },
+      "regression_expectation_met": true
+    },
+    {
+      "id": "wrong-position",
+      "new_complete_chain": false,
+      "material_result_reused": true,
+      "guard_rejected": true,
+      "iou_percent": 95.64827622279712,
+      "software_statuses": {
+        "diameter": "indeterminate",
+        "position_xy": "numeric_fail",
+        "through": "numeric_pass"
+      },
+      "regression_expectation_met": true
+    },
+    {
+      "id": "not-through",
+      "new_complete_chain": false,
+      "material_result_reused": true,
+      "guard_rejected": true,
+      "iou_percent": 95.92685245575724,
+      "software_statuses": {
+        "diameter": "not_measurable",
+        "position_xy": "not_measurable",
+        "through": "numeric_fail"
+      },
+      "regression_expectation_met": true
+    }
+  ],
+  "source_code_sha256": {
+    "run.py": "6bdbfc8743c88186c0b84e770655e2fa4f42f468f0c9f967b2b11b8137d882b3",
+    "measurement.py": "9e253ca7591a33f90d77906bad979374f441de0420c13bbbba0334abe1a681b9",
+    "preparation.py": "fc37a26df9687ef959088ab0240e162cad2bf26ce1343d7a4ea7ada6f201d958",
+    "programming.py": "7fe03d5e51704ba5e4bc107379479ab907c82d79aa23f6eb89b92a97591f910a",
+    "verification.py": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+    "simulation_engine.py": "ca8b49d1cbc3bfac38044c4cd0250a9b413f9cb3d3fcccba5360bd3ab1884ba8",
+    "drilling_geometry.py": "ac7453d631f43af3173ae81d1985633015dda17393ebdd14eabcff16b599551d",
+    "measure_worker.py": "99fa76a4ba93caf9994a8b728e0d2013857f6a178453090099709a5bbece7511",
+    "blind_verification.py": "e3ab08dd86b14dd235573397df26469145944b23db4e589a2f629568f582207a",
+    "__init__.py": "efa8f59200b1bd9b267b22368099635da387e3a7061c628450c7d861b1ed2e1c",
+    "freecad_worker.py": "e3f9226dd0fab260a85f8e0120012d50aa3498aea05839b1d15265cbf5a56a16",
+    "reference_sections.py": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+  },
+  "production_approved": false
+}

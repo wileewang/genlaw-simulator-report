@@ -1,0 +1,851 @@
+{
+  "schema": "genlaw.stage-results.v1",
+  "id": "S2-BLIND-RESULTS-20261029-r1",
+  "stage_id": "s2",
+  "title": "盲孔与逐孔深度",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "specification": {
+        "id": "baseline",
+        "name": "单盲孔基准",
+        "features": [
+          {
+            "id": "H1",
+            "kind": "blind_hole",
+            "center_xy_mm": [
+              3,
+              2
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "cylindrical_depth_mm": 0.5,
+            "bottom_angle_degrees": 118
+          }
+        ],
+        "order": [
+          "H1"
+        ],
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ]
+      },
+      "iou_percent": 99.97593353592792,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_pass",
+          "conical_bottom": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "measured_blind_floors": {
+        "H1": {
+          "cylindrical_depth_mm": 0.5000146804838713,
+          "tip_depth_mm": 1.1008795103225804,
+          "max_deviation_mm": 9.40052431099847e-05,
+          "minimum_remaining_floor_mm": 0.3992365199999999,
+          "fitted_bottom_angle_degrees": 117.99964547344122
+        }
+      },
+      "executed_feature_order": [
+        "H1"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 1.385301,
+          "label": "钻尖进入",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "f41b6b82d063091d21a6ffd0abeeae3022f982db4b64a1dff47bd1d32ede2c44",
+          "nc_sha256": "54cc63602bbed68e8e902e757477a58a22ca4a62a17e18c7934f3216b4ac7568",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "ad9f9f5353d51c765b7797ae2962e7a21802f3cbf69c090bda4d103ac4c58a45",
+          "watertight": true,
+          "volume_mm3": 71.91470569249852,
+          "triangles": 112816
+        },
+        {
+          "index": 2,
+          "time_seconds": 1.715559,
+          "label": "形成圆柱段",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "372234c4eb29cc58c19c2c1e712d09c587d043a30e9dc06ddcb34f1e62b2c920",
+          "nc_sha256": "54cc63602bbed68e8e902e757477a58a22ca4a62a17e18c7934f3216b4ac7568",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "cb288d8d37db41ed16a2c158659443b9e3582eeab0d4090fb1bf9b2380468b36",
+          "watertight": true,
+          "volume_mm3": 71.19616464798052,
+          "triangles": 114624
+        },
+        {
+          "index": 3,
+          "time_seconds": 1.990775,
+          "label": "接近目标孔深",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "7615e65972d866d33451f83c355ba214898fc6b2ffc909feb5e01e35c3cafe88",
+          "nc_sha256": "54cc63602bbed68e8e902e757477a58a22ca4a62a17e18c7934f3216b4ac7568",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "30eb6b36e777cc0ec675a8d3f6c11192f2b25e6d87ef0bdfe86b2a3258cc2b59",
+          "watertight": true,
+          "volume_mm3": 70.3327854100046,
+          "triangles": 116372
+        }
+      ]
+    },
+    {
+      "id": "deeper",
+      "specification": {
+        "id": "deeper",
+        "name": "圆柱孔深增加",
+        "features": [
+          {
+            "id": "H1",
+            "kind": "blind_hole",
+            "center_xy_mm": [
+              3,
+              2
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "cylindrical_depth_mm": 0.7,
+            "bottom_angle_degrees": 118
+          }
+        ],
+        "order": [
+          "H1"
+        ],
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ]
+      },
+      "iou_percent": 99.97561605414404,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_pass",
+          "conical_bottom": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "measured_blind_floors": {
+        "H1": {
+          "cylindrical_depth_mm": 0.7000139699193554,
+          "tip_depth_mm": 1.300882541612903,
+          "max_deviation_mm": 8.063524310997217e-05,
+          "minimum_remaining_floor_mm": 0.19922203000000005,
+          "fitted_bottom_angle_degrees": 117.99933043146592
+        }
+      },
+      "executed_feature_order": [
+        "H1"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 1.455301,
+          "label": "钻尖进入",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "186b94a5d07add2d5e90d3c545f78cd85ebc32dcacd6b205db6a12a79e9e56fb",
+          "nc_sha256": "87252cf342cb8122a4c433f30ebfa0143b7505d8b140770a66adc99e82cb86bd",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "c761a2ffcd68d54f2b7b94032c1b1d49a7aefb06146ac970b72f8d2892d409bd",
+          "watertight": true,
+          "volume_mm3": 71.83168885573117,
+          "triangles": 113104
+        },
+        {
+          "index": 2,
+          "time_seconds": 1.845559,
+          "label": "形成圆柱段",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "528d013a53a9ac484677d63d14dbedf1cdb30fbcc2bea8668bc2541c688f63c2",
+          "nc_sha256": "87252cf342cb8122a4c433f30ebfa0143b7505d8b140770a66adc99e82cb86bd",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "96c60df98c1e6db77c387bb6cff5e071f520f15915e7b2d92674eb7ff12ca102",
+          "watertight": true,
+          "volume_mm3": 70.78828077142478,
+          "triangles": 115464
+        },
+        {
+          "index": 3,
+          "time_seconds": 2.170775,
+          "label": "接近目标孔深",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "58d5688789d9a72c77511e5154c972d4630309f061a6eaccee9ff6674270cf15",
+          "nc_sha256": "87252cf342cb8122a4c433f30ebfa0143b7505d8b140770a66adc99e82cb86bd",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "eb213d4e11c774b16146a9a744d4f7d6031634570864e51a16c46baed7534e9e",
+          "watertight": true,
+          "volume_mm3": 69.76696100388806,
+          "triangles": 117540
+        }
+      ]
+    },
+    {
+      "id": "mixed",
+      "specification": {
+        "id": "mixed",
+        "name": "通孔与盲孔",
+        "features": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H2",
+            "kind": "blind_hole",
+            "center_xy_mm": [
+              5.5,
+              4
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "cylindrical_depth_mm": 0.5,
+            "bottom_angle_degrees": 118
+          }
+        ],
+        "order": [
+          "H1",
+          "H2"
+        ],
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ]
+      },
+      "iou_percent": 99.97314628999968,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_pass",
+          "conical_bottom": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "measured_blind_floors": {
+        "H2": {
+          "cylindrical_depth_mm": 0.5000146220161292,
+          "tip_depth_mm": 1.1008797796774188,
+          "max_deviation_mm": 9.199524310987695e-05,
+          "minimum_remaining_floor_mm": 0.3992353499999999,
+          "fitted_bottom_angle_degrees": 117.99961787268347
+        }
+      },
+      "executed_feature_order": [
+        "H1",
+        "H2"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 1.880344,
+          "label": "首孔钻削",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "c2761c5aa0936235753a13e26f7308ded4e7229cb21efefd2073462edce21c31",
+          "nc_sha256": "73eadd76ed5443c1403d95db51741da93cf19f9760b555602787df2e303709c5",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "5deb954a0584702ab1e418a3a078c95a71b4bb1a6a6cc5c0d367c995daba127e",
+          "watertight": true,
+          "volume_mm3": 70.66533853098453,
+          "triangles": 115704
+        },
+        {
+          "index": 2,
+          "time_seconds": 3.700861,
+          "label": "首孔完成，转入下一孔",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "df05a763392127aa2f0e7ad76b4efcecd3679ed8d59a606399310cafc7b791a9",
+          "nc_sha256": "73eadd76ed5443c1403d95db51741da93cf19f9760b555602787df2e303709c5",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "4bf8843e9b8a4d5a9cf427f769610a612f68c42849e1b4c95c7926d5c6583cab",
+          "watertight": true,
+          "volume_mm3": 67.30993445601585,
+          "triangles": 117040
+        },
+        {
+          "index": 3,
+          "time_seconds": 5.191635,
+          "label": "最后一孔接近目标深度",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "e0939733f30358aca566bee7aeaa2db2235ee73a0ed2f129d4102b36af13b157",
+          "nc_sha256": "73eadd76ed5443c1403d95db51741da93cf19f9760b555602787df2e303709c5",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "e0dac3de9e80c7c664f80dd88d9afca3ad4c485f93fc1bb0e04a3635f6e507da",
+          "watertight": true,
+          "volume_mm3": 65.81761362434891,
+          "triangles": 120928
+        }
+      ]
+    },
+    {
+      "id": "two-depths",
+      "specification": {
+        "id": "two-depths",
+        "name": "不同深度双盲孔",
+        "features": [
+          {
+            "id": "H1",
+            "kind": "blind_hole",
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "cylindrical_depth_mm": 0.5,
+            "bottom_angle_degrees": 118
+          },
+          {
+            "id": "H2",
+            "kind": "blind_hole",
+            "center_xy_mm": [
+              5.5,
+              4
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "cylindrical_depth_mm": 0.7,
+            "bottom_angle_degrees": 118
+          }
+        ],
+        "order": [
+          "H1",
+          "H2"
+        ],
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ]
+      },
+      "iou_percent": 99.97348932054341,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_pass",
+          "conical_bottom": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_pass",
+          "conical_bottom": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "measured_blind_floors": {
+        "H1": {
+          "cylindrical_depth_mm": 0.5000146855645164,
+          "tip_depth_mm": 1.100879508709677,
+          "max_deviation_mm": 9.40052431099847e-05,
+          "minimum_remaining_floor_mm": 0.3992365199999999,
+          "fitted_bottom_angle_degrees": 117.99964603699922
+        },
+        "H2": {
+          "cylindrical_depth_mm": 0.7000139649193556,
+          "tip_depth_mm": 1.3008825916129032,
+          "max_deviation_mm": 8.086524311001764e-05,
+          "minimum_remaining_floor_mm": 0.19922194999999987,
+          "fitted_bottom_angle_degrees": 117.99932580080002
+        }
+      },
+      "executed_feature_order": [
+        "H1",
+        "H2"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 1.440344,
+          "label": "首孔钻削",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "ef6a914825ea1353edf0a071f8e3f2cec5662383799ff0294345cc42ec491371",
+          "nc_sha256": "bfae2bf7684bf7dc01c372d757ff122d2e9a48ccc25402ec1c6a9cc476bdb0ee",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "2f0575148c89fc23d3fbd98f1916e92b158bee802481e3807a2ae90c5efa2440",
+          "watertight": true,
+          "volume_mm3": 71.84589708085147,
+          "triangles": 113064
+        },
+        {
+          "index": 2,
+          "time_seconds": 2.600861,
+          "label": "首孔完成，转入下一孔",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "ad7ae34c70ef931a8ccd99510a6487f74e81e0812f86b63b9af838f73ec1e39d",
+          "nc_sha256": "bfae2bf7684bf7dc01c372d757ff122d2e9a48ccc25402ec1c6a9cc476bdb0ee",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "f5fc0ec66df4bef52cb185c7b50bf7ba2d212f5b008143bb73f94b83693c638c",
+          "watertight": true,
+          "volume_mm3": 69.82287614325163,
+          "triangles": 117424
+        },
+        {
+          "index": 3,
+          "time_seconds": 4.271635,
+          "label": "最后一孔接近目标深度",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "a59d4b8e52eddd427d3350233acd21cf3d134afd3e11bb3005022c94ecf570b4",
+          "nc_sha256": "bfae2bf7684bf7dc01c372d757ff122d2e9a48ccc25402ec1c6a9cc476bdb0ee",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "eb8fa1a6da1dddae63d62fae087466217a6f884ab20ace9a2a896963f714c34f",
+          "watertight": true,
+          "volume_mm3": 67.74331764454031,
+          "triangles": 122560
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "too-shallow",
+      "parent_case": "mixed",
+      "affected_feature": "H2",
+      "unaffected_feature": "H1",
+      "guard_rejected": true,
+      "iou_percent": 98.78147602162163,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_fail",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_fail",
+          "conical_bottom": "numeric_fail"
+        }
+      },
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "regression_expectation_met": true,
+      "modified_tip_z_mm": -0.85086,
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "too-deep",
+      "parent_case": "mixed",
+      "affected_feature": "H2",
+      "unaffected_feature": "H1",
+      "guard_rejected": true,
+      "iou_percent": 99.00872179974395,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_fail",
+          "conical_bottom": "numeric_fail"
+        }
+      },
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "regression_expectation_met": true,
+      "modified_tip_z_mm": -1.30086,
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "drilled-through",
+      "parent_case": "mixed",
+      "affected_feature": "H2",
+      "unaffected_feature": "H1",
+      "guard_rejected": true,
+      "iou_percent": 96.11489981082124,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "not_measurable",
+          "conical_bottom": "numeric_fail"
+        }
+      },
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "regression_expectation_met": true,
+      "modified_tip_z_mm": -2.20086,
+      "resolution_mm": 0.025
+    }
+  ],
+  "resources": [
+    {
+      "case": "baseline",
+      "stage": "measure-part-4-resources",
+      "seconds": 10.778565210988745,
+      "peak_rss_mib": 259.5546875
+    },
+    {
+      "case": "baseline",
+      "stage": "camotics-resources",
+      "seconds": 4.600048672989942,
+      "peak_rss_mib": 510.20703125
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-plan-resources",
+      "seconds": 1.0490088229998946,
+      "peak_rss_mib": 259.171875
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-part-2-resources",
+      "seconds": 22.37521459601703,
+      "peak_rss_mib": 258.92578125
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-resources",
+      "seconds": 1.3613957460038364,
+      "peak_rss_mib": 259.69140625
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-part-0-resources",
+      "seconds": 19.880448269017506,
+      "peak_rss_mib": 259.35546875
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-part-3-resources",
+      "seconds": 22.900020388013218,
+      "peak_rss_mib": 259.5078125
+    },
+    {
+      "case": "baseline",
+      "stage": "freecad-resources",
+      "seconds": 2.4108706879778765,
+      "peak_rss_mib": 221.55859375
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-software-resources",
+      "seconds": 3.4614261600072496,
+      "peak_rss_mib": 254.91015625
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-part-1-resources",
+      "seconds": 21.129120058991248,
+      "peak_rss_mib": 259.3359375
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-features-resources",
+      "seconds": 3.45219214700046,
+      "peak_rss_mib": 255.06640625
+    },
+    {
+      "case": "deeper",
+      "stage": "measure-part-4-resources",
+      "seconds": 10.875616228004219,
+      "peak_rss_mib": 261.87890625
+    },
+    {
+      "case": "deeper",
+      "stage": "camotics-resources",
+      "seconds": 4.825287612009561,
+      "peak_rss_mib": 511.234375
+    },
+    {
+      "case": "deeper",
+      "stage": "measure-plan-resources",
+      "seconds": 1.1560480539919809,
+      "peak_rss_mib": 261.62109375
+    },
+    {
+      "case": "deeper",
+      "stage": "measure-part-2-resources",
+      "seconds": 22.39398081699619,
+      "peak_rss_mib": 261.9140625
+    },
+    {
+      "case": "deeper",
+      "stage": "measure-resources",
+      "seconds": 1.361030194995692,
+      "peak_rss_mib": 261.921875
+    },
+    {
+      "case": "deeper",
+      "stage": "measure-part-0-resources",
+      "seconds": 20.509560187987518,
+      "peak_rss_mib": 261.80078125
+    },
+    {
+      "case": "deeper",
+      "stage": "measure-part-3-resources",
+      "seconds": 22.800535147980554,
+      "peak_rss_mib": 261.609375
+    },
+    {
+      "case": "deeper",
+      "stage": "freecad-resources",
+      "seconds": 2.4169263590010814,
+      "peak_rss_mib": 223.05078125
+    },
+    {
+      "case": "deeper",
+      "stage": "verify-software-resources",
+      "seconds": 3.659792963997461,
+      "peak_rss_mib": 257.2578125
+    },
+    {
+      "case": "deeper",
+      "stage": "measure-part-1-resources",
+      "seconds": 21.661465085984673,
+      "peak_rss_mib": 261.859375
+    },
+    {
+      "case": "deeper",
+      "stage": "verify-features-resources",
+      "seconds": 3.347496536996914,
+      "peak_rss_mib": 262.84375
+    },
+    {
+      "case": "mixed",
+      "stage": "measure-part-4-resources",
+      "seconds": 13.908969793003052,
+      "peak_rss_mib": 268.28515625
+    },
+    {
+      "case": "mixed",
+      "stage": "camotics-resources",
+      "seconds": 4.816767729993444,
+      "peak_rss_mib": 515.3984375
+    },
+    {
+      "case": "mixed",
+      "stage": "measure-plan-resources",
+      "seconds": 1.1508808819926344,
+      "peak_rss_mib": 267.96875
+    },
+    {
+      "case": "mixed",
+      "stage": "measure-part-2-resources",
+      "seconds": 29.680381304002367,
+      "peak_rss_mib": 268.4453125
+    },
+    {
+      "case": "mixed",
+      "stage": "measure-resources",
+      "seconds": 1.4654431410017423,
+      "peak_rss_mib": 262.59765625
+    },
+    {
+      "case": "mixed",
+      "stage": "measure-part-0-resources",
+      "seconds": 26.99458956500166,
+      "peak_rss_mib": 262.1640625
+    },
+    {
+      "case": "mixed",
+      "stage": "measure-part-3-resources",
+      "seconds": 30.11234605399659,
+      "peak_rss_mib": 268.23046875
+    },
+    {
+      "case": "mixed",
+      "stage": "freecad-resources",
+      "seconds": 2.6148259920009878,
+      "peak_rss_mib": 257.5703125
+    },
+    {
+      "case": "mixed",
+      "stage": "verify-software-resources",
+      "seconds": 4.704628365987446,
+      "peak_rss_mib": 269.4921875
+    },
+    {
+      "case": "mixed",
+      "stage": "measure-part-1-resources",
+      "seconds": 28.96442007299629,
+      "peak_rss_mib": 268.15234375
+    },
+    {
+      "case": "mixed",
+      "stage": "verify-features-resources",
+      "seconds": 4.812484135996783,
+      "peak_rss_mib": 268.99609375
+    },
+    {
+      "case": "two-depths",
+      "stage": "measure-part-5-resources",
+      "seconds": 28.239048731978983,
+      "peak_rss_mib": 271.6953125
+    },
+    {
+      "case": "two-depths",
+      "stage": "measure-part-4-resources",
+      "seconds": 27.828746141982265,
+      "peak_rss_mib": 271.5234375
+    },
+    {
+      "case": "two-depths",
+      "stage": "camotics-resources",
+      "seconds": 4.707288097997662,
+      "peak_rss_mib": 515.875
+    },
+    {
+      "case": "two-depths",
+      "stage": "measure-plan-resources",
+      "seconds": 1.2561943930049893,
+      "peak_rss_mib": 271.61328125
+    },
+    {
+      "case": "two-depths",
+      "stage": "measure-part-2-resources",
+      "seconds": 25.308685859985417,
+      "peak_rss_mib": 271.421875
+    },
+    {
+      "case": "two-depths",
+      "stage": "measure-resources",
+      "seconds": 1.360265637980774,
+      "peak_rss_mib": 255.2578125
+    },
+    {
+      "case": "two-depths",
+      "stage": "measure-part-0-resources",
+      "seconds": 20.804467857000418,
+      "peak_rss_mib": 271.59765625
+    },
+    {
+      "case": "two-depths",
+      "stage": "measure-part-6-resources",
+      "seconds": 29.477615336014424,
+      "peak_rss_mib": 269.12890625
+    },
+    {
+      "case": "two-depths",
+      "stage": "measure-part-3-resources",
+      "seconds": 26.99903464599629,
+      "peak_rss_mib": 271.66015625
+    },
+    {
+      "case": "two-depths",
+      "stage": "freecad-resources",
+      "seconds": 5.337007460009772,
+      "peak_rss_mib": 348.11328125
+    },
+    {
+      "case": "two-depths",
+      "stage": "verify-software-resources",
+      "seconds": 6.382798722013831,
+      "peak_rss_mib": 272.5234375
+    },
+    {
+      "case": "two-depths",
+      "stage": "measure-part-1-resources",
+      "seconds": 24.382852196024032,
+      "peak_rss_mib": 271.81640625
+    },
+    {
+      "case": "two-depths",
+      "stage": "verify-features-resources",
+      "seconds": 6.602676332986448,
+      "peak_rss_mib": 272.7578125
+    },
+    {
+      "case": "two-depths",
+      "stage": "measure-part-7-resources",
+      "seconds": 30.540051581978332,
+      "peak_rss_mib": 265.42578125
+    }
+  ],
+  "input_archive": "S2-BLIND-20261028-r3",
+  "run_archive": "S2-BLIND-SUITE-20261029-r3",
+  "replay_archive": "S2-BLIND-REPLAY-20261029-r1",
+  "input_manifest_sha256": "3f7ddd1ac09d801c417b2ebc6746a2e4e345bd45684cdc01b252e49f95ae4144",
+  "suite_summary_sha256": "e2307b4b8f2e65dca21df2fe70fde54964ff08496396d5142d77985f25bc51fc",
+  "tests_passed": 123,
+  "normal_cases_passed": 4,
+  "negative_controls_detected": 3,
+  "s1_compatibility_ref": "s1-compatibility.json",
+  "s1_compatibility_sha256": "461839bf2d35291581ee49a6af365dae02c619273f247c0889a7a342296aca1e",
+  "new_features": [
+    "逐孔区分圆柱深与钻尖深",
+    "盲孔与通孔混合编程",
+    "孔底、深度及错误钻通检查"
+  ],
+  "remaining": [
+    "S3 基础铣削与其几何检验",
+    "核对真实工艺卡、图纸 / CAD 和资源"
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "blind_holes_verified": true,
+  "through_compatibility_ref": "through-compatibility.json",
+  "through_compatibility_sha256": "5c06d2ad15d632e2d1f50c5cc88b3073fb0d41c2230b4a6728c329ea6a0bf2d5",
+  "sampling_scope": "11 cylindrical sections and 25 floor probes per blind hole; not continuous GD&T certification.",
+  "source_reuse": "First three normal cases retain their original producer hashes. Only CAD display export changed; see sources and reuse-provenance.json."
+}

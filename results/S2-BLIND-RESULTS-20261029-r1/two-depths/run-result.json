@@ -1,0 +1,220 @@
+{
+  "schema": "genlaw.pipeline-run.v1",
+  "status": "software_chain_measured",
+  "input_sha256": "6050e526eb79e9d2798218ebaadf4aa8b0ae563f6fac4a3df50e7532a759b01a",
+  "input_id": "S2-BLIND-two-depths-r3",
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "native_stages": [
+    "freecad_cam",
+    "camotics"
+  ],
+  "source_code_sha256": {
+    "run.py": "6bdbfc8743c88186c0b84e770655e2fa4f42f468f0c9f967b2b11b8137d882b3",
+    "measurement.py": "9e253ca7591a33f90d77906bad979374f441de0420c13bbbba0334abe1a681b9",
+    "preparation.py": "fc37a26df9687ef959088ab0240e162cad2bf26ce1343d7a4ea7ada6f201d958",
+    "programming.py": "7fe03d5e51704ba5e4bc107379479ab907c82d79aa23f6eb89b92a97591f910a",
+    "verification.py": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+    "simulation_engine.py": "ca8b49d1cbc3bfac38044c4cd0250a9b413f9cb3d3fcccba5360bd3ab1884ba8",
+    "drilling_geometry.py": "ac7453d631f43af3173ae81d1985633015dda17393ebdd14eabcff16b599551d",
+    "measure_worker.py": "99fa76a4ba93caf9994a8b728e0d2013857f6a178453090099709a5bbece7511",
+    "blind_verification.py": "e3ab08dd86b14dd235573397df26469145944b23db4e589a2f629568f582207a",
+    "__init__.py": "efa8f59200b1bd9b267b22368099635da387e3a7061c628450c7d861b1ed2e1c",
+    "freecad_worker.py": "e3f9226dd0fab260a85f8e0120012d50aa3498aea05839b1d15265cbf5a56a16",
+    "reference_sections.py": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+  },
+  "execution_plan_sha256": "01fdbedf2b317f37b8857a28ac35d2238077506cc8e5e6bbc88b0de8aefba0e8",
+  "nc_sha256": "bfae2bf7684bf7dc01c372d757ff122d2e9a48ccc25402ec1c6a9cc476bdb0ee",
+  "simulation_config_sha256": "7d95487b8b2a1e5fef55aa78c0aa8bbac4e0ac5e9ef100651c9f2649c0bfa8ac",
+  "mesh_sha256": "3dce404774b7f45346113cc1349771b1b4189e61fa78640df4ea86cf64c98e19",
+  "iou": 0.9997348932054341,
+  "iou_percent": 99.97348932054341,
+  "requirement_readiness": [
+    {
+      "id": "H1-diameter",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H1-position_xy",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H1-surface_roughness",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H1-cylindrical_depth",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H1-conical_bottom",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H2-diameter",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H2-position_xy",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H2-surface_roughness",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H2-cylindrical_depth",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "H2-conical_bottom",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    }
+  ],
+  "coverage": [
+    {
+      "operation_id": "OP05",
+      "step_id": "OP05.1",
+      "type": "incoming_inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.1",
+      "type": "setup",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "drilling",
+      "status": "software_geometry_measured"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.3",
+      "type": "drilling",
+      "status": "software_geometry_measured"
+    },
+    {
+      "operation_id": "OP20",
+      "step_id": "OP20.1",
+      "type": "deburring",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP30",
+      "step_id": "OP30.1",
+      "type": "inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP35",
+      "step_id": "OP35.1",
+      "type": "postprocess",
+      "status": "not_verified"
+    }
+  ],
+  "full_tolerance_acceptance": false,
+  "source_pdf_automatically_recognized": false,
+  "metrics_sha256": "6e3376919a0d607a7e786824f933f6143d156b9f9b35e190959fc58962fe2b30",
+  "feature_verification_sha256": "cc8ed4f86fc1a5f1512d5c4cc793e1d9ea79c00ad80c6ed7cde8eddaa18d574f",
+  "requirement_checks": [
+    {
+      "id": "H1-diameter",
+      "feature_id": "H1",
+      "kind": "diameter",
+      "nominal": 2,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H1-position_xy",
+      "feature_id": "H1",
+      "kind": "position_xy",
+      "nominal": [
+        2,
+        2
+      ],
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H1-surface_roughness",
+      "feature_id": "H1",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness/material or general GD&T evaluator."
+    },
+    {
+      "id": "H1-cylindrical_depth",
+      "feature_id": "H1",
+      "kind": "cylindrical_depth",
+      "nominal": 0.5,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H1-conical_bottom",
+      "feature_id": "H1",
+      "kind": "conical_bottom",
+      "nominal": 118,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H2-diameter",
+      "feature_id": "H2",
+      "kind": "diameter",
+      "nominal": 2,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H2-position_xy",
+      "feature_id": "H2",
+      "kind": "position_xy",
+      "nominal": [
+        5.5,
+        4
+      ],
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H2-surface_roughness",
+      "feature_id": "H2",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness/material or general GD&T evaluator."
+    },
+    {
+      "id": "H2-cylindrical_depth",
+      "feature_id": "H2",
+      "kind": "cylindrical_depth",
+      "nominal": 0.7,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "H2-conical_bottom",
+      "feature_id": "H2",
+      "kind": "conical_bottom",
+      "nominal": 118,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    }
+  ]
+}

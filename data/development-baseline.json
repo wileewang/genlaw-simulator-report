@@ -130,13 +130,26 @@
           "id": "hole-pattern",
           "name": "通孔孔系",
           "status": "sample_cases_measured",
-          "label": "4 例已测 · 盲孔待补",
+          "label": "4 例已实测",
           "scope": "双孔、逆序、三孔和尺寸变体；同一直径、同一刀具与装夹。三个反例逐孔检出；不代表任意孔系。",
           "stages": [
             "s2"
           ],
           "evidence_paths": [
             "results/S2-PATTERN-RESULTS-20261028-r1/summary.json"
+          ]
+        },
+        {
+          "id": "blind-hole",
+          "name": "锥底盲孔 / 通盲混合",
+          "status": "sample_cases_measured",
+          "label": "4 例已实测",
+          "scope": "φ2、118° 钻尖，圆柱深 0.5 / 0.7 mm；单孔、通盲混合和双孔不同深度。深度错误反例可检出；不代表任意盲孔。",
+          "stages": [
+            "s2/blind"
+          ],
+          "evidence_paths": [
+            "results/S2-BLIND-RESULTS-20261029-r1/summary.json"
           ]
         },
         {
@@ -195,7 +208,7 @@
           "name": "XYZ / 单钻头 / 参考 NC",
           "status": "sample_cases_measured",
           "label": "S1 / S2 配置已测",
-          "scope": "固定刀轴、G54 零偏置、参考钻孔指令；S1 单孔与 S2 同刀多孔已测，未适配真实机床。",
+          "scope": "固定刀轴、G54 零偏置、同一钻头；单孔、通孔孔系及锥底盲孔参考 NC 已测，未适配真实机床。",
           "stages": [
             "s1",
             "s2"

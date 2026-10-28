@@ -166,7 +166,7 @@
       "input": "工艺卡 + CAD + 资源",
       "output": "可执行加工方案",
       "implementation": "规则程序 + 资源库",
-      "status": "单孔 / 孔系入口已测",
+      "status": "孔系 / 盲孔入口已测",
       "current": true,
       "description": "读取已核对的结构化工艺卡，核对来源、CAD、逐孔工步及资源；输出按卡片顺序执行的方案，缺项与冲突显式返回。已测单孔和同刀通孔孔系，纸质卡自动识别尚待接入。",
       "inputs": [
@@ -226,7 +226,7 @@
       "input": "执行方案 + CAD",
       "output": "最终 NC + 加工配置",
       "implementation": "FreeCAD CAM + 后处理",
-      "status": "按卡片孔序出码已测",
+      "status": "孔序与逐孔深度出码已测",
       "current": true,
       "description": "重新读取原始 CAD，逐孔核对并绑定 FreeCAD CAM 操作；按卡片顺序生成最终 NC，再检查完整指令、刀具、孔位与深度。当前限单孔及同刀通孔孔系。",
       "inputs": [
@@ -271,7 +271,7 @@
       "input": "最终 NC + 加工配置 + 原始 CAD",
       "output": "加工后几何 + 逐项检验 + 覆盖范围",
       "implementation": "CAMotics + 几何比较",
-      "status": "单孔 / 孔系及反例已测",
+      "status": "孔系 / 盲孔及反例已测",
       "current": true,
       "description": "修补后的完整 CAMotics 执行最终 NC；比较原 CAD 与实际剩料，逐孔测量孔径、孔心和贯穿，错误可定位到具体孔。S1 / S2 均有正常与错误实例；制造验收待依据，粗糙度尚未测量。",
       "inputs": [
