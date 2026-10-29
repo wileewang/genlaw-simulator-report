@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from './vendor/three/OrbitControls.js';
-import { meshBuffer } from './mesh-data.js';
+import { fetchMeshBuffer } from './mesh-fetch.js';
 
 const root = document.querySelector('[data-s1-viewer]');
 if (root) start().catch(fail);
@@ -91,19 +91,8 @@ async function start() {
     const delivery = config.geometry_transport?.[path];
     const compressed = delivery?.encoding === 'gzip' && typeof DecompressionStream === 'function';
     const url = new URL(compressed ? delivery.path : path, siteBase);
-    let r;
-    try { r = await fetch(url); }
-    catch (error) {
-      // A canceled browser request can surface as a network TypeError during
-      // rapid case changes. Retry once; HTTP, decoding and integrity failures
-      // retain their original failure path.
-      if (!(error instanceof TypeError)) throw error;
-      qa.networkRetries++;
-      await new Promise(resolve => setTimeout(resolve, 120));
-      r = await fetch(url);
-    }
-    if (!r.ok) throw Error('Geometry unavailable: ' + path);
-    const buffer = await meshBuffer(r);
+    const retryURL = compressed && delivery.retry_path ? new URL(delivery.retry_path, siteBase) : url;
+    const buffer = await fetchMeshBuffer(url, () => { qa.networkRetries++; }, { retryURL });
     if (delivery) {
       if (buffer.byteLength !== delivery.decoded_bytes) throw Error('Incomplete geometry: ' + path);
       if (globalThis.crypto?.subtle) {
