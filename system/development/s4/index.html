@@ -2,10 +2,10 @@
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>S4 · 多工序结果导航 · GenLaw</title><meta name="description" content="GenLaw 五模块设计，以及加工准备、NC 生成、仿真检验的起始点与支持范围。">
 <meta name="color-scheme" content="light"><link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=5b56718776"><link rel="stylesheet" href="../../../assets/overview.css?v=2472ccd33d">
-<script src="../../../assets/site.js?v=9e504ac0c0" defer></script><link rel="stylesheet" href="../../../assets/s3.css?v=ea183d420c"><link rel="stylesheet" href="../../../assets/s4.css?v=adcc4df9b1"></head><body>
+<script src="../../../assets/site.js?v=9e504ac0c0" defer></script><link rel="stylesheet" href="../../../assets/s3.css?v=ea183d420c"><link rel="stylesheet" href="../../../assets/s4.css?v=dd53d37f9a"></head><body>
 <a class="skip" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../../../index.html" aria-label="GenLaw 主页"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13Z" fill="#172a40"/><path d="m22 11-6-3-7 4v8l7 4 7-4v-5h-8v4h4l-3 1.7-3-1.7v-5l3-1.7 4 2Z" fill="#fff"/></svg>GenLaw<small>DESIGN → VERIFY</small></a><nav class="nav" aria-label="主导航"><a href="../../../index.html">主页</a><a href="../../../system/">系统设计</a><a href="../../../system/development/" aria-current="page">开发路线</a></nav></div></header>
 <main id="main" class="wrap"><nav class="crumb" aria-label="面包屑"><a href="../../../index.html">GenLaw</a><span aria-hidden="true">/</span><a href="../../">系统设计</a><span aria-hidden="true">/</span><a href="../">开发路线</a><span aria-hidden="true">/</span><strong aria-current="page">S4 结果导航</strong></nav><div class="page-head"><div class="eyebrow">S4 / 结果导航</div>
-      <div class="page-head-row"><h1>多工序与原尺寸验证</h1><span class="pill current"><span class="dot" aria-hidden="true"></span>6 组结果 · 18 个用例</span></div>
+      <div class="page-head-row"><h1>多工序与原尺寸验证</h1><span class="pill current"><span class="dot" aria-hidden="true"></span>7 组结果 · 22 个用例</span></div>
       <p>从单项外形到组合加工，再到 100 mm 参考件。选一组查看 IoU、形状、回放与模块验收。</p></div>
       <section class="section" aria-label="按加工组合查看结果"><div class="s3-feature-grid"><a class="s3-feature-card" data-s4-feature="sequence" href="sequence/">
           <div class="s3-feature-copy"><div class="s3-feature-title"><h2>面铣与孔的衔接</h2><span aria-hidden="true">↗</span></div>
@@ -23,7 +23,11 @@
           <div class="s3-feature-copy"><div class="s3-feature-title"><h2>型腔与孔组合</h2><span aria-hidden="true">↗</span></div>
           <p>检查腔底孔、换刀，以及卡片规定的先孔后腔</p><span class="s3-feature-count">4 个验证用例 · 5 个错误 NC 反例</span></div>
           <figure><figcaption class="s3-feature-labels"><span>● 输入 CAD</span><span>● 仿真结果</span></figcaption><img src="../../../results/s4-pocket-sequence-thumbnails/tool-change.png" width="1186" height="448" alt="型腔与孔组合：左侧输入 CAD，右侧实际仿真结果" loading="lazy"></figure>
-          <div class="s3-feature-bottom"><p>小型合成件 · 单一圆角型腔 · 通用 XYZ</p><strong>查看这类全部结果 →</strong></div></a><a class="s3-feature-card" data-s4-feature="original-size" href="original-size/">
+          <div class="s3-feature-bottom"><p>小型合成件 · 单一圆角型腔 · 通用 XYZ</p><strong>查看这类全部结果 →</strong></div></a><a class="s3-feature-card" data-s4-feature="work-coordinates" href="work-coordinates/">
+          <div class="s3-feature-copy"><div class="s3-feature-title"><h2>工件零点与装夹位置</h2><span aria-hidden="true">↗</span></div>
+          <p>改变零点和装夹坐标，仍与原 CAD 比较</p><span class="s3-feature-count">4 个验证用例 · 4 个配置 / NC 反例</span></div>
+          <figure><figcaption class="s3-feature-labels"><span>● 输入 CAD</span><span>● 仿真结果</span></figcaption><img src="https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@10474ec7892555e7e71b4641c61600cb73c73b4b/thumbnails/g55-tool-change.png" width="1186" height="448" alt="工件零点与装夹位置：左侧输入 CAD，右侧实际仿真结果" loading="lazy"></figure>
+          <div class="s3-feature-bottom"><p>小型合成件 · XYZ 平移 · G54 / G55</p><strong>查看这类全部结果 →</strong></div></a><a class="s3-feature-card" data-s4-feature="original-size" href="original-size/">
           <div class="s3-feature-copy"><div class="s3-feature-title"><h2>100 mm 矩形三孔板</h2><span aria-hidden="true">↗</span></div>
           <p>扩大尺寸，保持面铣与三个孔的精检</p><span class="s3-feature-count">1 个验证用例</span></div>
           <figure><figcaption class="s3-feature-labels"><span>● 输入 CAD</span><span>● 仿真结果</span></figcaption><img src="../../../results/s4-original-size-thumbnails/reference-100mm.png" width="1186" height="448" alt="100 mm 矩形三孔板：左侧输入 CAD，右侧实际仿真结果" loading="lazy"></figure>
@@ -32,8 +36,8 @@
           <p>按图纸尺寸验证组合加工，检查已录入的尺寸要求</p><span class="s3-feature-count">1 个验证用例</span></div>
           <figure><figcaption class="s3-feature-labels"><span>● 输入 CAD</span><span>● 仿真结果</span></figcaption><img src="../../../results/s4-connection-reference-thumbnails/connection-100mm.png" width="1186" height="448" alt="100 mm 圆头三孔连接板：左侧输入 CAD，右侧实际仿真结果" loading="lazy"></figure>
           <div class="s3-feature-bottom"><p>图纸派生单件 · 圆头外形 · T1 紫铜标签</p><strong>查看这类全部结果 →</strong></div></a></div>
-      <p class="input-note">共 18 个正常用例、18 个错误 NC 反例。材料仅为标签；各页分别说明已验证和未覆盖的要求。</p></section>
-      <section class="section pending"><h2>S4 尚未全部完成</h2><p>接下来扩展坐标偏置、多型腔与夹具，再补齐真实卡片的资源与验收要求。</p>
+      <p class="input-note">共 22 个正常用例、22 个反例（NC 或加工配置）。材料仅为标签；各页分别说明已验证和未覆盖的要求。</p></section>
+      <section class="section pending"><h2>S4 尚未全部完成</h2><p>接下来扩展刀长补偿、多型腔与夹具，再补齐真实卡片的资源与验收要求。</p>
       <details><summary>阶段验收范围</summary><p>工序顺序、材料连续性与偏置语义正确；改变一个配置能产生可解释的验收差异。</p><p>当前为软件几何验证，真实拼板、整张工艺卡和生产批准尚未完成。</p></details></section>
       <nav class="stage-nav"><a href="../">← 返回开发路线</a></nav></main>
 <footer class="footer wrap"><div>GenLaw · 系统设计与开发记录</div><div>更新于 2026.10.30 <span aria-hidden="true"> · </span><a href="../../../system/development/s4/">当前进展 S4 结果导航 ↗</a></div></footer></body></html>

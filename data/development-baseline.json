@@ -368,10 +368,23 @@
         },
         {
           "id": "nonzero-offsets",
-          "name": "非零工件 / 刀长偏置",
+          "name": "非零工件零点 / XYZ 装夹平移",
+          "status": "sample_cases_measured",
+          "label": "四例坐标配置已测",
+          "scope": "G54 / G55、原 CAD 非零工件零点、正负装夹平移及换刀。四个配置 / NC 反例检出；旋转、刀长补偿、真实机床和原尺寸分块组合未验证。",
+          "stages": [
+            "s4/work-coordinates"
+          ],
+          "evidence_paths": [
+            "data/s4-work-coordinate-publication.json"
+          ]
+        },
+        {
+          "id": "tool-length-offsets",
+          "name": "非零刀长补偿",
           "status": "planned",
           "label": "待开发",
-          "scope": "明确刀尖、工件坐标及控制器偏置语义，并做错误配置反例。",
+          "scope": "明确 G43 / H、刀尖及换刀后补偿语义，加入实际去料正反例。",
           "stages": [
             "s4"
           ],
