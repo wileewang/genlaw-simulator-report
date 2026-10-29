@@ -1,0 +1,60 @@
+{
+  "schema": "genlaw.preparation-input.v10",
+  "id": "S4-PROFILE-thicker-r2",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "明确矩形来料尺寸与原 CAD；来料已具有目标厚度。四角余料全部计入验证。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "8ab1916395405e3f74ca688274c5dfc0b9ae05530c996a5c75b2442b69e71975"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "be6abf865b303c202eab169bf26f22562f8b33cfe3ba5bddd87c04429844bd6e"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "9283de77b2bb6bbf0bd006ee71c192473553292a8aec4c243f4fcc8d685e3200"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "847c1732bfcfbce448e6995ab7902adb7c53032d896c6c532c26a4503b0bd092"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "fb7acffcf85eb13c3303c07bf534a796d32a7b76cb9fbb8612b9f6e82b973bc6"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "63836a4b22b8a858898d4c3d37e90bbc35ede0a14c08697476d051453534d718"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "59b52ca33d64cfba1be2f0dca0de3cbb097488425b76d06083d91e77ebfb66d9"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "266364b1e80f0508b7b264aa1c9b55086664c26dcbf219e671c7586abfae12e9"
+    }
+  },
+  "capability": "capsule_profile_xy"
+}

@@ -144,15 +144,17 @@
       "resources": "通用 XYZ，已验证 1 / 2 把平底铣刀；非零刀长 / 工件偏置待扩展",
       "new_programming": [
         "一个 FreeCAD Job：面铣 → 铣孔，保留原卡孔序",
-        "显式启动状态、换刀与每步刀具 / 参数"
+        "显式启动状态、换刀与每步刀具 / 参数",
+        "独立验证圆头外轮廓 Profile，作为后续组合能力"
       ],
       "new_verification": [
         "原始毛坯连续去料，核对中间实际形状",
         "几何与工序分别判定，错误启动状态也要检出",
-        "100 mm 参考件：0.025 mm 逐工步精检，21 项中间检查通过"
+        "100 mm 参考件：0.025 mm 逐工步精检，21 项中间检查通过",
+        "四例圆头外形：完整轮廓、厚度、保留面和四角清空"
       ],
       "remaining": [
-        "真实件圆头外形与拼板来料",
+        "圆头外形与孔连续组合，再接真实卡原尺寸与拼板来料",
         "继续组合型腔、轮廓与孔",
         "非零刀长 / 工件偏置、夹具和多装夹"
       ],
@@ -165,11 +167,12 @@
         "明确各步实际来料与中间要求"
       ],
       "results": {
-        "href": "s4/sequence/",
-        "label": "四例结果与五个反例",
-        "scope": "单次装夹，面铣 / 铣孔与换刀；S4 尚未全部完成。"
+        "href": "s4/",
+        "label": "多工序、原尺寸与外轮廓结果",
+        "scope": "面铣 / 孔序 / 换刀已有结果，圆头外形单独验证；组合与真实卡仍继续开发。"
       },
-      "original_size_results_ref": "results/S4-ORIGINAL-SIZE-RESULTS-20261029-r1/summary.json"
+      "original_size_results_ref": "results/S4-ORIGINAL-SIZE-RESULTS-20261029-r1/summary.json",
+      "profile_results_ref": "results/S4-PROFILE-RESULTS-20261029-r1/summary.json"
     },
     {
       "id": "s5",

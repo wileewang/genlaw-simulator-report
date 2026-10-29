@@ -1,0 +1,42 @@
+{
+  "schema": "genlaw.software-geometry-policy.v10",
+  "cad_sha256": "be6abf865b303c202eab169bf26f22562f8b33cfe3ba5bddd87c04429844bd6e",
+  "production_approved": false,
+  "features": {
+    "P1": {
+      "outer_profile_xy": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen before NC: 0.1 mm software allowance with two 0.025 mm grid cells as numerical guard; finite measurements, not manufacturing acceptance.",
+        "method": "sectioned_original_capsule_boundary",
+        "max_deviation_mm": 0.1
+      },
+      "retained_thickness": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen before NC: 0.1 mm software allowance with two 0.025 mm grid cells as numerical guard; finite measurements, not manufacturing acceptance.",
+        "method": "sampled_original_thickness",
+        "min_mm": 1.9,
+        "max_mm": 2.1
+      },
+      "retained_planes": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen before NC: 0.1 mm software allowance with two 0.025 mm grid cells as numerical guard; finite measurements, not manufacturing acceptance.",
+        "method": "sampled_original_top_bottom",
+        "max_deviation_mm": 0.1
+      },
+      "exterior_clearance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen before NC: 0.1 mm software allowance with two 0.025 mm grid cells as numerical guard; finite measurements, not manufacturing acceptance.",
+        "method": "sampled_full_depth_exterior_clearance",
+        "must_be_clear": true
+      }
+    }
+  }
+}
