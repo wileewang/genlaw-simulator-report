@@ -1,0 +1,87 @@
+{
+  "schema": "genlaw.planar-dimension-requirements.v1",
+  "units": "mm",
+  "cad_sha256": "508207e468a5b87779dc623ff92a363a3938818d4177351c6df2f79154a74924",
+  "measurement_policy": {
+    "samples_per_fitted_arc": 256,
+    "minimum_arc_coverage_degrees": 150,
+    "maximum_fit_condition_number": 1000000,
+    "span_guard_cells": 4,
+    "two_anchor_distance_guard_cells": 4,
+    "radius_guard_cells": 2,
+    "guard_is_certified_uncertainty": false
+  },
+  "items": [
+    {
+      "id": "length",
+      "kind": "support_span",
+      "axis": "X",
+      "nominal_mm": 8,
+      "profile_id": "P1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared observer regression; does not assert a production tolerance.",
+        "method": "support_span",
+        "min_mm": 7.7,
+        "max_mm": 8.3
+      }
+    },
+    {
+      "id": "width",
+      "kind": "support_span",
+      "axis": "Y",
+      "nominal_mm": 4,
+      "profile_id": "P1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared observer regression; does not assert a production tolerance.",
+        "method": "support_span",
+        "min_mm": 3.8,
+        "max_mm": 4.2
+      }
+    },
+    {
+      "id": "low-radius",
+      "kind": "end_radius",
+      "axis": "X",
+      "side": "low",
+      "nominal_mm": 2.0,
+      "profile_id": "P1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared observer regression; does not assert a production tolerance.",
+        "method": "end_radius",
+        "min_mm": 1.8,
+        "max_mm": 2.2
+      }
+    },
+    {
+      "id": "high-radius",
+      "kind": "end_radius",
+      "axis": "X",
+      "side": "high",
+      "nominal_mm": 2.0,
+      "profile_id": "P1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared observer regression; does not assert a production tolerance.",
+        "method": "end_radius",
+        "min_mm": 1.8,
+        "max_mm": 2.2
+      }
+    }
+  ],
+  "criteria_added_after_original_material_execution": true,
+  "criteria_frozen_before_added_measurement": true,
+  "manufacturing_approval": false,
+  "source_identity_and_revision_approved": false,
+  "source_dimension_stage_before_or_after_plating_approved": false
+}

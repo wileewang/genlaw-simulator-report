@@ -1,0 +1,146 @@
+{
+  "schema": "genlaw.planar-dimension-plan.v1",
+  "source": {
+    "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/uncut-corners/source.json",
+    "sha256": "49d1831002b7dd6b3c50da32af8e5100a107d6010e0520e43ffe2e770c8b3327"
+  },
+  "requirements": {
+    "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/uncut-corners/requirements.json",
+    "sha256": "a04cf6624524f260968534ffd68cc71250d27a1ac579ff70b03987063c9796e8"
+  },
+  "bindings": {
+    "input": {
+      "path": "validation/feature-inputs/S4-PROFILE-20261029-r2/baseline/input.json",
+      "sha256": "9e80031bf580bcf4558c7d3b3c83618ea053c10c43e761b26bc4a180b3dd1186"
+    },
+    "preparation": {
+      "path": "validation/runs/S4-PROFILE-SUITE-20261029-r1/baseline/preparation-result.json",
+      "sha256": "ff60a0754c4313d93e76fcaceaef762e0873ee599530aace0526dbe3e2d9ca19"
+    },
+    "native_cam": {
+      "path": "validation/runs/S4-PROFILE-SUITE-20261029-r1/baseline/cam-result.json",
+      "sha256": "efcf46d3999b32c5b45e5f66bc2aa684a8b00bb34829f6b1987e6373b61c4be3"
+    },
+    "original_reference": {
+      "path": "validation/runs/S4-PROFILE-SUITE-20261029-r1/baseline/native-geometry.json",
+      "sha256": "ea2ab65d61f8cc0379852bd9422ac0e572b342c829514963bbd2f96944113522"
+    },
+    "original_cad": {
+      "path": "validation/feature-inputs/S4-PROFILE-20261029-r2/baseline/target.brep",
+      "sha256": "508207e468a5b87779dc623ff92a363a3938818d4177351c6df2f79154a74924"
+    },
+    "nc": {
+      "path": "validation/runs/S4-PROFILE-SUITE-20261029-r1/uncut-corners/program.nc",
+      "sha256": "d850f76934f3319ea4da8b1e2fc1651358e5bbd5c1edf062cf2c50184e204442"
+    },
+    "project": {
+      "path": "validation/runs/S4-PROFILE-SUITE-20261029-r1/uncut-corners/simulation.camotics",
+      "sha256": "1fa78b8fad836244b204f809a50f07870012410c189610f0071176f849d2f3a0"
+    },
+    "original_metrics": {
+      "path": "validation/runs/S4-PROFILE-SUITE-20261029-r1/uncut-corners/metrics.json",
+      "sha256": "355e9249e5904d3511e0b750bd42039bc0096e350aee16e8abec8ea335740606"
+    },
+    "mesh": {
+      "path": "validation/runs/S4-PROFILE-SUITE-20261029-r1/uncut-corners/simulated.stl",
+      "sha256": "9361bded4a4f11072c28f56a84af8767aa95a8aa1b9bf14a03300f42f486b0fa"
+    },
+    "original_verification": {
+      "path": "validation/runs/S4-PROFILE-SUITE-20261029-r1/uncut-corners/software-verification.json",
+      "sha256": "a6946cf38e4a97ffa91ea34a0cff3fc13966ebd683067746df703b7d68876520"
+    },
+    "native_resources": {
+      "path": "validation/runs/S4-PROFILE-SUITE-20261029-r1/uncut-corners/camotics-resources.json",
+      "sha256": "4a51d9b7bb54e2675efba4f167a9257489136f944d8423247a28b19bc877b97e"
+    }
+  },
+  "backend": "single_mesh",
+  "heights": [
+    {
+      "requested_z_mm": -1.425,
+      "z_mm": -1.4404508609753457
+    },
+    {
+      "requested_z_mm": -1.29,
+      "z_mm": -1.290450811141811
+    },
+    {
+      "requested_z_mm": -1.155,
+      "z_mm": -1.165450811141811
+    },
+    {
+      "requested_z_mm": -1.02,
+      "z_mm": -1.0154508349836688
+    },
+    {
+      "requested_z_mm": -0.885,
+      "z_mm": -0.8904508349836688
+    },
+    {
+      "requested_z_mm": -0.7500000000000001,
+      "z_mm": -0.7654508349836688
+    },
+    {
+      "requested_z_mm": -0.6149999999999999,
+      "z_mm": -0.6154508588255267
+    },
+    {
+      "requested_z_mm": -0.48,
+      "z_mm": -0.49045084744205253
+    },
+    {
+      "requested_z_mm": -0.345,
+      "z_mm": -0.34045084148158805
+    },
+    {
+      "requested_z_mm": -0.20999999999999996,
+      "z_mm": -0.21545084717332516
+    },
+    {
+      "requested_z_mm": -0.07500000000000018,
+      "z_mm": -0.06545085184521904
+    }
+  ],
+  "resolution_mm": 0.025,
+  "source_code": [
+    {
+      "path": "genlaw_pipeline/dimension_inspection.py",
+      "sha256": "d2aa94b5b5985e52f2a4194fd126dc87db9e5c668160239bb192403de2c91541"
+    },
+    {
+      "path": "genlaw_pipeline/planar_dimensions.py",
+      "sha256": "19873bccd119f86b9148ab6f319d3e07b3fe8e4b2e79eb0cb639d04939b80a6f"
+    },
+    {
+      "path": "genlaw_pipeline/verification.py",
+      "sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1"
+    },
+    {
+      "path": "genlaw_pipeline/measure_worker.py",
+      "sha256": "4b096b5c5911bcc3f5cefba5ee0c3dd64df564d075c2a941240a06d331b12d32"
+    },
+    {
+      "path": "genlaw_pipeline/sharded_measure.py",
+      "sha256": "693c3d960d0857af0d6e2a5d4252d4a25a0ab743bfeacdb7dcee96a799b04665"
+    },
+    {
+      "path": "genlaw_pipeline/sharded_surface.py",
+      "sha256": "4afc1b39b8b0ce61e423f932e83d214c6152e98b41ea6907262af40ffec44bb0"
+    },
+    {
+      "path": "genlaw_pipeline/cell_windows.py",
+      "sha256": "ab43287ef3c5657d20d82a7b98344e84f353c29b558ab206e61205875c209eec"
+    },
+    {
+      "path": "web/tools/mesh_metrics.py",
+      "sha256": "741756ed20411cb81a99f7fe3a6200595cc8fc7b783bf72207f19da33979b4c4"
+    }
+  ],
+  "test_only_control": true,
+  "normal_guard_rejection": "Cutter center leaves the declared milling envelope",
+  "prior_iou_percent": 89.6403930302906,
+  "material_execution_reused_without_changes": true,
+  "new_material_execution": false,
+  "requirements_added_after_existing_run": true,
+  "scope": "Additional measurement of frozen prior NC material; not a rerun or new manufacturing approval."
+}

@@ -1,0 +1,119 @@
+{
+  "schema": "genlaw.dimension-qualification-inputs.v1",
+  "cases": [
+    {
+      "id": "profile-x",
+      "source": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/profile-x/source.json",
+        "sha256": "1d5662ee96ec7ac8251946d99f1f9394ee31457b9502061ebd493212f2de808c"
+      },
+      "requirements": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/profile-x/requirements.json",
+        "sha256": "a04cf6624524f260968534ffd68cc71250d27a1ac579ff70b03987063c9796e8"
+      },
+      "dimension_pass_expected": true,
+      "normal_process_guard_rejection_expected": false
+    },
+    {
+      "id": "profile-y",
+      "source": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/profile-y/source.json",
+        "sha256": "6d0b3b719fa2154e2fa670dc9aca6a82d766c657c824b55706217b63a33224ef"
+      },
+      "requirements": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/profile-y/requirements.json",
+        "sha256": "29c0e919dce5080f1279298769703ffe04e6fa4bbb1be1fd7397693baa2a84fa"
+      },
+      "dimension_pass_expected": true,
+      "normal_process_guard_rejection_expected": false
+    },
+    {
+      "id": "two-holes",
+      "source": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/two-holes/source.json",
+        "sha256": "f64d4aed8dcd3d04fc3964d49b04e7a9b95e9ae9d5884aad3e6d042b42e9bfc6"
+      },
+      "requirements": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/two-holes/requirements.json",
+        "sha256": "d61e755980d95cb80c6268070496cfc21f697085760cadbc0f06a51f29faa50b"
+      },
+      "dimension_pass_expected": true,
+      "normal_process_guard_rejection_expected": false
+    },
+    {
+      "id": "connection-100mm",
+      "source": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/connection-100mm/source.json",
+        "sha256": "64300fbabaac5eb184d81644b98fb6473a3c308011dd42205cc1d08b89d351a4"
+      },
+      "requirements": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/connection-100mm/requirements.json",
+        "sha256": "0995b8f7ad4bb0a62d051252e1f5c1d6f14da58a860ed3c31d63db78b10c9b11"
+      },
+      "dimension_pass_expected": true,
+      "normal_process_guard_rejection_expected": false
+    },
+    {
+      "id": "overcut",
+      "source": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/overcut/source.json",
+        "sha256": "27040892f8ca4842b00ea08fff8eb025d3f7bd94aeba5299a8fa103f55153232"
+      },
+      "requirements": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/overcut/requirements.json",
+        "sha256": "a04cf6624524f260968534ffd68cc71250d27a1ac579ff70b03987063c9796e8"
+      },
+      "dimension_pass_expected": false,
+      "normal_process_guard_rejection_expected": true
+    },
+    {
+      "id": "uncut-corners",
+      "source": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/uncut-corners/source.json",
+        "sha256": "49d1831002b7dd6b3c50da32af8e5100a107d6010e0520e43ffe2e770c8b3327"
+      },
+      "requirements": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/uncut-corners/requirements.json",
+        "sha256": "a04cf6624524f260968534ffd68cc71250d27a1ac579ff70b03987063c9796e8"
+      },
+      "dimension_pass_expected": false,
+      "normal_process_guard_rejection_expected": true
+    },
+    {
+      "id": "shifted-hole",
+      "source": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/shifted-hole/source.json",
+        "sha256": "5394d0cf1fae406109088fd538c7bd1953507913cbbe86407ad23de3479c7fb7"
+      },
+      "requirements": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/shifted-hole/requirements.json",
+        "sha256": "d61e755980d95cb80c6268070496cfc21f697085760cadbc0f06a51f29faa50b"
+      },
+      "dimension_pass_expected": false,
+      "normal_process_guard_rejection_expected": true
+    },
+    {
+      "id": "wrong-order",
+      "source": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/wrong-order/source.json",
+        "sha256": "2023620935ae95d6f6e0f26197c38041b5089f961c4866454d0bc6e679dd584c"
+      },
+      "requirements": {
+        "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/wrong-order/requirements.json",
+        "sha256": "d61e755980d95cb80c6268070496cfc21f697085760cadbc0f06a51f29faa50b"
+      },
+      "dimension_pass_expected": true,
+      "normal_process_guard_rejection_expected": true
+    }
+  ],
+  "source_code": {
+    "path": "tools/run_dimension_suite.py",
+    "sha256": "57a21046ffe64c34382df8a95a40652369d1370ccf787983a9ac90262d648236"
+  },
+  "declaration": {
+    "path": "docs/checkpoints/2026-10-30/drawing-dimensions-01/plan.json",
+    "sha256": "6e48ee232c4bd8b80c56143d7639e51cdef0fbc7fd8114caf6223bc8c9727492"
+  },
+  "new_material_execution": false,
+  "new_manufacturing_approval": false
+}

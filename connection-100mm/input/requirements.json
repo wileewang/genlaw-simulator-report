@@ -1,0 +1,160 @@
+{
+  "schema": "genlaw.planar-dimension-requirements.v1",
+  "units": "mm",
+  "cad_sha256": "fa3ceab935565ec20e34def53334cc92a2e4be5540fd3f6e6d0c3d6116eccb35",
+  "measurement_policy": {
+    "samples_per_fitted_arc": 256,
+    "minimum_arc_coverage_degrees": 150,
+    "maximum_fit_condition_number": 1000000,
+    "span_guard_cells": 4,
+    "two_anchor_distance_guard_cells": 4,
+    "radius_guard_cells": 2,
+    "guard_is_certified_uncertainty": false
+  },
+  "items": [
+    {
+      "id": "length",
+      "kind": "support_span",
+      "axis": "X",
+      "nominal_mm": 100,
+      "profile_id": "C1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Private source card PDF page 4, operation 15; explicit tolerances transcribed. Drawing provides right-end to H3 datum. Identity/revision and manufacturing approval pending.",
+        "method": "support_span",
+        "min_mm": 99.7,
+        "max_mm": 100.3
+      }
+    },
+    {
+      "id": "width",
+      "kind": "support_span",
+      "axis": "Y",
+      "nominal_mm": 14,
+      "profile_id": "C1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Private source card PDF page 4, operation 15; explicit tolerances transcribed. Drawing provides right-end to H3 datum. Identity/revision and manufacturing approval pending.",
+        "method": "support_span",
+        "min_mm": 13.8,
+        "max_mm": 14.2
+      }
+    },
+    {
+      "id": "low-radius",
+      "kind": "end_radius",
+      "axis": "X",
+      "side": "low",
+      "nominal_mm": 7.0,
+      "profile_id": "C1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Private source card PDF page 4, operation 15; explicit tolerances transcribed. Drawing provides right-end to H3 datum. Identity/revision and manufacturing approval pending.",
+        "method": "end_radius",
+        "min_mm": 6.8,
+        "max_mm": 7.2
+      }
+    },
+    {
+      "id": "high-radius",
+      "kind": "end_radius",
+      "axis": "X",
+      "side": "high",
+      "nominal_mm": 7.0,
+      "profile_id": "C1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Private source card PDF page 4, operation 15; explicit tolerances transcribed. Drawing provides right-end to H3 datum. Identity/revision and manufacturing approval pending.",
+        "method": "end_radius",
+        "min_mm": 6.8,
+        "max_mm": 7.2
+      }
+    },
+    {
+      "id": "high-end-offset",
+      "kind": "end_offset",
+      "axis": "X",
+      "side": "high",
+      "hole_id": "H3",
+      "nominal_mm": 10.0,
+      "profile_id": "C1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Private source card PDF page 4, operation 15; explicit tolerances transcribed. Drawing provides right-end to H3 datum. Identity/revision and manufacturing approval pending.",
+        "method": "end_offset",
+        "min_mm": 9.8,
+        "max_mm": 10.2
+      }
+    },
+    {
+      "id": "H1-H2-pitch",
+      "kind": "center_pitch",
+      "axis": "X",
+      "hole_ids": [
+        "H1",
+        "H2"
+      ],
+      "nominal_mm": 40,
+      "profile_id": "C1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Private source card PDF page 4, operation 15; explicit tolerances transcribed. Drawing provides right-end to H3 datum. Identity/revision and manufacturing approval pending.",
+        "method": "center_pitch",
+        "min_mm": 39.7,
+        "max_mm": 40.3
+      }
+    },
+    {
+      "id": "H2-H3-pitch",
+      "kind": "center_pitch",
+      "axis": "X",
+      "hole_ids": [
+        "H2",
+        "H3"
+      ],
+      "nominal_mm": 40,
+      "profile_id": "C1",
+      "acceptance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Private source card PDF page 4, operation 15; explicit tolerances transcribed. Drawing provides right-end to H3 datum. Identity/revision and manufacturing approval pending.",
+        "method": "center_pitch",
+        "min_mm": 39.7,
+        "max_mm": 40.3
+      }
+    }
+  ],
+  "criteria_added_after_original_material_execution": true,
+  "criteria_frozen_before_added_measurement": true,
+  "manufacturing_approval": false,
+  "source_identity_and_revision_approved": false,
+  "source_dimension_stage_before_or_after_plating_approved": false,
+  "private_source_documents": [
+    {
+      "kind": "source_card",
+      "sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931"
+    },
+    {
+      "kind": "candidate_drawing",
+      "sha256": "285c1ffea52bd40c1a64f586ab8bad3d75c365a7aa40aaf9114d63e31f7ec4d8"
+    }
+  ],
+  "datum_note": "The explicit 10 mm in the original drawing is from the right end to the rightmost hole (H3), not an independently dimensioned H1-left-end distance. Preserve old files; map this source explicitly in the new supplement.",
+  "previous_requirements_preserved": {
+    "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/requirement-verification.json",
+    "sha256": "8e7abad026340c8848fe1b41c4913b8db2c7c77dd2a47a2370c1b35a8c930949"
+  }
+}

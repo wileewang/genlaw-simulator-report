@@ -1,0 +1,142 @@
+{
+  "schema": "genlaw.planar-dimension-plan.v1",
+  "source": {
+    "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/connection-100mm/source.json",
+    "sha256": "64300fbabaac5eb184d81644b98fb6473a3c308011dd42205cc1d08b89d351a4"
+  },
+  "requirements": {
+    "path": "validation/feature-inputs/S4-DRAWING-DIMENSIONS-20261030-r1/connection-100mm/requirements.json",
+    "sha256": "0995b8f7ad4bb0a62d051252e1f5c1d6f14da58a860ed3c31d63db78b10c9b11"
+  },
+  "bindings": {
+    "input": {
+      "path": "validation/feature-inputs/S4-CONNECTION-REFERENCE-20261029-r2/connection-100mm/input.json",
+      "sha256": "7c6aad503ce5c0ab54caabb7a4461af2daf54ffd17a0b65ebbcb0d135a50d576"
+    },
+    "preparation": {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/preparation-result.json",
+      "sha256": "9ec5fe663a5956cca4981a34dd8bfbedad8c6c70e92ff2a4c04c8298468393d7"
+    },
+    "native_cam": {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/cam-result.json",
+      "sha256": "7a5e012840d9585288aec16da267fcb862d3776842b684d37250bbe166b135fb"
+    },
+    "original_reference": {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/native-geometry.json",
+      "sha256": "975b580fa1db970192051272a61157543700fe3466c3026212347ece0b334f5b"
+    },
+    "original_cad": {
+      "path": "validation/feature-inputs/S4-CONNECTION-REFERENCE-20261029-r2/connection-100mm/target.brep",
+      "sha256": "fa3ceab935565ec20e34def53334cc92a2e4be5540fd3f6e6d0c3d6116eccb35"
+    },
+    "nc": {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/program.nc",
+      "sha256": "e3a6486a0aad55d56866a79cb89c17a5068b4a994bdef3a0f2c31381ffea5b47"
+    },
+    "project": {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/simulation.camotics",
+      "sha256": "5632db2bc5f27262d8266ed4759001189fe18192e38e9899938be489245ff564"
+    },
+    "original_metrics": {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/metrics.json",
+      "sha256": "0685ccf53a0f9097c59ff8b67160985307dfb142bd1cbd3b48876088405221a7"
+    },
+    "surface": {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/surface.json",
+      "sha256": "2e1e89e2cadd64820aa657cc55cfab31b523df24e440ba69216c9454f71c262a"
+    },
+    "measure_plan": {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/sharded-measure-plan.json",
+      "sha256": "949e781a3ccfdaba82f3ef1c3d6c0238e6aaa872837f4c33ea62fb767d33d521"
+    }
+  },
+  "backend": "surface_shards",
+  "heights": [
+    {
+      "requested_z_mm": -2.9,
+      "z_mm": -2.8904509086590617
+    },
+    {
+      "requested_z_mm": -2.7199999999999998,
+      "z_mm": -2.7154508089919918
+    },
+    {
+      "requested_z_mm": -2.54,
+      "z_mm": -2.5404508566757076
+    },
+    {
+      "requested_z_mm": -2.36,
+      "z_mm": -2.36545081329163
+    },
+    {
+      "requested_z_mm": -2.18,
+      "z_mm": -2.190450860975346
+    },
+    {
+      "requested_z_mm": -2.0,
+      "z_mm": -1.9904508588255267
+    },
+    {
+      "requested_z_mm": -1.8199999999999998,
+      "z_mm": -1.8154508609753457
+    },
+    {
+      "requested_z_mm": -1.64,
+      "z_mm": -1.6404508349836688
+    },
+    {
+      "requested_z_mm": -1.46,
+      "z_mm": -1.4654508826673847
+    },
+    {
+      "requested_z_mm": -1.28,
+      "z_mm": -1.290450811141811
+    },
+    {
+      "requested_z_mm": -1.1,
+      "z_mm": -1.0904508826673847
+    }
+  ],
+  "resolution_mm": 0.025,
+  "source_code": [
+    {
+      "path": "genlaw_pipeline/dimension_inspection.py",
+      "sha256": "d2aa94b5b5985e52f2a4194fd126dc87db9e5c668160239bb192403de2c91541"
+    },
+    {
+      "path": "genlaw_pipeline/planar_dimensions.py",
+      "sha256": "19873bccd119f86b9148ab6f319d3e07b3fe8e4b2e79eb0cb639d04939b80a6f"
+    },
+    {
+      "path": "genlaw_pipeline/verification.py",
+      "sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1"
+    },
+    {
+      "path": "genlaw_pipeline/measure_worker.py",
+      "sha256": "4b096b5c5911bcc3f5cefba5ee0c3dd64df564d075c2a941240a06d331b12d32"
+    },
+    {
+      "path": "genlaw_pipeline/sharded_measure.py",
+      "sha256": "693c3d960d0857af0d6e2a5d4252d4a25a0ab743bfeacdb7dcee96a799b04665"
+    },
+    {
+      "path": "genlaw_pipeline/sharded_surface.py",
+      "sha256": "4afc1b39b8b0ce61e423f932e83d214c6152e98b41ea6907262af40ffec44bb0"
+    },
+    {
+      "path": "genlaw_pipeline/cell_windows.py",
+      "sha256": "ab43287ef3c5657d20d82a7b98344e84f353c29b558ab206e61205875c209eec"
+    },
+    {
+      "path": "web/tools/mesh_metrics.py",
+      "sha256": "741756ed20411cb81a99f7fe3a6200595cc8fc7b783bf72207f19da33979b4c4"
+    }
+  ],
+  "test_only_control": false,
+  "normal_guard_rejection": null,
+  "prior_iou_percent": 99.9274946122021,
+  "material_execution_reused_without_changes": true,
+  "new_material_execution": false,
+  "requirements_added_after_existing_run": true,
+  "scope": "Additional measurement of frozen prior NC material; not a rerun or new manufacturing approval."
+}
