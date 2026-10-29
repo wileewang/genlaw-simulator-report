@@ -86,7 +86,9 @@ async function start() {
     const h = new DataView(buffer);
     if (buffer.byteLength < 16 || new TextDecoder().decode(new Uint8Array(buffer,0,8)) !== 'GLWMESH1') throw Error('Invalid geometry');
     const nv = h.getUint32(8,true), nf = h.getUint32(12,true);
-    if (!nv || nf > 500000 || buffer.byteLength !== 16 + nv*12 + nf*12) throw Error('Geometry exceeds supported budget');
+    const limit = active.mesh_triangle_limit ?? 500000;
+    if (!Number.isInteger(limit) || limit < 1 || limit > 1000000 || !nv || !nf || nf > limit ||
+        buffer.byteLength > 64*1024*1024 || buffer.byteLength !== 16 + nv*12 + nf*12) throw Error('Geometry exceeds supported budget');
     const g = new THREE.BufferGeometry();
     g.setAttribute('position',new THREE.BufferAttribute(new Float32Array(buffer,16,nv*3),3));
     g.setIndex(new THREE.BufferAttribute(new Uint32Array(buffer,16+nv*12,nf*3),1));
@@ -142,9 +144,12 @@ async function start() {
     targetMesh.geometry = actualMesh.geometry = replayMesh.geometry = empty;
     for (const g of owned) g.dispose(); owned = []; frames = []; renderer.renderLists.dispose();
     active = entry; select.value = id;
+    const scale = entry.view_scale ?? 1;
+    if (!Number.isFinite(scale) || scale < 1 || scale > 20) throw Error('Invalid view scale');
+    camera.far = 120*scale; controls.minDistance = 7*scale; controls.maxDistance = 42*scale;
     const low = entry.stock.min, high = entry.stock.max;
     center.set(...low.map((v,i)=>(v+high[i])/2));
-    grids.forEach(g => g.position.set(center.x,center.y,low[2]-.2));
+    grids.forEach(g => { g.position.set(center.x,center.y,low[2]-.2); g.scale.setScalar(scale); });
     const stock = new THREE.BoxGeometry(...low.map((v,i)=>high[i]-v)); stock.translate(...center.toArray()); owned.push(stock);
     frames.push(stock);
     const paths = [entry.target_mesh,entry.actual_mesh,...entry.frames.map(f=>f.mesh)], loaded = [];
@@ -154,15 +159,19 @@ async function start() {
       loaded.push(...await Promise.all(paths.slice(i,i+2).map(geometry)));
     }
     [targetMesh.geometry,actualMesh.geometry] = loaded;
+    qa.loadedTriangles = loaded.reduce((sum,g)=>sum+g.index.count/3,0);
+    if (entry.total_triangle_limit !== undefined && (!Number.isInteger(entry.total_triangle_limit) ||
+        entry.total_triangle_limit > 2000000 || qa.loadedTriangles > entry.total_triangle_limit)) throw Error('Case exceeds supported display budget');
     frames.push(...loaded.slice(2));
     frames.push(actualMesh.geometry);
     captions = ['毛坯 · 未加工', ...entry.frames.map((f,i)=>`${f.label || ['钻入','继续钻削','接近贯穿'][i]}${Number.isFinite(f.time_seconds) ? ` · ${f.time_seconds.toFixed(2)} s` : ''}`), '完成 · 最终结果'];
     frame = 0; qa.frameIndex = 0; slider.value = '0'; slider.max = String(frames.length-1);
     qa.caseId = id; qa.stockThicknessMm = high[2]-low[2]; qa.frameCount = frames.length;
     qa.iouPercent = entry.iou_percent; qa.ownedGeometryCount = owned.length;
-    root.querySelector('.fallback img').src = new URL(entry.thumbnail,siteBase);
+    if (entry.thumbnail) root.querySelector('.fallback img').src = new URL(entry.thumbnail,siteBase);
     const resolutionNote = root.querySelector('[data-resolution-note]');
-    if (resolutionNote) resolutionNote.textContent = entry.frames.some(f=>f.kind==='cumulative_native_prefix') ?
+    if (resolutionNote) resolutionNote.textContent = entry.frames.length && entry.frames.every(f=>f.display_only) ?
+      `实际工步状态回放：中间状态 ${entry.frames[0].resolution_mm} mm，仅用于展示；最终结果 ${entry.resolution_mm} mm，用于 IoU 与几何检查。播放间隔不代表加工耗时。` : entry.frames.some(f=>f.kind==='cumulative_native_prefix') ?
       `真实去料状态：时间帧 0.05 mm，工步边界与最终结果 ${entry.resolution_mm} mm。工步边界复用同一原生 NC 的累计前缀结果；播放速度仅作展示。` : entry.frames.length ?
       `同一 NC 的真实去料状态。中间帧 0.05 mm，最终结果 ${entry.resolution_mm} mm；播放速度仅作展示。` :
       `此反例保留最终去料结果，分辨率 ${entry.resolution_mm} mm。`;

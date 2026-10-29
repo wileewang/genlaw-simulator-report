@@ -254,6 +254,19 @@
           "evidence_paths": []
         },
         {
+          "id": "original-size-reference",
+          "name": "100 mm 三孔参考件",
+          "status": "sample_cases_measured",
+          "label": "最终几何已实测",
+          "scope": "100×14×3 → 厚 2 mm，3×φ8.5；0.025 mm 分块去料，全局 IoU 与 13 项几何检查通过。中间回放 0.05 mm，仅展示；真实卡圆头外形及拼板待接入。",
+          "stages": [
+            "s4/original-size"
+          ],
+          "evidence_paths": [
+            "results/S4-ORIGINAL-SIZE-RESULTS-20261029-r1/summary.json"
+          ]
+        },
+        {
           "id": "real-part",
           "name": "配对的真实单件",
           "status": "pending",
@@ -304,14 +317,15 @@
           "id": "flat-endmill-reference",
           "name": "XYZ / 单平底铣刀 / 参考 NC",
           "status": "sample_cases_measured",
-          "label": "S3 十六例配置已测",
-          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层槽、台阶、岛台、开口、面铣和螺旋铣孔。刀柄与夹具干涉未验证。",
+          "label": "S3 / 原尺寸配置已测",
+          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层槽、台阶、岛台、开口、面铣和螺旋铣孔。刀柄与夹具干涉未验证。 新增 φ4 铣刀的 100 mm 参考件，未扩展到真实设备。",
           "stages": [
             "s3",
             "s3/step",
             "s3/region",
             "s3/facing",
-            "s3/helix"
+            "s3/helix",
+            "s4/original-size"
           ],
           "evidence_paths": [
             "results/S3-POCKET-RESULTS-20261029-r2/summary.json",
@@ -378,15 +392,16 @@
           "id": "box-stock",
           "name": "矩形完整毛坯",
           "status": "sample_cases_measured",
-          "label": "4 种尺寸组合已测",
-          "scope": "8×6×1.5、8×6×1.0、10×7.5×1.5 与 8×6×2 与 8×6×3 mm 来料；网格分别在用例中显式指定为 0.025、0.03 或 0.04 mm。面铣来料与成品独立；不是连续尺寸范围。",
+          "label": "多个明确尺寸已测",
+          "scope": "8×6×1.5、8×6×1.0、10×7.5×1.5 与 8×6×2 与 8×6×3 mm 来料；网格分别在用例中显式指定为 0.025、0.03 或 0.04 mm。面铣来料与成品独立；不是连续尺寸范围。 新增 100×14×3 mm：最终 0.025 mm，全局分块计算。",
           "stages": [
             "s1",
             "s2",
             "s3",
             "s3/step",
             "s3/facing",
-            "s3/helix"
+            "s3/helix",
+            "s4/original-size"
           ],
           "evidence_paths": [
             "verification/S1-VERIFY-20261028-r1/summary.json",
@@ -398,7 +413,8 @@
             "results/S3-STEP-RESULTS-20261029-r1/summary.json",
             "results/S3-REGION-RESULTS-20261029-r1/summary.json",
             "results/S3-FACING-RESULTS-20261029-r1/summary.json",
-            "results/S3-HELIX-RESULTS-20261029-r1/summary.json"
+            "results/S3-HELIX-RESULTS-20261029-r1/summary.json",
+            "results/S4-ORIGINAL-SIZE-RESULTS-20261029-r1/summary.json"
           ],
           "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json",
           "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"

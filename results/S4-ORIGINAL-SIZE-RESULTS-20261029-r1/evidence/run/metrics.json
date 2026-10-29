@@ -1,0 +1,94 @@
+{
+  "schema": "genlaw.sharded-sectional-iou.v1",
+  "status": "measured_numerical_estimate",
+  "iou": 0.999563467216672,
+  "iou_percent": 99.9563467216672,
+  "volumes": {
+    "actual_volume_mm3": 2460.3389146542013,
+    "target_volume_mm3": 2459.5298982535573,
+    "intersection_mm3": 2459.397368229857,
+    "alternative_intersection_mm3": 0.0,
+    "union_mm3": 2460.471444677901,
+    "iou": 0.999563467216672,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 0.9415464243443239,
+  "missing_material_mm3": 0.13253002370038303,
+  "absolute_iou_refinement_difference": 4.2183312953802954e-08,
+  "plan": {
+    "path": "validation/runs/S4-ORIGINAL-SIZE-20261029-r1/sharded-measure-plan.json",
+    "sha256": "7461a5eeef46dffb60d1efc9ceb3d5362b51559d2be94bda956bb9fcaf22585b"
+  },
+  "surface": {
+    "path": "validation/runs/S4-ORIGINAL-SIZE-20261029-r1/surface.json",
+    "sha256": "d47a35107cf4da4cc38de4d64d2b4d847b40ec49713a9445ecb392e8c1d266be"
+  },
+  "reference": {
+    "path": "validation/runs/S4-ORIGINAL-SIZE-20261029-r1/native-geometry.json",
+    "sha256": "026b519bd1ef2ca81a2e5ec87fb04855d899cf743262f3cc79566587f1349933"
+  },
+  "parts": [
+    {
+      "path": "validation/runs/S4-ORIGINAL-SIZE-20261029-r1/sharded-measure-parts/part-000.json",
+      "sha256": "43cc2aab0b2f54b54fb4bdcc2fdcf8fc1df8801c4de25981e04675fe04846126"
+    },
+    {
+      "path": "validation/runs/S4-ORIGINAL-SIZE-20261029-r1/sharded-measure-parts/part-001.json",
+      "sha256": "d19e83279bf8db81ac6f18b5aa9c053df8a0e1d283db4555ba19357b5fb41c08"
+    },
+    {
+      "path": "validation/runs/S4-ORIGINAL-SIZE-20261029-r1/sharded-measure-parts/part-002.json",
+      "sha256": "965fc4fe1f11dc765858ff8ae414ff431285e1eb0ac35d97d43b1decec2e20b7"
+    },
+    {
+      "path": "validation/runs/S4-ORIGINAL-SIZE-20261029-r1/sharded-measure-parts/part-003.json",
+      "sha256": "67c54789cd95deebf779b265cea692cd028f6539d01c9a1379d66f3bab40f9e1"
+    },
+    {
+      "path": "validation/runs/S4-ORIGINAL-SIZE-20261029-r1/sharded-measure-parts/part-004.json",
+      "sha256": "9516a0a62a277c4afe384ddb5dcfa17fce251943388241ff102b5b499ae60368"
+    },
+    {
+      "path": "validation/runs/S4-ORIGINAL-SIZE-20261029-r1/sharded-measure-parts/part-005.json",
+      "sha256": "c72af7137932fd3f3e79787f05aa4070d5f863f7d7cf0fa161f94a0ac93146b4"
+    }
+  ],
+  "all_vertex_height_intervals_preserved": true,
+  "per_window_iou_averaged": false,
+  "actual_surface_volume_mm3": 2460.338915019876,
+  "section_levels": 83,
+  "method": "Global closed-surface sections from exact uncapped shards; all height intervals; 3-point Gauss integration against native-checked independent CAD.",
+  "registration": "none; original coordinates",
+  "source_code": {
+    "path": "genlaw_pipeline/sharded_measure.py",
+    "sha256": "962fe0debcbf9fb4fa803aef06f328435f2c785ce9e1c0b329e616fa5e45f3ee"
+  },
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "full_tolerance_acceptance": false,
+  "production_approved": false
+}

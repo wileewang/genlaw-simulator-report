@@ -1,0 +1,7452 @@
+{
+  "schema": "genlaw.cam-result.v1",
+  "status": "generated_and_checked",
+  "native_cad_binding": {
+    "schema": "genlaw.native-binding.v9",
+    "status": "verified",
+    "cad_sha256": "41476ba0050c44b7b63e80101cb43873bff2994c4e1ce2d5adfca38e19061e0b",
+    "reference_class": "axis_aligned_box_minus_disjoint_z_through_cylinders",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -3.0
+      ],
+      "max": [
+        100.0,
+        14.0,
+        -1.0
+      ]
+    },
+    "incoming_stock_bounds": {
+      "min": [
+        0,
+        0,
+        -3
+      ],
+      "max": [
+        100,
+        14,
+        0
+      ]
+    },
+    "volume_mm3": 2459.5298961672047,
+    "valid_single_solid": true,
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "features": [
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          10,
+          7
+        ],
+        "diameter_mm": 8.5,
+        "cylinder_face": "Face7"
+      },
+      {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          50,
+          7
+        ],
+        "diameter_mm": 8.5,
+        "cylinder_face": "Face8"
+      },
+      {
+        "id": "H3",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          90,
+          7
+        ],
+        "diameter_mm": 8.5,
+        "cylinder_face": "Face9"
+      }
+    ],
+    "facing_feature": {
+      "id": "P1",
+      "kind": "planar_top",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "top_face": "Face3",
+      "top_z_mm": -1,
+      "thickness_mm": 2,
+      "bounds_xy_mm": {
+        "min": [
+          0,
+          0
+        ],
+        "max": [
+          100,
+          14
+        ]
+      }
+    },
+    "feature_bindings": [
+      {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face3",
+        "top_z_mm": -1,
+        "thickness_mm": 2,
+        "bounds_xy_mm": {
+          "min": [
+            0,
+            0
+          ],
+          "max": [
+            100,
+            14
+          ]
+        }
+      },
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          10,
+          7
+        ],
+        "diameter_mm": 8.5,
+        "cylinder_face": "Face7"
+      },
+      {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          50,
+          7
+        ],
+        "diameter_mm": 8.5,
+        "cylinder_face": "Face8"
+      },
+      {
+        "id": "H3",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          90,
+          7
+        ],
+        "diameter_mm": 8.5,
+        "cylinder_face": "Face9"
+      }
+    ],
+    "reference_for_iou": "Original final CAD checked by native symmetric difference; all operations share separately declared original stock."
+  },
+  "nc_sha256": "47b0c821e664c42f05d171373537449c19227bff158ac13617a59b310947c353",
+  "native_operation": "MillFace_then_Helix",
+  "native_stock": {
+    "construction": "FreeCAD Stock.CreateBox from declared incoming bounds",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -3.0
+      ],
+      "max": [
+        100.0,
+        14.0,
+        0.0
+      ]
+    },
+    "stock_type": "CreateBox"
+  },
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "gui_up": false,
+  "postprocessor": "FreeCAD bundled linuxcnc_post",
+  "post_arguments": "--no-show-editor --no-tlo --precision 5 --preamble \"G17 G54 G40 G49 G80 G90\\nG21\\nM5\\nG0 Z3\"",
+  "native_path_sha256": "6f96d93389efc8cee73f3b9056f20aa85e53045766641c0d500cdc2fa7543b52",
+  "operation_bindings": [
+    {
+      "step_id": "OP10.2",
+      "feature_id": "P1",
+      "cam_operation": "Face_01",
+      "native_operation": "MillFace",
+      "tool_id": "T1",
+      "tool_number": 1,
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face3"
+          ]
+        }
+      ],
+      "start_depth_mm": 0.0,
+      "final_depth_mm": -1.0,
+      "step_down_mm": 0.25,
+      "step_over_percent": 50,
+      "material_before_id": "raw",
+      "material_after_id": "after-01"
+    },
+    {
+      "step_id": "OP10.3",
+      "feature_id": "H1",
+      "cam_operation": "Helix_02",
+      "native_operation": "Helix",
+      "tool_id": "T1",
+      "tool_number": 1,
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face7"
+          ]
+        }
+      ],
+      "start_depth_mm": -0.9,
+      "final_depth_mm": -3.1,
+      "step_down_mm": 0.25,
+      "step_over_percent": 50,
+      "material_before_id": "after-01",
+      "material_after_id": "after-02"
+    },
+    {
+      "step_id": "OP10.4",
+      "feature_id": "H2",
+      "cam_operation": "Helix_03",
+      "native_operation": "Helix",
+      "tool_id": "T1",
+      "tool_number": 1,
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face8"
+          ]
+        }
+      ],
+      "start_depth_mm": -0.9,
+      "final_depth_mm": -3.1,
+      "step_down_mm": 0.25,
+      "step_over_percent": 50,
+      "material_before_id": "after-02",
+      "material_after_id": "after-03"
+    },
+    {
+      "step_id": "OP10.5",
+      "feature_id": "H3",
+      "cam_operation": "Helix_04",
+      "native_operation": "Helix",
+      "tool_id": "T1",
+      "tool_number": 1,
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face9"
+          ]
+        }
+      ],
+      "start_depth_mm": -0.9,
+      "final_depth_mm": -3.1,
+      "step_down_mm": 0.25,
+      "step_over_percent": 50,
+      "material_before_id": "after-03",
+      "material_after_id": "after-04"
+    }
+  ],
+  "nc_check": {
+    "status": "checked_ordered_native_milling",
+    "text_modified": false,
+    "executable_blocks": 333,
+    "step_map": [
+      {
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1,
+        "first_executable_block": 9,
+        "last_executable_block": 171,
+        "material_before_id": "raw",
+        "material_after_id": "after-01"
+      },
+      {
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1,
+        "first_executable_block": 172,
+        "last_executable_block": 224,
+        "material_before_id": "after-01",
+        "material_after_id": "after-02"
+      },
+      {
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1,
+        "first_executable_block": 225,
+        "last_executable_block": 277,
+        "material_before_id": "after-02",
+        "material_after_id": "after-03"
+      },
+      {
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1,
+        "first_executable_block": 278,
+        "last_executable_block": 330,
+        "material_before_id": "after-03",
+        "material_after_id": "after-04"
+      }
+    ],
+    "tool_transitions": [
+      {
+        "tool_number": 1,
+        "tool_id": "T1",
+        "first_executable_block": 6,
+        "last_executable_block": 8
+      }
+    ],
+    "operation_checks": [
+      {
+        "status": "checked_declared_milling_envelope",
+        "executable_blocks": 171,
+        "post_decimal_places": 5,
+        "text_modified": false,
+        "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+        "cutting_moves": 100,
+        "arc_moves": 0,
+        "cutting_levels_mm": [
+          -0.25,
+          -0.5,
+          -0.75,
+          -1.0
+        ],
+        "path_envelope_allowance_mm": 0.00202,
+        "feed_time_seconds": 2036.499999999997,
+        "rapid_time_not_included": true,
+        "final_uncovered_profile_mm2": 0.0,
+        "incoming_stock_bounds": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            100,
+            14,
+            0
+          ]
+        },
+        "target_bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -3.0
+          ],
+          "max": [
+            100.0,
+            14.0,
+            -1.0
+          ]
+        },
+        "facing_semantics": "Clear the complete incoming XY footprint to the original CAD top, with the declared step-down and unchanged NC.",
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1,
+        "actual_block_offset": 3,
+        "guard_projection": "Single-operation verification wrapper only; original native NC unchanged."
+      },
+      {
+        "status": "checked_declared_helical_hole",
+        "text_modified": false,
+        "executable_blocks": 61,
+        "scope": "Fixed-axis G17/G54, incremental I/J, CCW helical clearing with explicit air entry and breakthrough; no general NC interpreter.",
+        "cleared_radius_mm": 4.25,
+        "arc_moves": 40,
+        "helical_arc_moves": 36,
+        "feed_time_seconds": 133.5378948030169,
+        "rapid_time_not_included": true,
+        "entry_height_mm": -0.9,
+        "final_depth_mm": -3.1,
+        "rapid_in_stock_requires_previously_cleared_volume": true,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1,
+        "actual_block_offset": 166,
+        "guard_projection": "Single-operation verification wrapper only; original native NC unchanged."
+      },
+      {
+        "status": "checked_declared_helical_hole",
+        "text_modified": false,
+        "executable_blocks": 61,
+        "scope": "Fixed-axis G17/G54, incremental I/J, CCW helical clearing with explicit air entry and breakthrough; no general NC interpreter.",
+        "cleared_radius_mm": 4.25,
+        "arc_moves": 40,
+        "helical_arc_moves": 36,
+        "feed_time_seconds": 133.5378948030169,
+        "rapid_time_not_included": true,
+        "entry_height_mm": -0.9,
+        "final_depth_mm": -3.1,
+        "rapid_in_stock_requires_previously_cleared_volume": true,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1,
+        "actual_block_offset": 219,
+        "guard_projection": "Single-operation verification wrapper only; original native NC unchanged."
+      },
+      {
+        "status": "checked_declared_helical_hole",
+        "text_modified": false,
+        "executable_blocks": 61,
+        "scope": "Fixed-axis G17/G54, incremental I/J, CCW helical clearing with explicit air entry and breakthrough; no general NC interpreter.",
+        "cleared_radius_mm": 4.25,
+        "arc_moves": 40,
+        "helical_arc_moves": 36,
+        "feed_time_seconds": 133.5378948030169,
+        "rapid_time_not_included": true,
+        "entry_height_mm": -0.9,
+        "final_depth_mm": -3.1,
+        "rapid_in_stock_requires_previously_cleared_volume": true,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1,
+        "actual_block_offset": 272,
+        "guard_projection": "Single-operation verification wrapper only; original native NC unchanged."
+      }
+    ],
+    "motion_trace": [
+      {
+        "block": 9,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          null
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 10,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 11,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 12,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 13,
+        "motion": "G1",
+        "start": [
+          93.1,
+          6.9,
+          2.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2.25,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 14,
+        "motion": "G1",
+        "start": [
+          93.1,
+          6.9,
+          -0.25
+        ],
+        "end": [
+          93.1,
+          7.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2.3499999999999996,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 15,
+        "motion": "G1",
+        "start": [
+          93.1,
+          7.1,
+          -0.25
+        ],
+        "end": [
+          6.9,
+          7.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 45.449999999999996,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 16,
+        "motion": "G1",
+        "start": [
+          6.9,
+          7.1,
+          -0.25
+        ],
+        "end": [
+          6.9,
+          6.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 45.55,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 17,
+        "motion": "G1",
+        "start": [
+          6.9,
+          6.9,
+          -0.25
+        ],
+        "end": [
+          93.1,
+          6.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 88.64999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 18,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          -0.25
+        ],
+        "end": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 88.64999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 19,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 88.64999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 20,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 88.64999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 21,
+        "motion": "G1",
+        "start": [
+          94.1,
+          5.9,
+          2.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 90.89999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 22,
+        "motion": "G1",
+        "start": [
+          94.1,
+          5.9,
+          -0.25
+        ],
+        "end": [
+          94.1,
+          8.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 91.99999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 23,
+        "motion": "G1",
+        "start": [
+          94.1,
+          8.1,
+          -0.25
+        ],
+        "end": [
+          5.9,
+          8.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 136.09999999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 24,
+        "motion": "G1",
+        "start": [
+          5.9,
+          8.1,
+          -0.25
+        ],
+        "end": [
+          5.9,
+          5.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 137.19999999999996,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 25,
+        "motion": "G1",
+        "start": [
+          5.9,
+          5.9,
+          -0.25
+        ],
+        "end": [
+          94.1,
+          5.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 181.29999999999995,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 26,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          -0.25
+        ],
+        "end": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 181.29999999999995,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 27,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 181.29999999999995,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 28,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 181.29999999999995,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 29,
+        "motion": "G1",
+        "start": [
+          96.1,
+          3.9,
+          2.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 183.54999999999995,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 30,
+        "motion": "G1",
+        "start": [
+          96.1,
+          3.9,
+          -0.25
+        ],
+        "end": [
+          96.1,
+          10.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 186.64999999999995,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 31,
+        "motion": "G1",
+        "start": [
+          96.1,
+          10.1,
+          -0.25
+        ],
+        "end": [
+          3.9,
+          10.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 232.74999999999994,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 32,
+        "motion": "G1",
+        "start": [
+          3.9,
+          10.1,
+          -0.25
+        ],
+        "end": [
+          3.9,
+          3.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 235.84999999999994,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 33,
+        "motion": "G1",
+        "start": [
+          3.9,
+          3.9,
+          -0.25
+        ],
+        "end": [
+          96.1,
+          3.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 281.94999999999993,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 34,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          -0.25
+        ],
+        "end": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 281.94999999999993,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 35,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 281.94999999999993,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 36,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 281.94999999999993,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 37,
+        "motion": "G1",
+        "start": [
+          98.1,
+          1.9,
+          2.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 284.19999999999993,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 38,
+        "motion": "G1",
+        "start": [
+          98.1,
+          1.9,
+          -0.25
+        ],
+        "end": [
+          98.1,
+          12.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 289.29999999999995,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 39,
+        "motion": "G1",
+        "start": [
+          98.1,
+          12.1,
+          -0.25
+        ],
+        "end": [
+          1.9,
+          12.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 337.4,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 40,
+        "motion": "G1",
+        "start": [
+          1.9,
+          12.1,
+          -0.25
+        ],
+        "end": [
+          1.9,
+          1.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 342.5,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 41,
+        "motion": "G1",
+        "start": [
+          1.9,
+          1.9,
+          -0.25
+        ],
+        "end": [
+          98.1,
+          1.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 390.6,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 42,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          -0.25
+        ],
+        "end": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 390.6,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 43,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 390.6,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 44,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 390.6,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 45,
+        "motion": "G1",
+        "start": [
+          100.1,
+          -0.1,
+          2.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 392.85,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 46,
+        "motion": "G1",
+        "start": [
+          100.1,
+          -0.1,
+          -0.25
+        ],
+        "end": [
+          100.1,
+          14.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 399.95000000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 47,
+        "motion": "G1",
+        "start": [
+          100.1,
+          14.1,
+          -0.25
+        ],
+        "end": [
+          -0.1,
+          14.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 450.05000000000007,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 48,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          14.1,
+          -0.25
+        ],
+        "end": [
+          -0.1,
+          -0.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 457.1500000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 49,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          -0.1,
+          -0.25
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 507.2500000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 50,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          -0.25
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 507.2500000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 51,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 507.2500000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 52,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 507.2500000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 53,
+        "motion": "G1",
+        "start": [
+          93.1,
+          6.9,
+          2.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 509.7500000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 54,
+        "motion": "G1",
+        "start": [
+          93.1,
+          6.9,
+          -0.5
+        ],
+        "end": [
+          93.1,
+          7.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 509.85000000000014,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 55,
+        "motion": "G1",
+        "start": [
+          93.1,
+          7.1,
+          -0.5
+        ],
+        "end": [
+          6.9,
+          7.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 552.9500000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 56,
+        "motion": "G1",
+        "start": [
+          6.9,
+          7.1,
+          -0.5
+        ],
+        "end": [
+          6.9,
+          6.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 553.0500000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 57,
+        "motion": "G1",
+        "start": [
+          6.9,
+          6.9,
+          -0.5
+        ],
+        "end": [
+          93.1,
+          6.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 596.1500000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 58,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          -0.5
+        ],
+        "end": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 596.1500000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 59,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 596.1500000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 60,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 596.1500000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 61,
+        "motion": "G1",
+        "start": [
+          94.1,
+          5.9,
+          2.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 598.6500000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 62,
+        "motion": "G1",
+        "start": [
+          94.1,
+          5.9,
+          -0.5
+        ],
+        "end": [
+          94.1,
+          8.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 599.7500000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 63,
+        "motion": "G1",
+        "start": [
+          94.1,
+          8.1,
+          -0.5
+        ],
+        "end": [
+          5.9,
+          8.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 643.8500000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 64,
+        "motion": "G1",
+        "start": [
+          5.9,
+          8.1,
+          -0.5
+        ],
+        "end": [
+          5.9,
+          5.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 644.9500000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 65,
+        "motion": "G1",
+        "start": [
+          5.9,
+          5.9,
+          -0.5
+        ],
+        "end": [
+          94.1,
+          5.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 689.0500000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 66,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          -0.5
+        ],
+        "end": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 689.0500000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 67,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 689.0500000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 68,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 689.0500000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 69,
+        "motion": "G1",
+        "start": [
+          96.1,
+          3.9,
+          2.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 691.5500000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 70,
+        "motion": "G1",
+        "start": [
+          96.1,
+          3.9,
+          -0.5
+        ],
+        "end": [
+          96.1,
+          10.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 694.6500000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 71,
+        "motion": "G1",
+        "start": [
+          96.1,
+          10.1,
+          -0.5
+        ],
+        "end": [
+          3.9,
+          10.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 740.7500000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 72,
+        "motion": "G1",
+        "start": [
+          3.9,
+          10.1,
+          -0.5
+        ],
+        "end": [
+          3.9,
+          3.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 743.8500000000004,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 73,
+        "motion": "G1",
+        "start": [
+          3.9,
+          3.9,
+          -0.5
+        ],
+        "end": [
+          96.1,
+          3.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 789.9500000000004,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 74,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          -0.5
+        ],
+        "end": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 789.9500000000004,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 75,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 789.9500000000004,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 76,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 789.9500000000004,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 77,
+        "motion": "G1",
+        "start": [
+          98.1,
+          1.9,
+          2.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 792.4500000000004,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 78,
+        "motion": "G1",
+        "start": [
+          98.1,
+          1.9,
+          -0.5
+        ],
+        "end": [
+          98.1,
+          12.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 797.5500000000004,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 79,
+        "motion": "G1",
+        "start": [
+          98.1,
+          12.1,
+          -0.5
+        ],
+        "end": [
+          1.9,
+          12.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 845.6500000000004,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 80,
+        "motion": "G1",
+        "start": [
+          1.9,
+          12.1,
+          -0.5
+        ],
+        "end": [
+          1.9,
+          1.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 850.7500000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 81,
+        "motion": "G1",
+        "start": [
+          1.9,
+          1.9,
+          -0.5
+        ],
+        "end": [
+          98.1,
+          1.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 898.8500000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 82,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          -0.5
+        ],
+        "end": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 898.8500000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 83,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 898.8500000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 84,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 898.8500000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 85,
+        "motion": "G1",
+        "start": [
+          100.1,
+          -0.1,
+          2.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 901.3500000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 86,
+        "motion": "G1",
+        "start": [
+          100.1,
+          -0.1,
+          -0.5
+        ],
+        "end": [
+          100.1,
+          14.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 908.4500000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 87,
+        "motion": "G1",
+        "start": [
+          100.1,
+          14.1,
+          -0.5
+        ],
+        "end": [
+          -0.1,
+          14.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 958.5500000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 88,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          14.1,
+          -0.5
+        ],
+        "end": [
+          -0.1,
+          -0.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 965.6500000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 89,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          -0.1,
+          -0.5
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1015.7500000000006,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 90,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          -0.5
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1015.7500000000006,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 91,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1015.7500000000006,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 92,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1015.7500000000006,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 93,
+        "motion": "G1",
+        "start": [
+          93.1,
+          6.9,
+          2.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          -0.75
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 1018.5000000000006,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 94,
+        "motion": "G1",
+        "start": [
+          93.1,
+          6.9,
+          -0.75
+        ],
+        "end": [
+          93.1,
+          7.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1018.6000000000006,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 95,
+        "motion": "G1",
+        "start": [
+          93.1,
+          7.1,
+          -0.75
+        ],
+        "end": [
+          6.9,
+          7.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1061.7000000000005,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 96,
+        "motion": "G1",
+        "start": [
+          6.9,
+          7.1,
+          -0.75
+        ],
+        "end": [
+          6.9,
+          6.9,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1061.8000000000004,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 97,
+        "motion": "G1",
+        "start": [
+          6.9,
+          6.9,
+          -0.75
+        ],
+        "end": [
+          93.1,
+          6.9,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1104.9000000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 98,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          -0.75
+        ],
+        "end": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1104.9000000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 99,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1104.9000000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 100,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1104.9000000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 101,
+        "motion": "G1",
+        "start": [
+          94.1,
+          5.9,
+          2.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          -0.75
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 1107.6500000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 102,
+        "motion": "G1",
+        "start": [
+          94.1,
+          5.9,
+          -0.75
+        ],
+        "end": [
+          94.1,
+          8.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1108.7500000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 103,
+        "motion": "G1",
+        "start": [
+          94.1,
+          8.1,
+          -0.75
+        ],
+        "end": [
+          5.9,
+          8.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1152.8500000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 104,
+        "motion": "G1",
+        "start": [
+          5.9,
+          8.1,
+          -0.75
+        ],
+        "end": [
+          5.9,
+          5.9,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1153.95,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 105,
+        "motion": "G1",
+        "start": [
+          5.9,
+          5.9,
+          -0.75
+        ],
+        "end": [
+          94.1,
+          5.9,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1198.05,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 106,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          -0.75
+        ],
+        "end": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1198.05,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 107,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1198.05,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 108,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1198.05,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 109,
+        "motion": "G1",
+        "start": [
+          96.1,
+          3.9,
+          2.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          -0.75
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 1200.8,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 110,
+        "motion": "G1",
+        "start": [
+          96.1,
+          3.9,
+          -0.75
+        ],
+        "end": [
+          96.1,
+          10.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1203.8999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 111,
+        "motion": "G1",
+        "start": [
+          96.1,
+          10.1,
+          -0.75
+        ],
+        "end": [
+          3.9,
+          10.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1249.9999999999998,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 112,
+        "motion": "G1",
+        "start": [
+          3.9,
+          10.1,
+          -0.75
+        ],
+        "end": [
+          3.9,
+          3.9,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1253.0999999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 113,
+        "motion": "G1",
+        "start": [
+          3.9,
+          3.9,
+          -0.75
+        ],
+        "end": [
+          96.1,
+          3.9,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1299.1999999999996,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 114,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          -0.75
+        ],
+        "end": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1299.1999999999996,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 115,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1299.1999999999996,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 116,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1299.1999999999996,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 117,
+        "motion": "G1",
+        "start": [
+          98.1,
+          1.9,
+          2.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          -0.75
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 1301.9499999999996,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 118,
+        "motion": "G1",
+        "start": [
+          98.1,
+          1.9,
+          -0.75
+        ],
+        "end": [
+          98.1,
+          12.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1307.0499999999995,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 119,
+        "motion": "G1",
+        "start": [
+          98.1,
+          12.1,
+          -0.75
+        ],
+        "end": [
+          1.9,
+          12.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1355.1499999999994,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 120,
+        "motion": "G1",
+        "start": [
+          1.9,
+          12.1,
+          -0.75
+        ],
+        "end": [
+          1.9,
+          1.9,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1360.2499999999993,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 121,
+        "motion": "G1",
+        "start": [
+          1.9,
+          1.9,
+          -0.75
+        ],
+        "end": [
+          98.1,
+          1.9,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1408.3499999999992,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 122,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          -0.75
+        ],
+        "end": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1408.3499999999992,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 123,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1408.3499999999992,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 124,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1408.3499999999992,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 125,
+        "motion": "G1",
+        "start": [
+          100.1,
+          -0.1,
+          2.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          -0.75
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 1411.0999999999992,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 126,
+        "motion": "G1",
+        "start": [
+          100.1,
+          -0.1,
+          -0.75
+        ],
+        "end": [
+          100.1,
+          14.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1418.1999999999991,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 127,
+        "motion": "G1",
+        "start": [
+          100.1,
+          14.1,
+          -0.75
+        ],
+        "end": [
+          -0.1,
+          14.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1468.299999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 128,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          14.1,
+          -0.75
+        ],
+        "end": [
+          -0.1,
+          -0.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1475.399999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 129,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          -0.1,
+          -0.75
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1525.4999999999989,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 130,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          -0.75
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1525.4999999999989,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 131,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1525.4999999999989,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 132,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1525.4999999999989,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 133,
+        "motion": "G1",
+        "start": [
+          93.1,
+          6.9,
+          2.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          -1.0
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 1528.4999999999989,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 134,
+        "motion": "G1",
+        "start": [
+          93.1,
+          6.9,
+          -1.0
+        ],
+        "end": [
+          93.1,
+          7.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1528.5999999999988,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 135,
+        "motion": "G1",
+        "start": [
+          93.1,
+          7.1,
+          -1.0
+        ],
+        "end": [
+          6.9,
+          7.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1571.6999999999987,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 136,
+        "motion": "G1",
+        "start": [
+          6.9,
+          7.1,
+          -1.0
+        ],
+        "end": [
+          6.9,
+          6.9,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1571.7999999999986,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 137,
+        "motion": "G1",
+        "start": [
+          6.9,
+          6.9,
+          -1.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1614.8999999999985,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 138,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          -1.0
+        ],
+        "end": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1614.8999999999985,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 139,
+        "motion": "G0",
+        "start": [
+          93.1,
+          6.9,
+          3.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1614.8999999999985,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 140,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1614.8999999999985,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 141,
+        "motion": "G1",
+        "start": [
+          94.1,
+          5.9,
+          2.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          -1.0
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 1617.8999999999985,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 142,
+        "motion": "G1",
+        "start": [
+          94.1,
+          5.9,
+          -1.0
+        ],
+        "end": [
+          94.1,
+          8.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1618.9999999999984,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 143,
+        "motion": "G1",
+        "start": [
+          94.1,
+          8.1,
+          -1.0
+        ],
+        "end": [
+          5.9,
+          8.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1663.0999999999983,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 144,
+        "motion": "G1",
+        "start": [
+          5.9,
+          8.1,
+          -1.0
+        ],
+        "end": [
+          5.9,
+          5.9,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1664.1999999999982,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 145,
+        "motion": "G1",
+        "start": [
+          5.9,
+          5.9,
+          -1.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1708.2999999999981,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 146,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          -1.0
+        ],
+        "end": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1708.2999999999981,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 147,
+        "motion": "G0",
+        "start": [
+          94.1,
+          5.9,
+          3.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1708.2999999999981,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 148,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1708.2999999999981,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 149,
+        "motion": "G1",
+        "start": [
+          96.1,
+          3.9,
+          2.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          -1.0
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 1711.2999999999981,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 150,
+        "motion": "G1",
+        "start": [
+          96.1,
+          3.9,
+          -1.0
+        ],
+        "end": [
+          96.1,
+          10.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1714.399999999998,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 151,
+        "motion": "G1",
+        "start": [
+          96.1,
+          10.1,
+          -1.0
+        ],
+        "end": [
+          3.9,
+          10.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1760.499999999998,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 152,
+        "motion": "G1",
+        "start": [
+          3.9,
+          10.1,
+          -1.0
+        ],
+        "end": [
+          3.9,
+          3.9,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1763.5999999999979,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 153,
+        "motion": "G1",
+        "start": [
+          3.9,
+          3.9,
+          -1.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1809.6999999999978,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 154,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          -1.0
+        ],
+        "end": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1809.6999999999978,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 155,
+        "motion": "G0",
+        "start": [
+          96.1,
+          3.9,
+          3.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1809.6999999999978,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 156,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1809.6999999999978,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 157,
+        "motion": "G1",
+        "start": [
+          98.1,
+          1.9,
+          2.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          -1.0
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 1812.6999999999978,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 158,
+        "motion": "G1",
+        "start": [
+          98.1,
+          1.9,
+          -1.0
+        ],
+        "end": [
+          98.1,
+          12.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1817.7999999999977,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 159,
+        "motion": "G1",
+        "start": [
+          98.1,
+          12.1,
+          -1.0
+        ],
+        "end": [
+          1.9,
+          12.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1865.8999999999976,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 160,
+        "motion": "G1",
+        "start": [
+          1.9,
+          12.1,
+          -1.0
+        ],
+        "end": [
+          1.9,
+          1.9,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1870.9999999999975,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 161,
+        "motion": "G1",
+        "start": [
+          1.9,
+          1.9,
+          -1.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1919.0999999999974,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 162,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          -1.0
+        ],
+        "end": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1919.0999999999974,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 163,
+        "motion": "G0",
+        "start": [
+          98.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1919.0999999999974,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 164,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 1919.0999999999974,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 165,
+        "motion": "G1",
+        "start": [
+          100.1,
+          -0.1,
+          2.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          -1.0
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 1922.0999999999974,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 166,
+        "motion": "G1",
+        "start": [
+          100.1,
+          -0.1,
+          -1.0
+        ],
+        "end": [
+          100.1,
+          14.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1929.1999999999973,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 167,
+        "motion": "G1",
+        "start": [
+          100.1,
+          14.1,
+          -1.0
+        ],
+        "end": [
+          -0.1,
+          14.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1979.2999999999972,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 168,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          14.1,
+          -1.0
+        ],
+        "end": [
+          -0.1,
+          -0.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1986.3999999999971,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 169,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          -0.1,
+          -1.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2036.499999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 170,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          -1.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2036.499999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 171,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2036.499999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 172,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2036.499999999997,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 173,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2036.499999999997,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 174,
+        "motion": "G0",
+        "start": [
+          100.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          10.0,
+          7.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2036.499999999997,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 175,
+        "motion": "G0",
+        "start": [
+          10.0,
+          7.0,
+          3.0
+        ],
+        "end": [
+          10.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2036.499999999997,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 176,
+        "motion": "G0",
+        "start": [
+          10.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2036.499999999997,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 177,
+        "motion": "G1",
+        "start": [
+          12.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2036.499999999997,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 178,
+        "motion": "G3",
+        "start": [
+          12.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          8.0,
+          7.0,
+          -1.02222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2039.6421869507035,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24443999999999977,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 179,
+        "motion": "G3",
+        "start": [
+          8.0,
+          7.0,
+          -1.02222
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -1.14444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2042.7843739014097,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 180,
+        "motion": "G3",
+        "start": [
+          12.0,
+          7.0,
+          -1.14444
+        ],
+        "end": [
+          8.0,
+          7.0,
+          -1.26667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2045.9265609493614,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 181,
+        "motion": "G3",
+        "start": [
+          8.0,
+          7.0,
+          -1.26667
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -1.38889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2049.0687479000676,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 182,
+        "motion": "G3",
+        "start": [
+          12.0,
+          7.0,
+          -1.38889
+        ],
+        "end": [
+          8.0,
+          7.0,
+          -1.51111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2052.210934850774,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 183,
+        "motion": "G3",
+        "start": [
+          8.0,
+          7.0,
+          -1.51111
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -1.63333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2055.3531218014805,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 184,
+        "motion": "G3",
+        "start": [
+          12.0,
+          7.0,
+          -1.63333
+        ],
+        "end": [
+          8.0,
+          7.0,
+          -1.75556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2058.495308849432,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 185,
+        "motion": "G3",
+        "start": [
+          8.0,
+          7.0,
+          -1.75556
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -1.87778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2061.6374958001384,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 186,
+        "motion": "G3",
+        "start": [
+          12.0,
+          7.0,
+          -1.87778
+        ],
+        "end": [
+          8.0,
+          7.0,
+          -2.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2064.7796827508446,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 187,
+        "motion": "G3",
+        "start": [
+          8.0,
+          7.0,
+          -2.0
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -2.12222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2067.921869701551,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 188,
+        "motion": "G3",
+        "start": [
+          12.0,
+          7.0,
+          -2.12222
+        ],
+        "end": [
+          8.0,
+          7.0,
+          -2.24444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2071.0640566522575,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 189,
+        "motion": "G3",
+        "start": [
+          8.0,
+          7.0,
+          -2.24444
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -2.36667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2074.2062437002087,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 190,
+        "motion": "G3",
+        "start": [
+          12.0,
+          7.0,
+          -2.36667
+        ],
+        "end": [
+          8.0,
+          7.0,
+          -2.48889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2077.3484306509154,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 191,
+        "motion": "G3",
+        "start": [
+          8.0,
+          7.0,
+          -2.48889
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -2.61111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2080.4906176016216,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 192,
+        "motion": "G3",
+        "start": [
+          12.0,
+          7.0,
+          -2.61111
+        ],
+        "end": [
+          8.0,
+          7.0,
+          -2.73333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2083.632804552328,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 193,
+        "motion": "G3",
+        "start": [
+          8.0,
+          7.0,
+          -2.73333
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -2.85556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2086.7749916002795,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 194,
+        "motion": "G3",
+        "start": [
+          12.0,
+          7.0,
+          -2.85556
+        ],
+        "end": [
+          8.0,
+          7.0,
+          -2.97778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2089.9171785509857,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 195,
+        "motion": "G3",
+        "start": [
+          8.0,
+          7.0,
+          -2.97778
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2093.0593655016924,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 196,
+        "motion": "G3",
+        "start": [
+          12.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          8.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2096.200958155282,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 197,
+        "motion": "G3",
+        "start": [
+          8.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          12.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2099.3425508088717,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 198,
+        "motion": "G0",
+        "start": [
+          12.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          10.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2099.3425508088717,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 199,
+        "motion": "G0",
+        "start": [
+          10.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          10.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2099.3425508088717,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 200,
+        "motion": "G0",
+        "start": [
+          10.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2099.3425508088717,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 201,
+        "motion": "G1",
+        "start": [
+          12.25,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2099.3425508088717,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 202,
+        "motion": "G3",
+        "start": [
+          12.25,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          7.75,
+          7.0,
+          -1.02222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2102.877370818749,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24443999999999977,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 203,
+        "motion": "G3",
+        "start": [
+          7.75,
+          7.0,
+          -1.02222
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -1.14444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2106.4121908286265,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 204,
+        "motion": "G3",
+        "start": [
+          12.25,
+          7.0,
+          -1.14444
+        ],
+        "end": [
+          7.75,
+          7.0,
+          -1.26667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2109.9470109249473,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 205,
+        "motion": "G3",
+        "start": [
+          7.75,
+          7.0,
+          -1.26667
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -1.38889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2113.4818309348243,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 206,
+        "motion": "G3",
+        "start": [
+          12.25,
+          7.0,
+          -1.38889
+        ],
+        "end": [
+          7.75,
+          7.0,
+          -1.51111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2117.0166509447017,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 207,
+        "motion": "G3",
+        "start": [
+          7.75,
+          7.0,
+          -1.51111
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -1.63333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2120.551470954579,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 208,
+        "motion": "G3",
+        "start": [
+          12.25,
+          7.0,
+          -1.63333
+        ],
+        "end": [
+          7.75,
+          7.0,
+          -1.75556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2124.0862910509,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 209,
+        "motion": "G3",
+        "start": [
+          7.75,
+          7.0,
+          -1.75556
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -1.87778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2127.621111060777,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 210,
+        "motion": "G3",
+        "start": [
+          12.25,
+          7.0,
+          -1.87778
+        ],
+        "end": [
+          7.75,
+          7.0,
+          -2.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2131.1559310706543,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 211,
+        "motion": "G3",
+        "start": [
+          7.75,
+          7.0,
+          -2.0
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -2.12222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2134.6907510805318,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 212,
+        "motion": "G3",
+        "start": [
+          12.25,
+          7.0,
+          -2.12222
+        ],
+        "end": [
+          7.75,
+          7.0,
+          -2.24444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2138.2255710904087,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 213,
+        "motion": "G3",
+        "start": [
+          7.75,
+          7.0,
+          -2.24444
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -2.36667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2141.76039118673,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 214,
+        "motion": "G3",
+        "start": [
+          12.25,
+          7.0,
+          -2.36667
+        ],
+        "end": [
+          7.75,
+          7.0,
+          -2.48889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2145.295211196607,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 215,
+        "motion": "G3",
+        "start": [
+          7.75,
+          7.0,
+          -2.48889
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -2.61111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2148.8300312064844,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 216,
+        "motion": "G3",
+        "start": [
+          12.25,
+          7.0,
+          -2.61111
+        ],
+        "end": [
+          7.75,
+          7.0,
+          -2.73333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2152.364851216362,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 217,
+        "motion": "G3",
+        "start": [
+          7.75,
+          7.0,
+          -2.73333
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -2.85556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2155.8996713126826,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 218,
+        "motion": "G3",
+        "start": [
+          12.25,
+          7.0,
+          -2.85556
+        ],
+        "end": [
+          7.75,
+          7.0,
+          -2.97778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2159.4344913225596,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 219,
+        "motion": "G3",
+        "start": [
+          7.75,
+          7.0,
+          -2.97778
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2162.969311332437,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 220,
+        "motion": "G3",
+        "start": [
+          12.25,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          7.75,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2166.5036030677256,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 221,
+        "motion": "G3",
+        "start": [
+          7.75,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          12.25,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2170.037894803014,
+        "arc_center_xy_mm": [
+          10.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 222,
+        "motion": "G0",
+        "start": [
+          12.25,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          10.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2170.037894803014,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 223,
+        "motion": "G0",
+        "start": [
+          10.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          10.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2170.037894803014,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 224,
+        "motion": "G0",
+        "start": [
+          10.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          10.0,
+          7.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2170.037894803014,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 1
+      },
+      {
+        "block": 225,
+        "motion": "G0",
+        "start": [
+          10.0,
+          7.0,
+          3.0
+        ],
+        "end": [
+          10.0,
+          7.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2170.037894803014,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 226,
+        "motion": "G0",
+        "start": [
+          10.0,
+          7.0,
+          3.0
+        ],
+        "end": [
+          10.0,
+          7.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2170.037894803014,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 227,
+        "motion": "G0",
+        "start": [
+          10.0,
+          7.0,
+          3.0
+        ],
+        "end": [
+          50.0,
+          7.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2170.037894803014,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 228,
+        "motion": "G0",
+        "start": [
+          50.0,
+          7.0,
+          3.0
+        ],
+        "end": [
+          50.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2170.037894803014,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 229,
+        "motion": "G0",
+        "start": [
+          50.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2170.037894803014,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 230,
+        "motion": "G1",
+        "start": [
+          52.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2170.037894803014,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 231,
+        "motion": "G3",
+        "start": [
+          52.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          48.0,
+          7.0,
+          -1.02222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2173.18008175372,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24443999999999977,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 232,
+        "motion": "G3",
+        "start": [
+          48.0,
+          7.0,
+          -1.02222
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -1.14444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2176.3222687044267,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 233,
+        "motion": "G3",
+        "start": [
+          52.0,
+          7.0,
+          -1.14444
+        ],
+        "end": [
+          48.0,
+          7.0,
+          -1.26667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2179.464455752378,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 234,
+        "motion": "G3",
+        "start": [
+          48.0,
+          7.0,
+          -1.26667
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -1.38889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2182.6066427030846,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 235,
+        "motion": "G3",
+        "start": [
+          52.0,
+          7.0,
+          -1.38889
+        ],
+        "end": [
+          48.0,
+          7.0,
+          -1.51111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2185.748829653791,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 236,
+        "motion": "G3",
+        "start": [
+          48.0,
+          7.0,
+          -1.51111
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -1.63333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2188.891016604497,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 237,
+        "motion": "G3",
+        "start": [
+          52.0,
+          7.0,
+          -1.63333
+        ],
+        "end": [
+          48.0,
+          7.0,
+          -1.75556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2192.0332036524487,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 238,
+        "motion": "G3",
+        "start": [
+          48.0,
+          7.0,
+          -1.75556
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -1.87778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2195.175390603155,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 239,
+        "motion": "G3",
+        "start": [
+          52.0,
+          7.0,
+          -1.87778
+        ],
+        "end": [
+          48.0,
+          7.0,
+          -2.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2198.3175775538616,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 240,
+        "motion": "G3",
+        "start": [
+          48.0,
+          7.0,
+          -2.0
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -2.12222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2201.459764504568,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 241,
+        "motion": "G3",
+        "start": [
+          52.0,
+          7.0,
+          -2.12222
+        ],
+        "end": [
+          48.0,
+          7.0,
+          -2.24444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2204.601951455274,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 242,
+        "motion": "G3",
+        "start": [
+          48.0,
+          7.0,
+          -2.24444
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -2.36667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2207.7441385032257,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 243,
+        "motion": "G3",
+        "start": [
+          52.0,
+          7.0,
+          -2.36667
+        ],
+        "end": [
+          48.0,
+          7.0,
+          -2.48889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2210.886325453932,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 244,
+        "motion": "G3",
+        "start": [
+          48.0,
+          7.0,
+          -2.48889
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -2.61111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2214.0285124046386,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 245,
+        "motion": "G3",
+        "start": [
+          52.0,
+          7.0,
+          -2.61111
+        ],
+        "end": [
+          48.0,
+          7.0,
+          -2.73333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2217.170699355345,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 246,
+        "motion": "G3",
+        "start": [
+          48.0,
+          7.0,
+          -2.73333
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -2.85556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2220.3128864032965,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 247,
+        "motion": "G3",
+        "start": [
+          52.0,
+          7.0,
+          -2.85556
+        ],
+        "end": [
+          48.0,
+          7.0,
+          -2.97778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2223.4550733540027,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 248,
+        "motion": "G3",
+        "start": [
+          48.0,
+          7.0,
+          -2.97778
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2226.597260304709,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 249,
+        "motion": "G3",
+        "start": [
+          52.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          48.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2229.738852958299,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 250,
+        "motion": "G3",
+        "start": [
+          48.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          52.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2232.8804456118887,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 251,
+        "motion": "G0",
+        "start": [
+          52.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          50.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2232.8804456118887,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 252,
+        "motion": "G0",
+        "start": [
+          50.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          50.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2232.8804456118887,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 253,
+        "motion": "G0",
+        "start": [
+          50.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2232.8804456118887,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 254,
+        "motion": "G1",
+        "start": [
+          52.25,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2232.8804456118887,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 255,
+        "motion": "G3",
+        "start": [
+          52.25,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          47.75,
+          7.0,
+          -1.02222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2236.4152656217657,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24443999999999977,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 256,
+        "motion": "G3",
+        "start": [
+          47.75,
+          7.0,
+          -1.02222
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -1.14444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2239.950085631643,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 257,
+        "motion": "G3",
+        "start": [
+          52.25,
+          7.0,
+          -1.14444
+        ],
+        "end": [
+          47.75,
+          7.0,
+          -1.26667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2243.484905727964,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 258,
+        "motion": "G3",
+        "start": [
+          47.75,
+          7.0,
+          -1.26667
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -1.38889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2247.0197257378413,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 259,
+        "motion": "G3",
+        "start": [
+          52.25,
+          7.0,
+          -1.38889
+        ],
+        "end": [
+          47.75,
+          7.0,
+          -1.51111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2250.5545457477187,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 260,
+        "motion": "G3",
+        "start": [
+          47.75,
+          7.0,
+          -1.51111
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -1.63333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2254.0893657575957,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 261,
+        "motion": "G3",
+        "start": [
+          52.25,
+          7.0,
+          -1.63333
+        ],
+        "end": [
+          47.75,
+          7.0,
+          -1.75556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2257.6241858539165,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 262,
+        "motion": "G3",
+        "start": [
+          47.75,
+          7.0,
+          -1.75556
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -1.87778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2261.159005863794,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 263,
+        "motion": "G3",
+        "start": [
+          52.25,
+          7.0,
+          -1.87778
+        ],
+        "end": [
+          47.75,
+          7.0,
+          -2.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2264.6938258736714,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 264,
+        "motion": "G3",
+        "start": [
+          47.75,
+          7.0,
+          -2.0
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -2.12222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2268.2286458835483,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 265,
+        "motion": "G3",
+        "start": [
+          52.25,
+          7.0,
+          -2.12222
+        ],
+        "end": [
+          47.75,
+          7.0,
+          -2.24444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2271.7634658934257,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 266,
+        "motion": "G3",
+        "start": [
+          47.75,
+          7.0,
+          -2.24444
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -2.36667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2275.2982859897465,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 267,
+        "motion": "G3",
+        "start": [
+          52.25,
+          7.0,
+          -2.36667
+        ],
+        "end": [
+          47.75,
+          7.0,
+          -2.48889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2278.833105999624,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 268,
+        "motion": "G3",
+        "start": [
+          47.75,
+          7.0,
+          -2.48889
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -2.61111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2282.367926009501,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 269,
+        "motion": "G3",
+        "start": [
+          52.25,
+          7.0,
+          -2.61111
+        ],
+        "end": [
+          47.75,
+          7.0,
+          -2.73333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2285.9027460193784,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 270,
+        "motion": "G3",
+        "start": [
+          47.75,
+          7.0,
+          -2.73333
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -2.85556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2289.437566115699,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 271,
+        "motion": "G3",
+        "start": [
+          52.25,
+          7.0,
+          -2.85556
+        ],
+        "end": [
+          47.75,
+          7.0,
+          -2.97778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2292.9723861255766,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 272,
+        "motion": "G3",
+        "start": [
+          47.75,
+          7.0,
+          -2.97778
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2296.5072061354535,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 273,
+        "motion": "G3",
+        "start": [
+          52.25,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          47.75,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2300.041497870742,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 274,
+        "motion": "G3",
+        "start": [
+          47.75,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          52.25,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2303.575789606031,
+        "arc_center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 275,
+        "motion": "G0",
+        "start": [
+          52.25,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          50.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2303.575789606031,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 276,
+        "motion": "G0",
+        "start": [
+          50.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          50.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2303.575789606031,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 277,
+        "motion": "G0",
+        "start": [
+          50.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          50.0,
+          7.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2303.575789606031,
+        "step_id": "OP10.4",
+        "feature_id": "H2",
+        "tool_number": 1
+      },
+      {
+        "block": 278,
+        "motion": "G0",
+        "start": [
+          50.0,
+          7.0,
+          3.0
+        ],
+        "end": [
+          50.0,
+          7.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2303.575789606031,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 279,
+        "motion": "G0",
+        "start": [
+          50.0,
+          7.0,
+          3.0
+        ],
+        "end": [
+          50.0,
+          7.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2303.575789606031,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 280,
+        "motion": "G0",
+        "start": [
+          50.0,
+          7.0,
+          3.0
+        ],
+        "end": [
+          90.0,
+          7.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2303.575789606031,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 281,
+        "motion": "G0",
+        "start": [
+          90.0,
+          7.0,
+          3.0
+        ],
+        "end": [
+          90.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2303.575789606031,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 282,
+        "motion": "G0",
+        "start": [
+          90.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2303.575789606031,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 283,
+        "motion": "G1",
+        "start": [
+          92.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2303.575789606031,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 284,
+        "motion": "G3",
+        "start": [
+          92.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          88.0,
+          7.0,
+          -1.02222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2306.717976556737,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24443999999999977,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 285,
+        "motion": "G3",
+        "start": [
+          88.0,
+          7.0,
+          -1.02222
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -1.14444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2309.8601635074438,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 286,
+        "motion": "G3",
+        "start": [
+          92.0,
+          7.0,
+          -1.14444
+        ],
+        "end": [
+          88.0,
+          7.0,
+          -1.26667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2313.002350555395,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 287,
+        "motion": "G3",
+        "start": [
+          88.0,
+          7.0,
+          -1.26667
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -1.38889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2316.1445375061016,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 288,
+        "motion": "G3",
+        "start": [
+          92.0,
+          7.0,
+          -1.38889
+        ],
+        "end": [
+          88.0,
+          7.0,
+          -1.51111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2319.286724456808,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 289,
+        "motion": "G3",
+        "start": [
+          88.0,
+          7.0,
+          -1.51111
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -1.63333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2322.428911407514,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 290,
+        "motion": "G3",
+        "start": [
+          92.0,
+          7.0,
+          -1.63333
+        ],
+        "end": [
+          88.0,
+          7.0,
+          -1.75556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2325.5710984554657,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 291,
+        "motion": "G3",
+        "start": [
+          88.0,
+          7.0,
+          -1.75556
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -1.87778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2328.713285406172,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 292,
+        "motion": "G3",
+        "start": [
+          92.0,
+          7.0,
+          -1.87778
+        ],
+        "end": [
+          88.0,
+          7.0,
+          -2.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2331.8554723568786,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 293,
+        "motion": "G3",
+        "start": [
+          88.0,
+          7.0,
+          -2.0
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -2.12222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2334.997659307585,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 294,
+        "motion": "G3",
+        "start": [
+          92.0,
+          7.0,
+          -2.12222
+        ],
+        "end": [
+          88.0,
+          7.0,
+          -2.24444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2338.139846258291,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 295,
+        "motion": "G3",
+        "start": [
+          88.0,
+          7.0,
+          -2.24444
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -2.36667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2341.2820333062427,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 296,
+        "motion": "G3",
+        "start": [
+          92.0,
+          7.0,
+          -2.36667
+        ],
+        "end": [
+          88.0,
+          7.0,
+          -2.48889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2344.424220256949,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 297,
+        "motion": "G3",
+        "start": [
+          88.0,
+          7.0,
+          -2.48889
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -2.61111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2347.5664072076556,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 298,
+        "motion": "G3",
+        "start": [
+          92.0,
+          7.0,
+          -2.61111
+        ],
+        "end": [
+          88.0,
+          7.0,
+          -2.73333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2350.708594158362,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 299,
+        "motion": "G3",
+        "start": [
+          88.0,
+          7.0,
+          -2.73333
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -2.85556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2353.8507812063135,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 300,
+        "motion": "G3",
+        "start": [
+          92.0,
+          7.0,
+          -2.85556
+        ],
+        "end": [
+          88.0,
+          7.0,
+          -2.97778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2356.9929681570197,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 301,
+        "motion": "G3",
+        "start": [
+          88.0,
+          7.0,
+          -2.97778
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2360.135155107726,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 302,
+        "motion": "G3",
+        "start": [
+          92.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          88.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2363.276747761316,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 303,
+        "motion": "G3",
+        "start": [
+          88.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          92.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2366.4183404149057,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.0,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 304,
+        "motion": "G0",
+        "start": [
+          92.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          90.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2366.4183404149057,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 305,
+        "motion": "G0",
+        "start": [
+          90.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          90.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2366.4183404149057,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 306,
+        "motion": "G0",
+        "start": [
+          90.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2366.4183404149057,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 307,
+        "motion": "G1",
+        "start": [
+          92.25,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2366.4183404149057,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 308,
+        "motion": "G3",
+        "start": [
+          92.25,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          87.75,
+          7.0,
+          -1.02222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2369.953160424783,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24443999999999977,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 309,
+        "motion": "G3",
+        "start": [
+          87.75,
+          7.0,
+          -1.02222
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -1.14444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2373.48798043466,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 310,
+        "motion": "G3",
+        "start": [
+          92.25,
+          7.0,
+          -1.14444
+        ],
+        "end": [
+          87.75,
+          7.0,
+          -1.26667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2377.022800530981,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 311,
+        "motion": "G3",
+        "start": [
+          87.75,
+          7.0,
+          -1.26667
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -1.38889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2380.5576205408584,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 312,
+        "motion": "G3",
+        "start": [
+          92.25,
+          7.0,
+          -1.38889
+        ],
+        "end": [
+          87.75,
+          7.0,
+          -1.51111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2384.092440550736,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 313,
+        "motion": "G3",
+        "start": [
+          87.75,
+          7.0,
+          -1.51111
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -1.63333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2387.6272605606127,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 314,
+        "motion": "G3",
+        "start": [
+          92.25,
+          7.0,
+          -1.63333
+        ],
+        "end": [
+          87.75,
+          7.0,
+          -1.75556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2391.1620806569335,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 315,
+        "motion": "G3",
+        "start": [
+          87.75,
+          7.0,
+          -1.75556
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -1.87778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2394.696900666811,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 316,
+        "motion": "G3",
+        "start": [
+          92.25,
+          7.0,
+          -1.87778
+        ],
+        "end": [
+          87.75,
+          7.0,
+          -2.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2398.2317206766884,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 317,
+        "motion": "G3",
+        "start": [
+          87.75,
+          7.0,
+          -2.0
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -2.12222
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2401.7665406865653,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 318,
+        "motion": "G3",
+        "start": [
+          92.25,
+          7.0,
+          -2.12222
+        ],
+        "end": [
+          87.75,
+          7.0,
+          -2.24444
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2405.3013606964428,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 319,
+        "motion": "G3",
+        "start": [
+          87.75,
+          7.0,
+          -2.24444
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -2.36667
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2408.8361807927636,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 320,
+        "motion": "G3",
+        "start": [
+          92.25,
+          7.0,
+          -2.36667
+        ],
+        "end": [
+          87.75,
+          7.0,
+          -2.48889
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2412.371000802641,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 321,
+        "motion": "G3",
+        "start": [
+          87.75,
+          7.0,
+          -2.48889
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -2.61111
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2415.905820812518,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 322,
+        "motion": "G3",
+        "start": [
+          92.25,
+          7.0,
+          -2.61111
+        ],
+        "end": [
+          87.75,
+          7.0,
+          -2.73333
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2419.4406408223954,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 323,
+        "motion": "G3",
+        "start": [
+          87.75,
+          7.0,
+          -2.73333
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -2.85556
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2422.975460918716,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24446000000000012,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 324,
+        "motion": "G3",
+        "start": [
+          92.25,
+          7.0,
+          -2.85556
+        ],
+        "end": [
+          87.75,
+          7.0,
+          -2.97778
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2426.5102809285936,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 325,
+        "motion": "G3",
+        "start": [
+          87.75,
+          7.0,
+          -2.97778
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2430.0451009384706,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24444,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 326,
+        "motion": "G3",
+        "start": [
+          92.25,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          87.75,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2433.5793926737592,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 327,
+        "motion": "G3",
+        "start": [
+          87.75,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          92.25,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2437.113684409048,
+        "arc_center_xy_mm": [
+          90.0,
+          7.0
+        ],
+        "radius_mm": 2.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 328,
+        "motion": "G0",
+        "start": [
+          92.25,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          90.0,
+          7.0,
+          -3.1
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2437.113684409048,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 329,
+        "motion": "G0",
+        "start": [
+          90.0,
+          7.0,
+          -3.1
+        ],
+        "end": [
+          90.0,
+          7.0,
+          -0.9
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2437.113684409048,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      },
+      {
+        "block": 330,
+        "motion": "G0",
+        "start": [
+          90.0,
+          7.0,
+          -0.9
+        ],
+        "end": [
+          90.0,
+          7.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 2437.113684409048,
+        "step_id": "OP10.5",
+        "feature_id": "H3",
+        "tool_number": 1
+      }
+    ],
+    "feed_time_seconds": 2437.113684409048,
+    "rapid_time_not_included": true,
+    "card_order_checked": true,
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3,
+      "basis": "Explicit CAMotics reference initial state: no selected tool. Native post moves to declared clearance before M6; no spindle-head or holder geometry is represented."
+    },
+    "unloaded_clearance_before_first_tool_selection_checked": true,
+    "scope": "Native framed face/helix XYZ reference subset; every executable word checked, no general NC interpreter.",
+    "material_preconditions": "Expected face clearing is checked geometrically; actual cumulative-prefix checkpoints are measured separately."
+  },
+  "checkpoint_prefixes": [
+    {
+      "id": "after-01",
+      "prefix_binding_sha256": "c8a54c82740020095872951759de7ca5500ea6219fa7c58e1584a81ac13684ba"
+    },
+    {
+      "id": "after-02",
+      "prefix_binding_sha256": "75074a4bc4c4f6a636b3823884b5d47bcc5fd8deaa4dbd9d97754230c0056f17"
+    },
+    {
+      "id": "after-03",
+      "prefix_binding_sha256": "c28a4df819e74ae4e79e578453d24987494b80f80c8090a45271fb1d663136af"
+    }
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "execution_plan_sha256": "da5cd71901603e3463d7ba588384f5fc6b71b71026fa064d421fe6603e881efd"
+}

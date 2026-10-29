@@ -1,0 +1,128 @@
+{
+  "schema": "genlaw.cell-window-plan.v1",
+  "binding": {
+    "project": {
+      "path": "validation/runs/S4-SEQUENCE-SUITE-20261029-r2/two-holes/simulation.camotics",
+      "sha256": "a5cc33fa99d544fef6ad8fcbef6e94fb3f860e4294e5b8d4db7d56a9c4b9ddc4"
+    },
+    "nc_files": [
+      {
+        "path": "validation/runs/S4-SEQUENCE-SUITE-20261029-r2/two-holes/program.nc",
+        "sha256": "a249ac53f8a5aa0231f72307167dda45909e1acea9ea0b2e5d76ac463ebb67f4"
+      }
+    ],
+    "engine_manifest": {
+      "path": "engines/camotics/releases/1.2.0-genlaw-window-r3/manifest.json",
+      "sha256": "3315525983559b7427ce0f9dcc933d342f7334dceb60e48696397152d8245713"
+    },
+    "engine_binary": {
+      "path": "engines/camotics/releases/1.2.0-genlaw-window-r3/camsim",
+      "sha256": "abb99bb2a5afd6ce98fea7573bc53bde12e5fdef67473ed1362e41e2f94106d6"
+    },
+    "grid_report": {
+      "path": "validation/runs/GRID-WINDOW-BINDING-CONTROLS-20261029-r1/changed-grid.json",
+      "sha256": "60b276ad8d03a61d3b60c84caabe8b63bd16b98636f1885086308fbc97a740e4"
+    }
+  },
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -0.024998999999999504,
+      -0.025000000000000393,
+      -1.525
+    ],
+    "steps": [
+      322,
+      242,
+      62
+    ],
+    "upper_mm": [
+      8.025,
+      6.025,
+      0.025000000000000133
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "windows": [
+    [
+      0,
+      0,
+      0,
+      119,
+      104,
+      35
+    ],
+    [
+      0,
+      0,
+      35,
+      119,
+      104,
+      62
+    ],
+    [
+      0,
+      104,
+      0,
+      119,
+      242,
+      35
+    ],
+    [
+      0,
+      104,
+      35,
+      119,
+      242,
+      62
+    ],
+    [
+      119,
+      0,
+      0,
+      322,
+      104,
+      35
+    ],
+    [
+      119,
+      0,
+      35,
+      322,
+      104,
+      62
+    ],
+    [
+      119,
+      104,
+      0,
+      322,
+      242,
+      35
+    ],
+    [
+      119,
+      104,
+      35,
+      322,
+      242,
+      62
+    ]
+  ],
+  "global_cells": 4831288,
+  "maximum_cells_per_window": 5000000,
+  "maximum_xy_samples": 100000,
+  "source_code": {
+    "path": "genlaw_pipeline/cell_windows.py",
+    "sha256": "ab43287ef3c5657d20d82a7b98344e84f353c29b558ab206e61205875c209eec"
+  },
+  "engine_id": "1.2.0-genlaw-window-r3",
+  "sampling": "global-integer-lattice-v1",
+  "cell_interval": "half-open",
+  "original_stock_and_nc_preserved": true,
+  "production_approved": false
+}

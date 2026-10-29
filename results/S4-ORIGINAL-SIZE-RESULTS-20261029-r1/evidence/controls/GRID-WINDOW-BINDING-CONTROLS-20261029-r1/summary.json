@@ -1,0 +1,54 @@
+{
+  "schema": "genlaw.cell-window-binding-controls.v1",
+  "status": "passed",
+  "controls": [
+    {
+      "id": "missing-window",
+      "rejected": true,
+      "reason": "Missing or duplicate window results"
+    },
+    {
+      "id": "duplicate-window",
+      "rejected": true,
+      "reason": "Duplicate window result index"
+    },
+    {
+      "id": "foreign-source",
+      "rejected": true,
+      "reason": "Foreign, incomplete or mismatched window result"
+    },
+    {
+      "id": "mixed-execution-times",
+      "rejected": true,
+      "reason": "Foreign, incomplete or mismatched window result"
+    },
+    {
+      "id": "modified-surface",
+      "rejected": true,
+      "reason": "Window source binding changed: validation/runs/GRID-WINDOW-BINDING-CONTROLS-20261029-r1/changed.stl"
+    },
+    {
+      "id": "missing-cells",
+      "rejected": true,
+      "reason": "Missing global cells in window partition"
+    },
+    {
+      "id": "overlapping-cells",
+      "rejected": true,
+      "reason": "Overlapping or duplicate cell windows"
+    },
+    {
+      "id": "coherently-modified-lattice",
+      "rejected": true,
+      "reason": "Native grid differs from the original stock / exact shared lattice"
+    }
+  ],
+  "source_plan": {
+    "path": "validation/runs/GRID-WINDOW-REGRESSION-20261029-r1/two-holes/partitioned/plan.json",
+    "sha256": "bf292ceb0b6de2e5dc5e3e052ce2ca028ff03318d03aa6764bc0f25e0a6bb186"
+  },
+  "source_code": {
+    "path": "tools/check_window_guards.py",
+    "sha256": "d06084804296c6ac711d5ce4f228daacaba282912241e1130c454665015791ba"
+  }
+}

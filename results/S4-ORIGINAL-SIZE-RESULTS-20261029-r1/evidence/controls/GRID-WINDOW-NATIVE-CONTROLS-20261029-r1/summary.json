@@ -1,0 +1,72 @@
+{
+  "schema": "genlaw.native-window-controls.v1",
+  "status": "passed",
+  "controls": [
+    {
+      "id": "inspection-with-invalid-nc",
+      "no_nc_execution": true
+    },
+    {
+      "id": "cell-budget",
+      "rejected_before_material_execution": true,
+      "expected_error": "exceeds 5000000",
+      "resources": {
+        "path": "validation/runs/GRID-WINDOW-NATIVE-CONTROLS-20261029-r1/cell-budget-resources.json",
+        "sha256": "00cc1be5944cc764e6cfec128d8a60648d9031cc1510af9103f170d2dcbc8c5e"
+      }
+    },
+    {
+      "id": "xy-storage-budget",
+      "rejected_before_material_execution": true,
+      "expected_error": "exceeds 100000",
+      "resources": {
+        "path": "validation/runs/GRID-WINDOW-NATIVE-CONTROLS-20261029-r1/xy-storage-budget-resources.json",
+        "sha256": "a3bb27a3a549fd556a0144de5215bef6e2bb5f7de01aede075cc95c48294d249"
+      }
+    },
+    {
+      "id": "outside-global-grid",
+      "rejected_before_material_execution": true,
+      "expected_error": "outside the global grid",
+      "resources": {
+        "path": "validation/runs/GRID-WINDOW-NATIVE-CONTROLS-20261029-r1/outside-global-grid-resources.json",
+        "sha256": "d576079435417454b591214452b9a17c58f040305992210d197744c1735f121a"
+      }
+    },
+    {
+      "id": "fractional-index",
+      "rejected_before_material_execution": true,
+      "expected_error": "unsigned decimal integers",
+      "resources": {
+        "path": "validation/runs/GRID-WINDOW-NATIVE-CONTROLS-20261029-r1/fractional-index-resources.json",
+        "sha256": "e9f1ce1580e543ff1deaf8a87507de09a91e5464d383ac8d33a30ffa5ed5ee50"
+      }
+    },
+    {
+      "id": "reduction-not-allowed",
+      "rejected_before_material_execution": true,
+      "expected_error": "require --threads 1 --reduce=false",
+      "resources": {
+        "path": "validation/runs/GRID-WINDOW-NATIVE-CONTROLS-20261029-r1/reduction-not-allowed-resources.json",
+        "sha256": "108bc60b52adca510d9566606928dab87ad4648b2349f5a8e754f563c3f435de"
+      }
+    },
+    {
+      "id": "multiple-threads",
+      "rejected_before_material_execution": true,
+      "expected_error": "require --threads 1 --reduce=false",
+      "resources": {
+        "path": "validation/runs/GRID-WINDOW-NATIVE-CONTROLS-20261029-r1/multiple-threads-resources.json",
+        "sha256": "31d40b841d4c921d2f21ab5fc1b4cbceff271989898261b025eaaf8e04d1db5f"
+      }
+    }
+  ],
+  "engine_manifest": {
+    "path": "engines/camotics/releases/1.2.0-genlaw-window-r3/manifest.json",
+    "sha256": "3315525983559b7427ce0f9dcc933d342f7334dceb60e48696397152d8245713"
+  },
+  "source_code": {
+    "path": "tools/check_window_guards.py",
+    "sha256": "d06084804296c6ac711d5ce4f228daacaba282912241e1130c454665015791ba"
+  }
+}
