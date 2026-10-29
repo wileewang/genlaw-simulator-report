@@ -55,10 +55,39 @@ async function start() {
   targetScene.add(targetMesh); actualScene.add(actualMesh); replayScene.add(replayMesh);
   const center = new THREE.Vector3();
   let mode = 'replay', frame = 0, timer = null, queued = false, serial = Promise.resolve();
-  let active = null, frames = [], owned = [], captions = [];
+  let active = null, frames = [], owned = [], captions = [], cachedFrame = null, playGeneration = 0;
   const qa = window.__S1_VIEWER__ = { ready: false, caseId: null, frameIndex: 0, mode, playing: false, renderCount: 0, rendererCount: 1, networkRetries: 0 };
 
-  async function geometry(path) {
+  const parts = value => Array.isArray(value) ? value : [value];
+  const exclusive = () => active?.state_loading === 'exclusive';
+  function attach(mesh, value) {
+    // One shape may be delivered as several files. All parts are rendered;
+    // splitting never selects a subset of the actual surface.
+    mesh.clear();
+    mesh.geometry = Array.isArray(value) ? empty : value;
+    if (Array.isArray(value)) for (const g of value) mesh.add(new THREE.Mesh(g,mesh.material));
+  }
+  function release(value) {
+    for (const g of parts(value)) {
+      const index = owned.indexOf(g);
+      if (index < 0) throw Error('Geometry ownership is inconsistent');
+      owned.splice(index,1); g.dispose();
+    }
+    renderer.renderLists.dispose();
+  }
+  async function display(source, remainingTriangles = Infinity) {
+    if (!Array.isArray(source)) return geometry(source,remainingTriangles);
+    if (!source.length || source.length > 16 || new Set(source).size !== source.length ||
+        source.some(path=>typeof path !== 'string')) throw Error('Invalid multipart display');
+    const result = [];
+    for (const path of source) {
+      const g = await geometry(path,remainingTriangles);
+      remainingTriangles -= g.index.count/3; result.push(g);
+    }
+    return result;
+  }
+
+  async function geometry(path, remainingTriangles = Infinity) {
     const delivery = config.geometry_transport?.[path];
     const compressed = delivery?.encoding === 'gzip' && typeof DecompressionStream === 'function';
     const url = new URL(compressed ? delivery.path : path, siteBase);
@@ -87,7 +116,7 @@ async function start() {
     if (buffer.byteLength < 16 || new TextDecoder().decode(new Uint8Array(buffer,0,8)) !== 'GLWMESH1') throw Error('Invalid geometry');
     const nv = h.getUint32(8,true), nf = h.getUint32(12,true);
     const limit = active.mesh_triangle_limit ?? 500000;
-    if (!Number.isInteger(limit) || limit < 1 || limit > 1000000 || !nv || !nf || nf > limit ||
+    if (!Number.isInteger(limit) || limit < 1 || limit > 1000000 || !nv || !nf || nf > limit || nf > remainingTriangles ||
         buffer.byteLength > 64*1024*1024 || buffer.byteLength !== 16 + nv*12 + nf*12) throw Error('Geometry exceeds supported budget');
     const g = new THREE.BufferGeometry();
     g.setAttribute('position',new THREE.BufferAttribute(new Float32Array(buffer,16,nv*3),3));
@@ -109,9 +138,10 @@ async function start() {
     qa.renderCount++;
   }
   function schedule() { if (!queued) { queued = true; requestAnimationFrame(render); } }
-  function pause() { clearInterval(timer); timer = null; play.textContent = '播放'; qa.playing = false; }
+  function pause() { clearTimeout(timer); timer = null; playGeneration++; play.textContent = '播放'; qa.playing = false; }
   function showFrame(i) {
-    frame = i; qa.frameIndex = i; slider.value = String(i); replayMesh.geometry = frames[i];
+    if (!Number.isInteger(i) || !frames[i]) throw Error('Requested frame is not loaded');
+    frame = i; qa.frameIndex = i; slider.value = String(i); attach(replayMesh,frames[i]);
     caption.textContent = captions[i]; status.textContent = `${active.name} · 状态 ${i+1} / ${frames.length}`; schedule();
   }
   function setMode(value) {
@@ -123,27 +153,112 @@ async function start() {
       if (value === 'replay') showFrame(frame);
       else status.textContent = `${active.name} · 同坐标对比 · 单位 mm`;
     }
+    fitCamera();
     schedule();
+  }
+  async function changeMode(value) {
+    if (exclusive()) {
+      const selected = frame;
+      await loadFrame(active.id,value === 'compare' ? frames.length-1 : frame);
+      if (value === 'compare') { frame = selected; qa.frameIndex = selected; slider.value = String(selected); }
+    }
+    setMode(value);
+  }
+  function requestMode(value) {
+    pause();
+    serial = serial.then(()=>changeMode(value)).catch(error=>{pause();fail(error);});
+    return serial;
+  }
+  function fitCamera() {
+    if (active?.frame_loading !== 'on_demand') return;
+    let width = wrap.clientWidth, height = wrap.clientHeight;
+    if (mode === 'compare') {
+      if (matchMedia('(max-width:720px)').matches) height /= 2; else width /= 2;
+    }
+    if (!width || !height) return;
+    camera.aspect = width/height; camera.updateProjectionMatrix(); camera.updateMatrixWorld();
+    const tangent = Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
+    const corners = [];
+    for (const x of [active.stock.min[0],active.stock.max[0]])
+      for (const y of [active.stock.min[1],active.stock.max[1]])
+        for (const z of [active.stock.min[2],active.stock.max[2]]) corners.push(new THREE.Vector3(x,y,z));
+    let extra = 0;
+    for (const corner of corners) {
+      const p = corner.clone().applyMatrix4(camera.matrixWorldInverse);
+      extra = Math.max(extra,Math.abs(p.x)/(tangent*camera.aspect*.88)+p.z,Math.abs(p.y)/(tangent*.88)+p.z);
+    }
+    if (extra > 0) {
+      camera.position.addScaledVector(camera.position.clone().sub(center).normalize(),extra);
+      controls.update(); camera.updateMatrixWorld();
+    }
+    qa.projectedStockExtent = Math.max(...corners.flatMap(p=>{p.project(camera);return [Math.abs(p.x),Math.abs(p.y)];}));
   }
   function reset() {
     const position = active?.camera_position || [15,-12,12];
     if (!Array.isArray(position) || position.length !== 3 || !position.every(Number.isFinite)) throw Error('Invalid camera position');
     camera.position.set(...position); controls.target.copy(center); controls.update();
-    qa.cameraResetPosition = position.slice(); schedule();
+    qa.cameraResetPosition = position.slice(); fitCamera(); schedule();
   }
   function enabled(value) {
     select.disabled = !value;
     root.querySelectorAll('button,input').forEach(e => e.disabled = !value);
     document.querySelectorAll('[data-select-case]').forEach(e => e.disabled = !value);
   }
+  function triangleBudget() {
+    const limit = active.total_triangle_limit ?? 2000000;
+    if (!Number.isInteger(limit) || limit < 1 || limit > 2000000) throw Error('Invalid case display budget');
+    return limit;
+  }
+  function updateResidentGeometry() {
+    // Include the stock box in the resident budget for on-demand cases.
+    qa.loadedTriangles = owned.reduce((sum,g)=>sum+(g.index?.count || 0)/3,0);
+    if (qa.loadedTriangles > triangleBudget()) throw Error('Case exceeds supported display budget');
+    qa.peakLoadedTriangles = Math.max(qa.peakLoadedTriangles || 0,qa.loadedTriangles);
+    qa.ownedGeometryCount = owned.length;
+    qa.residentIntermediateFrames = cachedFrame !== null && cachedFrame !== frames.length-1 ? 1 : 0;
+    qa.residentFinalStates = frames.length && frames[frames.length-1] ? 1 : 0;
+  }
+  async function loadFrame(caseId, i) {
+    if (active.id !== caseId) return;
+    if (!Number.isInteger(i) || i < 0 || i >= frames.length) throw Error('Invalid frame index');
+    if (frames[i]) { showFrame(i); return; }
+    if (active.frame_loading !== 'on_demand') throw Error('Missing preloaded frame');
+    enabled(false); qa.loadingFrame = true; loading.hidden = false;
+    loading.textContent = `正在载入加工状态… ${i+1} / ${frames.length}`;
+    // Free the previous intermediate state before fetching its replacement.
+    attach(replayMesh,empty);
+    if (cachedFrame !== null) {
+      const prior = frames[cachedFrame]; frames[cachedFrame] = null; cachedFrame = null;
+      if (exclusive()) attach(actualMesh,empty);
+      release(prior);
+    }
+    updateResidentGeometry(); schedule();
+    const finalFrame = i === frames.length-1;
+    frames[i] = await display(finalFrame ? active.actual_mesh : active.frames[i-1].mesh,triangleBudget()-qa.loadedTriangles);
+    if (finalFrame) attach(actualMesh,frames[i]);
+    cachedFrame = i; updateResidentGeometry(); showFrame(i);
+    qa.loadingFrame = false; loading.hidden = true; enabled(true);
+  }
+  function requestFrame(i) {
+    const caseId = active.id;
+    // Case changes and frame changes share one queue: a late download cannot
+    // attach its geometry to another part or run alongside another frame load.
+    serial = serial.then(()=>loadFrame(caseId,i)).catch(error=>{ pause(); fail(error); });
+    return serial;
+  }
   async function loadCase(id, requestedMode) {
     const entry = config.cases.find(e => e.id === id); if (!entry) throw Error('Unknown case');
-    if (qa.ready && active?.id === id) { setMode(entry.frames.length ? requestedMode : 'compare'); return; }
+    if (qa.ready && active?.id === id) { await changeMode(entry.frames.length ? requestedMode : 'compare'); return; }
     pause(); qa.ready = false; enabled(false); loading.hidden = false;
     // Release prior geometry before loading the next case. Keep one renderer.
-    targetMesh.geometry = actualMesh.geometry = replayMesh.geometry = empty;
-    for (const g of owned) g.dispose(); owned = []; frames = []; renderer.renderLists.dispose();
+    for (const mesh of [targetMesh,actualMesh,replayMesh]) attach(mesh,empty);
+    for (const g of owned) g.dispose(); owned = []; frames = []; cachedFrame = null; renderer.renderLists.dispose();
     active = entry; select.value = id;
+    if (entry.frame_loading !== undefined && entry.frame_loading !== 'on_demand') throw Error('Invalid frame loading mode');
+    if (entry.state_loading !== undefined && (entry.state_loading !== 'exclusive' || entry.frame_loading !== 'on_demand')) throw Error('Invalid state loading mode');
+    qa.frameLoading = entry.frame_loading || 'preload'; qa.loadingFrame = false; qa.peakLoadedTriangles = 0;
+    qa.stateLoading = entry.state_loading || 'retain_final';
+    qa.residentIntermediateFrames = 0;
     const scale = entry.view_scale ?? 1;
     if (!Number.isFinite(scale) || scale < 1 || scale > 20) throw Error('Invalid view scale');
     camera.far = 120*scale; controls.minDistance = 7*scale; controls.maxDistance = 42*scale;
@@ -152,18 +267,21 @@ async function start() {
     grids.forEach(g => { g.position.set(center.x,center.y,low[2]-.2); g.scale.setScalar(scale); });
     const stock = new THREE.BoxGeometry(...low.map((v,i)=>high[i]-v)); stock.translate(...center.toArray()); owned.push(stock);
     frames.push(stock);
-    const paths = [entry.target_mesh,entry.actual_mesh,...entry.frames.map(f=>f.mesh)], loaded = [];
+    const demand = entry.frame_loading === 'on_demand';
+    const paths = [entry.target_mesh,...(exclusive() ? [] : [entry.actual_mesh]),...(demand ? [] : entry.frames.map(f=>f.mesh))], loaded = [];
     // At most two downloads at once, and only the selected case is retained.
     for (let i=0;i<paths.length;i+=2) {
       loading.textContent = `正在载入加工状态… ${i} / ${paths.length}`;
-      loaded.push(...await Promise.all(paths.slice(i,i+2).map(geometry)));
+      loaded.push(...await Promise.all(paths.slice(i,i+2).map(path=>display(path))));
     }
-    [targetMesh.geometry,actualMesh.geometry] = loaded;
-    qa.loadedTriangles = loaded.reduce((sum,g)=>sum+g.index.count/3,0);
+    attach(targetMesh,loaded[0]);
+    if (!exclusive()) attach(actualMesh,loaded[1]);
+    qa.loadedTriangles = loaded.flatMap(parts).reduce((sum,g)=>sum+g.index.count/3,0);
     if (entry.total_triangle_limit !== undefined && (!Number.isInteger(entry.total_triangle_limit) ||
         entry.total_triangle_limit > 2000000 || qa.loadedTriangles > entry.total_triangle_limit)) throw Error('Case exceeds supported display budget');
-    frames.push(...loaded.slice(2));
-    frames.push(actualMesh.geometry);
+    frames.push(...(demand ? entry.frames.map(()=>null) : loaded.slice(2)));
+    frames.push(exclusive() ? null : loaded[1]);
+    if (demand) updateResidentGeometry();
     captions = ['毛坯 · 未加工', ...entry.frames.map((f,i)=>`${f.label || ['钻入','继续钻削','接近贯穿'][i]}${Number.isFinite(f.time_seconds) ? ` · ${f.time_seconds.toFixed(2)} s` : ''}`), '完成 · 最终结果'];
     frame = 0; qa.frameIndex = 0; slider.value = '0'; slider.max = String(frames.length-1);
     qa.caseId = id; qa.stockThicknessMm = high[2]-low[2]; qa.frameCount = frames.length;
@@ -176,7 +294,7 @@ async function start() {
       `真实去料状态：时间帧 0.05 mm，工步边界与最终结果 ${entry.resolution_mm} mm。工步边界复用同一原生 NC 的累计前缀结果；播放速度仅作展示。` : entry.frames.length ?
       `同一 NC 的真实去料状态。中间帧 0.05 mm，最终结果 ${entry.resolution_mm} mm；播放速度仅作展示。` :
       `此反例保留最终去料结果，分辨率 ${entry.resolution_mm} mm。`;
-    reset(); setMode(entry.frames.length ? requestedMode : 'compare'); enabled(true);
+    reset(); await changeMode(entry.frames.length ? requestedMode : 'compare'); enabled(true);
     root.querySelector('[data-s1-mode=replay]').disabled = !entry.frames.length;
     loading.hidden = true; qa.ready = true;
   }
@@ -184,21 +302,31 @@ async function start() {
     serial = serial.then(()=>loadCase(id,value)).catch(error=>{ pause(); fail(error); });
     return serial;
   }
-  root.querySelectorAll('[data-s1-mode]').forEach(e=>e.addEventListener('click',()=>setMode(e.dataset.s1Mode)));
+  root.querySelectorAll('[data-s1-mode]').forEach(e=>e.addEventListener('click',()=>requestMode(e.dataset.s1Mode)));
   select.addEventListener('change',()=>requestCase(select.value));
   document.querySelectorAll('[data-select-case]').forEach(e=>e.addEventListener('click',()=>{
     requestCase(e.dataset.selectCase,e.dataset.selectMode);
     document.querySelector('#machining-process').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});
   }));
-  play.addEventListener('click',()=>{
-    if (timer) { pause(); return; }
-    if (frame === frames.length-1) showFrame(0);
+  play.addEventListener('click',async()=>{
+    if (qa.playing) { pause(); return; }
+    const generation = ++playGeneration;
     play.textContent = '暂停'; qa.playing = true;
-    timer = setInterval(()=>{showFrame(frame+1);if(frame===frames.length-1)pause();},1100);
+    if (frame === frames.length-1) await requestFrame(0);
+    function tick() {
+      if (!qa.playing || generation !== playGeneration) return;
+      timer = setTimeout(async()=>{
+        await requestFrame(frame+1);
+        if (!qa.playing || generation !== playGeneration) return;
+        if (frame === frames.length-1) pause(); else tick();
+      },1100);
+    }
+    tick();
   });
-  slider.addEventListener('input',()=>{pause();showFrame(Number(slider.value));});
+  slider.addEventListener('input',()=>{pause();requestFrame(Number(slider.value));});
   root.querySelector('[data-reset]').addEventListener('click',reset);
-  controls.addEventListener('change',schedule); new ResizeObserver(schedule).observe(wrap);
+  controls.addEventListener('change',schedule);
+  new ResizeObserver(()=>{if(qa.ready)fitCamera();schedule();}).observe(wrap);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
   new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)pause();}).observe(root);
   renderer.domElement.addEventListener('keydown',event=>{
