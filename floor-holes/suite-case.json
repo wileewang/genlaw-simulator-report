@@ -1,0 +1,287 @@
+{
+  "id": "floor-holes",
+  "specification": {
+    "id": "floor-holes",
+    "name": "双型腔各带腔底孔：换刀后加工两孔",
+    "stock_bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "target_bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        -0.5
+      ]
+    },
+    "resolution_mm": 0.025,
+    "pockets": [
+      {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.4,
+        "floor_face": "Face25"
+      },
+      {
+        "id": "K2",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.7,
+        "floor_face": "Face26"
+      }
+    ],
+    "holes": [
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          3
+        ],
+        "diameter_mm": 1,
+        "cylinder_face": "Face23"
+      },
+      {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          3
+        ],
+        "diameter_mm": 1,
+        "cylinder_face": "Face24"
+      }
+    ],
+    "order": [
+      "P1",
+      "K1",
+      "K2",
+      "H1",
+      "H2"
+    ],
+    "two_tools": true,
+    "tool_diameter_mm": 1,
+    "second_tool_diameter_mm": 0.5,
+    "features": [
+      {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face3",
+        "top_z_mm": -0.5,
+        "thickness_mm": 1.0,
+        "bounds_xy_mm": {
+          "min": [
+            0,
+            0
+          ],
+          "max": [
+            8,
+            6
+          ]
+        }
+      },
+      {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.4,
+        "floor_face": "Face25"
+      },
+      {
+        "id": "K2",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.7,
+        "floor_face": "Face26"
+      },
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          3
+        ],
+        "diameter_mm": 1,
+        "cylinder_face": "Face23"
+      },
+      {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          3
+        ],
+        "diameter_mm": 1,
+        "cylinder_face": "Face24"
+      }
+    ]
+  },
+  "iou_percent": 99.90209316268225,
+  "software_statuses": {
+    "P1": {
+      "top_height": "numeric_pass",
+      "target_thickness": "numeric_pass",
+      "top_geometry": "numeric_pass",
+      "outline_xy": "numeric_pass"
+    },
+    "K1": {
+      "profile_xy": "numeric_pass",
+      "pocket_depth": "numeric_pass",
+      "floor_geometry": "numeric_pass"
+    },
+    "K2": {
+      "profile_xy": "numeric_pass",
+      "pocket_depth": "numeric_pass",
+      "floor_geometry": "numeric_pass"
+    },
+    "H1": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_pass",
+      "through": "numeric_pass"
+    },
+    "H2": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_pass",
+      "through": "numeric_pass"
+    }
+  },
+  "regression_expectation_met": true,
+  "executed_feature_order": [
+    "P1",
+    "K1",
+    "K2",
+    "H1",
+    "H2"
+  ],
+  "tool_transitions": [
+    {
+      "tool_number": 1,
+      "tool_id": "T1",
+      "first_executable_block": 6,
+      "last_executable_block": 8
+    },
+    {
+      "tool_number": 2,
+      "tool_id": "T2",
+      "first_executable_block": 230,
+      "last_executable_block": 232
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "after-01",
+      "iou_percent": 99.96969294042735,
+      "check_count": 4,
+      "all_regression_expectations_met": true
+    },
+    {
+      "id": "after-02",
+      "iou_percent": 99.95717152559924,
+      "check_count": 7,
+      "all_regression_expectations_met": true
+    },
+    {
+      "id": "after-03",
+      "iou_percent": 99.93302830276915,
+      "check_count": 10,
+      "all_regression_expectations_met": true
+    },
+    {
+      "id": "after-04",
+      "iou_percent": 99.9123634092285,
+      "check_count": 13,
+      "all_regression_expectations_met": true
+    }
+  ],
+  "process_conformance": {
+    "status": "matched_card_and_measured_checkpoints",
+    "material_checkpoint_count": 4,
+    "material_checkpoints_sha256": "55385c7888f6b8ed682b0cce27286e251bdf53f2eda1701a7e9afecaead4233d",
+    "manufacturing_acceptance": false
+  },
+  "verifier_sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1",
+  "runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf"
+}

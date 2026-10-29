@@ -1,0 +1,1296 @@
+{
+  "schema": "genlaw.multi-pocket-suite.v1",
+  "id": "S4-MULTI-POCKET-SUITE-20261030-r1",
+  "status": "completed",
+  "normal_cases": [
+    {
+      "id": "equal-depth",
+      "specification": {
+        "id": "equal-depth",
+        "name": "双型腔：相同深度，分别绑定底面",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pockets": [
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.4,
+            "floor_face": "Face23"
+          },
+          {
+            "id": "K2",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.4,
+            "floor_face": "Face24"
+          }
+        ],
+        "holes": [],
+        "order": [
+          "P1",
+          "K1",
+          "K2"
+        ],
+        "two_tools": false,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.4,
+            "floor_face": "Face23"
+          },
+          {
+            "id": "K2",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.4,
+            "floor_face": "Face24"
+          }
+        ]
+      },
+      "iou_percent": 99.94302871650966,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "K2": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "K2"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95717152559924,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 2,
+        "material_checkpoints_sha256": "e69958e3f836201e5570c277b71e8915007a45532296e55010d1678ec28353d2",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1",
+      "runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "equal-depth/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "de1ac28723e02b71515ec41b7e5c80aad322ba3e4fc64bc21340888f17a817a4"
+        },
+        {
+          "mesh": "equal-depth/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "6f7e66ddaf0dcd96aeb96611c01ced1b5f4a9ad0b3e0ee592f6375cc46b63777",
+          "source_stl_sha256": "0e19f474678948a0f4f13538af58caa2aad4d15c5db34b96d20bc82dbed223b1"
+        }
+      ]
+    },
+    {
+      "id": "different-depth",
+      "specification": {
+        "id": "different-depth",
+        "name": "双型腔：不同深度，分别检查剩余底厚",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pockets": [
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.4,
+            "floor_face": "Face23"
+          },
+          {
+            "id": "K2",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.7,
+            "floor_face": "Face24"
+          }
+        ],
+        "holes": [],
+        "order": [
+          "P1",
+          "K1",
+          "K2"
+        ],
+        "two_tools": false,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.4,
+            "floor_face": "Face23"
+          },
+          {
+            "id": "K2",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.7,
+            "floor_face": "Face24"
+          }
+        ]
+      },
+      "iou_percent": 99.93302830276915,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "K2": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "K2"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95717152559924,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 2,
+        "material_checkpoints_sha256": "6cd6d0c10403544b28b4f99e99ca0d8ace51a9c4412a748455bf1e81f740a0cd",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1",
+      "runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "different-depth/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "009fcd2703062e147ba7b5e73f01969c028052034027ab497ed1088cfc1c5fd2"
+        },
+        {
+          "mesh": "different-depth/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "6f7e66ddaf0dcd96aeb96611c01ced1b5f4a9ad0b3e0ee592f6375cc46b63777",
+          "source_stl_sha256": "83a522f31b3858aff658474b3a6fd1f26d382646a4c7f09a1d1730d8808789f4"
+        }
+      ]
+    },
+    {
+      "id": "floor-holes",
+      "specification": {
+        "id": "floor-holes",
+        "name": "双型腔各带腔底孔：换刀后加工两孔",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pockets": [
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.4,
+            "floor_face": "Face25"
+          },
+          {
+            "id": "K2",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.7,
+            "floor_face": "Face26"
+          }
+        ],
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "diameter_mm": 1,
+            "cylinder_face": "Face23"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "diameter_mm": 1,
+            "cylinder_face": "Face24"
+          }
+        ],
+        "order": [
+          "P1",
+          "K1",
+          "K2",
+          "H1",
+          "H2"
+        ],
+        "two_tools": true,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.4,
+            "floor_face": "Face25"
+          },
+          {
+            "id": "K2",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.7,
+            "floor_face": "Face26"
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "diameter_mm": 1,
+            "cylinder_face": "Face23"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "diameter_mm": 1,
+            "cylinder_face": "Face24"
+          }
+        ]
+      },
+      "iou_percent": 99.90209316268225,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "K2": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "K2",
+        "H1",
+        "H2"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        },
+        {
+          "tool_number": 2,
+          "tool_id": "T2",
+          "first_executable_block": 230,
+          "last_executable_block": 232
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95717152559924,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.93302830276915,
+          "check_count": 10,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-04",
+          "iou_percent": 99.9123634092285,
+          "check_count": 13,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 4,
+        "material_checkpoints_sha256": "55385c7888f6b8ed682b0cce27286e251bdf53f2eda1701a7e9afecaead4233d",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1",
+      "runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "floor-holes/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "5c6a95b019dd07bf14497a5c084f308840e3f590bd5fe4fdc201f8d95f4bad6e"
+        },
+        {
+          "mesh": "floor-holes/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "6f7e66ddaf0dcd96aeb96611c01ced1b5f4a9ad0b3e0ee592f6375cc46b63777",
+          "source_stl_sha256": "974ea8b5733bdac3e41c62be5e414041ae3e57d2adba034fe8fe2016f63e761b"
+        },
+        {
+          "mesh": "floor-holes/checkpoints/after-03/actual.mesh",
+          "label": "K2 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "c9d34feeada1976c5906510ccab736b7dacd4e14c25899bbaf00a366f079197a",
+          "source_stl_sha256": "257457a21c0fe1d53e61a94af8a498219b4b32e54a2199cde8748856b255cd75"
+        },
+        {
+          "mesh": "floor-holes/checkpoints/after-04/actual.mesh",
+          "label": "H1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "f17beb82b78b91ad7c1f7566b71ce2fb79ccfb27ee52361036c616385342b566",
+          "source_stl_sha256": "359bd09cac1abd77c50ef3667e18cda8d0b8baf8760d48738716f801a0c10ac6"
+        }
+      ]
+    },
+    {
+      "id": "interleaved-card",
+      "specification": {
+        "id": "interleaved-card",
+        "name": "另一张明确卡片：孔、型腔交错并多次换刀",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pockets": [
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.4,
+            "floor_face": "Face25"
+          },
+          {
+            "id": "K2",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.7,
+            "floor_face": "Face26"
+          }
+        ],
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "diameter_mm": 1,
+            "cylinder_face": "Face23"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "diameter_mm": 1,
+            "cylinder_face": "Face24"
+          }
+        ],
+        "order": [
+          "P1",
+          "H1",
+          "K2",
+          "H2",
+          "K1"
+        ],
+        "two_tools": true,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.4,
+            "floor_face": "Face25"
+          },
+          {
+            "id": "K2",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "width_mm": 2.4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.7,
+            "floor_face": "Face26"
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              3
+            ],
+            "diameter_mm": 1,
+            "cylinder_face": "Face23"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              3
+            ],
+            "diameter_mm": 1,
+            "cylinder_face": "Face24"
+          }
+        ]
+      },
+      "iou_percent": 99.90209316268225,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "K2": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "H1",
+        "K2",
+        "H2",
+        "K1"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        },
+        {
+          "tool_number": 2,
+          "tool_id": "T2",
+          "first_executable_block": 124,
+          "last_executable_block": 126
+        },
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 148,
+          "last_executable_block": 150
+        },
+        {
+          "tool_number": 2,
+          "tool_id": "T2",
+          "first_executable_block": 214,
+          "last_executable_block": 216
+        },
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 238,
+          "last_executable_block": 240
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.94087290861722,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.91600604932133,
+          "check_count": 10,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-04",
+          "iou_percent": 99.90635085717831,
+          "check_count": 13,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 4,
+        "material_checkpoints_sha256": "17c9d82dd23c61c8e7b4cf7e05c3ab5050057a12d62436b399622687b60269e6",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1",
+      "runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "interleaved-card/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "da21a9dcc6aa604814d0870a3560cef1559cae2cf59321dd9cb2098d148efe1a"
+        },
+        {
+          "mesh": "interleaved-card/checkpoints/after-02/actual.mesh",
+          "label": "H1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "5d19f99be19c1bf4f94b070825163b5c7385e1798f1e2f89567b1edd7d1cabfe",
+          "source_stl_sha256": "0e421585b9cfcae79caa346ab366feff7a8e07c04f4590850b729d8e50e7d745"
+        },
+        {
+          "mesh": "interleaved-card/checkpoints/after-03/actual.mesh",
+          "label": "K2 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "7c08bd20f2e3cdc5644a6051c98959fea6b6b350e31b2872941e7685a7e5b4b6",
+          "source_stl_sha256": "e3f925868c9f2d12418782f051d0b7f9235f0efa26705d35b09ba46906e88e66"
+        },
+        {
+          "mesh": "interleaved-card/checkpoints/after-04/actual.mesh",
+          "label": "H2 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b76d1df4768f38c892afaea0054e4d54500be8dce9355e226e78c07f4d1a1a63",
+          "source_stl_sha256": "1e5cf1459e5661aa0250816df316364317805ba2a68d31f3aff2d9ded71c6e18"
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "missing-second",
+      "parent_case": "different-depth",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Missing machining operation",
+      "iou_percent": 89.30079799391095,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "K2": {
+          "profile_xy": "not_measurable",
+          "pocket_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": false,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Missing machining operation",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1",
+      "runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf",
+      "resolution_mm": 0.025,
+      "frames": []
+    },
+    {
+      "id": "shallow-second",
+      "parent_case": "different-depth",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Final milling depth missing",
+      "iou_percent": 95.85801155680835,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "K2": {
+          "profile_xy": "not_measurable",
+          "pocket_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": false,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Final milling depth missing",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1",
+      "runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf",
+      "resolution_mm": 0.025,
+      "frames": []
+    },
+    {
+      "id": "breached-second-floor",
+      "parent_case": "different-depth",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Actual descent exceeds declared step-down",
+      "iou_percent": 94.83047588995521,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "K2": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "not_measurable",
+          "floor_geometry": "numeric_fail"
+        }
+      },
+      "geometry_checks_pass": false,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Actual descent exceeds declared step-down",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1",
+      "runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf",
+      "resolution_mm": 0.025,
+      "frames": []
+    },
+    {
+      "id": "swapped-order",
+      "parent_case": "different-depth",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Native operation order / feature association differs from the card",
+      "iou_percent": 99.93302830276915,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "K2": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Native operation order / feature association differs from the card",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1",
+      "runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf",
+      "resolution_mm": 0.025,
+      "frames": []
+    }
+  ],
+  "all_regression_expectations_met": true,
+  "input_archive": "S4-MULTI-POCKET-20261030-r1",
+  "input_manifest_sha256": "9118704d990569cc6f5175cb3e9a529229b6a82179da17d47c8bf6d8fe500583",
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "s4_complete": false,
+  "implemented": "Individually bound disjoint pocket floors and layered material, optional floor holes, explicit repeated tool changes and card order; independent pre-NC cumulative CAD and unchanged original stock.",
+  "aggregation_source_sha256": "751532a18658d4797aef35d81b6dcee7d1286ba7f35e1a543aa5295684f026fc",
+  "frozen_numerical_runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf",
+  "aggregation_note": "Collected all eight completed case records with the corrected Path joining logic in the separate finalizer; frozen producer and raw results unchanged.",
+  "stage_id": "s4",
+  "title": "多型腔与腔底孔",
+  "ordered_milling_verified": true,
+  "pocketed_sequence_verified": true,
+  "new_features": [
+    "逐腔绑定底面与独立深度",
+    "多层剩料及腔底孔检验",
+    "卡片规定的交错工序与重复换刀"
+  ],
+  "multiple_pockets_verified": true,
+  "original_cad_sha256_by_case": {
+    "equal-depth": "6ad3ec5db129efb7a74b8fa231080f30cce73eaa28d171982c860e4d14ec8187",
+    "different-depth": "0699afa721ce85257a952804a5a8a2c400cc91969fd1d5d5518321ca1b613a8f",
+    "floor-holes": "86d875a710af040153fde0c803c6f6a630ecfe65355db6f9c8991e57e9fa30ca",
+    "interleaved-card": "86d875a710af040153fde0c803c6f6a630ecfe65355db6f9c8991e57e9fa30ca"
+  },
+  "distinct_original_cad_count": 3
+}

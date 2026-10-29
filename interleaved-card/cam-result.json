@@ -1,0 +1,5811 @@
+{
+  "schema": "genlaw.cam-result.v1",
+  "status": "generated_and_checked",
+  "native_cad_binding": {
+    "schema": "genlaw.native-binding.v13",
+    "status": "verified",
+    "reference_class": "z_layered_box_minus_disjoint_rounded_pockets_and_through_cylinders",
+    "cad_sha256": "86d875a710af040153fde0c803c6f6a630ecfe65355db6f9c8991e57e9fa30ca",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        -0.5
+      ]
+    },
+    "volume_mm3": 39.71307096212071,
+    "valid_single_solid": true,
+    "incoming_stock_bounds": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "features": [
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          3
+        ],
+        "diameter_mm": 1,
+        "cylinder_face": "Face23"
+      },
+      {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          3
+        ],
+        "diameter_mm": 1,
+        "cylinder_face": "Face24"
+      }
+    ],
+    "facing_feature": {
+      "id": "P1",
+      "kind": "planar_top",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "top_face": "Face3",
+      "top_z_mm": -0.5,
+      "thickness_mm": 1.0,
+      "bounds_xy_mm": {
+        "min": [
+          0,
+          0
+        ],
+        "max": [
+          8,
+          6
+        ]
+      }
+    },
+    "pocket_features": [
+      {
+        "id": "K2",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.7,
+        "floor_face": "Face26"
+      },
+      {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.4,
+        "floor_face": "Face25"
+      }
+    ],
+    "feature_bindings": [
+      {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face3",
+        "top_z_mm": -0.5,
+        "thickness_mm": 1.0,
+        "bounds_xy_mm": {
+          "min": [
+            0,
+            0
+          ],
+          "max": [
+            8,
+            6
+          ]
+        }
+      },
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          3
+        ],
+        "diameter_mm": 1,
+        "cylinder_face": "Face23"
+      },
+      {
+        "id": "K2",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.7,
+        "floor_face": "Face26"
+      },
+      {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          3
+        ],
+        "diameter_mm": 1,
+        "cylinder_face": "Face24"
+      },
+      {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.4,
+        "floor_face": "Face25"
+      }
+    ],
+    "hole_pocket_ids": {
+      "H1": "K1",
+      "H2": "K2"
+    },
+    "original_cad_reparsed": true,
+    "symmetric_difference_mm3": 0.0,
+    "pocket_outer_wire_verified": true,
+    "pocket_floor_bindings": {
+      "K2": {
+        "floor_face": "Face26",
+        "outer_wire_verified": true,
+        "hole_ids": [
+          "H2"
+        ]
+      },
+      "K1": {
+        "floor_face": "Face25",
+        "outer_wire_verified": true,
+        "hole_ids": [
+          "H1"
+        ]
+      }
+    },
+    "reference_for_iou": "Independent box / rounded rectangle union / cylinder composition, checked against original filleted-prism CAD."
+  },
+  "nc_sha256": "b6ecc84992b69500c10d63efff7987ff8e790f64b2f1e434ff05c0f64e4c28e9",
+  "native_operation": "ordered_MillFace_PocketShape_Helix",
+  "native_stock": {
+    "construction": "FreeCAD Stock.CreateBox from declared incoming bounds",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "stock_type": "CreateBox"
+  },
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "gui_up": false,
+  "postprocessor": "FreeCAD bundled linuxcnc_post",
+  "post_arguments": "--no-show-editor --no-tlo --precision 5 --preamble \"G17 G54 G40 G49 G80 G90\\nG21\\nM5\\nG0 Z3\"",
+  "native_path_sha256": "62c67e45b0e032811c0e38bfbf7845480853e2465e0f73e0b248fba2d09cdd11",
+  "operation_bindings": [
+    {
+      "step_id": "OP10.2",
+      "feature_id": "P1",
+      "cam_operation": "Face_01",
+      "native_operation": "MillFace",
+      "tool_id": "T1",
+      "tool_number": 1,
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face3"
+          ]
+        }
+      ],
+      "start_depth_mm": 0.0,
+      "final_depth_mm": -0.5,
+      "step_down_mm": 0.25,
+      "step_over_percent": 50,
+      "material_before_id": "raw",
+      "material_after_id": "after-01"
+    },
+    {
+      "step_id": "OP10.3",
+      "feature_id": "H1",
+      "cam_operation": "Helix_02",
+      "native_operation": "Helix",
+      "tool_id": "T2",
+      "tool_number": 2,
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face23"
+          ]
+        }
+      ],
+      "start_depth_mm": -0.4,
+      "final_depth_mm": -1.6,
+      "step_down_mm": 0.25,
+      "step_over_percent": 50,
+      "material_before_id": "after-01",
+      "material_after_id": "after-02"
+    },
+    {
+      "step_id": "OP10.4",
+      "feature_id": "K2",
+      "cam_operation": "Pocket_03",
+      "native_operation": "PocketShape",
+      "tool_id": "T1",
+      "tool_number": 1,
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face26"
+          ]
+        }
+      ],
+      "start_depth_mm": -0.5,
+      "final_depth_mm": -1.2,
+      "step_down_mm": 0.25,
+      "step_over_percent": 50,
+      "use_outline": true,
+      "whole_floor_outer_wire_verified": true,
+      "material_before_id": "after-02",
+      "material_after_id": "after-03"
+    },
+    {
+      "step_id": "OP10.5",
+      "feature_id": "H2",
+      "cam_operation": "Helix_04",
+      "native_operation": "Helix",
+      "tool_id": "T2",
+      "tool_number": 2,
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face24"
+          ]
+        }
+      ],
+      "start_depth_mm": -0.4,
+      "final_depth_mm": -1.6,
+      "step_down_mm": 0.25,
+      "step_over_percent": 50,
+      "material_before_id": "after-03",
+      "material_after_id": "after-04"
+    },
+    {
+      "step_id": "OP10.6",
+      "feature_id": "K1",
+      "cam_operation": "Pocket_05",
+      "native_operation": "PocketShape",
+      "tool_id": "T1",
+      "tool_number": 1,
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face25"
+          ]
+        }
+      ],
+      "start_depth_mm": -0.5,
+      "final_depth_mm": -0.9,
+      "step_down_mm": 0.25,
+      "step_over_percent": 50,
+      "use_outline": true,
+      "whole_floor_outer_wire_verified": true,
+      "material_before_id": "after-04",
+      "material_after_id": "after-05"
+    }
+  ],
+  "nc_check": {
+    "status": "checked_ordered_native_milling",
+    "text_modified": false,
+    "executable_blocks": 286,
+    "step_map": [
+      {
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1,
+        "first_executable_block": 9,
+        "last_executable_block": 123,
+        "material_before_id": "raw",
+        "material_after_id": "after-01"
+      },
+      {
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2,
+        "first_executable_block": 127,
+        "last_executable_block": 147,
+        "material_before_id": "after-01",
+        "material_after_id": "after-02"
+      },
+      {
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1,
+        "first_executable_block": 151,
+        "last_executable_block": 213,
+        "material_before_id": "after-02",
+        "material_after_id": "after-03"
+      },
+      {
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2,
+        "first_executable_block": 217,
+        "last_executable_block": 237,
+        "material_before_id": "after-03",
+        "material_after_id": "after-04"
+      },
+      {
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1,
+        "first_executable_block": 241,
+        "last_executable_block": 283,
+        "material_before_id": "after-04",
+        "material_after_id": "after-05"
+      }
+    ],
+    "tool_transitions": [
+      {
+        "tool_number": 1,
+        "tool_id": "T1",
+        "first_executable_block": 6,
+        "last_executable_block": 8
+      },
+      {
+        "tool_number": 2,
+        "tool_id": "T2",
+        "first_executable_block": 124,
+        "last_executable_block": 126
+      },
+      {
+        "tool_number": 1,
+        "tool_id": "T1",
+        "first_executable_block": 148,
+        "last_executable_block": 150
+      },
+      {
+        "tool_number": 2,
+        "tool_id": "T2",
+        "first_executable_block": 214,
+        "last_executable_block": 216
+      },
+      {
+        "tool_number": 1,
+        "tool_id": "T1",
+        "first_executable_block": 238,
+        "last_executable_block": 240
+      }
+    ],
+    "operation_checks": [
+      {
+        "status": "checked_declared_milling_envelope",
+        "executable_blocks": 123,
+        "post_decimal_places": 5,
+        "text_modified": false,
+        "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+        "cutting_moves": 70,
+        "arc_moves": 0,
+        "cutting_levels_mm": [
+          -0.25,
+          -0.5
+        ],
+        "path_envelope_allowance_mm": 0.00202,
+        "feed_time_seconds": 150.84999999999985,
+        "rapid_time_not_included": true,
+        "final_uncovered_profile_mm2": 0.0,
+        "incoming_stock_bounds": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -1.5
+          ],
+          "max": [
+            8.0,
+            6.0,
+            -0.5
+          ]
+        },
+        "facing_semantics": "Clear the complete incoming XY footprint to the original CAD top, with the declared step-down and unchanged NC.",
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1,
+        "actual_block_offset": 3,
+        "guard_projection": "Single-operation verification wrapper only; original native NC unchanged."
+      },
+      {
+        "status": "checked_declared_helical_hole",
+        "text_modified": false,
+        "executable_blocks": 29,
+        "scope": "Fixed-axis G17/G54, incremental I/J, CCW helical clearing with explicit air entry and breakthrough; no general NC interpreter.",
+        "cleared_radius_mm": 0.5,
+        "arc_moves": 12,
+        "helical_arc_moves": 10,
+        "feed_time_seconds": 4.757961174439831,
+        "rapid_time_not_included": true,
+        "entry_height_mm": -0.4,
+        "final_depth_mm": -1.6,
+        "rapid_in_stock_requires_previously_cleared_volume": true,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2,
+        "actual_block_offset": 121,
+        "guard_projection": "Single-operation verification wrapper only; original native NC unchanged."
+      },
+      {
+        "status": "checked_declared_milling_envelope",
+        "executable_blocks": 71,
+        "post_decimal_places": 5,
+        "text_modified": false,
+        "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+        "cutting_moves": 42,
+        "arc_moves": 12,
+        "cutting_levels_mm": [
+          -0.75,
+          -1.0,
+          -1.2
+        ],
+        "path_envelope_allowance_mm": 0.00202,
+        "feed_time_seconds": 32.03958459121268,
+        "rapid_time_not_included": true,
+        "final_uncovered_profile_mm2": 0.0,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1,
+        "actual_block_offset": 145,
+        "guard_projection": "Single-operation verification wrapper only; original native NC unchanged."
+      },
+      {
+        "status": "checked_declared_helical_hole",
+        "text_modified": false,
+        "executable_blocks": 29,
+        "scope": "Fixed-axis G17/G54, incremental I/J, CCW helical clearing with explicit air entry and breakthrough; no general NC interpreter.",
+        "cleared_radius_mm": 0.5,
+        "arc_moves": 12,
+        "helical_arc_moves": 10,
+        "feed_time_seconds": 4.757961174439831,
+        "rapid_time_not_included": true,
+        "entry_height_mm": -0.4,
+        "final_depth_mm": -1.6,
+        "rapid_in_stock_requires_previously_cleared_volume": true,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2,
+        "actual_block_offset": 211,
+        "guard_projection": "Single-operation verification wrapper only; original native NC unchanged."
+      },
+      {
+        "status": "checked_declared_milling_envelope",
+        "executable_blocks": 51,
+        "post_decimal_places": 5,
+        "text_modified": false,
+        "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+        "cutting_moves": 28,
+        "arc_moves": 8,
+        "cutting_levels_mm": [
+          -0.75,
+          -0.9
+        ],
+        "path_envelope_allowance_mm": 0.00202,
+        "feed_time_seconds": 20.72638972747512,
+        "rapid_time_not_included": true,
+        "final_uncovered_profile_mm2": 0.0,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1,
+        "actual_block_offset": 235,
+        "guard_projection": "Single-operation verification wrapper only; original native NC unchanged."
+      }
+    ],
+    "motion_trace": [
+      {
+        "block": 9,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          null
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 10,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 11,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          5.1,
+          2.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 12,
+        "motion": "G0",
+        "start": [
+          5.1,
+          2.9,
+          3.0
+        ],
+        "end": [
+          5.1,
+          2.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 13,
+        "motion": "G1",
+        "start": [
+          5.1,
+          2.9,
+          2.0
+        ],
+        "end": [
+          5.1,
+          2.9,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2.25,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 14,
+        "motion": "G1",
+        "start": [
+          5.1,
+          2.9,
+          -0.25
+        ],
+        "end": [
+          5.1,
+          3.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2.35,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 15,
+        "motion": "G1",
+        "start": [
+          5.1,
+          3.1,
+          -0.25
+        ],
+        "end": [
+          2.9,
+          3.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 3.45,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 16,
+        "motion": "G1",
+        "start": [
+          2.9,
+          3.1,
+          -0.25
+        ],
+        "end": [
+          2.9,
+          2.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 3.5500000000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 17,
+        "motion": "G1",
+        "start": [
+          2.9,
+          2.9,
+          -0.25
+        ],
+        "end": [
+          5.1,
+          2.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 4.65,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 18,
+        "motion": "G0",
+        "start": [
+          5.1,
+          2.9,
+          -0.25
+        ],
+        "end": [
+          5.1,
+          2.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 4.65,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 19,
+        "motion": "G0",
+        "start": [
+          5.1,
+          2.9,
+          3.0
+        ],
+        "end": [
+          5.6,
+          2.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 4.65,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 20,
+        "motion": "G0",
+        "start": [
+          5.6,
+          2.4,
+          3.0
+        ],
+        "end": [
+          5.6,
+          2.4,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 4.65,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 21,
+        "motion": "G1",
+        "start": [
+          5.6,
+          2.4,
+          2.0
+        ],
+        "end": [
+          5.6,
+          2.4,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 6.9,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 22,
+        "motion": "G1",
+        "start": [
+          5.6,
+          2.4,
+          -0.25
+        ],
+        "end": [
+          5.6,
+          3.6,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 7.5,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 23,
+        "motion": "G1",
+        "start": [
+          5.6,
+          3.6,
+          -0.25
+        ],
+        "end": [
+          2.4,
+          3.6,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 9.1,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 24,
+        "motion": "G1",
+        "start": [
+          2.4,
+          3.6,
+          -0.25
+        ],
+        "end": [
+          2.4,
+          2.4,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 9.7,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 25,
+        "motion": "G1",
+        "start": [
+          2.4,
+          2.4,
+          -0.25
+        ],
+        "end": [
+          5.6,
+          2.4,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 11.299999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 26,
+        "motion": "G0",
+        "start": [
+          5.6,
+          2.4,
+          -0.25
+        ],
+        "end": [
+          5.6,
+          2.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 11.299999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 27,
+        "motion": "G0",
+        "start": [
+          5.6,
+          2.4,
+          3.0
+        ],
+        "end": [
+          6.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 11.299999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 28,
+        "motion": "G0",
+        "start": [
+          6.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          6.1,
+          1.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 11.299999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 29,
+        "motion": "G1",
+        "start": [
+          6.1,
+          1.9,
+          2.0
+        ],
+        "end": [
+          6.1,
+          1.9,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 13.549999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 30,
+        "motion": "G1",
+        "start": [
+          6.1,
+          1.9,
+          -0.25
+        ],
+        "end": [
+          6.1,
+          4.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 14.649999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 31,
+        "motion": "G1",
+        "start": [
+          6.1,
+          4.1,
+          -0.25
+        ],
+        "end": [
+          1.9,
+          4.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 16.75,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 32,
+        "motion": "G1",
+        "start": [
+          1.9,
+          4.1,
+          -0.25
+        ],
+        "end": [
+          1.9,
+          1.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 17.85,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 33,
+        "motion": "G1",
+        "start": [
+          1.9,
+          1.9,
+          -0.25
+        ],
+        "end": [
+          6.1,
+          1.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 19.950000000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 34,
+        "motion": "G0",
+        "start": [
+          6.1,
+          1.9,
+          -0.25
+        ],
+        "end": [
+          6.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 19.950000000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 35,
+        "motion": "G0",
+        "start": [
+          6.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          6.6,
+          1.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 19.950000000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 36,
+        "motion": "G0",
+        "start": [
+          6.6,
+          1.4,
+          3.0
+        ],
+        "end": [
+          6.6,
+          1.4,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 19.950000000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 37,
+        "motion": "G1",
+        "start": [
+          6.6,
+          1.4,
+          2.0
+        ],
+        "end": [
+          6.6,
+          1.4,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 22.200000000000003,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 38,
+        "motion": "G1",
+        "start": [
+          6.6,
+          1.4,
+          -0.25
+        ],
+        "end": [
+          6.6,
+          4.6,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 23.800000000000004,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 39,
+        "motion": "G1",
+        "start": [
+          6.6,
+          4.6,
+          -0.25
+        ],
+        "end": [
+          1.4,
+          4.6,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 26.400000000000006,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 40,
+        "motion": "G1",
+        "start": [
+          1.4,
+          4.6,
+          -0.25
+        ],
+        "end": [
+          1.4,
+          1.4,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 28.000000000000007,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 41,
+        "motion": "G1",
+        "start": [
+          1.4,
+          1.4,
+          -0.25
+        ],
+        "end": [
+          6.6,
+          1.4,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 30.60000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 42,
+        "motion": "G0",
+        "start": [
+          6.6,
+          1.4,
+          -0.25
+        ],
+        "end": [
+          6.6,
+          1.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 30.60000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 43,
+        "motion": "G0",
+        "start": [
+          6.6,
+          1.4,
+          3.0
+        ],
+        "end": [
+          7.1,
+          0.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 30.60000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 44,
+        "motion": "G0",
+        "start": [
+          7.1,
+          0.9,
+          3.0
+        ],
+        "end": [
+          7.1,
+          0.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 30.60000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 45,
+        "motion": "G1",
+        "start": [
+          7.1,
+          0.9,
+          2.0
+        ],
+        "end": [
+          7.1,
+          0.9,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 32.85000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 46,
+        "motion": "G1",
+        "start": [
+          7.1,
+          0.9,
+          -0.25
+        ],
+        "end": [
+          7.1,
+          5.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 34.95000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 47,
+        "motion": "G1",
+        "start": [
+          7.1,
+          5.1,
+          -0.25
+        ],
+        "end": [
+          0.9,
+          5.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 38.05000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 48,
+        "motion": "G1",
+        "start": [
+          0.9,
+          5.1,
+          -0.25
+        ],
+        "end": [
+          0.9,
+          0.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 40.15000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 49,
+        "motion": "G1",
+        "start": [
+          0.9,
+          0.9,
+          -0.25
+        ],
+        "end": [
+          7.1,
+          0.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 43.250000000000014,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 50,
+        "motion": "G0",
+        "start": [
+          7.1,
+          0.9,
+          -0.25
+        ],
+        "end": [
+          7.1,
+          0.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 43.250000000000014,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 51,
+        "motion": "G0",
+        "start": [
+          7.1,
+          0.9,
+          3.0
+        ],
+        "end": [
+          7.6,
+          0.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 43.250000000000014,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 52,
+        "motion": "G0",
+        "start": [
+          7.6,
+          0.4,
+          3.0
+        ],
+        "end": [
+          7.6,
+          0.4,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 43.250000000000014,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 53,
+        "motion": "G1",
+        "start": [
+          7.6,
+          0.4,
+          2.0
+        ],
+        "end": [
+          7.6,
+          0.4,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 45.500000000000014,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 54,
+        "motion": "G1",
+        "start": [
+          7.6,
+          0.4,
+          -0.25
+        ],
+        "end": [
+          7.6,
+          5.6,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 48.100000000000016,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 55,
+        "motion": "G1",
+        "start": [
+          7.6,
+          5.6,
+          -0.25
+        ],
+        "end": [
+          0.4,
+          5.6,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 51.70000000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 56,
+        "motion": "G1",
+        "start": [
+          0.4,
+          5.6,
+          -0.25
+        ],
+        "end": [
+          0.4,
+          0.4,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 54.30000000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 57,
+        "motion": "G1",
+        "start": [
+          0.4,
+          0.4,
+          -0.25
+        ],
+        "end": [
+          7.6,
+          0.4,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 57.90000000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 58,
+        "motion": "G0",
+        "start": [
+          7.6,
+          0.4,
+          -0.25
+        ],
+        "end": [
+          7.6,
+          0.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 57.90000000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 59,
+        "motion": "G0",
+        "start": [
+          7.6,
+          0.4,
+          3.0
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 57.90000000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 60,
+        "motion": "G0",
+        "start": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 57.90000000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 61,
+        "motion": "G1",
+        "start": [
+          8.1,
+          -0.1,
+          2.0
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 60.15000000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 62,
+        "motion": "G1",
+        "start": [
+          8.1,
+          -0.1,
+          -0.25
+        ],
+        "end": [
+          8.1,
+          6.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 63.25000000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 63,
+        "motion": "G1",
+        "start": [
+          8.1,
+          6.1,
+          -0.25
+        ],
+        "end": [
+          -0.1,
+          6.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 67.35000000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 64,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          6.1,
+          -0.25
+        ],
+        "end": [
+          -0.1,
+          -0.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 70.45000000000002,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 65,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          -0.1,
+          -0.25
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 74.55000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 66,
+        "motion": "G0",
+        "start": [
+          8.1,
+          -0.1,
+          -0.25
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 74.55000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 67,
+        "motion": "G0",
+        "start": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          5.1,
+          2.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 74.55000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 68,
+        "motion": "G0",
+        "start": [
+          5.1,
+          2.9,
+          3.0
+        ],
+        "end": [
+          5.1,
+          2.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 74.55000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 69,
+        "motion": "G1",
+        "start": [
+          5.1,
+          2.9,
+          2.0
+        ],
+        "end": [
+          5.1,
+          2.9,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 77.05000000000001,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 70,
+        "motion": "G1",
+        "start": [
+          5.1,
+          2.9,
+          -0.5
+        ],
+        "end": [
+          5.1,
+          3.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 77.15,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 71,
+        "motion": "G1",
+        "start": [
+          5.1,
+          3.1,
+          -0.5
+        ],
+        "end": [
+          2.9,
+          3.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 78.25,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 72,
+        "motion": "G1",
+        "start": [
+          2.9,
+          3.1,
+          -0.5
+        ],
+        "end": [
+          2.9,
+          2.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 78.35,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 73,
+        "motion": "G1",
+        "start": [
+          2.9,
+          2.9,
+          -0.5
+        ],
+        "end": [
+          5.1,
+          2.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 79.44999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 74,
+        "motion": "G0",
+        "start": [
+          5.1,
+          2.9,
+          -0.5
+        ],
+        "end": [
+          5.1,
+          2.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 79.44999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 75,
+        "motion": "G0",
+        "start": [
+          5.1,
+          2.9,
+          3.0
+        ],
+        "end": [
+          5.6,
+          2.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 79.44999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 76,
+        "motion": "G0",
+        "start": [
+          5.6,
+          2.4,
+          3.0
+        ],
+        "end": [
+          5.6,
+          2.4,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 79.44999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 77,
+        "motion": "G1",
+        "start": [
+          5.6,
+          2.4,
+          2.0
+        ],
+        "end": [
+          5.6,
+          2.4,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 81.94999999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 78,
+        "motion": "G1",
+        "start": [
+          5.6,
+          2.4,
+          -0.5
+        ],
+        "end": [
+          5.6,
+          3.6,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 82.54999999999998,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 79,
+        "motion": "G1",
+        "start": [
+          5.6,
+          3.6,
+          -0.5
+        ],
+        "end": [
+          2.4,
+          3.6,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 84.14999999999998,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 80,
+        "motion": "G1",
+        "start": [
+          2.4,
+          3.6,
+          -0.5
+        ],
+        "end": [
+          2.4,
+          2.4,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 84.74999999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 81,
+        "motion": "G1",
+        "start": [
+          2.4,
+          2.4,
+          -0.5
+        ],
+        "end": [
+          5.6,
+          2.4,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 86.34999999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 82,
+        "motion": "G0",
+        "start": [
+          5.6,
+          2.4,
+          -0.5
+        ],
+        "end": [
+          5.6,
+          2.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 86.34999999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 83,
+        "motion": "G0",
+        "start": [
+          5.6,
+          2.4,
+          3.0
+        ],
+        "end": [
+          6.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 86.34999999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 84,
+        "motion": "G0",
+        "start": [
+          6.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          6.1,
+          1.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 86.34999999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 85,
+        "motion": "G1",
+        "start": [
+          6.1,
+          1.9,
+          2.0
+        ],
+        "end": [
+          6.1,
+          1.9,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 88.84999999999997,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 86,
+        "motion": "G1",
+        "start": [
+          6.1,
+          1.9,
+          -0.5
+        ],
+        "end": [
+          6.1,
+          4.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 89.94999999999996,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 87,
+        "motion": "G1",
+        "start": [
+          6.1,
+          4.1,
+          -0.5
+        ],
+        "end": [
+          1.9,
+          4.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 92.04999999999995,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 88,
+        "motion": "G1",
+        "start": [
+          1.9,
+          4.1,
+          -0.5
+        ],
+        "end": [
+          1.9,
+          1.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 93.14999999999995,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 89,
+        "motion": "G1",
+        "start": [
+          1.9,
+          1.9,
+          -0.5
+        ],
+        "end": [
+          6.1,
+          1.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 95.24999999999994,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 90,
+        "motion": "G0",
+        "start": [
+          6.1,
+          1.9,
+          -0.5
+        ],
+        "end": [
+          6.1,
+          1.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 95.24999999999994,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 91,
+        "motion": "G0",
+        "start": [
+          6.1,
+          1.9,
+          3.0
+        ],
+        "end": [
+          6.6,
+          1.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 95.24999999999994,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 92,
+        "motion": "G0",
+        "start": [
+          6.6,
+          1.4,
+          3.0
+        ],
+        "end": [
+          6.6,
+          1.4,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 95.24999999999994,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 93,
+        "motion": "G1",
+        "start": [
+          6.6,
+          1.4,
+          2.0
+        ],
+        "end": [
+          6.6,
+          1.4,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 97.74999999999994,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 94,
+        "motion": "G1",
+        "start": [
+          6.6,
+          1.4,
+          -0.5
+        ],
+        "end": [
+          6.6,
+          4.6,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 99.34999999999994,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 95,
+        "motion": "G1",
+        "start": [
+          6.6,
+          4.6,
+          -0.5
+        ],
+        "end": [
+          1.4,
+          4.6,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 101.94999999999993,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 96,
+        "motion": "G1",
+        "start": [
+          1.4,
+          4.6,
+          -0.5
+        ],
+        "end": [
+          1.4,
+          1.4,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 103.54999999999993,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 97,
+        "motion": "G1",
+        "start": [
+          1.4,
+          1.4,
+          -0.5
+        ],
+        "end": [
+          6.6,
+          1.4,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 106.14999999999992,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 98,
+        "motion": "G0",
+        "start": [
+          6.6,
+          1.4,
+          -0.5
+        ],
+        "end": [
+          6.6,
+          1.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 106.14999999999992,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 99,
+        "motion": "G0",
+        "start": [
+          6.6,
+          1.4,
+          3.0
+        ],
+        "end": [
+          7.1,
+          0.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 106.14999999999992,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 100,
+        "motion": "G0",
+        "start": [
+          7.1,
+          0.9,
+          3.0
+        ],
+        "end": [
+          7.1,
+          0.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 106.14999999999992,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 101,
+        "motion": "G1",
+        "start": [
+          7.1,
+          0.9,
+          2.0
+        ],
+        "end": [
+          7.1,
+          0.9,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 108.64999999999992,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 102,
+        "motion": "G1",
+        "start": [
+          7.1,
+          0.9,
+          -0.5
+        ],
+        "end": [
+          7.1,
+          5.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 110.74999999999991,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 103,
+        "motion": "G1",
+        "start": [
+          7.1,
+          5.1,
+          -0.5
+        ],
+        "end": [
+          0.9,
+          5.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 113.84999999999991,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 104,
+        "motion": "G1",
+        "start": [
+          0.9,
+          5.1,
+          -0.5
+        ],
+        "end": [
+          0.9,
+          0.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 115.9499999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 105,
+        "motion": "G1",
+        "start": [
+          0.9,
+          0.9,
+          -0.5
+        ],
+        "end": [
+          7.1,
+          0.9,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 119.0499999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 106,
+        "motion": "G0",
+        "start": [
+          7.1,
+          0.9,
+          -0.5
+        ],
+        "end": [
+          7.1,
+          0.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 119.0499999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 107,
+        "motion": "G0",
+        "start": [
+          7.1,
+          0.9,
+          3.0
+        ],
+        "end": [
+          7.6,
+          0.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 119.0499999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 108,
+        "motion": "G0",
+        "start": [
+          7.6,
+          0.4,
+          3.0
+        ],
+        "end": [
+          7.6,
+          0.4,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 119.0499999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 109,
+        "motion": "G1",
+        "start": [
+          7.6,
+          0.4,
+          2.0
+        ],
+        "end": [
+          7.6,
+          0.4,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 121.5499999999999,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 110,
+        "motion": "G1",
+        "start": [
+          7.6,
+          0.4,
+          -0.5
+        ],
+        "end": [
+          7.6,
+          5.6,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 124.14999999999989,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 111,
+        "motion": "G1",
+        "start": [
+          7.6,
+          5.6,
+          -0.5
+        ],
+        "end": [
+          0.4,
+          5.6,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 127.74999999999989,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 112,
+        "motion": "G1",
+        "start": [
+          0.4,
+          5.6,
+          -0.5
+        ],
+        "end": [
+          0.4,
+          0.4,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 130.34999999999988,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 113,
+        "motion": "G1",
+        "start": [
+          0.4,
+          0.4,
+          -0.5
+        ],
+        "end": [
+          7.6,
+          0.4,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 133.94999999999987,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 114,
+        "motion": "G0",
+        "start": [
+          7.6,
+          0.4,
+          -0.5
+        ],
+        "end": [
+          7.6,
+          0.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 133.94999999999987,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 115,
+        "motion": "G0",
+        "start": [
+          7.6,
+          0.4,
+          3.0
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 133.94999999999987,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 116,
+        "motion": "G0",
+        "start": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 133.94999999999987,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 117,
+        "motion": "G1",
+        "start": [
+          8.1,
+          -0.1,
+          2.0
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 136.44999999999987,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 118,
+        "motion": "G1",
+        "start": [
+          8.1,
+          -0.1,
+          -0.5
+        ],
+        "end": [
+          8.1,
+          6.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 139.54999999999987,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 119,
+        "motion": "G1",
+        "start": [
+          8.1,
+          6.1,
+          -0.5
+        ],
+        "end": [
+          -0.1,
+          6.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 143.64999999999986,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 120,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          6.1,
+          -0.5
+        ],
+        "end": [
+          -0.1,
+          -0.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 146.74999999999986,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 121,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          -0.1,
+          -0.5
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 150.84999999999985,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 122,
+        "motion": "G0",
+        "start": [
+          8.1,
+          -0.1,
+          -0.5
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 150.84999999999985,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 123,
+        "motion": "G0",
+        "start": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 150.84999999999985,
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "tool_number": 1
+      },
+      {
+        "block": 127,
+        "motion": "G0",
+        "start": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 150.84999999999985,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 128,
+        "motion": "G0",
+        "start": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 150.84999999999985,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 129,
+        "motion": "G0",
+        "start": [
+          8.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          2.0,
+          3.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 150.84999999999985,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 130,
+        "motion": "G0",
+        "start": [
+          2.0,
+          3.0,
+          3.0
+        ],
+        "end": [
+          2.0,
+          3.0,
+          -0.4
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 150.84999999999985,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 131,
+        "motion": "G0",
+        "start": [
+          2.0,
+          3.0,
+          -0.4
+        ],
+        "end": [
+          2.25,
+          3.0,
+          -0.4
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 150.84999999999985,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 132,
+        "motion": "G1",
+        "start": [
+          2.25,
+          3.0,
+          -0.4
+        ],
+        "end": [
+          2.25,
+          3.0,
+          -0.4
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 150.84999999999985,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 133,
+        "motion": "G3",
+        "start": [
+          2.25,
+          3.0,
+          -0.4
+        ],
+        "end": [
+          1.75,
+          3.0,
+          -0.52
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 151.2472563011041,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 134,
+        "motion": "G3",
+        "start": [
+          1.75,
+          3.0,
+          -0.52
+        ],
+        "end": [
+          2.25,
+          3.0,
+          -0.64
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 151.64451260220832,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 135,
+        "motion": "G3",
+        "start": [
+          2.25,
+          3.0,
+          -0.64
+        ],
+        "end": [
+          1.75,
+          3.0,
+          -0.76
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 152.04176890331257,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 136,
+        "motion": "G3",
+        "start": [
+          1.75,
+          3.0,
+          -0.76
+        ],
+        "end": [
+          2.25,
+          3.0,
+          -0.88
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 152.4390252044168,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 137,
+        "motion": "G3",
+        "start": [
+          2.25,
+          3.0,
+          -0.88
+        ],
+        "end": [
+          1.75,
+          3.0,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 152.83628150552104,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 138,
+        "motion": "G3",
+        "start": [
+          1.75,
+          3.0,
+          -1.0
+        ],
+        "end": [
+          2.25,
+          3.0,
+          -1.12
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 153.2335378066253,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24000000000000019,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 139,
+        "motion": "G3",
+        "start": [
+          2.25,
+          3.0,
+          -1.12
+        ],
+        "end": [
+          1.75,
+          3.0,
+          -1.24
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 153.6307941077295,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.23999999999999977,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 140,
+        "motion": "G3",
+        "start": [
+          1.75,
+          3.0,
+          -1.24
+        ],
+        "end": [
+          2.25,
+          3.0,
+          -1.36
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 154.02805040883376,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24000000000000019,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 141,
+        "motion": "G3",
+        "start": [
+          2.25,
+          3.0,
+          -1.36
+        ],
+        "end": [
+          1.75,
+          3.0,
+          -1.48
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 154.42530670993798,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.23999999999999977,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 142,
+        "motion": "G3",
+        "start": [
+          1.75,
+          3.0,
+          -1.48
+        ],
+        "end": [
+          2.25,
+          3.0,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 154.82256301104223,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24000000000000019,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 143,
+        "motion": "G3",
+        "start": [
+          2.25,
+          3.0,
+          -1.6
+        ],
+        "end": [
+          1.75,
+          3.0,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 155.21526209274097,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 144,
+        "motion": "G3",
+        "start": [
+          1.75,
+          3.0,
+          -1.6
+        ],
+        "end": [
+          2.25,
+          3.0,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 155.60796117443968,
+        "arc_center_xy_mm": [
+          2.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 145,
+        "motion": "G0",
+        "start": [
+          2.25,
+          3.0,
+          -1.6
+        ],
+        "end": [
+          2.0,
+          3.0,
+          -1.6
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 155.60796117443968,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 146,
+        "motion": "G0",
+        "start": [
+          2.0,
+          3.0,
+          -1.6
+        ],
+        "end": [
+          2.0,
+          3.0,
+          -0.4
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 155.60796117443968,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 147,
+        "motion": "G0",
+        "start": [
+          2.0,
+          3.0,
+          -0.4
+        ],
+        "end": [
+          2.0,
+          3.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 155.60796117443968,
+        "step_id": "OP10.3",
+        "feature_id": "H1",
+        "tool_number": 2
+      },
+      {
+        "block": 151,
+        "motion": "G0",
+        "start": [
+          2.0,
+          3.0,
+          3.0
+        ],
+        "end": [
+          2.0,
+          3.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 155.60796117443968,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 152,
+        "motion": "G0",
+        "start": [
+          2.0,
+          3.0,
+          3.0
+        ],
+        "end": [
+          2.0,
+          3.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 155.60796117443968,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 153,
+        "motion": "G0",
+        "start": [
+          2.0,
+          3.0,
+          3.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 155.60796117443968,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 154,
+        "motion": "G0",
+        "start": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 155.60796117443968,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 155,
+        "motion": "G1",
+        "start": [
+          6.2,
+          2.5,
+          2.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          -0.75
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 158.35796117443968,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 156,
+        "motion": "G1",
+        "start": [
+          6.2,
+          2.5,
+          -0.75
+        ],
+        "end": [
+          6.2,
+          3.5,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 158.85796117443968,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 157,
+        "motion": "G1",
+        "start": [
+          6.2,
+          3.5,
+          -0.75
+        ],
+        "end": [
+          5.8,
+          3.5,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 159.05796117443967,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 158,
+        "motion": "G1",
+        "start": [
+          5.8,
+          3.5,
+          -0.75
+        ],
+        "end": [
+          5.8,
+          2.5,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 159.55796117443967,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 159,
+        "motion": "G1",
+        "start": [
+          5.8,
+          2.5,
+          -0.75
+        ],
+        "end": [
+          6.2,
+          2.5,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 159.75796117443969,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 160,
+        "motion": "G0",
+        "start": [
+          6.2,
+          2.5,
+          -0.75
+        ],
+        "end": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 159.75796117443969,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 161,
+        "motion": "G0",
+        "start": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 159.75796117443969,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 162,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 159.75796117443969,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 163,
+        "motion": "G1",
+        "start": [
+          5.41403,
+          2.0,
+          2.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          -0.75
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 162.50796117443969,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 164,
+        "motion": "G1",
+        "start": [
+          5.41403,
+          2.0,
+          -0.75
+        ],
+        "end": [
+          6.58597,
+          2.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 163.0939311744397,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 165,
+        "motion": "G3",
+        "start": [
+          6.58597,
+          2.0,
+          -0.75
+        ],
+        "end": [
+          6.7,
+          2.11403,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 163.18626072888742,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 166,
+        "motion": "G1",
+        "start": [
+          6.7,
+          2.11403,
+          -0.75
+        ],
+        "end": [
+          6.7,
+          3.88597,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 164.07223072888743,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 167,
+        "motion": "G3",
+        "start": [
+          6.7,
+          3.88597,
+          -0.75
+        ],
+        "end": [
+          6.58597,
+          4.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 164.16456028333516,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 168,
+        "motion": "G1",
+        "start": [
+          6.58597,
+          4.0,
+          -0.75
+        ],
+        "end": [
+          5.41403,
+          4.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 164.75053028333517,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 169,
+        "motion": "G3",
+        "start": [
+          5.41403,
+          4.0,
+          -0.75
+        ],
+        "end": [
+          5.3,
+          3.88597,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 164.8428564837295,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 170,
+        "motion": "G1",
+        "start": [
+          5.3,
+          3.88597,
+          -0.75
+        ],
+        "end": [
+          5.3,
+          2.11403,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 165.7288264837295,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 171,
+        "motion": "G3",
+        "start": [
+          5.3,
+          2.11403,
+          -0.75
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 165.82115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 172,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          -0.75
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 165.82115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 173,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 165.82115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 174,
+        "motion": "G0",
+        "start": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 165.82115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 175,
+        "motion": "G1",
+        "start": [
+          6.2,
+          2.5,
+          2.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          -1.0
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 168.82115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 176,
+        "motion": "G1",
+        "start": [
+          6.2,
+          2.5,
+          -1.0
+        ],
+        "end": [
+          6.2,
+          3.5,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 169.32115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 177,
+        "motion": "G1",
+        "start": [
+          6.2,
+          3.5,
+          -1.0
+        ],
+        "end": [
+          5.8,
+          3.5,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 169.52115603817725,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 178,
+        "motion": "G1",
+        "start": [
+          5.8,
+          3.5,
+          -1.0
+        ],
+        "end": [
+          5.8,
+          2.5,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 170.02115603817725,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 179,
+        "motion": "G1",
+        "start": [
+          5.8,
+          2.5,
+          -1.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 170.22115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 180,
+        "motion": "G0",
+        "start": [
+          6.2,
+          2.5,
+          -1.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 170.22115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 181,
+        "motion": "G0",
+        "start": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 170.22115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 182,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 170.22115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 183,
+        "motion": "G1",
+        "start": [
+          5.41403,
+          2.0,
+          2.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          -1.0
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 173.22115603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 184,
+        "motion": "G1",
+        "start": [
+          5.41403,
+          2.0,
+          -1.0
+        ],
+        "end": [
+          6.58597,
+          2.0,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 173.80712603817724,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 185,
+        "motion": "G3",
+        "start": [
+          6.58597,
+          2.0,
+          -1.0
+        ],
+        "end": [
+          6.7,
+          2.11403,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 173.89945559262497,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 186,
+        "motion": "G1",
+        "start": [
+          6.7,
+          2.11403,
+          -1.0
+        ],
+        "end": [
+          6.7,
+          3.88597,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 174.785425592625,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 187,
+        "motion": "G3",
+        "start": [
+          6.7,
+          3.88597,
+          -1.0
+        ],
+        "end": [
+          6.58597,
+          4.0,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 174.87775514707272,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 188,
+        "motion": "G1",
+        "start": [
+          6.58597,
+          4.0,
+          -1.0
+        ],
+        "end": [
+          5.41403,
+          4.0,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 175.46372514707272,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 189,
+        "motion": "G3",
+        "start": [
+          5.41403,
+          4.0,
+          -1.0
+        ],
+        "end": [
+          5.3,
+          3.88597,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 175.55605134746705,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 190,
+        "motion": "G1",
+        "start": [
+          5.3,
+          3.88597,
+          -1.0
+        ],
+        "end": [
+          5.3,
+          2.11403,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 176.44202134746706,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 191,
+        "motion": "G3",
+        "start": [
+          5.3,
+          2.11403,
+          -1.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 176.5343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 192,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          -1.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 176.5343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 193,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 176.5343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 194,
+        "motion": "G0",
+        "start": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 176.5343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 195,
+        "motion": "G1",
+        "start": [
+          6.2,
+          2.5,
+          2.0
+        ],
+        "end": [
+          6.2,
+          2.5,
+          -1.2
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 179.7343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 196,
+        "motion": "G1",
+        "start": [
+          6.2,
+          2.5,
+          -1.2
+        ],
+        "end": [
+          6.2,
+          3.5,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 180.2343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 197,
+        "motion": "G1",
+        "start": [
+          6.2,
+          3.5,
+          -1.2
+        ],
+        "end": [
+          5.8,
+          3.5,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 180.4343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 198,
+        "motion": "G1",
+        "start": [
+          5.8,
+          3.5,
+          -1.2
+        ],
+        "end": [
+          5.8,
+          2.5,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 180.9343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 199,
+        "motion": "G1",
+        "start": [
+          5.8,
+          2.5,
+          -1.2
+        ],
+        "end": [
+          6.2,
+          2.5,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 181.1343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 200,
+        "motion": "G0",
+        "start": [
+          6.2,
+          2.5,
+          -1.2
+        ],
+        "end": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 181.1343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 201,
+        "motion": "G0",
+        "start": [
+          6.2,
+          2.5,
+          3.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 181.1343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 202,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 181.1343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 203,
+        "motion": "G1",
+        "start": [
+          5.41403,
+          2.0,
+          2.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          -1.2
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 184.3343509019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 204,
+        "motion": "G1",
+        "start": [
+          5.41403,
+          2.0,
+          -1.2
+        ],
+        "end": [
+          6.58597,
+          2.0,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 184.9203209019148,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 205,
+        "motion": "G3",
+        "start": [
+          6.58597,
+          2.0,
+          -1.2
+        ],
+        "end": [
+          6.7,
+          2.11403,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 185.01265045636254,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 206,
+        "motion": "G1",
+        "start": [
+          6.7,
+          2.11403,
+          -1.2
+        ],
+        "end": [
+          6.7,
+          3.88597,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 185.89862045636255,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 207,
+        "motion": "G3",
+        "start": [
+          6.7,
+          3.88597,
+          -1.2
+        ],
+        "end": [
+          6.58597,
+          4.0,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 185.99095001081028,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 208,
+        "motion": "G1",
+        "start": [
+          6.58597,
+          4.0,
+          -1.2
+        ],
+        "end": [
+          5.41403,
+          4.0,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 186.57692001081028,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 209,
+        "motion": "G3",
+        "start": [
+          5.41403,
+          4.0,
+          -1.2
+        ],
+        "end": [
+          5.3,
+          3.88597,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 186.6692462112046,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 210,
+        "motion": "G1",
+        "start": [
+          5.3,
+          3.88597,
+          -1.2
+        ],
+        "end": [
+          5.3,
+          2.11403,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 187.55521621120462,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 211,
+        "motion": "G3",
+        "start": [
+          5.3,
+          2.11403,
+          -1.2
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          -1.2
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 187.64754576565235,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 212,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          -1.2
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 187.64754576565235,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 213,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 187.64754576565235,
+        "step_id": "OP10.4",
+        "feature_id": "K2",
+        "tool_number": 1
+      },
+      {
+        "block": 217,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 187.64754576565235,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 218,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 187.64754576565235,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 219,
+        "motion": "G0",
+        "start": [
+          5.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          6.0,
+          3.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 187.64754576565235,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 220,
+        "motion": "G0",
+        "start": [
+          6.0,
+          3.0,
+          3.0
+        ],
+        "end": [
+          6.0,
+          3.0,
+          -0.4
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 187.64754576565235,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 221,
+        "motion": "G0",
+        "start": [
+          6.0,
+          3.0,
+          -0.4
+        ],
+        "end": [
+          6.25,
+          3.0,
+          -0.4
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 187.64754576565235,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 222,
+        "motion": "G1",
+        "start": [
+          6.25,
+          3.0,
+          -0.4
+        ],
+        "end": [
+          6.25,
+          3.0,
+          -0.4
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 187.64754576565235,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 223,
+        "motion": "G3",
+        "start": [
+          6.25,
+          3.0,
+          -0.4
+        ],
+        "end": [
+          5.75,
+          3.0,
+          -0.52
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 188.0448020667566,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 224,
+        "motion": "G3",
+        "start": [
+          5.75,
+          3.0,
+          -0.52
+        ],
+        "end": [
+          6.25,
+          3.0,
+          -0.64
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 188.44205836786082,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 225,
+        "motion": "G3",
+        "start": [
+          6.25,
+          3.0,
+          -0.64
+        ],
+        "end": [
+          5.75,
+          3.0,
+          -0.76
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 188.83931466896507,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 226,
+        "motion": "G3",
+        "start": [
+          5.75,
+          3.0,
+          -0.76
+        ],
+        "end": [
+          6.25,
+          3.0,
+          -0.88
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 189.2365709700693,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 227,
+        "motion": "G3",
+        "start": [
+          6.25,
+          3.0,
+          -0.88
+        ],
+        "end": [
+          5.75,
+          3.0,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 189.63382727117354,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 228,
+        "motion": "G3",
+        "start": [
+          5.75,
+          3.0,
+          -1.0
+        ],
+        "end": [
+          6.25,
+          3.0,
+          -1.12
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 190.0310835722778,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24000000000000019,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 229,
+        "motion": "G3",
+        "start": [
+          6.25,
+          3.0,
+          -1.12
+        ],
+        "end": [
+          5.75,
+          3.0,
+          -1.24
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 190.42833987338201,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.23999999999999977,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 230,
+        "motion": "G3",
+        "start": [
+          5.75,
+          3.0,
+          -1.24
+        ],
+        "end": [
+          6.25,
+          3.0,
+          -1.36
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 190.82559617448626,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24000000000000019,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 231,
+        "motion": "G3",
+        "start": [
+          6.25,
+          3.0,
+          -1.36
+        ],
+        "end": [
+          5.75,
+          3.0,
+          -1.48
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 191.22285247559049,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.23999999999999977,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 232,
+        "motion": "G3",
+        "start": [
+          5.75,
+          3.0,
+          -1.48
+        ],
+        "end": [
+          6.25,
+          3.0,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 191.62010877669474,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24000000000000019,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 233,
+        "motion": "G3",
+        "start": [
+          6.25,
+          3.0,
+          -1.6
+        ],
+        "end": [
+          5.75,
+          3.0,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 192.01280785839347,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 234,
+        "motion": "G3",
+        "start": [
+          5.75,
+          3.0,
+          -1.6
+        ],
+        "end": [
+          6.25,
+          3.0,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 192.40550694009218,
+        "arc_center_xy_mm": [
+          6.0,
+          3.0
+        ],
+        "radius_mm": 0.25,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 235,
+        "motion": "G0",
+        "start": [
+          6.25,
+          3.0,
+          -1.6
+        ],
+        "end": [
+          6.0,
+          3.0,
+          -1.6
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 192.40550694009218,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 236,
+        "motion": "G0",
+        "start": [
+          6.0,
+          3.0,
+          -1.6
+        ],
+        "end": [
+          6.0,
+          3.0,
+          -0.4
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 192.40550694009218,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 237,
+        "motion": "G0",
+        "start": [
+          6.0,
+          3.0,
+          -0.4
+        ],
+        "end": [
+          6.0,
+          3.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 192.40550694009218,
+        "step_id": "OP10.5",
+        "feature_id": "H2",
+        "tool_number": 2
+      },
+      {
+        "block": 241,
+        "motion": "G0",
+        "start": [
+          6.0,
+          3.0,
+          3.0
+        ],
+        "end": [
+          6.0,
+          3.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 192.40550694009218,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 242,
+        "motion": "G0",
+        "start": [
+          6.0,
+          3.0,
+          3.0
+        ],
+        "end": [
+          6.0,
+          3.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 192.40550694009218,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 243,
+        "motion": "G0",
+        "start": [
+          6.0,
+          3.0,
+          3.0
+        ],
+        "end": [
+          2.2,
+          2.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 192.40550694009218,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 244,
+        "motion": "G0",
+        "start": [
+          2.2,
+          2.5,
+          3.0
+        ],
+        "end": [
+          2.2,
+          2.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 192.40550694009218,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 245,
+        "motion": "G1",
+        "start": [
+          2.2,
+          2.5,
+          2.0
+        ],
+        "end": [
+          2.2,
+          2.5,
+          -0.75
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 195.15550694009218,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 246,
+        "motion": "G1",
+        "start": [
+          2.2,
+          2.5,
+          -0.75
+        ],
+        "end": [
+          2.2,
+          3.5,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 195.65550694009218,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 247,
+        "motion": "G1",
+        "start": [
+          2.2,
+          3.5,
+          -0.75
+        ],
+        "end": [
+          1.8,
+          3.5,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 195.85550694009217,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 248,
+        "motion": "G1",
+        "start": [
+          1.8,
+          3.5,
+          -0.75
+        ],
+        "end": [
+          1.8,
+          2.5,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 196.35550694009217,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 249,
+        "motion": "G1",
+        "start": [
+          1.8,
+          2.5,
+          -0.75
+        ],
+        "end": [
+          2.2,
+          2.5,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 196.5555069400922,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 250,
+        "motion": "G0",
+        "start": [
+          2.2,
+          2.5,
+          -0.75
+        ],
+        "end": [
+          2.2,
+          2.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 196.5555069400922,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 251,
+        "motion": "G0",
+        "start": [
+          2.2,
+          2.5,
+          3.0
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 196.5555069400922,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 252,
+        "motion": "G0",
+        "start": [
+          1.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 196.5555069400922,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 253,
+        "motion": "G1",
+        "start": [
+          1.41403,
+          2.0,
+          2.0
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          -0.75
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 199.3055069400922,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 254,
+        "motion": "G1",
+        "start": [
+          1.41403,
+          2.0,
+          -0.75
+        ],
+        "end": [
+          2.58597,
+          2.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 199.8914769400922,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 255,
+        "motion": "G3",
+        "start": [
+          2.58597,
+          2.0,
+          -0.75
+        ],
+        "end": [
+          2.7,
+          2.11403,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 199.98380649453992,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 256,
+        "motion": "G1",
+        "start": [
+          2.7,
+          2.11403,
+          -0.75
+        ],
+        "end": [
+          2.7,
+          3.88597,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 200.86977649453993,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 257,
+        "motion": "G3",
+        "start": [
+          2.7,
+          3.88597,
+          -0.75
+        ],
+        "end": [
+          2.58597,
+          4.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 200.96210604898766,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 258,
+        "motion": "G1",
+        "start": [
+          2.58597,
+          4.0,
+          -0.75
+        ],
+        "end": [
+          1.41403,
+          4.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 201.54807604898767,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 259,
+        "motion": "G3",
+        "start": [
+          1.41403,
+          4.0,
+          -0.75
+        ],
+        "end": [
+          1.3,
+          3.88597,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 201.640402249382,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 260,
+        "motion": "G1",
+        "start": [
+          1.3,
+          3.88597,
+          -0.75
+        ],
+        "end": [
+          1.3,
+          2.11403,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 202.526372249382,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 261,
+        "motion": "G3",
+        "start": [
+          1.3,
+          2.11403,
+          -0.75
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 202.61870180382974,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 262,
+        "motion": "G0",
+        "start": [
+          1.41403,
+          2.0,
+          -0.75
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 202.61870180382974,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 263,
+        "motion": "G0",
+        "start": [
+          1.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          2.2,
+          2.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 202.61870180382974,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 264,
+        "motion": "G0",
+        "start": [
+          2.2,
+          2.5,
+          3.0
+        ],
+        "end": [
+          2.2,
+          2.5,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 202.61870180382974,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 265,
+        "motion": "G1",
+        "start": [
+          2.2,
+          2.5,
+          2.0
+        ],
+        "end": [
+          2.2,
+          2.5,
+          -0.9
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 205.51870180382974,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 266,
+        "motion": "G1",
+        "start": [
+          2.2,
+          2.5,
+          -0.9
+        ],
+        "end": [
+          2.2,
+          3.5,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 206.01870180382974,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 267,
+        "motion": "G1",
+        "start": [
+          2.2,
+          3.5,
+          -0.9
+        ],
+        "end": [
+          1.8,
+          3.5,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 206.21870180382973,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 268,
+        "motion": "G1",
+        "start": [
+          1.8,
+          3.5,
+          -0.9
+        ],
+        "end": [
+          1.8,
+          2.5,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 206.71870180382973,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 269,
+        "motion": "G1",
+        "start": [
+          1.8,
+          2.5,
+          -0.9
+        ],
+        "end": [
+          2.2,
+          2.5,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 206.91870180382975,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 270,
+        "motion": "G0",
+        "start": [
+          2.2,
+          2.5,
+          -0.9
+        ],
+        "end": [
+          2.2,
+          2.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 206.91870180382975,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 271,
+        "motion": "G0",
+        "start": [
+          2.2,
+          2.5,
+          3.0
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 206.91870180382975,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 272,
+        "motion": "G0",
+        "start": [
+          1.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 206.91870180382975,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 273,
+        "motion": "G1",
+        "start": [
+          1.41403,
+          2.0,
+          2.0
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          -0.9
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 209.81870180382975,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 274,
+        "motion": "G1",
+        "start": [
+          1.41403,
+          2.0,
+          -0.9
+        ],
+        "end": [
+          2.58597,
+          2.0,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 210.40467180382973,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 275,
+        "motion": "G3",
+        "start": [
+          2.58597,
+          2.0,
+          -0.9
+        ],
+        "end": [
+          2.7,
+          2.11403,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 210.4970013582775,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 276,
+        "motion": "G1",
+        "start": [
+          2.7,
+          2.11403,
+          -0.9
+        ],
+        "end": [
+          2.7,
+          3.88597,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 211.38297135827747,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 277,
+        "motion": "G3",
+        "start": [
+          2.7,
+          3.88597,
+          -0.9
+        ],
+        "end": [
+          2.58597,
+          4.0,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 211.47530091272523,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 278,
+        "motion": "G1",
+        "start": [
+          2.58597,
+          4.0,
+          -0.9
+        ],
+        "end": [
+          1.41403,
+          4.0,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 212.06127091272523,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 279,
+        "motion": "G3",
+        "start": [
+          1.41403,
+          4.0,
+          -0.9
+        ],
+        "end": [
+          1.3,
+          3.88597,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 212.15359711311956,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 280,
+        "motion": "G1",
+        "start": [
+          1.3,
+          3.88597,
+          -0.9
+        ],
+        "end": [
+          1.3,
+          2.11403,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 213.03956711311955,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 281,
+        "motion": "G3",
+        "start": [
+          1.3,
+          2.11403,
+          -0.9
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          -0.9
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 213.1318966675673,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 282,
+        "motion": "G0",
+        "start": [
+          1.41403,
+          2.0,
+          -0.9
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 213.1318966675673,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      },
+      {
+        "block": 283,
+        "motion": "G0",
+        "start": [
+          1.41403,
+          2.0,
+          3.0
+        ],
+        "end": [
+          1.41403,
+          2.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 213.1318966675673,
+        "step_id": "OP10.6",
+        "feature_id": "K1",
+        "tool_number": 1
+      }
+    ],
+    "feed_time_seconds": 213.1318966675673,
+    "rapid_time_not_included": true,
+    "card_order_checked": true,
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3,
+      "basis": "Explicit CAMotics reference initial state: no selected tool. Native post moves to declared clearance before M6; no spindle-head or holder geometry is represented."
+    },
+    "unloaded_clearance_before_first_tool_selection_checked": true,
+    "scope": "Native framed face/pocket/helix XYZ reference subset; every executable word checked, no general NC interpreter.",
+    "material_preconditions": "Expected face clearing is checked geometrically; actual cumulative-prefix checkpoints are measured separately."
+  },
+  "checkpoint_prefixes": [
+    {
+      "id": "after-01",
+      "prefix_binding_sha256": "a1b6f7f5537bfc3c7fbe73c9b4e1b8a2d9b2ece6590ca3a00a6ba10309333684"
+    },
+    {
+      "id": "after-02",
+      "prefix_binding_sha256": "d3ad5e61fecfe83bcf3206a687e782c192c0bfb72f00f74981c8ea3165f5f797"
+    },
+    {
+      "id": "after-03",
+      "prefix_binding_sha256": "d8a8daad8b3a192b7fae766a37a0455a4026be460e8ab9b5c7332b402e78053d"
+    },
+    {
+      "id": "after-04",
+      "prefix_binding_sha256": "1de2cb7fd15ab0ee38d0627afbf7b2508c68eaa75df041a5d1ba85b7cb0f65eb"
+    }
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "execution_plan_sha256": "63b1bbb4ef121373d192a950b3ba491415c3a3403d907020ef1a02d596644e3b"
+}

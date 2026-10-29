@@ -1,0 +1,193 @@
+{
+  "schema": "genlaw.sectional-iou.v2",
+  "status": "measured_numerical_estimate",
+  "iou": 0.9996969294042736,
+  "iou_percent": 99.96969294042735,
+  "volumes": {
+    "actual_volume_mm3": 47.99865325869676,
+    "target_volume_mm3": 48.00000000000003,
+    "intersection_mm3": 47.99205193471737,
+    "union_mm3": 48.006601323979424,
+    "iou": 0.9996969294042736,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 0.0066013239793960565,
+  "missing_material_mm3": 0.007948065282661787,
+  "actual_mesh": {
+    "source_sha256": "da21a9dcc6aa604814d0870a3560cef1559cae2cf59321dd9cb2098d148efe1a",
+    "raw_triangles": 397916,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 397916,
+    "vertices": 198960,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 47.99865330577904,
+    "bounds": {
+      "min": [
+        -9.765625145519152e-05,
+        9.765625145519152e-05,
+        -1.500097632408142
+      ],
+      "max": [
+        8.000097274780273,
+        6.000097751617432,
+        -0.5000976324081421
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "schema": "genlaw.native-binding.v13",
+    "status": "verified",
+    "reference_class": "z_layered_box_minus_disjoint_rounded_pockets_and_through_cylinders",
+    "cad_sha256": "258319f2285206c3993dc6b680197e9c4f5ea18360118686329cc132cc25247e",
+    "oracle_ref": {
+      "path": "expected-state-01.brep",
+      "sha256": "258319f2285206c3993dc6b680197e9c4f5ea18360118686329cc132cc25247e"
+    },
+    "symmetric_difference_mm3": 0.0,
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        -0.5
+      ]
+    },
+    "volume_mm3": 47.99999999999999,
+    "valid_single_solid": true,
+    "incoming_stock_bounds": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "features": [],
+    "pocket_features": [],
+    "facing_feature": {
+      "id": "P1",
+      "kind": "planar_top",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "top_face": "Face3",
+      "top_z_mm": -0.5,
+      "thickness_mm": 1.0,
+      "bounds_xy_mm": {
+        "min": [
+          0,
+          0
+        ],
+        "max": [
+          8,
+          6
+        ]
+      }
+    },
+    "feature_bindings": [
+      {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face3",
+        "top_z_mm": -0.5,
+        "thickness_mm": 1.0,
+        "bounds_xy_mm": {
+          "min": [
+            0,
+            0
+          ],
+          "max": [
+            8,
+            6
+          ]
+        }
+      }
+    ],
+    "original_final_cad_sha256": "86d875a710af040153fde0c803c6f6a630ecfe65355db6f9c8991e57e9fa30ca",
+    "completed_features": [
+      "P1"
+    ],
+    "reference_for_iou": "Frozen pre-NC independent cumulative CAD; never simulation stock."
+  },
+  "native_geometry_sha256": "ef9ff2e1df990ff40e0c9ed9ca1f1d09907b952f38ec7e6a3a4e56b880c7614b",
+  "absolute_iou_refinement_difference": 1.1562417689958693e-11,
+  "section_levels": 43,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "method": "Closed STL cross-sections, all vertex-height intervals, 3-point Gauss integration against native-checked analytic CAD section.",
+  "registration": "none; same CAD/G54 coordinates",
+  "full_tolerance_acceptance": false,
+  "production_approved": false,
+  "limits": [
+    "Numerical volume estimate, not certified uncertainty.",
+    "All actual remaining material included; no registration or trimming.",
+    "Individual pocket contour/depth/floor and cumulative material checks are separate from global IoU. No manufacturing approval."
+  ],
+  "reference_sections": "Original box minus disjoint pockets at their individually declared floor heights and full-height holes; pocket/hole overlap counted once.",
+  "reference_source_code_sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b",
+  "multi_pocket_reference_source_code_sha256": "2ad6f6df2618d8c71ed8e535e6fab1a61c9f9797023791a624ba4a4e1e0da652",
+  "section_topology_observations": [
+    {
+      "requested_z_mm": -1.4,
+      "z_mm": -1.415450811141811,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": -1.0,
+      "z_mm": -0.9904508588255267,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": -0.6,
+      "z_mm": -0.5904508599004362,
+      "interior_loops": 0,
+      "holes": []
+    }
+  ]
+}

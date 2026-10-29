@@ -1,0 +1,78 @@
+{
+  "schema": "genlaw.preparation-input.v13",
+  "id": "S4-MULTI-POCKET-different-depth-r1",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2",
+      "OP10.3",
+      "OP10.4"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "显式完整矩形来料；各工步连续去料，不从预期成品重新创建来料。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "611c1827bee1695f1e9ebbf1f0bdc2531f9a0a760884b3a2608b4ef949128402"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "0699afa721ce85257a952804a5a8a2c400cc91969fd1d5d5518321ca1b613a8f"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "f0c4f917e5daec44c68798079b81e3bc15a7031cfe9d5b9bb25e9adcfb2010c6"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "a7a83d39c23db40b79a3195b1cfe28f48754b93481871736dc169e7058fc1e2d"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "0f87965d403a30dffe2b6b8652a2799829a660fdcff1c8823b382c6fbb0bed10"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "a33270c843a34c6805a7c430de673519c54633ceee345c428bbd531645930b04"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "85ff173246db9d1fd1429ed717c82ca6c7ec3aa4ba88b67fb4fdfdfe4716a223"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "2a28aec6b96efc3a72990744151d662368a093e24cbcdd1c2f65de9c6c858f5e"
+    },
+    "expected_states": {
+      "path": "expected-states.json",
+      "sha256": "a5a5bb104e8176efe770de1c1f8c09f229056fd5ac1fe7de2fc32d46eb57e897"
+    },
+    "after_01": {
+      "path": "expected-state-01.brep",
+      "sha256": "90bea05cbcc4fb907af6df57018afac818bbae8170c339a6c285a543c2f4e97a"
+    },
+    "after_02": {
+      "path": "expected-state-02.brep",
+      "sha256": "fc8f04c79e1f9db40f36742e37f61f8d80d18799abd31aed1b5200fc811fe206"
+    },
+    "after_03": {
+      "path": "expected-state-03.brep",
+      "sha256": "f4e27c2dedfe99c86bb11431b8869e115a68100cbafc670e19af215d6e99e258"
+    }
+  },
+  "capability": "multiple_pocketed_planar_milling_xy"
+}

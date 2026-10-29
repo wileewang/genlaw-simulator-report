@@ -1,0 +1,194 @@
+{
+  "id": "equal-depth",
+  "specification": {
+    "id": "equal-depth",
+    "name": "双型腔：相同深度，分别绑定底面",
+    "stock_bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "target_bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        -0.5
+      ]
+    },
+    "resolution_mm": 0.025,
+    "pockets": [
+      {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.4,
+        "floor_face": "Face23"
+      },
+      {
+        "id": "K2",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.4,
+        "floor_face": "Face24"
+      }
+    ],
+    "holes": [],
+    "order": [
+      "P1",
+      "K1",
+      "K2"
+    ],
+    "two_tools": false,
+    "tool_diameter_mm": 1,
+    "second_tool_diameter_mm": 0.5,
+    "features": [
+      {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face3",
+        "top_z_mm": -0.5,
+        "thickness_mm": 1.0,
+        "bounds_xy_mm": {
+          "min": [
+            0,
+            0
+          ],
+          "max": [
+            8,
+            6
+          ]
+        }
+      },
+      {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.4,
+        "floor_face": "Face23"
+      },
+      {
+        "id": "K2",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          3
+        ],
+        "width_mm": 2.4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.4,
+        "floor_face": "Face24"
+      }
+    ]
+  },
+  "iou_percent": 99.94302871650966,
+  "software_statuses": {
+    "P1": {
+      "top_height": "numeric_pass",
+      "target_thickness": "numeric_pass",
+      "top_geometry": "numeric_pass",
+      "outline_xy": "numeric_pass"
+    },
+    "K1": {
+      "profile_xy": "numeric_pass",
+      "pocket_depth": "numeric_pass",
+      "floor_geometry": "numeric_pass"
+    },
+    "K2": {
+      "profile_xy": "numeric_pass",
+      "pocket_depth": "numeric_pass",
+      "floor_geometry": "numeric_pass"
+    }
+  },
+  "regression_expectation_met": true,
+  "executed_feature_order": [
+    "P1",
+    "K1",
+    "K2"
+  ],
+  "tool_transitions": [
+    {
+      "tool_number": 1,
+      "tool_id": "T1",
+      "first_executable_block": 6,
+      "last_executable_block": 8
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "after-01",
+      "iou_percent": 99.96969294042735,
+      "check_count": 4,
+      "all_regression_expectations_met": true
+    },
+    {
+      "id": "after-02",
+      "iou_percent": 99.95717152559924,
+      "check_count": 7,
+      "all_regression_expectations_met": true
+    }
+  ],
+  "process_conformance": {
+    "status": "matched_card_and_measured_checkpoints",
+    "material_checkpoint_count": 2,
+    "material_checkpoints_sha256": "e69958e3f836201e5570c277b71e8915007a45532296e55010d1678ec28353d2",
+    "manufacturing_acceptance": false
+  },
+  "verifier_sha256": "e1d92caae959d1418140321c51e34df6069edc3f159994b4ea4ad6c370cf13d1",
+  "runner_sha256": "639615c8d368550c49c94ff82ed658659e3f3fcb4797cc4e6630eeacdbf70bbf"
+}
