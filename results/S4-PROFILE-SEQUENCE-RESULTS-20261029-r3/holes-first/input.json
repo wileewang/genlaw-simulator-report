@@ -1,0 +1,83 @@
+{
+  "schema": "genlaw.preparation-input.v11",
+  "id": "S4-PROFILE-SEQUENCE-holes-first-r3",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2",
+      "OP10.3",
+      "OP10.4",
+      "OP10.5"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "显式完整矩形来料；各工步连续去料，不从预期成品重新创建来料。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "4cbc6e72b2e136e3badfabff1fa7c3c5575f54b2cbe33f1efa0dd178541ea6cb"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "6bb2241279908b5fcf48ae2b3de1d7bc3ca6fbbc6b5479c907050d6c3089715e"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "dc9fd5980c7ef512a78c425fd97813d51db7f501cac11b3d5ccacd553cad77c3"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "bdeb963a461591a355ff5a3531ab5f31151a302a39ab824f0683181f8d0976f2"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "a47a92b43240d452521f4f484d788eacaa107526fa3f2730131d74bf0bdab136"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "86efd831b20c0a96c061482a31c768dcdc175f3a7c4058f9651debef90c6c165"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "364fe99fddafb89b89bb597f9b4ce1b3dfcfbf7e637a2f46c06f435b7bcff924"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "c858f1c5134215e9e56a1e555ccde2f8e9d80cb53d276285f3d3f22e26d7423b"
+    },
+    "expected_states": {
+      "path": "expected-states.json",
+      "sha256": "fcd9bf413c9fc7ecb36e65440efb26b79fcd51e20e59b17851ff67acc2944750"
+    },
+    "after_01": {
+      "path": "expected-state-01.brep",
+      "sha256": "a6e01208357d6012697f5308a68bb3f6360b5cb917a01a0cda6069d8cbf96ffa"
+    },
+    "after_02": {
+      "path": "expected-state-02.brep",
+      "sha256": "6fddb5aef8972337a2a3327e1a58fbab36e130879446fc13c28191ba1a9c9f94"
+    },
+    "after_03": {
+      "path": "expected-state-03.brep",
+      "sha256": "baaabedd73f3c6bb953e86775b6e79d4baa32493d3566ff65abd44c0e744fb09"
+    },
+    "after_04": {
+      "path": "expected-state-04.brep",
+      "sha256": "07f1fa41c6d59dc50eefcd1078da97ea1dbe16b76abc5dea992691af9e1c4b41"
+    }
+  },
+  "capability": "profiled_planar_milling_xy"
+}

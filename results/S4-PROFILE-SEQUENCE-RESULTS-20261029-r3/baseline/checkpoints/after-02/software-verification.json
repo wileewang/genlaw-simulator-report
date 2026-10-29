@@ -1,0 +1,125 @@
+{
+  "id": "after-02",
+  "iou_percent": 99.66938849899934,
+  "observations_sha256": "5c0acf5f1d89b7fa959321de9a0dabdbfe7baba10b43ebf7ee0f799270b97136",
+  "software_policy_sha256": "35cfae22a3da4c060b398f8a49b08c69e579ee41436fce500bb672628a0de69c",
+  "software_regression": [
+    {
+      "feature_id": "P1",
+      "kind": "top_height",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_top_height_and_mesh_max",
+        "min_mm": -0.6,
+        "max_mm": -0.4
+      },
+      "production_approved": false,
+      "reason": "Original-coordinate finite geometric observations with a two-cell guard; not continuous GD&T or production acceptance."
+    },
+    {
+      "feature_id": "P1",
+      "kind": "target_thickness",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_remaining_thickness",
+        "min_mm": 0.9,
+        "max_mm": 1.1
+      },
+      "production_approved": false,
+      "reason": "Original-coordinate finite geometric observations with a two-cell guard; not continuous GD&T or production acceptance."
+    },
+    {
+      "feature_id": "P1",
+      "kind": "top_geometry",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_top_plane",
+        "max_flatness_mm": 0.1
+      },
+      "production_approved": false,
+      "reason": "Original-coordinate finite geometric observations with a two-cell guard; not continuous GD&T or production acceptance."
+    },
+    {
+      "feature_id": "C1",
+      "kind": "outer_profile_xy",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sectioned_original_capsule_boundary",
+        "max_deviation_mm": 0.1
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration."
+    },
+    {
+      "feature_id": "C1",
+      "kind": "retained_thickness",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_original_thickness",
+        "min_mm": 0.9,
+        "max_mm": 1.1
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration."
+    },
+    {
+      "feature_id": "C1",
+      "kind": "retained_planes",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_original_top_bottom",
+        "max_deviation_mm": 0.1
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration."
+    },
+    {
+      "feature_id": "C1",
+      "kind": "exterior_clearance",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_full_depth_exterior_clearance",
+        "must_be_clear": true
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration."
+    }
+  ],
+  "all_regression_expectations_met": true,
+  "production_approved": false
+}

@@ -233,12 +233,13 @@
           "name": "圆头外轮廓",
           "status": "sample_cases_measured",
           "label": "4 个具体用例已测",
-          "scope": "8×4×1.5 mm 基准，加宽到 5 mm、长轴转为 Y、加厚到 2 mm；φ2 平底铣刀逐层清除矩形坯四角。不是任意外形或真实工艺卡整卡。",
+          "scope": "8×4×1.5 mm 基准，加宽到 5 mm、长轴转为 Y、加厚到 2 mm；φ2 平底铣刀逐层清除矩形坯四角。不是任意外形或真实工艺卡整卡。 已增加与面铣、双孔 / 三孔及换刀的同料连续加工；原尺寸与拼板仍待接入。",
           "stages": [
             "s4/profile"
           ],
           "evidence_paths": [
-            "results/S4-PROFILE-RESULTS-20261029-r1/summary.json"
+            "results/S4-PROFILE-RESULTS-20261029-r1/summary.json",
+            "results/S4-PROFILE-SEQUENCE-RESULTS-20261029-r3/summary.json"
           ]
         },
         {
@@ -332,7 +333,7 @@
           "name": "XYZ / 单平底铣刀 / 参考 NC",
           "status": "sample_cases_measured",
           "label": "S3 / 原尺寸配置已测",
-          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层槽、台阶、岛台、开口、面铣和螺旋铣孔。刀柄与夹具干涉未验证。 新增 φ4 铣刀的 100 mm 参考件，未扩展到真实设备。 φ2 圆头外轮廓四例已测。",
+          "scope": "φ1 可中心切削平底铣刀，有效刃长 5 mm、G54 零偏置；单刀分层槽、台阶、岛台、开口、面铣和螺旋铣孔。刀柄与夹具干涉未验证。 新增 φ4 铣刀的 100 mm 参考件，未扩展到真实设备。 φ2 圆头外轮廓四例已测。 φ1 / φ2 面铣、外形、铣孔连续链路及换刀已测。",
           "stages": [
             "s3",
             "s3/step",
@@ -348,7 +349,8 @@
             "results/S3-REGION-RESULTS-20261029-r1/summary.json",
             "results/S3-FACING-RESULTS-20261029-r1/summary.json",
             "results/S3-HELIX-RESULTS-20261029-r1/summary.json",
-            "results/S4-PROFILE-RESULTS-20261029-r1/summary.json"
+            "results/S4-PROFILE-RESULTS-20261029-r1/summary.json",
+            "results/S4-PROFILE-SEQUENCE-RESULTS-20261029-r3/summary.json"
           ]
         },
         {
@@ -409,7 +411,7 @@
           "name": "矩形完整毛坯",
           "status": "sample_cases_measured",
           "label": "多个明确尺寸已测",
-          "scope": "8×6×1.5、8×6×1.0、10×7.5×1.5 与 8×6×2 与 8×6×3 mm 来料；网格分别在用例中显式指定为 0.025、0.03 或 0.04 mm。面铣来料与成品独立；不是连续尺寸范围。 新增 100×14×3 mm：最终 0.025 mm，全局分块计算。 圆头外形用例新增 8×4×1.5、8×5×1.5、4×8×1.5、8×4×2 mm 矩形坯。",
+          "scope": "8×6×1.5、8×6×1.0、10×7.5×1.5 与 8×6×2 与 8×6×3 mm 来料；网格分别在用例中显式指定为 0.025、0.03 或 0.04 mm。面铣来料与成品独立；不是连续尺寸范围。 新增 100×14×3 mm：最终 0.025 mm，全局分块计算。 圆头外形用例新增 8×4×1.5、8×5×1.5、4×8×1.5、8×4×2 mm 矩形坯。 连续加工用例新增 12×4×1.5 mm 来料，面铣至厚 1 mm，再铣圆头外形与三孔。",
           "stages": [
             "s1",
             "s2",
@@ -432,7 +434,8 @@
             "results/S3-FACING-RESULTS-20261029-r1/summary.json",
             "results/S3-HELIX-RESULTS-20261029-r1/summary.json",
             "results/S4-ORIGINAL-SIZE-RESULTS-20261029-r1/summary.json",
-            "results/S4-PROFILE-RESULTS-20261029-r1/summary.json"
+            "results/S4-PROFILE-RESULTS-20261029-r1/summary.json",
+            "results/S4-PROFILE-SEQUENCE-RESULTS-20261029-r3/summary.json"
           ],
           "axis_diagnosis_ref": "verification/S1-AXIS-20261028-r1/summary.json",
           "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json"
@@ -459,7 +462,8 @@
             "results/S3-REGION-RESULTS-20261029-r1/summary.json",
             "results/S3-FACING-RESULTS-20261029-r1/summary.json",
             "results/S3-HELIX-RESULTS-20261029-r1/summary.json",
-            "results/S4-PROFILE-RESULTS-20261029-r1/summary.json"
+            "results/S4-PROFILE-RESULTS-20261029-r1/summary.json",
+            "results/S4-PROFILE-SEQUENCE-RESULTS-20261029-r3/summary.json"
           ]
         },
         {
@@ -488,7 +492,7 @@
     }
   ],
   "progression": [
-    "S1 / S2 钻孔、S3 铣削特征已有结果；S4 已测面铣与孔的连续工序，新增四例圆头外轮廓，继续扩展组合。",
+    "S1 / S2 钻孔、S3 铣削特征已有结果；S4 已测面铣、圆头外形与双孔 / 三孔连续加工，含换刀及不同卡片顺序；真实整卡尚未通过。",
     "沿单孔 → 孔系 → 铣削特征 → 多工序 → 3+2 → 连续五轴推进。",
     "真实单件、新设备、新毛坯或材料按依赖接入，每次只改变一类条件。"
   ],

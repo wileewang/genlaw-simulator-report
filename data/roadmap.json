@@ -135,26 +135,27 @@
       "id": "s4",
       "number": "04",
       "title": "换刀与多工序",
-      "case_name": "面铣 + 铣孔，从同刀到换刀",
+      "case_name": "面铣 + 圆头外形 + 铣孔，从同刀到换刀",
       "status": "current",
       "status_label": "部分实测 · 继续扩展",
       "headline": "同一块料连续加工，逐工步检查实际剩料。",
-      "part": "先做面铣后铣通孔；再扩展型腔与孔的组合",
+      "part": "已验证面铣、外形与孔连续加工；继续扩展型腔组合和真实原尺寸",
       "material": "沿用同一材料与来料",
       "resources": "通用 XYZ，已验证 1 / 2 把平底铣刀；非零刀长 / 工件偏置待扩展",
       "new_programming": [
-        "一个 FreeCAD Job：面铣 → 铣孔，保留原卡孔序",
+        "一个 FreeCAD Job：面铣 / 外形 / 铣孔，保持原卡顺序",
         "显式启动状态、换刀与每步刀具 / 参数",
-        "独立验证圆头外轮廓 Profile，作为后续组合能力"
+        "分别验证外形前后加工孔，不能自行重排卡片"
       ],
       "new_verification": [
         "原始毛坯连续去料，核对中间实际形状",
         "几何与工序分别判定，错误启动状态也要检出",
         "100 mm 参考件：0.025 mm 逐工步精检，21 项中间检查通过",
-        "四例圆头外形：完整轮廓、厚度、保留面和四角清空"
+        "四例圆头外形：完整轮廓、厚度、保留面和四角清空",
+        "四例外形与孔组合：55 项最终检查、91 项中间检查通过"
       ],
       "remaining": [
-        "圆头外形与孔连续组合，再接真实卡原尺寸与拼板来料",
+        "接入圆头连接板原尺寸、真实卡资源与拼板来料",
         "继续组合型腔、轮廓与孔",
         "非零刀长 / 工件偏置、夹具和多装夹"
       ],
@@ -168,11 +169,12 @@
       ],
       "results": {
         "href": "s4/",
-        "label": "多工序、原尺寸与外轮廓结果",
-        "scope": "面铣 / 孔序 / 换刀已有结果，圆头外形单独验证；组合与真实卡仍继续开发。"
+        "label": "多工序、原尺寸、外轮廓及组合结果",
+        "scope": "面铣 / 外形 / 孔序 / 换刀已有连续加工结果；真实卡和拼板仍继续开发。"
       },
       "original_size_results_ref": "results/S4-ORIGINAL-SIZE-RESULTS-20261029-r1/summary.json",
-      "profile_results_ref": "results/S4-PROFILE-RESULTS-20261029-r1/summary.json"
+      "profile_results_ref": "results/S4-PROFILE-RESULTS-20261029-r1/summary.json",
+      "profile_sequence_results_ref": "results/S4-PROFILE-SEQUENCE-RESULTS-20261029-r3/summary.json"
     },
     {
       "id": "s5",
