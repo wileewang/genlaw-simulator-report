@@ -1,0 +1,243 @@
+{
+  "schema": "genlaw.profile-window-regression.v1",
+  "status": "passed",
+  "engine_manifest": {
+    "path": "engines/camotics/releases/1.2.0-genlaw-window-r3/manifest.json",
+    "sha256": "3315525983559b7427ce0f9dcc933d342f7334dceb60e48696397152d8245713"
+  },
+  "base_engine_regression": {
+    "path": "validation/runs/GRID-WINDOW-REGRESSION-20261029-r1/summary.json",
+    "sha256": "e2c88a8c51607f570b0a3f2ca71644cecd27c9e51025f35d7c47f6209bb8b469"
+  },
+  "sources": [
+    {
+      "path": "genlaw_pipeline/sharded_measure.py",
+      "sha256": "693c3d960d0857af0d6e2a5d4252d4a25a0ab743bfeacdb7dcee96a799b04665"
+    },
+    {
+      "path": "genlaw_pipeline/sharded_verification.py",
+      "sha256": "ee54d05cfaebb21ca06f3bd49cdd49dbe18571ef5d2277e967e0a149d7cb39ae"
+    },
+    {
+      "path": "genlaw_pipeline/checkpoint_context.py",
+      "sha256": "f99b3fd7f381c22a2a11ac0cef5d42aa4376fc50289e622bca8245d2d4799b84"
+    },
+    {
+      "path": "genlaw_pipeline/window_controls.py",
+      "sha256": "8bf4d37daf34df017e6279b892e7d2e22f2cccba78b9accd68d667b9621fd481"
+    },
+    {
+      "path": "genlaw_pipeline/profile_sequence_geometry.py",
+      "sha256": "74b9583548b6db1f519eac1b57723018007b6fdcaad6d11b6021aadbb079a6a9"
+    },
+    {
+      "path": "genlaw_pipeline/profile_sequence_verification.py",
+      "sha256": "af81238aedb3641e5a8d454e4a29347b6facfc6c228168d0d55d697f0a0da748"
+    },
+    {
+      "path": "genlaw_pipeline/sequence_verification.py",
+      "sha256": "c5ba4723f62d12a06f315643637d53cb5e7cae2158b31f65813e50a701009055"
+    },
+    {
+      "path": "genlaw_pipeline/cell_windows.py",
+      "sha256": "ab43287ef3c5657d20d82a7b98344e84f353c29b558ab206e61205875c209eec"
+    },
+    {
+      "path": "genlaw_pipeline/profile_window_qualification.py",
+      "sha256": "d34765343f7da2e7fe398f470523553309657673d547e1b1ff3a8ddcebf94513"
+    },
+    {
+      "path": "tools/probe_cell_windows.py",
+      "sha256": "742b318e48a10905047a102558e17ee03c388c0b7e6863f15d40fbf96a34bf7a"
+    },
+    {
+      "path": "tools/check_window_geometry.py",
+      "sha256": "899048fbd280fb022a2c7da689cff09cabd9f6002c8d72d95f28905841f3c867"
+    },
+    {
+      "path": "tools/run_window_checkpoints.py",
+      "sha256": "e2e088438caef4073862c4bb3872c44c842776cbb1d073eaf780319a0aae541f"
+    },
+    {
+      "path": "tools/run_profile_window_regression.py",
+      "sha256": "85260ad8f1757831ee9d89fad5a9ac5685d4bc327817cb38dfa9e4bead841433"
+    }
+  ],
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "result": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/baseline/result.json",
+        "sha256": "a6136b1492f3ca6b669578454a49c746b941be4083e9060233c54b55bf20a8a1"
+      }
+    },
+    {
+      "id": "three-holes",
+      "result": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/three-holes/result.json",
+        "sha256": "01c0c727b4e5c35feccaa461e10ebf98c6cb37c496ba558420d815082b276034"
+      }
+    },
+    {
+      "id": "tool-change",
+      "result": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/tool-change/result.json",
+        "sha256": "050043d3acf2ba077c2cbae494aaa690d6a9439a421f9280c1d61981bfbd80b7"
+      }
+    },
+    {
+      "id": "holes-first",
+      "result": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/holes-first/result.json",
+        "sha256": "9bb96bbd810464492122b636b74c1eda0b0a69125e137c1b4de889670f08f893"
+      }
+    }
+  ],
+  "controls": [
+    {
+      "id": "missing-profile",
+      "result": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/missing-profile/result.json",
+        "sha256": "19765a95d0241b4de847ae10ed2a24a4adc1c74c835afcab81189c3d372cce9c"
+      }
+    },
+    {
+      "id": "shifted-hole",
+      "result": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/shifted-hole/result.json",
+        "sha256": "3b88cf31321ec2fd3e74298b6db51dc8ca0d992d90dc97ccc6d6371cab59af9b"
+      }
+    },
+    {
+      "id": "wrong-tool",
+      "result": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/wrong-tool/result.json",
+        "sha256": "48e291a138cc4b29b9cecdd4a35b8994762b9dba5a024dbbb7cce768ee70bf2a"
+      }
+    },
+    {
+      "id": "wrong-order",
+      "result": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/wrong-order/result.json",
+        "sha256": "21f8935a4736f8269e1ea2eb1fce7f3b9ce9fb4de07235fc65b9ed43aeaa1c9a"
+      }
+    }
+  ],
+  "checkpoint_regressions": [
+    {
+      "id": "baseline",
+      "summary": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-baseline/summary.json",
+        "sha256": "ef2ab58b5e88903dc12bcc5a07b195b6d21bdfd654cb3994405c29a968b6e73e"
+      },
+      "exact_facet_comparisons": [
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/checkpoints-baseline/after-01/full-window-facets.json",
+          "sha256": "25143f9735000450b8600dcd5cfab4cd795730200c762d53932797c0e97ad583"
+        },
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/checkpoints-baseline/after-02/full-window-facets.json",
+          "sha256": "4aa2cc6d4f892b1fe361edf753de1a9d4e12b73cf6bd52d4b62d31836d608dd9"
+        },
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r2/checkpoints-baseline/after-03/full-window-facets.json",
+          "sha256": "0bf4ee374083b9b47293b604581dfa0f2c430994f83f96a18aac1d74352cc01a"
+        }
+      ]
+    },
+    {
+      "id": "three-holes",
+      "summary": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-three-holes/summary.json",
+        "sha256": "0233a2050256ecc0d8be83aa81e98b57850fab3851ca781690abdfcafbb66075"
+      },
+      "exact_facet_comparisons": [
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-three-holes/after-01/full-window-facets.json",
+          "sha256": "cbc13f44a009dfa765d4d856b54d27cc81f27f34ff47ae44d04adc4da6c115ac"
+        },
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-three-holes/after-02/full-window-facets.json",
+          "sha256": "28de6730901ab355850351cb40b90b599d46d9c670a0170b7a39838ec089a100"
+        },
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-three-holes/after-03/full-window-facets.json",
+          "sha256": "87c6dfd448ff4ea58da50574708b04f85de217aa0e10cccd9a81321b49ba40b6"
+        },
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-three-holes/after-04/full-window-facets.json",
+          "sha256": "127b2bd99c89f13a69e31f107555f631f6636834f55ae7b482030ac0bc44a6d0"
+        }
+      ]
+    },
+    {
+      "id": "tool-change",
+      "summary": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-tool-change/summary.json",
+        "sha256": "33cb51d86044f131fb6e0b65f995e4a1cc4b66f32b41753583ee093923b8c39d"
+      },
+      "exact_facet_comparisons": [
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-tool-change/after-01/full-window-facets.json",
+          "sha256": "7917e4bd33499005223d7187b688b045c984c20ee12f82690615b1aa8787565d"
+        },
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-tool-change/after-02/full-window-facets.json",
+          "sha256": "3bca318e4801b1af7c60164228b3cf82816c4f658c85427b66cee1531cb92bbc"
+        },
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-tool-change/after-03/full-window-facets.json",
+          "sha256": "f8e72b13d705560a45b77fafac74b802eb2f85d5f353aca9fb75354bb8ddaa96"
+        }
+      ]
+    },
+    {
+      "id": "holes-first",
+      "summary": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-holes-first/summary.json",
+        "sha256": "6525723450e21b5aea4facacaff625d1a5ae656785cc3ba28912102eb02d1ea6"
+      },
+      "exact_facet_comparisons": [
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-holes-first/after-01/full-window-facets.json",
+          "sha256": "b94bfe7f1ae36881e9e041ee5b168cf4e4baa463e61750ce2a46d6c172e227a6"
+        },
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-holes-first/after-02/full-window-facets.json",
+          "sha256": "8dd9d270c9a72be2970790a1779190a75a7d739b6d57c27dae44568d0d7ea79d"
+        },
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-holes-first/after-03/full-window-facets.json",
+          "sha256": "d403ae6210f4f1d75b3cd1847306f11627df6e56014560f6ae04404e867af0c9"
+        }
+      ]
+    },
+    {
+      "id": "legacy-v9",
+      "summary": {
+        "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-legacy-v9/summary.json",
+        "sha256": "717d0107e38a6fa4fe309714135b619df2ce7f1023dba9f3e13e24d7b5fa88a3"
+      },
+      "exact_facet_comparisons": [
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-legacy-v9/after-01/legacy-facets.json",
+          "sha256": "c656d86bd9063e057bc8b79383b7471faed2d8530ffdbe837f457993e6bd25e0"
+        },
+        {
+          "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/checkpoints-legacy-v9/after-02/legacy-facets.json",
+          "sha256": "8321f3dafe83ab4abc8dde7275fa054baddbe44095bf6a300ac74c3204751699"
+        }
+      ]
+    }
+  ],
+  "intent": {
+    "path": "validation/runs/PROFILE-WINDOW-REGRESSION-20261029-r3/intent.json",
+    "sha256": "bc6f824d74e8d31dabda5ff4efedf69c7aa0bc61c616badd4be41e740ed1539a"
+  },
+  "continuation_source": {
+    "path": "tools/continue_profile_window_qualification.py",
+    "sha256": "f106fc636b7548ef3239a4a6125fc79d26cc3c19f5141ad3953484e2119f4772"
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false
+}

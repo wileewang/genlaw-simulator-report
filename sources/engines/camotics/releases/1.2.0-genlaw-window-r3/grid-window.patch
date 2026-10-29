@@ -1,0 +1,391 @@
+diff --git a/engines/camotics/source/src/camotics/contour/CubeSlice.cpp b/engines/camotics/source/src/camotics/contour/CubeSlice.cpp
+index ebe9d57..5557e28 100644
+--- a/engines/camotics/source/src/camotics/contour/CubeSlice.cpp
++++ b/engines/camotics/source/src/camotics/contour/CubeSlice.cpp
+@@ -68,6 +68,7 @@ void CubeSlice::compute(Task &task, FieldFunction &func) {
+     for (unsigned y = 0; y <= steps.y(); y++) {
+       if (task.shouldQuit()) return;
+       p.y() = grid.getOffset().y() + resolution * y;
++      if (grid.usesGlobalCoordinates()) p = grid.globalPoint(Vector3U(x, y, z));
+ 
+       Vector3D a = p;
+       double aDepth = left->depth(x, y);
+@@ -78,6 +79,8 @@ void CubeSlice::compute(Task &task, FieldFunction &func) {
+         if (y == steps.y() && (i == 1 || i == 4)) continue;
+ 
+         Vector3D b = p + offsets[i];
++        if (grid.usesGlobalCoordinates())
++          b = grid.globalPoint(Vector3U(x, y, z) + vIndex[i]);
+         double bDepth = depth(x, y, vIndex[i]);
+ 
+         if ((aDepth < 0) != (bDepth < 0) && !cull)
+diff --git a/engines/camotics/source/src/camotics/contour/GridTreeRef.cpp b/engines/camotics/source/src/camotics/contour/GridTreeRef.cpp
+index 549b383..8f33664 100644
+--- a/engines/camotics/source/src/camotics/contour/GridTreeRef.cpp
++++ b/engines/camotics/source/src/camotics/contour/GridTreeRef.cpp
+@@ -28,7 +28,8 @@ using namespace CAMotics;
+ 
+ 
+ GridTreeRef::GridTreeRef(GridTree *ref, const Vector3U &offset,
+-                         const Vector3U &steps) : ref(ref), offset(offset) {
++                         const Vector3U &steps, bool globalCoordinates) :
++  ref(ref), offset(offset), globalCoordinates(globalCoordinates) {
+ 
+   setResolution(ref->getResolution());
+   setOffset(ref->getOffset() + (Vector3D)offset * ref->getResolution());
+@@ -36,6 +37,13 @@ GridTreeRef::GridTreeRef(GridTree *ref, const Vector3U &offset,
+ }
+ 
+ 
++Vector3D GridTreeRef::globalPoint(const Vector3U &index) const {
++  // Add integer indices before multiplying. The same shared vertex then has
++  // the same floating-point coordinates in every independently executed tile.
++  return ref->getOffset() + (Vector3D)(offset + index) * getResolution();
++}
++
++
+ unsigned GridTreeRef::getCount() const {
+   THROWS("Cannot call " << __func__ << " on GridTreeRef");
+ }
+diff --git a/engines/camotics/source/src/camotics/contour/GridTreeRef.h b/engines/camotics/source/src/camotics/contour/GridTreeRef.h
+index 746b9c9..af6ab96 100644
+--- a/engines/camotics/source/src/camotics/contour/GridTreeRef.h
++++ b/engines/camotics/source/src/camotics/contour/GridTreeRef.h
+@@ -28,10 +28,14 @@ namespace CAMotics {
+   class GridTreeRef : public GridTreeBase, public Grid {
+     GridTree *ref;
+     cb::Vector3U offset;
++    bool globalCoordinates;
+ 
+   public:
+     GridTreeRef(GridTree *ref, const cb::Vector3U &offset,
+-                const cb::Vector3U &steps);
++                const cb::Vector3U &steps, bool globalCoordinates = false);
++
++    bool usesGlobalCoordinates() const {return globalCoordinates;}
++    cb::Vector3D globalPoint(const cb::Vector3U &index) const;
+ 
+     using GridTreeBase::insertLeaf;
+     void insertLeaf(GridTreeLeaf *leaf, const cb::Vector3U &offset);
+diff --git a/engines/camotics/source/src/camotics/contour/SliceContourGenerator.cpp b/engines/camotics/source/src/camotics/contour/SliceContourGenerator.cpp
+index 5b48388..5bb30a1 100644
+--- a/engines/camotics/source/src/camotics/contour/SliceContourGenerator.cpp
++++ b/engines/camotics/source/src/camotics/contour/SliceContourGenerator.cpp
+@@ -50,6 +50,8 @@ void SliceContourGenerator::run(FieldFunction &func, GridTreeRef &grid) {
+ 
+       for (unsigned x = 0; x < steps.x(); x++) {
+         p.x() = grid.getOffset().x() + resolution * x;
++        if (grid.usesGlobalCoordinates())
++          p = grid.globalPoint(Vector3U(x, y, z));
+ 
+         if (!func.cull(p, resolution * 1.1)) doCell(grid, slice, x, y);
+ 
+diff --git a/engines/camotics/source/src/camotics/contour/VertexSlice.cpp b/engines/camotics/source/src/camotics/contour/VertexSlice.cpp
+index 03b1fe9..335aa3b 100644
+--- a/engines/camotics/source/src/camotics/contour/VertexSlice.cpp
++++ b/engines/camotics/source/src/camotics/contour/VertexSlice.cpp
+@@ -45,6 +45,7 @@ void VertexSlice::compute(FieldFunction &func) {
+ 
+     for (unsigned y = 0; y <= steps.y(); y++) {
+       p.y() = grid.getOffset().y() + resolution * y;
++      if (grid.usesGlobalCoordinates()) p = grid.globalPoint(Vector3U(x, y, z));
+ 
+       if (!func.cull(p, 2.1 * resolution)) at(x).at(y) = func.depth(p);
+     }
+diff --git a/engines/camotics/source/src/camotics/render/Renderer.cpp b/engines/camotics/source/src/camotics/render/Renderer.cpp
+index cb4e02e..da514a7 100644
+--- a/engines/camotics/source/src/camotics/render/Renderer.cpp
++++ b/engines/camotics/source/src/camotics/render/Renderer.cpp
+@@ -42,7 +42,7 @@ using namespace CAMotics;
+ 
+ void Renderer::render(CutWorkpiece &cutWorkpiece, GridTree &tree,
+                       const Rectangle3D &bbox, unsigned threads,
+-                      RenderMode mode) {
++                      RenderMode mode, const Rectangle3U *cellWindow) {
+   typedef list<SmartPointer<RenderJob> > jobs_t;
+   jobs_t jobs;
+   vector<GridTreeRef> jobGrids;
+@@ -54,7 +54,10 @@ void Renderer::render(CutWorkpiece &cutWorkpiece, GridTree &tree,
+     unsigned targetJobCount = pow(2, ceil(log(threads) / log(2)) + 2);
+ 
+     task.begin("Partitioning 3D space");
+-    tree.partition(jobGrids, bbox, targetJobCount);
++    if (cellWindow)
++      jobGrids.push_back(GridTreeRef(&tree, cellWindow->rmin,
++                                    cellWindow->getDimensions(), true));
++    else tree.partition(jobGrids, bbox, targetJobCount);
+     unsigned totalJobCount = jobGrids.size();
+ 
+     LOG_DEBUG(1, "Partitioned in to " << totalJobCount << " jobs");
+diff --git a/engines/camotics/source/src/camotics/render/Renderer.h b/engines/camotics/source/src/camotics/render/Renderer.h
+index d188cd2..48c8532 100644
+--- a/engines/camotics/source/src/camotics/render/Renderer.h
++++ b/engines/camotics/source/src/camotics/render/Renderer.h
+@@ -41,6 +41,7 @@ namespace CAMotics {
+ 
+     void render(CutWorkpiece &cutWorkpiece, GridTree &tree,
+                 const cb::Rectangle3D &bbox, unsigned threads,
+-                RenderMode mode = RenderMode::MCUBES_MODE);
++                RenderMode mode = RenderMode::MCUBES_MODE,
++                const cb::Rectangle3U *cellWindow = 0);
+   };
+ }
+diff --git a/engines/camotics/source/src/camotics/sim/Simulation.cpp b/engines/camotics/source/src/camotics/sim/Simulation.cpp
+index 12136a6..a1becbf 100644
+--- a/engines/camotics/source/src/camotics/sim/Simulation.cpp
++++ b/engines/camotics/source/src/camotics/sim/Simulation.cpp
+@@ -62,6 +62,15 @@ void Simulation::read(const JSON::Value &value) {
+   resolution = value.getNumber("resolution", 0);
+   time = value.getNumber("time", 0);
+   mode = RenderMode::parse(value.getString("render-mode", mode.toString()));
++  hasCellWindow = value.has("cell-window");
++  if (hasCellWindow) {
++    const JSON::Value &window = *value.get("cell-window");
++    if (window.size() != 6) THROW("Cell window requires six integer indices");
++    for (unsigned i = 0; i < 3; i++) {
++      cellStart[i] = window.getU32(i);
++      cellEnd[i] = window.getU32(i + 3);
++    }
++  }
+ 
+   GCode::ToolTable tools;
+   if (value.has("tools")) tools.read(*value.get("tools"));
+@@ -81,6 +90,13 @@ void Simulation::write(JSON::Sink &sink, bool withPath,
+   sink.insert("resolution", resolution);
+   sink.insert("time", time);
+   sink.insert("render-mode", mode.toString());
++  if (hasCellWindow) {
++    sink.insertList("cell-window");
++    for (unsigned i = 0; i < 3; i++) sink.append(cellStart[i]);
++    for (unsigned i = 0; i < 3; i++) sink.append(cellEnd[i]);
++    sink.endList();
++    sink.insert("sampling", "global-integer-lattice-v1");
++  }
+ 
+   if (!path.isNull() && !path->getTools().empty()) {
+     sink.beginInsert("tools");
+diff --git a/engines/camotics/source/src/camotics/sim/Simulation.h b/engines/camotics/source/src/camotics/sim/Simulation.h
+index 3737c99..1ea3463 100644
+--- a/engines/camotics/source/src/camotics/sim/Simulation.h
++++ b/engines/camotics/source/src/camotics/sim/Simulation.h
+@@ -48,12 +48,17 @@ namespace CAMotics {
+     double time;
+     RenderMode mode;
+     unsigned threads;
++    // Optional half-open global marching-cube cell range. This limits sampling,
++    // never the original workpiece or the complete interpreted tool sweep.
++    bool hasCellWindow;
++    cb::Vector3U cellStart;
++    cb::Vector3U cellEnd;
+ 
+     Simulation(const cb::SmartPointer<GCode::ToolPath> &path,
+                const Workpiece &workpiece, double resolution, double time,
+                RenderMode mode, unsigned threads) :
+       path(path), workpiece(workpiece), resolution(resolution),
+-      time(time), mode(mode), threads(threads) {}
++      time(time), mode(mode), threads(threads), hasCellWindow(false) {}
+ 
+     const GCode::ToolTable &getTools() const {return path->getTools();}
+ 
+diff --git a/engines/camotics/source/src/camotics/sim/SimulationRun.cpp b/engines/camotics/source/src/camotics/sim/SimulationRun.cpp
+index dd395e0..0200ada 100644
+--- a/engines/camotics/source/src/camotics/sim/SimulationRun.cpp
++++ b/engines/camotics/source/src/camotics/sim/SimulationRun.cpp
+@@ -86,7 +86,24 @@ SmartPointer<Surface> SimulationRun::compute(Task &task) {
+ 
+   // Render
+   Renderer renderer(task);
+-  renderer.render(cutWP, *tree, bbox, sim.threads, sim.mode);
++  if (sim.hasCellWindow) {
++    if (sim.threads != 1 || sim.mode != RenderMode::MCUBES_MODE)
++      THROW("Cell windows require one thread and marching cubes");
++    uint64_t cells = 1;
++    for (unsigned i = 0; i < 3; i++) {
++      if (sim.cellStart[i] >= sim.cellEnd[i] ||
++          tree->getSteps()[i] < sim.cellEnd[i])
++        THROW("Cell window is empty or outside the global grid");
++      unsigned width = sim.cellEnd[i] - sim.cellStart[i];
++      if (5000000 / width < cells) THROW("Cell window exceeds 5000000 cells");
++      cells *= width;
++    }
++    if (100000 < (uint64_t)(sim.cellEnd.x() - sim.cellStart.x() + 1) *
++                 (sim.cellEnd.y() - sim.cellStart.y() + 1))
++      THROW("Cell window exceeds 100000 XY sample points");
++    Rectangle3U window(sim.cellStart, sim.cellEnd);
++    renderer.render(cutWP, *tree, bbox, sim.threads, sim.mode, &window);
++  } else renderer.render(cutWP, *tree, bbox, sim.threads, sim.mode);
+ 
+   if (task.shouldQuit()) {
+     sweep.release();
+diff --git a/engines/camotics/source/src/camsim.cpp b/engines/camotics/source/src/camsim.cpp
+index e8d32e0..0114541 100644
+--- a/engines/camotics/source/src/camsim.cpp
++++ b/engines/camotics/source/src/camsim.cpp
+@@ -23,6 +23,7 @@
+ #include <camotics/sim/CutSim.h>
+ #include <camotics/project/Project.h>
+ #include <camotics/contour/Surface.h>
++#include <camotics/Grid.h>
+ 
+ #include <stl/Writer.h>
+ 
+@@ -33,6 +34,9 @@
+ 
+ #include <iostream>
+ #include <limits>
++#include <cmath>
++#include <iomanip>
++#include <locale>
+ 
+ using namespace cb;
+ using namespace std;
+@@ -47,6 +51,8 @@ namespace CAMotics {
+     RenderMode renderMode;
+     string resolution;
+     unsigned threads;
++    bool inspectGrid;
++    string cellWindow;
+ 
+     string input;
+     SmartPointer<ostream> output;
+@@ -57,7 +63,7 @@ namespace CAMotics {
+   public:
+     SimApp() :
+       Application("CAMotics Sim"), time(0), reduce(true), binary(true),
+-      threads(SystemInfo::instance().getCPUCount()) {
++      threads(SystemInfo::instance().getCPUCount()), inspectGrid(false) {
+ 
+       cmdLine.setUsageArgs
+         ("[OPTIONS] <project.camotics | input.gcode | input.tpl> <output.stl>");
+@@ -75,6 +81,11 @@ namespace CAMotics {
+       cmdLine.addTarget("resolution", resolution, "Valid values are 'low', "
+                         "'medium', 'high' or a decimal value.");
+       cmdLine.addTarget("threads", threads, "Number of simulation threads.");
++      cmdLine.addTarget("inspect-grid", inspectGrid,
++                        "Write explicit global grid metadata without running NC.");
++      cmdLine.addTarget("cell-window", cellWindow,
++                        "Half-open global cell indices x0,y0,z0,x1,y1,z1; "
++                        "requires explicit metric stock, one thread and no reduction.");
+ 
+       Logger::instance().setLogTime(false);
+       Logger::instance().setLogNoInfoHeader(true);
+@@ -101,6 +112,68 @@ namespace CAMotics {
+     }
+ 
+ 
++    Grid explicitGrid() const {
++      const Project::Workpiece &stock = project.getWorkpiece();
++      double res = project.getResolution();
++      Rectangle3D bounds = stock.getBounds();
++      if (!project.isMetric() || stock.isAutomatic() || stock.getMargin() != 0 ||
++          project.getResolutionMode() != ResolutionMode::RESOLUTION_MANUAL ||
++          !std::isfinite(res) || res <= 0)
++        THROW("Grid windows require explicit metric stock and manual resolution");
++      for (unsigned i = 0; i < 3; i++) {
++        double width = bounds.rmax[i] - bounds.rmin[i];
++        if (!std::isfinite(bounds.rmin[i]) || !std::isfinite(bounds.rmax[i]) ||
++            !std::isfinite(width / res) || width <= 0 ||
++            numeric_limits<unsigned>::max() - 4.0 < width / res)
++          THROW("Invalid or unrepresentable global grid extent");
++      }
++      return Grid(bounds.grow(res * 0.9), res);
++    }
++
++
++    Rectangle3U parseCellWindow(const Grid &grid) const {
++      vector<string> values;
++      String::tokenize(cellWindow, values, ",", true);
++      if (values.size() != 6) THROW("Cell window requires six integer indices");
++      Vector3U start, end;
++      for (unsigned i = 0; i < 6; i++) {
++        if (values[i].empty() || values[i].find_first_not_of("0123456789") != string::npos)
++          THROW("Cell indices must be unsigned decimal integers");
++        (i < 3 ? start[i] : end[i - 3]) = String::parseU32(values[i]);
++      }
++      uint64_t cells = 1;
++      for (unsigned i = 0; i < 3; i++) {
++        if (start[i] >= end[i] || grid.getSteps()[i] < end[i])
++          THROW("Cell window is empty or outside the global grid");
++        unsigned width = end[i] - start[i];
++        if (5000000 / width < cells) THROW("Cell window exceeds 5000000 cells");
++        cells *= width;
++      }
++      if (100000 < (uint64_t)(end.x() - start.x() + 1) *
++                   (end.y() - start.y() + 1))
++        THROW("Cell window exceeds 100000 XY sample points");
++      return Rectangle3U(start, end);
++    }
++
++
++    void writeGrid(const Grid &grid) {
++      // The bundled JSON writer rounds doubles to six decimal places. Use a
++      // round-trippable number format for this fixed, finite grid schema only.
++      ostream &out = *output;
++      out.imbue(std::locale::classic());
++      out << setprecision(numeric_limits<double>::max_digits10)
++          << "{\"schema\":\"genlaw.camotics-grid.v1\",\"units\":\"mm\","
++          << "\"resolution_mm\":" << grid.getResolution()
++          << ",\"padding_resolution_factor\":0.9,\"offset_mm\":[";
++      for (unsigned i = 0; i < 3; i++) out << (i ? "," : "") << grid.getOffset()[i];
++      out << "],\"steps\":[";
++      for (unsigned i = 0; i < 3; i++) out << (i ? "," : "") << grid.getSteps()[i];
++      out << "],\"upper_mm\":[";
++      for (unsigned i = 0; i < 3; i++) out << (i ? "," : "") << grid.getBounds().rmax[i];
++      out << "],\"nc_executed\":false,\"surface_computed\":false}" << endl;
++    }
++
++
+     void run() {
+       // Open project
+       string ext = SystemUtilities::extension(input);
+@@ -122,6 +195,15 @@ namespace CAMotics {
+         project.setResolutionMode(resMode);
+       }
+ 
++      Rectangle3U window;
++      if (inspectGrid || !cellWindow.empty()) {
++        Grid grid = explicitGrid();
++        if (!cellWindow.empty()) window = parseCellWindow(grid);
++        if (inspectGrid) {writeGrid(grid); return;}
++        if (threads != 1 || reduce || renderMode != RenderMode::MCUBES_MODE)
++          THROW("Cell windows require --threads 1 --reduce=false and marching cubes");
++      }
++
+       // Generate tool path
+       SmartPointer<GCode::ToolPath> path = cutSim.computeToolPath(project);
+ 
+@@ -132,6 +214,11 @@ namespace CAMotics {
+       Simulation sim(path, bounds, project.getResolution(),
+                      time ? time : numeric_limits<double>::max(),
+                      renderMode, threads);
++      if (!cellWindow.empty()) {
++        sim.hasCellWindow = true;
++        sim.cellStart = window.rmin;
++        sim.cellEnd = window.rmax;
++      }
+ 
+       SmartPointer<Surface> surface;
+       if (!shouldQuit()) surface = cutSim.computeSurface(sim);
+diff --git a/engines/camotics/source/src/stl/Writer.cpp b/engines/camotics/source/src/stl/Writer.cpp
+index 6f5eee5..76b0bbb 100644
+--- a/engines/camotics/source/src/stl/Writer.cpp
++++ b/engines/camotics/source/src/stl/Writer.cpp
+@@ -21,6 +21,7 @@
+ #include "Writer.h"
+ #include "BinaryTriangle.h"
+ 
++#include <algorithm>
+ #include <string.h>
+ 
+ using namespace std;
+@@ -34,7 +35,9 @@ void Writer::writeHeader(const string &name, uint32_t count,
+     // Header
+     char header[81];
+     memset(header, 0, 81);
+-    if (!hash.empty()) memcpy(header, hash.c_str(), 80);
++    // The simulation hash is shorter than the 80-byte STL header. Do not read
++    // beyond its string storage or copy unrelated heap bytes into the output.
++    if (!hash.empty()) memcpy(header, hash.data(), min(hash.size(), size_t(80)));
+     stream.write(header, 80);
+ 
+     // Count

@@ -1,0 +1,35 @@
+{
+  "schema": "genlaw.software-geometry-policy.v11",
+  "cad_sha256": "59144733d029988165e7d6487f7bda959f3391973ed5b719317fd6d41f0aa932",
+  "production_approved": false,
+  "features": {
+    "P1": {
+      "top_height": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_top_height_and_mesh_max",
+        "min_mm": -1.1,
+        "max_mm": -0.9
+      },
+      "target_thickness": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software thickness interval adopts the explicitly transcribed 2 +/- 0.08 mm card values; the original two-cell numerical guard is unchanged. Manufacturing approval is separate.",
+        "method": "sampled_remaining_thickness",
+        "min_mm": 1.92,
+        "max_mm": 2.08
+      },
+      "top_geometry": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_top_plane",
+        "max_flatness_mm": 0.1
+      }
+    }
+  }
+}

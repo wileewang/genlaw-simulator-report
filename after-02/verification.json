@@ -1,0 +1,1410 @@
+{
+  "schema": "genlaw.sharded-feature-verification.v1",
+  "status": "measured",
+  "plan": {
+    "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/plan.json",
+    "sha256": "f92de1b62e032be4f2ae401c1b7a14cac12a6add8fa11c7341bfa67a23dbafc3"
+  },
+  "software_regression": [
+    {
+      "feature_id": "P1",
+      "kind": "top_height",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_top_height_and_mesh_max",
+        "min_mm": -1.1,
+        "max_mm": -0.9
+      },
+      "production_approved": false,
+      "reason": "Original-coordinate finite geometric observations with a two-cell guard; not continuous GD&T or production acceptance."
+    },
+    {
+      "feature_id": "P1",
+      "kind": "target_thickness",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software thickness interval adopts the explicitly transcribed 2 +/- 0.08 mm card values; the original two-cell numerical guard is unchanged. Manufacturing approval is separate.",
+        "method": "sampled_remaining_thickness",
+        "min_mm": 1.92,
+        "max_mm": 2.08
+      },
+      "production_approved": false,
+      "reason": "Original-coordinate finite geometric observations with a two-cell guard; not continuous GD&T or production acceptance."
+    },
+    {
+      "feature_id": "P1",
+      "kind": "top_geometry",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_top_plane",
+        "max_flatness_mm": 0.1
+      },
+      "production_approved": false,
+      "reason": "Original-coordinate finite geometric observations with a two-cell guard; not continuous GD&T or production acceptance."
+    },
+    {
+      "feature_id": "C1",
+      "kind": "outer_profile_xy",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sectioned_original_capsule_boundary",
+        "max_deviation_mm": 0.1
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration."
+    },
+    {
+      "feature_id": "C1",
+      "kind": "retained_thickness",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software thickness interval adopts the explicitly transcribed 2 +/- 0.08 mm card values; the original two-cell numerical guard is unchanged. Manufacturing approval is separate.",
+        "method": "sampled_original_thickness",
+        "min_mm": 1.92,
+        "max_mm": 2.08
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration."
+    },
+    {
+      "feature_id": "C1",
+      "kind": "retained_planes",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_original_top_bottom",
+        "max_deviation_mm": 0.1
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration."
+    },
+    {
+      "feature_id": "C1",
+      "kind": "exterior_clearance",
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen software regression: four-grid-cell dimensional allowance, two-cell numerical guard; finite probes, not manufacturing acceptance.",
+        "method": "sampled_full_depth_exterior_clearance",
+        "must_be_clear": true
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration."
+    }
+  ],
+  "observations": {
+    "features": {
+      "P1": {
+        "probes": [
+          {
+            "xy_mm": [
+              5.0,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              95.0,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              49.99999999999999,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              72.5,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              27.499999999999996,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              61.25000000000001,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              38.74999999999999,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              16.249999999999996,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              83.74999999999999,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              5.0,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              95.0,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              27.499999999999996,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              38.74999999999999,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              61.25000000000001,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              72.5,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              16.249999999999996,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              49.99999999999999,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              83.74999999999999,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              5.0,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              16.249999999999996,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              27.499999999999996,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              38.74999999999999,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              49.99999999999999,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              61.25000000000001,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              72.5,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          }
+        ],
+        "probe_count": 25,
+        "complete": true,
+        "sections": [
+          {
+            "requested_z_mm": -2.9,
+            "z_mm": -2.8904509086590617,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -2.7199999999999998,
+            "z_mm": -2.7154508089919918,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -2.54,
+            "z_mm": -2.5404508566757076,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -2.36,
+            "z_mm": -2.36545081329163,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -2.18,
+            "z_mm": -2.190450860975346,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -2.0,
+            "z_mm": -1.9904508588255267,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -1.8199999999999998,
+            "z_mm": -1.8154508609753457,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -1.64,
+            "z_mm": -1.6404508349836688,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -1.46,
+            "z_mm": -1.4654508826673847,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -1.28,
+            "z_mm": -1.290450811141811,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -1.1,
+            "z_mm": -1.0904508826673847,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          }
+        ],
+        "section_count": 11,
+        "contours_complete": true,
+        "topology_matches": true,
+        "max_boundary_deviation_mm": 0.010266161533558568,
+        "top_z_band_mm": [
+          -0.99990237,
+          -0.99990237
+        ],
+        "thickness_band_mm": [
+          1.9999998799999998,
+          1.9999998799999998
+        ],
+        "top_flatness_range_mm": 0.0,
+        "max_bottom_deviation_mm": 9.775161743164062e-05,
+        "mesh_max_z_mm": -0.9999023675918579,
+        "resolution_mm": 0.025,
+        "numerical_guard_mm": 0.05,
+        "guard_is_certified_uncertainty": false,
+        "registration_applied": false
+      },
+      "C1": {
+        "probes": [
+          {
+            "xy_mm": [
+              5.0,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              95.0,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              49.99999999999999,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              72.5,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              27.499999999999996,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              61.25000000000001,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              38.74999999999999,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              16.249999999999996,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              83.74999999999999,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              5.0,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              95.0,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              27.499999999999996,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              38.74999999999999,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              61.25000000000001,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              72.5,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              16.249999999999996,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              49.99999999999999,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              83.74999999999999,
+              13.299999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              5.0,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              16.249999999999996,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              27.499999999999996,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              38.74999999999999,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              49.99999999999999,
+              0.7000000000000001
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              61.25000000000001,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          },
+          {
+            "xy_mm": [
+              72.5,
+              6.999999999999999
+            ],
+            "surface_z_mm": [
+              -2.99990225,
+              -0.99990237
+            ],
+            "status": "measured",
+            "top_z_mm": -0.99990237,
+            "thickness_mm": 1.9999998799999998,
+            "bottom_deviation_mm": 9.775000000011858e-05
+          }
+        ],
+        "probe_count": 25,
+        "complete": true,
+        "sections": [
+          {
+            "requested_z_mm": -2.9,
+            "z_mm": -2.8904509086590617,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -2.7199999999999998,
+            "z_mm": -2.7154508089919918,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -2.54,
+            "z_mm": -2.5404508566757076,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -2.36,
+            "z_mm": -2.36545081329163,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -2.18,
+            "z_mm": -2.190450860975346,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -2.0,
+            "z_mm": -1.9904508588255267,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -1.8199999999999998,
+            "z_mm": -1.8154508609753457,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -1.64,
+            "z_mm": -1.6404508349836688,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -1.46,
+            "z_mm": -1.4654508826673847,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -1.28,
+            "z_mm": -1.290450811141811,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          },
+          {
+            "requested_z_mm": -1.1,
+            "z_mm": -1.0904508826673847,
+            "retained_body_count": 1,
+            "topology_matches": true,
+            "holes_checked_separately": true,
+            "boundary_deviation_mm": 0.010266161533558568
+          }
+        ],
+        "section_count": 11,
+        "contours_complete": true,
+        "topology_matches": true,
+        "max_boundary_deviation_mm": 0.010266161533558568,
+        "thickness_band_mm": [
+          1.9999998799999998,
+          1.9999998799999998
+        ],
+        "resolution_mm": 0.025,
+        "numerical_guard_mm": 0.05,
+        "guard_is_certified_uncertainty": false,
+        "registration_applied": false,
+        "max_plane_deviation_mm": 9.775161743164062e-05,
+        "exterior_probes": [
+          {
+            "xy_mm": [
+              0.28,
+              0.28
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              0.602,
+              1.8899999999999997
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              1.2460000000000002,
+              0.924
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              2.212,
+              0.28
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              4.466,
+              0.28
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              0.28,
+              13.72
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              0.602,
+              12.11
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              1.2460000000000002,
+              13.076
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              2.212,
+              13.72
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              4.466,
+              13.72
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              99.72,
+              0.28
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              99.398,
+              1.8899999999999997
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              98.754,
+              0.924
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              97.788,
+              0.28
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              95.534,
+              0.28
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              99.72,
+              13.72
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              99.398,
+              12.11
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              98.754,
+              13.076
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              97.788,
+              13.72
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          },
+          {
+            "xy_mm": [
+              95.534,
+              13.72
+            ],
+            "surface_z_mm": [],
+            "observation": "clear",
+            "maximum_material_interval_mm": 0
+          }
+        ],
+        "exterior_probe_count": 20,
+        "exterior_all_clear": true,
+        "disconnected_exterior_material_discarded": false,
+        "probe_selection": "Original capsule retained solid, excluding all intended holes; never adapted to simulated material."
+      }
+    },
+    "unassigned_contours_detected": false,
+    "section_feature_counts": [
+      {
+        "z_mm": -2.8904509086590617,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      },
+      {
+        "z_mm": -2.7154508089919918,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      },
+      {
+        "z_mm": -2.5404508566757076,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      },
+      {
+        "z_mm": -2.36545081329163,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      },
+      {
+        "z_mm": -2.190450860975346,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      },
+      {
+        "z_mm": -1.9904508588255267,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      },
+      {
+        "z_mm": -1.8154508609753457,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      },
+      {
+        "z_mm": -1.6404508349836688,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      },
+      {
+        "z_mm": -1.4654508826673847,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      },
+      {
+        "z_mm": -1.290450811141811,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      },
+      {
+        "z_mm": -1.0904508826673847,
+        "expected_holes": 0,
+        "observed_holes": 0,
+        "matched_features": [],
+        "unassigned_contours": 0
+      }
+    ]
+  },
+  "all_software_geometry_checks_passed": true,
+  "ray_parts": [
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/rays-000.json",
+      "sha256": "7e0c93fb70a2c41d27cb68e7aca3302a36c252b867e6221e8f7cceb0460ccffe"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/rays-001.json",
+      "sha256": "e04d4cea844d55c39a235e3a6f028a8b351be4498232807971b55b309678c240"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/rays-002.json",
+      "sha256": "68faade54048c98e1fce8cc6d4cd2a03ca6030e7eac6c9f322c68f8a385760ad"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/rays-003.json",
+      "sha256": "7edcaf319537e111318a1aa2c3fe4a67a23af5d43dc0a7c1e1343937a05b575f"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/rays-004.json",
+      "sha256": "d42250e851031bbd7989950442c428e4d574264982ec2dbdf9c4fb5f0b3992f8"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/rays-005.json",
+      "sha256": "fac8ad629bcdcf426d299437c1edc992335838f95c104353ad636e0f1d8289ba"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/rays-006.json",
+      "sha256": "fbd860792a73d9947ed4c1a03d390ead30d69add1ad6a55d720147b9799d6749"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/rays-007.json",
+      "sha256": "db952f0ee25a2de391d27290d46a7278f20d4e4a3128d8b801adeb999e33c1e8"
+    }
+  ],
+  "section_parts": [
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-000.json",
+      "sha256": "4253cce9ebb00d57b414ccee23fc91f48e00cb335694a0dcc1be5ad19b29f775"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-001.json",
+      "sha256": "384d87e06badac5bb384fd4d6efd0398cbdc67e013a86f329384db4ccdc20f94"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-002.json",
+      "sha256": "1299c1e29b2046abb771c6658fe37265e00bdb8e6c83503458d092a2ad3455ec"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-003.json",
+      "sha256": "f5d69dcc3dbb7dbc6cc5696c34e9caf7df862dbaaf4e5fcb290d6f3e7ed5345e"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-004.json",
+      "sha256": "420644e465a8d1d0de5162bfbf991e72ef7fd361196a36997d654b7ebbae0fa2"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-005.json",
+      "sha256": "c97079b73d74d5f304fb0da6e7a0255e70b80ca195631937447c6d5497791e03"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-006.json",
+      "sha256": "60470d2955f27359b091b495bbc7e86670f72e9e5e5b768e6a49634ecffe00a6"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-007.json",
+      "sha256": "ac9b5d46c4760da8a467980b7443dab33cedf039ce07378c20f6a3a8ef92c241"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-008.json",
+      "sha256": "ee975344ca86f552f0811fb32adcb09799a0f6ffe53e9da8462bda18706904ea"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-009.json",
+      "sha256": "c2bc18ceaf9a309ea881ca92bce8d061c585e801043ba4774ec6c1c537d4af1f"
+    },
+    {
+      "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/fine-checkpoints/after-02/features/section-010.json",
+      "sha256": "dedf74a2e2a3c6639dc8e0885dcb240720cf270686b72f966dda114248a08cab"
+    }
+  ],
+  "source_code": {
+    "path": "genlaw_pipeline/sharded_verification.py",
+    "sha256": "ee54d05cfaebb21ca06f3bd49cdd49dbe18571ef5d2277e967e0a149d7cb39ae"
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "limits": [
+    "Finite original-CAD probes and sections, not manufacturing acceptance.",
+    "This report covers one bound cumulative NC prefix; final geometry is reported separately."
+  ]
+}

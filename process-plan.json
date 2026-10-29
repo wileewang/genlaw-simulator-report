@@ -1,0 +1,196 @@
+{
+  "schema": "genlaw.process-plan.v1",
+  "id": "S4-PROFILE-SEQUENCE-connection-100mm-CARD-r2",
+  "cad_sha256": "fa3ceab935565ec20e34def53334cc92a2e4be5540fd3f6e6d0c3d6116eccb35",
+  "origin": "developer_authored_synthetic_paper_card",
+  "transcription": {
+    "status": "checked_against_source",
+    "reviewer_role": "developer_transcription",
+    "production_review": false
+  },
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "external_documents": [],
+  "operations": [
+    {
+      "id": "OP05",
+      "name": "来料核对",
+      "steps": [
+        {
+          "id": "OP05.1",
+          "type": "incoming_inspection",
+          "text": "本参考人为构造 100 × 14 × 3 mm 单件来料，T1 紫铜标签；原卡为 444 × 166 × 3 mm、28 件拼板，本次不覆盖排料、压板转换和落料。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP05.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP10",
+      "name": "铣",
+      "steps": [
+        {
+          "id": "OP10.1",
+          "type": "setup",
+          "text": "软件参考采用 CAD 原坐标、通用 XYZ、G54 零变换及零刀长偏置；夹具未建模，真实定位装夹待审核。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.1"
+          }
+        },
+        {
+          "id": "OP10.2",
+          "type": "face_milling",
+          "text": "用 T1 面铣 P1：由来料顶面 Z0 铣至 Z-1，厚度 2；保持底面及 XY 外形。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.2"
+          },
+          "feature_id": "P1",
+          "depends_on": [
+            "OP05.1",
+            "OP10.1"
+          ],
+          "constraints": {
+            "thickness_mm": 2,
+            "top_shape": "flat",
+            "tool_id": "T1"
+          }
+        },
+        {
+          "id": "OP10.3",
+          "type": "external_profile_milling",
+          "text": "用 T1 铣 C1 圆头外形：长 100、宽 14、端圆 R7，长轴 X，贯穿原底面并清除外侧余料。层内闭合后直接下层；孔不得被轮廓操作加工。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.3"
+          },
+          "feature_id": "C1",
+          "depends_on": [
+            "OP10.2"
+          ],
+          "constraints": {
+            "length_mm": 100,
+            "width_mm": 14,
+            "thickness_mm": 2,
+            "end_condition": "through_stock",
+            "tool_id": "T1"
+          }
+        },
+        {
+          "id": "OP10.4",
+          "type": "helical_hole_milling",
+          "text": "用 T1 在当前剩料上螺旋铣 H1：孔心 (10, 7)，φ8.5 贯穿；中心不得留芯，沿用原 CAD 坐标。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.4"
+          },
+          "feature_id": "H1",
+          "depends_on": [
+            "OP10.3"
+          ],
+          "constraints": {
+            "diameter_mm": 8.5,
+            "end_condition": "through",
+            "tool_id": "T1"
+          }
+        },
+        {
+          "id": "OP10.5",
+          "type": "helical_hole_milling",
+          "text": "用 T1 在当前剩料上螺旋铣 H2：孔心 (50, 7)，φ8.5 贯穿；中心不得留芯，沿用原 CAD 坐标。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.5"
+          },
+          "feature_id": "H2",
+          "depends_on": [
+            "OP10.4"
+          ],
+          "constraints": {
+            "diameter_mm": 8.5,
+            "end_condition": "through",
+            "tool_id": "T1"
+          }
+        },
+        {
+          "id": "OP10.6",
+          "type": "helical_hole_milling",
+          "text": "用 T1 在当前剩料上螺旋铣 H3：孔心 (90, 7)，φ8.5 贯穿；中心不得留芯，沿用原 CAD 坐标。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.6"
+          },
+          "feature_id": "H3",
+          "depends_on": [
+            "OP10.5"
+          ],
+          "constraints": {
+            "diameter_mm": 8.5,
+            "end_condition": "through",
+            "tool_id": "T1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP20",
+      "name": "去毛刺",
+      "steps": [
+        {
+          "id": "OP20.1",
+          "type": "deburring",
+          "text": "孔口及外缘去毛刺、锐边处理按制造要求确认；不自行增加倒角。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP20.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP30",
+      "name": "检验",
+      "steps": [
+        {
+          "id": "OP30.1",
+          "type": "inspection",
+          "text": "按软件条件核对逐工步剩料；另检查厚 2±0.08、三孔 φ8.5±0.2 mm 的数值条件。版次、尺寸适用阶段、形位和粗糙度待确认。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP30.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP35",
+      "name": "后续处置",
+      "steps": [
+        {
+          "id": "OP35.1",
+          "type": "postprocess",
+          "text": "原卡后续镀银 6–12 μm、标识、清洗、包装等未在本参考执行；不计整卡完成。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP35.1"
+          }
+        }
+      ]
+    }
+  ]
+}

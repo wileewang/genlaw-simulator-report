@@ -1,0 +1,351 @@
+{
+  "schema": "genlaw.connection-reference-result.v1",
+  "id": "S4-CONNECTION-REFERENCE-RESULTS-20261029-r1",
+  "status": "reference_geometry_measured_with_requirement_results",
+  "resolution_mm": 0.025,
+  "stock_bounds_mm": {
+    "min": [
+      0,
+      0,
+      -3
+    ],
+    "max": [
+      100,
+      14,
+      0
+    ]
+  },
+  "executable_nc_blocks": 392,
+  "final": {
+    "metrics": {
+      "schema": "genlaw.sharded-sectional-iou.v1",
+      "status": "measured_numerical_estimate",
+      "iou": 0.999274946122021,
+      "iou_percent": 99.9274946122021,
+      "volumes": {
+        "actual_volume_mm3": 2375.50795279221,
+        "target_volume_mm3": 2375.4059770179338,
+        "intersection_mm3": 2374.5954854533747,
+        "alternative_intersection_mm3": 0.0,
+        "union_mm3": 2376.318444356769,
+        "iou": 0.999274946122021,
+        "quadrature_order": 3
+      },
+      "excess_material_mm3": 0.9124673388350857,
+      "missing_material_mm3": 0.8104915645590154,
+      "absolute_iou_refinement_difference": 2.650391195402335e-08,
+      "plan": {
+        "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/sharded-measure-plan.json",
+        "sha256": "949e781a3ccfdaba82f3ef1c3d6c0238e6aaa872837f4c33ea62fb767d33d521"
+      },
+      "surface": {
+        "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/surface.json",
+        "sha256": "2e1e89e2cadd64820aa657cc55cfab31b523df24e440ba69216c9454f71c262a"
+      },
+      "reference": {
+        "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/native-geometry.json",
+        "sha256": "975b580fa1db970192051272a61157543700fe3466c3026212347ece0b334f5b"
+      },
+      "parts": [
+        {
+          "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/sharded-measure-parts/part-000.json",
+          "sha256": "5bf7d4136812bef8d1c7db4ec515a9c12fd9c65b2ca1adafaf63b38484660da5"
+        },
+        {
+          "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/sharded-measure-parts/part-001.json",
+          "sha256": "650268545ab4c08abf5fa135427a828c5840c90e45300b8edd6bbc8ac5c47bc5"
+        },
+        {
+          "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/sharded-measure-parts/part-002.json",
+          "sha256": "f1a2d22e1289915ae5441c2e0187a3ca4cef110bf3a0e35557977b5a2b2040e9"
+        },
+        {
+          "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/sharded-measure-parts/part-003.json",
+          "sha256": "bf8cc7afc8dd4bc1478987d4940d4272e698a46ce306997a6cdab95b09be48fb"
+        },
+        {
+          "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/sharded-measure-parts/part-004.json",
+          "sha256": "1c740b83901747ac58a5407dcfb9a065dcc1218b60225ea43915e1fda7b72f87"
+        },
+        {
+          "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/sharded-measure-parts/part-005.json",
+          "sha256": "bc03415eb4fdd6ab561d69d870952b2c486000fab1fd1cf9c4c7bc6270f952dd"
+        }
+      ],
+      "all_vertex_height_intervals_preserved": true,
+      "per_window_iou_averaged": false,
+      "actual_surface_volume_mm3": 2375.5079513459546,
+      "section_levels": 83,
+      "method": "Global closed-surface sections from exact uncapped shards; all height intervals; 3-point Gauss integration against native-checked independent CAD.",
+      "registration": "none; original coordinates",
+      "source_code": {
+        "path": "genlaw_pipeline/sharded_measure.py",
+        "sha256": "693c3d960d0857af0d6e2a5d4252d4a25a0ab743bfeacdb7dcee96a799b04665"
+      },
+      "controls": [
+        {
+          "case": "identical_cube",
+          "expected": 1,
+          "measured": 1.0,
+          "pass": true
+        },
+        {
+          "case": "same_volume_shifted_cube",
+          "expected": 0.6,
+          "measured": 0.6,
+          "pass": true
+        },
+        {
+          "case": "disjoint_cube",
+          "expected": 0,
+          "measured": 0.0,
+          "pass": true
+        },
+        {
+          "case": "hole_not_drilled",
+          "expected": 0.9345501530502127,
+          "measured": 0.9345501594672894,
+          "pass": true
+        }
+      ],
+      "full_tolerance_acceptance": false,
+      "production_approved": false
+    },
+    "checks_passed": 16,
+    "display_triangles": 1140212,
+    "browser_mesh_paths": [
+      "display-parts/final/part-000.mesh",
+      "display-parts/final/part-001.mesh"
+    ]
+  },
+  "checkpoints": [
+    {
+      "id": "after-01",
+      "label": "面铣完成",
+      "kind": "cumulative_native_prefix",
+      "iou_percent": 99.98849741452693,
+      "checks_passed": 3,
+      "completed_features": [
+        "P1"
+      ],
+      "resolution_mm": 0.025,
+      "fine_checkpoint_acceptance": true,
+      "display_only": false,
+      "mesh_path": "after-01/actual.mesh",
+      "browser_mesh_paths": [
+        "display-parts/after-01/part-000.mesh"
+      ],
+      "mesh_sha256": "c67a69a05f5b2c3b3cc21cabd75bc1d2032b91fca0f2bed7a8f5f5bda90ac4ad",
+      "mesh_triangles": 161156
+    },
+    {
+      "id": "after-02",
+      "label": "圆头外形完成",
+      "kind": "cumulative_native_prefix",
+      "iou_percent": 99.96424970313079,
+      "checks_passed": 7,
+      "completed_features": [
+        "P1",
+        "C1"
+      ],
+      "resolution_mm": 0.025,
+      "fine_checkpoint_acceptance": true,
+      "display_only": false,
+      "mesh_path": "after-02/actual.mesh",
+      "browser_mesh_paths": [
+        "display-parts/after-02/part-000.mesh"
+      ],
+      "mesh_sha256": "86c05ccaa434fb097e58e4843f166d3e4164aca265cf4bb76d6de1da3c4cd86d",
+      "mesh_triangles": 505684
+    },
+    {
+      "id": "after-03",
+      "label": "H1 铣孔完成",
+      "kind": "cumulative_native_prefix",
+      "iou_percent": 99.95306394134006,
+      "checks_passed": 10,
+      "completed_features": [
+        "P1",
+        "C1",
+        "H1"
+      ],
+      "resolution_mm": 0.025,
+      "fine_checkpoint_acceptance": true,
+      "display_only": false,
+      "mesh_path": "after-03/actual.mesh",
+      "browser_mesh_paths": [
+        "display-parts/after-03/part-000.mesh"
+      ],
+      "mesh_sha256": "373f971f25f5bc4a07baff8c9119ac74a9d8bf461a27dc1d06cb4c6f1f49c833",
+      "mesh_triangles": 716856
+    },
+    {
+      "id": "after-04",
+      "label": "H2 铣孔完成",
+      "kind": "cumulative_native_prefix",
+      "iou_percent": 99.94086095883716,
+      "checks_passed": 13,
+      "completed_features": [
+        "P1",
+        "C1",
+        "H1",
+        "H2"
+      ],
+      "resolution_mm": 0.025,
+      "fine_checkpoint_acceptance": true,
+      "display_only": false,
+      "mesh_path": "after-04/actual.mesh",
+      "browser_mesh_paths": [
+        "display-parts/after-04/part-000.mesh",
+        "display-parts/after-04/part-001.mesh"
+      ],
+      "mesh_sha256": "324945952e1dd8634ed14528f0b65495cd600c6ceeed3e9849bd18056828a7dc",
+      "mesh_triangles": 928732
+    }
+  ],
+  "actual_volumes_mm3": [
+    4200,
+    2800.0342382564286,
+    2715.203274582507,
+    2601.97150255204,
+    2488.7397312264015,
+    2375.5079513459546
+  ],
+  "manufacturing_requirements": {
+    "defined_count": 5,
+    "passed_count": 5,
+    "unmapped_count": 7,
+    "status_counts": {
+      "numeric_pass": 5,
+      "pending_criteria": 11,
+      "unsupported_measurement": 5
+    },
+    "all_requirements_passed": false,
+    "evaluated_dimensions": [
+      {
+        "id": "P1-target_thickness",
+        "feature_id": "P1",
+        "kind": "target_thickness",
+        "nominal": 2,
+        "status": "numeric_pass",
+        "criterion": {
+          "schema": "genlaw.numeric-acceptance.v1",
+          "units": "mm",
+          "scope": "engineering_requirement",
+          "basis": "Manually checked connection-plate process card, PDF page 4, operation 15: thickness 2 +/- 0.08 mm; diameter 8.5 +/- 0.2 mm. Transcribed numerical checks only: card/drawing identity, revision and pre/post-plating stage remain unapproved.",
+          "method": "sampled_remaining_thickness",
+          "min_mm": 1.92,
+          "max_mm": 2.08
+        },
+        "observed_band_mm": [
+          1.9999998799999998,
+          1.9999998799999998
+        ],
+        "numerical_guard_mm": 0.05,
+        "sample_count": 25,
+        "sample_type": "thickness_probes"
+      },
+      {
+        "id": "C1-retained_thickness",
+        "feature_id": "C1",
+        "kind": "retained_thickness",
+        "nominal": 2,
+        "status": "numeric_pass",
+        "criterion": {
+          "schema": "genlaw.numeric-acceptance.v1",
+          "units": "mm",
+          "scope": "engineering_requirement",
+          "basis": "Manually checked connection-plate process card, PDF page 4, operation 15: thickness 2 +/- 0.08 mm; diameter 8.5 +/- 0.2 mm. Transcribed numerical checks only: card/drawing identity, revision and pre/post-plating stage remain unapproved.",
+          "method": "sampled_original_thickness",
+          "min_mm": 1.92,
+          "max_mm": 2.08
+        },
+        "observed_band_mm": [
+          1.9999998799999998,
+          1.9999998799999998
+        ],
+        "numerical_guard_mm": 0.05,
+        "sample_count": 25,
+        "sample_type": "thickness_probes"
+      },
+      {
+        "id": "H1-diameter",
+        "feature_id": "H1",
+        "kind": "diameter",
+        "nominal": 8.5,
+        "status": "numeric_pass",
+        "criterion": {
+          "schema": "genlaw.numeric-acceptance.v1",
+          "units": "mm",
+          "scope": "engineering_requirement",
+          "basis": "Manually checked connection-plate process card, PDF page 4, operation 15: thickness 2 +/- 0.08 mm; diameter 8.5 +/- 0.2 mm. Transcribed numerical checks only: card/drawing identity, revision and pre/post-plating stage remain unapproved.",
+          "method": "sampled_radial_diameter_band",
+          "min_mm": 8.3,
+          "max_mm": 8.7
+        },
+        "observed_band_mm": [
+          8.480663365085801,
+          8.500194468153005
+        ],
+        "numerical_guard_mm": 0.05,
+        "sample_count": 11,
+        "sample_type": "sections"
+      },
+      {
+        "id": "H2-diameter",
+        "feature_id": "H2",
+        "kind": "diameter",
+        "nominal": 8.5,
+        "status": "numeric_pass",
+        "criterion": {
+          "schema": "genlaw.numeric-acceptance.v1",
+          "units": "mm",
+          "scope": "engineering_requirement",
+          "basis": "Manually checked connection-plate process card, PDF page 4, operation 15: thickness 2 +/- 0.08 mm; diameter 8.5 +/- 0.2 mm. Transcribed numerical checks only: card/drawing identity, revision and pre/post-plating stage remain unapproved.",
+          "method": "sampled_radial_diameter_band",
+          "min_mm": 8.3,
+          "max_mm": 8.7
+        },
+        "observed_band_mm": [
+          8.480663379105634,
+          8.500198131964183
+        ],
+        "numerical_guard_mm": 0.05,
+        "sample_count": 11,
+        "sample_type": "sections"
+      },
+      {
+        "id": "H3-diameter",
+        "feature_id": "H3",
+        "kind": "diameter",
+        "nominal": 8.5,
+        "status": "numeric_pass",
+        "criterion": {
+          "schema": "genlaw.numeric-acceptance.v1",
+          "units": "mm",
+          "scope": "engineering_requirement",
+          "basis": "Manually checked connection-plate process card, PDF page 4, operation 15: thickness 2 +/- 0.08 mm; diameter 8.5 +/- 0.2 mm. Transcribed numerical checks only: card/drawing identity, revision and pre/post-plating stage remain unapproved.",
+          "method": "sampled_radial_diameter_band",
+          "min_mm": 8.3,
+          "max_mm": 8.7
+        },
+        "observed_band_mm": [
+          8.48066329902842,
+          8.500198361168685
+        ],
+        "numerical_guard_mm": 0.05,
+        "sample_count": 11,
+        "sample_type": "sections"
+      }
+    ]
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "source": {
+    "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/completion.json",
+    "sha256": "bcbc150bb5d473ba2f8368cb036f747607dddf19fc12d4f0db5df7b5cb171aaa"
+  },
+  "original_raw_shards": 320,
+  "unique_raw_shards": 112,
+  "raw_customer_documents_included": false
+}

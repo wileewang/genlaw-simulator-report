@@ -1,0 +1,435 @@
+{
+  "schema": "genlaw.sharded-requirement-verification.v1",
+  "status": "evaluated",
+  "requirements": [
+    {
+      "id": "P1-top_height",
+      "feature_id": "P1",
+      "kind": "top_height",
+      "nominal": -1,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "P1-target_thickness",
+      "feature_id": "P1",
+      "kind": "target_thickness",
+      "nominal": 2,
+      "status": "numeric_pass",
+      "criterion_scope": "engineering_requirement",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Manually checked connection-plate process card, PDF page 4, operation 15: thickness 2 +/- 0.08 mm; diameter 8.5 +/- 0.2 mm. Transcribed numerical checks only: card/drawing identity, revision and pre/post-plating stage remain unapproved.",
+        "method": "sampled_remaining_thickness",
+        "min_mm": 1.92,
+        "max_mm": 2.08
+      },
+      "production_approved": false,
+      "reason": "Original-coordinate finite geometric observations with a two-cell guard; not continuous GD&T or production acceptance.",
+      "source_review": {
+        "file_key": "source_review",
+        "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+        "pdf_page": 4,
+        "operation": "15",
+        "identity_revision_approved": false,
+        "dimension_stage_approved": false
+      }
+    },
+    {
+      "id": "P1-top_geometry",
+      "feature_id": "P1",
+      "kind": "top_geometry",
+      "nominal": "flat",
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "P1-surface_roughness",
+      "feature_id": "P1",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness, material physics or general GD&T evaluator.",
+      "source_review": null
+    },
+    {
+      "id": "C1-outer_profile_xy",
+      "feature_id": "C1",
+      "kind": "outer_profile_xy",
+      "nominal": {
+        "center_xy_mm": [
+          50.0,
+          7.0
+        ],
+        "major_axis": "X",
+        "length_mm": 100,
+        "width_mm": 14
+      },
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "C1-retained_thickness",
+      "feature_id": "C1",
+      "kind": "retained_thickness",
+      "nominal": 2,
+      "status": "numeric_pass",
+      "criterion_scope": "engineering_requirement",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Manually checked connection-plate process card, PDF page 4, operation 15: thickness 2 +/- 0.08 mm; diameter 8.5 +/- 0.2 mm. Transcribed numerical checks only: card/drawing identity, revision and pre/post-plating stage remain unapproved.",
+        "method": "sampled_original_thickness",
+        "min_mm": 1.92,
+        "max_mm": 2.08
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration.",
+      "source_review": {
+        "file_key": "source_review",
+        "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+        "pdf_page": 4,
+        "operation": "15",
+        "identity_revision_approved": false,
+        "dimension_stage_approved": false
+      }
+    },
+    {
+      "id": "C1-retained_planes",
+      "feature_id": "C1",
+      "kind": "retained_planes",
+      "nominal": {
+        "top_z_mm": -1,
+        "bottom_z_mm": -3
+      },
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "C1-exterior_clearance",
+      "feature_id": "C1",
+      "kind": "exterior_clearance",
+      "nominal": "all_material_outside_original_capsule_removed_through_stock",
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "C1-surface_roughness",
+      "feature_id": "C1",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No physical cutting, roughness or general GD&T evaluator.",
+      "source_review": null
+    },
+    {
+      "id": "H1-diameter",
+      "feature_id": "H1",
+      "kind": "diameter",
+      "nominal": 8.5,
+      "status": "numeric_pass",
+      "criterion_scope": "engineering_requirement",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Manually checked connection-plate process card, PDF page 4, operation 15: thickness 2 +/- 0.08 mm; diameter 8.5 +/- 0.2 mm. Transcribed numerical checks only: card/drawing identity, revision and pre/post-plating stage remain unapproved.",
+        "method": "sampled_radial_diameter_band",
+        "min_mm": 8.3,
+        "max_mm": 8.7
+      },
+      "production_approved": false,
+      "reason": "Numerical test under the declared method; finite sampling and mesh resolution are not a production certificate.",
+      "source_review": {
+        "file_key": "source_review",
+        "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+        "pdf_page": 4,
+        "operation": "15",
+        "identity_revision_approved": false,
+        "dimension_stage_approved": false
+      }
+    },
+    {
+      "id": "H1-position_xy",
+      "feature_id": "H1",
+      "kind": "position_xy",
+      "nominal": [
+        10,
+        7
+      ],
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "H1-through",
+      "feature_id": "H1",
+      "kind": "through",
+      "nominal": true,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "H1-surface_roughness",
+      "feature_id": "H1",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness/material or general GD&T evaluator.",
+      "source_review": null
+    },
+    {
+      "id": "H2-diameter",
+      "feature_id": "H2",
+      "kind": "diameter",
+      "nominal": 8.5,
+      "status": "numeric_pass",
+      "criterion_scope": "engineering_requirement",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Manually checked connection-plate process card, PDF page 4, operation 15: thickness 2 +/- 0.08 mm; diameter 8.5 +/- 0.2 mm. Transcribed numerical checks only: card/drawing identity, revision and pre/post-plating stage remain unapproved.",
+        "method": "sampled_radial_diameter_band",
+        "min_mm": 8.3,
+        "max_mm": 8.7
+      },
+      "production_approved": false,
+      "reason": "Numerical test under the declared method; finite sampling and mesh resolution are not a production certificate.",
+      "source_review": {
+        "file_key": "source_review",
+        "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+        "pdf_page": 4,
+        "operation": "15",
+        "identity_revision_approved": false,
+        "dimension_stage_approved": false
+      }
+    },
+    {
+      "id": "H2-position_xy",
+      "feature_id": "H2",
+      "kind": "position_xy",
+      "nominal": [
+        50,
+        7
+      ],
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "H2-through",
+      "feature_id": "H2",
+      "kind": "through",
+      "nominal": true,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "H2-surface_roughness",
+      "feature_id": "H2",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness/material or general GD&T evaluator.",
+      "source_review": null
+    },
+    {
+      "id": "H3-diameter",
+      "feature_id": "H3",
+      "kind": "diameter",
+      "nominal": 8.5,
+      "status": "numeric_pass",
+      "criterion_scope": "engineering_requirement",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "engineering_requirement",
+        "basis": "Manually checked connection-plate process card, PDF page 4, operation 15: thickness 2 +/- 0.08 mm; diameter 8.5 +/- 0.2 mm. Transcribed numerical checks only: card/drawing identity, revision and pre/post-plating stage remain unapproved.",
+        "method": "sampled_radial_diameter_band",
+        "min_mm": 8.3,
+        "max_mm": 8.7
+      },
+      "production_approved": false,
+      "reason": "Numerical test under the declared method; finite sampling and mesh resolution are not a production certificate.",
+      "source_review": {
+        "file_key": "source_review",
+        "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+        "pdf_page": 4,
+        "operation": "15",
+        "identity_revision_approved": false,
+        "dimension_stage_approved": false
+      }
+    },
+    {
+      "id": "H3-position_xy",
+      "feature_id": "H3",
+      "kind": "position_xy",
+      "nominal": [
+        90,
+        7
+      ],
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "H3-through",
+      "feature_id": "H3",
+      "kind": "through",
+      "nominal": true,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied.",
+      "source_review": null
+    },
+    {
+      "id": "H3-surface_roughness",
+      "feature_id": "H3",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness/material or general GD&T evaluator.",
+      "source_review": null
+    }
+  ],
+  "status_counts": {
+    "numeric_pass": 5,
+    "pending_criteria": 11,
+    "unsupported_measurement": 5
+  },
+  "defined_numerical_requirements": 5,
+  "all_defined_numerical_requirements_passed": true,
+  "all_requirements_passed": false,
+  "unmapped_source_annotations": [
+    {
+      "id": "C1-length",
+      "feature_id": "C1",
+      "source_text": "长 100±0.3 mm",
+      "nominal_mm": 100,
+      "bilateral_tolerance_mm": 0.3,
+      "status": "not_evaluated",
+      "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+      "source_card_pdf_page": 4,
+      "reason": "Preserved source annotation; no automatic conversion into a different geometric criterion."
+    },
+    {
+      "id": "C1-width",
+      "feature_id": "C1",
+      "source_text": "宽 14±0.2 mm",
+      "nominal_mm": 14,
+      "bilateral_tolerance_mm": 0.2,
+      "status": "not_evaluated",
+      "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+      "source_card_pdf_page": 4,
+      "reason": "Preserved source annotation; no automatic conversion into a different geometric criterion."
+    },
+    {
+      "id": "C1-radius",
+      "feature_id": "C1",
+      "source_text": "两端 R7±0.2 mm",
+      "nominal_mm": 7,
+      "bilateral_tolerance_mm": 0.2,
+      "status": "not_evaluated",
+      "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+      "source_card_pdf_page": 4,
+      "reason": "Preserved source annotation; no automatic conversion into a different geometric criterion."
+    },
+    {
+      "id": "H3-end-distance",
+      "feature_id": "H3",
+      "source_text": "右端孔至右端 10±0.2 mm",
+      "nominal_mm": 10,
+      "bilateral_tolerance_mm": 0.2,
+      "status": "not_evaluated",
+      "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+      "source_card_pdf_page": 4,
+      "reason": "Preserved source annotation; no automatic conversion into a different geometric criterion."
+    },
+    {
+      "id": "hole-pitches",
+      "feature_ids": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "source_text": "两处孔距 40±0.3 mm",
+      "nominal_mm": 40,
+      "bilateral_tolerance_mm": 0.3,
+      "count": 2,
+      "status": "not_evaluated",
+      "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+      "source_card_pdf_page": 4,
+      "reason": "Preserved source annotation; no automatic conversion into a different geometric criterion."
+    },
+    {
+      "id": "hole-symmetry",
+      "feature_ids": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "source_text": "孔对 14 两面的形位标注 0.2；基准与判定语义待确认",
+      "status": "not_evaluated",
+      "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+      "source_card_pdf_page": 4,
+      "reason": "Preserved source annotation; no automatic conversion into a different geometric criterion."
+    },
+    {
+      "id": "surface-symbols",
+      "source_text": "工艺卡加工表面 6.3；图纸其余 6.3、两大面带圆圈符号。参数、单位及与铣厚工步关系待确认",
+      "status": "not_evaluated",
+      "source_card_sha256": "61deff83c10f790a0542166a336ec4462db35b5e86ccf56fed0cc92e30eaf931",
+      "source_card_pdf_page": 4,
+      "reason": "Preserved source annotation; no automatic conversion into a different geometric criterion."
+    }
+  ],
+  "input": {
+    "path": "validation/feature-inputs/S4-CONNECTION-REFERENCE-20261029-r2/connection-100mm/input.json",
+    "sha256": "7c6aad503ce5c0ab54caabb7a4461af2daf54ffd17a0b65ebbcb0d135a50d576"
+  },
+  "requirements_source": {
+    "path": "validation/feature-inputs/S4-CONNECTION-REFERENCE-20261029-r2/connection-100mm/requirements.json",
+    "sha256": "df15b14e2ea120fba05c0728c9d97bc189ccb3208081c3dd900c317125163aa4"
+  },
+  "actual_observations": {
+    "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/features/verification.json",
+    "sha256": "13f65873fd6ca33e527223ccb8afa413ce67320da729f50408046d282716bde9"
+  },
+  "surface": {
+    "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/surface.json",
+    "sha256": "2e1e89e2cadd64820aa657cc55cfab31b523df24e440ba69216c9454f71c262a"
+  },
+  "source_review": {
+    "path": "validation/feature-inputs/S4-CONNECTION-REFERENCE-20261029-r2/connection-100mm/source-review.json",
+    "sha256": "2ce85cfe9ed90783baa4c6462077a6256a8f258a1d99a2debcd63cdc7d6f90c5"
+  },
+  "nc": {
+    "path": "validation/runs/S4-CONNECTION-REFERENCE-20261029-r1/program.nc",
+    "sha256": "e3a6486a0aad55d56866a79cb89c17a5068b4a994bdef3a0f2c31381ffea5b47"
+  },
+  "resolution_mm": 0.025,
+  "registration_applied": false,
+  "numerical_guard_mm": 0.05,
+  "source_code": {
+    "path": "genlaw_pipeline/sharded_requirements.py",
+    "sha256": "89d77ba49d7c92ea2f66310cbffa5a12354314c4d5758b30a0a296aafe243ae5"
+  },
+  "manufacturing_acceptance": false,
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "limits": [
+    "Checks use existing finite samples of the actual NC result, with the unchanged two-cell guard.",
+    "Missing, unsupported and borderline criteria are not counted as passes.",
+    "Card identity, revision, resources and pre/post-treatment applicability require separate review."
+  ]
+}
