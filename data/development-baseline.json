@@ -371,7 +371,7 @@
           "name": "非零工件零点 / XYZ 装夹平移",
           "status": "sample_cases_measured",
           "label": "四例坐标配置已测",
-          "scope": "G54 / G55、原 CAD 非零工件零点、正负装夹平移及换刀。四个配置 / NC 反例检出；旋转、刀长补偿、真实机床和原尺寸分块组合未验证。",
+          "scope": "本组四例为 G54 / G55 零刀补坐标配置，含正负装夹平移和换刀。非零刀补见“静态刀长补偿与换刀”分组；旋转、真实机床和原尺寸分块组合未验证。",
           "stages": [
             "s4/work-coordinates"
           ],
@@ -381,14 +381,16 @@
         },
         {
           "id": "tool-length-offsets",
-          "name": "非零刀长补偿",
-          "status": "planned",
-          "label": "待开发",
-          "scope": "明确 G43 / H、刀尖及换刀后补偿语义，加入实际去料正反例。",
+          "name": "静态刀长补偿与换刀",
+          "status": "sample_cases_measured",
+          "label": "四种静态刀补设置已测",
+          "scope": "两种 CAD、四种静态 Z 刀补设置；H 编号 = T 编号，正常 H 值 = 实装刀长。动态 / 相对刀补、旋转、真实机床及原尺寸组合未验证。",
           "stages": [
-            "s4"
+            "s4/tool-lengths"
           ],
-          "evidence_paths": []
+          "evidence_paths": [
+            "data/s4-tool-length-publication.json"
+          ]
         },
         {
           "id": "rotary-axes",
