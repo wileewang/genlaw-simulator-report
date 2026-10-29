@@ -1,0 +1,630 @@
+{
+  "schema": "genlaw.pocket-sequence-fixtures.v1",
+  "stage": "s4-pocket-sequence",
+  "capability": "pocketed_planar_milling_xy",
+  "cases": [
+    {
+      "id": "baseline",
+      "name": "面铣 → 圆角型腔 → 腔外孔",
+      "stock_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          0
+        ]
+      },
+      "target_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          -0.5
+        ]
+      },
+      "resolution_mm": 0.025,
+      "pocket": {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          3,
+          3
+        ],
+        "width_mm": 4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.5,
+        "floor_face": "Face16"
+      },
+      "holes": [
+        {
+          "id": "H1",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            6.5,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face15"
+        }
+      ],
+      "order": [
+        "P1",
+        "K1",
+        "H1"
+      ],
+      "two_tools": false,
+      "tool_diameter_mm": 1,
+      "second_tool_diameter_mm": 0.5,
+      "features": [
+        {
+          "id": "P1",
+          "kind": "planar_top",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "top_face": "Face3",
+          "top_z_mm": -0.5,
+          "thickness_mm": 1.0,
+          "bounds_xy_mm": {
+            "min": [
+              0,
+              0
+            ],
+            "max": [
+              8,
+              6
+            ]
+          }
+        },
+        {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face16"
+        },
+        {
+          "id": "H1",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            6.5,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face15"
+        }
+      ]
+    },
+    {
+      "id": "floor-hole",
+      "name": "面铣 → 型腔 → 腔底孔及腔外孔",
+      "stock_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          0
+        ]
+      },
+      "target_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          -0.5
+        ]
+      },
+      "resolution_mm": 0.025,
+      "pocket": {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          3,
+          3
+        ],
+        "width_mm": 4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.5,
+        "floor_face": "Face17"
+      },
+      "holes": [
+        {
+          "id": "H1",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face16"
+        },
+        {
+          "id": "H2",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            6.5,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face15"
+        }
+      ],
+      "order": [
+        "P1",
+        "K1",
+        "H1",
+        "H2"
+      ],
+      "two_tools": false,
+      "tool_diameter_mm": 1,
+      "second_tool_diameter_mm": 0.5,
+      "features": [
+        {
+          "id": "P1",
+          "kind": "planar_top",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "top_face": "Face3",
+          "top_z_mm": -0.5,
+          "thickness_mm": 1.0,
+          "bounds_xy_mm": {
+            "min": [
+              0,
+              0
+            ],
+            "max": [
+              8,
+              6
+            ]
+          }
+        },
+        {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face17"
+        },
+        {
+          "id": "H1",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face16"
+        },
+        {
+          "id": "H2",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            6.5,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face15"
+        }
+      ]
+    },
+    {
+      "id": "tool-change",
+      "name": "φ1 面铣 / 型腔 → 换 φ0.5 铣双孔",
+      "stock_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          0
+        ]
+      },
+      "target_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          -0.5
+        ]
+      },
+      "resolution_mm": 0.025,
+      "pocket": {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          3,
+          3
+        ],
+        "width_mm": 4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.5,
+        "floor_face": "Face17"
+      },
+      "holes": [
+        {
+          "id": "H1",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face16"
+        },
+        {
+          "id": "H2",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            6.5,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face15"
+        }
+      ],
+      "order": [
+        "P1",
+        "K1",
+        "H1",
+        "H2"
+      ],
+      "two_tools": true,
+      "tool_diameter_mm": 1,
+      "second_tool_diameter_mm": 0.5,
+      "features": [
+        {
+          "id": "P1",
+          "kind": "planar_top",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "top_face": "Face3",
+          "top_z_mm": -0.5,
+          "thickness_mm": 1.0,
+          "bounds_xy_mm": {
+            "min": [
+              0,
+              0
+            ],
+            "max": [
+              8,
+              6
+            ]
+          }
+        },
+        {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face17"
+        },
+        {
+          "id": "H1",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face16"
+        },
+        {
+          "id": "H2",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            6.5,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face15"
+        }
+      ]
+    },
+    {
+      "id": "holes-first",
+      "name": "另一张明确卡片：面铣 → 双孔 → 型腔",
+      "stock_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          0
+        ]
+      },
+      "target_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          -0.5
+        ]
+      },
+      "resolution_mm": 0.025,
+      "pocket": {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          3,
+          3
+        ],
+        "width_mm": 4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.5,
+        "floor_face": "Face17"
+      },
+      "holes": [
+        {
+          "id": "H1",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face16"
+        },
+        {
+          "id": "H2",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            6.5,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face15"
+        }
+      ],
+      "order": [
+        "P1",
+        "H1",
+        "H2",
+        "K1"
+      ],
+      "two_tools": false,
+      "tool_diameter_mm": 1,
+      "second_tool_diameter_mm": 0.5,
+      "features": [
+        {
+          "id": "P1",
+          "kind": "planar_top",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "top_face": "Face3",
+          "top_z_mm": -0.5,
+          "thickness_mm": 1.0,
+          "bounds_xy_mm": {
+            "min": [
+              0,
+              0
+            ],
+            "max": [
+              8,
+              6
+            ]
+          }
+        },
+        {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face17"
+        },
+        {
+          "id": "H1",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face16"
+        },
+        {
+          "id": "H2",
+          "kind": "through_hole",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            6.5,
+            3
+          ],
+          "diameter_mm": 1.5,
+          "cylinder_face": "Face15"
+        }
+      ]
+    }
+  ],
+  "selection": "Synthetic original CAD: disjoint cavity/outside hole, then floor-hole interaction, explicit tool change, and a separate holes-first card. No automatic reordering.",
+  "production_approved": false,
+  "real_customer_card_passed": false,
+  "not_yet_supported": [
+    "partial_pocket_wall_holes",
+    "multiple_pockets",
+    "islands",
+    "nonzero_work_offsets",
+    "nonzero_tool_length_offsets",
+    "fixtures",
+    "material_physics",
+    "multiple_setups",
+    "five_axes"
+  ]
+}

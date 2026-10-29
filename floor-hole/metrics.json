@@ -1,0 +1,332 @@
+{
+  "schema": "genlaw.sectional-iou.v2",
+  "status": "measured_numerical_estimate",
+  "iou": 0.9987979342541711,
+  "iou_percent": 99.8797934254171,
+  "volumes": {
+    "actual_volume_mm3": 39.53146785616894,
+    "target_volume_mm3": 39.50379483622259,
+    "intersection_mm3": 39.49386566674239,
+    "union_mm3": 39.54139702564914,
+    "iou": 0.9987979342541711,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 0.03760218942655058,
+  "missing_material_mm3": 0.00992916948020195,
+  "actual_mesh": {
+    "source_sha256": "1b83ec85c1beb3a081ae94a21b85e60f775400f4fe230db271e83c3617c1d7e1",
+    "raw_triangles": 426924,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 426924,
+    "vertices": 213460,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 39.53146790459688,
+    "bounds": {
+      "min": [
+        -9.765625145519152e-05,
+        9.765625145519152e-05,
+        -1.500097632408142
+      ],
+      "max": [
+        8.000097274780273,
+        6.000097751617432,
+        -0.5000976324081421
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "schema": "genlaw.native-binding.v12",
+    "status": "verified",
+    "cad_sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+    "reference_class": "z_layered_box_minus_rounded_pocket_and_disjoint_through_cylinders",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        -0.5
+      ]
+    },
+    "volume_mm3": 39.50379452088744,
+    "valid_single_solid": true,
+    "incoming_stock_bounds": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "features": [
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          3,
+          3
+        ],
+        "diameter_mm": 1.5,
+        "cylinder_face": "Face16"
+      },
+      {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6.5,
+          3
+        ],
+        "diameter_mm": 1.5,
+        "cylinder_face": "Face15"
+      }
+    ],
+    "facing_feature": {
+      "id": "P1",
+      "kind": "planar_top",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "top_face": "Face3",
+      "top_z_mm": -0.5,
+      "thickness_mm": 1.0,
+      "bounds_xy_mm": {
+        "min": [
+          0,
+          0
+        ],
+        "max": [
+          8,
+          6
+        ]
+      }
+    },
+    "pocket_feature": {
+      "id": "K1",
+      "kind": "rounded_rectangular_pocket",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "center_xy_mm": [
+        3,
+        3
+      ],
+      "width_mm": 4,
+      "height_mm": 3,
+      "corner_radius_mm": 0.6,
+      "depth_mm": 0.5,
+      "floor_face": "Face17"
+    },
+    "feature_bindings": [
+      {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face3",
+        "top_z_mm": -0.5,
+        "thickness_mm": 1.0,
+        "bounds_xy_mm": {
+          "min": [
+            0,
+            0
+          ],
+          "max": [
+            8,
+            6
+          ]
+        }
+      },
+      {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          3,
+          3
+        ],
+        "width_mm": 4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.5,
+        "floor_face": "Face17"
+      },
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          3,
+          3
+        ],
+        "diameter_mm": 1.5,
+        "cylinder_face": "Face16"
+      },
+      {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6.5,
+          3
+        ],
+        "diameter_mm": 1.5,
+        "cylinder_face": "Face15"
+      }
+    ],
+    "hole_locations": {
+      "H1": "pocket_floor",
+      "H2": "top_land"
+    },
+    "original_cad_reparsed": true,
+    "symmetric_difference_mm3": 0.0,
+    "pocket_outer_wire_verified": true,
+    "reference_for_iou": "Independent rectangle / corner-cylinder union and full-height holes, native symmetric difference checked against original filleted-prism CAD."
+  },
+  "native_geometry_sha256": "ee3bde1478e1f768e30a1d39f2b8a3888d69291afff5ccfa08cffbb9f491f283",
+  "absolute_iou_refinement_difference": 1.2140900540469346e-07,
+  "section_levels": 44,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "method": "Closed STL cross-sections, all vertex-height intervals, 3-point Gauss integration against native-checked analytic CAD section.",
+  "registration": "none; same CAD/G54 coordinates",
+  "full_tolerance_acceptance": false,
+  "production_approved": false,
+  "limits": [
+    "Numerical volume estimate, not a certified error bound.",
+    "Independent original CAD and layer analytic volume bind the target; no registration or trimming.",
+    "Layer-specific feature checks and cumulative NC checkpoints remain separate from global IoU; no manufacturing approval."
+  ],
+  "reference_sections": "Original height-dependent box / rounded-pocket / through-hole composition; overlapping pocket-floor holes counted once, every simulated remnant included.",
+  "reference_source_code_sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b",
+  "pocket_sequence_reference_source_code_sha256": "41f3581c369b9c51f63d7ffbeea9a12fb20576b5c33efbcaa2f78817ffc19408",
+  "section_topology_observations": [
+    {
+      "requested_z_mm": -1.4,
+      "z_mm": -1.415450811141811,
+      "interior_loops": 2,
+      "holes": [
+        {
+          "centroid_xy_mm": [
+            2.9999989196166728,
+            3.0000010803842407
+          ],
+          "area_equivalent_diameter_mm": 1.492259710253718
+        },
+        {
+          "centroid_xy_mm": [
+            6.499998919644036,
+            3.0000010803499335
+          ],
+          "area_equivalent_diameter_mm": 1.4922596759748723
+        }
+      ]
+    },
+    {
+      "requested_z_mm": -1.0,
+      "z_mm": -0.9904508588255267,
+      "interior_loops": 2,
+      "holes": [
+        {
+          "centroid_xy_mm": [
+            2.999940304743579,
+            3.000069855741629
+          ],
+          "area_equivalent_diameter_mm": 3.856678018972938
+        },
+        {
+          "centroid_xy_mm": [
+            6.499998919644036,
+            3.0000010803499335
+          ],
+          "area_equivalent_diameter_mm": 1.4922596759748723
+        }
+      ]
+    },
+    {
+      "requested_z_mm": -0.6,
+      "z_mm": -0.5904508599004362,
+      "interior_loops": 2,
+      "holes": [
+        {
+          "centroid_xy_mm": [
+            2.999940304743579,
+            3.000069855741629
+          ],
+          "area_equivalent_diameter_mm": 3.856678018972938
+        },
+        {
+          "centroid_xy_mm": [
+            6.499998919644036,
+            3.0000010803499335
+          ],
+          "area_equivalent_diameter_mm": 1.4922596759748723
+        }
+      ]
+    }
+  ]
+}

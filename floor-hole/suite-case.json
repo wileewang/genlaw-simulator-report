@@ -1,0 +1,229 @@
+{
+  "id": "floor-hole",
+  "specification": {
+    "id": "floor-hole",
+    "name": "面铣 → 型腔 → 腔底孔及腔外孔",
+    "stock_bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "target_bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        -0.5
+      ]
+    },
+    "resolution_mm": 0.025,
+    "pocket": {
+      "id": "K1",
+      "kind": "rounded_rectangular_pocket",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "center_xy_mm": [
+        3,
+        3
+      ],
+      "width_mm": 4,
+      "height_mm": 3,
+      "corner_radius_mm": 0.6,
+      "depth_mm": 0.5,
+      "floor_face": "Face17"
+    },
+    "holes": [
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          3,
+          3
+        ],
+        "diameter_mm": 1.5,
+        "cylinder_face": "Face16"
+      },
+      {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6.5,
+          3
+        ],
+        "diameter_mm": 1.5,
+        "cylinder_face": "Face15"
+      }
+    ],
+    "order": [
+      "P1",
+      "K1",
+      "H1",
+      "H2"
+    ],
+    "two_tools": false,
+    "tool_diameter_mm": 1,
+    "second_tool_diameter_mm": 0.5,
+    "features": [
+      {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face3",
+        "top_z_mm": -0.5,
+        "thickness_mm": 1.0,
+        "bounds_xy_mm": {
+          "min": [
+            0,
+            0
+          ],
+          "max": [
+            8,
+            6
+          ]
+        }
+      },
+      {
+        "id": "K1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          3,
+          3
+        ],
+        "width_mm": 4,
+        "height_mm": 3,
+        "corner_radius_mm": 0.6,
+        "depth_mm": 0.5,
+        "floor_face": "Face17"
+      },
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          3,
+          3
+        ],
+        "diameter_mm": 1.5,
+        "cylinder_face": "Face16"
+      },
+      {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6.5,
+          3
+        ],
+        "diameter_mm": 1.5,
+        "cylinder_face": "Face15"
+      }
+    ]
+  },
+  "iou_percent": 99.8797934254171,
+  "software_statuses": {
+    "P1": {
+      "top_height": "numeric_pass",
+      "target_thickness": "numeric_pass",
+      "top_geometry": "numeric_pass",
+      "outline_xy": "numeric_pass"
+    },
+    "K1": {
+      "profile_xy": "numeric_pass",
+      "pocket_depth": "numeric_pass",
+      "floor_geometry": "numeric_pass"
+    },
+    "H1": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_pass",
+      "through": "numeric_pass"
+    },
+    "H2": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_pass",
+      "through": "numeric_pass"
+    }
+  },
+  "regression_expectation_met": true,
+  "executed_feature_order": [
+    "P1",
+    "K1",
+    "H1",
+    "H2"
+  ],
+  "tool_transitions": [
+    {
+      "tool_number": 1,
+      "tool_id": "T1",
+      "first_executable_block": 6,
+      "last_executable_block": 8
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "after-01",
+      "iou_percent": 99.96969294042735,
+      "check_count": 4,
+      "all_regression_expectations_met": true
+    },
+    {
+      "id": "after-02",
+      "iou_percent": 99.95023047767437,
+      "check_count": 7,
+      "all_regression_expectations_met": true
+    },
+    {
+      "id": "after-03",
+      "iou_percent": 99.92804479571184,
+      "check_count": 10,
+      "all_regression_expectations_met": true
+    }
+  ],
+  "process_conformance": {
+    "status": "matched_card_and_measured_checkpoints",
+    "material_checkpoint_count": 3,
+    "material_checkpoints_sha256": "7ef5314cd7b99110fb78ce9e8ffea8e2a64ee933ee12dfb5e8721e83d7b0342a",
+    "manufacturing_acceptance": false
+  },
+  "verifier_sha256": "0e8fb00e47aef84f6eafdd50e6a1e856ee12779a2e22ba4d920004840d85f1b7"
+}
