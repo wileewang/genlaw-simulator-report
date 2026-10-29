@@ -170,7 +170,8 @@ async function start() {
     qa.iouPercent = entry.iou_percent; qa.ownedGeometryCount = owned.length;
     if (entry.thumbnail) root.querySelector('.fallback img').src = new URL(entry.thumbnail,siteBase);
     const resolutionNote = root.querySelector('[data-resolution-note]');
-    if (resolutionNote) resolutionNote.textContent = entry.frames.length && entry.frames.every(f=>f.display_only) ?
+    if (resolutionNote) resolutionNote.textContent = entry.frames.length && entry.frames.every(f=>f.fine_checkpoint_acceptance) ?
+      `实际工步状态：边界与最终结果均为 ${entry.resolution_mm} mm，已用于 IoU 与几何检查。各步从原始毛坯执行累计 NC；播放间隔不代表加工耗时。` : entry.frames.length && entry.frames.every(f=>f.display_only) ?
       `实际工步状态回放：中间状态 ${entry.frames[0].resolution_mm} mm，仅用于展示；最终结果 ${entry.resolution_mm} mm，用于 IoU 与几何检查。播放间隔不代表加工耗时。` : entry.frames.some(f=>f.kind==='cumulative_native_prefix') ?
       `真实去料状态：时间帧 0.05 mm，工步边界与最终结果 ${entry.resolution_mm} mm。工步边界复用同一原生 NC 的累计前缀结果；播放速度仅作展示。` : entry.frames.length ?
       `同一 NC 的真实去料状态。中间帧 0.05 mm，最终结果 ${entry.resolution_mm} mm；播放速度仅作展示。` :
