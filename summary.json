@@ -1,0 +1,1333 @@
+{
+  "schema": "genlaw.work-coordinate-suite.v1",
+  "id": "S4-WORK-COORDINATE-SUITE-20261030-r1",
+  "status": "completed",
+  "normal_cases": [
+    {
+      "id": "g54-positive",
+      "specification": {
+        "id": "g54-positive",
+        "name": "G54 正向装夹平移",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pocket": {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face16"
+        },
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "order": [
+          "P1",
+          "K1",
+          "H1"
+        ],
+        "two_tools": false,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "width_mm": 4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.5,
+            "floor_face": "Face16"
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "source_case": "baseline",
+        "coordinate_setup": {
+          "schema": "genlaw.setup.xyz-translation.v1",
+          "units": "mm",
+          "height_parameter_frame": "original_cad",
+          "material_origin_machine_mm": [
+            10,
+            20,
+            30
+          ],
+          "work_origin_cad_mm": [
+            0,
+            0,
+            0
+          ],
+          "work_offset_origin_machine_mm": [
+            10,
+            20,
+            30
+          ],
+          "work_offset": "G54",
+          "rotation_degrees": [
+            0,
+            0,
+            0
+          ],
+          "tool_length_offset_mm": 0,
+          "fixture_mode": "unmodelled_explicitly_excluded",
+          "basis": "Explicit synthetic XYZ translation: original CAD and independently declared physical material placement remain fixed; no fitted registration.",
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "position_frame": "machine",
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 33,
+            "basis": "Initial unloaded G53 machine retract reaches the original-CAD Z3 clearance before first M6."
+          }
+        },
+        "card_origin_note": "复用已归档原 CAD / 工步；新增显式坐标配置，生产审核待定"
+      },
+      "iou_percent": 99.90398387603861,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "H1"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95023047767437,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 2,
+        "material_checkpoints_sha256": "dff672f138148552d6d934b0aa155d0a6019f6b7d21a10b2231fc1505fd7f337",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "g54-positive/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "a53be8f4fcb63c53996f01d48b4ab0287398fd8cb2de69ea49fe39e30ae3c552"
+        },
+        {
+          "mesh": "g54-positive/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b7fb5a45b25d6730ddbf453b81f7da9ab100e2d69615206395b3a35192d2238a",
+          "source_stl_sha256": "1b1669b375e7d1c51e5fc807677081bacfb69db9b9ff95f9dd409d4524d58da4"
+        }
+      ]
+    },
+    {
+      "id": "g54-negative",
+      "specification": {
+        "id": "g54-negative",
+        "name": "G54 负向装夹平移",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pocket": {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face16"
+        },
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "order": [
+          "P1",
+          "K1",
+          "H1"
+        ],
+        "two_tools": false,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "width_mm": 4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.5,
+            "floor_face": "Face16"
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "source_case": "baseline",
+        "coordinate_setup": {
+          "schema": "genlaw.setup.xyz-translation.v1",
+          "units": "mm",
+          "height_parameter_frame": "original_cad",
+          "material_origin_machine_mm": [
+            -10,
+            -20,
+            -30
+          ],
+          "work_origin_cad_mm": [
+            0,
+            0,
+            0
+          ],
+          "work_offset_origin_machine_mm": [
+            -10,
+            -20,
+            -30
+          ],
+          "work_offset": "G54",
+          "rotation_degrees": [
+            0,
+            0,
+            0
+          ],
+          "tool_length_offset_mm": 0,
+          "fixture_mode": "unmodelled_explicitly_excluded",
+          "basis": "Explicit synthetic XYZ translation: original CAD and independently declared physical material placement remain fixed; no fitted registration.",
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "position_frame": "machine",
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": -27,
+            "basis": "Initial unloaded G53 machine retract reaches the original-CAD Z3 clearance before first M6."
+          }
+        },
+        "card_origin_note": "复用已归档原 CAD / 工步；新增显式坐标配置，生产审核待定"
+      },
+      "iou_percent": 99.90398387603861,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "H1"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95023047767437,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 2,
+        "material_checkpoints_sha256": "4a9dd757d70bd3b9f0de115dc8a2c45d0606e14ccd5b30f015431e25311f5fff",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "g54-negative/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "a53be8f4fcb63c53996f01d48b4ab0287398fd8cb2de69ea49fe39e30ae3c552"
+        },
+        {
+          "mesh": "g54-negative/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b7fb5a45b25d6730ddbf453b81f7da9ab100e2d69615206395b3a35192d2238a",
+          "source_stl_sha256": "1b1669b375e7d1c51e5fc807677081bacfb69db9b9ff95f9dd409d4524d58da4"
+        }
+      ]
+    },
+    {
+      "id": "cad-origin",
+      "specification": {
+        "id": "cad-origin",
+        "name": "原 CAD 中指定非零工件零点",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pocket": {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face17"
+        },
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face16"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "order": [
+          "P1",
+          "K1",
+          "H1",
+          "H2"
+        ],
+        "two_tools": false,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "width_mm": 4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.5,
+            "floor_face": "Face17"
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face16"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "source_case": "floor-hole",
+        "coordinate_setup": {
+          "schema": "genlaw.setup.xyz-translation.v1",
+          "units": "mm",
+          "height_parameter_frame": "original_cad",
+          "material_origin_machine_mm": [
+            10,
+            20,
+            30
+          ],
+          "work_origin_cad_mm": [
+            4,
+            3,
+            -0.5
+          ],
+          "work_offset_origin_machine_mm": [
+            14,
+            23,
+            29.5
+          ],
+          "work_offset": "G54",
+          "rotation_degrees": [
+            0,
+            0,
+            0
+          ],
+          "tool_length_offset_mm": 0,
+          "fixture_mode": "unmodelled_explicitly_excluded",
+          "basis": "Explicit synthetic XYZ translation: original CAD and independently declared physical material placement remain fixed; no fitted registration.",
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "position_frame": "machine",
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 33,
+            "basis": "Initial unloaded G53 machine retract reaches the original-CAD Z3 clearance before first M6."
+          }
+        },
+        "card_origin_note": "复用已归档原 CAD / 工步；新增显式坐标配置，生产审核待定"
+      },
+      "iou_percent": 99.8797934254171,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "H1",
+        "H2"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95023047767437,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.92804479571184,
+          "check_count": 10,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 3,
+        "material_checkpoints_sha256": "fa2fd125b6f549347f08f325337d5bc4eb427c66aedf9871b7ae5e8dfb41008c",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "cad-origin/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "a53be8f4fcb63c53996f01d48b4ab0287398fd8cb2de69ea49fe39e30ae3c552"
+        },
+        {
+          "mesh": "cad-origin/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b7fb5a45b25d6730ddbf453b81f7da9ab100e2d69615206395b3a35192d2238a",
+          "source_stl_sha256": "1b1669b375e7d1c51e5fc807677081bacfb69db9b9ff95f9dd409d4524d58da4"
+        },
+        {
+          "mesh": "cad-origin/checkpoints/after-03/actual.mesh",
+          "label": "H1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b4e99d0d44c921ce85c086ae7b77b9faa5eb608beb0503635213a66ffe7f0ca0",
+          "source_stl_sha256": "443c6c8bb2d0267f14fe6abc83e7a21363dde65c6d5b4c345e2a09ff6220303d"
+        }
+      ]
+    },
+    {
+      "id": "g55-tool-change",
+      "specification": {
+        "id": "g55-tool-change",
+        "name": "G55 非零零点及换刀",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pocket": {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face17"
+        },
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face16"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "order": [
+          "P1",
+          "K1",
+          "H1",
+          "H2"
+        ],
+        "two_tools": true,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "width_mm": 4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.5,
+            "floor_face": "Face17"
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face16"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "source_case": "tool-change",
+        "coordinate_setup": {
+          "schema": "genlaw.setup.xyz-translation.v1",
+          "units": "mm",
+          "height_parameter_frame": "original_cad",
+          "material_origin_machine_mm": [
+            10,
+            20,
+            30
+          ],
+          "work_origin_cad_mm": [
+            4,
+            3,
+            -0.5
+          ],
+          "work_offset_origin_machine_mm": [
+            14,
+            23,
+            29.5
+          ],
+          "work_offset": "G55",
+          "rotation_degrees": [
+            0,
+            0,
+            0
+          ],
+          "tool_length_offset_mm": 0,
+          "fixture_mode": "unmodelled_explicitly_excluded",
+          "basis": "Explicit synthetic XYZ translation: original CAD and independently declared physical material placement remain fixed; no fitted registration.",
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "position_frame": "machine",
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 33,
+            "basis": "Initial unloaded G53 machine retract reaches the original-CAD Z3 clearance before first M6."
+          }
+        },
+        "card_origin_note": "复用已归档原 CAD / 工步；新增显式坐标配置，生产审核待定"
+      },
+      "iou_percent": 99.85319931404085,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "H1",
+        "H2"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        },
+        {
+          "tool_number": 2,
+          "tool_id": "T2",
+          "first_executable_block": 183,
+          "last_executable_block": 185
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95023047767437,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.91965650272242,
+          "check_count": 10,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 3,
+        "material_checkpoints_sha256": "e50493456f14c7f8b181f6d5a4a13bf52150f7c3497a9d3eaea412530b833c13",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "g55-tool-change/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "ca0e5a28cc716da8454ad512eb349bb3d1f7f880caa00f927ad7717742aa9a98"
+        },
+        {
+          "mesh": "g55-tool-change/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b7fb5a45b25d6730ddbf453b81f7da9ab100e2d69615206395b3a35192d2238a",
+          "source_stl_sha256": "254572b5b2463f1023aeccbd003dc2b7b4d620b62ad2b480b64dd83b47293fa8"
+        },
+        {
+          "mesh": "g55-tool-change/checkpoints/after-03/actual.mesh",
+          "label": "H1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "446e969a8af4c2eafbac37449c67a5f466e887e4cab6766b781bf539bf14bc8e",
+          "source_stl_sha256": "54a104e2f834990037e67ba1ea59a4732fba817f0311674aa03298e08c753364"
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "wrong-register-x",
+      "parent_case": "cad-origin",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Controller initialization differs from the explicit setup",
+      "iou_percent": 92.71456589084703,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_fail",
+          "target_thickness": "numeric_fail",
+          "top_geometry": "numeric_fail",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_fail",
+          "pocket_depth": "not_measurable",
+          "floor_geometry": "numeric_fail"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_fail",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_fail",
+          "through": "numeric_pass"
+        }
+      },
+      "expected_failure": [
+        "K1",
+        "profile_xy"
+      ],
+      "regression_expectation_met": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Controller initialization differs from the explicit setup",
+        "modified_control_nc": false,
+        "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+      },
+      "nc_modified": false,
+      "control_binding_sha256": "a04ddcb7a3980dd5fb9d053885d83db7bb448a83c0139e4cf3598ed96d9f6f86",
+      "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5",
+      "resolution_mm": 0.025,
+      "frames": []
+    },
+    {
+      "id": "wrong-register-z",
+      "parent_case": "cad-origin",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Controller initialization differs from the explicit setup",
+      "iou_percent": 73.70109478327669,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_fail",
+          "target_thickness": "numeric_fail",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_fail",
+          "pocket_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "expected_failure": [
+        "P1",
+        "top_height"
+      ],
+      "regression_expectation_met": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Controller initialization differs from the explicit setup",
+        "modified_control_nc": false,
+        "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+      },
+      "nc_modified": false,
+      "control_binding_sha256": "623bfe2ae8dfe3d5dc71f77e32e34ab7def0f10383887e08d902793021cca192",
+      "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5",
+      "resolution_mm": 0.025,
+      "frames": []
+    },
+    {
+      "id": "wrong-material-placement",
+      "parent_case": "cad-origin",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Applied physical material placement disagrees with the original card/setup",
+      "iou_percent": 92.71111029710778,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_fail",
+          "pocket_depth": "not_measurable",
+          "floor_geometry": "numeric_fail"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_fail",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_fail",
+          "through": "numeric_pass"
+        }
+      },
+      "expected_failure": [
+        "K1",
+        "profile_xy"
+      ],
+      "regression_expectation_met": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Applied physical material placement disagrees with the original card/setup",
+        "modified_control_nc": false,
+        "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+      },
+      "nc_modified": false,
+      "control_binding_sha256": "d97425a3c09d4d8d9257fe019a66f892d04773d65d0fcfe3bba7a991869bd7f9",
+      "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5",
+      "resolution_mm": 0.025,
+      "frames": []
+    },
+    {
+      "id": "wrong-work-slot",
+      "parent_case": "g55-tool-change",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Ordered NC preamble, unloaded startup retract or shutdown differs",
+      "iou_percent": 54.865283403251595,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_fail",
+          "target_thickness": "numeric_fail",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "not_measurable",
+          "pocket_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "expected_failure": [
+        "P1",
+        "top_height"
+      ],
+      "regression_expectation_met": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Ordered NC preamble, unloaded startup retract or shutdown differs",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+      },
+      "nc_modified": true,
+      "control_binding_sha256": "98f6891db21a88be4a2333c199101690440cb04c4c6ec09afda428b2494d70e6",
+      "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5",
+      "resolution_mm": 0.025,
+      "frames": []
+    }
+  ],
+  "all_regression_expectations_met": true,
+  "input_manifest_sha256": "ea1bc7bfeabf6a9530158d8e71c045b1a1e681efc1f7f7b8da6a6dcdde170a30",
+  "source_sha256": "66149745b2fb7cb62cc82d02b89b4c9088cbe7a80aa9f1748e9a941bf84d8028",
+  "selection_sha256": "84ba52c70fcb87667b9d5b51880cd9502f4e434e7019f91396260ced709f923b",
+  "implemented": "Explicit card/setup binding, native FreeCAD translated job and untouched NC, separate controller register initialization, fixed original-CAD material frame, final and cumulative-prefix geometry verification.",
+  "scope": "One metric XYZ translation setup with G54/G55, no rotation or tool length compensation.",
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "s4_complete": false,
+  "web_publication_pending": true,
+  "stage_id": "s4",
+  "title": "工件零点与装夹位置",
+  "ordered_milling_verified": true,
+  "pocketed_sequence_verified": true,
+  "new_features": [
+    "卡片与坐标配置一致性检查",
+    "FreeCAD 原生工件坐标 NC",
+    "独立控制器配置与原 CAD 几何验收"
+  ],
+  "work_coordinates_verified": true
+}

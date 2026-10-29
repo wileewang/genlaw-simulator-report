@@ -1,0 +1,44 @@
+{
+  "id": "wrong-work-slot",
+  "parent_case": "g55-tool-change",
+  "guard_rejected": true,
+  "normal_guard_rejection": "Ordered NC preamble, unloaded startup retract or shutdown differs",
+  "iou_percent": 54.865283403251595,
+  "software_statuses": {
+    "P1": {
+      "top_height": "numeric_fail",
+      "target_thickness": "numeric_fail",
+      "top_geometry": "numeric_pass",
+      "outline_xy": "numeric_pass"
+    },
+    "K1": {
+      "profile_xy": "not_measurable",
+      "pocket_depth": "numeric_fail",
+      "floor_geometry": "numeric_pass"
+    },
+    "H1": {
+      "diameter": "not_measurable",
+      "position_xy": "not_measurable",
+      "through": "numeric_fail"
+    },
+    "H2": {
+      "diameter": "not_measurable",
+      "position_xy": "not_measurable",
+      "through": "numeric_fail"
+    }
+  },
+  "expected_failure": [
+    "P1",
+    "top_height"
+  ],
+  "regression_expectation_met": true,
+  "process_conformance": {
+    "status": "rejected",
+    "reason": "Ordered NC preamble, unloaded startup retract or shutdown differs",
+    "modified_control_nc": true,
+    "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+  },
+  "nc_modified": true,
+  "control_binding_sha256": "98f6891db21a88be4a2333c199101690440cb04c4c6ec09afda428b2494d70e6",
+  "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5"
+}

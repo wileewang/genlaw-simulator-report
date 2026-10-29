@@ -1,0 +1,199 @@
+{
+  "schema": "genlaw.process-plan.v1",
+  "id": "S4-WORK-COORDINATE-g54-positive-CARD-r2",
+  "cad_sha256": "c0797e1517b829fa5870a52c7b2608048e7119b188d330acaa064a584ab398c5",
+  "origin": "developer_authored_synthetic_paper_card",
+  "transcription": {
+    "status": "checked_against_source",
+    "reviewer_role": "developer_transcription",
+    "production_review": false
+  },
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "external_documents": [],
+  "operations": [
+    {
+      "id": "OP05",
+      "name": "来料核对",
+      "steps": [
+        {
+          "id": "OP05.1",
+          "type": "incoming_inspection",
+          "text": "核对 8 × 6 × 1.5 mm 完整矩形来料、6061-T6 材料标签、独立原 CAD 和版本。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP05.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP10",
+      "name": "铣",
+      "steps": [
+        {
+          "id": "OP10.1",
+          "type": "setup",
+          "text": "XYZ 参考装夹：材料原点在机床中为 [10, 20, 30] mm；工件零点在原 CAD 中为 [0, 0, 0] mm；G54 控制器原点为 [10, 20, 30] mm。所有尺寸及高度标注沿用原 CAD；程序坐标减去工件零点。无旋转、无刀长补偿，夹具待审核。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.1"
+          },
+          "constraints": {
+            "coordinate_setup": {
+              "tool_length_offset_mm": 0,
+              "fixture_mode": "unmodelled_explicitly_excluded",
+              "units": "mm",
+              "material_origin_machine_mm": [
+                10,
+                20,
+                30
+              ],
+              "work_offset": "G54",
+              "startup": {
+                "position_mm": [
+                  0,
+                  0,
+                  0
+                ],
+                "position_frame": "machine",
+                "tool": "unloaded",
+                "spindle": "stopped",
+                "retract_before_tool_selection_z_mm": 33
+              },
+              "work_origin_cad_mm": [
+                0,
+                0,
+                0
+              ],
+              "work_offset_origin_machine_mm": [
+                10,
+                20,
+                30
+              ],
+              "height_parameter_frame": "original_cad",
+              "rotation_degrees": [
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        {
+          "id": "OP10.2",
+          "type": "face_milling",
+          "text": "用 T1 面铣 P1：由来料顶面 Z0 铣至 Z-0.5，厚度 1；保持底面及 XY 外形。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.2"
+          },
+          "feature_id": "P1",
+          "depends_on": [
+            "OP05.1",
+            "OP10.1"
+          ],
+          "constraints": {
+            "thickness_mm": 1.0,
+            "top_shape": "flat",
+            "tool_id": "T1"
+          }
+        },
+        {
+          "id": "OP10.3",
+          "type": "pocket_milling",
+          "text": "用 T1 铣 K1：中心 (3, 3)，长 4 × 宽 3，R0.6，从成品顶面向下 0.5，平底。按原底面外轮廓清空整个型腔；孔口不留岛，不得贯穿底板。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.3"
+          },
+          "feature_id": "K1",
+          "depends_on": [
+            "OP10.2"
+          ],
+          "constraints": {
+            "width_mm": 4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.5,
+            "bottom_shape": "flat",
+            "tool_id": "T1"
+          }
+        },
+        {
+          "id": "OP10.4",
+          "type": "helical_hole_milling",
+          "text": "用 T1 在当前剩料上螺旋铣 H1：孔心 (6.5, 3)，φ1.5 贯穿；中心不得留芯，沿用原 CAD 坐标。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.4"
+          },
+          "feature_id": "H1",
+          "depends_on": [
+            "OP10.3"
+          ],
+          "constraints": {
+            "diameter_mm": 1.5,
+            "end_condition": "through",
+            "tool_id": "T1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP20",
+      "name": "去毛刺",
+      "steps": [
+        {
+          "id": "OP20.1",
+          "type": "deburring",
+          "text": "孔口及外缘去毛刺、锐边处理按制造要求确认；不自行增加倒角。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP20.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP30",
+      "name": "检验",
+      "steps": [
+        {
+          "id": "OP30.1",
+          "type": "inspection",
+          "text": "检查面铣后的实际剩料，以及最终厚度、顶面、外缘和各孔；工步顺序、用刀亦须符合本卡。制造验收依据待确认。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP30.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP35",
+      "name": "后续处置",
+      "steps": [
+        {
+          "id": "OP35.1",
+          "type": "postprocess",
+          "text": "是否需要清洗、标识、包装，由实际交付要求决定。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP35.1"
+          }
+        }
+      ]
+    }
+  ]
+}

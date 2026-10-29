@@ -1,0 +1,469 @@
+{
+  "schema": "genlaw.work-frame-evidence.v1",
+  "status": "declared_probe_scope_verified",
+  "engine": {
+    "path": "engines/camotics/releases/1.2.0-genlaw-coordinates-r2/manifest.json",
+    "sha256": "75c3b9733d33a8656d7c589804c248b63506fd442f2f511c8dad55dafbd27fa6"
+  },
+  "engine_binary": {
+    "path": "engines/camotics/releases/1.2.0-genlaw-coordinates-r2/camsim",
+    "sha256": "5b989f5a77d524b06544dc99b667100eb6ebdec39aef71faacb97660d0f79452"
+  },
+  "inputs": {
+    "path": "validation/feature-inputs/MATERIAL-FRAME-20261030-r1/manifest.json",
+    "sha256": "aeeeddbbd1a238b48f69177114a2b034b9dddf0e8d7dc02b0ac75dbaec7ff1f6"
+  },
+  "fine_inputs": {
+    "path": "validation/feature-inputs/MATERIAL-FRAME-FINE-20261030-r1/manifest.json",
+    "sha256": "8fe4729f8795154f86067ff8d26e253035450bc49d49622090dfb41795fbb682"
+  },
+  "source": {
+    "path": "tools/finalize_work_frame_qualification.py",
+    "sha256": "92a660176d82656240d75af4014f23df087ed305df0d0ec85a3981326bdc784f"
+  },
+  "motion_probes": [
+    {
+      "case": "zero",
+      "check_count": 3,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/zero/result.json",
+        "sha256": "c92abece8e4a24b747dbf1302a81424ea53dd3f1e3b63cbc3777a93604b5169b"
+      }
+    },
+    {
+      "case": "g54-positive",
+      "check_count": 3,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/g54-positive/result.json",
+        "sha256": "68289c471cbdd49541c5c35cc8428e06737281c1f3feb656a6797c6f220ecd67"
+      }
+    },
+    {
+      "case": "g54-negative",
+      "check_count": 3,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/g54-negative/result.json",
+        "sha256": "9fe8be790f58c24fbbc4f2b91c87c600fafcabde656f860802bdaa8f8bf55ade"
+      }
+    },
+    {
+      "case": "g55-positive",
+      "check_count": 3,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/g55-positive/result.json",
+        "sha256": "c3f0ad486261c2bbccf489c78e043a2c53e1b6991f3320c6369c10f29c6d7fa0"
+      }
+    },
+    {
+      "case": "incremental",
+      "check_count": 3,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/incremental/result.json",
+        "sha256": "bbe1ac31e01c1822a91368deb53aa3ad996bb250a7998baf322812da9d3651c4"
+      }
+    },
+    {
+      "case": "g53-one-block",
+      "check_count": 5,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/g53-one-block/result.json",
+        "sha256": "1740c7826c83cfb598522e9d0bef2cb3227b01bb5138101ef9e437997c5e3f22"
+      }
+    },
+    {
+      "case": "g10-l20-active",
+      "check_count": 2,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/g10-l20-active/result.json",
+        "sha256": "a9084d7d968efb23dd3d392fa8a3d5d9e4d189f941d53dd25e6a49f109352e96"
+      }
+    },
+    {
+      "case": "g10-l20-inactive",
+      "check_count": 2,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/g10-l20-inactive/result.json",
+        "sha256": "7e304d339b920ef3a962e87067093ae564588419c6fab29e4c1fac5e2a06341a"
+      }
+    },
+    {
+      "case": "g10-l20-with-g92",
+      "check_count": 2,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/g10-l20-with-g92/result.json",
+        "sha256": "367e76cbbe3b1274c973b39ab221eac8caadba9373af25b6282d6430f1248a44"
+      }
+    },
+    {
+      "case": "slot-switch",
+      "check_count": 5,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/slot-switch/result.json",
+        "sha256": "381a93554dac3569d8f6b732795b4dd16537d7a15bc845154ef963316f433c64"
+      }
+    },
+    {
+      "case": "arc-incremental",
+      "check_count": 6,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/arc-incremental/result.json",
+        "sha256": "c38f6c8f00ccaee0c4918ca88380dbe25c0cfdc67006c4c5fb2686d80e43caea"
+      }
+    },
+    {
+      "case": "arc-absolute",
+      "check_count": 6,
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/arc-absolute/result.json",
+        "sha256": "27decdd1be02dc01fb7852c6b5d26fcaff540de8b3cf33a7d4401a89be7ad753"
+      }
+    }
+  ],
+  "motion_check_count": 43,
+  "original_cad_geometry_cases": [
+    {
+      "case": "zero",
+      "expected_pass": true,
+      "iou_percent": 99.96632581044642,
+      "checks": {
+        "profile_xy": "numeric_pass",
+        "pocket_depth": "numeric_pass",
+        "floor_geometry": "numeric_pass"
+      },
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/zero/result.json",
+        "sha256": "60c881a54b89aa4e3c3d2f1cd42e704e954f2fcc8d41f38b7635fbf81f487dae"
+      },
+      "mesh": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/zero/simulated.stl",
+        "sha256": "7cc559b104bedf0c343e9c9e87026ba29927b21ebf0a5c268de0db950e5dea4e"
+      }
+    },
+    {
+      "case": "g54-positive",
+      "expected_pass": true,
+      "iou_percent": 99.96632581044642,
+      "checks": {
+        "profile_xy": "numeric_pass",
+        "pocket_depth": "numeric_pass",
+        "floor_geometry": "numeric_pass"
+      },
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/g54-positive/result.json",
+        "sha256": "9a82ad8a52a487e0af9730cde9b2a897fabd7985914d6ae31d64e78e00f33f15"
+      },
+      "mesh": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/g54-positive/simulated.stl",
+        "sha256": "7cc559b104bedf0c343e9c9e87026ba29927b21ebf0a5c268de0db950e5dea4e"
+      }
+    },
+    {
+      "case": "g54-negative",
+      "expected_pass": true,
+      "iou_percent": 99.96632581044642,
+      "checks": {
+        "profile_xy": "numeric_pass",
+        "pocket_depth": "numeric_pass",
+        "floor_geometry": "numeric_pass"
+      },
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/g54-negative/result.json",
+        "sha256": "6ca2a153bdf2de7822e78f43d68185d67e477d784d257a9b616c93d24bedc5ed"
+      },
+      "mesh": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/g54-negative/simulated.stl",
+        "sha256": "7cc559b104bedf0c343e9c9e87026ba29927b21ebf0a5c268de0db950e5dea4e"
+      }
+    },
+    {
+      "case": "g55-positive",
+      "expected_pass": true,
+      "iou_percent": 99.96632581044642,
+      "checks": {
+        "profile_xy": "numeric_pass",
+        "pocket_depth": "numeric_pass",
+        "floor_geometry": "numeric_pass"
+      },
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/g55-positive/result.json",
+        "sha256": "444ab5fcdd73f00f8e8251d33954c0e57aef511d0ca747aa46e44879772a64d5"
+      },
+      "mesh": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/g55-positive/simulated.stl",
+        "sha256": "7cc559b104bedf0c343e9c9e87026ba29927b21ebf0a5c268de0db950e5dea4e"
+      }
+    },
+    {
+      "case": "wrong-controller-x",
+      "expected_pass": false,
+      "iou_percent": 96.34215483709774,
+      "checks": {
+        "profile_xy": "numeric_fail",
+        "pocket_depth": "numeric_fail",
+        "floor_geometry": "numeric_fail"
+      },
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/wrong-controller-x/result.json",
+        "sha256": "eed4449fb990197467a3194c3a007108de57bee9ed4162544049972560618688"
+      },
+      "mesh": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/wrong-controller-x/simulated.stl",
+        "sha256": "f1b87f7baf9477c83d9cbd00d0a2d81542e9beccb1a2d5bda6230a65f1cb46ba"
+      }
+    },
+    {
+      "case": "wrong-controller-z",
+      "expected_pass": false,
+      "iou_percent": 97.98599108532477,
+      "checks": {
+        "profile_xy": "not_measurable",
+        "pocket_depth": "numeric_fail",
+        "floor_geometry": "numeric_pass"
+      },
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/wrong-controller-z/result.json",
+        "sha256": "9c873350fb76919ba067480d54f337485df3ad01cfb3539e13b44d946055956c"
+      },
+      "mesh": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/wrong-controller-z/simulated.stl",
+        "sha256": "d61d542784993997cce9e9614ce24f188093654c8f5292b4169adb3d473408e1"
+      }
+    },
+    {
+      "case": "wrong-material-frame",
+      "expected_pass": false,
+      "iou_percent": 96.34203275385282,
+      "checks": {
+        "profile_xy": "numeric_fail",
+        "pocket_depth": "numeric_fail",
+        "floor_geometry": "numeric_fail"
+      },
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/wrong-material-frame/result.json",
+        "sha256": "d135150258720a475fc03170305877aa988d2e5676150c57002f00fb52bea0c7"
+      },
+      "mesh": {
+        "path": "validation/runs/MATERIAL-FRAME-FINE-20261030-r1/wrong-material-frame/simulated.stl",
+        "sha256": "4c55c7297e723f83c8b29d051e27b21747bf4cb40ec7696bc89a207c82c95a5f"
+      }
+    }
+  ],
+  "normal_geometry_case_count": 4,
+  "geometry_defect_case_count": 3,
+  "invalid_input_controls": [
+    {
+      "case": "two-values",
+      "stage": "native_engine",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/controls/two-values/result.json",
+        "sha256": "f6904ae787bb85048c9606f20c4d5c162b697226fe72d216bf542a06cf199382"
+      }
+    },
+    {
+      "case": "four-values",
+      "stage": "native_engine",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/controls/four-values/result.json",
+        "sha256": "93a7670ce2373eb9aab4f5807b8e2fd448a59fced5bc85da19f1162f1c297bcd"
+      }
+    },
+    {
+      "case": "nan",
+      "stage": "native_engine",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/controls/nan/result.json",
+        "sha256": "a61478c9db99fe74f45494d232ebc4ecd49e0f8df06924dd88bc7d084aa1bf07"
+      }
+    },
+    {
+      "case": "trailing-text",
+      "stage": "native_engine",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/controls/trailing-text/result.json",
+        "sha256": "b89f43dcb31402c4ba030ee2db23166a2cadf1a8dddf06c4179061fbe2806816"
+      }
+    },
+    {
+      "case": "infinite",
+      "stage": "native_engine",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/controls/infinite/result.json",
+        "sha256": "c365d32d27d37b0c5986e3ffb1a7a3aca861ffa5e23cffc4f9d2843698b46cdb"
+      }
+    },
+    {
+      "case": "time-cutoff",
+      "stage": "native_engine",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/controls/time-cutoff/result.json",
+        "sha256": "b3effad75b585ed66f1d4860cc7aac3f51cdfe44581d41933f18cdd73ba4b97f"
+      }
+    },
+    {
+      "case": "imperial-project",
+      "stage": "resource_preflight",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/controls/imperial-project/result.json",
+        "sha256": "2bede18209f6d25b3c6b3ee048861ff9d259cae6153074efc78f9073c1c46809"
+      }
+    },
+    {
+      "case": "rotary-axis",
+      "stage": "native_engine",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/controls/rotary-axis/result.json",
+        "sha256": "679a193b5d799a9d83079251c69038da19f1f6da9538c76cb47b39f946caa45b"
+      }
+    }
+  ],
+  "native_rejection_count": 7,
+  "preflight_rejection_count": 1,
+  "legacy_exact_payload_regressions": [
+    {
+      "case": "drill",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/legacy/drill/result.json",
+        "sha256": "5d1690a9a0b2db707fa1549d400c039d3ab02b6a2aa546ad41486930d60a022c"
+      },
+      "original_run": "validation/runs/S1-CYLINDER-ENGINE-20261029-r1/baseline"
+    },
+    {
+      "case": "not-through",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/legacy/not-through/result.json",
+        "sha256": "4f1b7159e71c4a6883f092086c010eeb82596a1d8936f26251f621388674aa42"
+      },
+      "original_run": "validation/runs/S1-CYLINDER-ENGINE-20261029-r1/not-through"
+    },
+    {
+      "case": "region-island",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/legacy/region-island/result.json",
+        "sha256": "df4841790beda47993b971b8b1f6c522a98856d6a018ec99b9cf67512ce0413c"
+      },
+      "original_run": "validation/runs/S3-REGION-SUITE-20261029-r2/island"
+    },
+    {
+      "case": "profile",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/legacy/profile/result.json",
+        "sha256": "85cb19ce584d23741d48ce76b13a8163ba5a4ae3486f28b22cbe43fc5846cb3f"
+      },
+      "original_run": "validation/runs/S4-PROFILE-SEQUENCE-SUITE-20261029-r1/tool-change"
+    },
+    {
+      "case": "pocket-tool-change",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/legacy/pocket-tool-change/result.json",
+        "sha256": "d4f004cb1ab96c3197897730d1f51708969630aa353dea1b6ca4b93a691fcccf"
+      },
+      "original_run": "validation/runs/S4-POCKET-SEQUENCE-SUITE-20261030-r1/tool-change"
+    },
+    {
+      "case": "wrong-order",
+      "result": {
+        "path": "validation/runs/MATERIAL-FRAME-20261030-r1/legacy/wrong-order/result.json",
+        "sha256": "2ea49988241fe94dd600369c124c47bd51eb64ed459a2a33a92fb5e143f56e1e"
+      },
+      "original_run": "validation/runs/S4-POCKET-SEQUENCE-SUITE-20261030-r1/wrong-order"
+    }
+  ],
+  "legacy_profile_lookup_correction": {
+    "path": "validation/runs/MATERIAL-FRAME-20261030-r1/legacy-profile-reference-resolution.json",
+    "sha256": "81eb1fe38dcc02afbc5ee650bc7d3487bb0aa2da42392d860aabfb09af298a64"
+  },
+  "earlier_machine_frame_equivalence": {
+    "path": "validation/runs/WORK-COORDINATES-20261030-r1/summary.json",
+    "sha256": "a561b6c55a7239091c7e3ab2f8cf5f986e5affa90b4dd8e875ebe88f5906c5b8"
+  },
+  "original_material_frame_triangle_correspondence": {
+    "status": "failed",
+    "unchanged_criterion": {
+      "same_triangle_count_and_order": true,
+      "maximum_vertex_difference_mm": 1e-05
+    },
+    "comparisons": [
+      {
+        "case": "g54-positive",
+        "baseline_triangles": 40956,
+        "actual_triangles": 41116,
+        "same_triangle_count_and_order": false,
+        "maximum_corresponding_vertex_difference_mm": null,
+        "passed": false
+      },
+      {
+        "case": "g54-negative",
+        "baseline_triangles": 40956,
+        "actual_triangles": 41116,
+        "same_triangle_count_and_order": false,
+        "maximum_corresponding_vertex_difference_mm": null,
+        "passed": false
+      },
+      {
+        "case": "g55-positive",
+        "baseline_triangles": 40956,
+        "actual_triangles": 41116,
+        "same_triangle_count_and_order": false,
+        "maximum_corresponding_vertex_difference_mm": null,
+        "passed": false
+      },
+      {
+        "case": "g53-one-block",
+        "baseline_triangles": 40956,
+        "actual_triangles": 41116,
+        "same_triangle_count_and_order": false,
+        "maximum_corresponding_vertex_difference_mm": null,
+        "passed": false
+      },
+      {
+        "case": "g10-l20-active",
+        "baseline_triangles": 40956,
+        "actual_triangles": 41116,
+        "same_triangle_count_and_order": false,
+        "maximum_corresponding_vertex_difference_mm": null,
+        "passed": false
+      },
+      {
+        "case": "g10-l20-inactive",
+        "baseline_triangles": 40956,
+        "actual_triangles": 41116,
+        "same_triangle_count_and_order": false,
+        "maximum_corresponding_vertex_difference_mm": null,
+        "passed": false
+      },
+      {
+        "case": "g10-l20-with-g92",
+        "baseline_triangles": 40956,
+        "actual_triangles": 41116,
+        "same_triangle_count_and_order": false,
+        "maximum_corresponding_vertex_difference_mm": null,
+        "passed": false
+      },
+      {
+        "case": "slot-switch",
+        "baseline_triangles": 40956,
+        "actual_triangles": 41116,
+        "same_triangle_count_and_order": false,
+        "maximum_corresponding_vertex_difference_mm": null,
+        "passed": false
+      }
+    ],
+    "failure_not_reclassified_by_fine_geometry_checks": true
+  },
+  "equivalent_absolute_and_incremental_arc_payload_identical": true,
+  "qualified_scope": "Retained metric XYZ interpreter probes; four .025 mm original-CAD material placements and three geometric defects only",
+  "frame_definition": "Native NC is interpreted in machine coordinates; the declared material placement is subtracted from tool tips before cutting. Original CAD, stock and output share material coordinates.",
+  "metric_registration_label_clarification": "Legacy measure_worker says same CAD/G54 coordinates. Here it means the fixed original CAD/material frame, not G54 or G55 work coordinates. No fitted registration.",
+  "general_translation_invariance_qualified": false,
+  "freecad_cam_adapter_qualified": false,
+  "process_card_chain_qualified": false,
+  "tool_length_compensation_qualified": false,
+  "rotary_axes_qualified": false,
+  "material_frame_plus_cell_windows_qualified": false,
+  "selected_default_engine": {
+    "path": "engines/camotics/selected-engine.json",
+    "sha256": "e496f8a91a45e514df52714e246d58fade21fb9fa9a7579efc666c9d52c08e42"
+  },
+  "selected_default_engine_changed": false,
+  "production_approved": false
+}

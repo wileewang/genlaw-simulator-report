@@ -1,0 +1,237 @@
+{
+  "schema": "genlaw.camotics-build.v1",
+  "id": "1.2.0-genlaw-coordinates-r2",
+  "binary": "engines/camotics/releases/1.2.0-genlaw-coordinates-r2/camsim",
+  "binary_sha256": "5b989f5a77d524b06544dc99b667100eb6ebdec39aef71faacb97660d0f79452",
+  "version_output": "1.2",
+  "patched_vertical_conic_sweep": true,
+  "complete_nc_material_removal_engine": true,
+  "build_features": {
+    "gui": false,
+    "tpl": false,
+    "openssl": false,
+    "event_http_service": false,
+    "nc_interpreter": true,
+    "sweep_and_surface": true,
+    "binary_stl": true
+  },
+  "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "compile_options": "num_jobs=1 debug=0 optimize=0 ccflags=-O2 strict=0 cxxstd=c++11",
+  "upstreams": [
+    {
+      "project": "CAMotics",
+      "commit": "a26af50604877e3c863091103b6667b207fa79ad",
+      "url": "https://codeload.github.com/CauldronDevelopmentLLC/CAMotics/tar.gz/a26af50604877e3c863091103b6667b207fa79ad",
+      "archive_sha256": "5027d84d22fe0752ca641e67d2ee67ccc6906420af83bc357ef24d156c57f2d2",
+      "source_directory": "engines/camotics/source"
+    },
+    {
+      "project": "cbang",
+      "commit": "e231d612a6fbb3424b7b211d08bb367f6d9ca0f8",
+      "url": "https://codeload.github.com/CauldronDevelopmentLLC/cbang/tar.gz/e231d612a6fbb3424b7b211d08bb367f6d9ca0f8",
+      "archive_sha256": "039a21f03a2b63e12e60e01379dc4d3fc2bb957043b6819e1e555a1d185c450b",
+      "source_directory": "engines/camotics/vendor/cbang"
+    }
+  ],
+  "modified_source_files": [
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/SConstruct",
+      "upstream_sha256": "9a1cb28ba8f11285e8de7c817f033e665a3e19adebead26909bbf374ca022907",
+      "modified_sha256": "d864702678ce66ba80a4d9c92868a662a98904b970d4fdb142cf4909f04cfd04"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/contour/CubeSlice.cpp",
+      "upstream_sha256": "3f3c43aaabbb8b05eb0c5ec34b99a5f4b0b67b8fcd8147133d3e86cae3765698",
+      "modified_sha256": "6d68a1a9629585001248cf0e775b337dcf6d2abd3323d7661ec0f057b9586d2c"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/contour/GridTreeRef.cpp",
+      "upstream_sha256": "64a36100457e4a69746d777ba08f7a924c86daccfdfaee2281dccfc41bcc3918",
+      "modified_sha256": "a92b4f6abff4dcdb3ff0008c43c01de3b4bab4e66640057b7dcaef0839ccc6b4"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/contour/GridTreeRef.h",
+      "upstream_sha256": "54c75968ae0bf1afd3562da6bde0c7dfa7b79d7848d2c8b09c6a1f3eef7baac6",
+      "modified_sha256": "11c5dec90421af67d2fd7fe8e0f9dde9ab1b4980c92c679797153d39bfd6fe9d"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/contour/SliceContourGenerator.cpp",
+      "upstream_sha256": "0ac4f18ce36d023f88c73ddcad80bc3ef5a1ca9f90d8cfead5d647467f7ee206",
+      "modified_sha256": "f8a0f6a665777618070f8ccfea8d8d80c7ee4f8f342b11b093246dc8eec10fe7"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/contour/VertexSlice.cpp",
+      "upstream_sha256": "d581a3db82821f0d6c528fb131bad158c0cf53880467521888dfa4aefa3d6a6c",
+      "modified_sha256": "6a92554c9c81144ea9f88eba8e6a9acc12e1521abd0e06d3b926c2e3215bfd79"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/render/Renderer.cpp",
+      "upstream_sha256": "1a19dd977ba372f5b491bda94f3f169dac053a5219392ec3813ef4df18e3a748",
+      "modified_sha256": "7d6e74478faedaa8877748a638af27a798368aa15b48fe22ef4feabfc12ea458"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/render/Renderer.h",
+      "upstream_sha256": "d91e5fca8723658252c645baeb263417eb6cda6aa0d917c38da88df9507a369d",
+      "modified_sha256": "a6109a5b3784d02a7f26bdd4af7bc4392404c938e9b9507cf01bc858bacc97af"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/sim/ConicSweep.cpp",
+      "upstream_sha256": "fbc00eb1b5f274d929c59338145da2f054569e831ab1309dd36f2652b61d5dab",
+      "modified_sha256": "c39f7bdf846ac4886c3d4f3842d65d9edef2de5a3c98406450ec3556e86cacd3"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/sim/Simulation.cpp",
+      "upstream_sha256": "1e784ab4cd7089206d119dc08bc73e5e4482357f055ef79a7ee7f08108cfcc69",
+      "modified_sha256": "a09f3540306c54b3143f56af9cb6da67c2511dfb6693dfdde8ed97f109e57182"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/sim/Simulation.h",
+      "upstream_sha256": "f81528180dc1a7e4546b40725e289d3e299b69636eb6b7872aac0e0b7264d17f",
+      "modified_sha256": "f42f7fc21c433a100b95dd50ff29984059d50af13afb4b111c768882c2ffd096"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camotics/sim/SimulationRun.cpp",
+      "upstream_sha256": "de0380ece01287f1e9514b2cde7aaa5dd361e2ce34468f5b79d74583d5994462",
+      "modified_sha256": "2ef85b6114dd94a535951310d0c7d5dc06ef2cfc10e08740d39bc1a3f87a5ef3"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/camsim.cpp",
+      "upstream_sha256": "7d43fe92cf4d0e827e20f81847cd4544a0c808f80cf5fcc08e865bd3b5d8233d",
+      "modified_sha256": "7b2d184a11a6a3d84a739c1be6c35ca7ff0defb412e1e09cfeacbb74883012ce"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/gcode/ControllerImpl.cpp",
+      "upstream_sha256": "81dffbe1a8c26ade06551fc9be80c080bf010d74a8b2233e4cd14e672dfb7102",
+      "modified_sha256": "8521c73b926cf613b1edf024bba037705f770f0a490ee2b040f3d0a0d4bf52db"
+    },
+    {
+      "project": "CAMotics",
+      "path": "engines/camotics/source/src/stl/Writer.cpp",
+      "upstream_sha256": "4f84867935c011816ff468ffad8ba7e802712102687458ebe01806a04f9abe48",
+      "modified_sha256": "4634b345b97f3df11427ef124a2580e1f57987f39c3c01453c45e198e54e7d88"
+    },
+    {
+      "project": "cbang",
+      "path": "engines/camotics/vendor/cbang/SConstruct",
+      "upstream_sha256": "41f127481c48592209795a4e4e08118117a1ecc9d6da4e67f352acf13b50f3e3",
+      "modified_sha256": "e24b79fbab814fa6117af8b7c9008609711a2beb4b98563f74f12c0230247d81"
+    },
+    {
+      "project": "cbang",
+      "path": "engines/camotics/vendor/cbang/config/__init__.py",
+      "upstream_sha256": "2b76b71801120c8aa00b6efda31a2b2dbd08e70c0a901b16ac2c145523b11192",
+      "modified_sha256": "40e908f74315eae0e89a1d5c39828de8a936f78845975f1c9cb616f6be5af543"
+    },
+    {
+      "project": "cbang",
+      "path": "engines/camotics/vendor/cbang/config/build_info/__init__.py",
+      "upstream_sha256": "4b132af6b94ec706f23c16fbd0fa1b23343f322a6811867c1b79a2445ec45688",
+      "modified_sha256": "b65928f1f975f291bcd01e4f3d977959d162c6946defbda39ec176c665a99b26"
+    }
+  ],
+  "library_directories": [
+    "engines/camotics/.work/sysroot/usr/lib/x86_64-linux-gnu"
+  ],
+  "linked_libraries": [
+    {
+      "path": "/lib/x86_64-linux-gnu/libstdc++.so.6",
+      "sha256": "ff0825e113603c3866680d5d52216bc6d8eedf3a59f52a0aef67ff01994db128",
+      "inside_workspace": false
+    },
+    {
+      "path": "/lib/x86_64-linux-gnu/libexpat.so.1",
+      "sha256": "683e2e41db14581194bf1f6616e95a8f02cd4ab599f0fba807e46325ec01d21f",
+      "inside_workspace": false
+    },
+    {
+      "path": "/lib/x86_64-linux-gnu/libm.so.6",
+      "sha256": "3dd5511ae94785c9f921429b0f2b2f7aabb461b6f0e6de6dfdbef15f24bdfee6",
+      "inside_workspace": false
+    },
+    {
+      "path": "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "sha256": "fc9d43b2f6c20e53b009238f767c5b949d202389e20de9e202ea684b4ba3729a",
+      "inside_workspace": false
+    },
+    {
+      "path": "/lib/x86_64-linux-gnu/libc.so.6",
+      "sha256": "b2cf6c33b74d2f22543b7a469a75b538911e690f769d0b238843a49465b83793",
+      "inside_workspace": false
+    },
+    {
+      "path": "/lib64/ld-linux-x86-64.so.2",
+      "sha256": "41daf7836f7fce21a40ca63a00c5caf21b05a35a76ccc075d86f1716212cdf01",
+      "inside_workspace": false
+    }
+  ],
+  "source_manifest_sha256": "c63aac71a4969feddb606f6b50b07f7b8d90423938024a17ae33a9e528e5badc",
+  "build_script_sha256": {
+    "build.py": "5025b3875d7f5403ed4dd9f5e452f17324b99f9e3c8d6bf752c6fc40c39c7218",
+    "build_chunk.py": "8719d094683e85e420d53b8cd45908a466ab4989b3beafd7d57b96ac20f4693b"
+  },
+  "numerical_patch_sha256": "2d08e76b6558f5934824dd531bce4783ff52a0ccd81f8a5c9a6e8c1080895df0",
+  "patched_horizontal_cylinder_sweep": true,
+  "horizontal_cylinder_patch_sha256": "1af83298ff213f465f7046e31338d73d4d6e6ef92c6e3a0e166b25ceeeeaee83",
+  "production_approved": false,
+  "grid_window_capability": {
+    "schema": "genlaw.camotics-cell-window.v1",
+    "sampling": "global-integer-lattice-v1",
+    "cell_interval": "half-open",
+    "original_stock_and_nc_preserved": true,
+    "artificial_partition_caps": false,
+    "inspection_executes_nc": false,
+    "threads": 1,
+    "maximum_cells_per_window": 5000000,
+    "maximum_xy_samples": 100000,
+    "render_mode": "marching_cubes",
+    "reduction_allowed": false,
+    "patch_sha256": "46d4ad48a4fb5f0dbb214874fae028497d5b76e0992f72ea83c44c053a02afe0",
+    "patch_ref": "engines/camotics/releases/1.2.0-genlaw-coordinates-r2/grid-window.patch",
+    "regression_approved": false
+  },
+  "freeze_script_sha256": "0c42343c7ff3405e1336b5aaa294f7bfe456f78520c6a640584facd36c5efea9",
+  "work_coordinate_capability": {
+    "schema": "genlaw.camotics-work-coordinates.v1",
+    "interpretation": "machine_tip = work_point + work_origin; no tool length compensation",
+    "candidate_scope": "metric XYZ translations, absolute and incremental moves, IJK arcs, G53, G10 L2/L20",
+    "tool_length_compensation_qualified": false,
+    "rotation_qualified": false,
+    "patch_sha256": "91231d6807939fbcae7305d8a6901b5e94bd1caa69efd2ec9228f440fecc5d62",
+    "patch_ref": "engines/camotics/releases/1.2.0-genlaw-coordinates-r2/work-coordinates.patch",
+    "controller_source_sha256": "8521c73b926cf613b1edf024bba037705f770f0a490ee2b040f3d0a0d4bf52db",
+    "regression_approved": false
+  },
+  "material_frame_capability": {
+    "schema": "genlaw.camotics-material-frame.v1",
+    "argument": "--material-origin",
+    "transform": "material_xyz = machine_tip_xyz - declared_material_origin_machine_xyz",
+    "nc_text_modified": false,
+    "stock_and_output_frame": "declared_material_frame",
+    "target_based_registration": false,
+    "units": "mm",
+    "axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "partial_time_cutoff_supported": false,
+    "patch_sha256": "b437454e4bcff7c7d7f83097d11b0ee727e5bad691efdd0ff760e79ff6efe28f",
+    "patch_ref": "engines/camotics/releases/1.2.0-genlaw-coordinates-r2/material-frame.patch",
+    "source_sha256": "7b2d184a11a6a3d84a739c1be6c35ca7ff0defb412e1e09cfeacbb74883012ce",
+    "regression_approved": false
+  }
+}

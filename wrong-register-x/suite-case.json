@@ -1,0 +1,44 @@
+{
+  "id": "wrong-register-x",
+  "parent_case": "cad-origin",
+  "guard_rejected": true,
+  "normal_guard_rejection": "Controller initialization differs from the explicit setup",
+  "iou_percent": 92.71456589084703,
+  "software_statuses": {
+    "P1": {
+      "top_height": "numeric_fail",
+      "target_thickness": "numeric_fail",
+      "top_geometry": "numeric_fail",
+      "outline_xy": "numeric_pass"
+    },
+    "K1": {
+      "profile_xy": "numeric_fail",
+      "pocket_depth": "not_measurable",
+      "floor_geometry": "numeric_fail"
+    },
+    "H1": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_fail",
+      "through": "numeric_pass"
+    },
+    "H2": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_fail",
+      "through": "numeric_pass"
+    }
+  },
+  "expected_failure": [
+    "K1",
+    "profile_xy"
+  ],
+  "regression_expectation_met": true,
+  "process_conformance": {
+    "status": "rejected",
+    "reason": "Controller initialization differs from the explicit setup",
+    "modified_control_nc": false,
+    "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+  },
+  "nc_modified": false,
+  "control_binding_sha256": "a04ddcb7a3980dd5fb9d053885d83db7bb448a83c0139e4cf3598ed96d9f6f86",
+  "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5"
+}

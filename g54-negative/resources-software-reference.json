@@ -1,0 +1,255 @@
+{
+  "schema": "genlaw.preparation-resources.v1",
+  "id": "S4-WORK-COORDINATE-g54-negative-RESOURCES-r2",
+  "units": "mm",
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "machine": {
+    "kind": "generic_XYZ_reference",
+    "axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "real_machine_qualified": false
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "tools": [
+    {
+      "id": "T1",
+      "kind": "flat_endmill",
+      "center_cutting": true,
+      "diameter_mm": 1,
+      "cutting_length_mm": 5,
+      "length_mm": 20,
+      "basis": "Explicit synthetic test tool, not a qualified physical tool or holder.",
+      "number": 1
+    }
+  ],
+  "setup": {
+    "schema": "genlaw.setup.xyz-translation.v1",
+    "units": "mm",
+    "height_parameter_frame": "original_cad",
+    "material_origin_machine_mm": [
+      -10,
+      -20,
+      -30
+    ],
+    "work_origin_cad_mm": [
+      0,
+      0,
+      0
+    ],
+    "work_offset_origin_machine_mm": [
+      -10,
+      -20,
+      -30
+    ],
+    "work_offset": "G54",
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "Explicit synthetic XYZ translation: original CAD and independently declared physical material placement remain fixed; no fitted registration.",
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "position_frame": "machine",
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": -27,
+      "basis": "Initial unloaded G53 machine retract reaches the original-CAD Z3 clearance before first M6."
+    }
+  },
+  "cutting_presets": [
+    {
+      "id": "FACE-REFERENCE",
+      "operation": "face_milling",
+      "tool_id": "T1",
+      "material_label": "6061-T6",
+      "feed_unit": "mm/min",
+      "speed_unit": "rpm",
+      "clearing_pattern": "Offset",
+      "cut_mode": "Climb",
+      "start_at": "Center",
+      "entry": "vertical_center_cutting",
+      "keep_tool_down": false,
+      "radial_allowance_mm": 0,
+      "axial_allowance_mm": 0,
+      "spindle_rpm": {
+        "value": 3000,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "feed_mm_min": {
+        "value": 120,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "plunge_mm_min": {
+        "value": 60,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_down_mm": {
+        "value": 0.25,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_over_percent": {
+        "value": 50,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "safe_height_mm": {
+        "value": 2,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "clearance_height_mm": {
+        "value": 3,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "path_tolerance_mm": {
+        "value": 0.001,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "boundary_shape": "Boundbox",
+      "clear_edges": true,
+      "exclude_raised_areas": false
+    },
+    {
+      "id": "HELIX-REFERENCE",
+      "operation": "helical_hole_milling",
+      "tool_id": "T1",
+      "material_label": "6061-T6",
+      "feed_unit": "mm/min",
+      "speed_unit": "rpm",
+      "clearing_pattern": "ConcentricHelix",
+      "cut_mode": "Climb",
+      "start_at": "Inside",
+      "entry": "helical",
+      "keep_tool_down": false,
+      "radial_allowance_mm": 0,
+      "axial_allowance_mm": 0,
+      "spindle_rpm": {
+        "value": 3000,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "feed_mm_min": {
+        "value": 120,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "plunge_mm_min": {
+        "value": 60,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_down_mm": {
+        "value": 0.25,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_over_percent": {
+        "value": 50,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "safe_height_mm": {
+        "value": 2,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "clearance_height_mm": {
+        "value": 3,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "path_tolerance_mm": {
+        "value": 0.001,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "start_radius_mm": 0,
+      "rapid_policy": "air_entry_or_proven_cleared_hole",
+      "entry_clearance_mm": {
+        "value": 0.1,
+        "basis": "Explicit software test attachment: 0.1 mm air entry and exit allowance; not a physical fixture approval."
+      },
+      "breakthrough_mm": {
+        "value": 0.1,
+        "basis": "Explicit software test attachment: 0.1 mm air entry and exit allowance; not a physical fixture approval."
+      }
+    },
+    {
+      "id": "POCKET-REFERENCE",
+      "operation": "pocket_milling",
+      "tool_id": "T1",
+      "material_label": "6061-T6",
+      "feed_unit": "mm/min",
+      "speed_unit": "rpm",
+      "clearing_pattern": "Offset",
+      "cut_mode": "Climb",
+      "start_at": "Center",
+      "entry": "vertical_center_cutting",
+      "keep_tool_down": false,
+      "radial_allowance_mm": 0,
+      "axial_allowance_mm": 0,
+      "spindle_rpm": {
+        "value": 3000,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "feed_mm_min": {
+        "value": 120,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "plunge_mm_min": {
+        "value": 60,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_down_mm": {
+        "value": 0.25,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_over_percent": {
+        "value": 50,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "safe_height_mm": {
+        "value": 2,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "clearance_height_mm": {
+        "value": 3,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "path_tolerance_mm": {
+        "value": 0.001,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "floor_outline": "clear_entire_outer_wire"
+    }
+  ],
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Explicit grid frozen before CAM under the unchanged 5,000,000-cell budget; no scaling of the physical target."
+  }
+}

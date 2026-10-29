@@ -1,0 +1,44 @@
+{
+  "id": "wrong-material-placement",
+  "parent_case": "cad-origin",
+  "guard_rejected": true,
+  "normal_guard_rejection": "Applied physical material placement disagrees with the original card/setup",
+  "iou_percent": 92.71111029710778,
+  "software_statuses": {
+    "P1": {
+      "top_height": "numeric_pass",
+      "target_thickness": "numeric_pass",
+      "top_geometry": "numeric_pass",
+      "outline_xy": "numeric_pass"
+    },
+    "K1": {
+      "profile_xy": "numeric_fail",
+      "pocket_depth": "not_measurable",
+      "floor_geometry": "numeric_fail"
+    },
+    "H1": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_fail",
+      "through": "numeric_pass"
+    },
+    "H2": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_fail",
+      "through": "numeric_pass"
+    }
+  },
+  "expected_failure": [
+    "K1",
+    "profile_xy"
+  ],
+  "regression_expectation_met": true,
+  "process_conformance": {
+    "status": "rejected",
+    "reason": "Applied physical material placement disagrees with the original card/setup",
+    "modified_control_nc": false,
+    "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+  },
+  "nc_modified": false,
+  "control_binding_sha256": "d97425a3c09d4d8d9257fe019a66f892d04773d65d0fcfe3bba7a991869bd7f9",
+  "verifier_sha256": "16447eec324a83d911a510cd1c355f7c9e703634c7f790aa8886aa291c750bc5"
+}

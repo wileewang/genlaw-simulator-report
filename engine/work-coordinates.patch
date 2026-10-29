@@ -1,0 +1,41 @@
+--- a/src/gcode/ControllerImpl.cpp
++++ b/src/gcode/ControllerImpl.cpp
+@@ -228,9 +228,11 @@
+ 
+   unsigned axisIndex = Axes::toIndex(axis);
+ 
+-  // Coordinate system offset
++  // The table stores the work origin in machine coordinates (G10 L2).
++  // This function maps machine -> work, so that origin must be subtracted.
++  // getNextAbsolutePosition performs the inverse by subtracting this result.
+   unsigned cs = get(CURRENT_COORD_SYSTEM);
+-  double offset = get(COORD_SYSTEM_ADDR(cs, axisIndex));
++  double offset = -get(COORD_SYSTEM_ADDR(cs, axisIndex));
+ 
+   // Coordinate system rotation
+   address_t addr = COORD_SYSTEM_ADDR(cs, COORD_SYSTEM_ROTATION_MEMBER);
+@@ -391,8 +393,8 @@
+                  (vars & getVarType(offsets[1])) ? getVar(offsets[1]) : 0);
+       center = start + offset;
+ 
+-    } else center = Vector2D(getVar(offsets[0]) + getAxisOffset(axes[0]),
+-                             getVar(offsets[1]) + getAxisOffset(axes[1]));
++    } else center = Vector2D(getVar(offsets[0]) - getAxisOffset(axes[0]),
++                             getVar(offsets[1]) - getAxisOffset(axes[1]));
+ 
+     // Check that the radius matches
+     radius = start.distance(center);
+@@ -622,7 +624,12 @@
+   for (const char *axis = Axes::AXES; *axis; axis++)
+     if (vars & getVarType(*axis)) {
+       double offset = getVar(*axis);
+-      if (relative) offset -= getAxisPosition(*axis);
++      if (relative) {
++        // G10 L20 sets the selected origin so that the stationary machine
++        // point has the requested work coordinate. P may be an inactive slot.
++        offset = getAxisAbsolutePosition(*axis) - offset;
++        if (get(GLOBAL_OFFSETS_ENABLED)) offset += getAxisGlobalOffset(*axis);
++      }
+ 
+       address_t addr = COORD_SYSTEM_ADDR(cs, Axes::toIndex(*axis));
+       set(addr, offset, getUnits());
