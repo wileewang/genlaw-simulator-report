@@ -1,0 +1,44 @@
+{
+  "id": "wrong-mounted-length",
+  "parent_case": "cad-origin",
+  "guard_rejected": true,
+  "normal_guard_rejection": "Applied actual mounted lengths disagree with the original card/setup",
+  "iou_percent": 66.17544894503442,
+  "software_statuses": {
+    "P1": {
+      "top_height": "numeric_fail",
+      "target_thickness": "numeric_fail",
+      "top_geometry": "numeric_pass",
+      "outline_xy": "numeric_fail"
+    },
+    "K1": {
+      "profile_xy": "not_measurable",
+      "pocket_depth": "numeric_fail",
+      "floor_geometry": "numeric_pass"
+    },
+    "H1": {
+      "diameter": "numeric_fail",
+      "position_xy": "numeric_pass",
+      "through": "numeric_pass"
+    },
+    "H2": {
+      "diameter": "not_measurable",
+      "position_xy": "not_measurable",
+      "through": "numeric_pass"
+    }
+  },
+  "expected_failure": [
+    "P1",
+    "top_height"
+  ],
+  "regression_expectation_met": true,
+  "process_conformance": {
+    "status": "rejected",
+    "reason": "Applied actual mounted lengths disagree with the original card/setup",
+    "modified_control_nc": false,
+    "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+  },
+  "nc_modified": false,
+  "control_binding_sha256": "4a6e895fbc6d4476f0ab13ec45f6720da7b27b073f9d9875809158a6d399caaa",
+  "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5"
+}

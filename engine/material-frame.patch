@@ -1,0 +1,108 @@
+--- a/src/camsim.cpp
++++ b/src/camsim.cpp
+@@ -24,6 +24,8 @@
+ #include <camotics/project/Project.h>
+ #include <camotics/contour/Surface.h>
+ #include <camotics/Grid.h>
++#include <gcode/ToolPath.h>
++#include <gcode/Move.h>
+ 
+ #include <stl/Writer.h>
+ 
+@@ -37,6 +39,7 @@
+ #include <cmath>
+ #include <iomanip>
+ #include <locale>
++#include <sstream>
+ 
+ using namespace cb;
+ using namespace std;
+@@ -53,6 +56,7 @@
+     unsigned threads;
+     bool inspectGrid;
+     string cellWindow;
++    string materialOrigin;
+ 
+     string input;
+     SmartPointer<ostream> output;
+@@ -86,6 +90,11 @@
+       cmdLine.addTarget("cell-window", cellWindow,
+                         "Half-open global cell indices x0,y0,z0,x1,y1,z1; "
+                         "requires explicit metric stock, one thread and no reduction.");
++      cmdLine.addTarget("material-origin", materialOrigin,
++                        "Machine XYZ position of the declared material-frame origin, in mm. "
++                        "NC is interpreted unchanged in machine coordinates, then tool-tip "
++                        "moves are expressed in the fixed material frame before cutting. "
++                        "The explicit stock and output STL use material coordinates.");
+ 
+       Logger::instance().setLogTime(false);
+       Logger::instance().setLogNoInfoHeader(true);
+@@ -174,6 +183,48 @@
+     }
+ 
+ 
++    Vector3D parseMaterialOrigin() const {
++      if (!project.isMetric() || project.getWorkpiece().isAutomatic() ||
++          project.getWorkpiece().getMargin() != 0 || time != 0)
++        THROW("Material frames require explicit metric stock, zero margin and full NC execution");
++      vector<string> values;
++      String::tokenize(materialOrigin, values, ",", true);
++      if (values.size() != 3) THROW("Material origin requires three finite XYZ values");
++      Vector3D origin;
++      for (unsigned i = 0; i < 3; i++) {
++        istringstream number(values[i]);
++        number.imbue(std::locale::classic());
++        if (!(number >> origin[i]) || !(number >> std::ws).eof() ||
++            !std::isfinite(origin[i]))
++          THROW("Material origin requires three finite numeric XYZ values");
++      }
++      return origin;
++    }
++
++
++    SmartPointer<GCode::ToolPath> inMaterialFrame
++    (const SmartPointer<GCode::ToolPath> &machinePath, const Vector3D &origin) const {
++      SmartPointer<GCode::ToolPath> result =
++        new GCode::ToolPath(machinePath->getTools());
++      for (GCode::ToolPath::const_iterator it = machinePath->begin();
++           it != machinePath->end(); ++it) {
++        GCode::Axes start = it->getStart(), end = it->getEnd();
++        start.setXYZ(start.getXYZ() - origin);
++        end.setXYZ(end.getXYZ() - origin);
++        for (unsigned i = 0; i < 9; i++) {
++          if (!std::isfinite(start.getIndex(i)) || !std::isfinite(end.getIndex(i)))
++            THROW("Non-finite material-frame position");
++          if (i >= 3 && (start.getIndex(i) != 0 || end.getIndex(i) != 0))
++            THROW("Material-frame cutting is limited to XYZ; rotary and auxiliary axes are not qualified");
++        }
++        GCode::Move move(it->getType(), start, end, it->getStartTime(),
++                         it->getTool(), it->getFeed(), it->getSpeed(), it->getLine());
++        result->move(move);
++      }
++      return result;
++    }
++
++
+     void run() {
+       // Open project
+       string ext = SystemUtilities::extension(input);
+@@ -196,6 +247,8 @@
+       }
+ 
+       Rectangle3U window;
++      Vector3D origin;
++      if (!materialOrigin.empty()) origin = parseMaterialOrigin();
+       if (inspectGrid || !cellWindow.empty()) {
+         Grid grid = explicitGrid();
+         if (!cellWindow.empty()) window = parseCellWindow(grid);
+@@ -206,6 +259,10 @@
+ 
+       // Generate tool path
+       SmartPointer<GCode::ToolPath> path = cutSim.computeToolPath(project);
++      if (!materialOrigin.empty()) {
++        LOG_INFO(1, "Material frame: machine tip minus declared origin " << origin << "mm");
++        path = inMaterialFrame(path, origin);
++      }
+ 
+       // Simulate
+       Rectangle3D bounds = project.getWorkpiece().getBounds();

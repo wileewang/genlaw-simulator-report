@@ -1,0 +1,44 @@
+{
+  "id": "stale-h-after-m6",
+  "parent_case": "shorter-tool",
+  "guard_rejected": true,
+  "normal_guard_rejection": "Native tool change or spindle differs from the card",
+  "iou_percent": 97.28273614248707,
+  "software_statuses": {
+    "P1": {
+      "top_height": "numeric_pass",
+      "target_thickness": "numeric_pass",
+      "top_geometry": "numeric_pass",
+      "outline_xy": "numeric_pass"
+    },
+    "K1": {
+      "profile_xy": "numeric_pass",
+      "pocket_depth": "numeric_pass",
+      "floor_geometry": "numeric_pass"
+    },
+    "H1": {
+      "diameter": "not_measurable",
+      "position_xy": "not_measurable",
+      "through": "numeric_fail"
+    },
+    "H2": {
+      "diameter": "not_measurable",
+      "position_xy": "not_measurable",
+      "through": "numeric_fail"
+    }
+  },
+  "expected_failure": [
+    "H1",
+    "through"
+  ],
+  "regression_expectation_met": true,
+  "process_conformance": {
+    "status": "rejected",
+    "reason": "Native tool change or spindle differs from the card",
+    "modified_control_nc": true,
+    "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+  },
+  "nc_modified": true,
+  "control_binding_sha256": "75b9a6837067465e757c0de8976b8e4151cf02e5e68d788bd0429fc1f35245ac",
+  "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "missing-g43",
+  "parent_case": "single-tool",
+  "guard_rejected": true,
+  "normal_guard_rejection": "Native tool change or spindle differs from the card",
+  "iou_percent": 56.09246761793408,
+  "software_statuses": {
+    "P1": {
+      "top_height": "numeric_fail",
+      "target_thickness": "numeric_fail",
+      "top_geometry": "numeric_pass",
+      "outline_xy": "numeric_pass"
+    },
+    "K1": {
+      "profile_xy": "not_measurable",
+      "pocket_depth": "numeric_fail",
+      "floor_geometry": "numeric_pass"
+    },
+    "H1": {
+      "diameter": "not_measurable",
+      "position_xy": "not_measurable",
+      "through": "numeric_fail"
+    }
+  },
+  "expected_failure": [
+    "P1",
+    "top_height"
+  ],
+  "regression_expectation_met": true,
+  "process_conformance": {
+    "status": "rejected",
+    "reason": "Native tool change or spindle differs from the card",
+    "modified_control_nc": true,
+    "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+  },
+  "nc_modified": true,
+  "control_binding_sha256": "ff636d5aaaf0418a7c7514878242f3b7c897906d8a4c256d03148727913b4ef4",
+  "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5"
+}

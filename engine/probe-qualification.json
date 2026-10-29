@@ -1,0 +1,1073 @@
+{
+  "schema": "genlaw.tool-length-qualification.v1",
+  "status": "declared_native_probe_scope_verified",
+  "engine": {
+    "path": "engines/camotics/releases/1.2.0-genlaw-tool-length-r3/manifest.json",
+    "sha256": "a788d6dde0a763c93d7b1d8f8ed7cdeb888e57751cf1f911ca22fae7f9f55f1b"
+  },
+  "engine_binary": {
+    "path": "engines/camotics/releases/1.2.0-genlaw-tool-length-r3/camsim",
+    "sha256": "50b4cd646619aaef71398a0ed26618be8b213c166e43bac91f06b8b06746a77f"
+  },
+  "inputs": {
+    "path": "validation/feature-inputs/TOOL-LENGTH-PROBES-20261030-r1/manifest.json",
+    "sha256": "f40f381f2b9f13f45882db9c6b9559835af79a16521950365c964508d9b1c8be"
+  },
+  "source": {
+    "path": "tools/finalize_tool_length_qualification.py",
+    "sha256": "713ffdc7c1f20a66bb324ec5a3b54f2663e1774c6bc3732cc7067b5c511565fc"
+  },
+  "cases": [
+    {
+      "case": "g54-static",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/g54-static/result.json",
+        "sha256": "877ec45865b6928b28102fa15cb8f7f58b96557507c1bb896047be73f4c1659d"
+      },
+      "motion_checks": 7,
+      "geometry_checked": true,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/g54-static/result.json",
+        "sha256": "410c2f13f359558ccd3ca76339393d51e927993672e1c9ebee15f47b01d7e271"
+      },
+      "iou_percent": 99.96632581044642,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "g43-current-tool",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/g43-current-tool/result.json",
+        "sha256": "a3b3522f82a90b56dfbcde2e2ac2b50af620f88596ff1e2959589527093e16fe"
+      },
+      "motion_checks": 7,
+      "geometry_checked": true,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/g43-current-tool/result.json",
+        "sha256": "1eebcb330f909440fce78d1c5a04c532338e30f31f40f4bd0084941b7ea95502"
+      },
+      "iou_percent": 99.96632581044642,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "g43-h0",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/g43-h0/result.json",
+        "sha256": "dfea6856d53a7dba30414a3acd8a926c9b39ca86a1bd256ce61fc640dccd6066"
+      },
+      "motion_checks": 7,
+      "geometry_checked": true,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/g43-h0/result.json",
+        "sha256": "fb608b2578366437a2e464ece59171c758999eebc0a4a9cb0ec3a423eabec819"
+      },
+      "iou_percent": 99.96632581044642,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "g55-independent-h2",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/g55-independent-h2/result.json",
+        "sha256": "e9613f63bcba1f79dd169cba080e79be2f190a3fb3b28beefb15da957bb24422"
+      },
+      "motion_checks": 7,
+      "geometry_checked": true,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/g55-independent-h2/result.json",
+        "sha256": "417152841c82355f717a291b2352e30f38d7657e11a08bd7a59b5fcc8d9cfd9b"
+      },
+      "iou_percent": 99.96632581044642,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "m6-reload-h",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/m6-reload-h/result.json",
+        "sha256": "b57c19d629f344effd60df7d598e9cb9312c74bcb9c06dd1cbc455c3cbddafb2"
+      },
+      "motion_checks": 15,
+      "geometry_checked": true,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/m6-reload-h/result.json",
+        "sha256": "6e14cd476fef845544c25077f791acd383f9ba46a5e613da229d2ac6d3ccb1ac"
+      },
+      "iou_percent": 99.96632581044642,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "m6-stale-h",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/m6-stale-h/result.json",
+        "sha256": "e32f9301b80a600ef9956bde836cdaee82e128007e2d00763a4eb88ff64ad95d"
+      },
+      "motion_checks": 14,
+      "geometry_checked": true,
+      "expected_geometry_pass": false,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/m6-stale-h/result.json",
+        "sha256": "533a1fc842ff13733a4fdecd1492ee7df83d0bfc174cb99ad4b58ae2a54ade7c"
+      },
+      "iou_percent": 97.98599108532477,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "not_measurable",
+          "reason": "Not one matched pocket contour at every sampled depth."
+        },
+        "pocket_depth": {
+          "status": "numeric_fail",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "g49-no-motion",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/g49-no-motion/result.json",
+        "sha256": "c6849c1c3bc095206d2df4b38f9359a80d2bde64cdad43aaa4ad81d7c6023c39"
+      },
+      "motion_checks": 10,
+      "geometry_checked": true,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/g49-no-motion/result.json",
+        "sha256": "2b7eceb0f4b3bd054aa4b0b61a00976413743b0c2a0d7b3e04dd0b97db581d78"
+      },
+      "iou_percent": 99.96632581044642,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "g53-one-block",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/g53-one-block/result.json",
+        "sha256": "b25c364466e1866a5ee41af5d8388cdcb1d623e70d8b8c3dc7f5766bbcf44a2a"
+      },
+      "motion_checks": 9,
+      "geometry_checked": true,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/g53-one-block/result.json",
+        "sha256": "c43661779fcaf7f13c9dfb4c6cb2a662f5b18e0eb2c103e666b9f0ec6b1a6aaf"
+      },
+      "iou_percent": 99.96632581044642,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "table-needs-reload",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/table-needs-reload/result.json",
+        "sha256": "7315fe0b3a99b460b036f46c1f6c14bc12e1452fa3d57fe61034509984fdca28"
+      },
+      "motion_checks": 15,
+      "geometry_checked": true,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/table-needs-reload/result.json",
+        "sha256": "bb5cba104ed804e885f6b819e83cc5266b8e769b6de0ba66f71a780d3a25d13b"
+      },
+      "iou_percent": 99.96632581044642,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "incremental",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/incremental/result.json",
+        "sha256": "c09d823f34cda4fb191b3fe39444a89b812160f7c754c6ca13e142614ee400de"
+      },
+      "motion_checks": 9,
+      "geometry_checked": true,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/incremental/result.json",
+        "sha256": "2da76b2a4daf4cce3a5f77dcfc62c3cbf4c84a2f96c4ffee72dcf1cd95227da6"
+      },
+      "iou_percent": 99.96632581044642,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "negative-h-register",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/negative-h-register/result.json",
+        "sha256": "2859710d3f406a9e9d08b01cc371c4bad080862e03b429b033f0a837997730cd"
+      },
+      "motion_checks": 7,
+      "geometry_checked": true,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/negative-h-register/result.json",
+        "sha256": "a6fc2feeaab730846dad05219409335c319cc247b146d889ce00344316093b91"
+      },
+      "iou_percent": 99.96632581044642,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": true
+    },
+    {
+      "case": "arc-incremental",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/arc-incremental/result.json",
+        "sha256": "cd018af8d844d3cdccec61fa80b156618adf7f43f5a5fde44ff9d4998071c0b2"
+      },
+      "motion_checks": 13,
+      "geometry_checked": false,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/arc-incremental/result.json",
+        "sha256": "22c3ded81914f24a7398214d04df8c265eff1efe1b0e1e65b7b2e2dd07e5fad3"
+      }
+    },
+    {
+      "case": "arc-absolute",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/arc-absolute/result.json",
+        "sha256": "4e8dd549f8aac3e632e60ee580dfadc3a232757b806587eff55d105409fa4e10"
+      },
+      "motion_checks": 13,
+      "geometry_checked": false,
+      "expected_geometry_pass": true,
+      "same_native_bytes_as_prior_result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/arc-absolute/result.json",
+        "sha256": "28d4e116b2974b60cb42ccddad9f2d02600fbb7c78e19a5e16ec28a5c35e7a16"
+      }
+    },
+    {
+      "case": "wrong-h",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/wrong-h/result.json",
+        "sha256": "79a54448f1a4aac665751deaefc023f773b20e9c2a86127e66c08e51ef34e802"
+      },
+      "motion_checks": 7,
+      "geometry_checked": true,
+      "expected_geometry_pass": false,
+      "iou_percent": 97.98599108532477,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "not_measurable",
+          "reason": "Not one matched pocket contour at every sampled depth."
+        },
+        "pocket_depth": {
+          "status": "numeric_fail",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": false
+    },
+    {
+      "case": "wrong-mounted-length",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/wrong-mounted-length/result.json",
+        "sha256": "404ff3dafe1497c53b318d729c588b2095fda3b91e0846cf45ec5372932859e8"
+      },
+      "motion_checks": 7,
+      "geometry_checked": true,
+      "expected_geometry_pass": false,
+      "original_predicted_defect_check_met": false,
+      "observed_defect_check": "floor_geometry",
+      "iou_percent": 97.94518774274569,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_boundary_distance",
+            "max_deviation_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "pocket_depth": {
+          "status": "not_measurable",
+          "reason": "Not an unambiguous closed floor at all probes."
+        },
+        "floor_geometry": {
+          "status": "numeric_fail",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": false
+    },
+    {
+      "case": "missing-g43",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/missing-g43/result.json",
+        "sha256": "fe223b88e0ffd796b414aa561218b7f0fdd50dfe1ecf8ec58d531d3babc3a474"
+      },
+      "motion_checks": 6,
+      "geometry_checked": true,
+      "expected_geometry_pass": false,
+      "iou_percent": 97.02710139911284,
+      "geometry_checks": {
+        "profile_xy": {
+          "status": "not_measurable",
+          "reason": "Not one matched pocket contour at every sampled depth."
+        },
+        "pocket_depth": {
+          "status": "numeric_fail",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_floor_depth",
+            "min_mm": 0.5,
+            "max_mm": 0.7
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        },
+        "floor_geometry": {
+          "status": "numeric_pass",
+          "criterion_scope": "software_regression",
+          "criterion": {
+            "schema": "genlaw.numeric-acceptance.v1",
+            "units": "mm",
+            "scope": "software_regression",
+            "basis": "Same existing 0.1 mm software dimension/flatness allowance and two-cell guard; depth is centered on the independently constructed 0.6 mm original CAD. Not manufacturing acceptance.",
+            "method": "sampled_flat_floor",
+            "max_flatness_mm": 0.1,
+            "min_remaining_floor_mm": 0.1
+          },
+          "production_approved": false,
+          "reason": "Finite contour/floor observations with a numerical grid guard; not a continuous or certified manufacturing inspection."
+        }
+      },
+      "measurements_reused": false
+    }
+  ],
+  "case_count": 16,
+  "motion_check_count": 153,
+  "geometry_check_count": 42,
+  "normal_geometry_case_count": 10,
+  "geometry_defect_case_count": 4,
+  "byte_identical_meshes_reusing_prior_cad_measurements": 11,
+  "arc_relative_absolute_payload_equal": true,
+  "native_rejections": [
+    {
+      "case": "unknown-h",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/unknown-h/result.json",
+        "sha256": "a3d9b0aed07037793b8f35ae947700984306dabaaaaa8ece9d0cd40b3ef3740f"
+      }
+    },
+    {
+      "case": "fractional-h",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/fractional-h/result.json",
+        "sha256": "613b7978d17ca3a6cabd7c19f0832cf5b8653cefb5c4a1bc66e637f457754221"
+      }
+    },
+    {
+      "case": "dynamic-h",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/dynamic-h/result.json",
+        "sha256": "80c612a03c0733928d0905189e9432cab36de326bd09d7123f38f7528fd0ac40"
+      }
+    },
+    {
+      "case": "non-z-offset",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/non-z-offset/result.json",
+        "sha256": "70f589a1b022a4e10c0d6f7d3afe80b4f711462ca8d9e1f9f7ee5d745a819335"
+      }
+    },
+    {
+      "case": "rotary-axis",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/rotary-axis/result.json",
+        "sha256": "24c8bc415e3ee4784e06fc80990f7d6f714104f9a5c95e0ed8b22c30a552c59a"
+      }
+    },
+    {
+      "case": "imperial-nc",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/imperial-nc/result.json",
+        "sha256": "80c2faba4e4d5c3743510d9377710ed8ee264c35301611b159584673b0ece5f2"
+      }
+    },
+    {
+      "case": "unsupported-code",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/unsupported-code/result.json",
+        "sha256": "2f113586e54b738ca705aff6f629ab56507119835ba63622eaace3108474c974"
+      }
+    },
+    {
+      "case": "missing-file",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/missing-file/result.json",
+        "sha256": "47f95bc9e1ae1769c465326026a6eac6fd2f94d335df468b6ce73b7fb510d52a"
+      }
+    },
+    {
+      "case": "missing-actual-tool",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/missing-actual-tool/result.json",
+        "sha256": "0d43fef14a9f06f0a1517d3b0fcc9cacb002729cfadb8ffb1032a2f8dd61bfae"
+      }
+    },
+    {
+      "case": "duplicate-length",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/duplicate-length/result.json",
+        "sha256": "7b00791c57cb18cf2a7bf3d95a071c600a4cf0d27e9ce1b21efda9ba0c13b5cd"
+      }
+    },
+    {
+      "case": "nonfinite-length",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/nonfinite-length/result.json",
+        "sha256": "50955f59c75aff697c129323924835ee6918a152972274c2a60d4011bd27af40"
+      }
+    },
+    {
+      "case": "negative-length",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/negative-length/result.json",
+        "sha256": "66f4d83cc5bb43cb24f46c8c7ff969d9dd8c64a12f9a74ba35bdc4fef004b2e2"
+      }
+    },
+    {
+      "case": "missing-material-origin",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/controls/missing-material-origin/result.json",
+        "sha256": "20cf66acac6c13b579226fc95303427183b8eee115ed38671bd8fa8b98319d1f"
+      }
+    }
+  ],
+  "original_predicted_check_mismatches": [
+    {
+      "case": "wrong-mounted-length",
+      "original_test_still_failed": true,
+      "diagnosis": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/wrong-mounted-length/fixture-diagnosis.json",
+        "sha256": "ec4bc34e4b7e084df0a27ebc16a971d2954456ceeaa89f768fdbd4c2f03b9ae7"
+      },
+      "observed_defect_check": "floor_geometry"
+    }
+  ],
+  "unloaded_spindle_probes": [
+    {
+      "case": "empty-tool",
+      "checks": 11,
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/empty-tool/result.json",
+        "sha256": "b3ce889a45300abf3dddebb61ec046569adc961cc3c62ff7cfb0ad1783cc2ecf"
+      }
+    },
+    {
+      "case": "empty-stock-crossing",
+      "checks": 4,
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/empty-stock-crossing/result.json",
+        "sha256": "85accfcedd7c60e31492a68c821928a743ca9e60c701c226bda92f8d71fed219"
+      }
+    }
+  ],
+  "legacy_exact_payload_regressions": [
+    {
+      "case": "drill",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/legacy/drill/result.json",
+        "sha256": "00f4b8f417a7cb41237fee5df26db7888c6ed9b7cc869568bf8502674752dc3f"
+      }
+    },
+    {
+      "case": "not-through",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/legacy/not-through/result.json",
+        "sha256": "e261db41a56965d5333859ffcbf17d82b3afe7ba5eb1924f429dac0fbbe937ea"
+      }
+    },
+    {
+      "case": "region-island",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/legacy/region-island/result.json",
+        "sha256": "c21334e58dba5115e2a4e6860aca10897cd60db159cdc5cf2321b9bc60d8399b"
+      }
+    },
+    {
+      "case": "profile",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/legacy/profile/result.json",
+        "sha256": "7f210162ba242cbc47c6b3ff9daf4715052fb17d023794ff27dbc41904de042a"
+      }
+    },
+    {
+      "case": "pocket-tool-change",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/legacy/pocket-tool-change/result.json",
+        "sha256": "c53b8f069c8fd3042eff79d579aa5e5457bd315f0f0bf00e54e68f5593e45485"
+      }
+    },
+    {
+      "case": "wrong-order",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/legacy/wrong-order/result.json",
+        "sha256": "1ed67281c99bbe66ca1e8574024b2a5d0382e5be65817d18dce5c2481a9b0fa7"
+      }
+    },
+    {
+      "case": "coordinate-g55",
+      "result": {
+        "path": "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/legacy/coordinate-g55/result.json",
+        "sha256": "9419a81c9029396df532a957242effd6aadf23433432ea8a8c753df703f0e2e6"
+      }
+    }
+  ],
+  "resource_worker_count": 47,
+  "maximum_worker_seconds": 6.499550283013377,
+  "successful_worker_count": 33,
+  "intentional_native_rejection_worker_count": 13,
+  "preserved_failed_prediction_verifier_count": 1,
+  "peak_worker_rss_bytes": 537579520,
+  "default_engine": {
+    "path": "engines/camotics/selected-engine.json",
+    "sha256": "e496f8a91a45e514df52714e246d58fade21fb9fa9a7579efc666c9d52c08e42"
+  },
+  "default_engine_changed": false,
+  "freecad_cam_integration_qualified": false,
+  "process_card_chain_qualified": false,
+  "fixture_collision_qualified": false,
+  "five_axis_qualified": false,
+  "production_approved": false,
+  "preserved_failures": [
+    "validation/runs/TOOL-LENGTH-PROBES-20261030-r1/g54-static/native-resources.json",
+    "validation/runs/TOOL-LENGTH-PROBES-20261030-r2/empty-tool/result.json",
+    "validation/runs/TOOL-LENGTH-PROBES-20261030-r3/wrong-mounted-length/geometry-verification.json"
+  ],
+  "interruption_record": {
+    "path": "docs/checkpoints/2026-10-30/tool-length-semantics-01/coordinator-interruption-01.json",
+    "sha256": "d682f65e32436aa5e480bfbaefd63501dbc088f2cde2bdb7f79f67c9732ac067"
+  },
+  "scope": "Explicit metric XYZ/G17 static G43 Hn/G49, nonrandom M6, independent physical gauge lengths, G54/G55. Native conformance probes; no FreeCAD/card-chain or machine collision claim."
+}

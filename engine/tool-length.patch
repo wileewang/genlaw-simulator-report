@@ -1,0 +1,457 @@
+--- a/src/camotics/sim/CutSim.cpp
++++ b/src/camotics/sim/CutSim.cpp
+@@ -35,8 +35,8 @@
+ 
+ 
+ SmartPointer<GCode::ToolPath>
+-CutSim::computeToolPath(const Project::Project &project) {
+-  task = new ToolPathTask(project);
++CutSim::computeToolPath(const Project::Project &project, bool metricToolLengths) {
++  task = new ToolPathTask(project, metricToolLengths);
+   task->run();
+   return task.cast<ToolPathTask>()->getPath();
+ }
+--- a/src/camotics/sim/CutSim.h
++++ b/src/camotics/sim/CutSim.h
+@@ -40,7 +40,7 @@
+     ~CutSim();
+ 
+     cb::SmartPointer<GCode::ToolPath>
+-    computeToolPath(const Project::Project &project);
++    computeToolPath(const Project::Project &project, bool metricToolLengths = false);
+     cb::SmartPointer<Surface> computeSurface(const Simulation &sim);
+     void reduceSurface(Surface &surface);
+ 
+--- a/src/camotics/sim/ToolPathTask.cpp
++++ b/src/camotics/sim/ToolPathTask.cpp
+@@ -48,9 +48,9 @@
+ using namespace CAMotics;
+ 
+ 
+-ToolPathTask::ToolPathTask(const Project::Project &project) :
++ToolPathTask::ToolPathTask(const Project::Project &project, bool metricToolLengths) :
+   tools(project.getTools()), units(project.getUnits()),
+-  simJSON(project.toString()), errors(0) {
++  simJSON(project.toString()), metricToolLengths(metricToolLengths), errors(0) {
+ 
+   for (unsigned i = 0; i < project.getFileCount(); i++)
+     files.push_back(project.getFile(i)->getPath());
+@@ -66,14 +66,19 @@
+ 
+   // TODO load machine configuration, including rapidFeed & maxArcError
+   GCode::Machine machine(*path);
+-  GCode::ControllerImpl controller(machine, tools);
++  GCode::ControllerImpl controller(machine, tools, metricToolLengths);
+ 
+   // Interpret code
+   for (unsigned i = 0; i < files.size() && !Task::shouldQuit(); i++) {
+     string filename = files[i];
+ 
+-    if (!SystemUtilities::exists(filename)) continue;
++    if (!SystemUtilities::exists(filename)) {
++      if (metricToolLengths) THROWS("Missing NC file: " << filename);
++      continue;
++    }
+     bool isTPL = String::endsWith(filename, ".tpl");
++    if (metricToolLengths && isTPL)
++      THROW("Tool length mode requires explicit NC files, not TPL");
+     uint64_t fileSize = isTPL ? 0 : SystemUtilities::getFileSize(filename);
+ 
+     Task::begin("Running " + string(isTPL ? "TPL" : "GCode"));
+@@ -155,6 +160,7 @@
+           interp(interp.next());
+ 
+         } catch (const Exception &e) {
++          if (metricToolLengths) throw; // No accepted partial path after error.
+           LOG_ERROR(e);
+           errors++;
+         }
+--- a/src/camotics/sim/ToolPathTask.h
++++ b/src/camotics/sim/ToolPathTask.h
+@@ -43,6 +43,7 @@
+     GCode::Units units;
+     std::vector<std::string> files;
+     std::string simJSON;
++    bool metricToolLengths;
+ 
+     unsigned errors;
+     cb::SmartPointer<GCode::ToolPath> path;
+@@ -52,7 +53,7 @@
+     cb::SmartPointer<cb::Thread> logCopier;
+ 
+     public:
+-    ToolPathTask(const Project::Project &project);
++    ToolPathTask(const Project::Project &project, bool metricToolLengths = false);
+     ~ToolPathTask();
+ 
+     unsigned getErrorCount() const {return errors;}
+--- a/src/camsim.cpp
++++ b/src/camsim.cpp
+@@ -57,6 +57,7 @@
+     bool inspectGrid;
+     string cellWindow;
+     string materialOrigin;
++    string toolGaugeLengths;
+ 
+     string input;
+     SmartPointer<ostream> output;
+@@ -95,6 +96,11 @@
+                         "NC is interpreted unchanged in machine coordinates, then tool-tip "
+                         "moves are expressed in the fixed material frame before cutting. "
+                         "The explicit stock and output STL use material coordinates.");
++      cmdLine.addTarget("tool-gauge-lengths", toolGaugeLengths,
++                        "Explicit metric XYZ static tool length mode: tool:length_mm pairs "
++                        "separated by commas. These actual mounted lengths are independent "
++                        "of G10 L1/G43 compensation registers and cutting geometry. "
++                        "Requires --material-origin and complete NC execution.");
+ 
+       Logger::instance().setLogTime(false);
+       Logger::instance().setLogNoInfoHeader(true);
+@@ -202,13 +208,54 @@
+     }
+ 
+ 
++    map<unsigned, double> parseToolGaugeLengths() const {
++      if (materialOrigin.empty() || !cellWindow.empty() || inspectGrid)
++        THROW("Tool gauge lengths require a material origin and an unpartitioned full simulation");
++      vector<string> pairs;
++      String::tokenize(toolGaugeLengths, pairs, ",", true);
++      map<unsigned, double> lengths;
++      for (unsigned i = 0; i < pairs.size(); ++i) {
++        vector<string> fields;
++        String::tokenize(pairs[i], fields, ":", true);
++        if (fields.size() != 2 || fields[0].empty() ||
++            fields[0].find_first_not_of("0123456789") != string::npos)
++          THROW("Tool gauge lengths require tool:length pairs");
++        unsigned tool = String::parseU32(fields[0]);
++        double length;
++        istringstream value(fields[1]);
++        value.imbue(std::locale::classic());
++        if (!tool || !project.getTools().has(tool) ||
++            !(value >> length) || !(value >> std::ws).eof() ||
++            !std::isfinite(length) || length <= 0 ||
++            !lengths.insert(make_pair(tool, length)).second)
++          THROW("Tool gauge lengths require unique known nonzero tools and finite positive lengths");
++      }
++      if (lengths.empty()) THROW("Tool gauge lengths cannot be empty");
++      return lengths;
++    }
++
++
+     SmartPointer<GCode::ToolPath> inMaterialFrame
+-    (const SmartPointer<GCode::ToolPath> &machinePath, const Vector3D &origin) const {
++    (const SmartPointer<GCode::ToolPath> &machinePath, const Vector3D &origin,
++     const map<unsigned, double> &lengths) const {
+       SmartPointer<GCode::ToolPath> result =
+         new GCode::ToolPath(machinePath->getTools());
+       for (GCode::ToolPath::const_iterator it = machinePath->begin();
+            it != machinePath->end(); ++it) {
+         GCode::Axes start = it->getStart(), end = it->getEnd();
++        if (!lengths.empty()) {
++          int tool = it->getTool();
++          map<unsigned, double>::const_iterator found = lengths.find(tool);
++          // CAMotics starts at tool -1; both -1 and T0 mean an unloaded
++          // spindle. Their rapid gauge moves have zero physical tool length.
++          if (tool < -1 || (tool > 0 && found == lengths.end()))
++            THROWS("No actual mounted gauge length for loaded tool " << tool);
++          if (tool <= 0 && it->getType() != GCode::Move::MOVE_RAPID)
++            THROW("Cutting with an unloaded spindle is outside tool length scope");
++          double length = tool > 0 ? found->second : 0;
++          start.setZ(start.getZ() - length);
++          end.setZ(end.getZ() - length);
++        }
+         start.setXYZ(start.getXYZ() - origin);
+         end.setXYZ(end.getXYZ() - origin);
+         for (unsigned i = 0; i < 9; i++) {
+@@ -217,8 +264,19 @@
+           if (i >= 3 && (start.getIndex(i) != 0 || end.getIndex(i) != 0))
+             THROW("Material-frame cutting is limited to XYZ; rotary and auxiliary axes are not qualified");
+         }
++        // The cutting kernel uses negative IDs for no cutter. In this
++        // explicit nonrandom-changer mode T0 is also an empty spindle; never
++        // let ToolSweep auto-create a fictitious cutting tool zero.
++        int cuttingTool = it->getTool();
++        if (!lengths.empty() && cuttingTool == 0) cuttingTool = -1;
+         GCode::Move move(it->getType(), start, end, it->getStartTime(),
+-                         it->getTool(), it->getFeed(), it->getSpeed(), it->getLine());
++                         cuttingTool, it->getFeed(), it->getSpeed(), it->getLine());
++        if (!lengths.empty())
++          LOG_INFO(3, "Tool gauge move: line=" << it->getLine() << " tool="
++                   << it->getTool() << " gauge_start=" << it->getStart().getXYZ()
++                   << " gauge_end=" << it->getEnd().getXYZ()
++                   << " material_start=" << start.getXYZ()
++                   << " material_end=" << end.getXYZ());
+         result->move(move);
+       }
+       return result;
+@@ -249,6 +307,8 @@
+       Rectangle3U window;
+       Vector3D origin;
+       if (!materialOrigin.empty()) origin = parseMaterialOrigin();
++      map<unsigned, double> lengths;
++      if (!toolGaugeLengths.empty()) lengths = parseToolGaugeLengths();
+       if (inspectGrid || !cellWindow.empty()) {
+         Grid grid = explicitGrid();
+         if (!cellWindow.empty()) window = parseCellWindow(grid);
+@@ -258,10 +318,13 @@
+       }
+ 
+       // Generate tool path
+-      SmartPointer<GCode::ToolPath> path = cutSim.computeToolPath(project);
++      SmartPointer<GCode::ToolPath> path =
++        cutSim.computeToolPath(project, !lengths.empty());
+       if (!materialOrigin.empty()) {
+-        LOG_INFO(1, "Material frame: machine tip minus declared origin " << origin << "mm");
+-        path = inMaterialFrame(path, origin);
++        LOG_INFO(1, "Material frame: " << (lengths.empty() ? "machine tip" :
++                 "machine gauge minus actual tool length") <<
++                 " minus declared origin " << origin << "mm");
++        path = inMaterialFrame(path, origin, lengths);
+       }
+ 
+       // Simulate
+--- a/src/gcode/ControllerImpl.cpp
++++ b/src/gcode/ControllerImpl.cpp
+@@ -28,6 +28,7 @@
+ #include <cbang/log/Logger.h>
+ 
+ #include <limits>
++#include <cmath>
+ 
+ #include <string.h> // For memset()
+ 
+@@ -38,8 +39,9 @@
+ 
+ 
+ ControllerImpl::ControllerImpl(MachineInterface &machine,
+-                               const ToolTable &tools) :
+-  tools(tools), syncState(SYNC_NONE), offsetParamChanged(false),
++                               const ToolTable &tools, bool metricToolLengths) :
++  tools(tools), metricToolLengths(metricToolLengths),
++  syncState(SYNC_NONE), offsetParamChanged(false),
+   currentMotionMode(10) {
+ 
+   state.units                      = this->machine.getUnits();
+@@ -73,6 +75,10 @@
+ 
+   memset(varValues, 0, sizeof(varValues));
+ 
++  if (metricToolLengths)
++    for (ToolTable::const_iterator it = tools.begin(); it != tools.end(); ++it)
++      toolZOffsets[it->first] = 0;
++
+   pushScope();
+ }
+ 
+@@ -244,6 +250,11 @@
+   if (get(GLOBAL_OFFSETS_ENABLED))
+     offset += get(GLOBAL_OFFSET_ADDR(axisIndex));
+ 
++  // Absolute position is the spindle gauge point in this mode. A positive
++  // length raises that point for a fixed programmed tool-tip coordinate.
++  if (metricToolLengths && state.toolLengthComp && axis == 'Z')
++    offset -= get(TOOL_OFFSET_ADDR(axisIndex));
++
+   return offset;
+ }
+ 
+@@ -295,6 +306,8 @@
+ 
+ Axes ControllerImpl::getNextAbsolutePosition(int vars, bool incremental) const {
+   Axes position;
++
++  if (metricToolLengths && state.moveInAbsoluteCoords) incremental = false;
+ 
+   for (const char *axis = Axes::AXES; *axis; axis++)
+     if (vars & getVarType(*axis)) {
+@@ -543,7 +556,32 @@
+ }
+ 
+ 
++unsigned ControllerImpl::checkedToolNumber(double number) const {
++  if (!std::isfinite(number) || number < 0 || number != std::floor(number) ||
++      number > std::numeric_limits<unsigned>::max())
++    THROW("Tool length register requires a nonnegative integer tool number");
++  unsigned tool = (unsigned)number;
++  if (tool && !tools.has(tool))
++    THROWS("Unknown tool length register " << tool);
++  return tool;
++}
++
++
+ void ControllerImpl::setTools(int vars, bool relative) {
++  if (metricToolLengths) {
++    if (relative || !(vars & VT_Z) ||
++        (vars & (VT_X | VT_Y | VT_A | VT_B | VT_C | VT_U | VT_V | VT_W |
++                 VT_R | VT_I | VT_J | VT_Q)))
++      THROW("Tool length mode supports only G10 L1 Pn Zn table updates");
++    unsigned tool = checkedToolNumber(getVar('P'));
++    if (!tool || !std::isfinite(getVar('Z')))
++      THROW("Tool length table requires a nonzero tool and finite Z offset");
++    toolZOffsets[tool] = getVar('Z');
++    // Updating the table does not reload an already active G43 offset.
++    LOG_INFO(3, "Controller: Set Z compensation register " << tool << " to "
++             << getVar('Z') << "mm");
++    return;
++  }
+   Tool &tool = getTool(getVar('P'));
+ 
+   for (const char *v = Tool::VARS; *v; v++)
+@@ -561,12 +599,29 @@
+ void ControllerImpl::toolChange() {
+   int tool = get("_selected_tool");
+   if (tool < 0) THROW("No tool selected");
++  if (metricToolLengths) {
++    checkedToolNumber(tool);
++    setSpindleDir(DIR_OFF);
++  }
+   machine.changeTool(tool);
++  // M6 deliberately retains the active compensation value.
+   LOG_INFO(3, "Controller: Tool change " << tool);
+ }
+ 
+ 
+ void ControllerImpl::loadToolOffsets(unsigned number) {
++  if (metricToolLengths) {
++    if (!number) number = getCurrentTool(); // Nonrandom changer G43 H0.
++    checkedToolNumber(number);
++    double length = number ? toolZOffsets.at(number) : 0;
++    for (const char *axis = Axes::AXES; *axis; axis++)
++      set(TOOL_OFFSET_ADDR(Axes::toIndex(*axis)),
++          *axis == 'Z' ? length : 0, Units::METRIC);
++    offsetParamChanged = true;
++    LOG_INFO(3, "Controller: Active Z compensation H" << number << " = "
++             << length << "mm");
++    return;
++  }
+   try {
+     const Tool &tool = getTool(number);
+ 
+@@ -922,6 +977,7 @@
+ 
+ 
+ void ControllerImpl::setTool(unsigned tool) {
++  if (metricToolLengths) checkedToolNumber(tool);
+   set("_selected_tool", tool, NO_UNITS);
+ }
+ 
+@@ -941,12 +997,38 @@
+     LOG_WARNING("Position after synchronized command unknown in simulator.");
+     syncState = SYNC_NONE;
+   }
++  if (metricToolLengths && state.moveInAbsoluteCoords) offsetParamChanged = true;
+   state.moveInAbsoluteCoords = false;
+ }
+ 
+ 
+ bool ControllerImpl::execute(const Code &code, int vars) {
+   bool implemented = true;
++
++  if (metricToolLengths) {
++    if (vars & (VT_A | VT_B | VT_C | VT_U | VT_V | VT_W))
++      THROW("Tool length mode supports XYZ axes only");
++    // An intentionally bounded interpreter contract, not a claim that every
++    // controller command or dynamic/rotary compensation has been qualified.
++    if (code.type == 'G') switch (code.number) {
++    case 0: case 10: case 20: case 30: case 40: case 100: case 170:
++    case 210: case 400: case 430: case 490: case 530: case 540: case 550:
++    case 610: case 611: case 640: case 800: case 900: case 901:
++    case 910: case 911: case 921: case 940: case 970: break;
++    default: THROWS("G code outside metric tool length scope: " << code);
++    }
++    if (code.type == 'M') switch (code.number) {
++    case 0: case 10: case 20: case 30: case 40: case 50: case 60:
++    case 70: case 80: case 90: case 300: break;
++    default: THROWS("M code outside metric tool length scope: " << code);
++    }
++    if (code.type == 'G' && code.number == 100 &&
++        (getVar('L') != 1 && getVar('L') != 2))
++      THROW("Tool length mode supports G10 L1 and G10 L2 only");
++    if (code.type == 'G' && code.number == 100 && getVar('L') == 2 &&
++        ((vars & VT_R) || (getVar('P') != 1 && getVar('P') != 2)))
++      THROW("Tool length mode requires unrotated G54 or G55 registers");
++  }
+ 
+   switch (code.type) {
+   case 'G':
+@@ -1018,9 +1100,11 @@
+     case 421: setCutterRadiusComp(vars, false, true);  break;
+ 
+     case 430:
+-      LOG_WARNING("Tool Length Offset not supported");
++      if (!metricToolLengths) LOG_WARNING("Tool Length Offset not supported");
++      loadToolOffsets(metricToolLengths ?
++        checkedToolNumber((vars & VT_H) ? getVar('H') : getCurrentTool()) :
++        ((vars & VT_H) ? getVar('H') : getCurrentTool()));
+       state.toolLengthComp = true;
+-      loadToolOffsets((vars & VT_H) ? getVar('H') : getCurrentTool());
+       break;
+ 
+     case 431:
+@@ -1029,7 +1113,10 @@
+       loadToolVarOffsets(vars);
+       break;
+ 
+-    case 490: state.toolLengthComp = false; break;
++    case 490:
++      state.toolLengthComp = false;
++      if (metricToolLengths) offsetParamChanged = true;
++      break;
+ 
+     case 520: setGlobalOffsets(vars); break; // Same as G92
+     case 530: state.moveInAbsoluteCoords = true;  break;
+@@ -1152,6 +1239,9 @@
+   default: implemented = false;
+   }
+ 
++  if (metricToolLengths && !implemented)
++    THROWS("Unimplemented code in metric tool length mode: " << code);
++
+   // Update offsets
+   updateOffsetParams();
+ 
+--- a/src/gcode/ControllerImpl.h
++++ b/src/gcode/ControllerImpl.h
+@@ -34,6 +34,10 @@
+ 
+     MachineUnitAdapter machine;
+     ToolTable tools;
++    // Opt-in gauge-point interpretation. These controller registers are NOT
++    // the ToolTable Z values, which CAMotics also uses for cutting geometry.
++    bool metricToolLengths;
++    std::map<unsigned, double> toolZOffsets;
+ 
+     // Block variables
+     static const int MAX_VAR = 26;
+@@ -66,7 +70,7 @@
+       bool incrementalDistanceMode;    // G90, G91
+       feed_mode_t feedMode;            // G93, G94, G95
+       unsigned coordSystem;            // G54-G59.3 CURRENT_COORD_SYSTEM
+-      bool toolLengthComp;             // G43, G43.1, G49 TODO unsupported
++      bool toolLengthComp;             // G43/G49 supported in explicit metric mode
+       return_mode_t returnMode;        // G98, G99
+       spin_mode_t spinMode;            // G96, G97
+       double spinMax;
+@@ -92,7 +96,8 @@
+ 
+   public:
+     ControllerImpl(MachineInterface &machine,
+-                   const ToolTable &tools = ToolTable());
++                   const ToolTable &tools = ToolTable(),
++                   bool metricToolLengths = false);
+ 
+     // Vars
+     double getVar(char c) const;
+@@ -151,7 +156,11 @@
+ 
+     // Tool
+     Tool &getTool(unsigned tool) {return tools.get(tool);}
+-    unsigned getCurrentTool() const {return (unsigned)get(TOOL_NUMBER);}
++    unsigned getCurrentTool() const {
++      double tool = get(TOOL_NUMBER);
++      return metricToolLengths && tool < 0 ? 0 : (unsigned)tool;
++    }
++    unsigned checkedToolNumber(double number) const;
+     void setTools(int vars, bool relative);
+     void toolChange();
+     void loadToolOffsets(unsigned tool);

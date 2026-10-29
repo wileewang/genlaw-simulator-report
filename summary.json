@@ -1,0 +1,1582 @@
+{
+  "schema": "genlaw.tool-length-suite.v1",
+  "id": "S4-TOOL-LENGTH-SUITE-20261030-r1",
+  "status": "completed",
+  "normal_cases": [
+    {
+      "id": "single-tool",
+      "specification": {
+        "id": "single-tool",
+        "name": "单刀静态刀长补偿",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pocket": {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face16"
+        },
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "order": [
+          "P1",
+          "K1",
+          "H1"
+        ],
+        "two_tools": false,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "width_mm": 4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.5,
+            "floor_face": "Face16"
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "source_case": "baseline",
+        "coordinate_setup": {
+          "schema": "genlaw.setup.xyz-tool-length.v1",
+          "units": "mm",
+          "height_parameter_frame": "original_cad",
+          "material_origin_machine_mm": [
+            10,
+            20,
+            30
+          ],
+          "work_origin_cad_mm": [
+            0,
+            0,
+            0
+          ],
+          "work_offset_origin_machine_mm": [
+            10,
+            20,
+            30
+          ],
+          "work_offset": "G54",
+          "rotation_degrees": [
+            0,
+            0,
+            0
+          ],
+          "fixture_mode": "unmodelled_explicitly_excluded",
+          "basis": "Explicit synthetic absolute gauge reference, original CAD and material placement fixed; no fitted alignment.",
+          "tool_length_compensation": {
+            "mode": "static_Z_absolute_gauge",
+            "actual_lengths_mm": [
+              {
+                "tool_number": 1,
+                "gauge_to_tip_mm": 30.4
+              }
+            ],
+            "registers_mm": [
+              {
+                "h_register": 1,
+                "offset_mm": 30.4
+              }
+            ],
+            "tool_bindings": [
+              {
+                "tool_number": 1,
+                "h_register": 1
+              }
+            ],
+            "minimum_clearance_above_stock_mm": 1.0,
+            "basis": "Declared actual mounted lengths and independently initialized controller table; nominal equality in the absolute gauge reference is checked, never inferred."
+          },
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "position_frame": "machine",
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 63.4,
+            "basis": "Unloaded G53 gauge retract clears original stock for the longest mounted tool before the first M6."
+          }
+        },
+        "card_origin_note": "复用已存档 CAD · 刀长补偿测试 · 工艺师傅审核待定"
+      },
+      "iou_percent": 99.90398387603861,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "H1"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 9,
+          "physical_tool_change": {
+            "previous_tool_number": null,
+            "next_tool_number": 1,
+            "gauge_machine_z_mm": 63.4,
+            "previous_tip_cad_z_mm": null,
+            "next_tip_cad_z_mm": 3.0,
+            "minimum_tip_cad_z_mm": 1.0,
+            "gauge_moves_during_m6": false,
+            "h_reloaded_by_native_g43_after_m6": true,
+            "holder_collision_checked": false
+          }
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95023047767437,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 2,
+        "material_checkpoints_sha256": "28a2b2986b567d597afbb86b9147f0b45ba1855575c917397cf070450d909dd0",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "single-tool/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "a53be8f4fcb63c53996f01d48b4ab0287398fd8cb2de69ea49fe39e30ae3c552"
+        },
+        {
+          "mesh": "single-tool/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b7fb5a45b25d6730ddbf453b81f7da9ab100e2d69615206395b3a35192d2238a",
+          "source_stl_sha256": "1b1669b375e7d1c51e5fc807677081bacfb69db9b9ff95f9dd409d4524d58da4"
+        }
+      ]
+    },
+    {
+      "id": "cad-origin",
+      "specification": {
+        "id": "cad-origin",
+        "name": "非零工件零点与刀长补偿",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pocket": {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face17"
+        },
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face16"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "order": [
+          "P1",
+          "K1",
+          "H1",
+          "H2"
+        ],
+        "two_tools": false,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "width_mm": 4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.5,
+            "floor_face": "Face17"
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face16"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "source_case": "floor-hole",
+        "coordinate_setup": {
+          "schema": "genlaw.setup.xyz-tool-length.v1",
+          "units": "mm",
+          "height_parameter_frame": "original_cad",
+          "material_origin_machine_mm": [
+            -10,
+            -20,
+            -30
+          ],
+          "work_origin_cad_mm": [
+            4,
+            3,
+            -0.5
+          ],
+          "work_offset_origin_machine_mm": [
+            -6,
+            -17,
+            -30.5
+          ],
+          "work_offset": "G55",
+          "rotation_degrees": [
+            0,
+            0,
+            0
+          ],
+          "fixture_mode": "unmodelled_explicitly_excluded",
+          "basis": "Explicit synthetic absolute gauge reference, original CAD and material placement fixed; no fitted alignment.",
+          "tool_length_compensation": {
+            "mode": "static_Z_absolute_gauge",
+            "actual_lengths_mm": [
+              {
+                "tool_number": 1,
+                "gauge_to_tip_mm": 30.4
+              }
+            ],
+            "registers_mm": [
+              {
+                "h_register": 1,
+                "offset_mm": 30.4
+              }
+            ],
+            "tool_bindings": [
+              {
+                "tool_number": 1,
+                "h_register": 1
+              }
+            ],
+            "minimum_clearance_above_stock_mm": 1.0,
+            "basis": "Declared actual mounted lengths and independently initialized controller table; nominal equality in the absolute gauge reference is checked, never inferred."
+          },
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "position_frame": "machine",
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 3.4,
+            "basis": "Unloaded G53 gauge retract clears original stock for the longest mounted tool before the first M6."
+          }
+        },
+        "card_origin_note": "复用已存档 CAD · 刀长补偿测试 · 工艺师傅审核待定"
+      },
+      "iou_percent": 99.8797934254171,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "H1",
+        "H2"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 9,
+          "physical_tool_change": {
+            "previous_tool_number": null,
+            "next_tool_number": 1,
+            "gauge_machine_z_mm": 3.4,
+            "previous_tip_cad_z_mm": null,
+            "next_tip_cad_z_mm": 3.0,
+            "minimum_tip_cad_z_mm": 1.0,
+            "gauge_moves_during_m6": false,
+            "h_reloaded_by_native_g43_after_m6": true,
+            "holder_collision_checked": false
+          }
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95023047767437,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.92804479571184,
+          "check_count": 10,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 3,
+        "material_checkpoints_sha256": "42d4b14724048267873791a1e6be1c791a8bc7f0cc7fd0e9cdf7e5555e4f7fb5",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "cad-origin/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "a53be8f4fcb63c53996f01d48b4ab0287398fd8cb2de69ea49fe39e30ae3c552"
+        },
+        {
+          "mesh": "cad-origin/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b7fb5a45b25d6730ddbf453b81f7da9ab100e2d69615206395b3a35192d2238a",
+          "source_stl_sha256": "1b1669b375e7d1c51e5fc807677081bacfb69db9b9ff95f9dd409d4524d58da4"
+        },
+        {
+          "mesh": "cad-origin/checkpoints/after-03/actual.mesh",
+          "label": "H1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b4e99d0d44c921ce85c086ae7b77b9faa5eb608beb0503635213a66ffe7f0ca0",
+          "source_stl_sha256": "443c6c8bb2d0267f14fe6abc83e7a21363dde65c6d5b4c345e2a09ff6220303d"
+        }
+      ]
+    },
+    {
+      "id": "shorter-tool",
+      "specification": {
+        "id": "shorter-tool",
+        "name": "换成较短的刀具",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pocket": {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face17"
+        },
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face16"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "order": [
+          "P1",
+          "K1",
+          "H1",
+          "H2"
+        ],
+        "two_tools": true,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "width_mm": 4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.5,
+            "floor_face": "Face17"
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face16"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "source_case": "tool-change",
+        "coordinate_setup": {
+          "schema": "genlaw.setup.xyz-tool-length.v1",
+          "units": "mm",
+          "height_parameter_frame": "original_cad",
+          "material_origin_machine_mm": [
+            10,
+            20,
+            30
+          ],
+          "work_origin_cad_mm": [
+            4,
+            3,
+            -0.5
+          ],
+          "work_offset_origin_machine_mm": [
+            14,
+            23,
+            29.5
+          ],
+          "work_offset": "G55",
+          "rotation_degrees": [
+            0,
+            0,
+            0
+          ],
+          "fixture_mode": "unmodelled_explicitly_excluded",
+          "basis": "Explicit synthetic absolute gauge reference, original CAD and material placement fixed; no fitted alignment.",
+          "tool_length_compensation": {
+            "mode": "static_Z_absolute_gauge",
+            "actual_lengths_mm": [
+              {
+                "tool_number": 1,
+                "gauge_to_tip_mm": 30.4
+              },
+              {
+                "tool_number": 2,
+                "gauge_to_tip_mm": 30.0
+              }
+            ],
+            "registers_mm": [
+              {
+                "h_register": 1,
+                "offset_mm": 30.4
+              },
+              {
+                "h_register": 2,
+                "offset_mm": 30.0
+              }
+            ],
+            "tool_bindings": [
+              {
+                "tool_number": 1,
+                "h_register": 1
+              },
+              {
+                "tool_number": 2,
+                "h_register": 2
+              }
+            ],
+            "minimum_clearance_above_stock_mm": 1.0,
+            "basis": "Declared actual mounted lengths and independently initialized controller table; nominal equality in the absolute gauge reference is checked, never inferred."
+          },
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "position_frame": "machine",
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 63.4,
+            "basis": "Unloaded G53 gauge retract clears original stock for the longest mounted tool before the first M6."
+          }
+        },
+        "card_origin_note": "复用已存档 CAD · 刀长补偿测试 · 工艺师傅审核待定"
+      },
+      "iou_percent": 99.85319931404085,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "H1",
+        "H2"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 9,
+          "physical_tool_change": {
+            "previous_tool_number": null,
+            "next_tool_number": 1,
+            "gauge_machine_z_mm": 63.4,
+            "previous_tip_cad_z_mm": null,
+            "next_tip_cad_z_mm": 3.0,
+            "minimum_tip_cad_z_mm": 1.0,
+            "gauge_moves_during_m6": false,
+            "h_reloaded_by_native_g43_after_m6": true,
+            "holder_collision_checked": false
+          }
+        },
+        {
+          "tool_number": 2,
+          "tool_id": "T2",
+          "first_executable_block": 184,
+          "last_executable_block": 187,
+          "physical_tool_change": {
+            "previous_tool_number": 1,
+            "next_tool_number": 2,
+            "gauge_machine_z_mm": 63.4,
+            "previous_tip_cad_z_mm": 3.0,
+            "next_tip_cad_z_mm": 3.3999999999999986,
+            "minimum_tip_cad_z_mm": 1.0,
+            "gauge_moves_during_m6": false,
+            "h_reloaded_by_native_g43_after_m6": true,
+            "holder_collision_checked": false
+          }
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95023047767437,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.91965650272242,
+          "check_count": 10,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 3,
+        "material_checkpoints_sha256": "c218fbee501114f456681a8072ec0cd13fccba0f4a748cc81482855cb5add6fa",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "shorter-tool/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "ca0e5a28cc716da8454ad512eb349bb3d1f7f880caa00f927ad7717742aa9a98"
+        },
+        {
+          "mesh": "shorter-tool/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b7fb5a45b25d6730ddbf453b81f7da9ab100e2d69615206395b3a35192d2238a",
+          "source_stl_sha256": "254572b5b2463f1023aeccbd003dc2b7b4d620b62ad2b480b64dd83b47293fa8"
+        },
+        {
+          "mesh": "shorter-tool/checkpoints/after-03/actual.mesh",
+          "label": "H1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "446e969a8af4c2eafbac37449c67a5f466e887e4cab6766b781bf539bf14bc8e",
+          "source_stl_sha256": "54a104e2f834990037e67ba1ea59a4732fba817f0311674aa03298e08c753364"
+        }
+      ]
+    },
+    {
+      "id": "longer-tool",
+      "specification": {
+        "id": "longer-tool",
+        "name": "换成较长的刀具",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "pocket": {
+          "id": "K1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            3,
+            3
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5,
+          "floor_face": "Face17"
+        },
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face16"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "order": [
+          "P1",
+          "K1",
+          "H1",
+          "H2"
+        ],
+        "two_tools": true,
+        "tool_diameter_mm": 1,
+        "second_tool_diameter_mm": 0.5,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "K1",
+            "kind": "rounded_rectangular_pocket",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "width_mm": 4,
+            "height_mm": 3,
+            "corner_radius_mm": 0.6,
+            "depth_mm": 0.5,
+            "floor_face": "Face17"
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face16"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6.5,
+              3
+            ],
+            "diameter_mm": 1.5,
+            "cylinder_face": "Face15"
+          }
+        ],
+        "source_case": "tool-change",
+        "coordinate_setup": {
+          "schema": "genlaw.setup.xyz-tool-length.v1",
+          "units": "mm",
+          "height_parameter_frame": "original_cad",
+          "material_origin_machine_mm": [
+            10,
+            20,
+            30
+          ],
+          "work_origin_cad_mm": [
+            4,
+            3,
+            -0.5
+          ],
+          "work_offset_origin_machine_mm": [
+            14,
+            23,
+            29.5
+          ],
+          "work_offset": "G55",
+          "rotation_degrees": [
+            0,
+            0,
+            0
+          ],
+          "fixture_mode": "unmodelled_explicitly_excluded",
+          "basis": "Explicit synthetic absolute gauge reference, original CAD and material placement fixed; no fitted alignment.",
+          "tool_length_compensation": {
+            "mode": "static_Z_absolute_gauge",
+            "actual_lengths_mm": [
+              {
+                "tool_number": 1,
+                "gauge_to_tip_mm": 30.4
+              },
+              {
+                "tool_number": 2,
+                "gauge_to_tip_mm": 30.8
+              }
+            ],
+            "registers_mm": [
+              {
+                "h_register": 1,
+                "offset_mm": 30.4
+              },
+              {
+                "h_register": 2,
+                "offset_mm": 30.8
+              }
+            ],
+            "tool_bindings": [
+              {
+                "tool_number": 1,
+                "h_register": 1
+              },
+              {
+                "tool_number": 2,
+                "h_register": 2
+              }
+            ],
+            "minimum_clearance_above_stock_mm": 1.0,
+            "basis": "Declared actual mounted lengths and independently initialized controller table; nominal equality in the absolute gauge reference is checked, never inferred."
+          },
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "position_frame": "machine",
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 63.8,
+            "basis": "Unloaded G53 gauge retract clears original stock for the longest mounted tool before the first M6."
+          }
+        },
+        "card_origin_note": "复用已存档 CAD · 刀长补偿测试 · 工艺师傅审核待定"
+      },
+      "iou_percent": 99.85319931404085,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "K1",
+        "H1",
+        "H2"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 9,
+          "physical_tool_change": {
+            "previous_tool_number": null,
+            "next_tool_number": 1,
+            "gauge_machine_z_mm": 63.8,
+            "previous_tip_cad_z_mm": null,
+            "next_tip_cad_z_mm": 3.3999999999999986,
+            "minimum_tip_cad_z_mm": 1.0,
+            "gauge_moves_during_m6": false,
+            "h_reloaded_by_native_g43_after_m6": true,
+            "holder_collision_checked": false
+          }
+        },
+        {
+          "tool_number": 2,
+          "tool_id": "T2",
+          "first_executable_block": 184,
+          "last_executable_block": 187,
+          "physical_tool_change": {
+            "previous_tool_number": 1,
+            "next_tool_number": 2,
+            "gauge_machine_z_mm": 63.4,
+            "previous_tip_cad_z_mm": 3.0,
+            "next_tip_cad_z_mm": 2.599999999999998,
+            "minimum_tip_cad_z_mm": 1.0,
+            "gauge_moves_during_m6": false,
+            "h_reloaded_by_native_g43_after_m6": true,
+            "holder_collision_checked": false
+          }
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "check_count": 4,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95023047767437,
+          "check_count": 7,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.91965650272242,
+          "check_count": 10,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 3,
+        "material_checkpoints_sha256": "df06679edf739375ff469ede2b65cd73661c36fa2e7e0998500192dbab6b1bdb",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "longer-tool/checkpoints/after-01/actual.mesh",
+          "label": "P1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "source_stl_sha256": "ca0e5a28cc716da8454ad512eb349bb3d1f7f880caa00f927ad7717742aa9a98"
+        },
+        {
+          "mesh": "longer-tool/checkpoints/after-02/actual.mesh",
+          "label": "K1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "b7fb5a45b25d6730ddbf453b81f7da9ab100e2d69615206395b3a35192d2238a",
+          "source_stl_sha256": "254572b5b2463f1023aeccbd003dc2b7b4d620b62ad2b480b64dd83b47293fa8"
+        },
+        {
+          "mesh": "longer-tool/checkpoints/after-03/actual.mesh",
+          "label": "H1 完成 · 工步边界",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "mesh_sha256": "446e969a8af4c2eafbac37449c67a5f466e887e4cab6766b781bf539bf14bc8e",
+          "source_stl_sha256": "54a104e2f834990037e67ba1ea59a4732fba817f0311674aa03298e08c753364"
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "wrong-h-register",
+      "parent_case": "cad-origin",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Controller initialization differs from the explicit setup",
+      "iou_percent": 73.70109478327669,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_fail",
+          "target_thickness": "numeric_fail",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_fail",
+          "pocket_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "expected_failure": [
+        "P1",
+        "top_height"
+      ],
+      "regression_expectation_met": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Controller initialization differs from the explicit setup",
+        "modified_control_nc": false,
+        "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+      },
+      "nc_modified": false,
+      "control_binding_sha256": "fd147994c4ecc1374b723b5ebe231793ce017a76be12d2b033298b9b24f7ba12",
+      "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5",
+      "resolution_mm": 0.025,
+      "frames": []
+    },
+    {
+      "id": "wrong-mounted-length",
+      "parent_case": "cad-origin",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Applied actual mounted lengths disagree with the original card/setup",
+      "iou_percent": 66.17544894503442,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_fail",
+          "target_thickness": "numeric_fail",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_fail"
+        },
+        "K1": {
+          "profile_xy": "not_measurable",
+          "pocket_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_fail",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_pass"
+        }
+      },
+      "expected_failure": [
+        "P1",
+        "top_height"
+      ],
+      "regression_expectation_met": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Applied actual mounted lengths disagree with the original card/setup",
+        "modified_control_nc": false,
+        "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+      },
+      "nc_modified": false,
+      "control_binding_sha256": "4a6e895fbc6d4476f0ab13ec45f6720da7b27b073f9d9875809158a6d399caaa",
+      "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5",
+      "resolution_mm": 0.025,
+      "frames": []
+    },
+    {
+      "id": "missing-g43",
+      "parent_case": "single-tool",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Native tool change or spindle differs from the card",
+      "iou_percent": 56.09246761793408,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_fail",
+          "target_thickness": "numeric_fail",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "not_measurable",
+          "pocket_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "expected_failure": [
+        "P1",
+        "top_height"
+      ],
+      "regression_expectation_met": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Native tool change or spindle differs from the card",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+      },
+      "nc_modified": true,
+      "control_binding_sha256": "ff636d5aaaf0418a7c7514878242f3b7c897906d8a4c256d03148727913b4ef4",
+      "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5",
+      "resolution_mm": 0.025,
+      "frames": []
+    },
+    {
+      "id": "stale-h-after-m6",
+      "parent_case": "shorter-tool",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Native tool change or spindle differs from the card",
+      "iou_percent": 97.28273614248707,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "expected_failure": [
+        "H1",
+        "through"
+      ],
+      "regression_expectation_met": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Native tool change or spindle differs from the card",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc_or_setup"
+      },
+      "nc_modified": true,
+      "control_binding_sha256": "75b9a6837067465e757c0de8976b8e4151cf02e5e68d788bd0429fc1f35245ac",
+      "verifier_sha256": "46cb5ff771125991df24ee6e2c68a3c1294a0a776d5c6255d7ed3fbc89ee38e5",
+      "resolution_mm": 0.025,
+      "frames": []
+    }
+  ],
+  "all_regression_expectations_met": true,
+  "input_manifest_sha256": "00be2fd3892960240d03dd5b7de6eee8bdb305199a7252c6dbb119774ca624ab",
+  "source_sha256": "706838ddb9b96af43c497c1eb824001938efc97ded5571fbaa1ef2e8e4f929c3",
+  "selection_sha256": "bc7e9005578dcb1ddfc6366350d4cf3906cc0b4ec768ae6ccd4a8dbfb0d83a1a",
+  "implemented": "Card-bound independent actual lengths and H registers, native FreeCAD G43 export, physical clearance before/after stationary M6, untouched normal NC, final and cumulative-prefix material compared with frozen original CAD.",
+  "scope": "Metric XYZ, G54/G55, static absolute-gauge Z compensation with H=T and normal H=L, single setup and nonrandom M6; cutting segment only.",
+  "not_qualified": [
+    "dynamic offsets",
+    "relative gauge calibration",
+    "rotary axes",
+    "five-axis machining",
+    "holders or fixture collisions",
+    "machine limits",
+    "material physics",
+    "whole real process card"
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "s4_complete": false,
+  "web_publication_pending": true,
+  "stage_id": "s4",
+  "title": "静态刀长补偿与换刀",
+  "ordered_milling_verified": true,
+  "pocketed_sequence_verified": true,
+  "new_features": [
+    "实装刀长与补偿表分开绑定",
+    "FreeCAD 原生 G43 与换刀净空检查",
+    "最终及逐工步原 CAD 几何验收"
+  ],
+  "tool_lengths_verified": true,
+  "original_cad_sha256_by_case": {
+    "single-tool": "c0797e1517b829fa5870a52c7b2608048e7119b188d330acaa064a584ab398c5",
+    "cad-origin": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+    "shorter-tool": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+    "longer-tool": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9"
+  },
+  "distinct_original_cad_count": 2
+}
