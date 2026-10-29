@@ -1,0 +1,78 @@
+{
+  "schema": "genlaw.preparation-input.v9",
+  "id": "S4-SEQUENCE-two-holes-r2",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2",
+      "OP10.3",
+      "OP10.4"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "显式完整矩形来料；各工步连续去料，不从预期成品重新创建来料。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "a50dd39783d8e591cfda60c0ddbc2a04081768ecbd8fddf9e2abfe79b18f77cc"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "a15efa4ec16f38ec00aa68df427721d66804d298d23ac33691dc9464aa99b929"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "b0692362cc0dffab0707e80a8c3400ba409965a66f7d5262db9d4caf27c51a4b"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "f4b83949d77355b62c7549a6fe36cd3edd9adf803e5a2af3700545c60e39665f"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "8243527b502b0af8d4fee85f896dd3282d763b2536ad8d2411fe77c672451dff"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "795bca3389a398047f66d12a1504b4ae9c5df29efad6ef25c697a461b6efdb6b"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "89f57fcffe7a5131b30bfe77efb2898927723cf75d5e984942ee97e2ccd965db"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "33a9a9cec76bb4553f2872dec5bc8208adfc54468a7648424d8f5bbaf60e295a"
+    },
+    "expected_states": {
+      "path": "expected-states.json",
+      "sha256": "f319a0352bacd0af2407153954ffb894684d033f7d24d1ca422328a3774b25d3"
+    },
+    "after_01": {
+      "path": "expected-state-01.brep",
+      "sha256": "258319f2285206c3993dc6b680197e9c4f5ea18360118686329cc132cc25247e"
+    },
+    "after_02": {
+      "path": "expected-state-02.brep",
+      "sha256": "3e602005195b0edbfc8a02e4b8036617fc8295e4ac605869032175c2fe4b3ee9"
+    },
+    "after_03": {
+      "path": "expected-state-03.brep",
+      "sha256": "d1106d52f9750320d4168ab848f583ffd5af57357708f64c5cc03ce2c7036988"
+    }
+  },
+  "capability": "ordered_planar_milling_xy"
+}

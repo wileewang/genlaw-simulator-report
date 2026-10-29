@@ -135,32 +135,38 @@
       "id": "s4",
       "number": "04",
       "title": "换刀与多工序",
-      "case_name": "型腔＋通孔组合件",
-      "status": "planned",
-      "status_label": "待开发",
-      "headline": "让上一道工序的真实剩料进入下一道。",
-      "part": "沿用小型薄板，先铣浅腔，再钻通孔",
+      "case_name": "面铣 + 铣孔，从同刀到换刀",
+      "status": "current",
+      "status_label": "部分实测 · 继续扩展",
+      "headline": "同一块料连续加工，逐工步检查实际剩料。",
+      "part": "先做面铣后铣通孔；再扩展型腔与孔的组合",
       "material": "沿用同一材料与来料",
-      "resources": "两把刀具，增加换刀与非零刀长 / 坐标配置",
+      "resources": "通用 XYZ，已验证 1 / 2 把平底铣刀；非零刀长 / 工件偏置待扩展",
       "new_programming": [
-        "组合铣削和钻削工序",
-        "绑定换刀、刀长、工件原点与最终 NC"
+        "一个 FreeCAD Job：面铣 → 铣孔，保留原卡孔序",
+        "显式启动状态、换刀与每步刀具 / 参数"
       ],
       "new_verification": [
-        "连续传递实际剩余材料",
-        "检查错误刀具、偏置及已建模夹具干涉"
+        "原始毛坯连续去料，核对中间实际形状",
+        "几何与工序分别判定，错误启动状态也要检出"
       ],
       "remaining": [
-        "先验证单次装夹中的多工序"
+        "继续组合型腔、轮廓与孔",
+        "非零刀长 / 工件偏置、夹具和多装夹"
       ],
       "changes": "增加工序与刀具资源；零件仍保持简单。",
-      "shape": "pocket-hole",
+      "shape": "single-hole",
       "gate": "工序顺序、材料连续性与偏置语义正确；改变一个配置能产生可解释的验收差异。",
       "extension_acceptance_ref": "extension-design.json#/shared_acceptance",
       "new_preparation": [
         "解析工序依赖、换刀与坐标",
         "明确各步实际来料与中间要求"
-      ]
+      ],
+      "results": {
+        "href": "s4/sequence/",
+        "label": "四例结果与五个反例",
+        "scope": "单次装夹，面铣 / 铣孔与换刀；S4 尚未全部完成。"
+      }
     },
     {
       "id": "s5",
@@ -284,33 +290,33 @@
   "axis_investigation_ref": "verification/S1-AXIS-20261028-r1/summary.json",
   "complete_engine_regression_ref": "verification/S1-ENGINE-20261028-r1/summary.json",
   "next_step": {
-    "title": "单特征已有结果，下一步衔接多工序",
+    "title": "已开始多工序：面铣、铣孔与换刀",
     "items": [
       [
-        "冻结组合输入",
-        "面铣 + 铣孔：存档同一工艺卡、原 CAD 与逐工步来料状态"
+        "逐工步验收",
+        "同一原始来料连续去料，面铣后和最终形状分别比对"
       ],
       [
-        "衔接工序",
-        "检查坐标、刀具、依赖和前后剩料，逐步增加换刀与轮廓"
+        "继续扩展",
+        "型腔组合、非零刀长 / 工件偏置、夹具及多装夹"
       ],
       [
-        "保留真实尺寸",
-        "解决真实连接板的计算预算和资源缺项，再验证整卡"
+        "真实卡输入",
+        "保留真实尺寸，继续解决资源缺项和原尺寸计算预算"
       ]
     ],
     "links": [
       [
+        "s4/sequence/",
+        "查看多工序结果"
+      ],
+      [
         "s3/helix/",
-        "查看新增螺旋铣孔"
+        "螺旋铣孔"
       ],
       [
         "s3/facing/",
         "面铣减薄"
-      ],
-      [
-        "s3/region/",
-        "平面轮廓"
       ]
     ]
   }

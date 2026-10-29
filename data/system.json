@@ -166,9 +166,9 @@
       "input": "工艺卡 + CAD + 资源",
       "output": "可执行加工方案",
       "implementation": "规则程序 + 资源库",
-      "status": "钻孔与平面铣削入口已测",
+      "status": "单特征与顺序加工入口已测",
       "current": true,
-      "description": "读取已核对录入的工艺卡，绑定 CAD、工步、要求和资源；缺项与冲突显式返回。纸质卡自动识别待接入。",
+      "description": "读取已核对的工艺卡，绑定 CAD、要求、来料、启动状态、刀具与工步依赖；缺项或冲突显式返回。纸质卡自动识别待接入。",
       "inputs": [
         [
           "process_plan",
@@ -226,9 +226,9 @@
       "input": "执行方案 + CAD",
       "output": "最终 NC + 加工配置",
       "implementation": "FreeCAD CAM + 后处理",
-      "status": "钻孔 / 基础铣削出码已测",
+      "status": "面铣 / 铣孔与换刀出码已测",
       "current": true,
-      "description": "独立读取原 CAD，调用 FreeCAD Drilling、PocketShape 或 MillFace；显式设置来料，检查刀具、切深、参数和逐层覆盖。当前限已列出的具体用例。",
+      "description": "独立读取原 CAD，调用 FreeCAD Drilling、PocketShape、MillFace 或 Helix；顺序加工在同一个 Job 中生成，核对原生 NC 的工步、启动、刀具、覆盖与深度。",
       "inputs": [
         [
           "execution_plan",
@@ -271,9 +271,9 @@
       "input": "最终 NC + 加工配置 + 原始 CAD",
       "output": "加工后几何 + 逐项检验 + 覆盖范围",
       "implementation": "CAMotics + 几何比较",
-      "status": "孔与平面铣削及反例已测",
+      "status": "最终与中间剩料均已实测",
       "current": true,
-      "description": "CAMotics 执行同一 NC，与原 CAD 比较实际剩料。先看 IoU 与形状，再按特征检查孔、轮廓、深度、顶底面和厚度。制造验收依据仍待补齐。",
+      "description": "CAMotics 按同一 NC 连续去料，与原 CAD 比较最终形状；工步边界另外检查实际剩料。IoU、特征几何与工序一致性分别判定。",
       "inputs": [
         [
           "nc_ref / execution_plan",
@@ -311,7 +311,7 @@
         ],
         [
           "feature_observations / software_regression",
-          "受限单孔逐项观测与独立软件测试条件；不将测试阈值写入制造要求"
+          "逐特征及中间剩料观测，软件测试条件单列，不写入制造要求"
         ]
       ],
       "example": {

@@ -1,0 +1,1279 @@
+{
+  "schema": "genlaw.stage-results.v1",
+  "id": "S4-SEQUENCE-RESULTS-20261029-r1",
+  "stage_id": "s4",
+  "title": "面铣、铣孔与换刀衔接",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "specification": {
+        "id": "baseline",
+        "name": "同刀：面铣后铣孔",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          }
+        ],
+        "order": [
+          "P1",
+          "H1"
+        ],
+        "two_tools": false,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          }
+        ]
+      },
+      "iou_percent": 99.90141065315021,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "H1"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 1,
+        "material_checkpoints_sha256": "471e28b893844918743ab1bc59c181cd99e1116b78bae915c2960d0d1a776f29",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "51ccc5e5930db41dc79d62e0e147aac0bdc269e02bfa642481b1508049b2e1ac",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "kind": "time_cutoff",
+          "time_seconds": 82.9675,
+          "label": "面铣进行中",
+          "index": 1,
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "1e8dc7e059f31400bf25831aa92540fa9611afa23614e75b1f28d60d0195f631",
+          "nc_sha256": "f3e37e1ea5521731458aad8fb6e1f294c32ac75201f58d8878ae09a58c6843ce",
+          "full_nc_sha256": "f3e37e1ea5521731458aad8fb6e1f294c32ac75201f58d8878ae09a58c6843ce",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "855200ac446e6f8f2248d76f578df09141a4c32d52796f61984415e0fb50f5d1",
+          "watertight": true,
+          "volume_mm3": 58.67951666503001,
+          "triangles": 107776
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-01",
+          "time_seconds": null,
+          "label": "P1 完成 · 工步边界",
+          "prefix_binding_sha256": "3a8071519ae8e938e176da46e7129bb909ec249d30a2706c11ef4b36182bd412",
+          "simulation_reused": true,
+          "index": 2,
+          "resolution_mm": 0.025,
+          "stl": "frame-2.stl",
+          "stl_sha256": "59def16bae468a4b4133dd25d4b3d2baefb679e4ed52aa19c0d9d99c3f941fd9",
+          "nc_sha256": "3cc2f6530fe4d889a14e5fd535f99abd4691a3da17d58aa077dcb95512135b29",
+          "full_nc_sha256": "f3e37e1ea5521731458aad8fb6e1f294c32ac75201f58d8878ae09a58c6843ce",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "watertight": true,
+          "volume_mm3": 47.99865330577904,
+          "triangles": 397916
+        },
+        {
+          "kind": "time_cutoff",
+          "time_seconds": 156.543283,
+          "label": "末孔铣削进行中",
+          "index": 3,
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "43618940ca5a2796abcbbf640340a0c6ecb90d125a6ae66cef51947b66de42b1",
+          "nc_sha256": "f3e37e1ea5521731458aad8fb6e1f294c32ac75201f58d8878ae09a58c6843ce",
+          "full_nc_sha256": "f3e37e1ea5521731458aad8fb6e1f294c32ac75201f58d8878ae09a58c6843ce",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "3116449904bd6f1aedc0f4cf51f11fdf884c11933a35724ed77618396a359526",
+          "watertight": true,
+          "volume_mm3": 46.06543860327833,
+          "triangles": 103752
+        }
+      ]
+    },
+    {
+      "id": "two-holes",
+      "specification": {
+        "id": "two-holes",
+        "name": "按卡片顺序：先 H2 后 H1",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              5.5,
+              4
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face8"
+          }
+        ],
+        "order": [
+          "P1",
+          "H2",
+          "H1"
+        ],
+        "two_tools": false,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              5.5,
+              4
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face8"
+          }
+        ]
+      },
+      "iou_percent": 99.82295047109085,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "H2",
+        "H1"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.90140431557339,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 2,
+        "material_checkpoints_sha256": "9793416b89c6577463311cee6d30e06160f200d69a4353ae16bdc502bbd6d277",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "51ccc5e5930db41dc79d62e0e147aac0bdc269e02bfa642481b1508049b2e1ac",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "kind": "time_cutoff",
+          "time_seconds": 82.9675,
+          "label": "面铣进行中",
+          "index": 1,
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "26195505adde8b99ed5a7bb4a9e81b37f8278d2a5bd4190c2e1ecfd31419489b",
+          "nc_sha256": "a249ac53f8a5aa0231f72307167dda45909e1acea9ea0b2e5d76ac463ebb67f4",
+          "full_nc_sha256": "a249ac53f8a5aa0231f72307167dda45909e1acea9ea0b2e5d76ac463ebb67f4",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "855200ac446e6f8f2248d76f578df09141a4c32d52796f61984415e0fb50f5d1",
+          "watertight": true,
+          "volume_mm3": 58.67951666503001,
+          "triangles": 107776
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-01",
+          "time_seconds": null,
+          "label": "P1 完成 · 工步边界",
+          "prefix_binding_sha256": "e1f262d58bfd384a3e8bc3e7350f176ecb0bb679f272d7f7ec1a8b7e42ef3834",
+          "simulation_reused": true,
+          "index": 2,
+          "resolution_mm": 0.025,
+          "stl": "frame-2.stl",
+          "stl_sha256": "f4de62683acd0d3a893e475d352ec05e593b194ebe5f870f7fc4cffc3e62d302",
+          "nc_sha256": "87f44b5fbab221b4d2d795280c4d7504ac01cdd501eeb427c50cccfc2b8c27e1",
+          "full_nc_sha256": "a249ac53f8a5aa0231f72307167dda45909e1acea9ea0b2e5d76ac463ebb67f4",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "watertight": true,
+          "volume_mm3": 47.99865330577904,
+          "triangles": 397916
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-02",
+          "time_seconds": null,
+          "label": "H2 完成 · 工步边界",
+          "prefix_binding_sha256": "f70fc74b5cfa165b05addde34a45d263a736f87eec368da443f7ced84e09f09f",
+          "simulation_reused": true,
+          "index": 3,
+          "resolution_mm": 0.025,
+          "stl": "frame-3.stl",
+          "stl_sha256": "839e370ddc31457ab64fcb7655d7e6b8b5867caa82c71043e4bb2be11ee19ba6",
+          "nc_sha256": "d0a413dead9b8cd30f81f048e0f41583b70870c14894c6a35a936a0221c4fc40",
+          "full_nc_sha256": "a249ac53f8a5aa0231f72307167dda45909e1acea9ea0b2e5d76ac463ebb67f4",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "94439f15401a65532468b251a1e3656bc6d44d2b595bebe3c830a29cb51a16de",
+          "watertight": true,
+          "volume_mm3": 44.886750151714715,
+          "triangles": 403840
+        },
+        {
+          "kind": "time_cutoff",
+          "time_seconds": 166.074076,
+          "label": "末孔铣削进行中",
+          "index": 4,
+          "resolution_mm": 0.05,
+          "stl": "frame-4.stl",
+          "stl_sha256": "443ee7a43cbbadc398a0e59e68030040e882285aca19a0bcdad0b4b934fecad3",
+          "nc_sha256": "a249ac53f8a5aa0231f72307167dda45909e1acea9ea0b2e5d76ac463ebb67f4",
+          "full_nc_sha256": "a249ac53f8a5aa0231f72307167dda45909e1acea9ea0b2e5d76ac463ebb67f4",
+          "mesh": "frame-4.mesh",
+          "mesh_sha256": "c177e6f072f203880100ce4b89c66ee8058aa7d9d618f7514d3286b8615ccb7e",
+          "watertight": true,
+          "volume_mm3": 42.91945185950568,
+          "triangles": 105328
+        }
+      ]
+    },
+    {
+      "id": "tool-change",
+      "specification": {
+        "id": "tool-change",
+        "name": "换刀：φ2 面铣 → φ1 铣孔",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          }
+        ],
+        "order": [
+          "P1",
+          "H1"
+        ],
+        "two_tools": true,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          }
+        ]
+      },
+      "iou_percent": 99.90141065315021,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "H1"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        },
+        {
+          "tool_number": 2,
+          "tool_id": "T2",
+          "first_executable_block": 76,
+          "last_executable_block": 78
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 1,
+        "material_checkpoints_sha256": "24289e52566a7e1296594594197f8051d0fbdd086a3fd511eecd8805afa76bee",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "51ccc5e5930db41dc79d62e0e147aac0bdc269e02bfa642481b1508049b2e1ac",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "kind": "time_cutoff",
+          "time_seconds": 47.41,
+          "label": "面铣进行中",
+          "index": 1,
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "40f85aae21f1de1a95af926e51fba2e565d6f24206325492e3825acf4d5e7f98",
+          "nc_sha256": "6ae6fc0b5f521aeac5235e59c099ddc963fb9f913053b7fe1a816e1204b68144",
+          "full_nc_sha256": "6ae6fc0b5f521aeac5235e59c099ddc963fb9f913053b7fe1a816e1204b68144",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "716d421387b99fe2971a2039b685a4b4b651c4c125f9f6ab416b17362e0f3866",
+          "watertight": true,
+          "volume_mm3": 57.89124671613799,
+          "triangles": 107996
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-01",
+          "time_seconds": null,
+          "label": "P1 完成 · 工步边界",
+          "prefix_binding_sha256": "fda8992636b5b23b87e1dc0c4b345c59448a654ba7ab0a7f802d45b34dad4d1d",
+          "simulation_reused": true,
+          "index": 2,
+          "resolution_mm": 0.025,
+          "stl": "frame-2.stl",
+          "stl_sha256": "b5328f452b864534a5c69ca85ee914243a050a6c393cadf3845a97d9118742f2",
+          "nc_sha256": "223a264f7a0922f85039d42a5537a4d2dacf7b819e2cbc0716b0ba26ddb80aa7",
+          "full_nc_sha256": "6ae6fc0b5f521aeac5235e59c099ddc963fb9f913053b7fe1a816e1204b68144",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "75c62a778f0add773f50975e1f057cfed0361694bda37fafca17f8d021c78bc1",
+          "watertight": true,
+          "volume_mm3": 47.99865330577904,
+          "triangles": 397916
+        },
+        {
+          "kind": "time_cutoff",
+          "time_seconds": 91.735783,
+          "label": "末孔铣削进行中",
+          "index": 3,
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "61d718a05f8ed1e0854ffba0be56ec7d25f7ff216302988fc946234f08d970d2",
+          "nc_sha256": "6ae6fc0b5f521aeac5235e59c099ddc963fb9f913053b7fe1a816e1204b68144",
+          "full_nc_sha256": "6ae6fc0b5f521aeac5235e59c099ddc963fb9f913053b7fe1a816e1204b68144",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "3116449904bd6f1aedc0f4cf51f11fdf884c11933a35724ed77618396a359526",
+          "watertight": true,
+          "volume_mm3": 46.06543860327833,
+          "triangles": 103752
+        }
+      ]
+    },
+    {
+      "id": "shifted-z",
+      "specification": {
+        "id": "shifted-z",
+        "name": "保留 CAD 的非零 Z 坐标",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -0.5
+          ],
+          "max": [
+            8,
+            6,
+            1
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -0.5
+          ],
+          "max": [
+            8,
+            6,
+            0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          }
+        ],
+        "order": [
+          "P1",
+          "H1"
+        ],
+        "two_tools": false,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face3",
+            "top_z_mm": 0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                6
+              ]
+            }
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              3,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          }
+        ]
+      },
+      "iou_percent": 99.90140767752635,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "H1"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96968996077433,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 1,
+        "material_checkpoints_sha256": "87c4f38954bc7ae27f3f7a6e720563913fba3a3973652ce57e64754f30f93292",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "51ccc5e5930db41dc79d62e0e147aac0bdc269e02bfa642481b1508049b2e1ac",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "kind": "time_cutoff",
+          "time_seconds": 75.2675,
+          "label": "面铣进行中",
+          "index": 1,
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "be45549fd7b250231f0eb5649cae5f53ba2ff58d48f4b44e87f0127773018e0b",
+          "nc_sha256": "ca04cd6a8eac09c9f54e72e3505cad7e8ee6e28653f693d3e720db79710b5c08",
+          "full_nc_sha256": "ca04cd6a8eac09c9f54e72e3505cad7e8ee6e28653f693d3e720db79710b5c08",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "d1d5f02c59620698e970125a3e467475c835b18d8dd2f7d9a5f76abd1f72333a",
+          "watertight": true,
+          "volume_mm3": 58.32850314418834,
+          "triangles": 107856
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-01",
+          "time_seconds": null,
+          "label": "P1 完成 · 工步边界",
+          "prefix_binding_sha256": "d4b6407ac5fc4318fc5e823c07f5ff3b36b3e452a3bdd1010ecf4892c0d91ecb",
+          "simulation_reused": true,
+          "index": 2,
+          "resolution_mm": 0.025,
+          "stl": "frame-2.stl",
+          "stl_sha256": "e2ad4b4643eb3d9129bb2e13c7b6fee477051124d3fe53e876bab0555fdcb410",
+          "nc_sha256": "3eb291079954a270af89d5bfe0ea0627c31b299ad5f39b0aa14f2d3e61dc1390",
+          "full_nc_sha256": "ca04cd6a8eac09c9f54e72e3505cad7e8ee6e28653f693d3e720db79710b5c08",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "d30b737fa248bfaa9d2cd6b4d7f0db727b1efcaa48ed960d5cda460d3d0cea86",
+          "watertight": true,
+          "volume_mm3": 47.99865187528701,
+          "triangles": 397916
+        },
+        {
+          "kind": "time_cutoff",
+          "time_seconds": 142.459283,
+          "label": "末孔铣削进行中",
+          "index": 3,
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "77ee5fe942aa14a5fb290597386d6bdb17a379653129db894b73acbddd8612ab",
+          "nc_sha256": "ca04cd6a8eac09c9f54e72e3505cad7e8ee6e28653f693d3e720db79710b5c08",
+          "full_nc_sha256": "ca04cd6a8eac09c9f54e72e3505cad7e8ee6e28653f693d3e720db79710b5c08",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "27e035f84b59fce13c563c991b5de687d5c12b6a17c3720b51ca12a656d4d62c",
+          "watertight": true,
+          "volume_mm3": 46.06458940041683,
+          "triangles": 104080
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "missing-face",
+      "parent_case": "baseline",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Native operation order / feature association differs from the card",
+      "iou_percent": 66.62102902867193,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_fail",
+          "target_thickness": "numeric_fail",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": false,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Native operation order / feature association differs from the card",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "51ccc5e5930db41dc79d62e0e147aac0bdc269e02bfa642481b1508049b2e1ac",
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "wrong-tool",
+      "parent_case": "tool-change",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Native tool change or spindle differs from the card",
+      "iou_percent": 91.30562194120928,
+      "software_statuses": {
+        "P1": {
+          "top_height": "not_measurable",
+          "target_thickness": "not_measurable",
+          "top_geometry": "not_measurable",
+          "outline_xy": "not_measurable"
+        },
+        "H1": {
+          "diameter": "numeric_fail",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": false,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Native tool change or spindle differs from the card",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "51ccc5e5930db41dc79d62e0e147aac0bdc269e02bfa642481b1508049b2e1ac",
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "shifted-hole",
+      "parent_case": "baseline",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Helix radius leaves target hole",
+      "iou_percent": 95.66735108380239,
+      "software_statuses": {
+        "P1": {
+          "top_height": "not_measurable",
+          "target_thickness": "not_measurable",
+          "top_geometry": "not_measurable",
+          "outline_xy": "not_measurable"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_fail",
+          "through": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": false,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Helix radius leaves target hole",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "51ccc5e5930db41dc79d62e0e147aac0bdc269e02bfa642481b1508049b2e1ac",
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "reversed-order",
+      "parent_case": "baseline",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Native operation order / feature association differs from the card",
+      "iou_percent": 99.90141065315021,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Native operation order / feature association differs from the card",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "51ccc5e5930db41dc79d62e0e147aac0bdc269e02bfa642481b1508049b2e1ac",
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "startup-collision",
+      "parent_case": "shifted-z",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Ordered NC preamble, unloaded startup retract or shutdown differs",
+      "iou_percent": 99.68295634561936,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_fail"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": false,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Ordered NC preamble, unloaded startup retract or shutdown differs",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "51ccc5e5930db41dc79d62e0e147aac0bdc269e02bfa642481b1508049b2e1ac",
+      "resolution_mm": 0.025
+    }
+  ],
+  "resources": [
+    {
+      "case": "baseline",
+      "stage": "camotics-resources",
+      "seconds": 5.881986076012254,
+      "peak_rss_mib": 500.36328125
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-plan-resources",
+      "seconds": 0.9434560820227489,
+      "peak_rss_mib": 230.7421875
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-resources",
+      "seconds": 7.958849608985474,
+      "peak_rss_mib": 230.75390625
+    },
+    {
+      "case": "baseline",
+      "stage": "freecad-resources",
+      "seconds": 1.8890506039897446,
+      "peak_rss_mib": 219.2109375
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-software-resources",
+      "seconds": 4.086175775999436,
+      "peak_rss_mib": 232.34375
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-features-resources",
+      "seconds": 4.091603943001246,
+      "peak_rss_mib": 232.34765625
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-01/camotics-resources",
+      "seconds": 5.343435112998122,
+      "peak_rss_mib": 498.859375
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-01/measure-plan-resources",
+      "seconds": 0.9458741180133075,
+      "peak_rss_mib": 228.2421875
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-01/measure-resources",
+      "seconds": 6.499291401007213,
+      "peak_rss_mib": 228.0
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-01/observe-resources",
+      "seconds": 2.4110426619881764,
+      "peak_rss_mib": 227.75
+    },
+    {
+      "case": "two-holes",
+      "stage": "camotics-resources",
+      "seconds": 6.175948885997059,
+      "peak_rss_mib": 499.89453125
+    },
+    {
+      "case": "two-holes",
+      "stage": "measure-plan-resources",
+      "seconds": 0.9438933980127331,
+      "peak_rss_mib": 233.98828125
+    },
+    {
+      "case": "two-holes",
+      "stage": "measure-resources",
+      "seconds": 9.748021048988448,
+      "peak_rss_mib": 234.00390625
+    },
+    {
+      "case": "two-holes",
+      "stage": "freecad-resources",
+      "seconds": 2.7236037489783484,
+      "peak_rss_mib": 246.0
+    },
+    {
+      "case": "two-holes",
+      "stage": "verify-software-resources",
+      "seconds": 5.0281575780245475,
+      "peak_rss_mib": 219.19921875
+    },
+    {
+      "case": "two-holes",
+      "stage": "verify-features-resources",
+      "seconds": 5.034075182978995,
+      "peak_rss_mib": 235.3828125
+    },
+    {
+      "case": "two-holes",
+      "stage": "checkpoints/after-01/camotics-resources",
+      "seconds": 5.129683175997343,
+      "peak_rss_mib": 500.92578125
+    },
+    {
+      "case": "two-holes",
+      "stage": "checkpoints/after-01/measure-plan-resources",
+      "seconds": 0.9455788249906618,
+      "peak_rss_mib": 228.31640625
+    },
+    {
+      "case": "two-holes",
+      "stage": "checkpoints/after-01/measure-resources",
+      "seconds": 6.28689587599365,
+      "peak_rss_mib": 227.98828125
+    },
+    {
+      "case": "two-holes",
+      "stage": "checkpoints/after-01/observe-resources",
+      "seconds": 2.5204140600108076,
+      "peak_rss_mib": 228.34765625
+    },
+    {
+      "case": "two-holes",
+      "stage": "checkpoints/after-02/camotics-resources",
+      "seconds": 5.654623326990986,
+      "peak_rss_mib": 497.03125
+    },
+    {
+      "case": "two-holes",
+      "stage": "checkpoints/after-02/measure-plan-resources",
+      "seconds": 0.9428634209907614,
+      "peak_rss_mib": 231.05078125
+    },
+    {
+      "case": "two-holes",
+      "stage": "checkpoints/after-02/measure-resources",
+      "seconds": 8.167966312990757,
+      "peak_rss_mib": 231.1015625
+    },
+    {
+      "case": "two-holes",
+      "stage": "checkpoints/after-02/observe-resources",
+      "seconds": 3.9820473470026627,
+      "peak_rss_mib": 230.87890625
+    },
+    {
+      "case": "tool-change",
+      "stage": "camotics-resources",
+      "seconds": 5.985430278000422,
+      "peak_rss_mib": 497.734375
+    },
+    {
+      "case": "tool-change",
+      "stage": "measure-plan-resources",
+      "seconds": 1.0511525880137924,
+      "peak_rss_mib": 230.60546875
+    },
+    {
+      "case": "tool-change",
+      "stage": "measure-resources",
+      "seconds": 8.18051095600822,
+      "peak_rss_mib": 230.8046875
+    },
+    {
+      "case": "tool-change",
+      "stage": "freecad-resources",
+      "seconds": 1.5755932710017078,
+      "peak_rss_mib": 212.2890625
+    },
+    {
+      "case": "tool-change",
+      "stage": "verify-software-resources",
+      "seconds": 4.087785259995144,
+      "peak_rss_mib": 227.84375
+    },
+    {
+      "case": "tool-change",
+      "stage": "verify-features-resources",
+      "seconds": 3.874356139014708,
+      "peak_rss_mib": 232.453125
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-01/camotics-resources",
+      "seconds": 5.452536454016808,
+      "peak_rss_mib": 496.83984375
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-01/measure-plan-resources",
+      "seconds": 0.9439030439825729,
+      "peak_rss_mib": 196.359375
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-01/measure-resources",
+      "seconds": 6.289473679004004,
+      "peak_rss_mib": 228.03515625
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-01/observe-resources",
+      "seconds": 2.6312459869950544,
+      "peak_rss_mib": 228.41796875
+    },
+    {
+      "case": "shifted-z",
+      "stage": "camotics-resources",
+      "seconds": 5.657181885995669,
+      "peak_rss_mib": 502.9921875
+    },
+    {
+      "case": "shifted-z",
+      "stage": "measure-plan-resources",
+      "seconds": 0.9430760759860277,
+      "peak_rss_mib": 230.6796875
+    },
+    {
+      "case": "shifted-z",
+      "stage": "measure-resources",
+      "seconds": 8.079316340998048,
+      "peak_rss_mib": 230.4296875
+    },
+    {
+      "case": "shifted-z",
+      "stage": "freecad-resources",
+      "seconds": 1.7838605919969268,
+      "peak_rss_mib": 219.1171875
+    },
+    {
+      "case": "shifted-z",
+      "stage": "verify-software-resources",
+      "seconds": 4.086579866008833,
+      "peak_rss_mib": 221.77734375
+    },
+    {
+      "case": "shifted-z",
+      "stage": "verify-features-resources",
+      "seconds": 4.08976756897755,
+      "peak_rss_mib": 225.2578125
+    },
+    {
+      "case": "shifted-z",
+      "stage": "checkpoints/after-01/camotics-resources",
+      "seconds": 5.134673280001152,
+      "peak_rss_mib": 500.8984375
+    },
+    {
+      "case": "shifted-z",
+      "stage": "checkpoints/after-01/measure-plan-resources",
+      "seconds": 0.9420262910134625,
+      "peak_rss_mib": 196.0390625
+    },
+    {
+      "case": "shifted-z",
+      "stage": "checkpoints/after-01/measure-resources",
+      "seconds": 6.174829955009045,
+      "peak_rss_mib": 227.984375
+    },
+    {
+      "case": "shifted-z",
+      "stage": "checkpoints/after-01/observe-resources",
+      "seconds": 2.740016410010867,
+      "peak_rss_mib": 223.80859375
+    }
+  ],
+  "input_archive": "S4-SEQUENCE-20261029-r2",
+  "run_archive": "S4-SEQUENCE-SUITE-20261029-r2",
+  "replay_archive": "S4-SEQUENCE-REPLAY-20261029-r1",
+  "input_manifest_sha256": "b2d5fc89dd7527121ed30050db73b31f3f4da714ddfc49ba15fed7be5a0d4393",
+  "suite_summary_sha256": "9f3e4dec26b27a1af98c3079c4d45faabe793f1cc415ed6c7258c6a2ac8c5b07",
+  "tests_passed": 245,
+  "normal_cases_passed": 4,
+  "negative_controls_detected": 5,
+  "new_features": [
+    "同一 NC 连续去料",
+    "按卡片顺序与刀号加工",
+    "逐工步实际剩料验收"
+  ],
+  "remaining": [
+    "型腔与孔的进一步组合",
+    "非零刀长 / 工件偏置与夹具",
+    "真实工艺卡的资源与原尺寸计算方案"
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "blind_holes_verified": false,
+  "ordered_milling_verified": true,
+  "s4_complete": false,
+  "input_review_bundle_ref": "validation-inputs.zip",
+  "input_review_bundle_sha256": "f26d9683ada356379a9e21411f8f83285ed9527258dfad00b45ffa99aaebacd6",
+  "legacy_compatibility_ref": "legacy-compatibility.json",
+  "legacy_compatibility_sha256": "620fa0bd096dd55bdd24f129fb4569f027ba2d44a13823c43be0e8bdf1f4b7c1",
+  "native_cad_guard_ref": "native-cad-guard.json",
+  "native_cad_guard_sha256": "7f93781f57645414a949598357e7f2907b0061a79a9af2f2974b729f6ab650cd",
+  "engine_build_ref": "engine-build.json",
+  "engine_build_sha256": "152473f86f52597ed2ed1524d99fc7f45d5220c7c52445f8514ad86851bd25e6",
+  "engine_evidence_archive": "S3-REGION-RESULTS-20261029-r1",
+  "sampling_scope": "25 original retained-face probes, 11 sections, 9 full-stock-height rays per hole; independent cumulative native-prefix states; no continuous GD&T.",
+  "scope_qualification": "Four synthetic sequential face/helix cases in one zero-offset XYZ setup, same or changed flat endmill; not complete S4, five-axis or a complete real process card."
+}

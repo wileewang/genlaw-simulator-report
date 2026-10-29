@@ -56,12 +56,23 @@ async function start() {
   const center = new THREE.Vector3();
   let mode = 'replay', frame = 0, timer = null, queued = false, serial = Promise.resolve();
   let active = null, frames = [], owned = [], captions = [];
-  const qa = window.__S1_VIEWER__ = { ready: false, caseId: null, frameIndex: 0, mode, playing: false, renderCount: 0, rendererCount: 1 };
+  const qa = window.__S1_VIEWER__ = { ready: false, caseId: null, frameIndex: 0, mode, playing: false, renderCount: 0, rendererCount: 1, networkRetries: 0 };
 
   async function geometry(path) {
     const delivery = config.geometry_transport?.[path];
     const compressed = delivery?.encoding === 'gzip' && typeof DecompressionStream === 'function';
-    const r = await fetch(new URL(compressed ? delivery.path : path, siteBase));
+    const url = new URL(compressed ? delivery.path : path, siteBase);
+    let r;
+    try { r = await fetch(url); }
+    catch (error) {
+      // A canceled browser request can surface as a network TypeError during
+      // rapid case changes. Retry once; HTTP, decoding and integrity failures
+      // retain their original failure path.
+      if (!(error instanceof TypeError)) throw error;
+      qa.networkRetries++;
+      await new Promise(resolve => setTimeout(resolve, 120));
+      r = await fetch(url);
+    }
     if (!r.ok) throw Error('Geometry unavailable: ' + path);
     const buffer = await meshBuffer(r);
     if (delivery) {
@@ -145,13 +156,14 @@ async function start() {
     [targetMesh.geometry,actualMesh.geometry] = loaded;
     frames.push(...loaded.slice(2));
     frames.push(actualMesh.geometry);
-    captions = ['毛坯 · 未加工', ...entry.frames.map((f,i)=>`${f.label || ['钻入','继续钻削','接近贯穿'][i]} · ${f.time_seconds.toFixed(2)} s`), '完成 · 最终结果'];
+    captions = ['毛坯 · 未加工', ...entry.frames.map((f,i)=>`${f.label || ['钻入','继续钻削','接近贯穿'][i]}${Number.isFinite(f.time_seconds) ? ` · ${f.time_seconds.toFixed(2)} s` : ''}`), '完成 · 最终结果'];
     frame = 0; qa.frameIndex = 0; slider.value = '0'; slider.max = String(frames.length-1);
     qa.caseId = id; qa.stockThicknessMm = high[2]-low[2]; qa.frameCount = frames.length;
     qa.iouPercent = entry.iou_percent; qa.ownedGeometryCount = owned.length;
     root.querySelector('.fallback img').src = new URL(entry.thumbnail,siteBase);
     const resolutionNote = root.querySelector('[data-resolution-note]');
-    if (resolutionNote) resolutionNote.textContent = entry.frames.length ?
+    if (resolutionNote) resolutionNote.textContent = entry.frames.some(f=>f.kind==='cumulative_native_prefix') ?
+      `真实去料状态：时间帧 0.05 mm，工步边界与最终结果 ${entry.resolution_mm} mm。工步边界复用同一原生 NC 的累计前缀结果；播放速度仅作展示。` : entry.frames.length ?
       `同一 NC 的真实去料状态。中间帧 0.05 mm，最终结果 ${entry.resolution_mm} mm；播放速度仅作展示。` :
       `此反例保留最终去料结果，分辨率 ${entry.resolution_mm} mm。`;
     reset(); setMode(entry.frames.length ? requestedMode : 'compare'); enabled(true);

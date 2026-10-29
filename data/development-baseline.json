@@ -231,13 +231,15 @@
         {
           "id": "combined-features",
           "name": "多工序组合",
-          "status": "planned",
-          "label": "待开发",
-          "scope": "换刀与工序间实际剩料连续。",
+          "status": "sample_cases_measured",
+          "label": "四例顺序加工实测",
+          "scope": "单次装夹，面铣后铣通孔；逐工步剩料、工序和刀具分别核对，尚未覆盖所有组合。",
           "stages": [
-            "s4"
+            "s4/sequence"
           ],
-          "evidence_paths": []
+          "evidence_paths": [
+            "results/S4-SEQUENCE-RESULTS-20261029-r1/summary.json"
+          ]
         },
         {
           "id": "multi-face-surface",
@@ -321,10 +323,23 @@
         },
         {
           "id": "milling-tools",
-          "name": "换刀 / 非零偏置",
+          "name": "XYZ / 换刀 / 显式启动状态",
+          "status": "sample_cases_measured",
+          "label": "两把铣刀实测",
+          "scope": "φ2 面铣 → φ1 铣孔；空刀升至清空高度后装刀。G54 与刀长补偿为零，夹具未建模。",
+          "stages": [
+            "s4/sequence"
+          ],
+          "evidence_paths": [
+            "results/S4-SEQUENCE-RESULTS-20261029-r1/tool-change/cam-result.json"
+          ]
+        },
+        {
+          "id": "nonzero-offsets",
+          "name": "非零工件 / 刀长偏置",
           "status": "planned",
           "label": "待开发",
-          "scope": "扩展换刀、刀长、工件坐标与多工序连接。",
+          "scope": "明确刀尖、工件坐标及控制器偏置语义，并做错误配置反例。",
           "stages": [
             "s4"
           ],
