@@ -1,0 +1,106 @@
+{
+  "sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+  "valid_single_solid": true,
+  "bounds": {
+    "min": [
+      0.0,
+      0.0,
+      -1.5
+    ],
+    "max": [
+      8.0,
+      6.0,
+      -0.5
+    ]
+  },
+  "volume_mm3": 39.50379452088744,
+  "reference_class": "z_layered_box_minus_rounded_pocket_and_disjoint_through_cylinders",
+  "features": [
+    {
+      "id": "P1",
+      "kind": "planar_top",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "top_face": "Face3",
+      "top_z_mm": -0.5,
+      "thickness_mm": 1.0,
+      "bounds_xy_mm": {
+        "min": [
+          0,
+          0
+        ],
+        "max": [
+          8,
+          6
+        ]
+      }
+    },
+    {
+      "id": "K1",
+      "kind": "rounded_rectangular_pocket",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "center_xy_mm": [
+        3,
+        3
+      ],
+      "width_mm": 4,
+      "height_mm": 3,
+      "corner_radius_mm": 0.6,
+      "depth_mm": 0.5,
+      "floor_face": "Face17"
+    },
+    {
+      "id": "H1",
+      "kind": "through_hole",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "center_xy_mm": [
+        3,
+        3
+      ],
+      "diameter_mm": 1.5,
+      "cylinder_face": "Face16"
+    },
+    {
+      "id": "H2",
+      "kind": "through_hole",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "center_xy_mm": [
+        6.5,
+        3
+      ],
+      "diameter_mm": 1.5,
+      "cylinder_face": "Face15"
+    }
+  ],
+  "hole_locations": {
+    "H1": "pocket_floor",
+    "H2": "top_land"
+  },
+  "target_created_before_nc": true,
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "construction": "Box minus independently filleted rectangular prism and full-height hole cylinders; original BREP reread for native face binding."
+}

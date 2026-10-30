@@ -1,0 +1,114 @@
+{
+  "schema": "genlaw.fixture-clearance-model.v1",
+  "units": "mm",
+  "frame": "original_cad_material",
+  "scope": "modeled_tool_assembly_vs_static_fixtures",
+  "minimum_clearance_mm": 0.05,
+  "basis": "Synthetic geometry observer qualification only. Clamp rests on the original top surface in the facing region. Original stock and clamp interiors do not overlap.",
+  "tools": [
+    {
+      "tool_number": 1,
+      "gauge_to_tip_mm": 30.4,
+      "segments": [
+        {
+          "id": "cutting",
+          "role": "cutting",
+          "z_min_mm": 0,
+          "z_max_mm": 5,
+          "radius_mm": 0.5
+        },
+        {
+          "id": "shank",
+          "role": "shank",
+          "z_min_mm": 5,
+          "z_max_mm": 20,
+          "radius_mm": 0.5
+        },
+        {
+          "id": "holder",
+          "role": "holder",
+          "z_min_mm": 20,
+          "z_max_mm": 30.4,
+          "radius_mm": 2.0
+        }
+      ]
+    },
+    {
+      "tool_number": 2,
+      "gauge_to_tip_mm": 30.0,
+      "segments": [
+        {
+          "id": "cutting",
+          "role": "cutting",
+          "z_min_mm": 0,
+          "z_max_mm": 5,
+          "radius_mm": 0.25
+        },
+        {
+          "id": "shank",
+          "role": "shank",
+          "z_min_mm": 5,
+          "z_max_mm": 20,
+          "radius_mm": 0.25
+        },
+        {
+          "id": "holder",
+          "role": "holder",
+          "z_min_mm": 20,
+          "z_max_mm": 30.0,
+          "radius_mm": 2.0
+        }
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "left-jaw",
+      "shape": "box",
+      "bounds_mm": {
+        "min": [
+          -2,
+          1,
+          -3
+        ],
+        "max": [
+          -0.8,
+          5,
+          -0.8
+        ]
+      }
+    },
+    {
+      "id": "right-jaw",
+      "shape": "box",
+      "bounds_mm": {
+        "min": [
+          8.8,
+          1,
+          -3
+        ],
+        "max": [
+          10,
+          5,
+          -0.8
+        ]
+      }
+    },
+    {
+      "id": "top-clamp",
+      "shape": "box",
+      "bounds_mm": {
+        "min": [
+          3.8,
+          2.8,
+          0
+        ],
+        "max": [
+          4.2,
+          3.2,
+          0.5
+        ]
+      }
+    }
+  ]
+}

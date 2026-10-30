@@ -1,0 +1,93 @@
+{
+  "id": "holder-overhang",
+  "status": "passed",
+  "input": {
+    "path": "validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r3/holder-overhang/input.json",
+    "sha256": "2d931fed1af0e3a682dda1f3aa6b346bad43b3c9796020e432c20e62740c9c24"
+  },
+  "run_result": {
+    "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/holder-overhang/run-result.json",
+    "sha256": "76c5c68a9446cde01f8b1d889138e36510bd36ad933ca9c33f695aa2828ee48a"
+  },
+  "fixture_report": {
+    "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/holder-overhang/fixture-verification.json",
+    "sha256": "e2b6cb9eb740287aaf93736fe1bd20659e4463ff7397f75af766087debb80f11"
+  },
+  "fixture_status": "collision",
+  "native_motion_count": 578,
+  "tested_pairs": 5193,
+  "findings": [
+    {
+      "fixture_id": "overhead-arm",
+      "tool_number": 1,
+      "segment_id": "holder",
+      "role": "holder",
+      "status": "collision",
+      "native_motion_count": 4,
+      "first_motion_index": 44,
+      "first_nc_line": 66,
+      "first_motion_type": "CUTTING",
+      "first_observation": {
+        "status": "collision",
+        "witness": {
+          "parameter": 0.4038461538461539,
+          "tip_mm": [
+            7.600000000000001,
+            2.5,
+            -0.25
+          ],
+          "closest_fixture_xy_mm": [
+            9.2,
+            2.5
+          ],
+          "axis_to_rectangle_mm": 1.5999999999999979,
+          "minimum_squared_xy_mm2": 2.5599999999999934,
+          "axial_overlap_parameter_interval": [
+            0.0,
+            1.0
+          ],
+          "candidate_count": 4,
+          "radial_gap_mm": -0.3899990000000022,
+          "effective_radius_mm": 1.989999,
+          "effective_axial_interval_mm": [
+            20.010001,
+            30.389999
+          ]
+        },
+        "outer_envelope": {
+          "parameter": 0.4038461538461539,
+          "tip_mm": [
+            7.600000000000001,
+            2.5,
+            -0.25
+          ],
+          "closest_fixture_xy_mm": [
+            9.2,
+            2.5
+          ],
+          "axis_to_rectangle_mm": 1.5999999999999979,
+          "minimum_squared_xy_mm2": 2.5599999999999934,
+          "axial_overlap_parameter_interval": [
+            0.0,
+            1.0
+          ],
+          "candidate_count": 4,
+          "radial_gap_mm": -0.4600010000000023,
+          "effective_radius_mm": 2.060001,
+          "effective_axial_interval_mm": [
+            19.939999,
+            30.460001
+          ]
+        }
+      }
+    }
+  ],
+  "minimum_clearance_mm": 0.05,
+  "same_executable_nc_as_original": true,
+  "original_cad_unchanged": true,
+  "source_cad_sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+  "material_simulation_executed": false,
+  "iou_percent": null,
+  "production_approved": false,
+  "whole_process_card_complete": false
+}

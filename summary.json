@@ -1,0 +1,769 @@
+{
+  "schema": "genlaw.fixture-clearance-suite.v1",
+  "status": "completed",
+  "cases": [
+    {
+      "id": "clear-jaws",
+      "status": "passed",
+      "input": {
+        "path": "validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r3/clear-jaws/input.json",
+        "sha256": "b54407539bcc0428d6a9d19cd7d426fb01ab2df330172b2832052cd8e269ef99"
+      },
+      "run_result": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/run-result.json",
+        "sha256": "bd1751ecddd05f86532ff1cbf152da642a6b956ebce07bd583e2fb82fde47150"
+      },
+      "fixture_report": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/fixture-verification.json",
+        "sha256": "3483b70c29519bf958aa26c99b48cfe2474db7b5dd58727e8025e3b37b882ab5"
+      },
+      "fixture_status": "clear",
+      "native_motion_count": 578,
+      "tested_pairs": 3462,
+      "findings": [],
+      "minimum_clearance_mm": 0.05,
+      "same_executable_nc_as_original": true,
+      "original_cad_unchanged": true,
+      "source_cad_sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+      "material_simulation_executed": true,
+      "iou_percent": 99.85319931404085,
+      "feature_checks": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass",
+          "outline_xy": "numeric_pass"
+        },
+        "K1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.96969294042735,
+          "checks": 4,
+          "all_passed": true,
+          "acceptance": {
+            "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-01/fixture-integration-verification.json",
+            "sha256": "4203a1b0645421212404898aa7327624d4dca873666be70b94d4f9fa300e7160"
+          }
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.95023047767437,
+          "checks": 7,
+          "all_passed": true,
+          "acceptance": {
+            "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-02/fixture-integration-verification.json",
+            "sha256": "236e80dfcd72767ddf71ddc460b22966519b5ed0b542d09ddcd30d7f855770a0"
+          }
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.91965650272242,
+          "checks": 10,
+          "all_passed": true,
+          "acceptance": {
+            "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-03/fixture-integration-verification.json",
+            "sha256": "225c0fd8c497210ecb183484afc47ff39ea86ebd3442bd8bfc137de524629186"
+          }
+        }
+      ],
+      "mesh": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/simulated.stl",
+        "sha256": "ddbe955823c114ff97481a3258454d51b24b271ad0168b196403ff4d773a98f9"
+      },
+      "same_material_mesh_as_original": true,
+      "same_iou_as_original": true,
+      "acceptance_coordinator": {
+        "path": "tools/accept_fixture_clearance_run.py",
+        "sha256": "27cc283626f8a79a5ebc3cfd25457027951d9e8d90a3af449ce144b1a94a1e92"
+      },
+      "preserved_incorrect_evaluator_attempt": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-02/software-verification.json",
+        "sha256": "26676214621067609d7a93b7260ab4608291740ce5b739df2c43207452e0103b"
+      },
+      "production_approved": false,
+      "whole_process_card_complete": false
+    },
+    {
+      "id": "cutting-clamp",
+      "status": "passed",
+      "input": {
+        "path": "validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r3/cutting-clamp/input.json",
+        "sha256": "660db5097b28f8c68e872dc4f43311407f4300cbb5e7b5d151dc1a4a468db184"
+      },
+      "run_result": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/cutting-clamp/run-result.json",
+        "sha256": "a7fe6a5e55a00f62c2a7b50a4810d352b8d6f5e12479feedb8c371de17690c1d"
+      },
+      "fixture_report": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/cutting-clamp/fixture-verification.json",
+        "sha256": "74b7e80f6c7a5dc8029340c73ec765ead5d05b4e5045f24f897178424d3ea0b0"
+      },
+      "fixture_status": "collision",
+      "native_motion_count": 578,
+      "tested_pairs": 5193,
+      "findings": [
+        {
+          "fixture_id": "top-clamp",
+          "tool_number": 1,
+          "segment_id": "cutting",
+          "role": "cutting",
+          "status": "collision",
+          "native_motion_count": 30,
+          "first_motion_index": 5,
+          "first_nc_line": 27,
+          "first_motion_type": "CUTTING",
+          "first_observation": {
+            "status": "collision",
+            "witness": {
+              "parameter": 0.40909090909090895,
+              "tip_mm": [
+                4.2,
+                3.1000000000000014,
+                -0.25
+              ],
+              "closest_fixture_xy_mm": [
+                4.2,
+                3.1000000000000014
+              ],
+              "axis_to_rectangle_mm": 0.0,
+              "minimum_squared_xy_mm2": 0.0,
+              "axial_overlap_parameter_interval": [
+                0.0,
+                1.0
+              ],
+              "candidate_count": 5,
+              "radial_gap_mm": -0.489999,
+              "effective_radius_mm": 0.489999,
+              "effective_axial_interval_mm": [
+                0.010001,
+                4.989999
+              ]
+            },
+            "outer_envelope": {
+              "parameter": 0.40909090909090895,
+              "tip_mm": [
+                4.2,
+                3.1000000000000014,
+                -0.25
+              ],
+              "closest_fixture_xy_mm": [
+                4.2,
+                3.1000000000000014
+              ],
+              "axis_to_rectangle_mm": 0.0,
+              "minimum_squared_xy_mm2": 0.0,
+              "axial_overlap_parameter_interval": [
+                0.0,
+                1.0
+              ],
+              "candidate_count": 5,
+              "radial_gap_mm": -0.560001,
+              "effective_radius_mm": 0.560001,
+              "effective_axial_interval_mm": [
+                -0.060001,
+                5.060001
+              ]
+            }
+          }
+        },
+        {
+          "fixture_id": "top-clamp",
+          "tool_number": 2,
+          "segment_id": "cutting",
+          "role": "cutting",
+          "status": "indeterminate",
+          "native_motion_count": 17,
+          "first_motion_index": 279,
+          "first_nc_line": 232,
+          "first_motion_type": "RAPID",
+          "first_observation": {
+            "status": "indeterminate",
+            "reason": "Requested clearance or contact cannot be decided inside the conservative error envelope.",
+            "outer_envelope": {
+              "parameter": 1.0,
+              "tip_mm": [
+                3.5,
+                3.0,
+                -0.3999999999999986
+              ],
+              "closest_fixture_xy_mm": [
+                3.8,
+                3.0
+              ],
+              "axis_to_rectangle_mm": 0.2999999999999998,
+              "minimum_squared_xy_mm2": 0.0899999999999999,
+              "axial_overlap_parameter_interval": [
+                0.0,
+                1.0
+              ],
+              "candidate_count": 2,
+              "radial_gap_mm": -0.010001000000000149,
+              "effective_radius_mm": 0.31000099999999997,
+              "effective_axial_interval_mm": [
+                -0.060001,
+                5.060001
+              ]
+            }
+          }
+        }
+      ],
+      "minimum_clearance_mm": 0.05,
+      "same_executable_nc_as_original": true,
+      "original_cad_unchanged": true,
+      "source_cad_sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+      "material_simulation_executed": false,
+      "iou_percent": null,
+      "production_approved": false,
+      "whole_process_card_complete": false
+    },
+    {
+      "id": "holder-overhang",
+      "status": "passed",
+      "input": {
+        "path": "validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r3/holder-overhang/input.json",
+        "sha256": "2d931fed1af0e3a682dda1f3aa6b346bad43b3c9796020e432c20e62740c9c24"
+      },
+      "run_result": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/holder-overhang/run-result.json",
+        "sha256": "76c5c68a9446cde01f8b1d889138e36510bd36ad933ca9c33f695aa2828ee48a"
+      },
+      "fixture_report": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/holder-overhang/fixture-verification.json",
+        "sha256": "e2b6cb9eb740287aaf93736fe1bd20659e4463ff7397f75af766087debb80f11"
+      },
+      "fixture_status": "collision",
+      "native_motion_count": 578,
+      "tested_pairs": 5193,
+      "findings": [
+        {
+          "fixture_id": "overhead-arm",
+          "tool_number": 1,
+          "segment_id": "holder",
+          "role": "holder",
+          "status": "collision",
+          "native_motion_count": 4,
+          "first_motion_index": 44,
+          "first_nc_line": 66,
+          "first_motion_type": "CUTTING",
+          "first_observation": {
+            "status": "collision",
+            "witness": {
+              "parameter": 0.4038461538461539,
+              "tip_mm": [
+                7.600000000000001,
+                2.5,
+                -0.25
+              ],
+              "closest_fixture_xy_mm": [
+                9.2,
+                2.5
+              ],
+              "axis_to_rectangle_mm": 1.5999999999999979,
+              "minimum_squared_xy_mm2": 2.5599999999999934,
+              "axial_overlap_parameter_interval": [
+                0.0,
+                1.0
+              ],
+              "candidate_count": 4,
+              "radial_gap_mm": -0.3899990000000022,
+              "effective_radius_mm": 1.989999,
+              "effective_axial_interval_mm": [
+                20.010001,
+                30.389999
+              ]
+            },
+            "outer_envelope": {
+              "parameter": 0.4038461538461539,
+              "tip_mm": [
+                7.600000000000001,
+                2.5,
+                -0.25
+              ],
+              "closest_fixture_xy_mm": [
+                9.2,
+                2.5
+              ],
+              "axis_to_rectangle_mm": 1.5999999999999979,
+              "minimum_squared_xy_mm2": 2.5599999999999934,
+              "axial_overlap_parameter_interval": [
+                0.0,
+                1.0
+              ],
+              "candidate_count": 4,
+              "radial_gap_mm": -0.4600010000000023,
+              "effective_radius_mm": 2.060001,
+              "effective_axial_interval_mm": [
+                19.939999,
+                30.460001
+              ]
+            }
+          }
+        }
+      ],
+      "minimum_clearance_mm": 0.05,
+      "same_executable_nc_as_original": true,
+      "original_cad_unchanged": true,
+      "source_cad_sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+      "material_simulation_executed": false,
+      "iou_percent": null,
+      "production_approved": false,
+      "whole_process_card_complete": false
+    },
+    {
+      "id": "rapid-crossing",
+      "status": "passed",
+      "input": {
+        "path": "validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r3/rapid-crossing/input.json",
+        "sha256": "bb03cecedc2d4d34030e85cd4ed2c31e9ef5a55c0873ecf04491833820623b95"
+      },
+      "run_result": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/rapid-crossing/run-result.json",
+        "sha256": "f8137b4b86b12df88563495d8bd84272e3e3c017cd5bb196634e2c860bc662b6"
+      },
+      "fixture_report": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/rapid-crossing/fixture-verification.json",
+        "sha256": "016d50af6a057dfdfca7d8ba1985f044010f46dc9aea072150f2c95989adbffb"
+      },
+      "fixture_status": "collision",
+      "native_motion_count": 578,
+      "tested_pairs": 5193,
+      "findings": [
+        {
+          "fixture_id": "approach-post",
+          "tool_number": 1,
+          "segment_id": "cutting",
+          "role": "cutting",
+          "status": "collision",
+          "native_motion_count": 1,
+          "first_motion_index": 1,
+          "first_nc_line": 23,
+          "first_motion_type": "RAPID",
+          "first_observation": {
+            "status": "collision",
+            "witness": {
+              "parameter": 0.3275109170305677,
+              "tip_mm": [
+                -5.054585152838428,
+                -12.5,
+                3.0
+              ],
+              "closest_fixture_xy_mm": [
+                -5.054585152838428,
+                -12.5
+              ],
+              "axis_to_rectangle_mm": 0.0,
+              "minimum_squared_xy_mm2": 0.0,
+              "axial_overlap_parameter_interval": [
+                0.0,
+                1.0
+              ],
+              "candidate_count": 6,
+              "radial_gap_mm": -0.489999,
+              "effective_radius_mm": 0.489999,
+              "effective_axial_interval_mm": [
+                0.010001,
+                4.989999
+              ]
+            },
+            "outer_envelope": {
+              "parameter": 0.3275109170305677,
+              "tip_mm": [
+                -5.054585152838428,
+                -12.5,
+                3.0
+              ],
+              "closest_fixture_xy_mm": [
+                -5.054585152838428,
+                -12.5
+              ],
+              "axis_to_rectangle_mm": 0.0,
+              "minimum_squared_xy_mm2": 0.0,
+              "axial_overlap_parameter_interval": [
+                0.0,
+                1.0
+              ],
+              "candidate_count": 6,
+              "radial_gap_mm": -0.560001,
+              "effective_radius_mm": 0.560001,
+              "effective_axial_interval_mm": [
+                -0.060001,
+                5.060001
+              ]
+            }
+          }
+        }
+      ],
+      "minimum_clearance_mm": 0.05,
+      "same_executable_nc_as_original": true,
+      "original_cad_unchanged": true,
+      "source_cad_sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+      "material_simulation_executed": false,
+      "iou_percent": null,
+      "production_approved": false,
+      "whole_process_card_complete": false
+    },
+    {
+      "id": "near-clearance",
+      "status": "passed",
+      "input": {
+        "path": "validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r3/near-clearance/input.json",
+        "sha256": "47203011179ec6fb254407a05a32b956d1bfaa6a717fcb8c805db80568192fbb"
+      },
+      "run_result": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/near-clearance/run-result.json",
+        "sha256": "5e2f6a92d1fb38214988b1bc388deb766c709f9c9309f6a9b080230ae86ac56c"
+      },
+      "fixture_report": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/near-clearance/fixture-verification.json",
+        "sha256": "61e14b9b3b868d50f9d252dfd564f9836d67debe55966d3617ddbfb8b2056ce8"
+      },
+      "fixture_status": "indeterminate",
+      "native_motion_count": 578,
+      "tested_pairs": 5193,
+      "findings": [
+        {
+          "fixture_id": "clearance-post",
+          "tool_number": 1,
+          "segment_id": "cutting",
+          "role": "cutting",
+          "status": "indeterminate",
+          "native_motion_count": 1,
+          "first_motion_index": 1,
+          "first_nc_line": 23,
+          "first_motion_type": "RAPID",
+          "first_observation": {
+            "status": "indeterminate",
+            "reason": "Requested clearance or contact cannot be decided inside the conservative error envelope.",
+            "outer_envelope": {
+              "parameter": 0.33328150050104993,
+              "tip_mm": [
+                -4.967449342434146,
+                -12.367853638525958,
+                3.0
+              ],
+              "closest_fixture_xy_mm": [
+                -5.42083085,
+                -12.06889902
+              ],
+              "axis_to_rectangle_mm": 0.5430733425060441,
+              "minimum_squared_xy_mm2": 0.2949286553406871,
+              "axial_overlap_parameter_interval": [
+                0.0,
+                1.0
+              ],
+              "candidate_count": 7,
+              "radial_gap_mm": -0.01692765749395586,
+              "effective_radius_mm": 0.560001,
+              "effective_axial_interval_mm": [
+                -0.060001,
+                5.060001
+              ]
+            }
+          }
+        }
+      ],
+      "minimum_clearance_mm": 0.05,
+      "same_executable_nc_as_original": true,
+      "original_cad_unchanged": true,
+      "source_cad_sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+      "material_simulation_executed": false,
+      "iou_percent": null,
+      "production_approved": false,
+      "whole_process_card_complete": false
+    }
+  ],
+  "existing_part_geometries": 1,
+  "new_part_families": 0,
+  "resource_configurations": 5,
+  "complete_material_runs": 1,
+  "collision_blocks": 3,
+  "indeterminate_blocks": 1,
+  "all_fixture_checks_before_material": true,
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "s4_complete": false,
+  "inputs": {
+    "path": "validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r3/manifest.json",
+    "sha256": "b27a2c6d06f73c9f6183de20a1b58a4af4496dc882970a9d81f374019a8659ea"
+  },
+  "sources": {
+    "path": "docs/checkpoints/2026-10-30/fixture-clearance-01/numerical-source-freeze.json",
+    "sha256": "1355cc858bc8cc2a96cd09bad948935039c9cca570973e3c06e6612ac703cf34"
+  },
+  "resources": [
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/camotics-resources.json",
+        "sha256": "66a9519359c803cf10ab9de3521aa585ec3353124ee1127c72023b84beeeb33c"
+      },
+      "seconds": 6.720382000959944,
+      "rss_bytes": 523939840
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-01/camotics-resources.json",
+        "sha256": "6dd9e15c840183a1a2e7b73f563c81920f2146854938ce1072b68abdc2fffda3"
+      },
+      "seconds": 5.147637742978986,
+      "rss_bytes": 514519040
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-01/measure-plan-resources.json",
+        "sha256": "35dee415baf67b2a64d9c420c82c22a8279cf688a218c8198d62a9cdc7d84e6b"
+      },
+      "seconds": 1.0510973880300298,
+      "rss_bytes": 239407104
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-01/measure-resources.json",
+        "sha256": "2eca6e8e5cbdbfe77a96c77218ea48b8977b1a9ccd61b0a58fb2e1e80b18b843"
+      },
+      "seconds": 6.298365091031883,
+      "rss_bytes": 215740416
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-01/observe-resources.json",
+        "sha256": "29c58c1651052a938b92e0620f6cd9b75448f86a42163310e05592c0aa9255f1"
+      },
+      "seconds": 2.833338600001298,
+      "rss_bytes": 227627008
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-02/camotics-resources.json",
+        "sha256": "d7858f293e8da853027fc61533da08b893bf7c82dcce1e245513fb4023f9368a"
+      },
+      "seconds": 5.778913463989738,
+      "rss_bytes": 528113664
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-02/measure-plan-resources.json",
+        "sha256": "9a7c7d079a86d96d7345e1878242b146c92789ede3a58dd26f17f58be2186e5b"
+      },
+      "seconds": 1.0497666210285388,
+      "rss_bytes": 250683392
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-02/measure-resources.json",
+        "sha256": "60bd3cebdef08b028609327522d07ec95032a4056f689983761b399ee8bb933f"
+      },
+      "seconds": 8.969588726002257,
+      "rss_bytes": 250814464
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-02/observe-resources.json",
+        "sha256": "25049b0d6feae96199b0e2a518f8e6aa82cab991deff2b1ffa24a3b1a989fe05"
+      },
+      "seconds": 6.503985903982539,
+      "rss_bytes": 262713344
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-03/camotics-resources.json",
+        "sha256": "6a28f84eb4f2e213c33f527832f80c3245b708c26ca310b81978c27ba515a5a2"
+      },
+      "seconds": 6.19579327700194,
+      "rss_bytes": 523403264
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-03/measure-plan-resources.json",
+        "sha256": "142e12ce9eea12b4931185809a1a242bced752735007310b95010bac40f4e755"
+      },
+      "seconds": 1.0503128499840386,
+      "rss_bytes": 250253312
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-03/measure-resources.json",
+        "sha256": "4be289dc9fa1b44aaefbfaf67aae203776254f46b05d32f7f3040c90b958d5db"
+      },
+      "seconds": 8.500947268039454,
+      "rss_bytes": 245878784
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/checkpoints/after-03/observe-resources.json",
+        "sha256": "d95377ce1172b7d574ea2966d200f58d3ab9a81eb4efadcc86880ec3f667c964"
+      },
+      "seconds": 7.4510132760042325,
+      "rss_bytes": 236351488
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/fixture-native-path-resources.json",
+        "sha256": "f491e5e3f5b85f0388d798f8ede6a7d82bc7c9f85cff2fa2edbeb24d1d467982"
+      },
+      "seconds": 0.10737569798948243,
+      "rss_bytes": 8192
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/freecad-resources.json",
+        "sha256": "2ba20b37a9265d4b7fb0a8b298a99645264ed92df9d095ffe357c022f14cfc2b"
+      },
+      "seconds": 5.8858173720072955,
+      "rss_bytes": 278327296
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/measure-plan-resources.json",
+        "sha256": "e947092bf9b5e14ba695f5daa4bede45a4289a4c2a99890e043e294429d57771"
+      },
+      "seconds": 1.1556955319829285,
+      "rss_bytes": 249344000
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/measure-resources.json",
+        "sha256": "21c0dedd7ee177289be08d497e145e150fd966c6890fa3537dea6e413e9bad4c"
+      },
+      "seconds": 9.972992423980031,
+      "rss_bytes": 254046208
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/verify-features-resources.json",
+        "sha256": "92aeb6ff3a7e5348914578404ca8e897901efc23c00ffcc63056a96b37353d6f"
+      },
+      "seconds": 8.955203215009533,
+      "rss_bytes": 257978368
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/verify-fixture-clearance-resources.json",
+        "sha256": "d382d3b175e66f61268b3bb567062d57cfd0f2b749e8a2d87e8bf840a96af78c"
+      },
+      "seconds": 0.4235795139684342,
+      "rss_bytes": 48377856
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/verify-software-resources.json",
+        "sha256": "7f87c210a9977afe3c455e4d43fc70aa843adf4c470cc3452804a52b20d96baa"
+      },
+      "seconds": 8.51468542101793,
+      "rss_bytes": 249573376
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/cutting-clamp/fixture-native-path-resources.json",
+        "sha256": "e1bae90fd99cfe12bc55cc7920b6830b876cba23112f029e40defceb07f6fb68"
+      },
+      "seconds": 0.10679660498863086,
+      "rss_bytes": 8192
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/cutting-clamp/freecad-resources.json",
+        "sha256": "ea288e7401669a4a7026c855b89d79af34e58cf2b2ccc0984ce92e049ec54f2a"
+      },
+      "seconds": 4.420966300996952,
+      "rss_bytes": 285143040
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/cutting-clamp/verify-fixture-clearance-resources.json",
+        "sha256": "5ac35677b77fdeb76aa64a56612931bc862130eeab87b52d7b408d1ac1ac573b"
+      },
+      "seconds": 0.4199610030045733,
+      "rss_bytes": 48381952
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/holder-overhang/fixture-native-path-resources.json",
+        "sha256": "03a8b0e61faf23dae7468b1aceb8069ed40636dffa7629d7b9db28ee468ac1d1"
+      },
+      "seconds": 0.10584262001793832,
+      "rss_bytes": 8192
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/holder-overhang/freecad-resources.json",
+        "sha256": "1f1d6256bae0e6433e2c2dc15cf662762db0d936e54e364b06a46de5b56fa154"
+      },
+      "seconds": 4.198386239004321,
+      "rss_bytes": 287887360
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/holder-overhang/verify-fixture-clearance-resources.json",
+        "sha256": "a0bb6bf740ab985de8648a67888facff42a3569c3d4031378f535c25c06c7ab5"
+      },
+      "seconds": 0.4206606330117211,
+      "rss_bytes": 48328704
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/rapid-crossing/fixture-native-path-resources.json",
+        "sha256": "d3e3197273211f50fe075bc622592f77293b1c46cf161a7a1bc87b380c879f87"
+      },
+      "seconds": 0.10617871599970385,
+      "rss_bytes": 8192
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/rapid-crossing/freecad-resources.json",
+        "sha256": "5ce955312ecb94007ab5e647c1f0450e49b235725ec66168d0683fa19038c732"
+      },
+      "seconds": 4.515902770042885,
+      "rss_bytes": 292466688
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/rapid-crossing/verify-fixture-clearance-resources.json",
+        "sha256": "a79445fba1521d9b1c16552327cefada8a1b6c0401c962f14a5286e411dfddd5"
+      },
+      "seconds": 0.4207661870168522,
+      "rss_bytes": 48861184
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/near-clearance/fixture-native-path-resources.json",
+        "sha256": "efb5837feff64ae3c5cf30ec05b97373bbf5197698d3f50259f90574199600e4"
+      },
+      "seconds": 0.10606390202883631,
+      "rss_bytes": 8192
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/near-clearance/freecad-resources.json",
+        "sha256": "4b936ff0a6704eab93ca44cba738468d4c2e1f23838f43a6326fb1cb1e49ee67"
+      },
+      "seconds": 4.300526236009318,
+      "rss_bytes": 277245952
+    },
+    {
+      "source": {
+        "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/near-clearance/verify-fixture-clearance-resources.json",
+        "sha256": "f12f6ccff6f0910c3082aa0f2322bbb7f2b2fa7d5d50d548607eba00800f4b21"
+      },
+      "seconds": 0.4206417059758678,
+      "rss_bytes": 48951296
+    }
+  ],
+  "max_worker_seconds": 9.972992423980031,
+  "peak_worker_rss_bytes": 528113664
+}

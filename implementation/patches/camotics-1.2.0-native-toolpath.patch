@@ -1,0 +1,95 @@
+--- a/src/camsim.cpp
++++ b/src/camsim.cpp
+@@ -55,6 +55,7 @@
+     string resolution;
+     unsigned threads;
+     bool inspectGrid;
++    bool inspectToolpath;
+     string cellWindow;
+     string materialOrigin;
+     string toolGaugeLengths;
+@@ -68,7 +69,8 @@
+   public:
+     SimApp() :
+       Application("CAMotics Sim"), time(0), reduce(true), binary(true),
+-      threads(SystemInfo::instance().getCPUCount()), inspectGrid(false) {
++      threads(SystemInfo::instance().getCPUCount()), inspectGrid(false),
++      inspectToolpath(false) {
+ 
+       cmdLine.setUsageArgs
+         ("[OPTIONS] <project.camotics | input.gcode | input.tpl> <output.stl>");
+@@ -88,6 +90,10 @@
+       cmdLine.addTarget("threads", threads, "Number of simulation threads.");
+       cmdLine.addTarget("inspect-grid", inspectGrid,
+                         "Write explicit global grid metadata without running NC.");
++      cmdLine.addTarget("inspect-toolpath", inspectToolpath,
++                        "Execute complete strict tool-length NC and export native "
++                        "gauge/material-tip segments as JSON, without surface computation. "
++                        "Requires explicit material origin, mounted lengths and one thread.");
+       cmdLine.addTarget("cell-window", cellWindow,
+                         "Half-open global cell indices x0,y0,z0,x1,y1,z1; "
+                         "requires explicit metric stock, one thread and no reduction.");
+@@ -283,6 +289,38 @@
+     }
+ 
+ 
++    void writeToolpath(const GCode::ToolPath &gauge,
++                       const GCode::ToolPath &material) {
++      if (gauge.size() != material.size() || material.empty() ||
++          200000 < material.size())
++        THROW("Native path export requires 1 to 200000 complete moves");
++      ostream &out = *output;
++      out.imbue(std::locale::classic());
++      out << setprecision(numeric_limits<double>::max_digits10)
++          << "{\"schema\":\"genlaw.native-toolpath.v1\",\"units\":\"mm\","
++          << "\"frame\":\"original_cad_material_tip\","
++          << "\"nc_executed\":true,\"surface_computed\":false,"
++          << "\"native_max_arc_error_mm\":0.01,\"moves\":[";
++      for (unsigned i = 0; i < material.size(); ++i) {
++        const GCode::Move &m = material.at(i), &g = gauge.at(i);
++        out << (i ? "," : "") << "{\"index\":" << i
++            << ",\"line\":" << m.getLine() << ",\"tool_number\":" << m.getTool()
++            << ",\"type\":\"" << m.getType().toString() << "\",\"feed_mm_min\":"
++            << m.getFeed() << ",\"spindle_rpm\":" << m.getSpeed();
++        const char *keys[] = {"start_mm", "end_mm", "gauge_start_mm", "gauge_end_mm"};
++        const GCode::Axes *points[] = {&m.getStart(), &m.getEnd(), &g.getStart(), &g.getEnd()};
++        for (unsigned j = 0; j < 4; ++j) {
++          out << ",\"" << keys[j] << "\":[";
++          for (unsigned k = 0; k < 3; ++k)
++            out << (k ? "," : "") << points[j]->getIndex(k);
++          out << "]";
++        }
++        out << "}";
++      }
++      out << "]}" << endl;
++    }
++
++
+     void run() {
+       // Open project
+       string ext = SystemUtilities::extension(input);
+@@ -309,6 +347,9 @@
+       if (!materialOrigin.empty()) origin = parseMaterialOrigin();
+       map<unsigned, double> lengths;
+       if (!toolGaugeLengths.empty()) lengths = parseToolGaugeLengths();
++      if (inspectToolpath && (materialOrigin.empty() || lengths.empty() ||
++          inspectGrid || !cellWindow.empty() || time != 0 || threads != 1 || reduce))
++        THROW("Native path export requires full strict tool-length mode, one thread and no reduction");
+       if (inspectGrid || !cellWindow.empty()) {
+         Grid grid = explicitGrid();
+         if (!cellWindow.empty()) window = parseCellWindow(grid);
+@@ -320,12 +361,14 @@
+       // Generate tool path
+       SmartPointer<GCode::ToolPath> path =
+         cutSim.computeToolPath(project, !lengths.empty());
++      SmartPointer<GCode::ToolPath> gaugePath = path;
+       if (!materialOrigin.empty()) {
+         LOG_INFO(1, "Material frame: " << (lengths.empty() ? "machine tip" :
+                  "machine gauge minus actual tool length") <<
+                  " minus declared origin " << origin << "mm");
+         path = inMaterialFrame(path, origin, lengths);
+       }
++      if (inspectToolpath) {writeToolpath(*gaugePath, *path); return;}
+ 
+       // Simulate
+       Rectangle3D bounds = project.getWorkpiece().getBounds();

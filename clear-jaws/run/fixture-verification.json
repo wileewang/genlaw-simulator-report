@@ -1,0 +1,67 @@
+{
+  "schema": "genlaw.fixture-clearance-observations.v1",
+  "status": "clear",
+  "modeled_clearance_passed": true,
+  "pair_counts": {
+    "clear": 3462,
+    "collision": 0,
+    "indeterminate": 0
+  },
+  "expected_pairs": 3462,
+  "tested_pairs": 3462,
+  "native_motion_count": 578,
+  "unloaded_spindle_moves_excluded": 1,
+  "findings": [],
+  "minimum_clearance_mm": 0.05,
+  "native_arc_error_mm": 0.01,
+  "floating_guard_mm": 1e-06,
+  "continuous_linear_sweeps_checked": true,
+  "endpoint_only_sampling": false,
+  "scope": "modeled_tool_assembly_vs_static_fixtures",
+  "manufacturing_approved": false,
+  "limits": [
+    "Only the explicitly modeled static boxes and fixed-Z cylindrical tool assembly are checked.",
+    "Native arc chord error is included conservatively; near contact or insufficient clearance stays indeterminate.",
+    "All loaded motion start/end poses are checked; physical tool-changer exchange motion is not modeled.",
+    "Spindle/machine bodies, clamping force, evolving workpiece versus noncutting tool parts and five-axis motion are not modeled."
+  ],
+  "model_ref": {
+    "path": "validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r3/clear-jaws/fixture-model.json",
+    "sha256": "9824951e8a153657aec9db0881af11c7e130e03b101abf470c1a49c36644f036"
+  },
+  "native_path": {
+    "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/fixture-native-path.json",
+    "sha256": "336c9dea42eab30e3106c97a8a3a1675a7655f78b5a9715f1e023f4a1a13b1dd"
+  },
+  "engine": {
+    "path": "engines/camotics/releases/1.2.0-genlaw-native-path-r1/manifest.json",
+    "sha256": "21d360068c714908554e1072aefe368b02b07b57c44200bb46cad3c5a7bb8f8d"
+  },
+  "observer_selection": {
+    "path": "engines/camotics/fixture-observer-engine.json",
+    "sha256": "e523cfa35fd20a1cc621efd64094d4172f907a2a0046309db04dc30339183978"
+  },
+  "original_cad_sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+  "nc_sha256": "7cbe9f0fcefab4ba84572871de1145a503887cf20fcbf8c0e37e0bc06354edb1",
+  "nc_text_modified": false,
+  "project_sha256": "34c6e03f2f0d69f5d1a5d80b884663d2c0593bf83330203671b43c6f2aa67e06",
+  "controller_initialization_sha256": "070c511c166805c97c743285eeb25eccd0a833818c9f520d5a0ea1fffd9e550f",
+  "native_resources": {
+    "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/clear-jaws/fixture-native-path-resources.json",
+    "sha256": "f491e5e3f5b85f0388d798f8ede6a7d82bc7c9f85cff2fa2edbeb24d1d467982"
+  },
+  "checked_before_material_removal": true,
+  "declared_resource_scope_integrated": true,
+  "actual_tool_change_poses_present": true,
+  "source_code": [
+    {
+      "path": "genlaw_pipeline/fixture_runtime.py",
+      "sha256": "8b9ba5c19eae4245888742705f4dd4fe77ff62f284617a5938ada22f6dbb3bb5"
+    },
+    {
+      "path": "genlaw_pipeline/fixture_clearance.py",
+      "sha256": "c267998d8b1a0e99ed3a67cf849d62dadb57e5511632448ba69b47ebc92df027"
+    }
+  ],
+  "whole_process_card_complete": false
+}

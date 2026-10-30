@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-c",
+    "import fitz,json\nfrom pathlib import Path\ncp=Path('docs/checkpoints/2026-10-30/fixture-clearance-01'); root=Path('validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r3'); rows=[]\nfor key in ['clear-jaws','holder-overhang','rapid-crossing','near-clearance']:\n for name in (['process-card.pdf','fixture-inspection.pdf'] if key=='clear-jaws' else ['fixture-inspection.pdf']):\n  doc=fitz.open(root/key/name)\n  for i,p in enumerate(doc):\n   target=cp/('r3-'+key+'-'+Path(name).stem+'-'+str(i+1)+'.png'); p.get_pixmap(matrix=fitz.Matrix(1.25,1.25),alpha=False).save(target)\n   rows.append({'case':key,'pdf':name,'page':i+1,'image':str(target),'text':p.get_text()})\n(cp/'paper-render-r3.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))\nprint('Rendered',len(rows),'pages; no NC started.')\n"
+  ],
+  "status": "completed",
+  "started": true,
+  "success": true,
+  "wall_limit_seconds": 60,
+  "per_process_address_space_limit_bytes": 2147483648,
+  "observed_group_rss_limit_bytes": 2147483648,
+  "rss_poll_interval_seconds": 0.1,
+  "file_size_limit_bytes": 67108864,
+  "cpu_affinity": [
+    1
+  ],
+  "thread_environment_limit": 1,
+  "peak_observed_group_rss_bytes": 60108800,
+  "subprocess_limits_are_manufacturing_evidence": false,
+  "pid": 885778,
+  "exit_code": 0,
+  "seconds": 0.42153146700002253
+}

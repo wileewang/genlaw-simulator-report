@@ -1,0 +1,309 @@
+{
+  "schema": "genlaw.preparation-resources.v1",
+  "id": "S4-FIXTURE-cutting-clamp-RESOURCES-r3",
+  "units": "mm",
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "machine": {
+    "kind": "generic_XYZ_reference",
+    "axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "real_machine_qualified": false
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "tools": [
+    {
+      "id": "T1",
+      "kind": "flat_endmill",
+      "center_cutting": true,
+      "diameter_mm": 1,
+      "cutting_length_mm": 5,
+      "length_mm": 20,
+      "basis": "Explicit synthetic test tool, not a qualified physical tool or holder.",
+      "number": 1
+    },
+    {
+      "id": "T2",
+      "kind": "flat_endmill",
+      "center_cutting": true,
+      "diameter_mm": 0.5,
+      "cutting_length_mm": 5,
+      "length_mm": 20,
+      "basis": "Explicit synthetic test tool, not a qualified physical tool or holder.",
+      "number": 2
+    }
+  ],
+  "setup": {
+    "schema": "genlaw.setup.xyz-tool-length-fixtures.v1",
+    "units": "mm",
+    "height_parameter_frame": "original_cad",
+    "material_origin_machine_mm": [
+      10,
+      20,
+      30
+    ],
+    "work_origin_cad_mm": [
+      4,
+      3,
+      -0.5
+    ],
+    "work_offset_origin_machine_mm": [
+      14,
+      23,
+      29.5
+    ],
+    "work_offset": "G55",
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "fixture_mode": "declared_static_tool_envelopes_vs_fixture_boxes",
+    "basis": "Explicit original material frame, static mounted lengths and separately frozen fixture/tool envelope appendix.",
+    "tool_length_compensation": {
+      "mode": "static_Z_absolute_gauge",
+      "actual_lengths_mm": [
+        {
+          "tool_number": 1,
+          "gauge_to_tip_mm": 30.4
+        },
+        {
+          "tool_number": 2,
+          "gauge_to_tip_mm": 30.0
+        }
+      ],
+      "registers_mm": [
+        {
+          "h_register": 1,
+          "offset_mm": 30.4
+        },
+        {
+          "h_register": 2,
+          "offset_mm": 30.0
+        }
+      ],
+      "tool_bindings": [
+        {
+          "tool_number": 1,
+          "h_register": 1
+        },
+        {
+          "tool_number": 2,
+          "h_register": 2
+        }
+      ],
+      "minimum_clearance_above_stock_mm": 1.0,
+      "basis": "Declared actual mounted lengths and independently initialized controller table; nominal equality in the absolute gauge reference is checked, never inferred."
+    },
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "position_frame": "machine",
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 63.4,
+      "basis": "Unloaded G53 gauge retract clears original stock for the longest mounted tool before the first M6."
+    },
+    "fixture_geometry": {
+      "schema": "genlaw.fixture-geometry-ref.v1",
+      "file_key": "fixture_geometry",
+      "sha256": "67ee1650ed29f0b0dd825b9a64fd1ec4f93d4bac7f437361d2782c5f849aca36",
+      "source": {
+        "document_id": "FIXTURE",
+        "page": 1,
+        "location": "静态夹具实体、装刀外形与验收规则表"
+      }
+    }
+  },
+  "cutting_presets": [
+    {
+      "id": "FACE-REFERENCE",
+      "operation": "face_milling",
+      "tool_id": "T1",
+      "material_label": "6061-T6",
+      "feed_unit": "mm/min",
+      "speed_unit": "rpm",
+      "clearing_pattern": "Offset",
+      "cut_mode": "Climb",
+      "start_at": "Center",
+      "entry": "vertical_center_cutting",
+      "keep_tool_down": false,
+      "radial_allowance_mm": 0,
+      "axial_allowance_mm": 0,
+      "spindle_rpm": {
+        "value": 3000,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "feed_mm_min": {
+        "value": 120,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "plunge_mm_min": {
+        "value": 60,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_down_mm": {
+        "value": 0.25,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_over_percent": {
+        "value": 50,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "safe_height_mm": {
+        "value": 2,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "clearance_height_mm": {
+        "value": 3,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "path_tolerance_mm": {
+        "value": 0.001,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "boundary_shape": "Boundbox",
+      "clear_edges": true,
+      "exclude_raised_areas": false
+    },
+    {
+      "id": "HELIX-REFERENCE",
+      "operation": "helical_hole_milling",
+      "tool_id": "T2",
+      "material_label": "6061-T6",
+      "feed_unit": "mm/min",
+      "speed_unit": "rpm",
+      "clearing_pattern": "ConcentricHelix",
+      "cut_mode": "Climb",
+      "start_at": "Inside",
+      "entry": "helical",
+      "keep_tool_down": false,
+      "radial_allowance_mm": 0,
+      "axial_allowance_mm": 0,
+      "spindle_rpm": {
+        "value": 3000,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "feed_mm_min": {
+        "value": 120,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "plunge_mm_min": {
+        "value": 60,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_down_mm": {
+        "value": 0.25,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_over_percent": {
+        "value": 50,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "safe_height_mm": {
+        "value": 2,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "clearance_height_mm": {
+        "value": 3,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "path_tolerance_mm": {
+        "value": 0.001,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "start_radius_mm": 0,
+      "rapid_policy": "air_entry_or_proven_cleared_hole",
+      "entry_clearance_mm": {
+        "value": 0.1,
+        "basis": "Explicit software test attachment: 0.1 mm air entry and exit allowance; not a physical fixture approval."
+      },
+      "breakthrough_mm": {
+        "value": 0.1,
+        "basis": "Explicit software test attachment: 0.1 mm air entry and exit allowance; not a physical fixture approval."
+      }
+    },
+    {
+      "id": "POCKET-REFERENCE",
+      "operation": "pocket_milling",
+      "tool_id": "T1",
+      "material_label": "6061-T6",
+      "feed_unit": "mm/min",
+      "speed_unit": "rpm",
+      "clearing_pattern": "Offset",
+      "cut_mode": "Climb",
+      "start_at": "Center",
+      "entry": "vertical_center_cutting",
+      "keep_tool_down": false,
+      "radial_allowance_mm": 0,
+      "axial_allowance_mm": 0,
+      "spindle_rpm": {
+        "value": 3000,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "feed_mm_min": {
+        "value": 120,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "plunge_mm_min": {
+        "value": 60,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_down_mm": {
+        "value": 0.25,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_over_percent": {
+        "value": 50,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "safe_height_mm": {
+        "value": 2,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "clearance_height_mm": {
+        "value": 3,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "path_tolerance_mm": {
+        "value": 0.001,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "floor_outline": "clear_entire_outer_wire"
+    }
+  ],
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Explicit grid frozen before CAM under the unchanged 5,000,000-cell budget; no scaling of the physical target."
+  }
+}

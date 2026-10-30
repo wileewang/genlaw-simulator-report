@@ -1,0 +1,95 @@
+{
+  "schema": "genlaw.preparation-input.v12",
+  "id": "S4-FIXTURE-clear-jaws-r3",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card",
+    "FIXTURE": "fixture_paper"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2",
+      "OP10.3",
+      "OP10.4",
+      "OP10.5"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "显式完整矩形来料；各工步连续去料，不从预期成品重新创建来料。",
+      "OP10.1": "按已绑定附页布置静态夹具及装刀外形；原 CAD 坐标、实际刀长和 H 表显式一致。夹紧力未验证。"
+    },
+    "excluded_checks": [
+      "unmodeled_fixture_geometry",
+      "holder_vs_evolving_workpiece",
+      "spindle_and_machine_body_collision",
+      "toolchanger_exchange_motion",
+      "clamping_force",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "01ceaac50229c3e07c6706e46a7785f12976fbd65033304e01a39daccf47d3ae"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "4fc12f88257caab63090b006807aa9833e187e4e2b6ab7ea251dd6733b924338"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "630c57824b4aa17b4b64af89e82fd8147d0fbca37b5aff03759c9cfadfeaec7b"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "4ba3e2cf8183e4da8fc3b8223d680543bf5cb83327c3dc2b644a6a22bdecb08b"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "62e0f8a0d91c4763a37b4a4a1a6077a78d7b243e7275bccb42e8f3c241f69ec8"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "9c444a3488ea1948c30527d71ca8ce77e1deb6caff56af1bc9fa8fdcdaea279d"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "649b5aff44eea76a092a60c752d836b82cb035b331993724de2a623b0435b108"
+    },
+    "expected_states": {
+      "path": "expected-states.json",
+      "sha256": "de62735330252f4bee4c4d23ef02aef7cf5d914f0ad7f64b9492f21d000bdb09"
+    },
+    "after_01": {
+      "path": "expected-state-01.brep",
+      "sha256": "258319f2285206c3993dc6b680197e9c4f5ea18360118686329cc132cc25247e"
+    },
+    "after_02": {
+      "path": "expected-state-02.brep",
+      "sha256": "f465d84222edd4227a17f12d7d14c62534d5ebbc7c53822ba1c84098e5a48321"
+    },
+    "after_03": {
+      "path": "expected-state-03.brep",
+      "sha256": "d0e4f52d5ed98f460220b48bac3714f1ced464f6dc25c4736a9170e8029998ce"
+    },
+    "after_04": {
+      "path": "expected-state-04.brep",
+      "sha256": "9366a0649dd5fc7aaba6163e1147e1449bce3f718023f23f1121e8c1a4801ebd"
+    },
+    "fixture_geometry": {
+      "path": "fixture-model.json",
+      "sha256": "9824951e8a153657aec9db0881af11c7e130e03b101abf470c1a49c36644f036"
+    },
+    "fixture_paper": {
+      "path": "fixture-inspection.pdf",
+      "sha256": "842899af1a32da3f462544fb47ffd92bef8752ef92b704e6d8b6ba583d6ab77d"
+    }
+  },
+  "capability": "pocketed_planar_milling_xy"
+}

@@ -1,0 +1,83 @@
+scons: Reading SConscript files ...
+   Compiler: gcc (gnu)
+   Platform: posix
+       Mode: gnu
+       Arch: x86
+GCC Version: 11
+       Jobs: 1
+Checking for C library pthread... (cached) yes
+Checking for C header file zlib.h... (cached) yes
+Checking for C library z... (cached) yes
+Checking for C header file bzlib.h... (cached) yes
+Checking for C library bz2... (cached) yes
+Checking for C header file expat.h... (cached) yes
+Checking for C library expat... (cached) yes
+Checking for C header file pthread.h... (cached) yes
+Checking for C library pthread... (cached) yes
+Checking for C library dl... (cached) yes
+Checking for C library sqlite3... (cached) yes
+Checking for C header file sqlite3.h... (cached) yes
+Checking for C function sqlite3_backup_init()... (cached) yes
+Checking for C header file event.h... (cached) yes
+Checking for C library event... (cached) yes
+Checking for C++ header file re2/re2.h... (cached) yes
+Checking for C library re2... (cached) yes
+Checking for C header file yaml.h... (cached) yes
+Checking for C library yaml... (cached) yes
+Checking for C library leveldb... no
+Checking for C header file mysql/mysql.h... no
+Checking for C function clock_gettime()... (cached) yes
+Checking for C library dl... (cached) yes
+Checking for C header file openssl/ssl.h... no
+Checking for C library libeay32MT... no
+Checking for C library libeay32... no
+Need openssl(cached) error: no result
+Checking for C++ header file ChakraCore.h... no
+Need C++ header ChakraCore.h(cached) error: no result
+Checking for C++ header file v8.h... no
+Need C++ header v8.h(cached) error: no result
+Checking for C header file pthread.h... (cached) yes
+Checking for C library pthread... (cached) yes
+Checking for C header file valgrind/valgrind.h... no
+Checking for C library cbang-boost... (cached) yes
+Checking for C library cbang... (cached) yes
+Checking for C++ header file cbang/Exception.h... (cached) yes
+Checking for C header file Python.h... (cached) yes
+Checking for C function Py_Initialize()... no
+Trying local python-config.py
+Python path configuration:
+  PYTHONHOME = '/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr'
+  PYTHONPATH = (not set)
+  program name = 'python3'
+  isolated = 0
+  environment = 1
+  user site = 1
+  import site = 1
+  sys._base_executable = '/usr/bin/python3'
+  sys.base_prefix = '/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr'
+  sys.base_exec_prefix = '/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr'
+  sys.platlibdir = 'lib'
+  sys.executable = '/usr/bin/python3'
+  sys.prefix = '/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr'
+  sys.exec_prefix = '/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr'
+  sys.path = [
+    '/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/lib/python310.zip',
+    '/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/lib/python3.10',
+    '/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/lib/python3.10/lib-dynload',
+  ]
+Fatal Python error: init_fs_encoding: failed to get the Python codec of the filesystem encoding
+Python runtime state: core initialized
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00007f8ddc193480 (most recent call first):
+  <no Python frame>
+Checking for C++ header file dxflib/dl_dxf.h... (cached) yes
+Checking for C library dxflib... no
+Need library dxflib(cached) error: no result
+Checking for C library stdc++... (cached) yes
+scons: done reading SConscript files.
+scons: Building targets ...
+g++ -o build/camsim.o -c -std=c++11 -Wno-deprecated-declarations -fno-pie -O2 -fPIC -DNDEBUG -D_REENTRANT -DHAVE_EXPAT -DHAVE_PTHREADS -DHAVE_LIBSQLITE -DHAVE_CBANG -DUSING_CBANG -I/home/team-member-01/GenLaw_simulator/engines/camotics/vendor/cbang/src -I/home/team-member-01/GenLaw_simulator/engines/camotics/vendor/cbang/include -I/home/team-member-01/GenLaw_simulator/engines/camotics/vendor/cbang/src/boost -I/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/include -Isrc -Ibuild -Isrc src/camsim.cpp
+build_function(["build/build_info.cpp"], [])
+g++ -o camsim -Wl,-S -Wl,-x -no-pie -pthread build/camsim.o -L/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/lib/x86_64-linux-gnu -L/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/lib/x86_64-linux-gnu -L/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/lib/x86_64-linux-gnu -L/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/lib/x86_64-linux-gnu -L/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/lib/x86_64-linux-gnu -L/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/lib/x86_64-linux-gnu -L/home/team-member-01/GenLaw_simulator/engines/camotics/.work/sysroot/usr/lib/x86_64-linux-gnu -L/home/team-member-01/GenLaw_simulator/engines/camotics/vendor/cbang/lib build/libCAMotics.a build/libDXF.a build/libSTL.a build/libGCode.a -lstdc++ -lcbang -lcbang-boost -lpthread -ldl -lpthread -lexpat -lbz2 -lz -lpthread build/dxflib/libdxflib.a
+scons: done building targets.

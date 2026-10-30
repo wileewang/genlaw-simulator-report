@@ -1,0 +1,43 @@
+{
+  "at_utc": "2026-10-30T02:02:32.117009+00:00",
+  "previous_goal_turn_classification": "progress",
+  "prior_progress_evidence": "web/qa/s4-dimension-chain-01/release.json",
+  "roadmap_reference": "web/content/roadmap-multi-pockets-20261030.json#/stages/3/remaining",
+  "objective": "Model explicitly declared fixture solids and mounted cutting/shank/holder envelopes against complete native NC motion; preserve independent actual material/CAD comparison.",
+  "implementation_steps": [
+    "Add opt-in native full-path export before surface computation, keeping the selected engine unchanged.",
+    "Prove continuous swept axial-cylinder versus box checks for every native linear motion; account conservatively for existing arc chord error.",
+    "Bind envelopes and obstacles to unchanged native NC, original CAD/material frame and independent mounted tool lengths.",
+    "Verify clear, cutting collision, holder collision and rapid crossing controls on existing simple FreeCAD NC, with original material evidence preserved.",
+    "Integrate qualified resource input and results into standard preparation/run; archive inputs before new complete runs.",
+    "Publish the new scope with CAD/IoU, resource configuration and motion evidence after a new independent page reviewer."
+  ],
+  "initial_scope": {
+    "axes": "XYZ / fixed +Z tool axis",
+    "controller": "existing strict metric static-Z tool-length backend",
+    "fixture_solids": "explicit axis-aligned boxes in unchanged original CAD/material frame",
+    "mounted_tools": "finite positive cylinders with independent axial start/end from actual tool tip",
+    "changes_between_moves": "static fixture geometry; ordinary programmed tool change poses only",
+    "excluded": [
+      "tool-changer exchange mechanism",
+      "unmodeled spindle/machine body",
+      "fixture holding forces",
+      "material deformation",
+      "rotation/five-axis",
+      "whole-card production approval"
+    ]
+  },
+  "algorithm": "Analytic minimum planar segment-to-rectangle distance restricted to the exact axial-overlap parameter interval; conservative outer envelope proves clearance, eroded inner envelope witnesses robust collision, gap/contact remains indeterminate.",
+  "native_arc_error_mm": 0.01,
+  "limits": {
+    "global_heavy_jobs": 1,
+    "cpu": 1,
+    "rss_bytes": 2147483648,
+    "native_and_postprocess_seconds": 60,
+    "files_bytes": 67108864,
+    "maximum_cells": 5000000,
+    "maximum_xy_samples": 100000
+  },
+  "no_new_user_confirmation_needed": true,
+  "goal_complete": false
+}

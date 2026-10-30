@@ -1,0 +1,69 @@
+{
+  "id": "near-clearance",
+  "status": "passed",
+  "input": {
+    "path": "validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r3/near-clearance/input.json",
+    "sha256": "47203011179ec6fb254407a05a32b956d1bfaa6a717fcb8c805db80568192fbb"
+  },
+  "run_result": {
+    "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/near-clearance/run-result.json",
+    "sha256": "5e2f6a92d1fb38214988b1bc388deb766c709f9c9309f6a9b080230ae86ac56c"
+  },
+  "fixture_report": {
+    "path": "validation/runs/S4-FIXTURE-CLEARANCE-SUITE-20261030-r1/near-clearance/fixture-verification.json",
+    "sha256": "61e14b9b3b868d50f9d252dfd564f9836d67debe55966d3617ddbfb8b2056ce8"
+  },
+  "fixture_status": "indeterminate",
+  "native_motion_count": 578,
+  "tested_pairs": 5193,
+  "findings": [
+    {
+      "fixture_id": "clearance-post",
+      "tool_number": 1,
+      "segment_id": "cutting",
+      "role": "cutting",
+      "status": "indeterminate",
+      "native_motion_count": 1,
+      "first_motion_index": 1,
+      "first_nc_line": 23,
+      "first_motion_type": "RAPID",
+      "first_observation": {
+        "status": "indeterminate",
+        "reason": "Requested clearance or contact cannot be decided inside the conservative error envelope.",
+        "outer_envelope": {
+          "parameter": 0.33328150050104993,
+          "tip_mm": [
+            -4.967449342434146,
+            -12.367853638525958,
+            3.0
+          ],
+          "closest_fixture_xy_mm": [
+            -5.42083085,
+            -12.06889902
+          ],
+          "axis_to_rectangle_mm": 0.5430733425060441,
+          "minimum_squared_xy_mm2": 0.2949286553406871,
+          "axial_overlap_parameter_interval": [
+            0.0,
+            1.0
+          ],
+          "candidate_count": 7,
+          "radial_gap_mm": -0.01692765749395586,
+          "effective_radius_mm": 0.560001,
+          "effective_axial_interval_mm": [
+            -0.060001,
+            5.060001
+          ]
+        }
+      }
+    }
+  ],
+  "minimum_clearance_mm": 0.05,
+  "same_executable_nc_as_original": true,
+  "original_cad_unchanged": true,
+  "source_cad_sha256": "adc3cb427176a39189093e38e6226e8855b0b719d4955cf9ce3f5b4b6f4ba4b9",
+  "material_simulation_executed": false,
+  "iou_percent": null,
+  "production_approved": false,
+  "whole_process_card_complete": false
+}

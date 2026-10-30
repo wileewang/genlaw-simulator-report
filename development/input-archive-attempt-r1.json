@@ -1,0 +1,8 @@
+{
+  "status": "failed_before_nc",
+  "cause": "Builder copied replaceable process-plan/resources files before exclusive creation of their new versions. Existing-file guard correctly stopped the build.",
+  "evidence": "freeze-fixture-chain-inputs-01.log",
+  "partial_inputs_preserved": "validation/feature-inputs/S4-FIXTURE-CLEARANCE-20261030-r1",
+  "nc_or_material_started": false,
+  "correction": "Copy only immutable input assets and build new documents in a fresh r2 directory; preserve the failed attempt."
+}
