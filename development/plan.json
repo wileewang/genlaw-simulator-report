@@ -1,0 +1,35 @@
+{
+  "schema": "genlaw.development-step.v1",
+  "at_utc": "2026-10-30T00:15:37.823858+00:00",
+  "previous_goal_turn": "progress",
+  "authoritative_private_head": "b56f370493a8e6bb989b077ba02ef49fd3a872d8",
+  "previous_release": "web/qa/s4-drawing-dimensions-01/release.json",
+  "purpose": "Integrate declared dimensional requirements into preparation and automatic final inspection of normal FreeCAD/CAMotics jobs.",
+  "scope": [
+    "Optional versioned inspection declaration in process input; preserve legacy plans when absent",
+    "Check original CAD, datum, provenance, criterion and available numerical resolution before native execution",
+    "Carry requirements binding through the execution plan and re-check it after native CAM",
+    "Use unchanged planar dimension kernel on actual final NC mesh automatically",
+    "Fresh small X/Y capsule and two/three-hole jobs; preserve initial PDF/CAD/criteria before execution",
+    "Reject unsupported/malformed data before native work; keep missing manufacturing criteria separate"
+  ],
+  "not_claimed": [
+    "No new five-axis, collision, material physics, whole-card or production approval",
+    "Do not rerun large 100 mm removal solely for presentation",
+    "Do not silently treat arbitrary extra files as consumed dimensions"
+  ],
+  "resource_limits": "Existing one-heavy-job, one CPU, 2 GiB, native 60s limits unchanged",
+  "web_constraints": {
+    "remaining_bytes": 188,
+    "html_total_bytes": 607194,
+    "indentation_only_saving_bytes": 6680,
+    "preserve_existing_evidence_urls_and_precision": true,
+    "new_independent_reviewer_required": true
+  },
+  "qualification": [
+    "New-input rejection and old execution-plan equivalence",
+    "Fresh complete small jobs with unchanged optional-dimension kernel",
+    "Actual measured dimension failures remain distinguishable from execution completion",
+    "Compare actual output geometry/IoU and expose declared input, prepared output and inspection evidence on webpage"
+  ]
+}

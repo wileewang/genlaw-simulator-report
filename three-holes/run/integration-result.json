@@ -1,0 +1,96 @@
+{
+  "id": "three-holes",
+  "status": "passed",
+  "input": {
+    "path": "validation/feature-inputs/S4-DIMENSION-CHAIN-20261030-r2/three-holes/input.json",
+    "sha256": "d2ecd07db1872a90dd73efbb46a0cfef7fec793908e28e20c67b2458ab7a80bc"
+  },
+  "result": {
+    "path": "validation/runs/S4-DIMENSION-CHAIN-20261030-r2/three-holes/run-result.json",
+    "sha256": "beb458ad27f57502d320cfba5da3f5c49b4b3b8799ddc7a3a95c6a7be768527a"
+  },
+  "dimensions": {
+    "path": "validation/runs/S4-DIMENSION-CHAIN-20261030-r2/three-holes/dimension-verification.json",
+    "sha256": "1aff6dda3a5993fa0e637cd1a1922bfac2f61beca9a2120f2d2c50817a77f453"
+  },
+  "iou_percent": 99.4643810616929,
+  "dimension_count": 7,
+  "dimension_statuses": {
+    "length": "numeric_pass",
+    "width": "numeric_pass",
+    "low-radius": "numeric_pass",
+    "high-radius": "numeric_pass",
+    "high-end-offset": "numeric_pass",
+    "H1-H2-pitch": "numeric_pass",
+    "H2-H3-pitch": "numeric_pass"
+  },
+  "original_feature_statuses": {
+    "P1": {
+      "top_height": "numeric_pass",
+      "target_thickness": "numeric_pass",
+      "top_geometry": "numeric_pass"
+    },
+    "C1": {
+      "outer_profile_xy": "numeric_pass",
+      "retained_thickness": "numeric_pass",
+      "retained_planes": "numeric_pass",
+      "exterior_clearance": "numeric_pass"
+    },
+    "H1": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_pass",
+      "through": "numeric_pass"
+    },
+    "H2": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_pass",
+      "through": "numeric_pass"
+    },
+    "H3": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_pass",
+      "through": "numeric_pass"
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "after-01",
+      "iou_percent": 99.97404938340512,
+      "check_count": 3,
+      "all_passed": true
+    },
+    {
+      "id": "after-02",
+      "iou_percent": 99.77656025665527,
+      "check_count": 7,
+      "all_passed": true
+    },
+    {
+      "id": "after-03",
+      "iou_percent": 99.68812413195819,
+      "check_count": 10,
+      "all_passed": true
+    },
+    {
+      "id": "after-04",
+      "iou_percent": 99.58533471383751,
+      "check_count": 13,
+      "all_passed": true
+    }
+  ],
+  "actual_mesh": {
+    "path": "validation/runs/S4-DIMENSION-CHAIN-20261030-r2/three-holes/simulated.stl",
+    "sha256": "791b07fba9bab8abfbf50407050a401ac9f6e78c8aa54fb906a4feb28f08cbcc"
+  },
+  "target_cad": "820cf60e6d9cef39245fcf5a495546fa8d6652e771ccfe3bfdda02649d9b99b6",
+  "prior_fixture": {
+    "run": "validation/runs/S4-PROFILE-SEQUENCE-SUITE-20261029-r1/three-holes",
+    "mesh_sha256": "791b07fba9bab8abfbf50407050a401ac9f6e78c8aa54fb906a4feb28f08cbcc",
+    "identical_actual_mesh_bytes": true,
+    "identical_iou": true
+  },
+  "fresh_freecad_and_actual_material": true,
+  "dimensions_declared_before_native": true,
+  "original_checks_replaced": false,
+  "production_approved": false
+}

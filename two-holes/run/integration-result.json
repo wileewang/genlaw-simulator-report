@@ -1,0 +1,84 @@
+{
+  "id": "two-holes",
+  "status": "passed",
+  "input": {
+    "path": "validation/feature-inputs/S4-DIMENSION-CHAIN-20261030-r2/two-holes/input.json",
+    "sha256": "772b0746671975fb7b3ad9ab929b87318cd859b876cc0da7d6fd73e0e607ec7c"
+  },
+  "result": {
+    "path": "validation/runs/S4-DIMENSION-CHAIN-20261030-r1/two-holes/run-result.json",
+    "sha256": "7b2ad79e30ca3b876b1b2b4511466079bd761cc5dcf9e2150549bc4a9d5fde14"
+  },
+  "dimensions": {
+    "path": "validation/runs/S4-DIMENSION-CHAIN-20261030-r1/two-holes/dimension-verification.json",
+    "sha256": "2399adad8df28cd831afe6bdb41819d2bd26fe6aee1105ae2d61454dbebb19db"
+  },
+  "iou_percent": 99.31135110977523,
+  "dimension_count": 6,
+  "dimension_statuses": {
+    "length": "numeric_pass",
+    "width": "numeric_pass",
+    "low-radius": "numeric_pass",
+    "high-radius": "numeric_pass",
+    "high-end-offset": "numeric_pass",
+    "H1-H2-pitch": "numeric_pass"
+  },
+  "original_feature_statuses": {
+    "P1": {
+      "top_height": "numeric_pass",
+      "target_thickness": "numeric_pass",
+      "top_geometry": "numeric_pass"
+    },
+    "C1": {
+      "outer_profile_xy": "numeric_pass",
+      "retained_thickness": "numeric_pass",
+      "retained_planes": "numeric_pass",
+      "exterior_clearance": "numeric_pass"
+    },
+    "H1": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_pass",
+      "through": "numeric_pass"
+    },
+    "H2": {
+      "diameter": "numeric_pass",
+      "position_xy": "numeric_pass",
+      "through": "numeric_pass"
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "after-01",
+      "iou_percent": 99.9732476523125,
+      "check_count": 3,
+      "all_passed": true
+    },
+    {
+      "id": "after-02",
+      "iou_percent": 99.66938849899934,
+      "check_count": 7,
+      "all_passed": true
+    },
+    {
+      "id": "after-03",
+      "iou_percent": 99.51225287304052,
+      "check_count": 10,
+      "all_passed": true
+    }
+  ],
+  "actual_mesh": {
+    "path": "validation/runs/S4-DIMENSION-CHAIN-20261030-r1/two-holes/simulated.stl",
+    "sha256": "6f47bc428f93fbb4aae44cfc3d5f34a3bfcf3180acb0846086b01d1197cede87"
+  },
+  "target_cad": "6bb2241279908b5fcf48ae2b3de1d7bc3ca6fbbc6b5479c907050d6c3089715e",
+  "prior_fixture": {
+    "run": "validation/runs/S4-PROFILE-SEQUENCE-SUITE-20261029-r1/baseline",
+    "mesh_sha256": "c9fcd331db7a38cf4b9577018d388d03509304c0bbe1e8c707d19f069953991b",
+    "identical_actual_mesh_bytes": false,
+    "identical_iou": true
+  },
+  "fresh_freecad_and_actual_material": true,
+  "dimensions_declared_before_native": true,
+  "original_checks_replaced": false,
+  "production_approved": false
+}

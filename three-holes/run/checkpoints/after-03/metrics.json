@@ -1,0 +1,300 @@
+{
+  "schema": "genlaw.sectional-iou.v2",
+  "status": "measured_numerical_estimate",
+  "iou": 0.9968812413195819,
+  "iou_percent": 99.68812413195819,
+  "volumes": {
+    "actual_volume_mm3": 41.3650698395277,
+    "target_volume_mm3": 41.42477703671037,
+    "intersection_mm3": 41.330272233968024,
+    "union_mm3": 41.45957464227005,
+    "iou": 0.9968812413195819,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 0.034797605559674594,
+  "missing_material_mm3": 0.09450480274234252,
+  "actual_mesh": {
+    "source_sha256": "1c36270f7e271f9a659a0dbc992a3fa5a13a6d98f0740579d5635a022efdb1d2",
+    "raw_triangles": 395352,
+    "exact_duplicate_faces_removed": 2696,
+    "triangles": 392656,
+    "vertices": 196328,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 41.365069796358206,
+    "bounds": {
+      "min": [
+        0.0020507811568677425,
+        -9.765625145519152e-05,
+        -1.500097632408142
+      ],
+      "max": [
+        11.99462890625,
+        3.9999022483825684,
+        -0.5000976324081421
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "schema": "genlaw.native-binding.v11",
+    "status": "verified",
+    "reference_class": "z_extruded_capsule_minus_disjoint_through_cylinders",
+    "bounds": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        12,
+        4,
+        -0.5
+      ]
+    },
+    "volume_mm3": 41.424777960769376,
+    "valid_single_solid": true,
+    "incoming_stock_bounds": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        12,
+        4,
+        0
+      ]
+    },
+    "features": [
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          2
+        ],
+        "diameter_mm": 2,
+        "cylinder_face": "Face7"
+      }
+    ],
+    "facing_feature": {
+      "id": "P1",
+      "kind": "planar_top",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "top_face": "Face5",
+      "top_z_mm": -0.5,
+      "thickness_mm": 1.0,
+      "bounds_xy_mm": {
+        "min": [
+          0,
+          0
+        ],
+        "max": [
+          12,
+          4
+        ]
+      }
+    },
+    "feature_bindings": [
+      {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face5",
+        "top_z_mm": -0.5,
+        "thickness_mm": 1.0,
+        "bounds_xy_mm": {
+          "min": [
+            0,
+            0
+          ],
+          "max": [
+            12,
+            4
+          ]
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "capsule_outline",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face5",
+        "major_axis": "X",
+        "center_xy_mm": [
+          6.0,
+          2.0
+        ],
+        "length_mm": 12,
+        "width_mm": 4,
+        "thickness_mm": 1.0,
+        "top_z_mm": -0.5
+      },
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          2
+        ],
+        "diameter_mm": 2,
+        "cylinder_face": "Face7"
+      }
+    ],
+    "original_final_cad_sha256": "820cf60e6d9cef39245fcf5a495546fa8d6652e771ccfe3bfdda02649d9b99b6",
+    "completed_features": [
+      "P1",
+      "C1",
+      "H1"
+    ],
+    "reference_for_iou": "Independent pre-NC expected state, verified against original final CAD dimensions; never used as simulation stock.",
+    "profile_feature": {
+      "id": "C1",
+      "kind": "capsule_outline",
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "top_face": "Face5",
+      "major_axis": "X",
+      "center_xy_mm": [
+        6.0,
+        2.0
+      ],
+      "length_mm": 12,
+      "width_mm": 4,
+      "thickness_mm": 1.0,
+      "top_z_mm": -0.5
+    },
+    "native_observed_bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        12.0,
+        4.0,
+        -0.5
+      ]
+    },
+    "bounds_comparison_tolerance_mm": 1e-08,
+    "cad_sha256": "ea14e60c5404ce83bdfc3867a5b548ebf394584d4ceadbad440e256dd2f19798",
+    "oracle_ref": {
+      "path": "expected-state-03.brep",
+      "sha256": "ea14e60c5404ce83bdfc3867a5b548ebf394584d4ceadbad440e256dd2f19798"
+    },
+    "symmetric_difference_mm3": 0.0
+  },
+  "native_geometry_sha256": "67bb6a2830cc7ffa342479b362cc39812eb97e5fb00703695482f46ee3c6492c",
+  "absolute_iou_refinement_difference": 1.423650645149266e-07,
+  "section_levels": 43,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "method": "Closed STL cross-sections, all vertex-height intervals, 3-point Gauss integration against native-checked analytic CAD section.",
+  "registration": "none; same CAD/G54 coordinates",
+  "full_tolerance_acceptance": false,
+  "production_approved": false,
+  "limits": [
+    "Numerical volume estimate, not a certified error bound.",
+    "Independent native CAD and analytic volume bind the target, never the generated NC.",
+    "Finite feature checks and cumulative NC checkpoints are separate; no manufacturing approval."
+  ],
+  "reference_sections": "Original capsule minus declared disjoint through holes; full simulated stock included, without registration or discarded remnants.",
+  "reference_source_code_sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b",
+  "profile_sequence_reference_source_code_sha256": "74b9583548b6db1f519eac1b57723018007b6fdcaad6d11b6021aadbb079a6a9",
+  "section_topology_observations": [
+    {
+      "requested_z_mm": -1.4,
+      "z_mm": -1.415450811141811,
+      "interior_loops": 1,
+      "holes": [
+        {
+          "centroid_xy_mm": [
+            1.9999991977874736,
+            1.9999991976721048
+          ],
+          "area_equivalent_diameter_mm": 1.9902961706567615
+        }
+      ]
+    },
+    {
+      "requested_z_mm": -1.0,
+      "z_mm": -0.9904508588255267,
+      "interior_loops": 1,
+      "holes": [
+        {
+          "centroid_xy_mm": [
+            1.9999991977874736,
+            1.9999991976721048
+          ],
+          "area_equivalent_diameter_mm": 1.9902961706567615
+        }
+      ]
+    },
+    {
+      "requested_z_mm": -0.6,
+      "z_mm": -0.5904508599004362,
+      "interior_loops": 1,
+      "holes": [
+        {
+          "centroid_xy_mm": [
+            1.9999991977874736,
+            1.9999991976721048
+          ],
+          "area_equivalent_diameter_mm": 1.9902961706567615
+        }
+      ]
+    }
+  ]
+}

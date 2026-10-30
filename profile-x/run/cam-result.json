@@ -1,0 +1,1009 @@
+{
+  "schema": "genlaw.cam-result.v1",
+  "status": "generated_and_checked",
+  "native_cad_binding": {
+    "schema": "genlaw.native-binding.v10",
+    "status": "verified",
+    "cad_sha256": "508207e468a5b87779dc623ff92a363a3938818d4177351c6df2f79154a74924",
+    "reference_class": "z_extruded_capsule_with_semicircular_ends",
+    "bounds": {
+      "min": [
+        0.0,
+        -2.220446049250313e-16,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        4.0,
+        0.0
+      ]
+    },
+    "incoming_stock_bounds": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        4,
+        0
+      ]
+    },
+    "volume_mm3": 42.849555921538766,
+    "valid_single_solid": true,
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "features": [
+      {
+        "id": "P1",
+        "kind": "capsule_outline",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face6",
+        "major_axis": "X",
+        "center_xy_mm": [
+          4.0,
+          2.0
+        ],
+        "length_mm": 8,
+        "width_mm": 4,
+        "thickness_mm": 1.5,
+        "top_z_mm": 0
+      }
+    ],
+    "reference_for_iou": "Original arc/line CAD checked against independent rectangle/cylinder union. All actual material, including outside waste, is compared without registration."
+  },
+  "nc_sha256": "917e8d2348538618ee18495ce849eae08d51b112660ccb249b5c19476dce08c3",
+  "native_operation": "Profile",
+  "native_stock": {
+    "construction": "FreeCAD Stock.CreateBox from declared incoming bounds",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        4.0,
+        0.0
+      ]
+    },
+    "stock_type": "CreateBox"
+  },
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "gui_up": false,
+  "postprocessor": "FreeCAD bundled linuxcnc_post",
+  "post_arguments": "--no-show-editor --no-tlo --precision 5 --preamble \"G17 G54 G40 G49 G80 G90\\nG21\\nM5\\nG0 Z3\"",
+  "native_path_sha256": "b5ab28c98b4918ef739dbbdaba54ed7e99cf59543efe0fc78f5c331a2c6ac13b",
+  "nc_check": {
+    "status": "checked_declared_milling_envelope",
+    "executable_blocks": 58,
+    "post_decimal_places": 5,
+    "text_modified": false,
+    "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+    "step_map": [
+      {
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "first_executable_block": 9,
+        "last_executable_block": 55
+      }
+    ],
+    "cutting_moves": 42,
+    "arc_moves": 21,
+    "cutting_levels_mm": [
+      -0.25,
+      -0.5,
+      -0.75,
+      -1.0,
+      -1.25,
+      -1.5,
+      -1.6
+    ],
+    "path_envelope_allowance_mm": 0.00202,
+    "feed_time_seconds": 97.56882196824488,
+    "rapid_time_not_included": true,
+    "motion_trace": [
+      {
+        "block": 9,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          null
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 10,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 11,
+        "motion": "G0",
+        "start": [
+          8.12099,
+          4.12132,
+          3.0
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 12,
+        "motion": "G1",
+        "start": [
+          8.12099,
+          4.12132,
+          2.0
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2.25
+      },
+      {
+        "block": 13,
+        "motion": "G2",
+        "start": [
+          8.12099,
+          4.12132,
+          -0.25
+        ],
+        "end": [
+          6.0,
+          -1.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 5.784126162917678
+      },
+      {
+        "block": 14,
+        "motion": "G1",
+        "start": [
+          6.0,
+          -1.0,
+          -0.25
+        ],
+        "end": [
+          2.0,
+          -1.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 7.784126162917678
+      },
+      {
+        "block": 15,
+        "motion": "G2",
+        "start": [
+          2.0,
+          -1.0,
+          -0.25
+        ],
+        "end": [
+          2.0,
+          5.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 12.496185171811655
+      },
+      {
+        "block": 16,
+        "motion": "G1",
+        "start": [
+          2.0,
+          5.0,
+          -0.25
+        ],
+        "end": [
+          6.0,
+          5.0,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 14.496185171811655
+      },
+      {
+        "block": 17,
+        "motion": "G2",
+        "start": [
+          6.0,
+          5.0,
+          -0.25
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 15.674117424034984
+      },
+      {
+        "block": 18,
+        "motion": "G1",
+        "start": [
+          8.12099,
+          4.12132,
+          -0.25
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -0.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 15.924117424034984
+      },
+      {
+        "block": 19,
+        "motion": "G2",
+        "start": [
+          8.12099,
+          4.12132,
+          -0.5
+        ],
+        "end": [
+          6.0,
+          -1.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 19.458243586952662
+      },
+      {
+        "block": 20,
+        "motion": "G1",
+        "start": [
+          6.0,
+          -1.0,
+          -0.5
+        ],
+        "end": [
+          2.0,
+          -1.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 21.458243586952662
+      },
+      {
+        "block": 21,
+        "motion": "G2",
+        "start": [
+          2.0,
+          -1.0,
+          -0.5
+        ],
+        "end": [
+          2.0,
+          5.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 26.17030259584664
+      },
+      {
+        "block": 22,
+        "motion": "G1",
+        "start": [
+          2.0,
+          5.0,
+          -0.5
+        ],
+        "end": [
+          6.0,
+          5.0,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 28.17030259584664
+      },
+      {
+        "block": 23,
+        "motion": "G2",
+        "start": [
+          6.0,
+          5.0,
+          -0.5
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -0.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 29.348234848069968
+      },
+      {
+        "block": 24,
+        "motion": "G1",
+        "start": [
+          8.12099,
+          4.12132,
+          -0.5
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -0.75
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 29.598234848069968
+      },
+      {
+        "block": 25,
+        "motion": "G2",
+        "start": [
+          8.12099,
+          4.12132,
+          -0.75
+        ],
+        "end": [
+          6.0,
+          -1.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 33.132361010987644
+      },
+      {
+        "block": 26,
+        "motion": "G1",
+        "start": [
+          6.0,
+          -1.0,
+          -0.75
+        ],
+        "end": [
+          2.0,
+          -1.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 35.132361010987644
+      },
+      {
+        "block": 27,
+        "motion": "G2",
+        "start": [
+          2.0,
+          -1.0,
+          -0.75
+        ],
+        "end": [
+          2.0,
+          5.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 39.844420019881625
+      },
+      {
+        "block": 28,
+        "motion": "G1",
+        "start": [
+          2.0,
+          5.0,
+          -0.75
+        ],
+        "end": [
+          6.0,
+          5.0,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 41.844420019881625
+      },
+      {
+        "block": 29,
+        "motion": "G2",
+        "start": [
+          6.0,
+          5.0,
+          -0.75
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 43.02235227210495
+      },
+      {
+        "block": 30,
+        "motion": "G1",
+        "start": [
+          8.12099,
+          4.12132,
+          -0.75
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -1.0
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 43.27235227210495
+      },
+      {
+        "block": 31,
+        "motion": "G2",
+        "start": [
+          8.12099,
+          4.12132,
+          -1.0
+        ],
+        "end": [
+          6.0,
+          -1.0,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 46.80647843502263
+      },
+      {
+        "block": 32,
+        "motion": "G1",
+        "start": [
+          6.0,
+          -1.0,
+          -1.0
+        ],
+        "end": [
+          2.0,
+          -1.0,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 48.80647843502263
+      },
+      {
+        "block": 33,
+        "motion": "G2",
+        "start": [
+          2.0,
+          -1.0,
+          -1.0
+        ],
+        "end": [
+          2.0,
+          5.0,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 53.518537443916614
+      },
+      {
+        "block": 34,
+        "motion": "G1",
+        "start": [
+          2.0,
+          5.0,
+          -1.0
+        ],
+        "end": [
+          6.0,
+          5.0,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 55.518537443916614
+      },
+      {
+        "block": 35,
+        "motion": "G2",
+        "start": [
+          6.0,
+          5.0,
+          -1.0
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -1.0
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 56.69646969613994
+      },
+      {
+        "block": 36,
+        "motion": "G1",
+        "start": [
+          8.12099,
+          4.12132,
+          -1.0
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -1.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 56.94646969613994
+      },
+      {
+        "block": 37,
+        "motion": "G2",
+        "start": [
+          8.12099,
+          4.12132,
+          -1.25
+        ],
+        "end": [
+          6.0,
+          -1.0,
+          -1.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 60.48059585905762
+      },
+      {
+        "block": 38,
+        "motion": "G1",
+        "start": [
+          6.0,
+          -1.0,
+          -1.25
+        ],
+        "end": [
+          2.0,
+          -1.0,
+          -1.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 62.48059585905762
+      },
+      {
+        "block": 39,
+        "motion": "G2",
+        "start": [
+          2.0,
+          -1.0,
+          -1.25
+        ],
+        "end": [
+          2.0,
+          5.0,
+          -1.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 67.1926548679516
+      },
+      {
+        "block": 40,
+        "motion": "G1",
+        "start": [
+          2.0,
+          5.0,
+          -1.25
+        ],
+        "end": [
+          6.0,
+          5.0,
+          -1.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 69.1926548679516
+      },
+      {
+        "block": 41,
+        "motion": "G2",
+        "start": [
+          6.0,
+          5.0,
+          -1.25
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -1.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 70.37058712017493
+      },
+      {
+        "block": 42,
+        "motion": "G1",
+        "start": [
+          8.12099,
+          4.12132,
+          -1.25
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -1.5
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 70.62058712017493
+      },
+      {
+        "block": 43,
+        "motion": "G2",
+        "start": [
+          8.12099,
+          4.12132,
+          -1.5
+        ],
+        "end": [
+          6.0,
+          -1.0,
+          -1.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 74.1547132830926
+      },
+      {
+        "block": 44,
+        "motion": "G1",
+        "start": [
+          6.0,
+          -1.0,
+          -1.5
+        ],
+        "end": [
+          2.0,
+          -1.0,
+          -1.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 76.1547132830926
+      },
+      {
+        "block": 45,
+        "motion": "G2",
+        "start": [
+          2.0,
+          -1.0,
+          -1.5
+        ],
+        "end": [
+          2.0,
+          5.0,
+          -1.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 80.86677229198658
+      },
+      {
+        "block": 46,
+        "motion": "G1",
+        "start": [
+          2.0,
+          5.0,
+          -1.5
+        ],
+        "end": [
+          6.0,
+          5.0,
+          -1.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 82.86677229198658
+      },
+      {
+        "block": 47,
+        "motion": "G2",
+        "start": [
+          6.0,
+          5.0,
+          -1.5
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -1.5
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 84.0447045442099
+      },
+      {
+        "block": 48,
+        "motion": "G1",
+        "start": [
+          8.12099,
+          4.12132,
+          -1.5
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -1.6
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 84.1447045442099
+      },
+      {
+        "block": 49,
+        "motion": "G2",
+        "start": [
+          8.12099,
+          4.12132,
+          -1.6
+        ],
+        "end": [
+          6.0,
+          -1.0,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 87.67883070712757
+      },
+      {
+        "block": 50,
+        "motion": "G1",
+        "start": [
+          6.0,
+          -1.0,
+          -1.6
+        ],
+        "end": [
+          2.0,
+          -1.0,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 89.67883070712757
+      },
+      {
+        "block": 51,
+        "motion": "G2",
+        "start": [
+          2.0,
+          -1.0,
+          -1.6
+        ],
+        "end": [
+          2.0,
+          5.0,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 94.39088971602155
+      },
+      {
+        "block": 52,
+        "motion": "G1",
+        "start": [
+          2.0,
+          5.0,
+          -1.6
+        ],
+        "end": [
+          6.0,
+          5.0,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 96.39088971602155
+      },
+      {
+        "block": 53,
+        "motion": "G2",
+        "start": [
+          6.0,
+          5.0,
+          -1.6
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 97.56882196824488
+      },
+      {
+        "block": 54,
+        "motion": "G0",
+        "start": [
+          8.12099,
+          4.12132,
+          -1.6
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 97.56882196824488
+      },
+      {
+        "block": 55,
+        "motion": "G0",
+        "start": [
+          8.12099,
+          4.12132,
+          3.0
+        ],
+        "end": [
+          8.12099,
+          4.12132,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 97.56882196824488
+      }
+    ],
+    "final_uncovered_profile_mm2": 0.0,
+    "initial_machine_state": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3,
+      "basis": "Explicit unloaded-start reference; retract before selecting the cutter, spindle head excluded."
+    },
+    "original_nc_modified": false,
+    "guard_wrapper_only": true,
+    "outside_profile_verified": true,
+    "full_stock_waste_area_mm2": 3.4336343139551984,
+    "closed_layers": [
+      {
+        "z_mm": -0.25,
+        "start_xy": [
+          8.12099,
+          4.12132
+        ],
+        "end_xy": [
+          8.12099,
+          4.12132
+        ],
+        "length_mm": 26.848234848069968
+      },
+      {
+        "z_mm": -0.5,
+        "start_xy": [
+          8.12099,
+          4.12132
+        ],
+        "end_xy": [
+          8.12099,
+          4.12132
+        ],
+        "length_mm": 26.848234848069968
+      },
+      {
+        "z_mm": -0.75,
+        "start_xy": [
+          8.12099,
+          4.12132
+        ],
+        "end_xy": [
+          8.12099,
+          4.12132
+        ],
+        "length_mm": 26.848234848069968
+      },
+      {
+        "z_mm": -1.0,
+        "start_xy": [
+          8.12099,
+          4.12132
+        ],
+        "end_xy": [
+          8.12099,
+          4.12132
+        ],
+        "length_mm": 26.848234848069968
+      },
+      {
+        "z_mm": -1.25,
+        "start_xy": [
+          8.12099,
+          4.12132
+        ],
+        "end_xy": [
+          8.12099,
+          4.12132
+        ],
+        "length_mm": 26.848234848069968
+      },
+      {
+        "z_mm": -1.5,
+        "start_xy": [
+          8.12099,
+          4.12132
+        ],
+        "end_xy": [
+          8.12099,
+          4.12132
+        ],
+        "length_mm": 26.848234848069968
+      },
+      {
+        "z_mm": -1.6,
+        "start_xy": [
+          8.12099,
+          4.12132
+        ],
+        "end_xy": [
+          8.12099,
+          4.12132
+        ],
+        "length_mm": 26.848234848069968
+      }
+    ],
+    "layer_transition": "closed_profile_feed_down",
+    "semantics": "CAM radius-compensated outside path; every depth clears all original exterior waste. Original target is retained, no disconnected waste is discarded."
+  },
+  "operation_bindings": [
+    {
+      "step_id": "OP10.2",
+      "feature_id": "P1",
+      "cam_operation": "Profile",
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face6"
+          ]
+        }
+      ]
+    }
+  ],
+  "parameters": {
+    "side": "Outside",
+    "direction": "CW",
+    "cam_radius_compensation": true,
+    "controller_radius_compensation": false,
+    "number_of_passes": 1,
+    "stepover_mm": 0.0,
+    "step_down_mm": 0.25,
+    "final_depth_mm": -1.6,
+    "geometry_tolerance_mm": 0.001,
+    "native_area_parameters": "{'Tolerance': 1e-07, 'FitArcs': True, 'Simplify': False, 'CleanDistance': 0.0, 'Accuracy': 0.001, 'Unit': 1.0, 'MinArcPoints': 4, 'MaxArcPoints': 100, 'ClipperScale': 10000000.0, 'Fill': 0, 'Coplanar': 0, 'Reorient': True, 'Outline': False, 'Explode': False, 'OpenMode': 0, 'Deflection': 0.001, 'SubjectFill': 0, 'ClipFill': 0, 'Offset': 1.0, 'ExtraPass': 0, 'Stepover': -0.0, 'LastStepover': 0.0, 'JoinType': 0, 'EndType': 0, 'MiterLimit': 2.0, 'RoundPrecision': 0.0, 'PocketMode': 0, 'ToolRadius': 1.0, 'PocketExtraOffset': 0.0, 'PocketStepover': 0.0, 'PocketLastStepover': 0.0, 'FromCenter': False, 'Angle': 45.0, 'AngleShift': 0.0, 'Shift': 0.0, 'Thicken': False, 'SectionCount': -1, 'Stepdown': 1.0, 'SectionOffset': 0.0, 'SectionTolerance': 1e-06, 'SectionMode': 2, 'Project': False}"
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "execution_plan_sha256": "e72140efd04d82777c19fe464556466fc3d32fe594aa0047fa14942c25193af1"
+}
