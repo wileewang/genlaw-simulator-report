@@ -280,9 +280,10 @@ async function start() {
     if (resolutionNote) resolutionNote.textContent = entry.frames.length && entry.frames.every(f=>f.fine_checkpoint_acceptance) ?
       `实际工步状态：边界与最终结果均为 ${entry.resolution_mm} mm，已用于 IoU 与几何检查。各步从原始毛坯执行累计 NC；播放间隔不代表加工耗时。` : entry.frames.length && entry.frames.every(f=>f.display_only) ?
       `实际工步状态回放：中间状态 ${entry.frames[0].resolution_mm} mm，仅用于展示；最终结果 ${entry.resolution_mm} mm，用于 IoU 与几何检查。播放间隔不代表加工耗时。` : entry.frames.some(f=>f.kind==='cumulative_native_prefix') ?
-      `真实去料状态：时间帧 0.05 mm，工步边界与最终结果 ${entry.resolution_mm} mm。工步边界复用同一原生 NC 的累计前缀结果；播放速度仅作展示。` : entry.frames.length ?
+      `真实去料状态：时间帧 0.05 mm，工步边界与最终结果 ${entry.resolution_mm} mm。工步边界复用同一原生 NC 的累计前缀结果；播放速度仅作展示。` : entry.frames.length && entry.frames.every(f=>f.kind==='native_time_cutoff' && f.resolution_mm===entry.resolution_mm) ?
+      `同一 NC 的真实去料状态：中间与最终网格均为 ${entry.resolution_mm} mm。时间帧用于展示，不代表独立工步验收；播放间隔不代表加工耗时。` : entry.frames.length ?
       `同一 NC 的真实去料状态。中间帧 0.05 mm，最终结果 ${entry.resolution_mm} mm；播放速度仅作展示。` :
-      `此反例保留最终去料结果，分辨率 ${entry.resolution_mm} mm。`;
+      `${entry.case_kind==='normal' ? '此例展示最终去料结果；加工回放见基准例' : '此反例保留最终去料结果'}，分辨率 ${entry.resolution_mm} mm。`;
     reset(); await changeMode(entry.frames.length ? requestedMode : 'compare'); enabled(true);
     root.querySelector('[data-s1-mode=replay]').disabled = !entry.frames.length;
     loading.hidden = true; qa.ready = true;
