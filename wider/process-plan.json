@@ -1,0 +1,119 @@
+{
+  "schema": "genlaw.process-plan.v1",
+  "id": "S4-CHAMFER-20261030-r1-wider-CARD",
+  "cad_sha256": "0693f7f00c8af3268c47ac5ce92f7898ae939704ee6e76235056b12b79bf0f91",
+  "origin": "developer_authored_synthetic_paper_card",
+  "transcription": {
+    "status": "checked_against_source",
+    "reviewer_role": "developer_transcription",
+    "production_review": false
+  },
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "external_documents": [],
+  "operations": [
+    {
+      "id": "OP05",
+      "name": "来料核对",
+      "steps": [
+        {
+          "id": "OP05.1",
+          "type": "incoming_inspection",
+          "text": "核对 8 × 6 × 1.5 mm 矩形来料、6061-T6 标签、CAD 版本和原坐标；原顶底厚度已具备。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP05.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP10",
+      "name": "铣",
+      "steps": [
+        {
+          "id": "OP10.1",
+          "type": "setup",
+          "text": "按确认后的定位基准与装夹方案找正；建立 CAD 与工件坐标的对应关系。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.1"
+          }
+        },
+        {
+          "id": "OP10.2",
+          "type": "chamfer_milling",
+          "text": "用 T1 对上口四边 C1 倒角 C0.5 × 45°；从外侧垂直入刀，顺时针一圈闭合后抬刀。保留其余侧壁、底面和中央顶面，禁止添加额外切削线。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.2"
+          },
+          "feature_id": "C1",
+          "depends_on": [
+            "OP05.1",
+            "OP10.1"
+          ],
+          "constraints": {
+            "width_mm": 0.5,
+            "angle_degrees": 45,
+            "edge_selection": "all_four_top_edges",
+            "tool_id": "T1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP20",
+      "name": "去毛刺",
+      "steps": [
+        {
+          "id": "OP20.1",
+          "type": "deburring",
+          "text": "检查倒角边缘毛刺；是否需人工去毛刺按实际工艺确认，不追加未经定义的倒角。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP20.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP30",
+      "name": "检验",
+      "steps": [
+        {
+          "id": "OP30.1",
+          "type": "inspection",
+          "text": "检验四边倒角宽度、角度、中央保留厚度与顶底面；制造公差、角度公差及粗糙度依据待确认。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP30.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP35",
+      "name": "后续处置",
+      "steps": [
+        {
+          "id": "OP35.1",
+          "type": "postprocess",
+          "text": "是否需要清洗、标识、包装，由实际交付要求决定。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP35.1"
+          }
+        }
+      ]
+    }
+  ]
+}

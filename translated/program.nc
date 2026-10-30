@@ -1,0 +1,38 @@
+(Exported by FreeCAD)
+(Post Processor: Path.Post.scripts.linuxcnc_post)
+(Output Time:2026-10-30 13:33:27.645967)
+(begin preamble)
+G17 G54 G40 G49 G80 G90
+G21
+M5
+G0 Z3
+G21
+(begin operation: TC Chamfer T1)
+(machine units: mm/min)
+(TC Chamfer T1) 
+M5
+M6 T1 
+M3 S3000 
+(finish operation: TC Chamfer T1)
+(begin operation: ChamferEdges)
+(machine units: mm/min)
+(ChamferEdges) 
+G0 Z3.00000 
+G0 X9.00000 Y-2.40000 
+G0 Z2.00000 
+G1 X9.00000 Y-2.40000 Z0.40000 F60.00000 
+G1 X1.00000 Y-2.40000 Z0.40000 F120.00000 
+G2 X0.60000 Y-2.00000 Z0.40000 I0.00000 J0.40000 F120.00000 
+G1 X0.60000 Y4.00000 Z0.40000 F120.00000 
+G2 X1.00000 Y4.40000 Z0.40000 I0.40000 J-0.00000 F120.00000 
+G1 X9.00000 Y4.40000 Z0.40000 F120.00000 
+G2 X9.40000 Y4.00000 Z0.40000 I-0.00000 J-0.40000 F120.00000 
+G1 X9.40000 Y-2.00000 Z0.40000 F120.00000 
+G2 X9.00000 Y-2.40000 Z0.40000 I-0.40000 J0.00000 F120.00000 
+G0 Z3.00000 
+G0 Z3.00000 
+(finish operation: ChamferEdges)
+(begin postamble)
+M05
+G17 G54 G90 G80 G40
+M2

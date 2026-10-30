@@ -1,0 +1,242 @@
+{
+  "schema": "genlaw.execution-plan.v14",
+  "capability": "rectangular_top_chamfer_xy",
+  "input_id": "S4-CHAMFER-20261030-r1-wider",
+  "mode": "software_geometry_reference",
+  "source_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "9e5fac35244427e8e21ce6d854a1132c6f1477381e67143c8cdcbdc5990554df"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "0693f7f00c8af3268c47ac5ce92f7898ae939704ee6e76235056b12b79bf0f91"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "69ebdcd7859e457e45e297cd285c0a1f39f0a6ee645696a7b4e2e91bf007dee5"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "a08fa0c5c577f4dad2f8f4e5168412482621a0999d3651ef18c6ea2d94a33d91"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "08360b4c322af2ca76afcad8565dee4e1802d72cff015f9350c591f7923dde0e"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "cb941e476a3f22db134f712e3821aa19cc894602954037977f2fbff5f0bd4ba0"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "0c16cac6d04c98f9379f3ac95edb8993de4a3ada932125ca6061e58cdbdba536"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "e14a1728ef569768950d29a1e3499ac00815d41b9052031f45f4452bb0480536"
+    }
+  },
+  "cad_ref": {
+    "path": "target.brep",
+    "sha256": "0693f7f00c8af3268c47ac5ce92f7898ae939704ee6e76235056b12b79bf0f91"
+  },
+  "cad_observation_ref": {
+    "path": "geometry-observation.json",
+    "sha256": "a08fa0c5c577f4dad2f8f4e5168412482621a0999d3651ef18c6ea2d94a33d91"
+  },
+  "operations": [
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "chamfer_milling",
+      "feature_id": "C1",
+      "geometry": {
+        "id": "C1",
+        "kind": "top_perimeter_chamfer_45",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "faces": [
+          "Face3",
+          "Face7",
+          "Face9",
+          "Face10"
+        ],
+        "width_mm": 0.5,
+        "angle_degrees": 45,
+        "top_z_mm": 0.0,
+        "thickness_mm": 1.5,
+        "bounds_xy_mm": {
+          "min": [
+            -8.326672684688674e-17,
+            -2.886579864025407e-15
+          ],
+          "max": [
+            8.0,
+            6.0
+          ]
+        }
+      },
+      "final_z_mm": -0.699999999999998
+    }
+  ],
+  "target_bounds_mm": {
+    "min": [
+      -8.326672684688674e-17,
+      -2.886579864025407e-15,
+      -1.5
+    ],
+    "max": [
+      8.0,
+      6.0,
+      1.9984014443252818e-15
+    ]
+  },
+  "cam_backend": {
+    "path": "engines/freecad/deburr-linear-height-r2/manifest.json",
+    "sha256": "d9d124ffe9eeafd311c68463971dc118ba47b578219dda9137c0b90739d19008"
+  },
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "tool": {
+    "id": "T1",
+    "kind": "chamfer_frustum",
+    "center_cutting": false,
+    "diameter_mm": 2.0,
+    "tip_diameter_mm": 0.4,
+    "included_angle_degrees": 90,
+    "cutting_length_mm": 0.8,
+    "length_mm": 20,
+    "basis": "Explicit finite 90 degree frustum with a flat tip; software reference only, shank and holder excluded."
+  },
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "Explicit software-only zero transform; real clamping excluded.",
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3,
+      "basis": "Explicit unloaded-start reference; retract before selecting the cutter, spindle head excluded."
+    }
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "parameters": {
+    "spindle_rpm": 3000.0,
+    "feed_mm_min": 120.0,
+    "plunge_mm_min": 60.0,
+    "safe_height_mm": 2.0,
+    "clearance_height_mm": 3.0,
+    "path_tolerance_mm": 0.001,
+    "extra_depth_mm": 0.2
+  },
+  "strategy": {
+    "clearing_pattern": "ClosedChamfer",
+    "cut_mode": "CW",
+    "start_at": "NativeBoundary",
+    "entry": "outside_vertical",
+    "keep_tool_down": true,
+    "radial_allowance_mm": 0,
+    "axial_allowance_mm": 0,
+    "side": "Outside",
+    "compensation": "CAM_frustum_offset_G40",
+    "profile_passes": 1,
+    "join_type": "Round"
+  },
+  "parameter_provenance": {
+    "spindle_rpm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "feed_mm_min": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "plunge_mm_min": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "safe_height_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "clearance_height_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "path_tolerance_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "extra_depth_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference keeps the flat tip outside original vertical walls."
+    }
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Frozen before NC under unchanged local grid budget."
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "来料为原坐标中的矩形实体，外形和厚度已具备；只选择上口四边倒角。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "requirements_ref": {
+    "path": "requirements.json",
+    "sha256": "cb941e476a3f22db134f712e3821aa19cc894602954037977f2fbff5f0bd4ba0"
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false
+}

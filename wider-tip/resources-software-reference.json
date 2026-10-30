@@ -1,0 +1,138 @@
+{
+  "schema": "genlaw.preparation-resources.v1",
+  "id": "S4-CHAMFER-20261030-r1-wider-tip-RESOURCES",
+  "units": "mm",
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "machine": {
+    "kind": "generic_XYZ_reference",
+    "axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "real_machine_qualified": false
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "tools": [
+    {
+      "id": "T1",
+      "kind": "chamfer_frustum",
+      "center_cutting": false,
+      "diameter_mm": 2.4000000000000004,
+      "tip_diameter_mm": 0.8,
+      "included_angle_degrees": 90,
+      "cutting_length_mm": 0.8,
+      "length_mm": 20,
+      "basis": "Explicit finite 90 degree frustum with a flat tip; software reference only, shank and holder excluded."
+    }
+  ],
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "Explicit software-only zero transform; real clamping excluded.",
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3,
+      "basis": "Explicit unloaded-start reference; retract before selecting the cutter, spindle head excluded."
+    }
+  },
+  "cutting_presets": [
+    {
+      "id": "REFERENCE-ONLY",
+      "operation": "chamfer_milling",
+      "tool_id": "T1",
+      "material_label": "6061-T6",
+      "feed_unit": "mm/min",
+      "speed_unit": "rpm",
+      "clearing_pattern": "ClosedChamfer",
+      "cut_mode": "CW",
+      "start_at": "NativeBoundary",
+      "entry": "outside_vertical",
+      "keep_tool_down": true,
+      "radial_allowance_mm": 0,
+      "axial_allowance_mm": 0,
+      "spindle_rpm": {
+        "value": 3000,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "feed_mm_min": {
+        "value": 120,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "plunge_mm_min": {
+        "value": 60,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "safe_height_mm": {
+        "value": 2,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "clearance_height_mm": {
+        "value": 3,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "path_tolerance_mm": {
+        "value": 0.001,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "side": "Outside",
+      "compensation": "CAM_frustum_offset_G40",
+      "profile_passes": 1,
+      "join_type": "Round",
+      "extra_depth_mm": {
+        "value": 0.2,
+        "basis": "Explicit software reference keeps the flat tip outside original vertical walls."
+      }
+    }
+  ],
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Frozen before NC under unchanged local grid budget."
+  },
+  "cam_backend": {
+    "path": "engines/freecad/deburr-linear-height-r2/manifest.json",
+    "sha256": "d9d124ffe9eeafd311c68463971dc118ba47b578219dda9137c0b90739d19008"
+  }
+}

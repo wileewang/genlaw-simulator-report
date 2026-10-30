@@ -1,0 +1,475 @@
+{
+  "schema": "genlaw.chamfer-qualification.v1",
+  "at_utc": "2026-10-30T05:41:43.377527+00:00",
+  "status": "formal_synthetic_scope_qualified",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "iou_percent": 99.98226558950411,
+      "max_boundary_deviation_mm": 0.02009765999999913,
+      "max_width_deviation_mm": 0.0001364301818180813,
+      "software_checks": {
+        "chamfer_sections": "numeric_pass",
+        "chamfer_width": "numeric_pass",
+        "retained_planes": "numeric_pass",
+        "retained_thickness": "numeric_pass"
+      },
+      "native_cad_sha256": "23e6b300854404e004be7aaeee73ea475bf5a3d1cc84ffc3ebf06796729a1aa1",
+      "native_nc_sha256": "8f47e276ca5b54654ab72b4094f7b5bd27b566b963a16f105918bbc6c8d5a558",
+      "actual_mesh_sha256": "372b6867c48f0d7264894727ec8e8c89444e784f68faabaa9982f7a93f976135"
+    },
+    {
+      "id": "wider",
+      "iou_percent": 99.98235629441737,
+      "max_boundary_deviation_mm": 0.02509765999999994,
+      "max_width_deviation_mm": 0.00014561685176800454,
+      "software_checks": {
+        "chamfer_sections": "numeric_pass",
+        "chamfer_width": "numeric_pass",
+        "retained_planes": "numeric_pass",
+        "retained_thickness": "numeric_pass"
+      },
+      "native_cad_sha256": "0693f7f00c8af3268c47ac5ce92f7898ae939704ee6e76235056b12b79bf0f91",
+      "native_nc_sha256": "bc0feb7eade8e79c8f6bb3d24cc11c1d159109756a1392102dc8367082c57c80",
+      "actual_mesh_sha256": "cdafa47748ab92c2d7573b198682ffb2158a55fc75bfba92ee128a26d651ad06"
+    },
+    {
+      "id": "translated",
+      "iou_percent": 99.98237883247889,
+      "max_boundary_deviation_mm": 0.01774700134956451,
+      "max_width_deviation_mm": 0.00011795272727269102,
+      "software_checks": {
+        "chamfer_sections": "numeric_pass",
+        "chamfer_width": "numeric_pass",
+        "retained_planes": "numeric_pass",
+        "retained_thickness": "numeric_pass"
+      },
+      "native_cad_sha256": "c15828ee2c09a337a9d9ce2abd1a51c94490e1ead67cd16cdd73ce70e7c1d206",
+      "native_nc_sha256": "3919950ac77fce76169259d8ee27ca5285cb520696987c264c0da7db6ea5c883",
+      "actual_mesh_sha256": "7fc5be75f90c3666fa87a531a1f6d3707bfbffc0c8710bdf6943d3138ee3ec8b"
+    },
+    {
+      "id": "wider-tip",
+      "iou_percent": 99.98219710700191,
+      "max_boundary_deviation_mm": 0.01774664779617328,
+      "max_width_deviation_mm": 0.0001311090909101864,
+      "software_checks": {
+        "chamfer_sections": "numeric_pass",
+        "chamfer_width": "numeric_pass",
+        "retained_planes": "numeric_pass",
+        "retained_thickness": "numeric_pass"
+      },
+      "native_cad_sha256": "23e6b300854404e004be7aaeee73ea475bf5a3d1cc84ffc3ebf06796729a1aa1",
+      "native_nc_sha256": "a71f37154e59b19e058add7e394c8f1f2efa9c8ecfb2911b9a2d78aa8e194e00",
+      "actual_mesh_sha256": "5d86bd3ad34db6b0deb05b149e260452c1124be4253f4dc207787dfd6fcc0909"
+    }
+  ],
+  "negative_controls": [
+    {
+      "id": "overcut-depth",
+      "iou_percent": 96.26522418184611,
+      "software_checks": {
+        "chamfer_sections": "numeric_fail",
+        "chamfer_width": "numeric_fail",
+        "retained_planes": "indeterminate",
+        "retained_thickness": "indeterminate"
+      },
+      "normal_guard_rejected": true
+    },
+    {
+      "id": "too-shallow",
+      "iou_percent": 97.41292385395003,
+      "software_checks": {
+        "chamfer_sections": "numeric_fail",
+        "chamfer_width": "numeric_fail",
+        "retained_planes": "numeric_pass",
+        "retained_thickness": "numeric_pass"
+      },
+      "normal_guard_rejected": true
+    },
+    {
+      "id": "wrong-position",
+      "iou_percent": 97.08465853431896,
+      "software_checks": {
+        "chamfer_sections": "numeric_fail",
+        "chamfer_width": "numeric_fail",
+        "retained_planes": "numeric_fail",
+        "retained_thickness": "numeric_fail"
+      },
+      "normal_guard_rejected": true
+    },
+    {
+      "id": "extra-inner-edge",
+      "iou_percent": 93.604407988331,
+      "software_checks": {
+        "chamfer_sections": "numeric_fail",
+        "chamfer_width": "numeric_fail",
+        "retained_planes": "numeric_fail",
+        "retained_thickness": "numeric_fail"
+      },
+      "normal_guard_rejected": true
+    }
+  ],
+  "input_archive": "validation/feature-inputs/S4-CHAMFER-20261030-r1",
+  "input_manifest_sha256": "38cdd7f004d1729b25976d257990d0c1886e9affb78e55c643c97a9c5a6dd7a5",
+  "input_zip_sha256": "03c876b2b051a278aa7f64ceb4e3965df5fddde1c67cb1384ae25d1889bd3f48",
+  "suite_summary_sha256": "07c27162b1d7dfc6d5f250c5f636fcdf445cdc35da64ca55e273191d423b425f",
+  "backend_manifest": {
+    "path": "engines/freecad/deburr-linear-height-r2/manifest.json",
+    "sha256": "d9d124ffe9eeafd311c68463971dc118ba47b578219dda9137c0b90739d19008"
+  },
+  "original_freecad_runtime_modified": false,
+  "native_nc_modified": false,
+  "tests": {
+    "chamfer": 12,
+    "existing_preparation_and_milling": 125,
+    "all_passed": true
+  },
+  "replay": {
+    "representative_case": "baseline",
+    "intermediate_frames": 3,
+    "resolution_mm": 0.025,
+    "actual_material_volumes_mm3": [
+      72.0,
+      71.68444723539069,
+      70.90699912082938,
+      70.18499150693894,
+      69.8468057325346
+    ],
+    "summary_sha256": "89a80dc50b5f2ef855b49930d0edc15c6a92ffa7fc929ad0d43b407add6facdc",
+    "final_result_reexecuted": false,
+    "resolution_reduced": false
+  },
+  "resources": [
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/milling-regressions-01-resources.json",
+      "sha256": "b7b8ad9e4cd46a015af1da4e63d4cf3af41ecbe48ce06fad438f1619f37a3ceb",
+      "seconds": 3.367585805011913,
+      "peak_group_rss_bytes": 91418624
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/baseline/camotics-resources.json",
+      "sha256": "58b979aec732ee5d258838ac6d15ea95a0df377484d1057d6587adfa0d4a88e8",
+      "seconds": 4.9412343699950725,
+      "peak_group_rss_bytes": 525983744
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/baseline/freecad-resources.json",
+      "sha256": "7cd1853d10980f34cae5dec5da68d8a9398c6bb439060cd673203d3778c61ec5",
+      "seconds": 1.1553714700276032,
+      "peak_group_rss_bytes": 213979136
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/baseline/measure-plan-resources.json",
+      "sha256": "3f6c7f460b9b92b2180200c6d95eacd685ecde66a7c6bfbdbd5cf84869c568ff",
+      "seconds": 1.3698530900292099,
+      "peak_group_rss_bytes": 255557632
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/baseline/measure-resources.json",
+      "sha256": "332d228bc737a67909c759ea9634c88fa931dbdd3ae2114cd67d729265321724",
+      "seconds": 14.723658585979138,
+      "peak_group_rss_bytes": 263286784
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/baseline/verify-features-resources.json",
+      "sha256": "a1367a51c635522290e32dee31df16f70e03c7853a02513317450ba618a75744",
+      "seconds": 3.3802604569937102,
+      "peak_group_rss_bytes": 270315520
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/baseline/verify-software-resources.json",
+      "sha256": "14067996d62a291cd68941e60eac1ce5e6fe6b69b3ee7e2947245faa512797bc",
+      "seconds": 3.050613310013432,
+      "peak_group_rss_bytes": 270266368
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/extra-inner-edge/camotics-resources.json",
+      "sha256": "a8ed635ecc9854546426f2bb29409c9676f88e76ea76e32a7b135c47c30c1906",
+      "seconds": 4.8275745419668965,
+      "peak_group_rss_bytes": 526569472
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/extra-inner-edge/measure-part-0-resources.json",
+      "sha256": "3b31419748eb236d09f1951ce0fc978f9d73a324355da858fd02443ed1bd771e",
+      "seconds": 25.377221169997938,
+      "peak_group_rss_bytes": 270581760
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/extra-inner-edge/measure-part-1-resources.json",
+      "sha256": "5f6fdfc709ac946a93a664562dfae6176666e0c2dbbed7982bca7d5b2868f76e",
+      "seconds": 18.883667120011523,
+      "peak_group_rss_bytes": 270315520
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/extra-inner-edge/measure-part-2-resources.json",
+      "sha256": "d448e69119b495cb726488deabf19b6fa8cc1fd096688cd4c067efb9e1e9e76f",
+      "seconds": 3.986304306949023,
+      "peak_group_rss_bytes": 270684160
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/extra-inner-edge/measure-plan-resources.json",
+      "sha256": "a38b8794ac9969087bd7580a33b01d839fd9e91cd0e8e96cd1f4881d5c266a03",
+      "seconds": 1.1557125970139168,
+      "peak_group_rss_bytes": 270401536
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/extra-inner-edge/measure-resources.json",
+      "sha256": "481584e3875219e5fe9165c9e72844f66b508ce2b56921553eca28d91fe45487",
+      "seconds": 1.2595138479955494,
+      "peak_group_rss_bytes": 270499840
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/extra-inner-edge/verify-software-resources.json",
+      "sha256": "3df0e7f1ee2a9c00c210810b49437e81b337b96873aa2858ceeec686bb774df6",
+      "seconds": 3.0452499100356363,
+      "peak_group_rss_bytes": 277749760
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/overcut-depth/camotics-resources.json",
+      "sha256": "ebbc9576b782b1824eb3cc2ef3ae5980fefac089b17dcd2787d38479b94c5309",
+      "seconds": 5.264223385951482,
+      "peak_group_rss_bytes": 524931072
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/overcut-depth/measure-plan-resources.json",
+      "sha256": "096e3170daaefe6adf151b097de7b4e9a7dd4da1be32b7200d94aab901ec75f7",
+      "seconds": 1.1540868309675716,
+      "peak_group_rss_bytes": 262500352
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/overcut-depth/measure-resources.json",
+      "sha256": "ef0cb8e3773d2821caf4a987a1a164b4dc074c96fdbc2c9b39624832b47dfb91",
+      "seconds": 16.054293410968967,
+      "peak_group_rss_bytes": 262316032
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/overcut-depth/verify-software-resources.json",
+      "sha256": "595b0741120cb957e37e480f7405580e78941d809066deef270b91f30590259a",
+      "seconds": 3.0448664590367116,
+      "peak_group_rss_bytes": 264691712
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/too-shallow/camotics-resources.json",
+      "sha256": "778ea6fa0c59a3f40e636b142c0a82b7fd112da480895c1406d81871a98e74e7",
+      "seconds": 4.612999750010204,
+      "peak_group_rss_bytes": 519737344
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/too-shallow/measure-plan-resources.json",
+      "sha256": "90e35803b66e0c4b8b8d2cd86551093f5e21e9e316bcc15fa648375851b902d8",
+      "seconds": 1.0489841340458952,
+      "peak_group_rss_bytes": 262471680
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/too-shallow/measure-resources.json",
+      "sha256": "204011bc525684d9843dd1dc62b92df23d9e74349a0d26b1d409df346a190285",
+      "seconds": 11.435562600032426,
+      "peak_group_rss_bytes": 262832128
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/too-shallow/verify-software-resources.json",
+      "sha256": "dbe208ef4a1fa0f293a1b64fc69cc3c406a69c582baede3b15e8924c00bfb921",
+      "seconds": 2.829648892977275,
+      "peak_group_rss_bytes": 264962048
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/translated/camotics-resources.json",
+      "sha256": "6c414a7b540b77e2e70d51bdb5cb90aa15da7e1576c292f3bcfd4ca99a1ed286",
+      "seconds": 5.04139700595988,
+      "peak_group_rss_bytes": 532471808
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/translated/freecad-resources.json",
+      "sha256": "fc1ea1bc9d955d84657956dbce60458d344ba39754421821fd0b0c6eee86e148",
+      "seconds": 1.1580875249928795,
+      "peak_group_rss_bytes": 215515136
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/translated/measure-plan-resources.json",
+      "sha256": "5408d24f2f6581fe737dfb409764749a0180833df05fdfae071e31bd726efaa4",
+      "seconds": 1.1544321430264972,
+      "peak_group_rss_bytes": 248041472
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/translated/measure-resources.json",
+      "sha256": "9d640879a4bcb9ad04986fe1650673aef30e097013ba92a116ba5699db480916",
+      "seconds": 14.26487911696313,
+      "peak_group_rss_bytes": 264036352
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/translated/verify-features-resources.json",
+      "sha256": "3ef6f2e1efc5f4d906831006bc1dde6d795d8ae6bc9347cb8464a040598109a4",
+      "seconds": 3.041156019025948,
+      "peak_group_rss_bytes": 259100672
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/translated/verify-software-resources.json",
+      "sha256": "fee73fc471ca9168448f1191f71b4343df71bc417074c605ae2abb1e6a5b3563",
+      "seconds": 3.045635971997399,
+      "peak_group_rss_bytes": 266063872
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider/camotics-resources.json",
+      "sha256": "4e611ff23a2e2a1c19609a06e5951a6f7c9ef5d8320aa178f5d20ff93a58394f",
+      "seconds": 4.934151357971132,
+      "peak_group_rss_bytes": 531263488
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider/freecad-resources.json",
+      "sha256": "adff653cce1538f18e547581f2e1f94197fafcbc6a1b41090ce92ed0d99d4965",
+      "seconds": 1.0512949610128999,
+      "peak_group_rss_bytes": 212008960
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider/measure-plan-resources.json",
+      "sha256": "3b5673291b360884b4dc7b1601c2cca54688438f7d47c1ddaad62a771cdae775",
+      "seconds": 1.1584714989876375,
+      "peak_group_rss_bytes": 262848512
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider/measure-resources.json",
+      "sha256": "5a4eafa0f8af6299b6d87ed4dd414097a46adc9bd80ef2a137ba002c67ddfdee",
+      "seconds": 15.330098382022697,
+      "peak_group_rss_bytes": 263004160
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider/verify-features-resources.json",
+      "sha256": "db981b0f0f976af0eb69d7326b62aa9c51b24efcac315586f878e9ab14443b1c",
+      "seconds": 3.0440510240150616,
+      "peak_group_rss_bytes": 264904704
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider/verify-software-resources.json",
+      "sha256": "0676b85d57bc0eba4e5afe6ecc90bbc161d113adc1c2195c072c6c4d724fbe22",
+      "seconds": 3.486177591024898,
+      "peak_group_rss_bytes": 264683520
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider-tip/camotics-resources.json",
+      "sha256": "85dc1663e78f31c44aa7f8faeab2263190b8ebebcc69173ca983530dc46f82be",
+      "seconds": 5.033138529979624,
+      "peak_group_rss_bytes": 532086784
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider-tip/freecad-resources.json",
+      "sha256": "99eb527c7a0b8771143bde5c5d4e129a70d45e0befc909b64f45fda3068247da",
+      "seconds": 1.1570520069799386,
+      "peak_group_rss_bytes": 215244800
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider-tip/measure-plan-resources.json",
+      "sha256": "8cb6e16e3abe64ecf4d21efca73280e767380577c146217a71468d5d06fbacac",
+      "seconds": 1.1545946869882755,
+      "peak_group_rss_bytes": 262750208
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider-tip/measure-resources.json",
+      "sha256": "b2d105370fcfd67f016dac80963c2950d2828c03b31e1211e347f8bccf90026a",
+      "seconds": 14.271387894987129,
+      "peak_group_rss_bytes": 262860800
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider-tip/verify-features-resources.json",
+      "sha256": "c86cebba32d7902744afd8c1f1a5e7c944f8d2d53996fad1cb418ee74325aa36",
+      "seconds": 2.9348734520026483,
+      "peak_group_rss_bytes": 264982528
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wider-tip/verify-software-resources.json",
+      "sha256": "2d11b1531e12de5b077517052e60d30e54278c45cd52f9db542ef2df93660bb0",
+      "seconds": 3.047745823976584,
+      "peak_group_rss_bytes": 264663040
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wrong-position/camotics-resources.json",
+      "sha256": "b7aaa6e379b5b1cf827a5e6c9225370a7442a9700bdd17ec4a770df4bfd57fab",
+      "seconds": 4.721433994011022,
+      "peak_group_rss_bytes": 525950976
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wrong-position/measure-plan-resources.json",
+      "sha256": "5f8235d4c05c459927ed3806afe72dd9eb797272597716f6f7fd15ce3224fb77",
+      "seconds": 1.1543853390030563,
+      "peak_group_rss_bytes": 262606848
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wrong-position/measure-resources.json",
+      "sha256": "cb9a90f13a49e007c397f38922ace6bb3c11265ecba15bed672872b5f7f95b20",
+      "seconds": 17.511712310020812,
+      "peak_group_rss_bytes": 262660096
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/native-suite-01/wrong-position/verify-software-resources.json",
+      "sha256": "a176735b21b3500242639eff2a6742256f7f7eff3e11aa69109df1c65b14f943",
+      "seconds": 2.940627353033051,
+      "peak_group_rss_bytes": 264675328
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/render-cards-01-resources.json",
+      "sha256": "2241288c0aa7059c30796b5bc3fa641edff6b77c025b6a67e1eb15e17cf7208a",
+      "seconds": 0.6311625519883819,
+      "peak_group_rss_bytes": 61489152
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/replay-01/baseline/export-resources.json",
+      "sha256": "a27100bc66f93b8101a4f50e624fcad896c21b1f4eb34a8ac4a4d212a2392d14",
+      "seconds": 4.932200179959182,
+      "peak_group_rss_bytes": 277057536
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/replay-01/baseline/frame-1-resources.json",
+      "sha256": "69cc69dc0df1a8152e4618cf4c2f2bbd3f9213e35b97fab2d9565464e96077d2",
+      "seconds": 4.831789373012725,
+      "peak_group_rss_bytes": 532983808
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/replay-01/baseline/frame-2-resources.json",
+      "sha256": "2bb3515a430ac68837ef8cc01af09e4d2a7e7f6abbeefcf5a79a9461fef983e6",
+      "seconds": 4.723980431037489,
+      "peak_group_rss_bytes": 530644992
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/replay-01/baseline/frame-3-resources.json",
+      "sha256": "72a971b995f3e24eacc944ba23c0b2cc393db7f9c099e63c23dddfffb10f48a5",
+      "seconds": 4.943340771016665,
+      "peak_group_rss_bytes": 532467712
+    },
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/unit-chamfer-01-resources.json",
+      "sha256": "659f484e22ca343177423ed4af9bd13ef941f54158c83d5f11b0651015d424af",
+      "seconds": 0.31646114704199135,
+      "peak_group_rss_bytes": 42881024
+    },
+    {
+      "path": "validation/feature-inputs/S4-CHAMFER-20261030-r1/generate-cad-resources.json",
+      "sha256": "fcea8fc6b35b4a9500dcfd4ebb65926a1aec1eca51a35ac1077f383cecd59fb8",
+      "seconds": 0.5254380900296383,
+      "peak_group_rss_bytes": 128278528
+    }
+  ],
+  "prior_finalization_attempts": [
+    {
+      "path": "docs/checkpoints/2026-10-30/chamfer-formal-01/qualification-finalize-01-resources.json",
+      "sha256": "49bd9de5a7f09aa40dd9a693434a1ce54d34f92675878469559e1c7093aecb75",
+      "status": "process_failed",
+      "success": false
+    }
+  ],
+  "limits_changed": false,
+  "maximum_worker_seconds": 25.377221169997938,
+  "peak_worker_rss_bytes": 532983808,
+  "scope": "Four equal 45-degree top edges of one rectangular synthetic family; baseline, width, original CAD translation and finite flat-tip variation. Fixed Z, generic XYZ.",
+  "manufacturing_angle_certified": false,
+  "material_physics_verified": false,
+  "real_process_card_tested": false,
+  "whole_process_card_complete": false,
+  "production_approved": false,
+  "web_progress_updated": false,
+  "goal_complete": false,
+  "next_required": [
+    "Publish all four normal cases and four negative controls with CAD/actual visual results, IoU, representative paper-card/module I/O and this replay; new independent web reviewer required.",
+    "Extend to original-size C3 and combined/multi-setup real-card operations, preserving original CAD coordinates and resource bounds.",
+    "Complete actual CAD/card revision matching, manufacturing criteria and real equipment resources; continue planned 3+2 and five-axis scope."
+  ]
+}

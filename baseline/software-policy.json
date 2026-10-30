@@ -1,0 +1,42 @@
+{
+  "schema": "genlaw.software-geometry-policy.v14",
+  "cad_sha256": "23e6b300854404e004be7aaeee73ea475bf5a3d1cc84ffc3ebf06796729a1aa1",
+  "production_approved": false,
+  "features": {
+    "C1": {
+      "chamfer_sections": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen before NC: 0.1 mm software allowance with two 0.025 mm cells as numerical guard; finite measurements, no manufacturing acceptance or certified angle uncertainty.",
+        "method": "sectioned_original_chamfer_boundary",
+        "max_deviation_mm": 0.1
+      },
+      "chamfer_width": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen before NC: 0.1 mm software allowance with two 0.025 mm cells as numerical guard; finite measurements, no manufacturing acceptance or certified angle uncertainty.",
+        "method": "sampled_extrapolated_chamfer_width",
+        "max_deviation_mm": 0.1
+      },
+      "retained_planes": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen before NC: 0.1 mm software allowance with two 0.025 mm cells as numerical guard; finite measurements, no manufacturing acceptance or certified angle uncertainty.",
+        "method": "sampled_original_top_bottom",
+        "max_deviation_mm": 0.1
+      },
+      "retained_thickness": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen before NC: 0.1 mm software allowance with two 0.025 mm cells as numerical guard; finite measurements, no manufacturing acceptance or certified angle uncertainty.",
+        "method": "sampled_original_thickness",
+        "min_mm": 1.4,
+        "max_mm": 1.6
+      }
+    }
+  }
+}

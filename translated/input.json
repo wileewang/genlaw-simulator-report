@@ -1,0 +1,60 @@
+{
+  "schema": "genlaw.preparation-input.v14",
+  "id": "S4-CHAMFER-20261030-r1-translated",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "来料为原坐标中的矩形实体，外形和厚度已具备；只选择上口四边倒角。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "62db337cb3676810a6d3062a3dfa4d7b8dd9137ace39dfcd5295d11c8ae4718b"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "c15828ee2c09a337a9d9ce2abd1a51c94490e1ead67cd16cdd73ce70e7c1d206"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "b5b0dfd6e03130806dce54a7a7ebf973bceca5aba38d1070ff73d0423e51d517"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "2101e70814226411e1776f6490f655981aba85209fdeee35dee8e05b48425252"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "88f361fdcdce8d5aa54e3d99208911bfdd064a4621ab45a01a7714cb1492c6d1"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "bb9fd9b829eb7f9155d27cd889bffe88c6f4a652ba030ff19a76336cc501c339"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "43b0c924dc5d10d61a3b07b318aef7addfc58951a899eeb2c69dcff222cdc50e"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "0ea5dcf70b1c4e9c515ed2a3d66b45aadb0e1ad78adde93c76b1e3773640cb35"
+    }
+  },
+  "capability": "rectangular_top_chamfer_xy"
+}

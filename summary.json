@@ -1,0 +1,565 @@
+{
+  "schema": "genlaw.chamfer-suite.v1",
+  "id": "native-suite-01",
+  "status": "completed",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "specification": {
+        "id": "baseline",
+        "name": "四边等宽倒角",
+        "chamfer_width_mm": 0.4,
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0.0
+          ]
+        },
+        "tip_diameter_mm": 0.4,
+        "tool_diameter_mm": 2.0,
+        "cone_height_mm": 0.8,
+        "extra_depth_mm": 0.2,
+        "resolution_mm": 0.025,
+        "features": [
+          {
+            "id": "C1",
+            "kind": "top_perimeter_chamfer_45",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "faces": [
+              "Face3",
+              "Face7",
+              "Face9",
+              "Face10"
+            ],
+            "width_mm": 0.4,
+            "angle_degrees": 45,
+            "top_z_mm": 0.0,
+            "thickness_mm": 1.5,
+            "bounds_xy_mm": {
+              "min": [
+                -8.881784197001252e-16,
+                -3.1086244689504383e-15
+              ],
+              "max": [
+                8.000000000000004,
+                6.0
+              ]
+            }
+          }
+        ]
+      },
+      "iou_percent": 99.98226558950411,
+      "software_statuses": {
+        "C1": {
+          "chamfer_sections": "numeric_pass",
+          "chamfer_width": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "retained_thickness": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "max_boundary_deviation_mm": 0.02009765999999913,
+      "max_width_deviation_mm": 0.0001364301818180813,
+      "widths": [
+        {
+          "edge": "xmin",
+          "extrapolated_top_width_mm": 0.40001483030303114,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 1.4830303031121428e-05,
+          "max_fit_residual_mm": 0.0001364301818180813,
+          "estimated_angle_degrees": 45.005358524589965,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "xmax",
+          "extrapolated_top_width_mm": 0.40009764363636713,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 9.764363636710627e-05,
+          "max_fit_residual_mm": 2.0100000028278053e-07,
+          "estimated_angle_degrees": 45.000000651088406,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "ymin",
+          "extrapolated_top_width_mm": 0.4000932364646494,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 9.323646464937108e-05,
+          "max_fit_residual_mm": 9.84384545453243e-05,
+          "estimated_angle_degrees": 44.99920879382946,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "ymax",
+          "extrapolated_top_width_mm": 0.4000976436363635,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 9.764363636349804e-05,
+          "max_fit_residual_mm": 2.010000003105361e-07,
+          "estimated_angle_degrees": 45.000000651088406,
+          "angle_manufacturing_acceptance": false
+        }
+      ],
+      "nc_sha256": "8f47e276ca5b54654ab72b4094f7b5bd27b566b963a16f105918bbc6c8d5a558",
+      "mesh_sha256": "372b6867c48f0d7264894727ec8e8c89444e784f68faabaa9982f7a93f976135",
+      "software_verification_sha256": "b08065ccbd3dbca7bab8d8be727cff57b15f7785915eb90e6706f27c45eb8511",
+      "frames": [
+        {
+          "kind": "native_time_cutoff",
+          "time_seconds": 4.464159,
+          "label": "倒角前段",
+          "resolution_mm": 0.025,
+          "mesh_sha256": "83e36e0f5dd7389da3120b2ec315ba41b53db3345df6ac639afcb192f9a2f01c",
+          "stl_sha256": "89355e35be5b0f1a801c1b83cd8c7bcbdd72692d558fb16a0e4cf194dbf15688",
+          "mesh": "baseline/replay/frame-1.mesh"
+        },
+        {
+          "kind": "native_time_cutoff",
+          "time_seconds": 9.82115,
+          "label": "沿外周加工",
+          "resolution_mm": 0.025,
+          "mesh_sha256": "1d74d1a95a5b20e9bc6eec71fca61389f8354ec9d83116a6bfcc84ef6f7102fc",
+          "stl_sha256": "4dd3c82b88825c6b6429d1d1ae322fbfb9ea688f2fe6d22b81691a5156b92ec0",
+          "mesh": "baseline/replay/frame-2.mesh"
+        },
+        {
+          "kind": "native_time_cutoff",
+          "time_seconds": 15.178142,
+          "label": "接近闭合",
+          "resolution_mm": 0.025,
+          "mesh_sha256": "e34caaa82f89bae00dd524d1ab54604891fa0cfd768c6ac90e7df3d6e2690e19",
+          "stl_sha256": "0417109b20b866dcfaf3bf6d79311e67898454a8d6985f79a7001eaf54dc73d5",
+          "mesh": "baseline/replay/frame-3.mesh"
+        }
+      ],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "wider",
+      "specification": {
+        "id": "wider",
+        "name": "倒角加宽",
+        "chamfer_width_mm": 0.5,
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0.0
+          ]
+        },
+        "tip_diameter_mm": 0.4,
+        "tool_diameter_mm": 2.0,
+        "cone_height_mm": 0.8,
+        "extra_depth_mm": 0.2,
+        "resolution_mm": 0.025,
+        "features": [
+          {
+            "id": "C1",
+            "kind": "top_perimeter_chamfer_45",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "faces": [
+              "Face3",
+              "Face7",
+              "Face9",
+              "Face10"
+            ],
+            "width_mm": 0.5,
+            "angle_degrees": 45,
+            "top_z_mm": 0.0,
+            "thickness_mm": 1.5,
+            "bounds_xy_mm": {
+              "min": [
+                -8.326672684688674e-17,
+                -2.886579864025407e-15
+              ],
+              "max": [
+                8.0,
+                6.0
+              ]
+            }
+          }
+        ]
+      },
+      "iou_percent": 99.98235629441737,
+      "software_statuses": {
+        "C1": {
+          "chamfer_sections": "numeric_pass",
+          "chamfer_width": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "retained_thickness": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "max_boundary_deviation_mm": 0.02509765999999994,
+      "max_width_deviation_mm": 0.00014561685176800454,
+      "widths": [
+        {
+          "edge": "xmin",
+          "extrapolated_top_width_mm": 0.5000539300566419,
+          "nominal_width_mm": 0.5,
+          "width_error_mm": 5.393005664189321e-05,
+          "max_fit_residual_mm": 0.00014561685176800454,
+          "estimated_angle_degrees": 44.99931500943493,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "xmax",
+          "extrapolated_top_width_mm": 0.500097629975759,
+          "nominal_width_mm": 0.5,
+          "width_error_mm": 9.762997575901711e-05,
+          "max_fit_residual_mm": 2.529394097505744e-07,
+          "estimated_angle_degrees": 45.00000486105765,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "ymin",
+          "extrapolated_top_width_mm": 0.5000984479401153,
+          "nominal_width_mm": 0.5,
+          "width_error_mm": 9.844794011526492e-05,
+          "max_fit_residual_mm": 6.819109071662388e-05,
+          "estimated_angle_degrees": 44.99909534346701,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "ymax",
+          "extrapolated_top_width_mm": 0.5000988161202473,
+          "nominal_width_mm": 0.5,
+          "width_error_mm": 9.881612024731368e-05,
+          "max_fit_residual_mm": 0.00010230552806150817,
+          "estimated_angle_degrees": 44.99864594802069,
+          "angle_manufacturing_acceptance": false
+        }
+      ],
+      "nc_sha256": "bc0feb7eade8e79c8f6bb3d24cc11c1d159109756a1392102dc8367082c57c80",
+      "mesh_sha256": "cdafa47748ab92c2d7573b198682ffb2158a55fc75bfba92ee128a26d651ad06",
+      "software_verification_sha256": "8a209346cb8fa2b5853e022e80a97530fd8566e870bb4fbcb28b0aa15522a625",
+      "frames": [],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "translated",
+      "specification": {
+        "id": "translated",
+        "name": "原 CAD 坐标平移",
+        "chamfer_width_mm": 0.4,
+        "stock_bounds_mm": {
+          "min": [
+            1,
+            -2,
+            -0.5
+          ],
+          "max": [
+            9,
+            4,
+            1.0
+          ]
+        },
+        "tip_diameter_mm": 0.4,
+        "tool_diameter_mm": 2.0,
+        "cone_height_mm": 0.8,
+        "extra_depth_mm": 0.2,
+        "resolution_mm": 0.025,
+        "features": [
+          {
+            "id": "C1",
+            "kind": "top_perimeter_chamfer_45",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "faces": [
+              "Face3",
+              "Face7",
+              "Face9",
+              "Face10"
+            ],
+            "width_mm": 0.4,
+            "angle_degrees": 45,
+            "top_z_mm": 1.0,
+            "thickness_mm": 1.5,
+            "bounds_xy_mm": {
+              "min": [
+                0.9999999999999982,
+                -2.000000000000003
+              ],
+              "max": [
+                9.000000000000004,
+                4.0
+              ]
+            }
+          }
+        ]
+      },
+      "iou_percent": 99.98237883247889,
+      "software_statuses": {
+        "C1": {
+          "chamfer_sections": "numeric_pass",
+          "chamfer_width": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "retained_thickness": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "max_boundary_deviation_mm": 0.01774700134956451,
+      "max_width_deviation_mm": 0.00011795272727269102,
+      "widths": [
+        {
+          "edge": "xmin",
+          "extrapolated_top_width_mm": 0.39994326404040575,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 5.673595959426736e-05,
+          "max_fit_residual_mm": 0.00011795272727269102,
+          "estimated_angle_degrees": 45.011027073993006,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "xmax",
+          "extrapolated_top_width_mm": 0.40002739989899294,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 2.739989899291917e-05,
+          "max_fit_residual_mm": 9.115090909078694e-05,
+          "estimated_angle_degrees": 45.006605546878866,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "ymin",
+          "extrapolated_top_width_mm": 0.4000438477777806,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 4.384777778060345e-05,
+          "max_fit_residual_mm": 0.00010686409090882032,
+          "estimated_angle_degrees": 45.00566756166917,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "ymax",
+          "extrapolated_top_width_mm": 0.40006214383838373,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 6.214383838371029e-05,
+          "max_fit_residual_mm": 0.00010379663636372882,
+          "estimated_angle_degrees": 45.001931555034396,
+          "angle_manufacturing_acceptance": false
+        }
+      ],
+      "nc_sha256": "3919950ac77fce76169259d8ee27ca5285cb520696987c264c0da7db6ea5c883",
+      "mesh_sha256": "7fc5be75f90c3666fa87a531a1f6d3707bfbffc0c8710bdf6943d3138ee3ec8b",
+      "software_verification_sha256": "49c87eef4f507869f51c1ca19f6db0d86ea796085acd5fc21a1f953727606e8a",
+      "frames": [],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "wider-tip",
+      "specification": {
+        "id": "wider-tip",
+        "name": "更换平刃刀尖尺寸",
+        "chamfer_width_mm": 0.4,
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0.0
+          ]
+        },
+        "tip_diameter_mm": 0.8,
+        "tool_diameter_mm": 2.4000000000000004,
+        "cone_height_mm": 0.8,
+        "extra_depth_mm": 0.2,
+        "resolution_mm": 0.025,
+        "features": [
+          {
+            "id": "C1",
+            "kind": "top_perimeter_chamfer_45",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "faces": [
+              "Face3",
+              "Face7",
+              "Face9",
+              "Face10"
+            ],
+            "width_mm": 0.4,
+            "angle_degrees": 45,
+            "top_z_mm": 0.0,
+            "thickness_mm": 1.5,
+            "bounds_xy_mm": {
+              "min": [
+                -8.881784197001252e-16,
+                -3.1086244689504383e-15
+              ],
+              "max": [
+                8.000000000000004,
+                6.0
+              ]
+            }
+          }
+        ]
+      },
+      "iou_percent": 99.98219710700191,
+      "software_statuses": {
+        "C1": {
+          "chamfer_sections": "numeric_pass",
+          "chamfer_width": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "retained_thickness": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "max_boundary_deviation_mm": 0.01774664779617328,
+      "max_width_deviation_mm": 0.0001311090909101864,
+      "widths": [
+        {
+          "edge": "xmin",
+          "extrapolated_top_width_mm": 0.4001311090909102,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 0.0001311090909101864,
+          "max_fit_residual_mm": 0.00010247490909090495,
+          "estimated_angle_degrees": 44.98910805991676,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "xmax",
+          "extrapolated_top_width_mm": 0.40009764363636713,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 9.764363636710627e-05,
+          "max_fit_residual_mm": 2.0100000028278053e-07,
+          "estimated_angle_degrees": 45.000000651088406,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "ymin",
+          "extrapolated_top_width_mm": 0.4000976554545486,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 9.765545454859526e-05,
+          "max_fit_residual_mm": 1.4545454618541953e-08,
+          "estimated_angle_degrees": 44.999999999999986,
+          "angle_manufacturing_acceptance": false
+        },
+        {
+          "edge": "ymax",
+          "extrapolated_top_width_mm": 0.4000976436363635,
+          "nominal_width_mm": 0.4,
+          "width_error_mm": 9.764363636349804e-05,
+          "max_fit_residual_mm": 2.010000003105361e-07,
+          "estimated_angle_degrees": 45.000000651088406,
+          "angle_manufacturing_acceptance": false
+        }
+      ],
+      "nc_sha256": "a71f37154e59b19e058add7e394c8f1f2efa9c8ecfb2911b9a2d78aa8e194e00",
+      "mesh_sha256": "5d86bd3ad34db6b0deb05b149e260452c1124be4253f4dc207787dfd6fcc0909",
+      "software_verification_sha256": "1a1440aef163cdece41e3e7f15258eb6798ef648e7c60dd745c490845d083ad0",
+      "frames": [],
+      "resolution_mm": 0.025
+    }
+  ],
+  "controls": [
+    {
+      "id": "overcut-depth",
+      "parent_case": "baseline",
+      "guard_rejected": true,
+      "iou_percent": 96.26522418184611,
+      "software_statuses": {
+        "C1": {
+          "chamfer_sections": "numeric_fail",
+          "chamfer_width": "numeric_fail",
+          "retained_planes": "indeterminate",
+          "retained_thickness": "indeterminate"
+        }
+      },
+      "regression_expectation_met": true,
+      "software_verification_sha256": "235bc84bd531a2d3a24300190aabc264c3d3359d642bc8a4e487f088df922b44",
+      "frames": [],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "too-shallow",
+      "parent_case": "baseline",
+      "guard_rejected": true,
+      "iou_percent": 97.41292385395003,
+      "software_statuses": {
+        "C1": {
+          "chamfer_sections": "numeric_fail",
+          "chamfer_width": "numeric_fail",
+          "retained_planes": "numeric_pass",
+          "retained_thickness": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "software_verification_sha256": "b4d009439b19788034496150eeb74fac3e85ab23c1e94bb885f39b6d498f50e7",
+      "frames": [],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "wrong-position",
+      "parent_case": "baseline",
+      "guard_rejected": true,
+      "iou_percent": 97.08465853431896,
+      "software_statuses": {
+        "C1": {
+          "chamfer_sections": "numeric_fail",
+          "chamfer_width": "numeric_fail",
+          "retained_planes": "numeric_fail",
+          "retained_thickness": "numeric_fail"
+        }
+      },
+      "regression_expectation_met": true,
+      "software_verification_sha256": "a0cf549d4fca302894daf4f5b561a82c0c410a84582564c4cabf38fc2886e341",
+      "frames": [],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "extra-inner-edge",
+      "parent_case": "baseline",
+      "guard_rejected": true,
+      "iou_percent": 93.604407988331,
+      "software_statuses": {
+        "C1": {
+          "chamfer_sections": "numeric_fail",
+          "chamfer_width": "numeric_fail",
+          "retained_planes": "numeric_fail",
+          "retained_thickness": "numeric_fail"
+        }
+      },
+      "regression_expectation_met": true,
+      "software_verification_sha256": "8ff4fedb3c5108b62caa0b6b19b545f4ce34e0378f297957c89798dceb16cf12",
+      "frames": [],
+      "resolution_mm": 0.025
+    }
+  ],
+  "all_regression_expectations_met": true,
+  "input_archive": "S4-CHAMFER-20261030-r1",
+  "input_manifest_sha256": "38cdd7f004d1729b25976d257990d0c1886e9affb78e55c643c97a9c5a6dd7a5",
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "real_process_card_tested": false,
+  "scope": "One synthetic rectangular four-edge chamfer family; finite-frustum cutter, fixed Z, no certified manufacturing angle acceptance.",
+  "stage_id": "s4",
+  "title": "四边 45° 倒角",
+  "rectangular_chamfer_verified": true,
+  "representative_replay_case": "baseline",
+  "new_simulations_for_publication": 0
+}

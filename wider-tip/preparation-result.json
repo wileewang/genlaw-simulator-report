@@ -1,0 +1,416 @@
+{
+  "schema": "genlaw.preparation-result.v1",
+  "adapter": "genlaw.preparation.rectangular-chamfer.v1",
+  "status": "ready_for_declared_scope",
+  "execution_plan": {
+    "schema": "genlaw.execution-plan.v14",
+    "capability": "rectangular_top_chamfer_xy",
+    "input_id": "S4-CHAMFER-20261030-r1-wider-tip",
+    "mode": "software_geometry_reference",
+    "source_bindings": {
+      "process_plan": {
+        "path": "process-plan.json",
+        "sha256": "4820e4359583df368dd528fcbf0a7e73454b8ecda2d809e5e881421cb74b92bc"
+      },
+      "cad": {
+        "path": "target.brep",
+        "sha256": "23e6b300854404e004be7aaeee73ea475bf5a3d1cc84ffc3ebf06796729a1aa1"
+      },
+      "display_cad": {
+        "path": "target.step",
+        "sha256": "2ec6150bfac17b5456c929f6b316f4acf3e7b79619b7abf1dcdfe3e858edd35b"
+      },
+      "geometry_observation": {
+        "path": "geometry-observation.json",
+        "sha256": "7c9c40fc8369cce480e164a434ac8d9d895b5a855bd623d5edb441afcd532ff5"
+      },
+      "native_reference": {
+        "path": "reference.json",
+        "sha256": "eb808c6641706f3205bebb0dd7e306de469155d86e6970d97181e814fb7ef554"
+      },
+      "requirements": {
+        "path": "requirements.json",
+        "sha256": "83ffc763ab487123a472223a81e6b96badcd1afb64f91f491382c7a5beb989fb"
+      },
+      "resources": {
+        "path": "resources-software-reference.json",
+        "sha256": "88ee8086fe623d8f9b1032b5efc96ff8e85de7f473caf5123006a2e75475960a"
+      },
+      "paper_card": {
+        "path": "process-card.pdf",
+        "sha256": "bdd060218953c7d7c14318d725b2f08d1e4aae576540470a6229f3c062f3ae70"
+      }
+    },
+    "cad_ref": {
+      "path": "target.brep",
+      "sha256": "23e6b300854404e004be7aaeee73ea475bf5a3d1cc84ffc3ebf06796729a1aa1"
+    },
+    "cad_observation_ref": {
+      "path": "geometry-observation.json",
+      "sha256": "7c9c40fc8369cce480e164a434ac8d9d895b5a855bd623d5edb441afcd532ff5"
+    },
+    "operations": [
+      {
+        "operation_id": "OP10",
+        "step_id": "OP10.2",
+        "type": "chamfer_milling",
+        "feature_id": "C1",
+        "geometry": {
+          "id": "C1",
+          "kind": "top_perimeter_chamfer_45",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "faces": [
+            "Face3",
+            "Face7",
+            "Face9",
+            "Face10"
+          ],
+          "width_mm": 0.4,
+          "angle_degrees": 45,
+          "top_z_mm": 0.0,
+          "thickness_mm": 1.5,
+          "bounds_xy_mm": {
+            "min": [
+              -8.881784197001252e-16,
+              -3.1086244689504383e-15
+            ],
+            "max": [
+              8.000000000000004,
+              6.0
+            ]
+          }
+        },
+        "final_z_mm": -0.5999999999999981
+      }
+    ],
+    "target_bounds_mm": {
+      "min": [
+        -8.881784197001252e-16,
+        -3.1086244689504383e-15,
+        -1.5
+      ],
+      "max": [
+        8.000000000000004,
+        6.0,
+        1.9984014443252818e-15
+      ]
+    },
+    "cam_backend": {
+      "path": "engines/freecad/deburr-linear-height-r2/manifest.json",
+      "sha256": "d9d124ffe9eeafd311c68463971dc118ba47b578219dda9137c0b90739d19008"
+    },
+    "stock": {
+      "shape": "box",
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          0.0
+        ]
+      },
+      "material_label": "6061-T6",
+      "material_physics_verified": false
+    },
+    "tool": {
+      "id": "T1",
+      "kind": "chamfer_frustum",
+      "center_cutting": false,
+      "diameter_mm": 2.4000000000000004,
+      "tip_diameter_mm": 0.8,
+      "included_angle_degrees": 90,
+      "cutting_length_mm": 0.8,
+      "length_mm": 20,
+      "basis": "Explicit finite 90 degree frustum with a flat tip; software reference only, shank and holder excluded."
+    },
+    "setup": {
+      "work_offset": "G54",
+      "origin_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "tool_length_offset_mm": 0,
+      "fixture_mode": "unmodelled_explicitly_excluded",
+      "basis": "Explicit software-only zero transform; real clamping excluded.",
+      "startup": {
+        "position_mm": [
+          0,
+          0,
+          0
+        ],
+        "tool": "unloaded",
+        "spindle": "stopped",
+        "retract_before_tool_selection_z_mm": 3,
+        "basis": "Explicit unloaded-start reference; retract before selecting the cutter, spindle head excluded."
+      }
+    },
+    "controller": {
+      "profile": "reference_NC_subset",
+      "return_mode": "initial_plane",
+      "linuxcnc_runtime_required": false,
+      "arc_centers": "incremental_IJK"
+    },
+    "parameters": {
+      "spindle_rpm": 3000.0,
+      "feed_mm_min": 120.0,
+      "plunge_mm_min": 60.0,
+      "safe_height_mm": 2.0,
+      "clearance_height_mm": 3.0,
+      "path_tolerance_mm": 0.001,
+      "extra_depth_mm": 0.2
+    },
+    "strategy": {
+      "clearing_pattern": "ClosedChamfer",
+      "cut_mode": "CW",
+      "start_at": "NativeBoundary",
+      "entry": "outside_vertical",
+      "keep_tool_down": true,
+      "radial_allowance_mm": 0,
+      "axial_allowance_mm": 0,
+      "side": "Outside",
+      "compensation": "CAM_frustum_offset_G40",
+      "profile_passes": 1,
+      "join_type": "Round"
+    },
+    "parameter_provenance": {
+      "spindle_rpm": {
+        "kind": "resource_preset",
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "feed_mm_min": {
+        "kind": "resource_preset",
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "plunge_mm_min": {
+        "kind": "resource_preset",
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "safe_height_mm": {
+        "kind": "resource_preset",
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "clearance_height_mm": {
+        "kind": "resource_preset",
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "path_tolerance_mm": {
+        "kind": "resource_preset",
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "extra_depth_mm": {
+        "kind": "resource_preset",
+        "basis": "Explicit software reference keeps the flat tip outside original vertical walls."
+      }
+    },
+    "simulation": {
+      "resolution_mm": 0.025,
+      "basis": "Frozen before NC under unchanged local grid budget."
+    },
+    "scope": {
+      "selected_steps": [
+        "OP10.2"
+      ],
+      "whole_process_card": false,
+      "declared_preconditions": {
+        "OP05.1": "来料为原坐标中的矩形实体，外形和厚度已具备；只选择上口四边倒角。",
+        "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+      },
+      "excluded_checks": [
+        "fixture_collision",
+        "holder_collision",
+        "material_physics",
+        "surface_roughness",
+        "whole_process_completion"
+      ]
+    },
+    "requirements_ref": {
+      "path": "requirements.json",
+      "sha256": "83ffc763ab487123a472223a81e6b96badcd1afb64f91f491382c7a5beb989fb"
+    },
+    "production_approved": false,
+    "whole_process_card_complete": false
+  },
+  "issues": [
+    {
+      "code": "missing_information",
+      "field": "requirements/C1-chamfer_sections/acceptance",
+      "message": "制造验收依据待补。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "input_maintenance"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/C1-chamfer_width/acceptance",
+      "message": "制造验收依据待补。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "input_maintenance"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/C1-retained_thickness/acceptance",
+      "message": "制造验收依据待补。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "input_maintenance"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/C1-retained_planes/acceptance",
+      "message": "制造验收依据待补。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "input_maintenance"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/C1-chamfer_angle_degrees/acceptance",
+      "message": "制造验收依据待补。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "input_maintenance"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/C1-surface_roughness/acceptance",
+      "message": "制造验收依据待补。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "input_maintenance"
+    },
+    {
+      "code": "unverified_scope",
+      "field": "review",
+      "message": "软件参考；整卡 / 工艺 / 生产批准均未完成。",
+      "severity": "notice",
+      "blocked_stage": null,
+      "owner": "process_engineer"
+    }
+  ],
+  "coverage": [
+    {
+      "operation_id": "OP05",
+      "step_id": "OP05.1",
+      "type": "incoming_inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.1",
+      "type": "setup",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "chamfer_milling",
+      "status": "selected_for_preparation"
+    },
+    {
+      "operation_id": "OP20",
+      "step_id": "OP20.1",
+      "type": "deburring",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP30",
+      "step_id": "OP30.1",
+      "type": "inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP35",
+      "step_id": "OP35.1",
+      "type": "postprocess",
+      "status": "not_verified"
+    }
+  ],
+  "requirement_readiness": [
+    {
+      "id": "C1-chamfer_sections",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "C1-chamfer_width",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "C1-retained_thickness",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "C1-retained_planes",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "C1-chamfer_angle_degrees",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "C1-surface_roughness",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    }
+  ],
+  "input_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "4820e4359583df368dd528fcbf0a7e73454b8ecda2d809e5e881421cb74b92bc"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "23e6b300854404e004be7aaeee73ea475bf5a3d1cc84ffc3ebf06796729a1aa1"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "2ec6150bfac17b5456c929f6b316f4acf3e7b79619b7abf1dcdfe3e858edd35b"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "7c9c40fc8369cce480e164a434ac8d9d895b5a855bd623d5edb441afcd532ff5"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "eb808c6641706f3205bebb0dd7e306de469155d86e6970d97181e814fb7ef554"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "83ffc763ab487123a472223a81e6b96badcd1afb64f91f491382c7a5beb989fb"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "88ee8086fe623d8f9b1032b5efc96ff8e85de7f473caf5123006a2e75475960a"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "bdd060218953c7d7c14318d725b2f08d1e4aae576540470a6229f3c062f3ae70"
+    }
+  },
+  "source_pdf_automatically_recognized": false,
+  "cad_native_geometry_reparsed_this_run": false,
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "input_id": "S4-CHAMFER-20261030-r1-wider-tip",
+  "input_manifest_sha256": "d37485f85a6d548a6a0c58616a794e72707f11cccc315818095e82bf5750b0c1",
+  "execution_plan_sha256": "b8f3400b7e956468f7f706bd29828d1e80cea27324012440804d69eae5b00579"
+}

@@ -1,0 +1,169 @@
+{
+  "schema": "genlaw.sectional-iou.v2",
+  "status": "measured_numerical_estimate",
+  "iou": 0.9998237883247889,
+  "iou_percent": 99.98237883247889,
+  "volumes": {
+    "actual_volume_mm3": 69.85421993544769,
+    "target_volume_mm3": 69.8453333333333,
+    "intersection_mm3": 69.84362191904721,
+    "union_mm3": 69.85593134973378,
+    "iou": 0.9998237883247889,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 0.010598016400479082,
+  "missing_material_mm3": 0.0017114142860918946,
+  "actual_mesh": {
+    "source_sha256": "7fc5be75f90c3666fa87a531a1f6d3707bfbffc0c8710bdf6943d3138ee3ec8b",
+    "raw_triangles": 446352,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 446352,
+    "vertices": 223178,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 69.85421996973558,
+    "bounds": {
+      "min": [
+        0.9999023675918579,
+        -1.999902367591858,
+        -0.5000976324081421
+      ],
+      "max": [
+        9.000097274780273,
+        4.000097751617432,
+        1.000097632408142
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "schema": "genlaw.native-binding.v14",
+    "status": "verified",
+    "cad_sha256": "c15828ee2c09a337a9d9ce2abd1a51c94490e1ead67cd16cdd73ce70e7c1d206",
+    "reference_class": "box_with_equal_45_degree_top_perimeter_chamfers",
+    "bounds": {
+      "min": [
+        0.9999999999999982,
+        -2.000000000000003,
+        -0.5
+      ],
+      "max": [
+        9.000000000000004,
+        4.0,
+        1.0000000000000022
+      ]
+    },
+    "incoming_stock_bounds": {
+      "min": [
+        1,
+        -2,
+        -0.5
+      ],
+      "max": [
+        9,
+        4,
+        1.0
+      ]
+    },
+    "volume_mm3": 69.84533333333336,
+    "valid_single_solid": true,
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "features": [
+      {
+        "id": "C1",
+        "kind": "top_perimeter_chamfer_45",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "faces": [
+          "Face3",
+          "Face7",
+          "Face9",
+          "Face10"
+        ],
+        "width_mm": 0.4,
+        "angle_degrees": 45,
+        "top_z_mm": 1.0,
+        "thickness_mm": 1.5,
+        "bounds_xy_mm": {
+          "min": [
+            0.9999999999999982,
+            -2.000000000000003
+          ],
+          "max": [
+            9.000000000000004,
+            4.0
+          ]
+        }
+      }
+    ],
+    "reference_for_iou": "Original native CAD independently checked by four triangular wedge cuts and analytic volume; no fitted registration or discarded material."
+  },
+  "native_geometry_sha256": "9480b2f50395592a02065ff70ea53bf185f1d60bb0d23814b42f5a3708bfbad3",
+  "absolute_iou_refinement_difference": 3.2312490816366335e-07,
+  "section_levels": 101,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "method": "Closed STL cross-sections, all vertex-height intervals, 3-point Gauss integration against native-checked analytic CAD section.",
+  "registration": "none; same CAD/G54 coordinates",
+  "full_tolerance_acceptance": false,
+  "production_approved": false,
+  "limits": [
+    "Numerical volume estimate, not certified uncertainty.",
+    "Global IoU alone does not accept chamfer width or angle.",
+    "No registration or trimming; finite mesh resolution; no manufacturing approval."
+  ],
+  "reference_sections": "Exact inset rectangles across the native-checked 45-degree perimeter chamfer; every actual mesh section and remnant retained.",
+  "reference_source_code_sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b",
+  "chamfer_reference_source_code_sha256": "0585d381bf5933722f0b2a8644f1840167c638d7ccee24510746dbba507f34a6",
+  "section_topology_observations": [
+    {
+      "requested_z_mm": -0.34999999999999976,
+      "z_mm": -0.36545084744205253,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": 0.2500000000000011,
+      "z_mm": 0.25954915255794747,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": 0.8500000000000021,
+      "z_mm": 0.8499396468575262,
+      "interior_loops": 0,
+      "holes": []
+    }
+  ]
+}

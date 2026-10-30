@@ -1,0 +1,21 @@
+--- upstream/Path/Op/Deburr.py
++++ patched/Path/Op/Deburr.py
+@@ -27,6 +27,7 @@
+ import Path.Op.Base as PathOp
+ import Path.Op.EngraveBase as PathEngraveBase
+ import Path.Op.Util as PathOpUtil
++import Path.Geom as PathGeom
+ import math
+ 
+ from PySide.QtCore import QT_TRANSLATE_NOOP
+@@ -342,8 +343,9 @@
+ 
+                         else:  # Line
+                             if (
+-                                edge.Vertexes[0].Point.z == edge.Vertexes[1].Point.z
++                                PathGeom.isRoughly(edge.Vertexes[0].Point.z, edge.Vertexes[1].Point.z)
+                                 and edge.Vertexes[0].Point.z < max_h
++                                and not PathGeom.isRoughly(edge.Vertexes[0].Point.z, max_h)
+                             ):
+                                 new_edge = Part.Edge(
+                                     Part.LineSegment(

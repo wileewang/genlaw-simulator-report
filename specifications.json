@@ -1,0 +1,221 @@
+{
+  "schema": "genlaw.chamfer-fixtures.v1",
+  "stage": "s4-chamfer",
+  "cases": [
+    {
+      "id": "baseline",
+      "name": "四边等宽倒角",
+      "chamfer_width_mm": 0.4,
+      "stock_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          0.0
+        ]
+      },
+      "tip_diameter_mm": 0.4,
+      "tool_diameter_mm": 2.0,
+      "cone_height_mm": 0.8,
+      "extra_depth_mm": 0.2,
+      "resolution_mm": 0.025,
+      "features": [
+        {
+          "id": "C1",
+          "kind": "top_perimeter_chamfer_45",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "faces": [
+            "Face3",
+            "Face7",
+            "Face9",
+            "Face10"
+          ],
+          "width_mm": 0.4,
+          "angle_degrees": 45,
+          "top_z_mm": 0.0,
+          "thickness_mm": 1.5,
+          "bounds_xy_mm": {
+            "min": [
+              -8.881784197001252e-16,
+              -3.1086244689504383e-15
+            ],
+            "max": [
+              8.000000000000004,
+              6.0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wider",
+      "name": "倒角加宽",
+      "chamfer_width_mm": 0.5,
+      "stock_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          0.0
+        ]
+      },
+      "tip_diameter_mm": 0.4,
+      "tool_diameter_mm": 2.0,
+      "cone_height_mm": 0.8,
+      "extra_depth_mm": 0.2,
+      "resolution_mm": 0.025,
+      "features": [
+        {
+          "id": "C1",
+          "kind": "top_perimeter_chamfer_45",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "faces": [
+            "Face3",
+            "Face7",
+            "Face9",
+            "Face10"
+          ],
+          "width_mm": 0.5,
+          "angle_degrees": 45,
+          "top_z_mm": 0.0,
+          "thickness_mm": 1.5,
+          "bounds_xy_mm": {
+            "min": [
+              -8.326672684688674e-17,
+              -2.886579864025407e-15
+            ],
+            "max": [
+              8.0,
+              6.0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "translated",
+      "name": "原 CAD 坐标平移",
+      "chamfer_width_mm": 0.4,
+      "stock_bounds_mm": {
+        "min": [
+          1,
+          -2,
+          -0.5
+        ],
+        "max": [
+          9,
+          4,
+          1.0
+        ]
+      },
+      "tip_diameter_mm": 0.4,
+      "tool_diameter_mm": 2.0,
+      "cone_height_mm": 0.8,
+      "extra_depth_mm": 0.2,
+      "resolution_mm": 0.025,
+      "features": [
+        {
+          "id": "C1",
+          "kind": "top_perimeter_chamfer_45",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "faces": [
+            "Face3",
+            "Face7",
+            "Face9",
+            "Face10"
+          ],
+          "width_mm": 0.4,
+          "angle_degrees": 45,
+          "top_z_mm": 1.0,
+          "thickness_mm": 1.5,
+          "bounds_xy_mm": {
+            "min": [
+              0.9999999999999982,
+              -2.000000000000003
+            ],
+            "max": [
+              9.000000000000004,
+              4.0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wider-tip",
+      "name": "更换平刃刀尖尺寸",
+      "chamfer_width_mm": 0.4,
+      "stock_bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          6,
+          0.0
+        ]
+      },
+      "tip_diameter_mm": 0.8,
+      "tool_diameter_mm": 2.4000000000000004,
+      "cone_height_mm": 0.8,
+      "extra_depth_mm": 0.2,
+      "resolution_mm": 0.025,
+      "features": [
+        {
+          "id": "C1",
+          "kind": "top_perimeter_chamfer_45",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "faces": [
+            "Face3",
+            "Face7",
+            "Face9",
+            "Face10"
+          ],
+          "width_mm": 0.4,
+          "angle_degrees": 45,
+          "top_z_mm": 0.0,
+          "thickness_mm": 1.5,
+          "bounds_xy_mm": {
+            "min": [
+              -8.881784197001252e-16,
+              -3.1086244689504383e-15
+            ],
+            "max": [
+              8.000000000000004,
+              6.0
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "selection": "One synthetic four-edge top chamfer with independent width, original CAD translation and finite tip changes. Not a scaled real-card part, new WCS support or whole-card test.",
+  "production_approved": false,
+  "real_process_card_tested": false
+}
