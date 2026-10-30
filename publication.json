@@ -1,0 +1,1287 @@
+{
+  "schema": "genlaw.chamfer-publication.v1",
+  "archive_commit": "e6ca91bd115ef81c23cfd7088cf9de9f9dc61111",
+  "archive_base_url": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/",
+  "archive_manifest_sha256": "f0bdad753f70bd9295356e257733f9308de9864e02a3dfc1320a75b967be5ce5",
+  "geometry_mirror_commit": "e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a",
+  "review_media_commit": "1342edc593f9f00b8f9b283198bdc1519c6956f6",
+  "summary": {
+    "schema": "genlaw.chamfer-suite.v1",
+    "id": "native-suite-01",
+    "status": "completed",
+    "normal_cases": [
+      {
+        "id": "baseline",
+        "specification": {
+          "id": "baseline",
+          "name": "四边等宽倒角",
+          "chamfer_width_mm": 0.4,
+          "stock_bounds_mm": {
+            "min": [
+              0,
+              0,
+              -1.5
+            ],
+            "max": [
+              8,
+              6,
+              0.0
+            ]
+          },
+          "tip_diameter_mm": 0.4,
+          "tool_diameter_mm": 2.0,
+          "cone_height_mm": 0.8,
+          "extra_depth_mm": 0.2,
+          "resolution_mm": 0.025,
+          "features": [
+            {
+              "id": "C1",
+              "kind": "top_perimeter_chamfer_45",
+              "axis": [
+                0,
+                0,
+                1
+              ],
+              "faces": [
+                "Face3",
+                "Face7",
+                "Face9",
+                "Face10"
+              ],
+              "width_mm": 0.4,
+              "angle_degrees": 45,
+              "top_z_mm": 0.0,
+              "thickness_mm": 1.5,
+              "bounds_xy_mm": {
+                "min": [
+                  -8.881784197001252e-16,
+                  -3.1086244689504383e-15
+                ],
+                "max": [
+                  8.000000000000004,
+                  6.0
+                ]
+              }
+            }
+          ]
+        },
+        "iou_percent": 99.98226558950411,
+        "software_statuses": {
+          "C1": {
+            "chamfer_sections": "numeric_pass",
+            "chamfer_width": "numeric_pass",
+            "retained_planes": "numeric_pass",
+            "retained_thickness": "numeric_pass"
+          }
+        },
+        "regression_expectation_met": true,
+        "max_boundary_deviation_mm": 0.02009765999999913,
+        "max_width_deviation_mm": 0.0001364301818180813,
+        "widths": [
+          {
+            "edge": "xmin",
+            "extrapolated_top_width_mm": 0.40001483030303114,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 1.4830303031121428e-05,
+            "max_fit_residual_mm": 0.0001364301818180813,
+            "estimated_angle_degrees": 45.005358524589965,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "xmax",
+            "extrapolated_top_width_mm": 0.40009764363636713,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 9.764363636710627e-05,
+            "max_fit_residual_mm": 2.0100000028278053e-07,
+            "estimated_angle_degrees": 45.000000651088406,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "ymin",
+            "extrapolated_top_width_mm": 0.4000932364646494,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 9.323646464937108e-05,
+            "max_fit_residual_mm": 9.84384545453243e-05,
+            "estimated_angle_degrees": 44.99920879382946,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "ymax",
+            "extrapolated_top_width_mm": 0.4000976436363635,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 9.764363636349804e-05,
+            "max_fit_residual_mm": 2.010000003105361e-07,
+            "estimated_angle_degrees": 45.000000651088406,
+            "angle_manufacturing_acceptance": false
+          }
+        ],
+        "nc_sha256": "8f47e276ca5b54654ab72b4094f7b5bd27b566b963a16f105918bbc6c8d5a558",
+        "mesh_sha256": "372b6867c48f0d7264894727ec8e8c89444e784f68faabaa9982f7a93f976135",
+        "software_verification_sha256": "b08065ccbd3dbca7bab8d8be727cff57b15f7785915eb90e6706f27c45eb8511",
+        "frames": [
+          {
+            "kind": "native_time_cutoff",
+            "time_seconds": 4.464159,
+            "label": "倒角前段",
+            "resolution_mm": 0.025,
+            "mesh_sha256": "83e36e0f5dd7389da3120b2ec315ba41b53db3345df6ac639afcb192f9a2f01c",
+            "stl_sha256": "89355e35be5b0f1a801c1b83cd8c7bcbdd72692d558fb16a0e4cf194dbf15688",
+            "mesh": "baseline/replay/frame-1.mesh"
+          },
+          {
+            "kind": "native_time_cutoff",
+            "time_seconds": 9.82115,
+            "label": "沿外周加工",
+            "resolution_mm": 0.025,
+            "mesh_sha256": "1d74d1a95a5b20e9bc6eec71fca61389f8354ec9d83116a6bfcc84ef6f7102fc",
+            "stl_sha256": "4dd3c82b88825c6b6429d1d1ae322fbfb9ea688f2fe6d22b81691a5156b92ec0",
+            "mesh": "baseline/replay/frame-2.mesh"
+          },
+          {
+            "kind": "native_time_cutoff",
+            "time_seconds": 15.178142,
+            "label": "接近闭合",
+            "resolution_mm": 0.025,
+            "mesh_sha256": "e34caaa82f89bae00dd524d1ab54604891fa0cfd768c6ac90e7df3d6e2690e19",
+            "stl_sha256": "0417109b20b866dcfaf3bf6d79311e67898454a8d6985f79a7001eaf54dc73d5",
+            "mesh": "baseline/replay/frame-3.mesh"
+          }
+        ],
+        "resolution_mm": 0.025
+      },
+      {
+        "id": "wider",
+        "specification": {
+          "id": "wider",
+          "name": "倒角加宽",
+          "chamfer_width_mm": 0.5,
+          "stock_bounds_mm": {
+            "min": [
+              0,
+              0,
+              -1.5
+            ],
+            "max": [
+              8,
+              6,
+              0.0
+            ]
+          },
+          "tip_diameter_mm": 0.4,
+          "tool_diameter_mm": 2.0,
+          "cone_height_mm": 0.8,
+          "extra_depth_mm": 0.2,
+          "resolution_mm": 0.025,
+          "features": [
+            {
+              "id": "C1",
+              "kind": "top_perimeter_chamfer_45",
+              "axis": [
+                0,
+                0,
+                1
+              ],
+              "faces": [
+                "Face3",
+                "Face7",
+                "Face9",
+                "Face10"
+              ],
+              "width_mm": 0.5,
+              "angle_degrees": 45,
+              "top_z_mm": 0.0,
+              "thickness_mm": 1.5,
+              "bounds_xy_mm": {
+                "min": [
+                  -8.326672684688674e-17,
+                  -2.886579864025407e-15
+                ],
+                "max": [
+                  8.0,
+                  6.0
+                ]
+              }
+            }
+          ]
+        },
+        "iou_percent": 99.98235629441737,
+        "software_statuses": {
+          "C1": {
+            "chamfer_sections": "numeric_pass",
+            "chamfer_width": "numeric_pass",
+            "retained_planes": "numeric_pass",
+            "retained_thickness": "numeric_pass"
+          }
+        },
+        "regression_expectation_met": true,
+        "max_boundary_deviation_mm": 0.02509765999999994,
+        "max_width_deviation_mm": 0.00014561685176800454,
+        "widths": [
+          {
+            "edge": "xmin",
+            "extrapolated_top_width_mm": 0.5000539300566419,
+            "nominal_width_mm": 0.5,
+            "width_error_mm": 5.393005664189321e-05,
+            "max_fit_residual_mm": 0.00014561685176800454,
+            "estimated_angle_degrees": 44.99931500943493,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "xmax",
+            "extrapolated_top_width_mm": 0.500097629975759,
+            "nominal_width_mm": 0.5,
+            "width_error_mm": 9.762997575901711e-05,
+            "max_fit_residual_mm": 2.529394097505744e-07,
+            "estimated_angle_degrees": 45.00000486105765,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "ymin",
+            "extrapolated_top_width_mm": 0.5000984479401153,
+            "nominal_width_mm": 0.5,
+            "width_error_mm": 9.844794011526492e-05,
+            "max_fit_residual_mm": 6.819109071662388e-05,
+            "estimated_angle_degrees": 44.99909534346701,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "ymax",
+            "extrapolated_top_width_mm": 0.5000988161202473,
+            "nominal_width_mm": 0.5,
+            "width_error_mm": 9.881612024731368e-05,
+            "max_fit_residual_mm": 0.00010230552806150817,
+            "estimated_angle_degrees": 44.99864594802069,
+            "angle_manufacturing_acceptance": false
+          }
+        ],
+        "nc_sha256": "bc0feb7eade8e79c8f6bb3d24cc11c1d159109756a1392102dc8367082c57c80",
+        "mesh_sha256": "cdafa47748ab92c2d7573b198682ffb2158a55fc75bfba92ee128a26d651ad06",
+        "software_verification_sha256": "8a209346cb8fa2b5853e022e80a97530fd8566e870bb4fbcb28b0aa15522a625",
+        "frames": [],
+        "resolution_mm": 0.025
+      },
+      {
+        "id": "translated",
+        "specification": {
+          "id": "translated",
+          "name": "原 CAD 坐标平移",
+          "chamfer_width_mm": 0.4,
+          "stock_bounds_mm": {
+            "min": [
+              1,
+              -2,
+              -0.5
+            ],
+            "max": [
+              9,
+              4,
+              1.0
+            ]
+          },
+          "tip_diameter_mm": 0.4,
+          "tool_diameter_mm": 2.0,
+          "cone_height_mm": 0.8,
+          "extra_depth_mm": 0.2,
+          "resolution_mm": 0.025,
+          "features": [
+            {
+              "id": "C1",
+              "kind": "top_perimeter_chamfer_45",
+              "axis": [
+                0,
+                0,
+                1
+              ],
+              "faces": [
+                "Face3",
+                "Face7",
+                "Face9",
+                "Face10"
+              ],
+              "width_mm": 0.4,
+              "angle_degrees": 45,
+              "top_z_mm": 1.0,
+              "thickness_mm": 1.5,
+              "bounds_xy_mm": {
+                "min": [
+                  0.9999999999999982,
+                  -2.000000000000003
+                ],
+                "max": [
+                  9.000000000000004,
+                  4.0
+                ]
+              }
+            }
+          ]
+        },
+        "iou_percent": 99.98237883247889,
+        "software_statuses": {
+          "C1": {
+            "chamfer_sections": "numeric_pass",
+            "chamfer_width": "numeric_pass",
+            "retained_planes": "numeric_pass",
+            "retained_thickness": "numeric_pass"
+          }
+        },
+        "regression_expectation_met": true,
+        "max_boundary_deviation_mm": 0.01774700134956451,
+        "max_width_deviation_mm": 0.00011795272727269102,
+        "widths": [
+          {
+            "edge": "xmin",
+            "extrapolated_top_width_mm": 0.39994326404040575,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 5.673595959426736e-05,
+            "max_fit_residual_mm": 0.00011795272727269102,
+            "estimated_angle_degrees": 45.011027073993006,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "xmax",
+            "extrapolated_top_width_mm": 0.40002739989899294,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 2.739989899291917e-05,
+            "max_fit_residual_mm": 9.115090909078694e-05,
+            "estimated_angle_degrees": 45.006605546878866,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "ymin",
+            "extrapolated_top_width_mm": 0.4000438477777806,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 4.384777778060345e-05,
+            "max_fit_residual_mm": 0.00010686409090882032,
+            "estimated_angle_degrees": 45.00566756166917,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "ymax",
+            "extrapolated_top_width_mm": 0.40006214383838373,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 6.214383838371029e-05,
+            "max_fit_residual_mm": 0.00010379663636372882,
+            "estimated_angle_degrees": 45.001931555034396,
+            "angle_manufacturing_acceptance": false
+          }
+        ],
+        "nc_sha256": "3919950ac77fce76169259d8ee27ca5285cb520696987c264c0da7db6ea5c883",
+        "mesh_sha256": "7fc5be75f90c3666fa87a531a1f6d3707bfbffc0c8710bdf6943d3138ee3ec8b",
+        "software_verification_sha256": "49c87eef4f507869f51c1ca19f6db0d86ea796085acd5fc21a1f953727606e8a",
+        "frames": [],
+        "resolution_mm": 0.025
+      },
+      {
+        "id": "wider-tip",
+        "specification": {
+          "id": "wider-tip",
+          "name": "更换平刃刀尖尺寸",
+          "chamfer_width_mm": 0.4,
+          "stock_bounds_mm": {
+            "min": [
+              0,
+              0,
+              -1.5
+            ],
+            "max": [
+              8,
+              6,
+              0.0
+            ]
+          },
+          "tip_diameter_mm": 0.8,
+          "tool_diameter_mm": 2.4000000000000004,
+          "cone_height_mm": 0.8,
+          "extra_depth_mm": 0.2,
+          "resolution_mm": 0.025,
+          "features": [
+            {
+              "id": "C1",
+              "kind": "top_perimeter_chamfer_45",
+              "axis": [
+                0,
+                0,
+                1
+              ],
+              "faces": [
+                "Face3",
+                "Face7",
+                "Face9",
+                "Face10"
+              ],
+              "width_mm": 0.4,
+              "angle_degrees": 45,
+              "top_z_mm": 0.0,
+              "thickness_mm": 1.5,
+              "bounds_xy_mm": {
+                "min": [
+                  -8.881784197001252e-16,
+                  -3.1086244689504383e-15
+                ],
+                "max": [
+                  8.000000000000004,
+                  6.0
+                ]
+              }
+            }
+          ]
+        },
+        "iou_percent": 99.98219710700191,
+        "software_statuses": {
+          "C1": {
+            "chamfer_sections": "numeric_pass",
+            "chamfer_width": "numeric_pass",
+            "retained_planes": "numeric_pass",
+            "retained_thickness": "numeric_pass"
+          }
+        },
+        "regression_expectation_met": true,
+        "max_boundary_deviation_mm": 0.01774664779617328,
+        "max_width_deviation_mm": 0.0001311090909101864,
+        "widths": [
+          {
+            "edge": "xmin",
+            "extrapolated_top_width_mm": 0.4001311090909102,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 0.0001311090909101864,
+            "max_fit_residual_mm": 0.00010247490909090495,
+            "estimated_angle_degrees": 44.98910805991676,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "xmax",
+            "extrapolated_top_width_mm": 0.40009764363636713,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 9.764363636710627e-05,
+            "max_fit_residual_mm": 2.0100000028278053e-07,
+            "estimated_angle_degrees": 45.000000651088406,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "ymin",
+            "extrapolated_top_width_mm": 0.4000976554545486,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 9.765545454859526e-05,
+            "max_fit_residual_mm": 1.4545454618541953e-08,
+            "estimated_angle_degrees": 44.999999999999986,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "ymax",
+            "extrapolated_top_width_mm": 0.4000976436363635,
+            "nominal_width_mm": 0.4,
+            "width_error_mm": 9.764363636349804e-05,
+            "max_fit_residual_mm": 2.010000003105361e-07,
+            "estimated_angle_degrees": 45.000000651088406,
+            "angle_manufacturing_acceptance": false
+          }
+        ],
+        "nc_sha256": "a71f37154e59b19e058add7e394c8f1f2efa9c8ecfb2911b9a2d78aa8e194e00",
+        "mesh_sha256": "5d86bd3ad34db6b0deb05b149e260452c1124be4253f4dc207787dfd6fcc0909",
+        "software_verification_sha256": "1a1440aef163cdece41e3e7f15258eb6798ef648e7c60dd745c490845d083ad0",
+        "frames": [],
+        "resolution_mm": 0.025
+      }
+    ],
+    "controls": [
+      {
+        "id": "overcut-depth",
+        "parent_case": "baseline",
+        "guard_rejected": true,
+        "iou_percent": 96.26522418184611,
+        "software_statuses": {
+          "C1": {
+            "chamfer_sections": "numeric_fail",
+            "chamfer_width": "numeric_fail",
+            "retained_planes": "indeterminate",
+            "retained_thickness": "indeterminate"
+          }
+        },
+        "regression_expectation_met": true,
+        "software_verification_sha256": "235bc84bd531a2d3a24300190aabc264c3d3359d642bc8a4e487f088df922b44",
+        "frames": [],
+        "resolution_mm": 0.025
+      },
+      {
+        "id": "too-shallow",
+        "parent_case": "baseline",
+        "guard_rejected": true,
+        "iou_percent": 97.41292385395003,
+        "software_statuses": {
+          "C1": {
+            "chamfer_sections": "numeric_fail",
+            "chamfer_width": "numeric_fail",
+            "retained_planes": "numeric_pass",
+            "retained_thickness": "numeric_pass"
+          }
+        },
+        "regression_expectation_met": true,
+        "software_verification_sha256": "b4d009439b19788034496150eeb74fac3e85ab23c1e94bb885f39b6d498f50e7",
+        "frames": [],
+        "resolution_mm": 0.025
+      },
+      {
+        "id": "wrong-position",
+        "parent_case": "baseline",
+        "guard_rejected": true,
+        "iou_percent": 97.08465853431896,
+        "software_statuses": {
+          "C1": {
+            "chamfer_sections": "numeric_fail",
+            "chamfer_width": "numeric_fail",
+            "retained_planes": "numeric_fail",
+            "retained_thickness": "numeric_fail"
+          }
+        },
+        "regression_expectation_met": true,
+        "software_verification_sha256": "a0cf549d4fca302894daf4f5b561a82c0c410a84582564c4cabf38fc2886e341",
+        "frames": [],
+        "resolution_mm": 0.025
+      },
+      {
+        "id": "extra-inner-edge",
+        "parent_case": "baseline",
+        "guard_rejected": true,
+        "iou_percent": 93.604407988331,
+        "software_statuses": {
+          "C1": {
+            "chamfer_sections": "numeric_fail",
+            "chamfer_width": "numeric_fail",
+            "retained_planes": "numeric_fail",
+            "retained_thickness": "numeric_fail"
+          }
+        },
+        "regression_expectation_met": true,
+        "software_verification_sha256": "8ff4fedb3c5108b62caa0b6b19b545f4ce34e0378f297957c89798dceb16cf12",
+        "frames": [],
+        "resolution_mm": 0.025
+      }
+    ],
+    "all_regression_expectations_met": true,
+    "input_archive": "S4-CHAMFER-20261030-r1",
+    "input_manifest_sha256": "38cdd7f004d1729b25976d257990d0c1886e9affb78e55c643c97a9c5a6dd7a5",
+    "production_approved": false,
+    "whole_process_card_complete": false,
+    "real_process_card_tested": false,
+    "scope": "One synthetic rectangular four-edge chamfer family; finite-frustum cutter, fixed Z, no certified manufacturing angle acceptance.",
+    "stage_id": "s4",
+    "title": "四边 45° 倒角",
+    "rectangular_chamfer_verified": true,
+    "representative_replay_case": "baseline",
+    "new_simulations_for_publication": 0
+  },
+  "geometry_delivery": {
+    "baseline/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 177,
+      "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+      "decoded_bytes": 400,
+      "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+      "path": "baseline/target.mesh.gz"
+    },
+    "baseline/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 2328263,
+      "sha256": "68448b693df567ccbc8f07d84294ecea22640664167f37d54f8616a4141f6e13",
+      "decoded_bytes": 7998280,
+      "decoded_sha256": "db429e18ebc35219c19661ad37cb7e131326d1c3c5ca138fe34827861cee2cb3",
+      "path": "baseline/actual.mesh.gz"
+    },
+    "baseline/replay/frame-1.mesh": {
+      "encoding": "gzip",
+      "bytes": 2286408,
+      "sha256": "09e07aa61c15a1716a94bd26357788e261ffeff0cf1d250fb4f82bf800f85986",
+      "decoded_bytes": 7982968,
+      "decoded_sha256": "83e36e0f5dd7389da3120b2ec315ba41b53db3345df6ac639afcb192f9a2f01c",
+      "path": "baseline/replay/frame-1.mesh.gz"
+    },
+    "baseline/replay/frame-2.mesh": {
+      "encoding": "gzip",
+      "bytes": 2302451,
+      "sha256": "7d85b4448e6d44b6246d2cf54484e7a47a634dd8fc3ef24e5aaacc4d0d2a00a8",
+      "decoded_bytes": 7996480,
+      "decoded_sha256": "1d74d1a95a5b20e9bc6eec71fca61389f8354ec9d83116a6bfcc84ef6f7102fc",
+      "path": "baseline/replay/frame-2.mesh.gz"
+    },
+    "baseline/replay/frame-3.mesh": {
+      "encoding": "gzip",
+      "bytes": 2329719,
+      "sha256": "1b0800cb10c3e8a2f08b43e0d543a02217086ac3aff840c54284e81414d21898",
+      "decoded_bytes": 7993384,
+      "decoded_sha256": "e34caaa82f89bae00dd524d1ab54604891fa0cfd768c6ac90e7df3d6e2690e19",
+      "path": "baseline/replay/frame-3.mesh.gz"
+    },
+    "wider/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 165,
+      "sha256": "b22cecc3c436db8b9f098565a609d94165377f6b1324c2fde3825d0cf97964c2",
+      "decoded_bytes": 400,
+      "decoded_sha256": "550c445536b378577f98f705201c76b10eca45d1759bafc13efbdade93ef21a6",
+      "path": "wider/target.mesh.gz"
+    },
+    "wider/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 2337379,
+      "sha256": "a2224b88e98d46b35e9427939a8be80268c207a83540cb92f98ed420f28df084",
+      "decoded_bytes": 7994488,
+      "decoded_sha256": "2ec76351d5f5b1557d38bf7392129f581e21d79ef9afc6b77f3f1948dbecf9ec",
+      "path": "wider/actual.mesh.gz"
+    },
+    "translated/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 179,
+      "sha256": "ce333c184b2569582a5163aa9ca79ecbc5642a67a1cc563cfb408c663bf4a384",
+      "decoded_bytes": 400,
+      "decoded_sha256": "3250539ed8c7b7aba7247774507c5a8344d4f63a636994fd16fec7e38763ed48",
+      "path": "translated/target.mesh.gz"
+    },
+    "translated/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 2342106,
+      "sha256": "41adbee7f7b82aa3a425c21afd0c885a2c5b97a53e6e69195ba8376a85590414",
+      "decoded_bytes": 8034376,
+      "decoded_sha256": "42fa23cec876f82e801f219e34814d1dd3cb06808e7a0f3491f8ea0de45138e9",
+      "path": "translated/actual.mesh.gz"
+    },
+    "wider-tip/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 177,
+      "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+      "decoded_bytes": 400,
+      "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+      "path": "wider-tip/target.mesh.gz"
+    },
+    "wider-tip/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 2322504,
+      "sha256": "11092c9db181071886ab0388f63deda255b80d694d8d29826064f10c248ec195",
+      "decoded_bytes": 7985824,
+      "decoded_sha256": "080f3ad2e3f56e92a337e59bd650b50792e4927370a3e8d0bee5296fe2f43480",
+      "path": "wider-tip/actual.mesh.gz"
+    },
+    "overcut-depth/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 177,
+      "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+      "decoded_bytes": 400,
+      "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+      "path": "overcut-depth/target.mesh.gz"
+    },
+    "overcut-depth/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 2342869,
+      "sha256": "c5e98f66a35ff54a06ef27d4f9f7f9111f1c0fe595802f6db550152384bac7a8",
+      "decoded_bytes": 7982320,
+      "decoded_sha256": "65ad5857ee44ff3b2b936afa6e7c443e24f281ff9f0de1ec4ff3580d829be8c1",
+      "path": "overcut-depth/actual.mesh.gz"
+    },
+    "too-shallow/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 177,
+      "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+      "decoded_bytes": 400,
+      "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+      "path": "too-shallow/target.mesh.gz"
+    },
+    "too-shallow/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 2297485,
+      "sha256": "789b725a0e350be5eb56a78b979d1e64e4118624d878875b4198b1cd10a47fb6",
+      "decoded_bytes": 7992424,
+      "decoded_sha256": "e2836b843838ec8e998ae9afe60037427a56f9cedb107426597d36cf25225477",
+      "path": "too-shallow/actual.mesh.gz"
+    },
+    "wrong-position/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 177,
+      "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+      "decoded_bytes": 400,
+      "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+      "path": "wrong-position/target.mesh.gz"
+    },
+    "wrong-position/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 2321573,
+      "sha256": "f64d68620b7f00e035cf7c333644b6424348edacc03750d4a834990dad591ed6",
+      "decoded_bytes": 7985176,
+      "decoded_sha256": "65655f652652d048b3b44d6f495251d1570c2040eb2ade10330374bd742072fe",
+      "path": "wrong-position/actual.mesh.gz"
+    },
+    "extra-inner-edge/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 177,
+      "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+      "decoded_bytes": 400,
+      "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+      "path": "extra-inner-edge/target.mesh.gz"
+    },
+    "extra-inner-edge/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 2441363,
+      "sha256": "b9fe529371ad6aa8e7d0bb3f8a342a43e56f7d9769f9bec9dd70e50e5d731190",
+      "decoded_bytes": 8260048,
+      "decoded_sha256": "698cdd724cd24755756874c6f120a6adbe32d89f7f50ea600ede4c048295b075",
+      "path": "extra-inner-edge/actual.mesh.gz"
+    }
+  },
+  "geometry_transport_paths": {
+    "baseline/target.mesh": "geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+    "baseline/actual.mesh": "geometry/68448b693df567ccbc8f07d84294ecea22640664167f37d54f8616a4141f6e13.mesh.gz",
+    "baseline/replay/frame-1.mesh": "geometry/09e07aa61c15a1716a94bd26357788e261ffeff0cf1d250fb4f82bf800f85986.mesh.gz",
+    "baseline/replay/frame-2.mesh": "geometry/7d85b4448e6d44b6246d2cf54484e7a47a634dd8fc3ef24e5aaacc4d0d2a00a8.mesh.gz",
+    "baseline/replay/frame-3.mesh": "geometry/1b0800cb10c3e8a2f08b43e0d543a02217086ac3aff840c54284e81414d21898.mesh.gz",
+    "wider/target.mesh": "geometry/b22cecc3c436db8b9f098565a609d94165377f6b1324c2fde3825d0cf97964c2.mesh.gz",
+    "wider/actual.mesh": "geometry/a2224b88e98d46b35e9427939a8be80268c207a83540cb92f98ed420f28df084.mesh.gz",
+    "translated/target.mesh": "geometry/ce333c184b2569582a5163aa9ca79ecbc5642a67a1cc563cfb408c663bf4a384.mesh.gz",
+    "translated/actual.mesh": "geometry/41adbee7f7b82aa3a425c21afd0c885a2c5b97a53e6e69195ba8376a85590414.mesh.gz",
+    "wider-tip/target.mesh": "geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+    "wider-tip/actual.mesh": "geometry/11092c9db181071886ab0388f63deda255b80d694d8d29826064f10c248ec195.mesh.gz",
+    "overcut-depth/target.mesh": "geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+    "overcut-depth/actual.mesh": "geometry/c5e98f66a35ff54a06ef27d4f9f7f9111f1c0fe595802f6db550152384bac7a8.mesh.gz",
+    "too-shallow/target.mesh": "geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+    "too-shallow/actual.mesh": "geometry/789b725a0e350be5eb56a78b979d1e64e4118624d878875b4198b1cd10a47fb6.mesh.gz",
+    "wrong-position/target.mesh": "geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+    "wrong-position/actual.mesh": "geometry/f64d68620b7f00e035cf7c333644b6424348edacc03750d4a834990dad591ed6.mesh.gz",
+    "extra-inner-edge/target.mesh": "geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+    "extra-inner-edge/actual.mesh": "geometry/b9fe529371ad6aa8e7d0bb3f8a342a43e56f7d9769f9bec9dd70e50e5d731190.mesh.gz"
+  },
+  "documents": {
+    "baseline": {
+      "path": "documents/baseline/process-card.pdf",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/documents/baseline/process-card.pdf",
+      "bytes": 76199,
+      "sha256": "1a8370a37dc6a6254b86c9aa29d87b5f16f6768f880b454975d573e43486a010"
+    },
+    "wider": {
+      "path": "documents/wider/process-card.pdf",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/documents/wider/process-card.pdf",
+      "bytes": 76152,
+      "sha256": "e14a1728ef569768950d29a1e3499ac00815d41b9052031f45f4452bb0480536"
+    },
+    "translated": {
+      "path": "documents/translated/process-card.pdf",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/documents/translated/process-card.pdf",
+      "bytes": 76354,
+      "sha256": "0ea5dcf70b1c4e9c515ed2a3d66b45aadb0e1ad78adde93c76b1e3773640cb35"
+    },
+    "wider-tip": {
+      "path": "documents/wider-tip/process-card.pdf",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/documents/wider-tip/process-card.pdf",
+      "bytes": 76652,
+      "sha256": "bdd060218953c7d7c14318d725b2f08d1e4aae576540470a6229f3c062f3ae70"
+    }
+  },
+  "thumbnails": {
+    "baseline": {
+      "path": "thumbnails/baseline.png",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/baseline.png",
+      "bytes": 116289,
+      "sha256": "d278daf5d37bc069af9f0822b7c8a27d9ce9b165f1550cf2133b4bd9d02b39b8"
+    },
+    "wider": {
+      "path": "thumbnails/wider.png",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/wider.png",
+      "bytes": 116379,
+      "sha256": "b54394ce47cf4e9d096dd413170b9f2bf4f4f3b3e18fe6261b786954d9e677ba"
+    },
+    "translated": {
+      "path": "thumbnails/translated.png",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/translated.png",
+      "bytes": 116538,
+      "sha256": "127c6c15a331b82a4f987cc7e7391d2bbac2aa3601df575023c39625c3c5e19a"
+    },
+    "wider-tip": {
+      "path": "thumbnails/wider-tip.png",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/wider-tip.png",
+      "bytes": 116275,
+      "sha256": "7190db5e2579da00d7f5237d2fa571414a42854cd076843ca5598092b142dde6"
+    },
+    "overcut-depth": {
+      "path": "thumbnails/overcut-depth.png",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/overcut-depth.png",
+      "bytes": 116403,
+      "sha256": "6dd6e9192080f0b34dfccbd3e49e962721ad2b7d8996b9f0a40ee4580c5de0e7"
+    },
+    "too-shallow": {
+      "path": "thumbnails/too-shallow.png",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/too-shallow.png",
+      "bytes": 115603,
+      "sha256": "60cfa7557708772551141815f093a0fc078d8c5d85ccd3c822533fe35d10e9a2"
+    },
+    "wrong-position": {
+      "path": "thumbnails/wrong-position.png",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/wrong-position.png",
+      "bytes": 116236,
+      "sha256": "49b2eba456a6e4a32199d98463896b8da50c367d974974382df1c962566a64a5"
+    },
+    "extra-inner-edge": {
+      "path": "thumbnails/extra-inner-edge.png",
+      "url": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/extra-inner-edge.png",
+      "bytes": 118230,
+      "sha256": "228cd5f1603c7b169696da6ac678fc4195889a38d14bdc982f4fca0ffeb62ff8"
+    }
+  },
+  "viewer": {
+    "schema": "genlaw.stage-results-viewer.v1",
+    "stage": "s4",
+    "cases": [
+      {
+        "id": "baseline",
+        "name": "四边等宽倒角",
+        "iou_percent": 99.98226558950411,
+        "resolution_mm": 0.025,
+        "stock": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0.0
+          ]
+        },
+        "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/target.mesh",
+        "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/actual.mesh",
+        "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/baseline.png",
+        "frames": [
+          {
+            "kind": "native_time_cutoff",
+            "time_seconds": 4.464159,
+            "label": "倒角前段",
+            "resolution_mm": 0.025,
+            "mesh_sha256": "83e36e0f5dd7389da3120b2ec315ba41b53db3345df6ac639afcb192f9a2f01c",
+            "stl_sha256": "89355e35be5b0f1a801c1b83cd8c7bcbdd72692d558fb16a0e4cf194dbf15688",
+            "mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/replay/frame-1.mesh"
+          },
+          {
+            "kind": "native_time_cutoff",
+            "time_seconds": 9.82115,
+            "label": "沿外周加工",
+            "resolution_mm": 0.025,
+            "mesh_sha256": "1d74d1a95a5b20e9bc6eec71fca61389f8354ec9d83116a6bfcc84ef6f7102fc",
+            "stl_sha256": "4dd3c82b88825c6b6429d1d1ae322fbfb9ea688f2fe6d22b81691a5156b92ec0",
+            "mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/replay/frame-2.mesh"
+          },
+          {
+            "kind": "native_time_cutoff",
+            "time_seconds": 15.178142,
+            "label": "接近闭合",
+            "resolution_mm": 0.025,
+            "mesh_sha256": "e34caaa82f89bae00dd524d1ab54604891fa0cfd768c6ac90e7df3d6e2690e19",
+            "stl_sha256": "0417109b20b866dcfaf3bf6d79311e67898454a8d6985f79a7001eaf54dc73d5",
+            "mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/replay/frame-3.mesh"
+          }
+        ],
+        "camera_position": [
+          15,
+          -12,
+          12
+        ],
+        "mesh_triangle_limit": 800000,
+        "total_triangle_limit": 2000000,
+        "frame_loading": "on_demand",
+        "state_loading": "exclusive",
+        "case_kind": "normal"
+      },
+      {
+        "id": "wider",
+        "name": "倒角加宽",
+        "iou_percent": 99.98235629441737,
+        "resolution_mm": 0.025,
+        "stock": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0.0
+          ]
+        },
+        "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider/target.mesh",
+        "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider/actual.mesh",
+        "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/wider.png",
+        "frames": [],
+        "camera_position": [
+          15,
+          -12,
+          12
+        ],
+        "mesh_triangle_limit": 800000,
+        "total_triangle_limit": 2000000,
+        "frame_loading": "on_demand",
+        "state_loading": "exclusive",
+        "case_kind": "normal"
+      },
+      {
+        "id": "translated",
+        "name": "原 CAD 坐标平移",
+        "iou_percent": 99.98237883247889,
+        "resolution_mm": 0.025,
+        "stock": {
+          "min": [
+            1,
+            -2,
+            -0.5
+          ],
+          "max": [
+            9,
+            4,
+            1.0
+          ]
+        },
+        "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/translated/target.mesh",
+        "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/translated/actual.mesh",
+        "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/translated.png",
+        "frames": [],
+        "camera_position": [
+          15,
+          -12,
+          12
+        ],
+        "mesh_triangle_limit": 800000,
+        "total_triangle_limit": 2000000,
+        "frame_loading": "on_demand",
+        "state_loading": "exclusive",
+        "case_kind": "normal"
+      },
+      {
+        "id": "wider-tip",
+        "name": "更换平刃刀尖尺寸",
+        "iou_percent": 99.98219710700191,
+        "resolution_mm": 0.025,
+        "stock": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0.0
+          ]
+        },
+        "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider-tip/target.mesh",
+        "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider-tip/actual.mesh",
+        "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/wider-tip.png",
+        "frames": [],
+        "camera_position": [
+          15,
+          -12,
+          12
+        ],
+        "mesh_triangle_limit": 800000,
+        "total_triangle_limit": 2000000,
+        "frame_loading": "on_demand",
+        "state_loading": "exclusive",
+        "case_kind": "normal"
+      },
+      {
+        "id": "overcut-depth",
+        "name": "反例：刀尖多下 0.2 mm",
+        "iou_percent": 96.26522418184611,
+        "resolution_mm": 0.025,
+        "stock": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0.0
+          ]
+        },
+        "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/overcut-depth/target.mesh",
+        "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/overcut-depth/actual.mesh",
+        "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/overcut-depth.png",
+        "frames": [],
+        "camera_position": [
+          15,
+          -12,
+          12
+        ],
+        "mesh_triangle_limit": 800000,
+        "total_triangle_limit": 2000000,
+        "frame_loading": "on_demand",
+        "state_loading": "exclusive",
+        "case_kind": "negative_control"
+      },
+      {
+        "id": "too-shallow",
+        "name": "反例：刀尖少下 0.25 mm",
+        "iou_percent": 97.41292385395003,
+        "resolution_mm": 0.025,
+        "stock": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0.0
+          ]
+        },
+        "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/too-shallow/target.mesh",
+        "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/too-shallow/actual.mesh",
+        "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/too-shallow.png",
+        "frames": [],
+        "camera_position": [
+          15,
+          -12,
+          12
+        ],
+        "mesh_triangle_limit": 800000,
+        "total_triangle_limit": 2000000,
+        "frame_loading": "on_demand",
+        "state_loading": "exclusive",
+        "case_kind": "negative_control"
+      },
+      {
+        "id": "wrong-position",
+        "name": "反例：刀路偏移 0.5 mm",
+        "iou_percent": 97.08465853431896,
+        "resolution_mm": 0.025,
+        "stock": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0.0
+          ]
+        },
+        "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wrong-position/target.mesh",
+        "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wrong-position/actual.mesh",
+        "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/wrong-position.png",
+        "frames": [],
+        "camera_position": [
+          15,
+          -12,
+          12
+        ],
+        "mesh_triangle_limit": 800000,
+        "total_triangle_limit": 2000000,
+        "frame_loading": "on_demand",
+        "state_loading": "exclusive",
+        "case_kind": "negative_control"
+      },
+      {
+        "id": "extra-inner-edge",
+        "name": "反例：多出内部切削线",
+        "iou_percent": 93.604407988331,
+        "resolution_mm": 0.025,
+        "stock": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            6,
+            0.0
+          ]
+        },
+        "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/extra-inner-edge/target.mesh",
+        "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/extra-inner-edge/actual.mesh",
+        "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@1342edc593f9f00b8f9b283198bdc1519c6956f6/thumbnails/extra-inner-edge.png",
+        "frames": [],
+        "camera_position": [
+          15,
+          -12,
+          12
+        ],
+        "mesh_triangle_limit": 800000,
+        "total_triangle_limit": 2000000,
+        "frame_loading": "on_demand",
+        "state_loading": "exclusive",
+        "case_kind": "negative_control"
+      }
+    ],
+    "geometry_transport": {
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/target.mesh": {
+        "encoding": "gzip",
+        "bytes": 177,
+        "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+        "decoded_bytes": 400,
+        "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/target.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/actual.mesh": {
+        "encoding": "gzip",
+        "bytes": 2328263,
+        "sha256": "68448b693df567ccbc8f07d84294ecea22640664167f37d54f8616a4141f6e13",
+        "decoded_bytes": 7998280,
+        "decoded_sha256": "db429e18ebc35219c19661ad37cb7e131326d1c3c5ca138fe34827861cee2cb3",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/68448b693df567ccbc8f07d84294ecea22640664167f37d54f8616a4141f6e13.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/actual.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/replay/frame-1.mesh": {
+        "encoding": "gzip",
+        "bytes": 2286408,
+        "sha256": "09e07aa61c15a1716a94bd26357788e261ffeff0cf1d250fb4f82bf800f85986",
+        "decoded_bytes": 7982968,
+        "decoded_sha256": "83e36e0f5dd7389da3120b2ec315ba41b53db3345df6ac639afcb192f9a2f01c",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/09e07aa61c15a1716a94bd26357788e261ffeff0cf1d250fb4f82bf800f85986.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/replay/frame-1.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/replay/frame-2.mesh": {
+        "encoding": "gzip",
+        "bytes": 2302451,
+        "sha256": "7d85b4448e6d44b6246d2cf54484e7a47a634dd8fc3ef24e5aaacc4d0d2a00a8",
+        "decoded_bytes": 7996480,
+        "decoded_sha256": "1d74d1a95a5b20e9bc6eec71fca61389f8354ec9d83116a6bfcc84ef6f7102fc",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/7d85b4448e6d44b6246d2cf54484e7a47a634dd8fc3ef24e5aaacc4d0d2a00a8.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/replay/frame-2.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/replay/frame-3.mesh": {
+        "encoding": "gzip",
+        "bytes": 2329719,
+        "sha256": "1b0800cb10c3e8a2f08b43e0d543a02217086ac3aff840c54284e81414d21898",
+        "decoded_bytes": 7993384,
+        "decoded_sha256": "e34caaa82f89bae00dd524d1ab54604891fa0cfd768c6ac90e7df3d6e2690e19",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/1b0800cb10c3e8a2f08b43e0d543a02217086ac3aff840c54284e81414d21898.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/baseline/replay/frame-3.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider/target.mesh": {
+        "encoding": "gzip",
+        "bytes": 165,
+        "sha256": "b22cecc3c436db8b9f098565a609d94165377f6b1324c2fde3825d0cf97964c2",
+        "decoded_bytes": 400,
+        "decoded_sha256": "550c445536b378577f98f705201c76b10eca45d1759bafc13efbdade93ef21a6",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/b22cecc3c436db8b9f098565a609d94165377f6b1324c2fde3825d0cf97964c2.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider/target.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider/actual.mesh": {
+        "encoding": "gzip",
+        "bytes": 2337379,
+        "sha256": "a2224b88e98d46b35e9427939a8be80268c207a83540cb92f98ed420f28df084",
+        "decoded_bytes": 7994488,
+        "decoded_sha256": "2ec76351d5f5b1557d38bf7392129f581e21d79ef9afc6b77f3f1948dbecf9ec",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/a2224b88e98d46b35e9427939a8be80268c207a83540cb92f98ed420f28df084.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider/actual.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/translated/target.mesh": {
+        "encoding": "gzip",
+        "bytes": 179,
+        "sha256": "ce333c184b2569582a5163aa9ca79ecbc5642a67a1cc563cfb408c663bf4a384",
+        "decoded_bytes": 400,
+        "decoded_sha256": "3250539ed8c7b7aba7247774507c5a8344d4f63a636994fd16fec7e38763ed48",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/ce333c184b2569582a5163aa9ca79ecbc5642a67a1cc563cfb408c663bf4a384.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/translated/target.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/translated/actual.mesh": {
+        "encoding": "gzip",
+        "bytes": 2342106,
+        "sha256": "41adbee7f7b82aa3a425c21afd0c885a2c5b97a53e6e69195ba8376a85590414",
+        "decoded_bytes": 8034376,
+        "decoded_sha256": "42fa23cec876f82e801f219e34814d1dd3cb06808e7a0f3491f8ea0de45138e9",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/41adbee7f7b82aa3a425c21afd0c885a2c5b97a53e6e69195ba8376a85590414.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/translated/actual.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider-tip/target.mesh": {
+        "encoding": "gzip",
+        "bytes": 177,
+        "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+        "decoded_bytes": 400,
+        "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider-tip/target.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider-tip/actual.mesh": {
+        "encoding": "gzip",
+        "bytes": 2322504,
+        "sha256": "11092c9db181071886ab0388f63deda255b80d694d8d29826064f10c248ec195",
+        "decoded_bytes": 7985824,
+        "decoded_sha256": "080f3ad2e3f56e92a337e59bd650b50792e4927370a3e8d0bee5296fe2f43480",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/11092c9db181071886ab0388f63deda255b80d694d8d29826064f10c248ec195.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wider-tip/actual.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/overcut-depth/target.mesh": {
+        "encoding": "gzip",
+        "bytes": 177,
+        "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+        "decoded_bytes": 400,
+        "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/overcut-depth/target.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/overcut-depth/actual.mesh": {
+        "encoding": "gzip",
+        "bytes": 2342869,
+        "sha256": "c5e98f66a35ff54a06ef27d4f9f7f9111f1c0fe595802f6db550152384bac7a8",
+        "decoded_bytes": 7982320,
+        "decoded_sha256": "65ad5857ee44ff3b2b936afa6e7c443e24f281ff9f0de1ec4ff3580d829be8c1",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/c5e98f66a35ff54a06ef27d4f9f7f9111f1c0fe595802f6db550152384bac7a8.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/overcut-depth/actual.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/too-shallow/target.mesh": {
+        "encoding": "gzip",
+        "bytes": 177,
+        "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+        "decoded_bytes": 400,
+        "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/too-shallow/target.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/too-shallow/actual.mesh": {
+        "encoding": "gzip",
+        "bytes": 2297485,
+        "sha256": "789b725a0e350be5eb56a78b979d1e64e4118624d878875b4198b1cd10a47fb6",
+        "decoded_bytes": 7992424,
+        "decoded_sha256": "e2836b843838ec8e998ae9afe60037427a56f9cedb107426597d36cf25225477",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/789b725a0e350be5eb56a78b979d1e64e4118624d878875b4198b1cd10a47fb6.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/too-shallow/actual.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wrong-position/target.mesh": {
+        "encoding": "gzip",
+        "bytes": 177,
+        "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+        "decoded_bytes": 400,
+        "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wrong-position/target.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wrong-position/actual.mesh": {
+        "encoding": "gzip",
+        "bytes": 2321573,
+        "sha256": "f64d68620b7f00e035cf7c333644b6424348edacc03750d4a834990dad591ed6",
+        "decoded_bytes": 7985176,
+        "decoded_sha256": "65655f652652d048b3b44d6f495251d1570c2040eb2ade10330374bd742072fe",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/f64d68620b7f00e035cf7c333644b6424348edacc03750d4a834990dad591ed6.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/wrong-position/actual.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/extra-inner-edge/target.mesh": {
+        "encoding": "gzip",
+        "bytes": 177,
+        "sha256": "78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f",
+        "decoded_bytes": 400,
+        "decoded_sha256": "860e9e28453e36fbdd94fdf76e30771a4822352d8da2c497c9d62a2ef0935bb8",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/78a18113e893aac080af7cd00869d9544862e5d0cb785d222552dfd9c37cb59f.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/extra-inner-edge/target.mesh.gz"
+      },
+      "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/extra-inner-edge/actual.mesh": {
+        "encoding": "gzip",
+        "bytes": 2441363,
+        "sha256": "b9fe529371ad6aa8e7d0bb3f8a342a43e56f7d9769f9bec9dd70e50e5d731190",
+        "decoded_bytes": 8260048,
+        "decoded_sha256": "698cdd724cd24755756874c6f120a6adbe32d89f7f50ea600ede4c048295b075",
+        "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@e96c3e253ef7fb58ed7b0a03c0a70974c0ce950a/geometry/b9fe529371ad6aa8e7d0bb3f8a342a43e56f7d9769f9bec9dd70e50e5d731190.mesh.gz",
+        "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/e6ca91bd115ef81c23cfd7088cf9de9f9dc61111/extra-inner-edge/actual.mesh.gz"
+      }
+    }
+  }
+}
