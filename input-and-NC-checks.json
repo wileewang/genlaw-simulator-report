@@ -1,0 +1,126 @@
+{
+  "status": "passed",
+  "input": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/baseline/input.json",
+    "sha256": "abce5584a96239bc57bef6980014888c506a0b9dd4f74292fb2870d30fae100f"
+  },
+  "rejections": [
+    {
+      "id": "missing-resource-attachment",
+      "rejected": true,
+      "reason": "Unsupported execution attachment or changed acceptance"
+    },
+    {
+      "id": "qualification-from-other-CAD",
+      "rejected": true,
+      "reason": "Cumulative geometry input is not its qualified archived chain"
+    },
+    {
+      "id": "stock-reset-before-rounds",
+      "rejected": true,
+      "reason": "This first cohort requires its explicit pre-NC software resource attachment"
+    },
+    {
+      "id": "insufficient-ball-cutter-length",
+      "rejected": true,
+      "reason": "This first cohort requires its explicit pre-NC software resource attachment"
+    },
+    {
+      "id": "undeclared-controller-offset",
+      "rejected": true,
+      "reason": "This first cohort requires its explicit pre-NC software resource attachment"
+    },
+    {
+      "id": "wrong-second-program-tool",
+      "rejected": true,
+      "reason": "This first cohort requires its explicit pre-NC software resource attachment"
+    },
+    {
+      "id": "relaxed-final-acceptance",
+      "rejected": true,
+      "reason": "Unsupported execution attachment or changed acceptance"
+    },
+    {
+      "id": "boolean-resource-number",
+      "rejected": true,
+      "reason": "This first cohort requires its explicit pre-NC software resource attachment"
+    },
+    {
+      "id": "inch-units",
+      "rejected": true,
+      "reason": "Ordered NC preamble, unloaded startup retract or shutdown differs"
+    },
+    {
+      "id": "relative-coordinates",
+      "rejected": true,
+      "reason": "Ordered NC preamble, unloaded startup retract or shutdown differs"
+    },
+    {
+      "id": "wrong-spindle",
+      "rejected": true,
+      "reason": "Unexpected tool selection or spindle"
+    },
+    {
+      "id": "wrong-feed",
+      "rejected": true,
+      "reason": "Feed differs from explicit resource card"
+    },
+    {
+      "id": "wrong-work-offset",
+      "rejected": true,
+      "reason": "Ordered NC preamble, unloaded startup retract or shutdown differs"
+    },
+    {
+      "id": "wrong-tool",
+      "rejected": true,
+      "reason": "Native tool change or spindle differs from the card"
+    },
+    {
+      "id": "wrong-chamfer-depth",
+      "rejected": true,
+      "reason": "Native Z leaves the declared cutting/clearance envelope"
+    },
+    {
+      "id": "wrong-edge-side",
+      "rejected": true,
+      "reason": "Entry is not an endpoint of an unprocessed selected edge"
+    },
+    {
+      "id": "unmodelled-continuous-rotation",
+      "rejected": true,
+      "reason": "Programs must preserve one original stock envelope and admitted static frame"
+    },
+    {
+      "id": "duplicate-program-identity",
+      "rejected": true,
+      "reason": "Duplicate or unsupported native stage fields"
+    },
+    {
+      "id": "boolean-placement",
+      "rejected": true,
+      "reason": "Require twelve finite numeric placement values"
+    },
+    {
+      "id": "nonfinite-placement",
+      "rejected": true,
+      "reason": "Require twelve finite numeric placement values"
+    }
+  ],
+  "sources": [
+    {
+      "path": "tools/check_cumulative_execution_guards.py",
+      "sha256": "7bcdb70f0f20e6b4d39083f9ea7a29034bcd831d45bad316ba8c539c2a576e54"
+    },
+    {
+      "path": "genlaw_pipeline/cumulative_execution.py",
+      "sha256": "3f63ac128153f64d951abdea3abebf910dcd6b0665ad71c5074ee28b1bb17a58"
+    },
+    {
+      "path": "genlaw_pipeline/cumulative_material.py",
+      "sha256": "e15ba0ed7d7b0cacfcfba3c9c81026e1936048fc03a9e236119a9776da155585"
+    }
+  ],
+  "new_CAM_jobs": 0,
+  "new_native_material_executions": 0,
+  "geometry_controls_separate": true
+}

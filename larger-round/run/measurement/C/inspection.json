@@ -1,0 +1,2667 @@
+{
+  "schema": "genlaw.cumulative-inspection.v1",
+  "request": {
+    "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/verification/request.json",
+    "sha256": "4e34dd1a151856cc338a870ff8ed2fd77c1f2fd6b0a180fcc8217cfaa1b5be00"
+  },
+  "execution_plan": {
+    "schema": "genlaw.cumulative-execution-plan.v1",
+    "input": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/input.json",
+      "sha256": "5cdd90ca9260c43859550ba9adf7eaa095fac9fd2d0f11a737469cdcf3e37099"
+    },
+    "id": "larger-round",
+    "geometry": {
+      "schema": "genlaw.cumulative-target-plan.v1",
+      "input": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/input.json",
+        "sha256": "87cd7fb4b60f1d18dbdebf3df708f3bfc55480612ba730af9728593e2f5ca2f2"
+      },
+      "id": "larger-round",
+      "original_stock": {
+        "bounds_mm": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/stock.brep",
+          "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+        },
+        "material_label": "6061-T6"
+      },
+      "paper_card": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/process-card.pdf",
+        "sha256": "7a96ca2d36026829c8b5916cdb8d51cbc908fa708be723e9ff728cc44263e40d"
+      },
+      "process_plan": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/process-plan.json",
+        "sha256": "789a7b30b14afda60faf2835f261ebe6c0002de540ab37a99ff1f4333a066a51"
+      },
+      "stages": [
+        {
+          "id": "A",
+          "setup_id": "S1",
+          "to_material": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "predecessor": "original_stock",
+          "operation_reference": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/operation-reference.json",
+            "sha256": "0bec85181bd7d62750c01cc2e94131cf85d617971ad5ef969d3dc3323abb9516"
+          },
+          "incoming_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/stock.brep",
+            "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+          },
+          "target_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+            "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+          }
+        },
+        {
+          "id": "B",
+          "setup_id": "S1",
+          "to_material": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "predecessor": "A",
+          "operation_reference": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/operation-reference.json",
+            "sha256": "30b531dbf14c2052f21c9a83fb3d514662f23baf93c2537f7f403107335d2f92"
+          },
+          "incoming_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+            "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+          },
+          "target_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+            "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+          }
+        },
+        {
+          "id": "C",
+          "setup_id": "S2",
+          "to_material": [
+            1,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            4,
+            -3
+          ],
+          "predecessor": "B",
+          "operation_reference": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/operation-reference.json",
+            "sha256": "084840a4f377e0b8731dbd5d33e3e8d4bd6f9760d6416c9a5c6aa0ceb3091854"
+          },
+          "incoming_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+            "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+          },
+          "target_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+            "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+          }
+        },
+        {
+          "id": "D",
+          "setup_id": "S2",
+          "to_material": [
+            1,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            4,
+            -3
+          ],
+          "predecessor": "C",
+          "operation_reference": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/operation-reference.json",
+            "sha256": "219c18918d52df9002cb1c0f7470131dab10ef9822ccae56bd03425c7913ed1b"
+          },
+          "incoming_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+            "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+          },
+          "target_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/target.brep",
+            "sha256": "37260ac8856df6dc4a0eaed331cea6dabc159bb2b9e8b65e1edb99a0fd20c0de"
+          }
+        }
+      ],
+      "references": [
+        {
+          "schema": "genlaw.cumulative-operation-reference.v1",
+          "reference_class": "axis_aligned_box_after_top_facing",
+          "cad": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/operation.brep",
+            "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+          },
+          "bounds": {
+            "min": [
+              0.0,
+              0.0,
+              -3.0
+            ],
+            "max": [
+              6.0,
+              4.0,
+              -0.3999999999999999
+            ]
+          },
+          "volume_mm3": 62.39999999999999,
+          "valid_single_solid": true,
+          "target_created_before_NC": true
+        },
+        {
+          "schema": "genlaw.cumulative-operation-reference.v1",
+          "reference_class": "rectangular_solid_with_two_top_x_rounds",
+          "cad": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/operation.brep",
+            "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+          },
+          "bounds": {
+            "min": [
+              0.0,
+              -1.1102230246251565e-16,
+              -3.0
+            ],
+            "max": [
+              6.0,
+              4.0,
+              -0.3999999999999997
+            ]
+          },
+          "volume_mm3": 61.138141200777014,
+          "valid_single_solid": true,
+          "target_created_before_NC": true,
+          "radius_mm": 0.7
+        },
+        {
+          "schema": "genlaw.cumulative-operation-reference.v1",
+          "reference_class": "axis_aligned_box_after_top_facing",
+          "cad": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/operation.brep",
+            "sha256": "b190389bb2d7052bc17c19660cef5f239fb24b67727d113706960f6e674348dc"
+          },
+          "bounds": {
+            "min": [
+              0.0,
+              0.0,
+              -2.6
+            ],
+            "max": [
+              6.0,
+              4.0,
+              -0.2999999999999998
+            ]
+          },
+          "volume_mm3": 55.2,
+          "valid_single_solid": true,
+          "target_created_before_NC": true
+        },
+        {
+          "schema": "genlaw.cumulative-operation-reference.v1",
+          "reference_class": "box_with_selected_parallel_top_chamfers_45",
+          "cad": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/operation.brep",
+            "sha256": "f49559929c091a3505d92e1dfaac99f6e0a500fd2a8da666a5c34034190af4fc"
+          },
+          "bounds": {
+            "min": [
+              0.0,
+              0.0,
+              -2.6
+            ],
+            "max": [
+              6.000000000000001,
+              4.0,
+              -0.2999999999999997
+            ]
+          },
+          "volume_mm3": 54.24,
+          "valid_single_solid": true,
+          "target_created_before_NC": true,
+          "width_mm": 0.4,
+          "selected_sides": [
+            "ymin",
+            "ymax"
+          ]
+        }
+      ],
+      "final_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/target.brep",
+        "sha256": "37260ac8856df6dc4a0eaed331cea6dabc159bb2b9e8b65e1edb99a0fd20c0de"
+      },
+      "native_CAD_verification_required": true,
+      "CAM_generated": false,
+      "material_simulated": false,
+      "whole_real_card_complete": false,
+      "production_approved": false
+    },
+    "geometry_qualification": {
+      "path": "docs/checkpoints/2026-10-31/cumulative-target-01/normal-larger-round/larger-round.json",
+      "sha256": "bad1cf19c60a405910abf98ec5b81716e7bc5f54b90bcae9a349abec7ca1edf5"
+    },
+    "paper_card": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/process-card.pdf",
+      "sha256": "01995527a8e306df9446a65aad2ba96fd92ed5527af3e2c89e067b79cacf9e92"
+    },
+    "resource_attachment": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/resources.json",
+      "sha256": "afdad39c2c2fdc70e791f4f5c35262fcbad6f74829214c0c9b2b1738ed3c6c36"
+    },
+    "stage_plans": [
+      {
+        "stock": {
+          "bounds_mm": {
+            "min": [
+              0,
+              0,
+              -3
+            ],
+            "max": [
+              6,
+              4,
+              0
+            ]
+          }
+        },
+        "tool": {
+          "id": "FLAT",
+          "kind": "flat_endmill",
+          "diameter_mm": 1.0,
+          "cutting_length_mm": 5.0,
+          "length_mm": 20.0,
+          "center_cutting": true
+        },
+        "parameters": {
+          "spindle_rpm": 3000.0,
+          "feed_mm_min": 120.0,
+          "plunge_mm_min": 60.0,
+          "safe_height_mm": 2,
+          "clearance_height_mm": 3,
+          "native_operation": "MillFace",
+          "step_down_mm": 0.25,
+          "step_over_percent": 50.0,
+          "path_tolerance_mm": 0.001,
+          "clearing_pattern": "Offset",
+          "cut_mode": "Climb",
+          "start_at": "Center",
+          "keep_tool_down": false,
+          "boundary_shape": "Boundbox",
+          "clear_edges": true,
+          "exclude_raised_areas": false
+        },
+        "setup": {
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 3
+          }
+        },
+        "stage_id": "A",
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/stock.brep",
+          "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+        },
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/operation-reference.json",
+          "sha256": "0bec85181bd7d62750c01cc2e94131cf85d617971ad5ef969d3dc3323abb9516"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        },
+        "schema": "genlaw.execution-plan.v7",
+        "capability": "top_facing_xy",
+        "target_bounds_mm": {
+          "min": [
+            0.0,
+            0.0,
+            -3.0
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.3999999999999999
+          ]
+        },
+        "operations": [
+          {
+            "step_id": "A",
+            "feature_id": "TOP-A",
+            "geometry": {
+              "id": "TOP-A",
+              "kind": "planar_top"
+            },
+            "final_z_mm": -0.3999999999999999
+          }
+        ]
+      },
+      {
+        "stock": {
+          "bounds_mm": {
+            "min": [
+              0,
+              0,
+              -3
+            ],
+            "max": [
+              6,
+              4,
+              -0.3999999999999999
+            ]
+          }
+        },
+        "tool": {
+          "id": "BALL",
+          "kind": "ballnose",
+          "diameter_mm": 1.0,
+          "cutting_length_mm": 5.0,
+          "length_mm": 20.0,
+          "center_cutting": true
+        },
+        "parameters": {
+          "spindle_rpm": 3000.0,
+          "feed_mm_min": 120.0,
+          "plunge_mm_min": 60.0,
+          "safe_height_mm": 2,
+          "clearance_height_mm": 3,
+          "native_operation": "Surface",
+          "scan_type": "Planar",
+          "pattern": "Line",
+          "layer_mode": "Multi-pass",
+          "cut_mode": "Climb",
+          "step_down_mm": 0.25,
+          "stepover_percent": 10.0,
+          "sample_interval_mm": 0.05,
+          "linear_deflection_mm": 0.001,
+          "geometry_tolerance_mm": 0.005,
+          "boundary_adjustment_mm": 1.05,
+          "start_depth_mm": -0.3999999999999997,
+          "final_depth_mm": -3.0
+        },
+        "setup": {
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 3
+          }
+        },
+        "stage_id": "B",
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        },
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/operation-reference.json",
+          "sha256": "30b531dbf14c2052f21c9a83fb3d514662f23baf93c2537f7f403107335d2f92"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+          "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+        },
+        "schema": "genlaw.round-surface-execution-plan.v1"
+      },
+      {
+        "stock": {
+          "bounds_mm": {
+            "min": [
+              0,
+              0,
+              -2.6
+            ],
+            "max": [
+              6,
+              4,
+              0
+            ]
+          }
+        },
+        "tool": {
+          "id": "FLAT",
+          "kind": "flat_endmill",
+          "diameter_mm": 1.0,
+          "cutting_length_mm": 5.0,
+          "length_mm": 20.0,
+          "center_cutting": true
+        },
+        "parameters": {
+          "spindle_rpm": 3000.0,
+          "feed_mm_min": 120.0,
+          "plunge_mm_min": 60.0,
+          "safe_height_mm": 2,
+          "clearance_height_mm": 3,
+          "native_operation": "MillFace",
+          "step_down_mm": 0.25,
+          "step_over_percent": 50.0,
+          "path_tolerance_mm": 0.001,
+          "clearing_pattern": "Offset",
+          "cut_mode": "Climb",
+          "start_at": "Center",
+          "keep_tool_down": false,
+          "boundary_shape": "Boundbox",
+          "clear_edges": true,
+          "exclude_raised_areas": false
+        },
+        "setup": {
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 3
+          }
+        },
+        "stage_id": "C",
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+          "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+        },
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/operation-reference.json",
+          "sha256": "084840a4f377e0b8731dbd5d33e3e8d4bd6f9760d6416c9a5c6aa0ceb3091854"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+          "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+        },
+        "schema": "genlaw.execution-plan.v7",
+        "capability": "top_facing_xy",
+        "target_bounds_mm": {
+          "min": [
+            0.0,
+            0.0,
+            -2.6
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.2999999999999998
+          ]
+        },
+        "operations": [
+          {
+            "step_id": "C",
+            "feature_id": "TOP-C",
+            "geometry": {
+              "id": "TOP-C",
+              "kind": "planar_top"
+            },
+            "final_z_mm": -0.2999999999999998
+          }
+        ]
+      },
+      {
+        "stock": {
+          "bounds_mm": {
+            "min": [
+              0.0,
+              0.0,
+              -2.6
+            ],
+            "max": [
+              6.0,
+              4.0,
+              -0.2999999999999998
+            ]
+          }
+        },
+        "tool": {
+          "id": "CHAMFER",
+          "kind": "finite_frustum",
+          "diameter_mm": 2.0,
+          "tip_diameter_mm": 0.4,
+          "included_angle_degrees": 90.0,
+          "cutting_length_mm": 0.8,
+          "length_mm": 20.0
+        },
+        "parameters": {
+          "spindle_rpm": 3000.0,
+          "feed_mm_min": 120.0,
+          "plunge_mm_min": 60.0,
+          "safe_height_mm": 2,
+          "clearance_height_mm": 3,
+          "native_operation": "Deburr",
+          "extra_depth_mm": 0.1,
+          "path_tolerance_mm": 0.001,
+          "backend": {
+            "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+            "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+          }
+        },
+        "setup": {
+          "startup": {
+            "position_mm": [
+              0,
+              0,
+              0
+            ],
+            "tool": "unloaded",
+            "spindle": "stopped",
+            "retract_before_tool_selection_z_mm": 3
+          }
+        },
+        "stage_id": "D",
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+          "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+        },
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/operation-reference.json",
+          "sha256": "219c18918d52df9002cb1c0f7470131dab10ef9822ccae56bd03425c7913ed1b"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/target.brep",
+          "sha256": "37260ac8856df6dc4a0eaed331cea6dabc159bb2b9e8b65e1edb99a0fd20c0de"
+        },
+        "schema": "genlaw.selected-chamfer-execution-plan.v1",
+        "specification": {
+          "stock": {
+            "min": [
+              0.0,
+              0.0,
+              -2.6
+            ],
+            "max": [
+              6.000000000000001,
+              4.0,
+              -0.2999999999999997
+            ]
+          },
+          "width_mm": 0.4,
+          "selected_sides": [
+            "ymin",
+            "ymax"
+          ]
+        },
+        "final_tip_z_mm": -0.7999999999999997
+      }
+    ],
+    "projects": [
+      {
+        "units": "metric",
+        "resolution-mode": "manual",
+        "resolution": 0.025,
+        "tools": {
+          "1": {
+            "units": "metric",
+            "shape": "cylindrical",
+            "diameter": 1.0,
+            "length": 5.0
+          }
+        },
+        "workpiece": {
+          "automatic": false,
+          "margin": 0,
+          "bounds": {
+            "min": [
+              0,
+              0,
+              -3
+            ],
+            "max": [
+              6,
+              4,
+              0
+            ]
+          }
+        },
+        "files": [
+          "program.nc"
+        ]
+      },
+      {
+        "units": "metric",
+        "resolution-mode": "manual",
+        "resolution": 0.025,
+        "tools": {
+          "1": {
+            "units": "metric",
+            "shape": "ballnose",
+            "diameter": 1.0,
+            "length": 4.5
+          }
+        },
+        "workpiece": {
+          "automatic": false,
+          "margin": 0,
+          "bounds": {
+            "min": [
+              0,
+              0,
+              -3
+            ],
+            "max": [
+              6,
+              4,
+              0
+            ]
+          }
+        },
+        "files": [
+          "program.nc"
+        ]
+      },
+      {
+        "units": "metric",
+        "resolution-mode": "manual",
+        "resolution": 0.025,
+        "tools": {
+          "1": {
+            "units": "metric",
+            "shape": "cylindrical",
+            "diameter": 1.0,
+            "length": 5.0
+          }
+        },
+        "workpiece": {
+          "automatic": false,
+          "margin": 0,
+          "bounds": {
+            "min": [
+              0,
+              0,
+              -3
+            ],
+            "max": [
+              6,
+              4,
+              0
+            ]
+          }
+        },
+        "files": [
+          "program.nc"
+        ]
+      },
+      {
+        "units": "metric",
+        "resolution-mode": "manual",
+        "resolution": 0.025,
+        "tools": {
+          "1": {
+            "units": "metric",
+            "shape": "snubnose",
+            "diameter": 2.0,
+            "length": 0.8,
+            "snub_diameter": 0.4
+          }
+        },
+        "workpiece": {
+          "automatic": false,
+          "margin": 0,
+          "bounds": {
+            "min": [
+              0,
+              0,
+              -3
+            ],
+            "max": [
+              6,
+              4,
+              0
+            ]
+          }
+        },
+        "files": [
+          "program.nc"
+        ]
+      }
+    ],
+    "grid": {
+      "schema": "genlaw.camotics-grid.v1",
+      "units": "mm",
+      "resolution_mm": 0.025,
+      "padding_resolution_factor": 0.9,
+      "offset_mm": [
+        -0.025000000000000393,
+        -0.02499999999999995,
+        -3.0250000000000004
+      ],
+      "steps": [
+        242,
+        162,
+        122
+      ],
+      "upper_mm": [
+        6.025,
+        4.0249999999999995,
+        0.02499999999999991
+      ],
+      "nc_executed": false,
+      "surface_computed": false
+    },
+    "acceptance": {
+      "iou_percent_min": 99.0,
+      "bounds_deviation_mm_max": 0.025,
+      "volume_deviation_mm3_max": 0.15,
+      "round_deviation_mm_max": 0.15,
+      "chamfer_deviation_mm_max": 0.1,
+      "retained_plane_deviation_mm_max": 0.025,
+      "numerical_guard_mm": 0.05,
+      "quadrature_orders": [
+        4,
+        8
+      ],
+      "quadrature_iou_difference_max": 1e-06,
+      "target_integral_error_mm3_max": 1e-05,
+      "mesh_integral_error_mm3_max": 0.0001,
+      "scope": "software_regression",
+      "manufacturing_tolerance_approved": false
+    },
+    "original_stock": {
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/stock.brep",
+        "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+      },
+      "material_label": "6061-T6"
+    },
+    "whole_real_card_complete": false,
+    "production_approved": false
+  },
+  "reference_stage_index": 2,
+  "case_kind": "normal",
+  "reference_CAD": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+    "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+  },
+  "original_CAD_volume_mm3": 53.93814120077702,
+  "mesh_inspection": {
+    "source_sha256": "21e231792fde5f4e73bc8c355fd2777d79e90b7bb3f1971d3b47af09bd926b96",
+    "raw_triangles": 306296,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 306296,
+    "vertices": 153150,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 53.964451045633815,
+    "bounds": {
+      "min": [
+        9.765625145519152e-05,
+        -9.765625145519152e-05,
+        -2.699902296066284
+      ],
+      "max": [
+        6.000097751617432,
+        4.000097751617432,
+        -0.39990234375
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "maximum_bounds_error_mm": 9.775161743164062e-05,
+  "feature_observations": {
+    "complete_sections": [
+      {
+        "requested_z_mm": -2.38,
+        "z_mm": -2.38,
+        "region": "complete_cumulative_section",
+        "boundary_deviation_mm": 0.005482828199574559,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -1.9,
+        "z_mm": -1.9,
+        "region": "complete_cumulative_section",
+        "boundary_deviation_mm": 0.02156114568937947,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -1.4199999999999997,
+        "z_mm": -1.4199999999999997,
+        "region": "complete_cumulative_section",
+        "boundary_deviation_mm": 0.03004264632189548,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.9599999999999997,
+        "z_mm": -0.9599999999999997,
+        "region": "complete_cumulative_section",
+        "boundary_deviation_mm": 0.036664029827098786,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.7499999999999998,
+        "z_mm": -0.7496642785786454,
+        "region": "complete_cumulative_section",
+        "boundary_deviation_mm": 0.016003662487065702,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.5399999999999998,
+        "z_mm": -0.5399999999999998,
+        "region": "complete_cumulative_section",
+        "boundary_deviation_mm": 0.021268321949599503,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -1.0649999999999997,
+        "z_mm": -1.0649999999999997,
+        "region": "round",
+        "boundary_deviation_mm": 0.04026739030536345,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -1.0019999999999996,
+        "z_mm": -1.0019999999999996,
+        "region": "round",
+        "boundary_deviation_mm": 0.038537718359274886,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.9389999999999996,
+        "z_mm": -0.9389999999999996,
+        "region": "round",
+        "boundary_deviation_mm": 0.035955797220128045,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.8759999999999997,
+        "z_mm": -0.8759999999999997,
+        "region": "round",
+        "boundary_deviation_mm": 0.03278498264847886,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.8129999999999997,
+        "z_mm": -0.8129999999999997,
+        "region": "round",
+        "boundary_deviation_mm": 0.026412981725837992,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.7499999999999998,
+        "z_mm": -0.7496642785786454,
+        "region": "round",
+        "boundary_deviation_mm": 0.016003662487065702,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.6869999999999996,
+        "z_mm": -0.6869999999999996,
+        "region": "round",
+        "boundary_deviation_mm": 0.017108747220565823,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.6239999999999997,
+        "z_mm": -0.6239999999999997,
+        "region": "round",
+        "boundary_deviation_mm": 0.016373748711255624,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.5609999999999997,
+        "z_mm": -0.5609999999999997,
+        "region": "round",
+        "boundary_deviation_mm": 0.01368229275735639,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.49799999999999967,
+        "z_mm": -0.49799999999999967,
+        "region": "round",
+        "boundary_deviation_mm": 0.01573937070823977,
+        "topology_matches": true,
+        "passed": true
+      },
+      {
+        "requested_z_mm": -0.4349999999999997,
+        "z_mm": -0.4349999999999997,
+        "region": "round",
+        "boundary_deviation_mm": 0.02329913202071257,
+        "topology_matches": true,
+        "passed": true
+      }
+    ],
+    "fixed_original_circle_samples": [
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -1.0649999999999997,
+        "measured_mm": 0.7009719919779074,
+        "deviation_mm": 0.0009719919779074271,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -1.0649999999999997,
+        "measured_mm": 0.7007768257834034,
+        "deviation_mm": 0.0007768257834034342,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -1.0649999999999997,
+        "measured_mm": 0.7009719919779074,
+        "deviation_mm": 0.0009719919779074271,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -1.0649999999999997,
+        "measured_mm": 0.7007768257834034,
+        "deviation_mm": 0.0007768257834034342,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -1.0649999999999997,
+        "measured_mm": 0.7009719919779074,
+        "deviation_mm": 0.0009719919779074271,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -1.0649999999999997,
+        "measured_mm": 0.7007768257834034,
+        "deviation_mm": 0.0007768257834034342,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -1.0649999999999997,
+        "measured_mm": 0.7009719919779074,
+        "deviation_mm": 0.0009719919779074271,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -1.0649999999999997,
+        "measured_mm": 0.7007768257834034,
+        "deviation_mm": 0.0007768257834034342,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -1.0649999999999997,
+        "measured_mm": 0.7009719919779074,
+        "deviation_mm": 0.0009719919779074271,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -1.0649999999999997,
+        "measured_mm": 0.7007768257834034,
+        "deviation_mm": 0.0007768257834034342,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -1.0019999999999996,
+        "measured_mm": 0.7069234283410583,
+        "deviation_mm": 0.006923428341058302,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -1.0019999999999996,
+        "measured_mm": 0.7067299056606156,
+        "deviation_mm": 0.006729905660615598,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -1.0019999999999996,
+        "measured_mm": 0.7069234283410583,
+        "deviation_mm": 0.006923428341058302,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -1.0019999999999996,
+        "measured_mm": 0.7067299056606156,
+        "deviation_mm": 0.006729905660615598,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -1.0019999999999996,
+        "measured_mm": 0.7069234283410583,
+        "deviation_mm": 0.006923428341058302,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -1.0019999999999996,
+        "measured_mm": 0.7067299056606156,
+        "deviation_mm": 0.006729905660615598,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -1.0019999999999996,
+        "measured_mm": 0.7069234283410583,
+        "deviation_mm": 0.006923428341058302,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -1.0019999999999996,
+        "measured_mm": 0.7067299056606156,
+        "deviation_mm": 0.006729905660615598,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -1.0019999999999996,
+        "measured_mm": 0.7069234283410583,
+        "deviation_mm": 0.006923428341058302,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -1.0019999999999996,
+        "measured_mm": 0.7067299056606156,
+        "deviation_mm": 0.006729905660615598,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.9389999999999996,
+        "measured_mm": 0.7183715845838249,
+        "deviation_mm": 0.01837158458382493,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.9389999999999996,
+        "measured_mm": 0.7181811467555123,
+        "deviation_mm": 0.0181811467555123,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.9389999999999996,
+        "measured_mm": 0.7183715845838249,
+        "deviation_mm": 0.01837158458382493,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.9389999999999996,
+        "measured_mm": 0.7181811467555123,
+        "deviation_mm": 0.0181811467555123,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -0.9389999999999996,
+        "measured_mm": 0.7183715845838249,
+        "deviation_mm": 0.01837158458382493,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -0.9389999999999996,
+        "measured_mm": 0.7181811467555123,
+        "deviation_mm": 0.0181811467555123,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.9389999999999996,
+        "measured_mm": 0.7183715845838249,
+        "deviation_mm": 0.01837158458382493,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.9389999999999996,
+        "measured_mm": 0.7181811467555123,
+        "deviation_mm": 0.0181811467555123,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -0.9389999999999996,
+        "measured_mm": 0.7183715845838249,
+        "deviation_mm": 0.01837158458382493,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -0.9389999999999996,
+        "measured_mm": 0.7181811467555123,
+        "deviation_mm": 0.0181811467555123,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.8759999999999997,
+        "measured_mm": 0.7066743779343424,
+        "deviation_mm": 0.006674377934342446,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.8759999999999997,
+        "measured_mm": 0.7066742925753733,
+        "deviation_mm": 0.006674292575373331,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.8759999999999997,
+        "measured_mm": 0.7066743779343424,
+        "deviation_mm": 0.006674377934342446,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.8759999999999997,
+        "measured_mm": 0.7066742925753733,
+        "deviation_mm": 0.006674292575373331,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -0.8759999999999997,
+        "measured_mm": 0.7066743779343424,
+        "deviation_mm": 0.006674377934342446,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -0.8759999999999997,
+        "measured_mm": 0.7066742925753733,
+        "deviation_mm": 0.006674292575373331,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.8759999999999997,
+        "measured_mm": 0.7066743779343424,
+        "deviation_mm": 0.006674377934342446,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.8759999999999997,
+        "measured_mm": 0.7066742925753733,
+        "deviation_mm": 0.006674292575373331,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -0.8759999999999997,
+        "measured_mm": 0.7066743779343424,
+        "deviation_mm": 0.006674377934342446,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -0.8759999999999997,
+        "measured_mm": 0.7066742925753733,
+        "deviation_mm": 0.006674292575373331,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.8129999999999997,
+        "measured_mm": 0.7002967089999962,
+        "deviation_mm": 0.00029670899999623135,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.8129999999999997,
+        "measured_mm": 0.7002966816350887,
+        "deviation_mm": 0.0002966816350887802,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.8129999999999997,
+        "measured_mm": 0.7002967089999962,
+        "deviation_mm": 0.00029670899999623135,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.8129999999999997,
+        "measured_mm": 0.7002966816350887,
+        "deviation_mm": 0.0002966816350887802,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -0.8129999999999997,
+        "measured_mm": 0.7002967089999962,
+        "deviation_mm": 0.00029670899999623135,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -0.8129999999999997,
+        "measured_mm": 0.7002966816350887,
+        "deviation_mm": 0.0002966816350887802,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.8129999999999997,
+        "measured_mm": 0.7002967089999962,
+        "deviation_mm": 0.00029670899999623135,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.8129999999999997,
+        "measured_mm": 0.7002966816350887,
+        "deviation_mm": 0.0002966816350887802,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -0.8129999999999997,
+        "measured_mm": 0.7002967089999962,
+        "deviation_mm": 0.00029670899999623135,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -0.8129999999999997,
+        "measured_mm": 0.7002966816350887,
+        "deviation_mm": 0.0002966816350887802,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.7496642785786454,
+        "measured_mm": 0.7034422291243116,
+        "deviation_mm": 0.003442229124311691,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.7496642785786454,
+        "measured_mm": 0.7034390032934734,
+        "deviation_mm": 0.003439003293473464,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.7496642785786454,
+        "measured_mm": 0.7034389252492391,
+        "deviation_mm": 0.0034389252492391664,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.7496642785786454,
+        "measured_mm": 0.7034390032934734,
+        "deviation_mm": 0.003439003293473464,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -0.7496642785786454,
+        "measured_mm": 0.7034389252492391,
+        "deviation_mm": 0.0034389252492391664,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -0.7496642785786454,
+        "measured_mm": 0.7034390032934734,
+        "deviation_mm": 0.003439003293473464,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.7496642785786454,
+        "measured_mm": 0.7034389252492391,
+        "deviation_mm": 0.0034389252492391664,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.7496642785786454,
+        "measured_mm": 0.7034390032934734,
+        "deviation_mm": 0.003439003293473464,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -0.7496642785786454,
+        "measured_mm": 0.7034389252492391,
+        "deviation_mm": 0.0034389252492391664,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -0.7496642785786454,
+        "measured_mm": 0.7034423158402622,
+        "deviation_mm": 0.0034423158402622223,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.6869999999999996,
+        "measured_mm": 0.7017810841226473,
+        "deviation_mm": 0.001781084122647325,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.6869999999999996,
+        "measured_mm": 0.7016988950391783,
+        "deviation_mm": 0.0016988950391783053,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.6869999999999996,
+        "measured_mm": 0.7017810841226473,
+        "deviation_mm": 0.001781084122647325,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.6869999999999996,
+        "measured_mm": 0.7017810841226475,
+        "deviation_mm": 0.0017810841226475471,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -0.6869999999999996,
+        "measured_mm": 0.7017810841226473,
+        "deviation_mm": 0.001781084122647325,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -0.6869999999999996,
+        "measured_mm": 0.7017810841226475,
+        "deviation_mm": 0.0017810841226475471,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.6869999999999996,
+        "measured_mm": 0.7017810841226473,
+        "deviation_mm": 0.001781084122647325,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.6869999999999996,
+        "measured_mm": 0.7017810841226475,
+        "deviation_mm": 0.0017810841226475471,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -0.6869999999999996,
+        "measured_mm": 0.7016989677992425,
+        "deviation_mm": 0.0016989677992425012,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -0.6869999999999996,
+        "measured_mm": 0.7017810841226475,
+        "deviation_mm": 0.0017810841226475471,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.6239999999999997,
+        "measured_mm": 0.700376923148889,
+        "deviation_mm": 0.0003769231488890412,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.6239999999999997,
+        "measured_mm": 0.7003769818329986,
+        "deviation_mm": 0.000376981832998613,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.6239999999999997,
+        "measured_mm": 0.700376923148889,
+        "deviation_mm": 0.0003769231488890412,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.6239999999999997,
+        "measured_mm": 0.7003769818329986,
+        "deviation_mm": 0.000376981832998613,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -0.6239999999999997,
+        "measured_mm": 0.7003829749698819,
+        "deviation_mm": 0.0003829749698819329,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -0.6239999999999997,
+        "measured_mm": 0.7003830336544268,
+        "deviation_mm": 0.00038303365442682313,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.6239999999999997,
+        "measured_mm": 0.7005185768689295,
+        "deviation_mm": 0.0005185768689295323,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.6239999999999997,
+        "measured_mm": 0.7005186062160761,
+        "deviation_mm": 0.000518606216076134,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -0.6239999999999997,
+        "measured_mm": 0.7005185768689295,
+        "deviation_mm": 0.0005185768689295323,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -0.6239999999999997,
+        "measured_mm": 0.7005186062160761,
+        "deviation_mm": 0.000518606216076134,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.5609999999999997,
+        "measured_mm": 0.7010208402835397,
+        "deviation_mm": 0.00102084028353977,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.5609999999999997,
+        "measured_mm": 0.7010208338895935,
+        "deviation_mm": 0.0010208338895935087,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.5609999999999997,
+        "measured_mm": 0.7010208402835397,
+        "deviation_mm": 0.00102084028353977,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.5609999999999997,
+        "measured_mm": 0.7010208338895935,
+        "deviation_mm": 0.0010208338895935087,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -0.5609999999999997,
+        "measured_mm": 0.7010208402835397,
+        "deviation_mm": 0.00102084028353977,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -0.5609999999999997,
+        "measured_mm": 0.7010208338895935,
+        "deviation_mm": 0.0010208338895935087,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.5609999999999997,
+        "measured_mm": 0.7010208402835397,
+        "deviation_mm": 0.00102084028353977,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.5609999999999997,
+        "measured_mm": 0.7010208338895935,
+        "deviation_mm": 0.0010208338895935087,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -0.5609999999999997,
+        "measured_mm": 0.7010208402835397,
+        "deviation_mm": 0.00102084028353977,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -0.5609999999999997,
+        "measured_mm": 0.7010208338895935,
+        "deviation_mm": 0.0010208338895935087,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.49799999999999967,
+        "measured_mm": 0.7001235358632235,
+        "deviation_mm": 0.00012353586322355614,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.49799999999999967,
+        "measured_mm": 0.7001235154412371,
+        "deviation_mm": 0.00012351544123712088,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.49799999999999967,
+        "measured_mm": 0.7001235358632235,
+        "deviation_mm": 0.00012353586322355614,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.49799999999999967,
+        "measured_mm": 0.7001235154412371,
+        "deviation_mm": 0.00012351544123712088,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -0.49799999999999967,
+        "measured_mm": 0.7001235358632235,
+        "deviation_mm": 0.00012353586322355614,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -0.49799999999999967,
+        "measured_mm": 0.7001235154412371,
+        "deviation_mm": 0.00012351544123712088,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.49799999999999967,
+        "measured_mm": 0.7001235358632235,
+        "deviation_mm": 0.00012353586322355614,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.49799999999999967,
+        "measured_mm": 0.7001235154412371,
+        "deviation_mm": 0.00012351544123712088,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -0.49799999999999967,
+        "measured_mm": 0.7001235358632235,
+        "deviation_mm": 0.00012353586322355614,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -0.49799999999999967,
+        "measured_mm": 0.7001235154412371,
+        "deviation_mm": 0.00012351544123712088,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.4349999999999997,
+        "measured_mm": 0.7002587528741043,
+        "deviation_mm": 0.0002587528741043732,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 0.8999999999999999,
+        "local_z_mm": -0.4349999999999997,
+        "measured_mm": 0.7002587748062195,
+        "deviation_mm": 0.0002587748062194972,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.4349999999999997,
+        "measured_mm": 0.7002587528741043,
+        "deviation_mm": 0.0002587528741043732,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 1.9500000000000002,
+        "local_z_mm": -0.4349999999999997,
+        "measured_mm": 0.7002587748062195,
+        "deviation_mm": 0.0002587748062194972,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 3.0,
+        "local_z_mm": -0.4349999999999997,
+        "measured_mm": 0.7002587528741043,
+        "deviation_mm": 0.0002587528741043732,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 3.0,
+        "local_z_mm": -0.4349999999999997,
+        "measured_mm": 0.7002587748062195,
+        "deviation_mm": 0.0002587748062194972,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.4349999999999997,
+        "measured_mm": 0.7002587528741043,
+        "deviation_mm": 0.0002587528741043732,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 4.050000000000001,
+        "local_z_mm": -0.4349999999999997,
+        "measured_mm": 0.7002587748062195,
+        "deviation_mm": 0.0002587748062194972,
+        "passed": true
+      },
+      {
+        "side": "ymin",
+        "x_mm": 5.1,
+        "local_z_mm": -0.4349999999999997,
+        "measured_mm": 0.7002587528741043,
+        "deviation_mm": 0.0002587528741043732,
+        "passed": true
+      },
+      {
+        "side": "ymax",
+        "x_mm": 5.1,
+        "local_z_mm": -0.4349999999999997,
+        "measured_mm": 0.7002587748062195,
+        "deviation_mm": 0.0002587748062194972,
+        "passed": true
+      }
+    ],
+    "selected_chamfer_width_samples": [],
+    "retained_plane_rays": [
+      {
+        "xy_mm": [
+          1.7999999999999998,
+          1.2
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.7999999999999998,
+          1.6
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.7999999999999998,
+          2.0
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.7999999999999998,
+          2.4
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.7999999999999998,
+          2.8
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.4000000000000004,
+          1.2
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.4000000000000004,
+          1.6
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.4000000000000004,
+          2.0
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.4000000000000004,
+          2.4
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.4000000000000004,
+          2.8
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.0,
+          1.2
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.0,
+          1.6
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.0,
+          2.0
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.0,
+          2.4
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.0,
+          2.8
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.5999999999999996,
+          1.2
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.5999999999999996,
+          1.6
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.5999999999999996,
+          2.0
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.5999999999999996,
+          2.4
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.5999999999999996,
+          2.8
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          4.199999999999999,
+          1.2
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          4.199999999999999,
+          1.6
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          4.199999999999999,
+          2.0
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          4.199999999999999,
+          2.4
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          4.199999999999999,
+          2.8
+        ],
+        "surface_z_mm": [
+          -2.6999023,
+          -0.39990234
+        ],
+        "deviation_mm": 9.769999999997836e-05,
+        "passed": true
+      }
+    ],
+    "sections_pass": true,
+    "rounds_pass": true,
+    "chamfers_pass": true,
+    "retained_planes_pass": true,
+    "reference_bounds": {
+      "min": [
+        0,
+        0,
+        -2.7
+      ],
+      "max": [
+        6,
+        4,
+        -0.3999999999999999
+      ]
+    },
+    "geometry_fitting_applied": false
+  },
+  "acceptance": {
+    "iou_percent_min": 99.0,
+    "bounds_deviation_mm_max": 0.025,
+    "volume_deviation_mm3_max": 0.15,
+    "round_deviation_mm_max": 0.15,
+    "chamfer_deviation_mm_max": 0.1,
+    "retained_plane_deviation_mm_max": 0.025,
+    "numerical_guard_mm": 0.05,
+    "quadrature_orders": [
+      4,
+      8
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-05,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "scope": "software_regression",
+    "manufacturing_tolerance_approved": false
+  },
+  "parts": [
+    [
+      0,
+      16
+    ],
+    [
+      16,
+      32
+    ],
+    [
+      32,
+      48
+    ],
+    [
+      48,
+      64
+    ],
+    [
+      64,
+      80
+    ],
+    [
+      80,
+      96
+    ],
+    [
+      96,
+      112
+    ],
+    [
+      112,
+      128
+    ],
+    [
+      128,
+      144
+    ],
+    [
+      144,
+      160
+    ],
+    [
+      160,
+      176
+    ],
+    [
+      176,
+      186
+    ]
+  ],
+  "arrays": {
+    "vertices": {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/verification/measurement/vertices.npy",
+      "sha256": "e55a5de56511e25128e832e8e4e19ec6480a76afa711012977175b85461e7be2"
+    },
+    "faces": {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/verification/measurement/faces.npy",
+      "sha256": "c9f47f467ca08583f273ae4cf831557448674be5f779bfdf417cc07d26036c3e"
+    },
+    "levels": {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/verification/measurement/levels.npy",
+      "sha256": "b6bf11486b8117e5293eee976fc5b266d6e1f3836adb2edb63c3ba66b06ecc3d"
+    }
+  },
+  "bound_artifacts": [
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/request.json",
+      "sha256": "ac08621e932ddf893644be00f390ad73fc16bfcf82e4fe7f8a4b5e5f5c72d581"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/preparation-result.json",
+      "sha256": "8970184c1eefc9afc6fae0d30983aa15acbf62cce7f7eb368fc4c14142688746"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/freecad-resources.json",
+      "sha256": "c04f9038139c1299fa4f9b49b818e7f41a2fe31e85c7b8de084a0067b958dbf0"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/cam-result.json",
+      "sha256": "db682641839804fb7094653f3100513e86d43e42e40b99f8135c97f95b201d49"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/current-native-CAD-check.json",
+      "sha256": "bad1cf19c60a405910abf98ec5b81716e7bc5f54b90bcae9a349abec7ca1edf5"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/manifest.json",
+      "sha256": "8c295ae3379cfd7d4ef2f4b5f19946ea302700092a12bb9cdec77a806440da33"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/input.json",
+      "sha256": "5cdd90ca9260c43859550ba9adf7eaa095fac9fd2d0f11a737469cdcf3e37099"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/A/result.json",
+      "sha256": "342ebc8c5299c8b2803530425de3e89e4d9a16a22e2bab1dcebcdcdcd9299aa1"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/A/program.nc",
+      "sha256": "fedcedb1f993d77d2cc72558715ffe08ca4c88e753f03ec6763f1e75cd569ca3"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/A/simulation.camotics",
+      "sha256": "9933e915aeac1fcb332d688440ec9a4c0920a911ed0f6d3ef2311e2103eb6c47"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/stock.brep",
+      "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+      "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/B/result.json",
+      "sha256": "3ef12eafe442a04e950414ee1fb0654f0c6a3bf48e002288408fd060508d3fe7"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/B/program.nc",
+      "sha256": "2c62e39cccdaf8b9eba30b9fb63f5dff52798643bab0b377918e5adc29dfbc8a"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/B/simulation.camotics",
+      "sha256": "d2855e83d89213e439062c8b508b69b9315beecea32521fffd2557843554c5af"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+      "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+      "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/C/result.json",
+      "sha256": "7988488ec5abbc987a0c48c8aa833dfb3046b0472646c573ce85bd7cbc929de2"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/C/program.nc",
+      "sha256": "a5ab6fd21cf2940e29443287d5dfdbb4303d653dd7d19ef2d4a96ab649580cf3"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/C/simulation.camotics",
+      "sha256": "9933e915aeac1fcb332d688440ec9a4c0920a911ed0f6d3ef2311e2103eb6c47"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+      "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+      "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/D/result.json",
+      "sha256": "539f582026c1eac7391a9e6cbcface5c4e3b00de6d52bdd3f34b3d88fb8dc2b1"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/D/program.nc",
+      "sha256": "59c49a6d9b7362170c7cbcada824a5d03c81a91dc30b508c27418e0519fbc5cd"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/D/simulation.camotics",
+      "sha256": "946023bd00d9e704898c6cb3d39ef3f13d5ee60e4664d9f5126b44cb1a63c86a"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+      "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/target.brep",
+      "sha256": "37260ac8856df6dc4a0eaed331cea6dabc159bb2b9e8b65e1edb99a0fd20c0de"
+    },
+    {
+      "path": "genlaw_pipeline/cumulative_execution.py",
+      "sha256": "3f63ac128153f64d951abdea3abebf910dcd6b0665ad71c5074ee28b1bb17a58"
+    },
+    {
+      "path": "genlaw_pipeline/cumulative_stage_geometry.py",
+      "sha256": "0e1301deb06c0a59534326788b4c297553f6a0a19d542434a72137709d3b5038"
+    },
+    {
+      "path": "tools/cumulative_cam_worker.py",
+      "sha256": "b59710078234d5ddedc8a2478586554746c472f4ba7acc42231bc96ccc764ac8"
+    },
+    {
+      "path": "tools/check_cumulative_stage_cad.py",
+      "sha256": "324b2410260ec8bdbc2328af1f6358d64914f969b41933f213b78c53a26944fb"
+    },
+    {
+      "path": "tools/run_cumulative_cam_case.py",
+      "sha256": "24677ea52a8db818a5d8c001f369f8a86e469718352219c860162133de474bed"
+    },
+    {
+      "path": "genlaw_pipeline/round_surface_nc.py",
+      "sha256": "df24d76ca53cf1ecd494f65ef376d0e57178ffad95b55e475247bd9e42289786"
+    },
+    {
+      "path": "genlaw_pipeline/selected_chamfer_nc.py",
+      "sha256": "6b3df74f55028d1703ed2abc612416b7750ee79c2175563db0dc7923d6e5a65b"
+    },
+    {
+      "path": "genlaw_pipeline/facing_nc.py",
+      "sha256": "b29c7e7dbc956a42311c0892aee8063c9723860aefc4335d494a42385c700a87"
+    },
+    {
+      "path": "genlaw_pipeline/milling_nc.py",
+      "sha256": "56c3ed6538568c7603d16f3f668e3203306b6d0905e9fd0092ac7f058a8de5d3"
+    },
+    {
+      "path": "genlaw_pipeline/sequence_nc.py",
+      "sha256": "f30f04ea0255bb18e2d5400a0d22cf4e67ebfde58d932189157542f212d6bb85"
+    },
+    {
+      "path": "genlaw_pipeline/surface_feed_adapter.py",
+      "sha256": "48c0a9ff1132f0c89d576f42a346627d65b46ee320447f1859f7b6bcc96bc3cf"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/genlaw_pipeline/cumulative_execution.py",
+      "sha256": "3f63ac128153f64d951abdea3abebf910dcd6b0665ad71c5074ee28b1bb17a58"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/genlaw_pipeline/cumulative_stage_geometry.py",
+      "sha256": "0e1301deb06c0a59534326788b4c297553f6a0a19d542434a72137709d3b5038"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/tools/cumulative_cam_worker.py",
+      "sha256": "b59710078234d5ddedc8a2478586554746c472f4ba7acc42231bc96ccc764ac8"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/tools/check_cumulative_stage_cad.py",
+      "sha256": "324b2410260ec8bdbc2328af1f6358d64914f969b41933f213b78c53a26944fb"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/tools/run_cumulative_cam_case.py",
+      "sha256": "24677ea52a8db818a5d8c001f369f8a86e469718352219c860162133de474bed"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/genlaw_pipeline/round_surface_nc.py",
+      "sha256": "df24d76ca53cf1ecd494f65ef376d0e57178ffad95b55e475247bd9e42289786"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/genlaw_pipeline/selected_chamfer_nc.py",
+      "sha256": "6b3df74f55028d1703ed2abc612416b7750ee79c2175563db0dc7923d6e5a65b"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/genlaw_pipeline/facing_nc.py",
+      "sha256": "b29c7e7dbc956a42311c0892aee8063c9723860aefc4335d494a42385c700a87"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/genlaw_pipeline/milling_nc.py",
+      "sha256": "56c3ed6538568c7603d16f3f668e3203306b6d0905e9fd0092ac7f058a8de5d3"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/genlaw_pipeline/sequence_nc.py",
+      "sha256": "f30f04ea0255bb18e2d5400a0d22cf4e67ebfde58d932189157542f212d6bb85"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/sources/genlaw_pipeline/surface_feed_adapter.py",
+      "sha256": "48c0a9ff1132f0c89d576f42a346627d65b46ee320447f1859f7b6bcc96bc3cf"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/baseline/input.json",
+      "sha256": "abce5584a96239bc57bef6980014888c506a0b9dd4f74292fb2870d30fae100f"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/baseline/process-card.pdf",
+      "sha256": "c1234634d767a652d2d88fbbf57cf4c4224cf8fb90e194a388b2c34bdf31258f"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/baseline/resources.json",
+      "sha256": "730794965b6772c73a729eb13960c2ec89fce780ab4675502bc7e81ec5b21b93"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/input.json",
+      "sha256": "5cdd90ca9260c43859550ba9adf7eaa095fac9fd2d0f11a737469cdcf3e37099"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/process-card.pdf",
+      "sha256": "01995527a8e306df9446a65aad2ba96fd92ed5527af3e2c89e067b79cacf9e92"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/resources.json",
+      "sha256": "afdad39c2c2fdc70e791f4f5c35262fcbad6f74829214c0c9b2b1738ed3c6c36"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/input.json",
+      "sha256": "84e8e0963d9e9242a4b74e77c4e8e6e1b931591acb34430909e83071116cc7dc"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/process-card.pdf",
+      "sha256": "8b3f8fc109aee178e3209bfaf7db71b5c2a0fbdf399c2cc44ebd89788a6d5a90"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/resources.json",
+      "sha256": "533aca56aee02a713ec963ad20cfcbc321bb9237b71c3381fc1464875fc2e365"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/input.json",
+      "sha256": "9ca4a49de338c68b965a36abb93421fbdb21087305ba15370eb144e925c29c58"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/process-card.pdf",
+      "sha256": "8095adde6af69a5bfda7d5c14750ab77d734bc41b8fa44097012978439dc0e2e"
+    },
+    {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/resources.json",
+      "sha256": "a6c91f5d4af907e00619cd4a454535bc2bd52c150389b08abb1299609bc47210"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/verification/request.json",
+      "sha256": "4e34dd1a151856cc338a870ff8ed2fd77c1f2fd6b0a180fcc8217cfaa1b5be00"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/result.json",
+      "sha256": "02900a3c91dbf4b7d8ef9df4a22437ccf4e39856cab079db4b694b8e32e9e006"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/request.json",
+      "sha256": "47de1fbad91abe5da0fa62cc83c876c5fae760f8a8adf6040a1837cea3d24b60"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/surface.stl",
+      "sha256": "21e231792fde5f4e73bc8c355fd2777d79e90b7bb3f1971d3b47af09bd926b96"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-00/native/native.json",
+      "sha256": "d04bb53c27ea9479aad237d8d6828377d6434f4b92ada90d8348d55a8d04771e"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-00/native-resources.json",
+      "sha256": "02b68a91b2f3caf54853a1ae7b7b130a83cd7b956e7e6e2448afe06e546367f9"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-00/native/surface-0000.stl",
+      "sha256": "be51e4653475747d5d7a98394377ed98279acfff17c20ae1a702396f7b14cb20"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-01/native/native.json",
+      "sha256": "4684d9651fdd7cd67fee388781799fc6cf8ebc0a13007f6c62cc2cf137bdc964"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-01/native-resources.json",
+      "sha256": "6e1365689f285ca99883f53dfa6eeb81905845bd07aeacaaabb20401ff20d868"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-01/native/surface-0000.stl",
+      "sha256": "550111c36627bd1eee0ded8eb27aaa4dfe867702e7919d8c88acf8ea737d91c1"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-02/native/native.json",
+      "sha256": "c62eb64642163ca432145d115bf5f379d8314dbf0874390626328e6966820d93"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-02/native-resources.json",
+      "sha256": "8585a1c05ddbb323dc7c5033297900df5252a05314960f97ef07b4b4f847daed"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-02/native/surface-0000.stl",
+      "sha256": "bf0088cd2af4310adaf0fd14712806a68672f0021d4667710f87fe94987fb542"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-03/native/native.json",
+      "sha256": "50702f62bea9ba37f7a0810ca32eab3924afe4c29b2d14b5c228c83be6f8d553"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-03/native-resources.json",
+      "sha256": "f027d8fb139ecbe46768e3b280869c9aa201b6d8d1792d3b6dd7f9b5af62a7f6"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-03/native/surface-0000.stl",
+      "sha256": "12bb9542b34a3ebb9a699184de3b2eeab5ef7a19a3abaf14bdc5df49878f9593"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-04/native/native.json",
+      "sha256": "7a55bb4727d4fd58b98346d5d8c12357d034e0c58c67936a104e8e2adbe2bc9a"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-04/native-resources.json",
+      "sha256": "0a6ad0c1257dea0627d66f14537f1f62b60a9ca01e4d61a7b337709ac5cc48ad"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-04/native/surface-0000.stl",
+      "sha256": "5ceed80037c5dd8c564d9fa1119db812dce1757ba8c4164ba02e75338b45aa56"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-05/native/native.json",
+      "sha256": "e380d46dd56883b269f5d49fd95916f6f498500d993c269710477e6377e4bb5a"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-05/native-resources.json",
+      "sha256": "7cffc84745376b1c17899b6e413d21bcc2a23960dbd3893d1cd0244b069fcad3"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-05/native/surface-0000.stl",
+      "sha256": "0aea7c8639029e990ffe832f802a79a0bb0034fb75fe502b6cb6cb914dbcbefc"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-06/native/native.json",
+      "sha256": "9876d68b7cb3b26b42496bfcc8fc0f158790c3eed724aa35c9230bdf0f9ed173"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-06/native-resources.json",
+      "sha256": "07d14da81a9c8f15017b27fda2431df12e9fe9ad35370e9cc121d5ced2f157b5"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-06/native/surface-0000.stl",
+      "sha256": "3d35f1cd7d754d10057b199cfba49ec5ac7c22be982eb88d0c6e9b436894b961"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-07/native/native.json",
+      "sha256": "df8db99daaee84e146c31932f8e65524644c053e74ade9ac9e4c2256908f1de8"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-07/native-resources.json",
+      "sha256": "4164c49f97cfdca45df28927692aed001f0e195a9060ef0e6ddfdaf99e454b73"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/window-07/native/surface-0000.stl",
+      "sha256": "bcfc7cadb7d1dcdfef0617b3f027eab1da76545a3be0ebeb4d1994ba5ebb181b"
+    }
+  ],
+  "source_code": [
+    {
+      "path": "genlaw_pipeline/cumulative_measurement_v2.py",
+      "sha256": "a8eefbb76af21b7769a01c765ab61dfe55b8524fe22ce9ba184bf56ddb8a10b1"
+    },
+    {
+      "path": "genlaw_pipeline/cumulative_stage_geometry.py",
+      "sha256": "0e1301deb06c0a59534326788b4c297553f6a0a19d542434a72137709d3b5038"
+    },
+    {
+      "path": "genlaw_pipeline/indexed_sections.py",
+      "sha256": "66ceb253b8085e4424f4cc004a7f248eb83bec33d1551cffecedbdd6a819dfab"
+    },
+    {
+      "path": "genlaw_pipeline/reference_sections.py",
+      "sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+    }
+  ],
+  "complete_native_material": true,
+  "registered_or_repaired": false,
+  "numerical_result_not_yet_complete": true
+}

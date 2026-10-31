@@ -1,0 +1,166 @@
+{
+  "schema": "genlaw.cumulative-target-input.v1",
+  "id": "shifted-datum",
+  "mode": "software_geometry_reference",
+  "material_frame": "original_CAD_mm",
+  "original_stock": {
+    "bounds_mm": {
+      "min": [
+        -1,
+        2,
+        -0.5
+      ],
+      "max": [
+        5,
+        6,
+        2.5
+      ]
+    },
+    "CAD": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/stock.brep",
+      "sha256": "4b328a1af320f032e41d99a574918a921e8d0b54b6fd4a2f9983d1e29b0a26a7"
+    },
+    "material_label": "6061-T6"
+  },
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/process-card.pdf",
+    "sha256": "5a5981730b347d85290ff096b3c7d45f68000948af5699a441da2552b88f9118"
+  },
+  "process_plan": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/process-plan.json",
+    "sha256": "687a53d7bb8a51e1213dafd08c063a2494b10e01655c4fa601d9bd7b6dd69ac4"
+  },
+  "stages": [
+    {
+      "id": "A",
+      "setup_id": "S1",
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "predecessor": "original_stock",
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/A/operation-reference.json",
+        "sha256": "6eb58e3be7ebf52931f300f0016d210d80cb4dec663290b80d215335c1b89787"
+      },
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/stock.brep",
+        "sha256": "4b328a1af320f032e41d99a574918a921e8d0b54b6fd4a2f9983d1e29b0a26a7"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/A/target.brep",
+        "sha256": "43a10bfc135f781c6d93b7884f53dd18f1a99df69107d467b10ca338c4735622"
+      }
+    },
+    {
+      "id": "B",
+      "setup_id": "S1",
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "predecessor": "A",
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/B/operation-reference.json",
+        "sha256": "d3b5a00ce12d82d4156a9cd392e13f0b61eb404c823a5d385ecede2141bb5641"
+      },
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/A/target.brep",
+        "sha256": "43a10bfc135f781c6d93b7884f53dd18f1a99df69107d467b10ca338c4735622"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/B/target.brep",
+        "sha256": "48f2ef8b580a292829c613b1e4ba2e313885a13fda92e4ba0457800349432d58"
+      }
+    },
+    {
+      "id": "C",
+      "setup_id": "S2",
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        8,
+        2.0
+      ],
+      "predecessor": "B",
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/C/operation-reference.json",
+        "sha256": "bd8f8b2357c23807b96869b57d1fd1cd9b13e78efa7ce23787300e33fc0ca7ee"
+      },
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/B/target.brep",
+        "sha256": "48f2ef8b580a292829c613b1e4ba2e313885a13fda92e4ba0457800349432d58"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/C/target.brep",
+        "sha256": "692b73a277a681e0aa6004c5eb4e8aa43bf63304eb44e0c1b08033e50191c512"
+      }
+    },
+    {
+      "id": "D",
+      "setup_id": "S2",
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        8,
+        2.0
+      ],
+      "predecessor": "C",
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/D/operation-reference.json",
+        "sha256": "4eb724ed81d4cc01c6c7428e6306e4faa469c2e8e565e9904abbe7343c4eb044"
+      },
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/C/target.brep",
+        "sha256": "692b73a277a681e0aa6004c5eb4e8aa43bf63304eb44e0c1b08033e50191c512"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/D/target.brep",
+        "sha256": "36f32dd4a615ed5bbf62fad287f77edc90c45fbb4420148c3d4884ec67cf9075"
+      }
+    }
+  ],
+  "final_CAD": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/D/target.brep",
+    "sha256": "36f32dd4a615ed5bbf62fad287f77edc90c45fbb4420148c3d4884ec67cf9075"
+  },
+  "stock_reset_between_stages": false,
+  "continuous_rotary_motion": false,
+  "production_approved": false
+}

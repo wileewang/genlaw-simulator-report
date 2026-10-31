@@ -1,0 +1,815 @@
+{
+  "schema": "genlaw.cumulative-CAM-suite.v1",
+  "status": "four_normal_three_controls_qualified",
+  "cohort": {
+    "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/material-cohort-02/result.json",
+    "sha256": "12334c623b48ea317debaf98892d2bcc645bc974554f32e7bf97c8d04bbb0071"
+  },
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "name": "圆角保留到另一面倒角",
+      "specification": {
+        "id": "baseline",
+        "name": "圆角保留到另一面倒角",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.6,
+        "chamfer_width_mm": 0.4
+      },
+      "qualification": {
+        "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/material-cohort-01/qualified-baseline.json",
+        "sha256": "8735e3cf6781d37be812ab5b4052c301299dc68de5fe22195bea679ee3eb5162"
+      },
+      "CAM": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/result.json",
+        "sha256": "25005979b8f9cd469733335e848af8c34e08d24f5548fa22aad96d54cc571475"
+      },
+      "input": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/baseline/input.json",
+        "sha256": "abce5584a96239bc57bef6980014888c506a0b9dd4f74292fb2870d30fae100f"
+      },
+      "states": [
+        {
+          "stage_id": "A",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/A/verification/measurement/metrics.json",
+            "sha256": "509ad55efb4eb7f322b1730992b266f40c05daeccbda69d4cd69f5d4886f2984"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/A/material/result.json",
+            "sha256": "4b09a1505fa791fabd6ea94a9594dc5c1e7d0c0206766f9edb00186cb1cf8cbe"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/A/target.brep",
+            "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/A/material/surface.stl",
+            "sha256": "1cb2119219d958ec018dbd00116496bce7b784cf6ccef23089347eafc360862d"
+          },
+          "iou_percent": 99.98240582532601,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 321372,
+          "round_samples": 0,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 4.101153295952827,
+          "max_worker_rss_bytes": 213663744
+        },
+        {
+          "stage_id": "B",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/B/verification/measurement/metrics.json",
+            "sha256": "b088328c743ca3b350f337a39000681521e9206daaf35980d2d8f9656caf03e8"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/B/material/result.json",
+            "sha256": "a9cc99680bd342dc23c02ccac63e62c0d02736eccd71480604570bf33d9292ec"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/B/target.brep",
+            "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/B/material/surface.stl",
+            "sha256": "6f2d3dd5050bc816670886a431e757432c00f5b3685162556cfda4e33052f398"
+          },
+          "iou_percent": 99.92911068492155,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 326736,
+          "round_samples": 110,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 18.277200360025745,
+          "max_worker_rss_bytes": 207728640
+        },
+        {
+          "stage_id": "C",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/C/verification/measurement/metrics.json",
+            "sha256": "5357c73c0779186cb354b1b7a0149d4ff230fecf8583f5e3c13d2f2185e1da7f"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/C/material/result.json",
+            "sha256": "baa39d5e10879a771ff6b104ae72659f5da2fb132090b4242700962c3d7fc429"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/C/target.brep",
+            "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/C/material/surface.stl",
+            "sha256": "71dcc28b29f37459f364a514ef56e6a2bec3aa94704263a6d30ab341c080977c"
+          },
+          "iou_percent": 99.92079137027066,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 307488,
+          "round_samples": 110,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 18.15619314101059,
+          "max_worker_rss_bytes": 199454720
+        },
+        {
+          "stage_id": "D",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/D/verification/measurement/metrics.json",
+            "sha256": "9dfcad21cb7ce633a6c41dbcbf161f74903b106a5a4bf2fb8adbf425b102f130"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/D/material/result.json",
+            "sha256": "a50dcee3fc499b665c8553cd72219ae1b815f1daceab0b352db71826eb66104d"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/D/target.brep",
+            "sha256": "21f7d20a07ce0be4f548b406efa6ee5b4e4edfc20194188f5a4af670f663b842"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/D/material/surface.stl",
+            "sha256": "5348cdb1b76eadc22fa48bd7fc852358f8b5a0c633ac0f636c34b649a825d96a"
+          },
+          "iou_percent": 99.92033419328186,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 307952,
+          "round_samples": 110,
+          "chamfer_samples": 110,
+          "max_worker_seconds": 18.363894929003436,
+          "max_worker_rss_bytes": 219799552
+        }
+      ],
+      "final_iou_percent": 99.92033419328186
+    },
+    {
+      "id": "larger-round",
+      "name": "增加第一面圆角半径",
+      "specification": {
+        "id": "larger-round",
+        "name": "增加第一面圆角半径",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.7,
+        "chamfer_width_mm": 0.4
+      },
+      "qualification": {
+        "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/material-cohort-02/qualified-larger-round.json",
+        "sha256": "ba104e275e01b7bf13d3b55be7cf64185be42d69a51522184254bccc1dd7a2da"
+      },
+      "CAM": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/result.json",
+        "sha256": "21143518287e98244c67753f2bd1f43ae600e8a6981fd070ca1d949b8313b8b6"
+      },
+      "input": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/input.json",
+        "sha256": "5cdd90ca9260c43859550ba9adf7eaa095fac9fd2d0f11a737469cdcf3e37099"
+      },
+      "states": [
+        {
+          "stage_id": "A",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/A/verification/measurement/metrics.json",
+            "sha256": "bda7ca13bd4c48a76b1565819ee0a64fd4d6d267963a5bc572741dd751478208"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/A/material/result.json",
+            "sha256": "7522f177cb31f02d695a32ab87ecb490ab1f3b813b956372e39b81944fa2f4cb"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+            "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/A/material/surface.stl",
+            "sha256": "1cb2119219d958ec018dbd00116496bce7b784cf6ccef23089347eafc360862d"
+          },
+          "iou_percent": 99.98240582532601,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 321372,
+          "round_samples": 0,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 4.097757776034996,
+          "max_worker_rss_bytes": 225226752
+        },
+        {
+          "stage_id": "B",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/B/verification/measurement/metrics.json",
+            "sha256": "e3bd91ed1a461711ebec242b8b4a70fe5d65b46fa929825edb977670281b9ce8"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/B/material/result.json",
+            "sha256": "3054dc874f5c1be2b1081591780ee13cb4c85807e99e1889b39964586a14d52b"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+            "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/B/material/surface.stl",
+            "sha256": "c38a595f50866eb1163d444ab599ed380bdcb92817dce014446ad2e33bba2428"
+          },
+          "iou_percent": 99.91809462810501,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 325544,
+          "round_samples": 110,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 18.529813918983564,
+          "max_worker_rss_bytes": 229593088
+        },
+        {
+          "stage_id": "C",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/verification/measurement/metrics.json",
+            "sha256": "afef0013f014c2e0e88caafff897550b63552c30ea0308f4af7e6908dd5c1979"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/result.json",
+            "sha256": "02900a3c91dbf4b7d8ef9df4a22437ccf4e39856cab079db4b694b8e32e9e006"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+            "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/C/material/surface.stl",
+            "sha256": "21e231792fde5f4e73bc8c355fd2777d79e90b7bb3f1971d3b47af09bd926b96"
+          },
+          "iou_percent": 99.90825521192161,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 306296,
+          "round_samples": 110,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 19.39430953899864,
+          "max_worker_rss_bytes": 210325504
+        },
+        {
+          "stage_id": "D",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/D/verification/measurement/metrics.json",
+            "sha256": "da753372ab6593a12fa7fc27101dd5be05430717e287c6e3d23a5da591a27768"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/D/material/result.json",
+            "sha256": "ad513a885663ce48bdb1b5ae49b6b23f1579abf2611f3341fcf864cee4beee02"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/target.brep",
+            "sha256": "37260ac8856df6dc4a0eaed331cea6dabc159bb2b9e8b65e1edb99a0fd20c0de"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/D/material/surface.stl",
+            "sha256": "87241ad0fd5cd0d06ab6f4e737f1f3d0d158e06301ef3ca12efa515fbbb7702f"
+          },
+          "iou_percent": 99.9075707335831,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 306760,
+          "round_samples": 110,
+          "chamfer_samples": 110,
+          "max_worker_seconds": 18.375809636025224,
+          "max_worker_rss_bytes": 192974848
+        }
+      ],
+      "final_iou_percent": 99.9075707335831
+    },
+    {
+      "id": "wider-bottom",
+      "name": "增加第二面倒角宽度",
+      "specification": {
+        "id": "wider-bottom",
+        "name": "增加第二面倒角宽度",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.6,
+        "chamfer_width_mm": 0.5
+      },
+      "qualification": {
+        "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/material-cohort-02/qualified-wider-bottom.json",
+        "sha256": "517f7e92048e748c508c4ece976bc2f26a1f1f3f72acef08c2f36792e8f15319"
+      },
+      "CAM": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/result.json",
+        "sha256": "ccf8f2ad45c8496f3652b6cc0625676f0ef058206f5a10c1c6527ea3318581da"
+      },
+      "input": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/input.json",
+        "sha256": "9ca4a49de338c68b965a36abb93421fbdb21087305ba15370eb144e925c29c58"
+      },
+      "states": [
+        {
+          "stage_id": "A",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/A/verification/measurement/metrics.json",
+            "sha256": "1667e883132fa5e174186d167e9864f232c6f1b99549aefd0d047347c852d764"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/A/material/result.json",
+            "sha256": "f22721c63809130b9046f82b6fb6f20eb6ef6f681f164ad513746a7d5eb9b9f8"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/target.brep",
+            "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/A/material/surface.stl",
+            "sha256": "1cb2119219d958ec018dbd00116496bce7b784cf6ccef23089347eafc360862d"
+          },
+          "iou_percent": 99.98240582532601,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 321372,
+          "round_samples": 0,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 4.306512821000069,
+          "max_worker_rss_bytes": 223662080
+        },
+        {
+          "stage_id": "B",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/B/verification/measurement/metrics.json",
+            "sha256": "a55337fb1250e3aa4565fb9ec27addfea63e640aa6f5e3d6873c20f981c93ec2"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/B/material/result.json",
+            "sha256": "d0220630ef7de106923f4f8d7d5d568e8431f3c97a7b9df188f53ca3c75219d6"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/target.brep",
+            "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/B/material/surface.stl",
+            "sha256": "6f2d3dd5050bc816670886a431e757432c00f5b3685162556cfda4e33052f398"
+          },
+          "iou_percent": 99.92911068492155,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 326736,
+          "round_samples": 110,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 18.913870082993526,
+          "max_worker_rss_bytes": 226377728
+        },
+        {
+          "stage_id": "C",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/C/verification/measurement/metrics.json",
+            "sha256": "c6106dca06f4a112c4ddace008299f93c4a75fd343deaa474bf238572f95b298"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/C/material/result.json",
+            "sha256": "0e8d0f3fff39266ee3ac198bb1ff08496e974392c4e82089ff90719e556ea747"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/target.brep",
+            "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/C/material/surface.stl",
+            "sha256": "71dcc28b29f37459f364a514ef56e6a2bec3aa94704263a6d30ab341c080977c"
+          },
+          "iou_percent": 99.92079137027066,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 307488,
+          "round_samples": 110,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 18.275666311034,
+          "max_worker_rss_bytes": 215535616
+        },
+        {
+          "stage_id": "D",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/D/verification/measurement/metrics.json",
+            "sha256": "6ce179264044cd3fb2a15408843e4cbb42078412e7bf7cd2de095d240c4904ce"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/D/material/result.json",
+            "sha256": "d116ee83dc81070104ee6d7538f50e3b384cc8e30fbe6d5b1ec615d485977b0b"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/target.brep",
+            "sha256": "6e312985a40d00836a33384a8a46849e4cd50b388201357d15eaec9e6df8c1b9"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/D/material/surface.stl",
+            "sha256": "26d6ff164ff3fb8ce73e397d9de56c9c3e33aabc7a678e8b5009aa1d5990a91c"
+          },
+          "iou_percent": 99.91981276734458,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 307792,
+          "round_samples": 110,
+          "chamfer_samples": 110,
+          "max_worker_seconds": 18.243217115988955,
+          "max_worker_rss_bytes": 192901120
+        }
+      ],
+      "final_iou_percent": 99.91981276734458
+    },
+    {
+      "id": "shifted-datum",
+      "name": "保持非零原 CAD 坐标",
+      "specification": {
+        "id": "shifted-datum",
+        "name": "保持非零原 CAD 坐标",
+        "stock": {
+          "min": [
+            -1,
+            2,
+            -0.5
+          ],
+          "max": [
+            5,
+            6,
+            2.5
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.6,
+        "chamfer_width_mm": 0.4
+      },
+      "qualification": {
+        "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/material-cohort-02/qualified-shifted-datum.json",
+        "sha256": "c35f77d1664bbda85ca6ecf2efbe7e382c773e724fc636491d1a550b0b04aab9"
+      },
+      "CAM": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/result.json",
+        "sha256": "97f39e2e02d86e3110deb4bbdb7f2aacfeb1c5cffac96b1e4c7a2fcbe0a45468"
+      },
+      "input": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/input.json",
+        "sha256": "84e8e0963d9e9242a4b74e77c4e8e6e1b931591acb34430909e83071116cc7dc"
+      },
+      "states": [
+        {
+          "stage_id": "A",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/A/verification/measurement/metrics.json",
+            "sha256": "c98a3bf0a5ff7241372cc641f3ab35100312236db449cda8a5c3da9c3f442279"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/A/material/result.json",
+            "sha256": "961cfeb938885981285376ad91f356c6db0a1a825ad6498b4cbce34a461f4290"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/A/target.brep",
+            "sha256": "43a10bfc135f781c6d93b7884f53dd18f1a99df69107d467b10ca338c4735622"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/A/material/surface.stl",
+            "sha256": "6140c19832c3d2708411cfbb78b2e3442c2e37c6bd006f294609b51d082cba9e"
+          },
+          "iou_percent": 99.98241051291453,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 321372,
+          "round_samples": 0,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 3.9946783339837566,
+          "max_worker_rss_bytes": 200798208
+        },
+        {
+          "stage_id": "B",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/B/verification/measurement/metrics.json",
+            "sha256": "4bfb684adb079d0428d5c4875165a78e073eadabfbc44596b089786fd1f0ba9a"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/B/material/result.json",
+            "sha256": "a2c8263490d5cf2a5cbe4d121a766df7c9e45c703b11e2e9730b5f64a9686e10"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/B/target.brep",
+            "sha256": "48f2ef8b580a292829c613b1e4ba2e313885a13fda92e4ba0457800349432d58"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/B/material/surface.stl",
+            "sha256": "aff92c9487cf0e6f445514c98d9bb6e6facac460dc5618c5aeac23abca57093e"
+          },
+          "iou_percent": 99.92919770433787,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 320196,
+          "round_samples": 110,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 18.28669343801448,
+          "max_worker_rss_bytes": 202485760
+        },
+        {
+          "stage_id": "C",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/C/verification/measurement/metrics.json",
+            "sha256": "de2c6033f1bbf75b62e8d6a654921781f9062dbca1f792fc05fb11f9c0c164e7"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/C/material/result.json",
+            "sha256": "06b94cb670ec04fae0181e6a5a93c61de4c3c1763e972801c10b223c03b96604"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/C/target.brep",
+            "sha256": "692b73a277a681e0aa6004c5eb4e8aa43bf63304eb44e0c1b08033e50191c512"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/C/material/surface.stl",
+            "sha256": "73b4317de8332a7237aed397288c2f76b340ebb0f089155a71d4e1910fec2d40"
+          },
+          "iou_percent": 99.92088758805549,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 300948,
+          "round_samples": 110,
+          "chamfer_samples": 0,
+          "max_worker_seconds": 18.155828472983558,
+          "max_worker_rss_bytes": 213385216
+        },
+        {
+          "stage_id": "D",
+          "kind": "normal",
+          "metrics": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/D/verification/measurement/metrics.json",
+            "sha256": "bef2128a59925883d5b8b245b944d05e713d5535b51a8092ced5b231326bf554"
+          },
+          "material": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/D/material/result.json",
+            "sha256": "d4ace24112332d8e03b560aaaca63fd442a881635a4a5ec02b20e114ef25dcdc"
+          },
+          "reference_CAD": {
+            "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/D/target.brep",
+            "sha256": "36f32dd4a615ed5bbf62fad287f77edc90c45fbb4420148c3d4884ec67cf9075"
+          },
+          "surface": {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/D/material/surface.stl",
+            "sha256": "d88e237da8625e19be4767191ddb71063e194be0b6ef375d40cb745973dfb2df"
+          },
+          "iou_percent": 99.9206438301826,
+          "geometry_pass": true,
+          "native_windows": 8,
+          "triangles": 302540,
+          "round_samples": 110,
+          "chamfer_samples": 110,
+          "max_worker_seconds": 18.234354880987667,
+          "max_worker_rss_bytes": 188190720
+        }
+      ],
+      "final_iou_percent": 99.9206438301826
+    }
+  ],
+  "controls": [
+    {
+      "id": "omitted-round",
+      "qualification": {
+        "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/material-cohort-01/qualified-omitted-round.json",
+        "sha256": "b104ea511d04ab02123ca801f85db2b095c1737e6bae885a00c678a790cd0cf9"
+      },
+      "stage_id": "D",
+      "kind": "omitted-round",
+      "metrics": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/control-omitted-round-01/D/verification/measurement/metrics.json",
+        "sha256": "601c7b9a71c4f1baa779d67152cbfa0c60e63b71a0be18cb538c826fc780a1da"
+      },
+      "material": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/control-omitted-round-01/D/material/result.json",
+        "sha256": "153403985b73edd736207d79f361f34e450ef667a97a635d44a96a643f68ba7b"
+      },
+      "reference_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/D/target.brep",
+        "sha256": "21f7d20a07ce0be4f548b406efa6ee5b4e4edfc20194188f5a4af670f663b842"
+      },
+      "surface": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/control-omitted-round-01/D/material/surface.stl",
+        "sha256": "d63bc5fc288d09b7c6847f505828957da58355b78ed1b8f72d36911a8f61b2a8"
+      },
+      "iou_percent": 98.27281834370343,
+      "geometry_pass": false,
+      "native_windows": 8,
+      "triangles": 304240,
+      "round_samples": 110,
+      "chamfer_samples": 110,
+      "max_worker_seconds": 4.6198182660155,
+      "max_worker_rss_bytes": 214052864,
+      "new_native_material": true
+    },
+    {
+      "id": "wrong-second-setup",
+      "qualification": {
+        "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/material-cohort-02/qualified-wrong-second-setup.json",
+        "sha256": "a08f2f47ac1a339fc7d29f1fc7743bdc96d6237cce8a72c4921fccd199b7f050"
+      },
+      "stage_id": "D",
+      "kind": "wrong-second-setup",
+      "metrics": {
+        "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/observer-v2-01/wrong-second-setup/verification/measurement/metrics.json",
+        "sha256": "4f2965522ac05e0e0770baf2fef6b9a9cd00b6ef645fa6797f0aae14e9f98cc6"
+      },
+      "material": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/control-wrong-second-setup-01/D/material/result.json",
+        "sha256": "b643a761de2b1fb75b67dcd77ed79d6f73a2fc9b1ee246123006bc3c24255b3e"
+      },
+      "reference_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/D/target.brep",
+        "sha256": "21f7d20a07ce0be4f548b406efa6ee5b4e4edfc20194188f5a4af670f663b842"
+      },
+      "surface": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/control-wrong-second-setup-01/D/material/surface.stl",
+        "sha256": "6f2d3dd5050bc816670886a431e757432c00f5b3685162556cfda4e33052f398"
+      },
+      "iou_percent": 86.6731352485543,
+      "geometry_pass": false,
+      "native_windows": 8,
+      "triangles": 326736,
+      "round_samples": 110,
+      "chamfer_samples": 110,
+      "max_worker_seconds": 20.14747352997074,
+      "max_worker_rss_bytes": 227983360,
+      "new_native_material": true
+    },
+    {
+      "id": "omitted-chamfer",
+      "qualification": {
+        "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/material-cohort-02/qualified-omitted-chamfer.json",
+        "sha256": "ba15fbfa540c3400bf03c05a3cf0ef24fba8bb49f14c0358f5860abfd19e479b"
+      },
+      "stage_id": "D",
+      "kind": "omitted-chamfer",
+      "metrics": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/control-omitted-chamfer-02/measurement/metrics.json",
+        "sha256": "e0b00517cceb7d7fe91a64b893cd9ccda62fe08611ee94b0e4bc11c6173480b1"
+      },
+      "material": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/C/material/result.json",
+        "sha256": "baa39d5e10879a771ff6b104ae72659f5da2fb132090b4242700962c3d7fc429"
+      },
+      "reference_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/D/target.brep",
+        "sha256": "21f7d20a07ce0be4f548b406efa6ee5b4e4edfc20194188f5a4af670f663b842"
+      },
+      "surface": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/C/material/surface.stl",
+        "sha256": "71dcc28b29f37459f364a514ef56e6a2bec3aa94704263a6d30ab341c080977c"
+      },
+      "iou_percent": 98.15569736772125,
+      "geometry_pass": false,
+      "native_windows": 8,
+      "triangles": 307488,
+      "round_samples": 110,
+      "chamfer_samples": 110,
+      "max_worker_seconds": 18.15619314101059,
+      "max_worker_rss_bytes": 192290816,
+      "new_native_material": false
+    }
+  ],
+  "programs_per_case": 4,
+  "static_setups_per_case": 2,
+  "software_acceptance": {
+    "iou_percent_min": 99.0,
+    "bounds_deviation_mm_max": 0.025,
+    "volume_deviation_mm3_max": 0.15,
+    "round_deviation_mm_max": 0.15,
+    "chamfer_deviation_mm_max": 0.1,
+    "retained_plane_deviation_mm_max": 0.025,
+    "numerical_guard_mm": 0.05,
+    "quadrature_orders": [
+      4,
+      8
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-05,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "scope": "software_regression",
+    "manufacturing_tolerance_approved": false
+  },
+  "input_and_NC_rejections": 20,
+  "input_checks": {
+    "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/material-cohort-01/guards/result.json",
+    "sha256": "13e12ff792eed7df9e490e9ea1b01247f664deb40a464762f1dc8ed488023687"
+  },
+  "paper_review": {
+    "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/execution-paper-review.json",
+    "sha256": "ee589a1d34c2404ed5224ecfadfe7c593fe381fb03f3f465d15aaa4f68c94401"
+  },
+  "geometry_archives": [
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/material-chain-01/geometry-archive/manifest.json",
+      "sha256": "4bcbd685ac8d012ae2d646774316244d5c92b9cd9a453691ae6827aa5d37c70c"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/material-chain-02/geometry-archive/manifest.json",
+      "sha256": "646545db2ad44da1d3946e16136af807f3ac7ecd62b1f4471390df01e80498d0"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/geometry-archive/manifest.json",
+      "sha256": "5e24eb44f64023e605d766eacb779401c60c6cb5ba2c19f3850e506e9db6850e"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/geometry-archive/manifest.json",
+      "sha256": "cdab2abd4cfebd4b45cdfb6875925658b3dcf27d9b9e78ad7c968d8afba9805d"
+    },
+    {
+      "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/control-omitted-round-01/geometry-archive/manifest.json",
+      "sha256": "54decf06354d411c00173cdd13b7669755dbf25f53ebfe9581c1a465af537be3"
+    },
+    {
+      "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/observer-v2-01/wrong-second-setup/geometry-archive/manifest.json",
+      "sha256": "9fc5aa6a30dc8ab1765007a4f034a614c3d944357b18464e65597689e39f18b5"
+    }
+  ],
+  "native_qualification": {
+    "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/native-qualification-01/qualification.json",
+    "sha256": "38d2540f627151124f2abe295281b6e09c3ea978f8ad6ad323a0ba269bbf8b7c"
+  },
+  "empty_group_correction_normal_regression": {
+    "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/material-cohort-02/qualified-v2-normal-regression.json",
+    "sha256": "fa265f8a3a106d1d67edbe7a062d06c7a7c6ab64895dc1573f17a2352f4ce981"
+  },
+  "empty_group_correction_positive_comparison": {
+    "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/observer-v2-01/baseline-final/compatibility.json",
+    "sha256": "e6cc8dcabd13e21761e686614402b883ff07559c1742e2f3320119b3d7592d47"
+  },
+  "ball_qualification": {
+    "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/ball-compatibility-01/qualification.json",
+    "sha256": "7ab2508c0f4f4841f99d64b69f191d8f4d4a34d1188d2d58568300b30758a063"
+  },
+  "NC_generated_by_FreeCAD": true,
+  "NC_text_modified": false,
+  "CAM_uses_complete_predecessor_CAD": true,
+  "CAM_uses_complete_cumulative_target_CAD": true,
+  "same_original_material_for_all_programs": true,
+  "every_prefix_geometry_gates_its_successor": true,
+  "target_CAD_supplied_to_material_engine": false,
+  "geometry_registered_repaired_or_simplified": false,
+  "complete_normal_material_states": 16,
+  "complete_control_material_measurements": 3,
+  "new_native_material_collections": 18,
+  "native_windows_per_collection": 8,
+  "continuous_five_axis_supported": false,
+  "physical_fixture_or_holder_collision_verified": false,
+  "material_physics_verified": false,
+  "whole_real_card_complete": false,
+  "production_approved": false,
+  "maximum_observed_worker_seconds": 24.13902420399245,
+  "source": {
+    "path": "tools/summarize_cumulative_cohort.py",
+    "sha256": "216f11a4a61a3eaf34d68bc4c97cae97e38f9e0b4f478cce5c7bbe0e3f94cb83"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "stock": {
+    "bounds_mm": {
+      "min": [
+        -1.0,
+        2.0,
+        -0.10000000000000009
+      ],
+      "max": [
+        5.0,
+        6.0,
+        2.2
+      ]
+    }
+  },
+  "tool": {
+    "id": "CHAMFER",
+    "kind": "finite_frustum",
+    "diameter_mm": 2.0,
+    "tip_diameter_mm": 0.4,
+    "included_angle_degrees": 90.0,
+    "cutting_length_mm": 0.8,
+    "length_mm": 20.0
+  },
+  "parameters": {
+    "spindle_rpm": 3000.0,
+    "feed_mm_min": 120.0,
+    "plunge_mm_min": 60.0,
+    "safe_height_mm": 4.5,
+    "clearance_height_mm": 5.5,
+    "native_operation": "Deburr",
+    "extra_depth_mm": 0.1,
+    "path_tolerance_mm": 0.001,
+    "backend": {
+      "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+      "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+    }
+  },
+  "setup": {
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 5.5
+    }
+  },
+  "stage_id": "D",
+  "incoming_CAD": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/C/target.brep",
+    "sha256": "692b73a277a681e0aa6004c5eb4e8aa43bf63304eb44e0c1b08033e50191c512"
+  },
+  "operation_reference": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/D/operation-reference.json",
+    "sha256": "4eb724ed81d4cc01c6c7428e6306e4faa469c2e8e565e9904abbe7343c4eb044"
+  },
+  "target_CAD": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/D/target.brep",
+    "sha256": "36f32dd4a615ed5bbf62fad287f77edc90c45fbb4420148c3d4884ec67cf9075"
+  },
+  "schema": "genlaw.selected-chamfer-execution-plan.v1",
+  "specification": {
+    "stock": {
+      "min": [
+        -1.0,
+        2.0,
+        -0.1
+      ],
+      "max": [
+        5.000000000000001,
+        6.0,
+        2.2
+      ]
+    },
+    "width_mm": 0.4,
+    "selected_sides": [
+      "ymin",
+      "ymax"
+    ]
+  },
+  "final_tip_z_mm": 1.7000000000000002
+}

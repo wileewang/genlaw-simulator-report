@@ -1,0 +1,70 @@
+{
+  "stock": {
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -3
+      ],
+      "max": [
+        6,
+        4,
+        -0.3999999999999999
+      ]
+    }
+  },
+  "tool": {
+    "id": "BALL",
+    "kind": "ballnose",
+    "diameter_mm": 1.0,
+    "cutting_length_mm": 5.0,
+    "length_mm": 20.0,
+    "center_cutting": true
+  },
+  "parameters": {
+    "spindle_rpm": 3000.0,
+    "feed_mm_min": 120.0,
+    "plunge_mm_min": 60.0,
+    "safe_height_mm": 2,
+    "clearance_height_mm": 3,
+    "native_operation": "Surface",
+    "scan_type": "Planar",
+    "pattern": "Line",
+    "layer_mode": "Multi-pass",
+    "cut_mode": "Climb",
+    "step_down_mm": 0.25,
+    "stepover_percent": 10.0,
+    "sample_interval_mm": 0.05,
+    "linear_deflection_mm": 0.001,
+    "geometry_tolerance_mm": 0.005,
+    "boundary_adjustment_mm": 1.05,
+    "start_depth_mm": -0.3999999999999997,
+    "final_depth_mm": -3.0
+  },
+  "setup": {
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3
+    }
+  },
+  "stage_id": "B",
+  "incoming_CAD": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+    "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+  },
+  "operation_reference": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/operation-reference.json",
+    "sha256": "30b531dbf14c2052f21c9a83fb3d514662f23baf93c2537f7f403107335d2f92"
+  },
+  "target_CAD": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+    "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+  },
+  "schema": "genlaw.round-surface-execution-plan.v1"
+}

@@ -1,0 +1,135 @@
+{
+  "schema": "genlaw.cumulative-material-request.v1",
+  "stages": {
+    "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/material-chain-02/A/stages.json",
+    "sha256": "42846e01217283ba2a4b27131d8b5aac04c5c8a177d770713b5369d8388ee0b0"
+  },
+  "program_inputs": [
+    {
+      "id": "A",
+      "inputs": {
+        "project": {
+          "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/A/simulation.camotics",
+          "sha256": "9933e915aeac1fcb332d688440ec9a4c0920a911ed0f6d3ef2311e2103eb6c47"
+        },
+        "nc_files": [
+          {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/A/program.nc",
+            "sha256": "d8c91f0e4616c04db5419aaccf05a0f0b69f6a02b9303cd767e62f3a35b938c9"
+          }
+        ]
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -0.025000000000000393,
+      -0.02499999999999995,
+      -3.0250000000000004
+    ],
+    "steps": [
+      242,
+      162,
+      122
+    ],
+    "upper_mm": [
+      6.025,
+      4.0249999999999995,
+      0.02499999999999991
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "windows": [
+    [
+      0,
+      0,
+      0,
+      121,
+      81,
+      61
+    ],
+    [
+      0,
+      0,
+      61,
+      121,
+      81,
+      122
+    ],
+    [
+      0,
+      81,
+      0,
+      121,
+      162,
+      61
+    ],
+    [
+      0,
+      81,
+      61,
+      121,
+      162,
+      122
+    ],
+    [
+      121,
+      0,
+      0,
+      242,
+      81,
+      61
+    ],
+    [
+      121,
+      0,
+      61,
+      242,
+      81,
+      122
+    ],
+    [
+      121,
+      81,
+      0,
+      242,
+      162,
+      61
+    ],
+    [
+      121,
+      81,
+      61,
+      242,
+      162,
+      122
+    ]
+  ],
+  "build": {
+    "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/build-02/build.json",
+    "sha256": "55d5194d8ccb02b6c930539a3e6d574db1a45749a0be5ff6626f071d420b2f99"
+  },
+  "source_code": {
+    "path": "genlaw_pipeline/cumulative_material.py",
+    "sha256": "e15ba0ed7d7b0cacfcfba3c9c81026e1936048fc03a9e236119a9776da155585"
+  }
+}

@@ -1,0 +1,557 @@
+{
+  "schema": "genlaw.cumulative-review-summary.v1",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "name": "圆角保留到另一面倒角",
+      "case_kind": "normal",
+      "geometry_pass": true,
+      "iou_percent": 99.92033419328186,
+      "numerical_stability_pass": true,
+      "specification": {
+        "id": "baseline",
+        "name": "圆角保留到另一面倒角",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.6,
+        "chamfer_width_mm": 0.4
+      },
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "baseline/A.mesh",
+          "label": "A 第一面面铣完成",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true
+        },
+        {
+          "mesh": "baseline/B.mesh",
+          "label": "B 两条上侧圆角完成",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true
+        },
+        {
+          "mesh": "baseline/C.mesh",
+          "label": "C 翻面后的另一面面铣完成",
+          "kind": "cumulative_native_prefix",
+          "time_seconds": null,
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true
+        }
+      ],
+      "states": [
+        {
+          "stage_id": "A",
+          "iou_percent": 99.98240582532601,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "baseline/run/measurement/A/metrics.json",
+          "inspection": "baseline/run/measurement/A/inspection.json"
+        },
+        {
+          "stage_id": "B",
+          "iou_percent": 99.92911068492155,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "baseline/run/measurement/B/metrics.json",
+          "inspection": "baseline/run/measurement/B/inspection.json"
+        },
+        {
+          "stage_id": "C",
+          "iou_percent": 99.92079137027066,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "baseline/run/measurement/C/metrics.json",
+          "inspection": "baseline/run/measurement/C/inspection.json"
+        },
+        {
+          "stage_id": "D",
+          "iou_percent": 99.92033419328186,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "baseline/run/measurement/D/metrics.json",
+          "inspection": "baseline/run/measurement/D/inspection.json"
+        }
+      ],
+      "new_native_material_for_this_control": null,
+      "original_final_CAD": "baseline/input/geometry/D/target.step",
+      "paper_card": "baseline/input/process-card.pdf"
+    },
+    {
+      "id": "larger-round",
+      "name": "增加第一面圆角半径",
+      "case_kind": "normal",
+      "geometry_pass": true,
+      "iou_percent": 99.9075707335831,
+      "numerical_stability_pass": true,
+      "specification": {
+        "id": "larger-round",
+        "name": "增加第一面圆角半径",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.7,
+        "chamfer_width_mm": 0.4
+      },
+      "resolution_mm": 0.025,
+      "frames": [],
+      "states": [
+        {
+          "stage_id": "A",
+          "iou_percent": 99.98240582532601,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "larger-round/run/measurement/A/metrics.json",
+          "inspection": "larger-round/run/measurement/A/inspection.json"
+        },
+        {
+          "stage_id": "B",
+          "iou_percent": 99.91809462810501,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "larger-round/run/measurement/B/metrics.json",
+          "inspection": "larger-round/run/measurement/B/inspection.json"
+        },
+        {
+          "stage_id": "C",
+          "iou_percent": 99.90825521192161,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "larger-round/run/measurement/C/metrics.json",
+          "inspection": "larger-round/run/measurement/C/inspection.json"
+        },
+        {
+          "stage_id": "D",
+          "iou_percent": 99.9075707335831,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "larger-round/run/measurement/D/metrics.json",
+          "inspection": "larger-round/run/measurement/D/inspection.json"
+        }
+      ],
+      "new_native_material_for_this_control": null,
+      "original_final_CAD": "larger-round/input/geometry/D/target.step",
+      "paper_card": "larger-round/input/process-card.pdf"
+    },
+    {
+      "id": "wider-bottom",
+      "name": "增加第二面倒角宽度",
+      "case_kind": "normal",
+      "geometry_pass": true,
+      "iou_percent": 99.91981276734458,
+      "numerical_stability_pass": true,
+      "specification": {
+        "id": "wider-bottom",
+        "name": "增加第二面倒角宽度",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.6,
+        "chamfer_width_mm": 0.5
+      },
+      "resolution_mm": 0.025,
+      "frames": [],
+      "states": [
+        {
+          "stage_id": "A",
+          "iou_percent": 99.98240582532601,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "wider-bottom/run/measurement/A/metrics.json",
+          "inspection": "wider-bottom/run/measurement/A/inspection.json"
+        },
+        {
+          "stage_id": "B",
+          "iou_percent": 99.92911068492155,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "wider-bottom/run/measurement/B/metrics.json",
+          "inspection": "wider-bottom/run/measurement/B/inspection.json"
+        },
+        {
+          "stage_id": "C",
+          "iou_percent": 99.92079137027066,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "wider-bottom/run/measurement/C/metrics.json",
+          "inspection": "wider-bottom/run/measurement/C/inspection.json"
+        },
+        {
+          "stage_id": "D",
+          "iou_percent": 99.91981276734458,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "wider-bottom/run/measurement/D/metrics.json",
+          "inspection": "wider-bottom/run/measurement/D/inspection.json"
+        }
+      ],
+      "new_native_material_for_this_control": null,
+      "original_final_CAD": "wider-bottom/input/geometry/D/target.step",
+      "paper_card": "wider-bottom/input/process-card.pdf"
+    },
+    {
+      "id": "shifted-datum",
+      "name": "保持非零原 CAD 坐标",
+      "case_kind": "normal",
+      "geometry_pass": true,
+      "iou_percent": 99.9206438301826,
+      "numerical_stability_pass": true,
+      "specification": {
+        "id": "shifted-datum",
+        "name": "保持非零原 CAD 坐标",
+        "stock": {
+          "min": [
+            -1,
+            2,
+            -0.5
+          ],
+          "max": [
+            5,
+            6,
+            2.5
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.6,
+        "chamfer_width_mm": 0.4
+      },
+      "resolution_mm": 0.025,
+      "frames": [],
+      "states": [
+        {
+          "stage_id": "A",
+          "iou_percent": 99.98241051291453,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "shifted-datum/run/measurement/A/metrics.json",
+          "inspection": "shifted-datum/run/measurement/A/inspection.json"
+        },
+        {
+          "stage_id": "B",
+          "iou_percent": 99.92919770433787,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "shifted-datum/run/measurement/B/metrics.json",
+          "inspection": "shifted-datum/run/measurement/B/inspection.json"
+        },
+        {
+          "stage_id": "C",
+          "iou_percent": 99.92088758805549,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "shifted-datum/run/measurement/C/metrics.json",
+          "inspection": "shifted-datum/run/measurement/C/inspection.json"
+        },
+        {
+          "stage_id": "D",
+          "iou_percent": 99.9206438301826,
+          "geometry_pass": true,
+          "feature_checks": {
+            "sections_pass": true,
+            "rounds_pass": true,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "shifted-datum/run/measurement/D/metrics.json",
+          "inspection": "shifted-datum/run/measurement/D/inspection.json"
+        }
+      ],
+      "new_native_material_for_this_control": null,
+      "original_final_CAD": "shifted-datum/input/geometry/D/target.step",
+      "paper_card": "shifted-datum/input/process-card.pdf"
+    }
+  ],
+  "controls": [
+    {
+      "id": "omitted-round",
+      "name": "漏掉第一面圆角",
+      "case_kind": "negative_control",
+      "geometry_pass": false,
+      "iou_percent": 98.27281834370343,
+      "numerical_stability_pass": true,
+      "specification": {
+        "id": "baseline",
+        "name": "圆角保留到另一面倒角",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.6,
+        "chamfer_width_mm": 0.4
+      },
+      "resolution_mm": 0.025,
+      "frames": [],
+      "states": [
+        {
+          "stage_id": "D",
+          "iou_percent": 98.27281834370343,
+          "geometry_pass": false,
+          "feature_checks": {
+            "sections_pass": false,
+            "rounds_pass": false,
+            "chamfers_pass": true,
+            "retained_planes_pass": true
+          },
+          "metrics": "omitted-round/run/measurement/D/metrics.json",
+          "inspection": "omitted-round/run/measurement/D/inspection.json"
+        }
+      ],
+      "new_native_material_for_this_control": true,
+      "original_final_CAD": "omitted-round/input/geometry/D/target.step",
+      "paper_card": "omitted-round/input/process-card.pdf"
+    },
+    {
+      "id": "wrong-second-setup",
+      "name": "第二次装夹姿态错误",
+      "case_kind": "negative_control",
+      "geometry_pass": false,
+      "iou_percent": 86.6731352485543,
+      "numerical_stability_pass": true,
+      "specification": {
+        "id": "baseline",
+        "name": "圆角保留到另一面倒角",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.6,
+        "chamfer_width_mm": 0.4
+      },
+      "resolution_mm": 0.025,
+      "frames": [],
+      "states": [
+        {
+          "stage_id": "D",
+          "iou_percent": 86.6731352485543,
+          "geometry_pass": false,
+          "feature_checks": {
+            "sections_pass": false,
+            "rounds_pass": true,
+            "chamfers_pass": false,
+            "retained_planes_pass": false
+          },
+          "metrics": "wrong-second-setup/run/measurement/D/metrics.json",
+          "inspection": "wrong-second-setup/run/measurement/D/inspection.json"
+        }
+      ],
+      "new_native_material_for_this_control": true,
+      "original_final_CAD": "wrong-second-setup/input/geometry/D/target.step",
+      "paper_card": "wrong-second-setup/input/process-card.pdf"
+    },
+    {
+      "id": "omitted-chamfer",
+      "name": "漏掉末步倒角",
+      "case_kind": "negative_control",
+      "geometry_pass": false,
+      "iou_percent": 98.15569736772125,
+      "numerical_stability_pass": true,
+      "specification": {
+        "id": "baseline",
+        "name": "圆角保留到另一面倒角",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "material_label": "6061-T6",
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "radius_mm": 0.6,
+        "chamfer_width_mm": 0.4
+      },
+      "resolution_mm": 0.025,
+      "frames": [],
+      "states": [
+        {
+          "stage_id": "D",
+          "iou_percent": 98.15569736772125,
+          "geometry_pass": false,
+          "feature_checks": {
+            "sections_pass": false,
+            "rounds_pass": true,
+            "chamfers_pass": false,
+            "retained_planes_pass": true
+          },
+          "metrics": "omitted-chamfer/run/measurement/D/metrics.json",
+          "inspection": "omitted-chamfer/run/measurement/D/inspection.json"
+        }
+      ],
+      "new_native_material_for_this_control": false,
+      "original_final_CAD": "omitted-chamfer/input/geometry/D/target.step",
+      "paper_card": "omitted-chamfer/input/process-card.pdf"
+    }
+  ],
+  "input_and_NC_rejections": 20,
+  "software_acceptance": {
+    "iou_percent_min": 99.0,
+    "bounds_deviation_mm_max": 0.025,
+    "volume_deviation_mm3_max": 0.15,
+    "round_deviation_mm_max": 0.15,
+    "chamfer_deviation_mm_max": 0.1,
+    "retained_plane_deviation_mm_max": 0.025,
+    "numerical_guard_mm": 0.05,
+    "quadrature_orders": [
+      4,
+      8
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-05,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "scope": "software_regression",
+    "manufacturing_tolerance_approved": false
+  },
+  "representative_id": "baseline",
+  "representative_actual_states_including_stock": 5,
+  "qualified_scope": "Four synthetic cumulative facing, round, static-flip facing and selected-chamfer cases",
+  "whole_real_card_complete": false,
+  "production_approved": false,
+  "new_machine_models": 0,
+  "new_material_physics": 0
+}

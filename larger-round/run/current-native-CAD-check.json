@@ -1,0 +1,496 @@
+{
+  "schema": "genlaw.cumulative-target-CAD-verification.v1",
+  "status": "verified",
+  "input": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/input.json",
+    "sha256": "87cd7fb4b60f1d18dbdebf3df708f3bfc55480612ba730af9728593e2f5ca2f2"
+  },
+  "plan": {
+    "schema": "genlaw.cumulative-target-plan.v1",
+    "input": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/input.json",
+      "sha256": "87cd7fb4b60f1d18dbdebf3df708f3bfc55480612ba730af9728593e2f5ca2f2"
+    },
+    "id": "larger-round",
+    "original_stock": {
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/stock.brep",
+        "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+      },
+      "material_label": "6061-T6"
+    },
+    "paper_card": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/process-card.pdf",
+      "sha256": "7a96ca2d36026829c8b5916cdb8d51cbc908fa708be723e9ff728cc44263e40d"
+    },
+    "process_plan": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/process-plan.json",
+      "sha256": "789a7b30b14afda60faf2835f261ebe6c0002de540ab37a99ff1f4333a066a51"
+    },
+    "stages": [
+      {
+        "id": "A",
+        "setup_id": "S1",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "predecessor": "original_stock",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/operation-reference.json",
+          "sha256": "0bec85181bd7d62750c01cc2e94131cf85d617971ad5ef969d3dc3323abb9516"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/stock.brep",
+          "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        }
+      },
+      {
+        "id": "B",
+        "setup_id": "S1",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "predecessor": "A",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/operation-reference.json",
+          "sha256": "30b531dbf14c2052f21c9a83fb3d514662f23baf93c2537f7f403107335d2f92"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+          "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+        }
+      },
+      {
+        "id": "C",
+        "setup_id": "S2",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          4,
+          -3
+        ],
+        "predecessor": "B",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/operation-reference.json",
+          "sha256": "084840a4f377e0b8731dbd5d33e3e8d4bd6f9760d6416c9a5c6aa0ceb3091854"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+          "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+          "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+        }
+      },
+      {
+        "id": "D",
+        "setup_id": "S2",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          4,
+          -3
+        ],
+        "predecessor": "C",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/operation-reference.json",
+          "sha256": "219c18918d52df9002cb1c0f7470131dab10ef9822ccae56bd03425c7913ed1b"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+          "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/target.brep",
+          "sha256": "37260ac8856df6dc4a0eaed331cea6dabc159bb2b9e8b65e1edb99a0fd20c0de"
+        }
+      }
+    ],
+    "references": [
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "axis_aligned_box_after_top_facing",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/operation.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -3.0
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.3999999999999999
+          ]
+        },
+        "volume_mm3": 62.39999999999999,
+        "valid_single_solid": true,
+        "target_created_before_NC": true
+      },
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "rectangular_solid_with_two_top_x_rounds",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/operation.brep",
+          "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            -1.1102230246251565e-16,
+            -3.0
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.3999999999999997
+          ]
+        },
+        "volume_mm3": 61.138141200777014,
+        "valid_single_solid": true,
+        "target_created_before_NC": true,
+        "radius_mm": 0.7
+      },
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "axis_aligned_box_after_top_facing",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/operation.brep",
+          "sha256": "b190389bb2d7052bc17c19660cef5f239fb24b67727d113706960f6e674348dc"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -2.6
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.2999999999999998
+          ]
+        },
+        "volume_mm3": 55.2,
+        "valid_single_solid": true,
+        "target_created_before_NC": true
+      },
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "box_with_selected_parallel_top_chamfers_45",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/operation.brep",
+          "sha256": "f49559929c091a3505d92e1dfaac99f6e0a500fd2a8da666a5c34034190af4fc"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -2.6
+          ],
+          "max": [
+            6.000000000000001,
+            4.0,
+            -0.2999999999999997
+          ]
+        },
+        "volume_mm3": 54.24,
+        "valid_single_solid": true,
+        "target_created_before_NC": true,
+        "width_mm": 0.4,
+        "selected_sides": [
+          "ymin",
+          "ymax"
+        ]
+      }
+    ],
+    "final_CAD": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/target.brep",
+      "sha256": "37260ac8856df6dc4a0eaed331cea6dabc159bb2b9e8b65e1edb99a0fd20c0de"
+    },
+    "native_CAD_verification_required": true,
+    "CAM_generated": false,
+    "material_simulated": false,
+    "whole_real_card_complete": false,
+    "production_approved": false
+  },
+  "stages": [
+    {
+      "id": "A",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/stock.brep",
+        "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      },
+      "operation_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/operation.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      },
+      "operation_difference_mm3": 0.0,
+      "incoming_difference_mm3": 0.0,
+      "cumulative_target_difference_mm3": 0.0,
+      "added_material_mm3": 0.0,
+      "target_volume_mm3": 62.39999999999999,
+      "section_integrals_mm3": [
+        62.400000000000006,
+        62.40000000000002
+      ],
+      "native_section_samples": [
+        {
+          "z_mm": -2.48,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.7,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.9199999999999999,
+          "symmetric_difference_mm2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+        "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+      },
+      "operation_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/operation.brep",
+        "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+      },
+      "operation_difference_mm3": 0.0,
+      "incoming_difference_mm3": 0.0,
+      "cumulative_target_difference_mm3": 0.0,
+      "added_material_mm3": 0.0,
+      "target_volume_mm3": 61.13814120077703,
+      "section_integrals_mm3": [
+        61.13814439187894,
+        61.13814160428537
+      ],
+      "native_section_samples": [
+        {
+          "z_mm": -2.62,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -2.05,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.4799999999999995,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.9599999999999997,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.7499999999999998,
+          "symmetric_difference_mm2": 3.9968028886505635e-15
+        },
+        {
+          "z_mm": -0.5399999999999998,
+          "symmetric_difference_mm2": 6.661338147750939e-16
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+        "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+        "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+      },
+      "operation_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/operation.brep",
+        "sha256": "b190389bb2d7052bc17c19660cef5f239fb24b67727d113706960f6e674348dc"
+      },
+      "operation_difference_mm3": 0.0,
+      "incoming_difference_mm3": 0.0,
+      "cumulative_target_difference_mm3": 0.0,
+      "added_material_mm3": 0.0,
+      "target_volume_mm3": 53.93814120077702,
+      "section_integrals_mm3": [
+        53.938144391878936,
+        53.93814160428538
+      ],
+      "native_section_samples": [
+        {
+          "z_mm": -2.38,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.9,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.4199999999999997,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.9599999999999997,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.7499999999999998,
+          "symmetric_difference_mm2": 3.9968028886505635e-15
+        },
+        {
+          "z_mm": -0.5399999999999998,
+          "symmetric_difference_mm2": 6.661338147750939e-16
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+        "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/target.brep",
+        "sha256": "37260ac8856df6dc4a0eaed331cea6dabc159bb2b9e8b65e1edb99a0fd20c0de"
+      },
+      "operation_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/operation.brep",
+        "sha256": "f49559929c091a3505d92e1dfaac99f6e0a500fd2a8da666a5c34034190af4fc"
+      },
+      "operation_difference_mm3": 0.0,
+      "incoming_difference_mm3": 0.0,
+      "cumulative_target_difference_mm3": 0.0,
+      "added_material_mm3": 0.0,
+      "target_volume_mm3": 52.97814120077699,
+      "section_integrals_mm3": [
+        52.97814439187894,
+        52.978141604285376
+      ],
+      "native_section_samples": [
+        {
+          "z_mm": -2.62,
+          "symmetric_difference_mm2": 6.8212102632969615e-15
+        },
+        {
+          "z_mm": -2.5,
+          "symmetric_difference_mm2": 6.428191312579656e-15
+        },
+        {
+          "z_mm": -2.3800000000000003,
+          "symmetric_difference_mm2": 6.534772722943671e-15
+        },
+        {
+          "z_mm": -2.06,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.7,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.3399999999999999,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.9599999999999997,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.7499999999999998,
+          "symmetric_difference_mm2": 3.9968028886505635e-15
+        },
+        {
+          "z_mm": -0.5399999999999998,
+          "symmetric_difference_mm2": 6.661338147750939e-16
+        }
+      ]
+    }
+  ],
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "CAM_jobs_generated": 0,
+  "native_material_executions": 0,
+  "stock_reset_between_stages": false,
+  "full_NC_chain_verified": false,
+  "whole_real_card_complete": false,
+  "production_approved": false
+}

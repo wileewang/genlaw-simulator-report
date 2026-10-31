@@ -1,0 +1,210 @@
+{
+  "schema": "genlaw.cumulative-nc-review.v1",
+  "stages": [
+    {
+      "stage_id": "A",
+      "source": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/A/result.json",
+        "sha256": "342ebc8c5299c8b2803530425de3e89e4d9a16a22e2bab1dcebcdcdcd9299aa1"
+      },
+      "native_operation": "MillFace",
+      "NC": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/A/program.nc",
+        "sha256": "fedcedb1f993d77d2cc72558715ffe08ca4c88e753f03ec6763f1e75cd569ca3"
+      },
+      "CAM_uses_full_incoming_CAD": true,
+      "CAM_uses_full_cumulative_target_CAD": true,
+      "NC_text_modified": false,
+      "checks": {
+        "status": "checked_declared_milling_envelope",
+        "executable_blocks": 91,
+        "post_decimal_places": 5,
+        "text_modified": false,
+        "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+        "step_map": [
+          {
+            "step_id": "A",
+            "feature_id": "TOP-A",
+            "first_executable_block": 6,
+            "last_executable_block": 88
+          }
+        ],
+        "cutting_moves": 50,
+        "arc_moves": 0,
+        "cutting_levels_mm": [
+          -0.25,
+          -0.4
+        ],
+        "path_envelope_allowance_mm": 0.00202,
+        "feed_time_seconds": 87.24999999999999,
+        "rapid_time_not_included": true,
+        "final_uncovered_profile_mm2": 0.0,
+        "incoming_stock_bounds": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "target_bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -3.0
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.3999999999999999
+          ]
+        },
+        "facing_semantics": "Clear the complete incoming XY footprint to the original CAD top, with the declared step-down and unchanged NC.",
+        "actual_executable_blocks": 94,
+        "original_NC_text_unchanged": true,
+        "guard_projection": "In-memory single-operation wrapper after checking every actual startup/tool/shutdown block"
+      }
+    },
+    {
+      "stage_id": "B",
+      "source": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/B/result.json",
+        "sha256": "3ef12eafe442a04e950414ee1fb0654f0c6a3bf48e002288408fd060508d3fe7"
+      },
+      "native_operation": "Surface",
+      "NC": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/B/program.nc",
+        "sha256": "2c62e39cccdaf8b9eba30b9fb63f5dff52798643bab0b377918e5adc29dfbc8a"
+      },
+      "CAM_uses_full_incoming_CAD": true,
+      "CAM_uses_full_cumulative_target_CAD": true,
+      "NC_text_modified": false,
+      "checks": {
+        "status": "checked_native_surface_words_and_envelope",
+        "original_nc_modified": false,
+        "executable_blocks": 14110,
+        "feed_moves": 12416,
+        "validated_rapid_moves": 1683,
+        "vertical_retractions_with_previous_cutter_containment": 561,
+        "feed_time_seconds": 4780.108748798075,
+        "geometric_result_not_inferred_from_NC_guard": true,
+        "physical_fixture_clearance_checked": false,
+        "continuous_rotary_motion": false
+      }
+    },
+    {
+      "stage_id": "C",
+      "source": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/C/result.json",
+        "sha256": "7988488ec5abbc987a0c48c8aa833dfb3046b0472646c573ce85bd7cbc929de2"
+      },
+      "native_operation": "MillFace",
+      "NC": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/C/program.nc",
+        "sha256": "a5ab6fd21cf2940e29443287d5dfdbb4303d653dd7d19ef2d4a96ab649580cf3"
+      },
+      "CAM_uses_full_incoming_CAD": true,
+      "CAM_uses_full_cumulative_target_CAD": true,
+      "NC_text_modified": false,
+      "checks": {
+        "status": "checked_declared_milling_envelope",
+        "executable_blocks": 91,
+        "post_decimal_places": 5,
+        "text_modified": false,
+        "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+        "step_map": [
+          {
+            "step_id": "C",
+            "feature_id": "TOP-C",
+            "first_executable_block": 6,
+            "last_executable_block": 88
+          }
+        ],
+        "cutting_moves": 50,
+        "arc_moves": 0,
+        "cutting_levels_mm": [
+          -0.25,
+          -0.3
+        ],
+        "path_envelope_allowance_mm": 0.00202,
+        "feed_time_seconds": 86.74999999999997,
+        "rapid_time_not_included": true,
+        "final_uncovered_profile_mm2": 0.0,
+        "incoming_stock_bounds": {
+          "min": [
+            0,
+            0,
+            -2.6
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        },
+        "target_bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -2.6
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.2999999999999998
+          ]
+        },
+        "facing_semantics": "Clear the complete incoming XY footprint to the original CAD top, with the declared step-down and unchanged NC.",
+        "actual_executable_blocks": 94,
+        "original_NC_text_unchanged": true,
+        "guard_projection": "In-memory single-operation wrapper after checking every actual startup/tool/shutdown block"
+      }
+    },
+    {
+      "stage_id": "D",
+      "source": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/D/result.json",
+        "sha256": "539f582026c1eac7391a9e6cbcface5c4e3b00de6d52bdd3f34b3d88fb8dc2b1"
+      },
+      "native_operation": "Deburr",
+      "NC": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/D/program.nc",
+        "sha256": "59c49a6d9b7362170c7cbcada824a5d03c81a91dc30b508c27418e0519fbc5cd"
+      },
+      "CAM_uses_full_incoming_CAD": true,
+      "CAM_uses_full_cumulative_target_CAD": true,
+      "NC_text_modified": false,
+      "checks": {
+        "status": "checked_native_selected_edges",
+        "NC_text_modified": false,
+        "selected_sides": [
+          "ymin",
+          "ymax"
+        ],
+        "executed_sides": [
+          "ymin",
+          "ymax"
+        ],
+        "one_safe_entry_and_retract_per_edge": true,
+        "executable_blocks": 24,
+        "feed_time_seconds": 11.6,
+        "rapid_time_not_included": true,
+        "final_tip_z_mm": -0.7999999999999997,
+        "step_map": [
+          {
+            "step_id": "OP20",
+            "first_executable_block": 9,
+            "last_executable_block": 21
+          }
+        ],
+        "scope": "One or two parallel complete top edges, fixed Z, explicit finite 90 degree frustum; no general NC interpreter."
+      }
+    }
+  ],
+  "complete_motion_traces_preserved_in_original_stage_results": true,
+  "note": "Readable projection of the original checks; no new NC generation or numerical validation."
+}

@@ -1,0 +1,50 @@
+{
+  "status": "qualified",
+  "case": "/home/team-member-01/GenLaw_simulator/validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline",
+  "kind": "wrong-second-setup",
+  "result": {
+    "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/observer-v2-01/wrong-second-setup/result.json",
+    "sha256": "fc8d7efeae6280b6fa7d23243d388423c3d82a2d4ea6873e1d88f35f7aabc8b0"
+  },
+  "stages": [
+    {
+      "stage_id": "D",
+      "kind": "wrong-second-setup",
+      "metrics": {
+        "path": "docs/checkpoints/2026-10-31/cumulative-cam-01/observer-v2-01/wrong-second-setup/verification/measurement/metrics.json",
+        "sha256": "4f2965522ac05e0e0770baf2fef6b9a9cd00b6ef645fa6797f0aae14e9f98cc6"
+      },
+      "material": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/control-wrong-second-setup-01/D/material/result.json",
+        "sha256": "b643a761de2b1fb75b67dcd77ed79d6f73a2fc9b1ee246123006bc3c24255b3e"
+      },
+      "reference_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/D/target.brep",
+        "sha256": "21f7d20a07ce0be4f548b406efa6ee5b4e4edfc20194188f5a4af670f663b842"
+      },
+      "surface": {
+        "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/control-wrong-second-setup-01/D/material/surface.stl",
+        "sha256": "6f2d3dd5050bc816670886a431e757432c00f5b3685162556cfda4e33052f398"
+      },
+      "iou_percent": 86.6731352485543,
+      "geometry_pass": false,
+      "native_windows": 8,
+      "triangles": 326736,
+      "round_samples": 110,
+      "chamfer_samples": 110,
+      "max_worker_seconds": 20.14747352997074,
+      "max_worker_rss_bytes": 227983360
+    }
+  ],
+  "observer": {
+    "path": "genlaw_pipeline/cumulative_measurement_v2.py",
+    "sha256": "a8eefbb76af21b7769a01c765ab61dfe55b8524fe22ce9ba184bf56ddb8a10b1"
+  },
+  "qualifier": {
+    "path": "tools/check_cumulative_case_v2.py",
+    "sha256": "6f84f8d597f79633892f4e180e41d3e1c3bad8db1e59e48e16500e222ff9c508"
+  },
+  "explicit_recovery": null,
+  "whole_real_card_complete": false,
+  "production_approved": false
+}

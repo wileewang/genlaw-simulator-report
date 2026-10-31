@@ -1,0 +1,222 @@
+{
+  "schema": "genlaw.cumulative-material-request.v1",
+  "stages": {
+    "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/control-wrong-second-setup-01/D/stages.json",
+    "sha256": "e245a5167cf91a8e219273ccdfd17f14569a0eb037e79f08766314f52d3f8388"
+  },
+  "program_inputs": [
+    {
+      "id": "A",
+      "inputs": {
+        "project": {
+          "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/A/simulation.camotics",
+          "sha256": "9933e915aeac1fcb332d688440ec9a4c0920a911ed0f6d3ef2311e2103eb6c47"
+        },
+        "nc_files": [
+          {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/A/program.nc",
+            "sha256": "02d79ca8a6e7c7c8dec50bee31b2bf56e54625d510f14ed28b0fb7602fae0a7c"
+          }
+        ]
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "B",
+      "inputs": {
+        "project": {
+          "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/B/simulation.camotics",
+          "sha256": "d2855e83d89213e439062c8b508b69b9315beecea32521fffd2557843554c5af"
+        },
+        "nc_files": [
+          {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/B/program.nc",
+            "sha256": "aa3efd65d7b36abfa572c44d87ca8f4e2de64acd3583cea9d8c28ae5f7ca7807"
+          }
+        ]
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C",
+      "inputs": {
+        "project": {
+          "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/C/simulation.camotics",
+          "sha256": "9933e915aeac1fcb332d688440ec9a4c0920a911ed0f6d3ef2311e2103eb6c47"
+        },
+        "nc_files": [
+          {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/C/program.nc",
+            "sha256": "6f786677686e14312e05233ff7fb0bb37a5559883d8c1abef82db2aee8702a78"
+          }
+        ]
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "D",
+      "inputs": {
+        "project": {
+          "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/D/simulation.camotics",
+          "sha256": "946023bd00d9e704898c6cb3d39ef3f13d5ee60e4664d9f5126b44cb1a63c86a"
+        },
+        "nc_files": [
+          {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/baseline/D/program.nc",
+            "sha256": "a2af94f7285180125a9de4e90a8bd68b551ad7dbbf81175339ef0f5021c99754"
+          }
+        ]
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -0.025000000000000393,
+      -0.02499999999999995,
+      -3.0250000000000004
+    ],
+    "steps": [
+      242,
+      162,
+      122
+    ],
+    "upper_mm": [
+      6.025,
+      4.0249999999999995,
+      0.02499999999999991
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "windows": [
+    [
+      0,
+      0,
+      0,
+      121,
+      81,
+      61
+    ],
+    [
+      0,
+      0,
+      61,
+      121,
+      81,
+      122
+    ],
+    [
+      0,
+      81,
+      0,
+      121,
+      162,
+      61
+    ],
+    [
+      0,
+      81,
+      61,
+      121,
+      162,
+      122
+    ],
+    [
+      121,
+      0,
+      0,
+      242,
+      81,
+      61
+    ],
+    [
+      121,
+      0,
+      61,
+      242,
+      81,
+      122
+    ],
+    [
+      121,
+      81,
+      0,
+      242,
+      162,
+      61
+    ],
+    [
+      121,
+      81,
+      61,
+      242,
+      162,
+      122
+    ]
+  ],
+  "build": {
+    "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/build-02/build.json",
+    "sha256": "55d5194d8ccb02b6c930539a3e6d574db1a45749a0be5ff6626f071d420b2f99"
+  },
+  "source_code": {
+    "path": "genlaw_pipeline/cumulative_material.py",
+    "sha256": "e15ba0ed7d7b0cacfcfba3c9c81026e1936048fc03a9e236119a9776da155585"
+  }
+}

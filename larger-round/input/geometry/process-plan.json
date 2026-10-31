@@ -1,0 +1,141 @@
+{
+  "schema": "genlaw.cumulative-target-card.v1",
+  "id": "larger-round",
+  "final_CAD": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/target.brep",
+    "sha256": "37260ac8856df6dc4a0eaed331cea6dabc159bb2b9e8b65e1edb99a0fd20c0de"
+  },
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/process-card.pdf",
+    "sha256": "7a96ca2d36026829c8b5916cdb8d51cbc908fa708be723e9ff728cc44263e40d"
+  },
+  "material_label": "6061-T6",
+  "steps": [
+    {
+      "id": "A",
+      "setup_id": "S1",
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "predecessor": "original_stock",
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/operation-reference.json",
+        "sha256": "0bec85181bd7d62750c01cc2e94131cf85d617971ad5ef969d3dc3323abb9516"
+      },
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/stock.brep",
+        "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      }
+    },
+    {
+      "id": "B",
+      "setup_id": "S1",
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "predecessor": "A",
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/operation-reference.json",
+        "sha256": "30b531dbf14c2052f21c9a83fb3d514662f23baf93c2537f7f403107335d2f92"
+      },
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/A/target.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+        "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+      }
+    },
+    {
+      "id": "C",
+      "setup_id": "S2",
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        4,
+        -3
+      ],
+      "predecessor": "B",
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/operation-reference.json",
+        "sha256": "084840a4f377e0b8731dbd5d33e3e8d4bd6f9760d6416c9a5c6aa0ceb3091854"
+      },
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/B/target.brep",
+        "sha256": "ac1c529431d086dbc2bc1194f302deaf12d8db9274edb955a69cba5dcd3256bd"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+        "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+      }
+    },
+    {
+      "id": "D",
+      "setup_id": "S2",
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        4,
+        -3
+      ],
+      "predecessor": "C",
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/operation-reference.json",
+        "sha256": "219c18918d52df9002cb1c0f7470131dab10ef9822ccae56bd03425c7913ed1b"
+      },
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/C/target.brep",
+        "sha256": "94e1f36a9a5375c7a326219ea3c524fd174474cba1f49193360956a409a26ccc"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/D/target.brep",
+        "sha256": "37260ac8856df6dc4a0eaed331cea6dabc159bb2b9e8b65e1edb99a0fd20c0de"
+      }
+    }
+  ],
+  "manufacturing_approval": false,
+  "whole_real_card_complete": false
+}

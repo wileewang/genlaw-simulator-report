@@ -1,0 +1,40 @@
+{
+  "schema": "genlaw.cumulative-execution-input.v1",
+  "id": "shifted-datum",
+  "geometry_input": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/shifted-datum/input.json",
+    "sha256": "79dc548ad7e904e8946146e4809b45633e83166c0889816ee8a4a13abf7da74f"
+  },
+  "geometry_qualification": {
+    "path": "docs/checkpoints/2026-10-31/cumulative-target-01/normal-shifted-datum/shifted-datum.json",
+    "sha256": "103eeca882414bb2bf34e00201f312e6f440d207c67b85789310da65d86c7475"
+  },
+  "resources": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/resources.json",
+    "sha256": "533aca56aee02a713ec963ad20cfcbc321bb9237b71c3381fc1464875fc2e365"
+  },
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/process-card.pdf",
+    "sha256": "8b3f8fc109aee178e3209bfaf7db71b5c2a0fbdf399c2cc44ebd89788a6d5a90"
+  },
+  "acceptance": {
+    "iou_percent_min": 99.0,
+    "bounds_deviation_mm_max": 0.025,
+    "volume_deviation_mm3_max": 0.15,
+    "round_deviation_mm_max": 0.15,
+    "chamfer_deviation_mm_max": 0.1,
+    "retained_plane_deviation_mm_max": 0.025,
+    "numerical_guard_mm": 0.05,
+    "quadrature_orders": [
+      4,
+      8
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-05,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "scope": "software_regression",
+    "manufacturing_tolerance_approved": false
+  },
+  "scope": "experimental_software_geometry",
+  "production_approved": false
+}

@@ -1,0 +1,167 @@
+{
+  "schema": "genlaw.cumulative-resources.v1",
+  "material_label": "6061-T6",
+  "machine": {
+    "kind": "generic_XYZ_reference",
+    "real_machine_qualified": false
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "units": "mm",
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "linuxcnc_runtime_used": false
+  },
+  "workholding": {
+    "mode": "explicit_static_setups",
+    "physical_geometry_modelled": false,
+    "tool_changes": "separate_program_manual_tool_table",
+    "continuous_rotary_motion": false
+  },
+  "simulation_resolution_mm": 0.025,
+  "programs": [
+    {
+      "stage_id": "A",
+      "tool": {
+        "id": "FLAT",
+        "kind": "flat_endmill",
+        "diameter_mm": 1.0,
+        "cutting_length_mm": 5.0,
+        "length_mm": 20.0,
+        "center_cutting": true
+      },
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "native_operation": "MillFace",
+        "step_down_mm": 0.25,
+        "step_over_percent": 50.0,
+        "path_tolerance_mm": 0.001,
+        "clearing_pattern": "Offset",
+        "cut_mode": "Climb",
+        "start_at": "Center",
+        "keep_tool_down": false,
+        "boundary_shape": "Boundbox",
+        "clear_edges": true,
+        "exclude_raised_areas": false
+      },
+      "program_tool_number": 1,
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/stock.brep",
+        "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+      }
+    },
+    {
+      "stage_id": "B",
+      "tool": {
+        "id": "BALL",
+        "kind": "ballnose",
+        "diameter_mm": 1.0,
+        "cutting_length_mm": 5.0,
+        "length_mm": 20.0,
+        "center_cutting": true
+      },
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "native_operation": "Surface",
+        "scan_type": "Planar",
+        "pattern": "Line",
+        "layer_mode": "Multi-pass",
+        "cut_mode": "Climb",
+        "step_down_mm": 0.25,
+        "stepover_percent": 10.0,
+        "sample_interval_mm": 0.05,
+        "linear_deflection_mm": 0.001,
+        "geometry_tolerance_mm": 0.005,
+        "boundary_adjustment_mm": 1.05,
+        "start_depth_mm": -0.3999999999999998,
+        "final_depth_mm": -3.0
+      },
+      "program_tool_number": 1,
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/A/target.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      }
+    },
+    {
+      "stage_id": "C",
+      "tool": {
+        "id": "FLAT",
+        "kind": "flat_endmill",
+        "diameter_mm": 1.0,
+        "cutting_length_mm": 5.0,
+        "length_mm": 20.0,
+        "center_cutting": true
+      },
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "native_operation": "MillFace",
+        "step_down_mm": 0.25,
+        "step_over_percent": 50.0,
+        "path_tolerance_mm": 0.001,
+        "clearing_pattern": "Offset",
+        "cut_mode": "Climb",
+        "start_at": "Center",
+        "keep_tool_down": false,
+        "boundary_shape": "Boundbox",
+        "clear_edges": true,
+        "exclude_raised_areas": false
+      },
+      "program_tool_number": 1,
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/B/target.brep",
+        "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+      }
+    },
+    {
+      "stage_id": "D",
+      "tool": {
+        "id": "CHAMFER",
+        "kind": "finite_frustum",
+        "diameter_mm": 2.0,
+        "tip_diameter_mm": 0.4,
+        "included_angle_degrees": 90.0,
+        "cutting_length_mm": 0.8,
+        "length_mm": 20.0
+      },
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "native_operation": "Deburr",
+        "extra_depth_mm": 0.1,
+        "path_tolerance_mm": 0.001,
+        "backend": {
+          "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+          "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+        }
+      },
+      "program_tool_number": 1,
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/baseline/C/target.brep",
+        "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+      }
+    }
+  ],
+  "basis": "Developer-authored software reference attachment; no production parameters inferred.",
+  "material_physics_verified": false,
+  "production_approved": false
+}

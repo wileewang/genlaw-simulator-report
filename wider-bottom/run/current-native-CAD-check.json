@@ -1,0 +1,496 @@
+{
+  "schema": "genlaw.cumulative-target-CAD-verification.v1",
+  "status": "verified",
+  "input": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/input.json",
+    "sha256": "134183f22d9cbc125e4903900003181561c40c0ad3b78ca5de91835fdaea3d5e"
+  },
+  "plan": {
+    "schema": "genlaw.cumulative-target-plan.v1",
+    "input": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/input.json",
+      "sha256": "134183f22d9cbc125e4903900003181561c40c0ad3b78ca5de91835fdaea3d5e"
+    },
+    "id": "wider-bottom",
+    "original_stock": {
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/stock.brep",
+        "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+      },
+      "material_label": "6061-T6"
+    },
+    "paper_card": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/process-card.pdf",
+      "sha256": "9332cc7f87155ff9e7eb2cc17c007f3b173ff6653e38309a2e8b40f13c52b188"
+    },
+    "process_plan": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/process-plan.json",
+      "sha256": "0918f7a9a1ee1707c22854db05ed449f9db42b62ff5a48e36a08e7b57336c9ae"
+    },
+    "stages": [
+      {
+        "id": "A",
+        "setup_id": "S1",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "predecessor": "original_stock",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/operation-reference.json",
+          "sha256": "49b2a589b9f21d32c88411241f86e81468ce4b19f38e09ae30992d1d67652c8c"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/stock.brep",
+          "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/target.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        }
+      },
+      {
+        "id": "B",
+        "setup_id": "S1",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "predecessor": "A",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/operation-reference.json",
+          "sha256": "cf3a64e81cf3189f215ab3ffce1f132cc4de8fb373090e8e24fe50bf8bedcf20"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/target.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/target.brep",
+          "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+        }
+      },
+      {
+        "id": "C",
+        "setup_id": "S2",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          4,
+          -3
+        ],
+        "predecessor": "B",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/operation-reference.json",
+          "sha256": "13dfb7d1044cb549f0549f2f97668c02856c3def684edb00feac2b9078322340"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/target.brep",
+          "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/target.brep",
+          "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+        }
+      },
+      {
+        "id": "D",
+        "setup_id": "S2",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          4,
+          -3
+        ],
+        "predecessor": "C",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/operation-reference.json",
+          "sha256": "eef1bfcf01b3d68afc59f71ee825b5f24d9989f8d3cf585b62f51790af4dffb1"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/target.brep",
+          "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/target.brep",
+          "sha256": "6e312985a40d00836a33384a8a46849e4cd50b388201357d15eaec9e6df8c1b9"
+        }
+      }
+    ],
+    "references": [
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "axis_aligned_box_after_top_facing",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/operation.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -3.0
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.3999999999999999
+          ]
+        },
+        "volume_mm3": 62.39999999999999,
+        "valid_single_solid": true,
+        "target_created_before_NC": true
+      },
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "rectangular_solid_with_two_top_x_rounds",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/operation.brep",
+          "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            -1.1102230246251565e-16,
+            -3.0
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.3999999999999998
+          ]
+        },
+        "volume_mm3": 61.472920065876984,
+        "valid_single_solid": true,
+        "target_created_before_NC": true,
+        "radius_mm": 0.6
+      },
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "axis_aligned_box_after_top_facing",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/operation.brep",
+          "sha256": "b190389bb2d7052bc17c19660cef5f239fb24b67727d113706960f6e674348dc"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -2.6
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.2999999999999998
+          ]
+        },
+        "volume_mm3": 55.2,
+        "valid_single_solid": true,
+        "target_created_before_NC": true
+      },
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "box_with_selected_parallel_top_chamfers_45",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/operation.brep",
+          "sha256": "6f558770cc74893113a20a9074550ecae68dc7bd782df9ad76f08d1473ea1bc1"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -2.6
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.2999999999999998
+          ]
+        },
+        "volume_mm3": 53.7,
+        "valid_single_solid": true,
+        "target_created_before_NC": true,
+        "width_mm": 0.5,
+        "selected_sides": [
+          "ymin",
+          "ymax"
+        ]
+      }
+    ],
+    "final_CAD": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/target.brep",
+      "sha256": "6e312985a40d00836a33384a8a46849e4cd50b388201357d15eaec9e6df8c1b9"
+    },
+    "native_CAD_verification_required": true,
+    "CAM_generated": false,
+    "material_simulated": false,
+    "whole_real_card_complete": false,
+    "production_approved": false
+  },
+  "stages": [
+    {
+      "id": "A",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/stock.brep",
+        "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/target.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      },
+      "operation_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/operation.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      },
+      "operation_difference_mm3": 0.0,
+      "incoming_difference_mm3": 0.0,
+      "cumulative_target_difference_mm3": 0.0,
+      "added_material_mm3": 0.0,
+      "target_volume_mm3": 62.39999999999999,
+      "section_integrals_mm3": [
+        62.400000000000006,
+        62.40000000000002
+      ],
+      "native_section_samples": [
+        {
+          "z_mm": -2.48,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.7,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.9199999999999999,
+          "symmetric_difference_mm2": 0.0
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/target.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/target.brep",
+        "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+      },
+      "operation_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/operation.brep",
+        "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+      },
+      "operation_difference_mm3": 0.0,
+      "incoming_difference_mm3": 0.0,
+      "cumulative_target_difference_mm3": 0.0,
+      "added_material_mm3": 0.0,
+      "target_volume_mm3": 61.47292006587699,
+      "section_integrals_mm3": [
+        61.47292241036003,
+        61.472920362332104
+      ],
+      "native_section_samples": [
+        {
+          "z_mm": -2.6,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -2.0,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.4,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.8799999999999998,
+          "symmetric_difference_mm2": 2.6645352591003757e-15
+        },
+        {
+          "z_mm": -0.6999999999999998,
+          "symmetric_difference_mm2": 3.3306690738754696e-15
+        },
+        {
+          "z_mm": -0.5199999999999998,
+          "symmetric_difference_mm2": 2.9976021664879227e-15
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/target.brep",
+        "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/target.brep",
+        "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+      },
+      "operation_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/operation.brep",
+        "sha256": "b190389bb2d7052bc17c19660cef5f239fb24b67727d113706960f6e674348dc"
+      },
+      "operation_difference_mm3": 0.0,
+      "incoming_difference_mm3": 0.0,
+      "cumulative_target_difference_mm3": 0.0,
+      "added_material_mm3": 0.0,
+      "target_volume_mm3": 54.272920065877,
+      "section_integrals_mm3": [
+        54.27292241036004,
+        54.272920362332115
+      ],
+      "native_section_samples": [
+        {
+          "z_mm": -2.3600000000000003,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.85,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.3399999999999999,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.8799999999999998,
+          "symmetric_difference_mm2": 2.6645352591003757e-15
+        },
+        {
+          "z_mm": -0.6999999999999998,
+          "symmetric_difference_mm2": 3.3306690738754696e-15
+        },
+        {
+          "z_mm": -0.5199999999999998,
+          "symmetric_difference_mm2": 2.9976021664879227e-15
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/target.brep",
+        "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/target.brep",
+        "sha256": "6e312985a40d00836a33384a8a46849e4cd50b388201357d15eaec9e6df8c1b9"
+      },
+      "operation_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/operation.brep",
+        "sha256": "6f558770cc74893113a20a9074550ecae68dc7bd782df9ad76f08d1473ea1bc1"
+      },
+      "operation_difference_mm3": 0.0,
+      "incoming_difference_mm3": 0.0,
+      "cumulative_target_difference_mm3": 0.0,
+      "added_material_mm3": 0.0,
+      "target_volume_mm3": 52.77292006587701,
+      "section_integrals_mm3": [
+        52.77292241036004,
+        52.772920362332115
+      ],
+      "native_section_samples": [
+        {
+          "z_mm": -2.6,
+          "symmetric_difference_mm2": 7.105427357601002e-15
+        },
+        {
+          "z_mm": -2.45,
+          "symmetric_difference_mm2": 7.105427357601002e-15
+        },
+        {
+          "z_mm": -2.3000000000000003,
+          "symmetric_difference_mm2": 3.552713678800501e-15
+        },
+        {
+          "z_mm": -1.96,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.6,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -1.2399999999999998,
+          "symmetric_difference_mm2": 0.0
+        },
+        {
+          "z_mm": -0.8799999999999998,
+          "symmetric_difference_mm2": 2.6645352591003757e-15
+        },
+        {
+          "z_mm": -0.6999999999999998,
+          "symmetric_difference_mm2": 3.3306690738754696e-15
+        },
+        {
+          "z_mm": -0.5199999999999998,
+          "symmetric_difference_mm2": 2.9976021664879227e-15
+        }
+      ]
+    }
+  ],
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "CAM_jobs_generated": 0,
+  "native_material_executions": 0,
+  "stock_reset_between_stages": false,
+  "full_NC_chain_verified": false,
+  "whole_real_card_complete": false,
+  "production_approved": false
+}

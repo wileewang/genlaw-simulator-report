@@ -1,0 +1,92 @@
+{
+  "stock": {
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -3
+      ],
+      "max": [
+        6,
+        4,
+        0
+      ]
+    }
+  },
+  "tool": {
+    "id": "FLAT",
+    "kind": "flat_endmill",
+    "diameter_mm": 1.0,
+    "cutting_length_mm": 5.0,
+    "length_mm": 20.0,
+    "center_cutting": true
+  },
+  "parameters": {
+    "spindle_rpm": 3000.0,
+    "feed_mm_min": 120.0,
+    "plunge_mm_min": 60.0,
+    "safe_height_mm": 2,
+    "clearance_height_mm": 3,
+    "native_operation": "MillFace",
+    "step_down_mm": 0.25,
+    "step_over_percent": 50.0,
+    "path_tolerance_mm": 0.001,
+    "clearing_pattern": "Offset",
+    "cut_mode": "Climb",
+    "start_at": "Center",
+    "keep_tool_down": false,
+    "boundary_shape": "Boundbox",
+    "clear_edges": true,
+    "exclude_raised_areas": false
+  },
+  "setup": {
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3
+    }
+  },
+  "stage_id": "A",
+  "incoming_CAD": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/stock.brep",
+    "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+  },
+  "operation_reference": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/operation-reference.json",
+    "sha256": "49b2a589b9f21d32c88411241f86e81468ce4b19f38e09ae30992d1d67652c8c"
+  },
+  "target_CAD": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/target.brep",
+    "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+  },
+  "schema": "genlaw.execution-plan.v7",
+  "capability": "top_facing_xy",
+  "target_bounds_mm": {
+    "min": [
+      0.0,
+      0.0,
+      -3.0
+    ],
+    "max": [
+      6.0,
+      4.0,
+      -0.3999999999999999
+    ]
+  },
+  "operations": [
+    {
+      "step_id": "A",
+      "feature_id": "TOP-A",
+      "geometry": {
+        "id": "TOP-A",
+        "kind": "planar_top"
+      },
+      "final_z_mm": -0.3999999999999999
+    }
+  ]
+}

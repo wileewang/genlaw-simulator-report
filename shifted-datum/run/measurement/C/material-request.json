@@ -1,0 +1,193 @@
+{
+  "schema": "genlaw.cumulative-material-request.v1",
+  "stages": {
+    "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/material-chain-02/C/stages.json",
+    "sha256": "b3049f537afcef7948c0fdc1a39fe1a690dfd522a0af9f5403729489a7f35b7a"
+  },
+  "program_inputs": [
+    {
+      "id": "A",
+      "inputs": {
+        "project": {
+          "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/A/simulation.camotics",
+          "sha256": "a6eb3b42aa053c92649245d84a2a27174c3a4f81c9b9464d9f071a9cdd7c8fcc"
+        },
+        "nc_files": [
+          {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/A/program.nc",
+            "sha256": "a149709279be8fe34fba08d8d3fe9011670d3580e5be3f4de72bc1ffd44f66b4"
+          }
+        ]
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "B",
+      "inputs": {
+        "project": {
+          "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/B/simulation.camotics",
+          "sha256": "9b91b8cfc0ccf4681ef2c97e33c054a50f6b1f2e520ce2c5b1b89203af903fb8"
+        },
+        "nc_files": [
+          {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/B/program.nc",
+            "sha256": "28ed67d22dd92212f698c20e9ad6239c3db07c9a74d7459a0c55ebe53d245f2c"
+          }
+        ]
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "C",
+      "inputs": {
+        "project": {
+          "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/C/simulation.camotics",
+          "sha256": "a6eb3b42aa053c92649245d84a2a27174c3a4f81c9b9464d9f071a9cdd7c8fcc"
+        },
+        "nc_files": [
+          {
+            "path": "validation/runs/S4-CUMULATIVE-CAM-20261031-r1/shifted-datum/C/program.nc",
+            "sha256": "9a9c999103fdfbc58074e1d508993394937e8462cb12d1a0dee1e901ad961491"
+          }
+        ]
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        8,
+        2.0
+      ]
+    }
+  ],
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -1.0250000000000004,
+      1.975,
+      -0.5250000000000001
+    ],
+    "steps": [
+      242,
+      162,
+      122
+    ],
+    "upper_mm": [
+      5.025,
+      6.025,
+      2.5250000000000004
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "windows": [
+    [
+      0,
+      0,
+      0,
+      121,
+      81,
+      61
+    ],
+    [
+      0,
+      0,
+      61,
+      121,
+      81,
+      122
+    ],
+    [
+      0,
+      81,
+      0,
+      121,
+      162,
+      61
+    ],
+    [
+      0,
+      81,
+      61,
+      121,
+      162,
+      122
+    ],
+    [
+      121,
+      0,
+      0,
+      242,
+      81,
+      61
+    ],
+    [
+      121,
+      0,
+      61,
+      242,
+      81,
+      122
+    ],
+    [
+      121,
+      81,
+      0,
+      242,
+      162,
+      61
+    ],
+    [
+      121,
+      81,
+      61,
+      242,
+      162,
+      122
+    ]
+  ],
+  "build": {
+    "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/build-02/build.json",
+    "sha256": "55d5194d8ccb02b6c930539a3e6d574db1a45749a0be5ff6626f071d420b2f99"
+  },
+  "source_code": {
+    "path": "genlaw_pipeline/cumulative_material.py",
+    "sha256": "e15ba0ed7d7b0cacfcfba3c9c81026e1936048fc03a9e236119a9776da155585"
+  }
+}

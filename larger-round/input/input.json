@@ -1,0 +1,40 @@
+{
+  "schema": "genlaw.cumulative-execution-input.v1",
+  "id": "larger-round",
+  "geometry_input": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/larger-round/input.json",
+    "sha256": "87cd7fb4b60f1d18dbdebf3df708f3bfc55480612ba730af9728593e2f5ca2f2"
+  },
+  "geometry_qualification": {
+    "path": "docs/checkpoints/2026-10-31/cumulative-target-01/normal-larger-round/larger-round.json",
+    "sha256": "bad1cf19c60a405910abf98ec5b81716e7bc5f54b90bcae9a349abec7ca1edf5"
+  },
+  "resources": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/resources.json",
+    "sha256": "afdad39c2c2fdc70e791f4f5c35262fcbad6f74829214c0c9b2b1738ed3c6c36"
+  },
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/larger-round/process-card.pdf",
+    "sha256": "01995527a8e306df9446a65aad2ba96fd92ed5527af3e2c89e067b79cacf9e92"
+  },
+  "acceptance": {
+    "iou_percent_min": 99.0,
+    "bounds_deviation_mm_max": 0.025,
+    "volume_deviation_mm3_max": 0.15,
+    "round_deviation_mm_max": 0.15,
+    "chamfer_deviation_mm_max": 0.1,
+    "retained_plane_deviation_mm_max": 0.025,
+    "numerical_guard_mm": 0.05,
+    "quadrature_orders": [
+      4,
+      8
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-05,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "scope": "software_regression",
+    "manufacturing_tolerance_approved": false
+  },
+  "scope": "experimental_software_geometry",
+  "production_approved": false
+}

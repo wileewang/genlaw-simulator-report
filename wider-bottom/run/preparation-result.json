@@ -1,0 +1,824 @@
+{
+  "schema": "genlaw.cumulative-execution-plan.v1",
+  "input": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/input.json",
+    "sha256": "9ca4a49de338c68b965a36abb93421fbdb21087305ba15370eb144e925c29c58"
+  },
+  "id": "wider-bottom",
+  "geometry": {
+    "schema": "genlaw.cumulative-target-plan.v1",
+    "input": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/input.json",
+      "sha256": "134183f22d9cbc125e4903900003181561c40c0ad3b78ca5de91835fdaea3d5e"
+    },
+    "id": "wider-bottom",
+    "original_stock": {
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/stock.brep",
+        "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+      },
+      "material_label": "6061-T6"
+    },
+    "paper_card": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/process-card.pdf",
+      "sha256": "9332cc7f87155ff9e7eb2cc17c007f3b173ff6653e38309a2e8b40f13c52b188"
+    },
+    "process_plan": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/process-plan.json",
+      "sha256": "0918f7a9a1ee1707c22854db05ed449f9db42b62ff5a48e36a08e7b57336c9ae"
+    },
+    "stages": [
+      {
+        "id": "A",
+        "setup_id": "S1",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "predecessor": "original_stock",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/operation-reference.json",
+          "sha256": "49b2a589b9f21d32c88411241f86e81468ce4b19f38e09ae30992d1d67652c8c"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/stock.brep",
+          "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/target.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        }
+      },
+      {
+        "id": "B",
+        "setup_id": "S1",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "predecessor": "A",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/operation-reference.json",
+          "sha256": "cf3a64e81cf3189f215ab3ffce1f132cc4de8fb373090e8e24fe50bf8bedcf20"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/target.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/target.brep",
+          "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+        }
+      },
+      {
+        "id": "C",
+        "setup_id": "S2",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          4,
+          -3
+        ],
+        "predecessor": "B",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/operation-reference.json",
+          "sha256": "13dfb7d1044cb549f0549f2f97668c02856c3def684edb00feac2b9078322340"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/target.brep",
+          "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/target.brep",
+          "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+        }
+      },
+      {
+        "id": "D",
+        "setup_id": "S2",
+        "to_material": [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          4,
+          -3
+        ],
+        "predecessor": "C",
+        "operation_reference": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/operation-reference.json",
+          "sha256": "eef1bfcf01b3d68afc59f71ee825b5f24d9989f8d3cf585b62f51790af4dffb1"
+        },
+        "incoming_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/target.brep",
+          "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+        },
+        "target_CAD": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/target.brep",
+          "sha256": "6e312985a40d00836a33384a8a46849e4cd50b388201357d15eaec9e6df8c1b9"
+        }
+      }
+    ],
+    "references": [
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "axis_aligned_box_after_top_facing",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/operation.brep",
+          "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -3.0
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.3999999999999999
+          ]
+        },
+        "volume_mm3": 62.39999999999999,
+        "valid_single_solid": true,
+        "target_created_before_NC": true
+      },
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "rectangular_solid_with_two_top_x_rounds",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/operation.brep",
+          "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            -1.1102230246251565e-16,
+            -3.0
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.3999999999999998
+          ]
+        },
+        "volume_mm3": 61.472920065876984,
+        "valid_single_solid": true,
+        "target_created_before_NC": true,
+        "radius_mm": 0.6
+      },
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "axis_aligned_box_after_top_facing",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/operation.brep",
+          "sha256": "b190389bb2d7052bc17c19660cef5f239fb24b67727d113706960f6e674348dc"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -2.6
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.2999999999999998
+          ]
+        },
+        "volume_mm3": 55.2,
+        "valid_single_solid": true,
+        "target_created_before_NC": true
+      },
+      {
+        "schema": "genlaw.cumulative-operation-reference.v1",
+        "reference_class": "box_with_selected_parallel_top_chamfers_45",
+        "cad": {
+          "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/operation.brep",
+          "sha256": "6f558770cc74893113a20a9074550ecae68dc7bd782df9ad76f08d1473ea1bc1"
+        },
+        "bounds": {
+          "min": [
+            0.0,
+            0.0,
+            -2.6
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.2999999999999998
+          ]
+        },
+        "volume_mm3": 53.7,
+        "valid_single_solid": true,
+        "target_created_before_NC": true,
+        "width_mm": 0.5,
+        "selected_sides": [
+          "ymin",
+          "ymax"
+        ]
+      }
+    ],
+    "final_CAD": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/target.brep",
+      "sha256": "6e312985a40d00836a33384a8a46849e4cd50b388201357d15eaec9e6df8c1b9"
+    },
+    "native_CAD_verification_required": true,
+    "CAM_generated": false,
+    "material_simulated": false,
+    "whole_real_card_complete": false,
+    "production_approved": false
+  },
+  "geometry_qualification": {
+    "path": "docs/checkpoints/2026-10-31/cumulative-target-01/normal-wider-bottom/wider-bottom.json",
+    "sha256": "ec9fd86c19412cedc5b921e2e47326d80e95bc9a08555d9594894c125ce5078c"
+  },
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/process-card.pdf",
+    "sha256": "8095adde6af69a5bfda7d5c14750ab77d734bc41b8fa44097012978439dc0e2e"
+  },
+  "resource_attachment": {
+    "path": "validation/feature-inputs/S4-CUMULATIVE-CAM-20261031-r1/wider-bottom/resources.json",
+    "sha256": "a6c91f5d4af907e00619cd4a454535bc2bd52c150389b08abb1299609bc47210"
+  },
+  "stage_plans": [
+    {
+      "stock": {
+        "bounds_mm": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        }
+      },
+      "tool": {
+        "id": "FLAT",
+        "kind": "flat_endmill",
+        "diameter_mm": 1.0,
+        "cutting_length_mm": 5.0,
+        "length_mm": 20.0,
+        "center_cutting": true
+      },
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "native_operation": "MillFace",
+        "step_down_mm": 0.25,
+        "step_over_percent": 50.0,
+        "path_tolerance_mm": 0.001,
+        "clearing_pattern": "Offset",
+        "cut_mode": "Climb",
+        "start_at": "Center",
+        "keep_tool_down": false,
+        "boundary_shape": "Boundbox",
+        "clear_edges": true,
+        "exclude_raised_areas": false
+      },
+      "setup": {
+        "startup": {
+          "position_mm": [
+            0,
+            0,
+            0
+          ],
+          "tool": "unloaded",
+          "spindle": "stopped",
+          "retract_before_tool_selection_z_mm": 3
+        }
+      },
+      "stage_id": "A",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/stock.brep",
+        "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+      },
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/operation-reference.json",
+        "sha256": "49b2a589b9f21d32c88411241f86e81468ce4b19f38e09ae30992d1d67652c8c"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/target.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      },
+      "schema": "genlaw.execution-plan.v7",
+      "capability": "top_facing_xy",
+      "target_bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -3.0
+        ],
+        "max": [
+          6.0,
+          4.0,
+          -0.3999999999999999
+        ]
+      },
+      "operations": [
+        {
+          "step_id": "A",
+          "feature_id": "TOP-A",
+          "geometry": {
+            "id": "TOP-A",
+            "kind": "planar_top"
+          },
+          "final_z_mm": -0.3999999999999999
+        }
+      ]
+    },
+    {
+      "stock": {
+        "bounds_mm": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            -0.3999999999999999
+          ]
+        }
+      },
+      "tool": {
+        "id": "BALL",
+        "kind": "ballnose",
+        "diameter_mm": 1.0,
+        "cutting_length_mm": 5.0,
+        "length_mm": 20.0,
+        "center_cutting": true
+      },
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "native_operation": "Surface",
+        "scan_type": "Planar",
+        "pattern": "Line",
+        "layer_mode": "Multi-pass",
+        "cut_mode": "Climb",
+        "step_down_mm": 0.25,
+        "stepover_percent": 10.0,
+        "sample_interval_mm": 0.05,
+        "linear_deflection_mm": 0.001,
+        "geometry_tolerance_mm": 0.005,
+        "boundary_adjustment_mm": 1.05,
+        "start_depth_mm": -0.3999999999999998,
+        "final_depth_mm": -3.0
+      },
+      "setup": {
+        "startup": {
+          "position_mm": [
+            0,
+            0,
+            0
+          ],
+          "tool": "unloaded",
+          "spindle": "stopped",
+          "retract_before_tool_selection_z_mm": 3
+        }
+      },
+      "stage_id": "B",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/A/target.brep",
+        "sha256": "8a3e7c412e31ac8cf10e210f354d2f45fbe2c06f8de25b4e81e13b55d4d3295a"
+      },
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/operation-reference.json",
+        "sha256": "cf3a64e81cf3189f215ab3ffce1f132cc4de8fb373090e8e24fe50bf8bedcf20"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/target.brep",
+        "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+      },
+      "schema": "genlaw.round-surface-execution-plan.v1"
+    },
+    {
+      "stock": {
+        "bounds_mm": {
+          "min": [
+            0,
+            0,
+            -2.6
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        }
+      },
+      "tool": {
+        "id": "FLAT",
+        "kind": "flat_endmill",
+        "diameter_mm": 1.0,
+        "cutting_length_mm": 5.0,
+        "length_mm": 20.0,
+        "center_cutting": true
+      },
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "native_operation": "MillFace",
+        "step_down_mm": 0.25,
+        "step_over_percent": 50.0,
+        "path_tolerance_mm": 0.001,
+        "clearing_pattern": "Offset",
+        "cut_mode": "Climb",
+        "start_at": "Center",
+        "keep_tool_down": false,
+        "boundary_shape": "Boundbox",
+        "clear_edges": true,
+        "exclude_raised_areas": false
+      },
+      "setup": {
+        "startup": {
+          "position_mm": [
+            0,
+            0,
+            0
+          ],
+          "tool": "unloaded",
+          "spindle": "stopped",
+          "retract_before_tool_selection_z_mm": 3
+        }
+      },
+      "stage_id": "C",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/B/target.brep",
+        "sha256": "7fa51965b3a18d41e864c11b0706b771eeaa05825aeebd12718f57a8e592b5a8"
+      },
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/operation-reference.json",
+        "sha256": "13dfb7d1044cb549f0549f2f97668c02856c3def684edb00feac2b9078322340"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/target.brep",
+        "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+      },
+      "schema": "genlaw.execution-plan.v7",
+      "capability": "top_facing_xy",
+      "target_bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -2.6
+        ],
+        "max": [
+          6.0,
+          4.0,
+          -0.2999999999999998
+        ]
+      },
+      "operations": [
+        {
+          "step_id": "C",
+          "feature_id": "TOP-C",
+          "geometry": {
+            "id": "TOP-C",
+            "kind": "planar_top"
+          },
+          "final_z_mm": -0.2999999999999998
+        }
+      ]
+    },
+    {
+      "stock": {
+        "bounds_mm": {
+          "min": [
+            0.0,
+            0.0,
+            -2.6
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.2999999999999998
+          ]
+        }
+      },
+      "tool": {
+        "id": "CHAMFER",
+        "kind": "finite_frustum",
+        "diameter_mm": 2.0,
+        "tip_diameter_mm": 0.4,
+        "included_angle_degrees": 90.0,
+        "cutting_length_mm": 0.8,
+        "length_mm": 20.0
+      },
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "native_operation": "Deburr",
+        "extra_depth_mm": 0.1,
+        "path_tolerance_mm": 0.001,
+        "backend": {
+          "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+          "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+        }
+      },
+      "setup": {
+        "startup": {
+          "position_mm": [
+            0,
+            0,
+            0
+          ],
+          "tool": "unloaded",
+          "spindle": "stopped",
+          "retract_before_tool_selection_z_mm": 3
+        }
+      },
+      "stage_id": "D",
+      "incoming_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/C/target.brep",
+        "sha256": "60ed9fc82970d8c6be2d903c190f0ff68cd8d511bdf87361156ddc383cfdc4ee"
+      },
+      "operation_reference": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/operation-reference.json",
+        "sha256": "eef1bfcf01b3d68afc59f71ee825b5f24d9989f8d3cf585b62f51790af4dffb1"
+      },
+      "target_CAD": {
+        "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/D/target.brep",
+        "sha256": "6e312985a40d00836a33384a8a46849e4cd50b388201357d15eaec9e6df8c1b9"
+      },
+      "schema": "genlaw.selected-chamfer-execution-plan.v1",
+      "specification": {
+        "stock": {
+          "min": [
+            0.0,
+            0.0,
+            -2.6
+          ],
+          "max": [
+            6.0,
+            4.0,
+            -0.2999999999999998
+          ]
+        },
+        "width_mm": 0.5,
+        "selected_sides": [
+          "ymin",
+          "ymax"
+        ]
+      },
+      "final_tip_z_mm": -0.8999999999999998
+    }
+  ],
+  "projects": [
+    {
+      "units": "metric",
+      "resolution-mode": "manual",
+      "resolution": 0.025,
+      "tools": {
+        "1": {
+          "units": "metric",
+          "shape": "cylindrical",
+          "diameter": 1.0,
+          "length": 5.0
+        }
+      },
+      "workpiece": {
+        "automatic": false,
+        "margin": 0,
+        "bounds": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        }
+      },
+      "files": [
+        "program.nc"
+      ]
+    },
+    {
+      "units": "metric",
+      "resolution-mode": "manual",
+      "resolution": 0.025,
+      "tools": {
+        "1": {
+          "units": "metric",
+          "shape": "ballnose",
+          "diameter": 1.0,
+          "length": 4.5
+        }
+      },
+      "workpiece": {
+        "automatic": false,
+        "margin": 0,
+        "bounds": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        }
+      },
+      "files": [
+        "program.nc"
+      ]
+    },
+    {
+      "units": "metric",
+      "resolution-mode": "manual",
+      "resolution": 0.025,
+      "tools": {
+        "1": {
+          "units": "metric",
+          "shape": "cylindrical",
+          "diameter": 1.0,
+          "length": 5.0
+        }
+      },
+      "workpiece": {
+        "automatic": false,
+        "margin": 0,
+        "bounds": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        }
+      },
+      "files": [
+        "program.nc"
+      ]
+    },
+    {
+      "units": "metric",
+      "resolution-mode": "manual",
+      "resolution": 0.025,
+      "tools": {
+        "1": {
+          "units": "metric",
+          "shape": "snubnose",
+          "diameter": 2.0,
+          "length": 0.8,
+          "snub_diameter": 0.4
+        }
+      },
+      "workpiece": {
+        "automatic": false,
+        "margin": 0,
+        "bounds": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            6,
+            4,
+            0
+          ]
+        }
+      },
+      "files": [
+        "program.nc"
+      ]
+    }
+  ],
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -0.025000000000000393,
+      -0.02499999999999995,
+      -3.0250000000000004
+    ],
+    "steps": [
+      242,
+      162,
+      122
+    ],
+    "upper_mm": [
+      6.025,
+      4.0249999999999995,
+      0.02499999999999991
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "acceptance": {
+    "iou_percent_min": 99.0,
+    "bounds_deviation_mm_max": 0.025,
+    "volume_deviation_mm3_max": 0.15,
+    "round_deviation_mm_max": 0.15,
+    "chamfer_deviation_mm_max": 0.1,
+    "retained_plane_deviation_mm_max": 0.025,
+    "numerical_guard_mm": 0.05,
+    "quadrature_orders": [
+      4,
+      8
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-05,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "scope": "software_regression",
+    "manufacturing_tolerance_approved": false
+  },
+  "original_stock": {
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -3
+      ],
+      "max": [
+        6,
+        4,
+        0
+      ]
+    },
+    "CAD": {
+      "path": "validation/feature-inputs/S4-CUMULATIVE-TARGET-20261031-r1/wider-bottom/stock.brep",
+      "sha256": "254da9790bc849c2a2463b848113e0e4d67579bcc3f1d1c14594e9a9c1fdd475"
+    },
+    "material_label": "6061-T6"
+  },
+  "whole_real_card_complete": false,
+  "production_approved": false
+}
