@@ -1,0 +1,1503 @@
+{
+  "schema": "genlaw.round-surface-inspection.v3",
+  "mesh": {
+    "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/material-partitioned/surface.stl",
+    "sha256": "41eee82a6a50d9131d6addb72fc573a2bcd5025f11f67d584678cd94d7f37588"
+  },
+  "native_result": {
+    "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/material-partitioned/result.json",
+    "sha256": "38877c703c8ff12ac6c90ffd9d213af43e9f88274554c90c9bf08049011ab13c"
+  },
+  "preparation": {
+    "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/preparation-result.json",
+    "sha256": "a2c69f60466a72fdbbb36d0e2a2cb84ab1bca9d3225e63036bf9518c27eb90b3"
+  },
+  "reference": {
+    "reference_class": "rectangular_solid_with_two_top_x_rounds",
+    "bounds": {
+      "min": [
+        0.0,
+        -4.440892098500626e-16,
+        -3.0
+      ],
+      "max": [
+        3.0,
+        6.0,
+        4.440892098500626e-16
+      ]
+    },
+    "radius_mm": 2,
+    "status": "verified",
+    "valid_single_solid": true,
+    "volume_mm3": 48.84955592153881,
+    "symmetric_difference_mm3": 0.0,
+    "analytic_volume_mm3": 48.849555921538766,
+    "cylindrical_faces": [
+      {
+        "face": "Face3",
+        "radius_mm": 2.0,
+        "axis": [
+          1.0,
+          0.0,
+          -0.0
+        ],
+        "center": [
+          0.0,
+          1.9999999999999996,
+          -1.9999999999999996
+        ]
+      },
+      {
+        "face": "Face7",
+        "radius_mm": 2.0,
+        "axis": [
+          1.0,
+          0.0,
+          -0.0
+        ],
+        "center": [
+          0.0,
+          4.0,
+          -1.9999999999999996
+        ]
+      }
+    ],
+    "construction_check": "Subtract two corner boxes excluding their axial cylinders",
+    "original_CAD_reparsed": true,
+    "registration_applied": false,
+    "CAD": {
+      "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/baseline/target.brep",
+      "sha256": "ef0d6c2bdacd3711ca5834489e5d3242aba7e90f47d4208553313b377c3ab9f1"
+    }
+  },
+  "mesh_inspection": {
+    "source_sha256": "41eee82a6a50d9131d6addb72fc573a2bcd5025f11f67d584678cd94d7f37588",
+    "raw_triangles": 284992,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 284992,
+    "vertices": 142498,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 48.90895430307344,
+    "bounds": {
+      "min": [
+        9.765625145519152e-05,
+        9.765625145519152e-05,
+        -2.9999022483825684
+      ],
+      "max": [
+        3.0000977516174316,
+        6.000097751617432,
+        9.765625145519152e-05
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "acceptance": {
+    "iou_percent_min": 99.0,
+    "bounds_deviation_mm_max": 0.025,
+    "volume_deviation_mm3_max": 0.15,
+    "profile_deviation_mm_max": 0.15,
+    "radius_deviation_mm_max": 0.15,
+    "numerical_guard_mm": 0.05,
+    "quadrature_orders": [
+      4,
+      8
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-05,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "scope": "software_regression",
+    "manufacturing_tolerance_approved": false
+  },
+  "feature_observations": {
+    "method": "14 full original-coordinate sections, fixed CAD-center radii at 55 cross-lines, 25 central retained-plane rays",
+    "contours": [
+      {
+        "region": "round",
+        "z_mm": -1.8999999999999995,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.02343917455266843,
+        "missing_material_area_mm2": 0.004645539063103027,
+        "excess_material_area_mm2": 0.014754809193027357
+      },
+      {
+        "region": "round",
+        "z_mm": -1.7199999999999995,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.025590554039461106,
+        "missing_material_area_mm2": 0.00510084338815089,
+        "excess_material_area_mm2": 0.11503288462944114
+      },
+      {
+        "region": "round",
+        "z_mm": -1.5399999999999996,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.022373508482323955,
+        "missing_material_area_mm2": 0.003634103252507583,
+        "excess_material_area_mm2": 0.08911454117546835
+      },
+      {
+        "region": "round",
+        "z_mm": -1.3599999999999994,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.014383330465329334,
+        "missing_material_area_mm2": 0.002299228291436775,
+        "excess_material_area_mm2": 0.053073045476491956
+      },
+      {
+        "region": "round",
+        "z_mm": -1.1799999999999997,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.01727974694176982,
+        "missing_material_area_mm2": 0.0020883099344579472,
+        "excess_material_area_mm2": 0.01268835599304049
+      },
+      {
+        "region": "round",
+        "z_mm": -0.9945166943085473,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.010577715379540442,
+        "missing_material_area_mm2": 0.001678113195447899,
+        "excess_material_area_mm2": 0.03103772217307541
+      },
+      {
+        "region": "round",
+        "z_mm": -0.8199999999999994,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.01776033983828002,
+        "missing_material_area_mm2": 0.0020509472264155027,
+        "excess_material_area_mm2": 0.007621195502258319
+      },
+      {
+        "region": "round",
+        "z_mm": -0.6399999999999995,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.009010256695236599,
+        "missing_material_area_mm2": 0.0014274174539932705,
+        "excess_material_area_mm2": 0.018628191046597076
+      },
+      {
+        "region": "round",
+        "z_mm": -0.4599999999999995,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.016402977074337736,
+        "missing_material_area_mm2": 0.00209179296968731,
+        "excess_material_area_mm2": 0.0006935864543154123
+      },
+      {
+        "region": "round",
+        "z_mm": -0.2799999999999996,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.016569840748481664,
+        "missing_material_area_mm2": 0.002180676073439187,
+        "excess_material_area_mm2": 0.007657544943315059
+      },
+      {
+        "region": "round",
+        "z_mm": -0.09999999999999964,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.009350288348061694,
+        "missing_material_area_mm2": 0.002454840246209712,
+        "excess_material_area_mm2": 0.006173526513675044
+      },
+      {
+        "region": "retained_wall",
+        "z_mm": -2.8,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.017746722042374027,
+        "missing_material_area_mm2": 0.0011889936067382284,
+        "excess_material_area_mm2": 0.0008773014817203339
+      },
+      {
+        "region": "retained_wall",
+        "z_mm": -2.49045081329163,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.01774672557791468,
+        "missing_material_area_mm2": 0.0012475221978221233,
+        "excess_material_area_mm2": 0.0008744887351383615
+      },
+      {
+        "region": "retained_wall",
+        "z_mm": -2.1999999999999997,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "topology_matches": true,
+        "boundary_deviation_mm": 0.0200679983844084,
+        "missing_material_area_mm2": 0.0024005607698856586,
+        "excess_material_area_mm2": 0.0008666434600635512
+      }
+    ],
+    "radius_samples": [
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -1.8999999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.002400901302602,
+          2.002400811414903
+        ],
+        "maximum_radius_error_mm": 0.0024009013026020654,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -1.8999999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.002400901302602,
+          2.002400811414903
+        ],
+        "maximum_radius_error_mm": 0.0024009013026020654,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -1.8999999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.002400901302602,
+          2.002400811414903
+        ],
+        "maximum_radius_error_mm": 0.0024009013026020654,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -1.8999999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.002400901302602,
+          2.002400811414903
+        ],
+        "maximum_radius_error_mm": 0.0024009013026020654,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -1.8999999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.002400901302602,
+          2.002400811414903
+        ],
+        "maximum_radius_error_mm": 0.0024009013026020654,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -1.7199999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.019408173088708,
+          2.019408083958035
+        ],
+        "maximum_radius_error_mm": 0.019408173088708125,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -1.7199999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.019408173088708,
+          2.019408083958035
+        ],
+        "maximum_radius_error_mm": 0.019408173088708125,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -1.7199999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.019408173088708,
+          2.019408083958035
+        ],
+        "maximum_radius_error_mm": 0.019408173088708125,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -1.7199999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.019408173088708,
+          2.019408083958035
+        ],
+        "maximum_radius_error_mm": 0.019408173088708125,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -1.7199999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.019408173088708,
+          2.019408083958035
+        ],
+        "maximum_radius_error_mm": 0.019408173088708125,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -1.5399999999999996,
+        "complete": true,
+        "observed_radii_mm": [
+          2.014720245444871,
+          2.014720225973147
+        ],
+        "maximum_radius_error_mm": 0.01472024544487116,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -1.5399999999999996,
+        "complete": true,
+        "observed_radii_mm": [
+          2.014720245444871,
+          2.014720225973147
+        ],
+        "maximum_radius_error_mm": 0.01472024544487116,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -1.5399999999999996,
+        "complete": true,
+        "observed_radii_mm": [
+          2.014720245444871,
+          2.014720225973147
+        ],
+        "maximum_radius_error_mm": 0.01472024544487116,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -1.5399999999999996,
+        "complete": true,
+        "observed_radii_mm": [
+          2.014720245444871,
+          2.014720225973147
+        ],
+        "maximum_radius_error_mm": 0.01472024544487116,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -1.5399999999999996,
+        "complete": true,
+        "observed_radii_mm": [
+          2.014720245444871,
+          2.014720225973147
+        ],
+        "maximum_radius_error_mm": 0.01472024544487116,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -1.3599999999999994,
+        "complete": true,
+        "observed_radii_mm": [
+          2.008392627559153,
+          2.0083926180804714
+        ],
+        "maximum_radius_error_mm": 0.008392627559152821,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -1.3599999999999994,
+        "complete": true,
+        "observed_radii_mm": [
+          2.008392627559153,
+          2.0083926180804714
+        ],
+        "maximum_radius_error_mm": 0.008392627559152821,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -1.3599999999999994,
+        "complete": true,
+        "observed_radii_mm": [
+          2.008392627559153,
+          2.0083926180804714
+        ],
+        "maximum_radius_error_mm": 0.008392627559152821,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -1.3599999999999994,
+        "complete": true,
+        "observed_radii_mm": [
+          2.008392627559153,
+          2.0083926180804714
+        ],
+        "maximum_radius_error_mm": 0.008392627559152821,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -1.3599999999999994,
+        "complete": true,
+        "observed_radii_mm": [
+          2.008392627559153,
+          2.0083926180804714
+        ],
+        "maximum_radius_error_mm": 0.008392627559152821,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -1.1799999999999997,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0018396241629444,
+          2.0018394508345345
+        ],
+        "maximum_radius_error_mm": 0.0018396241629443644,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -1.1799999999999997,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0019202586918676,
+          2.0018394508345345
+        ],
+        "maximum_radius_error_mm": 0.0019202586918676268,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -1.1799999999999997,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0018934929548378,
+          2.0018933196254878
+        ],
+        "maximum_radius_error_mm": 0.001893492954837761,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -1.1799999999999997,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0018396241629444,
+          2.0018933196254878
+        ],
+        "maximum_radius_error_mm": 0.001893319625487777,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -1.1799999999999997,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0018396241629444,
+          2.001920112729916
+        ],
+        "maximum_radius_error_mm": 0.0019201127299162124,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -0.9945166943085473,
+        "complete": true,
+        "observed_radii_mm": [
+          2.004493535314971,
+          2.0043615757667053
+        ],
+        "maximum_radius_error_mm": 0.004493535314971098,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -0.9945166943085473,
+        "complete": true,
+        "observed_radii_mm": [
+          2.004493535314971,
+          2.004493613173178
+        ],
+        "maximum_radius_error_mm": 0.00449361317317809,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -0.9945166943085473,
+        "complete": true,
+        "observed_radii_mm": [
+          2.004493535314971,
+          2.004493613173178
+        ],
+        "maximum_radius_error_mm": 0.00449361317317809,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -0.9945166943085473,
+        "complete": true,
+        "observed_radii_mm": [
+          2.004493535314971,
+          2.004493613173178
+        ],
+        "maximum_radius_error_mm": 0.00449361317317809,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -0.9945166943085473,
+        "complete": true,
+        "observed_radii_mm": [
+          2.004361619020307,
+          2.004493613173178
+        ],
+        "maximum_radius_error_mm": 0.00449361317317809,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -0.8199999999999994,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0009637112551553,
+          2.000963638570183
+        ],
+        "maximum_radius_error_mm": 0.000963711255155264,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -0.8199999999999994,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0009637112551553,
+          2.000963638570183
+        ],
+        "maximum_radius_error_mm": 0.000963711255155264,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -0.8199999999999994,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0009637112551553,
+          2.000992106958772
+        ],
+        "maximum_radius_error_mm": 0.0009921069587721654,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -0.8199999999999994,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0009637112551553,
+          2.000963638570183
+        ],
+        "maximum_radius_error_mm": 0.000963711255155264,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -0.8199999999999994,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0009637112551553,
+          2.000992106958772
+        ],
+        "maximum_radius_error_mm": 0.0009921069587721654,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -0.6399999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0022495230377775,
+          2.002249434967391
+        ],
+        "maximum_radius_error_mm": 0.002249523037777479,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -0.6399999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0022495230377775,
+          2.002249434967391
+        ],
+        "maximum_radius_error_mm": 0.002249523037777479,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -0.6399999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0022495230377775,
+          2.002249434967391
+        ],
+        "maximum_radius_error_mm": 0.002249523037777479,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -0.6399999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0022495230377775,
+          2.002249434967391
+        ],
+        "maximum_radius_error_mm": 0.002249523037777479,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -0.6399999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0022495230377775,
+          2.002249434967391
+        ],
+        "maximum_radius_error_mm": 0.002249523037777479,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -0.4599999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.000028188254056,
+          2.0000282648208962
+        ],
+        "maximum_radius_error_mm": 2.826482089623994e-05,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -0.4599999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.000028188254056,
+          2.0000282648208962
+        ],
+        "maximum_radius_error_mm": 2.826482089623994e-05,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -0.4599999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.000028188254056,
+          2.0000282648208962
+        ],
+        "maximum_radius_error_mm": 2.826482089623994e-05,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -0.4599999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.000028188254056,
+          2.0000282648208962
+        ],
+        "maximum_radius_error_mm": 2.826482089623994e-05,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -0.4599999999999995,
+        "complete": true,
+        "observed_radii_mm": [
+          2.000028188254056,
+          2.0000282648208962
+        ],
+        "maximum_radius_error_mm": 2.826482089623994e-05,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -0.2799999999999996,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0006295472190407,
+          2.000629618724021
+        ],
+        "maximum_radius_error_mm": 0.0006296187240208972,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -0.2799999999999996,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0006295472190407,
+          2.000629618724021
+        ],
+        "maximum_radius_error_mm": 0.0006296187240208972,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -0.2799999999999996,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0006295472190407,
+          2.000629618724021
+        ],
+        "maximum_radius_error_mm": 0.0006296187240208972,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -0.2799999999999996,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0006295472190407,
+          2.000629618724021
+        ],
+        "maximum_radius_error_mm": 0.0006296187240208972,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -0.2799999999999996,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0006295472190407,
+          2.000629618724021
+        ],
+        "maximum_radius_error_mm": 0.0006296187240208972,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.30000000000000004,
+        "z_mm": -0.09999999999999964,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0003088701267093,
+          2.0003088701267093
+        ],
+        "maximum_radius_error_mm": 0.00030887012670932634,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 0.8999999999999999,
+        "z_mm": -0.09999999999999964,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0003088701267093,
+          2.0003088701267093
+        ],
+        "maximum_radius_error_mm": 0.00030887012670932634,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 1.5,
+        "z_mm": -0.09999999999999964,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0003088701267093,
+          2.0003088701267093
+        ],
+        "maximum_radius_error_mm": 0.00030887012670932634,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.0999999999999996,
+        "z_mm": -0.09999999999999964,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0003088701267093,
+          2.0003088701267093
+        ],
+        "maximum_radius_error_mm": 0.00030887012670932634,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      },
+      {
+        "x_mm": 2.7,
+        "z_mm": -0.09999999999999964,
+        "complete": true,
+        "observed_radii_mm": [
+          2.0003088701267093,
+          2.0003088701267093
+        ],
+        "maximum_radius_error_mm": 0.00030887012670932634,
+        "center_from_original_CAD": true,
+        "center_fitted": false
+      }
+    ],
+    "retained_plane_probes": [
+      {
+        "xy_mm": [
+          0.6000000000000001,
+          2.3999999999999995
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          0.6000000000000001,
+          2.6999999999999993
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          0.6000000000000001,
+          2.9999999999999996
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          0.6000000000000001,
+          3.3
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          0.6000000000000001,
+          3.5999999999999996
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.0499999999999998,
+          2.3999999999999995
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.0499999999999998,
+          2.6999999999999993
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.0499999999999998,
+          2.9999999999999996
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.0499999999999998,
+          3.3
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.0499999999999998,
+          3.5999999999999996
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.5,
+          2.3999999999999995
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          -9.756e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.5,
+          2.6999999999999993
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          -9.761e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.5,
+          2.9999999999999996
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          -9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.5,
+          3.3
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          -9.761e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.5,
+          3.5999999999999996
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          -9.756e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.9500000000000002,
+          2.3999999999999995
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.9500000000000002,
+          2.6999999999999993
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.9500000000000002,
+          2.9999999999999996
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.9500000000000002,
+          3.3
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.9500000000000002,
+          3.5999999999999996
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.4000000000000004,
+          2.3999999999999995
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.4000000000000004,
+          2.6999999999999993
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.4000000000000004,
+          2.9999999999999996
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.4000000000000004,
+          3.3
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.4000000000000004,
+          3.5999999999999996
+        ],
+        "surface_z_mm": [
+          -2.99990225,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.775000000011858e-05,
+        "passed": true
+      }
+    ],
+    "maximum_boundary_deviation_mm": 0.025590554039461106,
+    "maximum_radius_deviation_mm": 0.019408173088708125,
+    "profile_pass": true,
+    "radius_pass": true,
+    "retained_planes_pass": true,
+    "numerical_guard_mm": 0.05,
+    "guard_is_certified_uncertainty": false,
+    "registration_applied": false
+  },
+  "maximum_bounds_error_mm": 9.775161743164062e-05,
+  "volume_deviation_mm3": 0.05939838153467747,
+  "level_count": 306,
+  "total_interval_limit": 4095,
+  "quadrature_intervals_per_worker": 16,
+  "integral_plan_allowed": true,
+  "parts": [
+    [
+      0,
+      16
+    ],
+    [
+      16,
+      32
+    ],
+    [
+      32,
+      48
+    ],
+    [
+      48,
+      64
+    ],
+    [
+      64,
+      80
+    ],
+    [
+      80,
+      96
+    ],
+    [
+      96,
+      112
+    ],
+    [
+      112,
+      128
+    ],
+    [
+      128,
+      144
+    ],
+    [
+      144,
+      160
+    ],
+    [
+      160,
+      176
+    ],
+    [
+      176,
+      192
+    ],
+    [
+      192,
+      208
+    ],
+    [
+      208,
+      224
+    ],
+    [
+      224,
+      240
+    ],
+    [
+      240,
+      256
+    ],
+    [
+      256,
+      272
+    ],
+    [
+      272,
+      288
+    ],
+    [
+      288,
+      304
+    ],
+    [
+      304,
+      305
+    ]
+  ],
+  "arrays": {
+    "vertices": {
+      "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/measurement-partitioned/vertices.npy",
+      "sha256": "0ba39e511fae184a7b9dbb440af15db9d6146604e6af2a756498d949800f3fb9"
+    },
+    "faces": {
+      "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/measurement-partitioned/faces.npy",
+      "sha256": "f0fffc203efc19e14a35b3012e2eddf46ad1c7dd7b2ba5cc200233653d08db06"
+    },
+    "levels": {
+      "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/measurement-partitioned/levels.npy",
+      "sha256": "8f8806ffbd372894a0aeba3f2867851f18360c0d9b78b0f1e9864d59053d66c8"
+    }
+  },
+  "source_code": [
+    {
+      "path": "genlaw_pipeline/round_surface_measurement_v3.py",
+      "sha256": "e68e109438de575eb6134fdcf08e8efbdef0a8e51a3dd21e755cc9decb57f50c"
+    },
+    {
+      "path": "genlaw_pipeline/round_surface_geometry.py",
+      "sha256": "c391293a41493e2d4202fbb7f215af06e54f70a286112e9d1ae28c3e1d0be6aa"
+    },
+    {
+      "path": "genlaw_pipeline/reference_sections.py",
+      "sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+    },
+    {
+      "path": "web/tools/mesh_metrics.py",
+      "sha256": "741756ed20411cb81a99f7fe3a6200595cc8fc7b783bf72207f19da33979b4c4"
+    },
+    {
+      "path": "genlaw_pipeline/indexed_sections.py",
+      "sha256": "66ceb253b8085e4424f4cc004a7f248eb83bec33d1551cffecedbdd6a819dfab"
+    },
+    {
+      "path": "genlaw_pipeline/small_partition_material.py",
+      "sha256": "7040d454c9c7a3ce031fe63adf23d76247768b0ee17a5634d2ef502d26fed98e"
+    }
+  ],
+  "IoU_not_yet_measured": true,
+  "production_approved": false,
+  "whole_process_card_complete": false
+}

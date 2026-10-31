@@ -1,0 +1,118 @@
+{
+  "schema": "genlaw.small-partition-material-request.v1",
+  "inputs": {
+    "project": {
+      "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/simulation.camotics",
+      "sha256": "d97ffd4f340559cc5c545b59da396ff5785174ff6880d56c9d8854978cdaca10"
+    },
+    "nc_files": [
+      {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/program.nc",
+        "sha256": "e8c23fc1868e7baf59e9f53c952501edd76d07c4736b4056280c5da7148b1adf"
+      }
+    ]
+  },
+  "build": {
+    "path": "docs/checkpoints/2026-10-31/native-stream-output-01/build-02/build.json",
+    "sha256": "715fe1b94ee1109c545adedab955b59eed49ec94bc0a7d55b894cfd0a05ee879"
+  },
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -3.0250000000000004,
+      3.975,
+      0.9749999999999999
+    ],
+    "steps": [
+      122,
+      242,
+      122
+    ],
+    "upper_mm": [
+      0.02499999999999991,
+      10.025,
+      4.025
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "windows": [
+    [
+      0,
+      0,
+      0,
+      61,
+      121,
+      61
+    ],
+    [
+      0,
+      0,
+      61,
+      61,
+      121,
+      122
+    ],
+    [
+      0,
+      121,
+      0,
+      61,
+      242,
+      61
+    ],
+    [
+      0,
+      121,
+      61,
+      61,
+      242,
+      122
+    ],
+    [
+      61,
+      0,
+      0,
+      122,
+      121,
+      61
+    ],
+    [
+      61,
+      0,
+      61,
+      122,
+      121,
+      122
+    ],
+    [
+      61,
+      121,
+      0,
+      122,
+      242,
+      61
+    ],
+    [
+      61,
+      121,
+      61,
+      122,
+      242,
+      122
+    ]
+  ],
+  "source_code": {
+    "path": "genlaw_pipeline/small_partition_material.py",
+    "sha256": "7040d454c9c7a3ce031fe63adf23d76247768b0ee17a5634d2ef502d26fed98e"
+  },
+  "preserved_source": {
+    "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/material-partitioned/material-source.py",
+    "sha256": "7040d454c9c7a3ce031fe63adf23d76247768b0ee17a5634d2ef502d26fed98e"
+  },
+  "target_CAD_used": false,
+  "limits_increased": false
+}

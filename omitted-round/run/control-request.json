@@ -1,0 +1,36 @@
+{
+  "schema": "genlaw.round-omitted-control.v1",
+  "baseline_preparation": {
+    "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/preparation-result.json",
+    "sha256": "a2c69f60466a72fdbbb36d0e2a2cb84ab1bca9d3225e63036bf9518c27eb90b3"
+  },
+  "baseline_CAM": {
+    "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/cam-result.json",
+    "sha256": "d041d268a27299e8042dad576b39a056fcd1bfa3bea4b028bba7e5c3ee0958c2"
+  },
+  "baseline_pass": {
+    "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/partitioned-case-result.json",
+    "sha256": "f8dc728aae997b9f3fd21d0e12b949e12ec997ab7d720a8f7113badb80b2c1ff"
+  },
+  "original_NC": {
+    "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/program.nc",
+    "sha256": "fd96a1b3c5e945a399625e7472c11762a80298b878537e3101549502da518384"
+  },
+  "control_NC": {
+    "path": "docs/checkpoints/2026-10-31/round-surface-01/geometry-controls-01/omitted-round/program.nc",
+    "sha256": "9953a5952e6bbbcb1c6c969d7b0a054a1157a4c8691511711cab7f782683f6e9"
+  },
+  "control_project": {
+    "path": "docs/checkpoints/2026-10-31/round-surface-01/geometry-controls-01/omitted-round/simulation.camotics",
+    "sha256": "3fa8137cffa886c6a0931641c152c307980de1bb356a87ecc68a143f425bd892"
+  },
+  "normal_NC_guard_rejection": "Require one native ball tool and one Surface operation",
+  "mutation": "Remove the entire framed RoundSurface operation; keep all other native NC lines.",
+  "executed_for_negative_geometry_test_only": true,
+  "normal_execution_allowed": false,
+  "target_CAD_passed_to_simulator": false,
+  "source_code": {
+    "path": "tools/run_round_geometry_controls.py",
+    "sha256": "d89c442ec94aa867f5a816536fca0e09bae206390a8b27071b7f5cc0f6a1188b"
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "status": "passed",
+  "normal_inputs": [
+    {
+      "id": "baseline",
+      "receipt": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/baseline-admission.json",
+        "sha256": "ec3b89ba8022fde8cd84d686516d4f04c36d48f31d4c54258f2223ccaaf3ad4a"
+      },
+      "executed_preparation": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/preparation-result.json",
+        "sha256": "a2c69f60466a72fdbbb36d0e2a2cb84ab1bca9d3225e63036bf9518c27eb90b3"
+      },
+      "plans_identical": true
+    },
+    {
+      "id": "larger-radius",
+      "receipt": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/larger-radius-admission.json",
+        "sha256": "6a9cd0c8d368693363736bf98a8166dc270cf339ce556253554edd5f0d2e2b7d"
+      },
+      "executed_preparation": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/larger-radius/preparation-result.json",
+        "sha256": "8b5eaa49c5c5c287ffe57386db96f1fcb1e5dc0e4cbf5aa3f0b194b4a07a9477"
+      },
+      "plans_identical": true
+    },
+    {
+      "id": "longer",
+      "receipt": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/longer-admission.json",
+        "sha256": "3592e728bd87a84eeacf0c5f665b68ae6420e235dbb10564e88bdce58a9c7fb0"
+      },
+      "executed_preparation": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/longer/preparation-result.json",
+        "sha256": "dab3d0f5d760311b2664750f777317c9938384398286f2e08160595522d53aad"
+      },
+      "plans_identical": true
+    },
+    {
+      "id": "shifted-datum",
+      "receipt": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/shifted-datum-admission.json",
+        "sha256": "b209ff7e8573f5fc02747ec79ca475ba017682a88501fb629524e7131850ee0f"
+      },
+      "executed_preparation": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/preparation-result.json",
+        "sha256": "1edfa2cd54ea3ab09bf420c73ccb2cd4946f6d20b249ff060271bff221fd7b9a"
+      },
+      "plans_identical": true
+    }
+  ],
+  "rejections": [
+    {
+      "id": "wrong_stock",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Paper plan, original CAD and declared rounds disagree",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/wrong_stock.json",
+        "sha256": "1cac8c3853fb2ac3d83d3a96b99769b898a1ceafc1aa3daa550fb3870614b144"
+      }
+    },
+    {
+      "id": "wrong_radius",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Paper plan, original CAD and declared rounds disagree",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/wrong_radius.json",
+        "sha256": "91828f68e07d114f4a1a4f32c34af8bd91168f3d56dc207ee4a519ac6657ce65"
+      }
+    },
+    {
+      "id": "missing_round",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Paper plan, original CAD and declared rounds disagree",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/missing_round.json",
+        "sha256": "12a9d7dd70cfc8477b3060d205c9fa5fda91e798152bb0bfa97d2cee7de5ed8a"
+      }
+    },
+    {
+      "id": "flat_tool",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Require the declared fixed-axis ball-end Surface operation",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/flat_tool.json",
+        "sha256": "190588bf1532c2c83d8259060e9c9a0b336cd63c9b44fb62ae24717cec05b5b1"
+      }
+    },
+    {
+      "id": "oversize_ball",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Require the declared fixed-axis ball-end Surface operation",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/oversize_ball.json",
+        "sha256": "1701ac34f432a2af299b8bb3e1866700a0fd610434f529cd7134abcab57979a4"
+      }
+    },
+    {
+      "id": "short_cutting_length",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Require the declared fixed-axis ball-end Surface operation",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/short_cutting_length.json",
+        "sha256": "d8ae2d1a8e4b35e335453c0e0d7e3176537219ccce4bcf0ee711b0084536c10d"
+      }
+    },
+    {
+      "id": "foreign_tool_number",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Require the declared fixed-axis ball-end Surface operation",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/foreign_tool_number.json",
+        "sha256": "f1cc91898e6f2487300168f012a3c045fac21b4c0302780ddf0639c6d0c1d10f"
+      }
+    },
+    {
+      "id": "not_center_cutting",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Require the declared fixed-axis ball-end Surface operation",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/not_center_cutting.json",
+        "sha256": "3402d2a8b56ced9a4fe32fc4a9d3ccbadf775ba76436741b6ce0eb2f31558790"
+      }
+    },
+    {
+      "id": "rotary_scan",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Require the declared fixed-axis ball-end Surface operation",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/rotary_scan.json",
+        "sha256": "95020a091082e412ae6e685a2bbf4e0dc58f174a20d5a04d93db8027a241c346"
+      }
+    },
+    {
+      "id": "single_pass",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Require the declared fixed-axis ball-end Surface operation",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/single_pass.json",
+        "sha256": "8817f61d9e24a7492a12a06178bf05464aa44112b433151071a0a97807712944"
+      }
+    },
+    {
+      "id": "wrong_start",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Unsupported explicit cutting envelope",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/wrong_start.json",
+        "sha256": "f76a1a6dcdb4f6950aa0cd91b9911a6bf6fb9b396a8a33e8246087c9b2a37dab"
+      }
+    },
+    {
+      "id": "wrong_end",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Unsupported explicit cutting envelope",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/wrong_end.json",
+        "sha256": "a668f25feff933a9370db069f4dd8a4f9028002b535ede277ab417e14e9183d1"
+      }
+    },
+    {
+      "id": "insufficient_boundary_parameter",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Unsupported explicit cutting envelope",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/insufficient_boundary_parameter.json",
+        "sha256": "40291cf12a5efb6a3f532bed18021a6e4bdf6553c22c5c1d761efc3761628914"
+      }
+    },
+    {
+      "id": "unsafe_clearance",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Unsupported explicit cutting envelope",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/unsafe_clearance.json",
+        "sha256": "a82e05ec12ad9031fe58a6dd630a42af451539730c92e9f3fa691497289944ab"
+      }
+    },
+    {
+      "id": "zero_stepdown",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Positive finite CAM parameter required: step_down_mm",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/zero_stepdown.json",
+        "sha256": "fc6f51b4b6149e01a3f37f26baf72fe4796111299fdfb3a67f287323d11012fd"
+      }
+    },
+    {
+      "id": "excess_stepover",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Unsupported explicit cutting envelope",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/excess_stepover.json",
+        "sha256": "2502863455900ab0ce8f0701f481f3b3fb93d35416ef354a147b1c89171e5423"
+      }
+    },
+    {
+      "id": "zero_sampling",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Positive finite CAM parameter required: sample_interval_mm",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/zero_sampling.json",
+        "sha256": "cc29d756e4888063c7bcfed267da47c7608ab939be369e5d8efaec895ba86d04"
+      }
+    },
+    {
+      "id": "coarser_simulation",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Unsupported explicit cutting envelope",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/coarser_simulation.json",
+        "sha256": "d17022d2dba0c6dadb3f9d9c1b9d712f8f1a95b61acef3475fb15b84c3bcb56b"
+      }
+    },
+    {
+      "id": "zero_spindle",
+      "level": "resource_and_geometry_preparation",
+      "reason": "Positive finite CAM parameter required: spindle_rpm",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/zero_spindle.json",
+        "sha256": "03c1218e9dfb030f517de85b8e91ded21c3bc190b9e3e8f966b52cde8902cd9d"
+      }
+    },
+    {
+      "id": "unlisted_input",
+      "level": "reviewed_archive_admission",
+      "reason": "Input is not an unchanged member of the reviewed archive",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/unlisted_input.json",
+        "sha256": "47d18c6cd031d027553089d4cfb0cb0b65525e55df26f0b5bf09eacb72f52e09"
+      }
+    },
+    {
+      "id": "foreign_paper",
+      "level": "reviewed_archive_admission",
+      "reason": "Input is not an unchanged member of the reviewed archive",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/foreign_paper.json",
+        "sha256": "b95ca3c8ea42fe7de3a1d71e84f7142eac41b13a943a7d097ee984e6830371b2"
+      }
+    },
+    {
+      "id": "altered_feed",
+      "level": "reviewed_archive_admission",
+      "reason": "Input is not an unchanged member of the reviewed archive",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/input-check-01/altered_feed.json",
+        "sha256": "510b7b447e993857a820455adffc6c09eb72e4a76f2d57c495a0f2610da5e4d1"
+      }
+    },
+    {
+      "id": "changed_archive",
+      "level": "reviewed_archive_admission",
+      "reason": "Window source binding changed: validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/manifest.json"
+    }
+  ],
+  "new_FreeCAD_or_material_executions": 0,
+  "source_code": [
+    {
+      "path": "tools/check_round_inputs.py",
+      "sha256": "f38628ff47c747358f9638b9bd542125e42a52a9b680d745b5c7d24c1ca5cbf5"
+    },
+    {
+      "path": "genlaw_pipeline/round_archive.py",
+      "sha256": "9f59d1e7fcb4d585d94609b3199ff80bddbb64c80a72f95ca2d02f0ce457f4ab"
+    },
+    {
+      "path": "genlaw_pipeline/round_surface_preparation.py",
+      "sha256": "3dde2283002d0b952db016abd9ce9173e71a1e684f3c8af61a2b19ef3b348a97"
+    }
+  ],
+  "arbitrary_production_PDF_parsing_qualified": false,
+  "manufacturing_approval": false
+}

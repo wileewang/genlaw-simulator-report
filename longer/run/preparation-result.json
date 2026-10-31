@@ -1,0 +1,222 @@
+{
+  "schema": "genlaw.round-surface-execution-plan.v1",
+  "status": "prepared_for_native_probe",
+  "input": {
+    "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/input.json",
+    "sha256": "77681327071f6697f4a98b4faf030523c1bec30454d22d8ad8dd8ae5e61fa457"
+  },
+  "input_bindings": {
+    "CAD": {
+      "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/target.brep",
+      "sha256": "ec055c4bd087c54ef78db1b1117885c327320f49c708dd390dd608a2230097d9"
+    },
+    "CAD_reference": {
+      "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/reference.json",
+      "sha256": "4fbf62adb51e4f86d5e4d6206f7e7f443c17224ec679dfcd7e4e47a501ce9548"
+    },
+    "process_plan": {
+      "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/process-plan.json",
+      "sha256": "bbf888ae357293e4cc8d6eb851a5afd41fa2dc27ad4ea987925cd455fe0cd089"
+    },
+    "paper_card": {
+      "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/process-card.pdf",
+      "sha256": "d7392effea8f45303c7d1e5f37290a603518cefc92b4a56ec57a9acd0bfece9f"
+    }
+  },
+  "specification": {
+    "id": "longer",
+    "name": "延长直线段",
+    "archive_revision": "r2",
+    "stock": {
+      "min": [
+        0,
+        0,
+        -3
+      ],
+      "max": [
+        4,
+        6,
+        0
+      ]
+    },
+    "radius_mm": 2,
+    "round_edges": [
+      "top_x_parallel_ymin",
+      "top_x_parallel_ymax"
+    ],
+    "resolution_mm": 0.025,
+    "tool": {
+      "id": "T1",
+      "kind": "ballnose",
+      "diameter_mm": 1.0,
+      "cutting_length_mm": 5.0,
+      "length_mm": 20.0,
+      "center_cutting": true
+    },
+    "cam": {
+      "native_operation": "Surface",
+      "scan_type": "Planar",
+      "pattern": "Line",
+      "cut_mode": "Climb",
+      "layer_mode": "Multi-pass",
+      "step_down_mm": 0.25,
+      "stepover_percent": 10.0,
+      "sample_interval_mm": 0.05,
+      "linear_deflection_mm": 0.001,
+      "geometry_tolerance_mm": 0.005,
+      "boundary_adjustment_mm": 1.05,
+      "final_depth_mm": -3,
+      "start_depth_mm": 0,
+      "safe_height_mm": 2,
+      "clearance_height_mm": 3,
+      "spindle_rpm": 3000,
+      "feed_mm_min": 120,
+      "plunge_mm_min": 60
+    },
+    "software_acceptance": {
+      "iou_percent_min": 99.0,
+      "bounds_deviation_mm_max": 0.025,
+      "volume_deviation_mm3_max": 0.15,
+      "profile_deviation_mm_max": 0.15,
+      "radius_deviation_mm_max": 0.15,
+      "numerical_guard_mm": 0.05,
+      "quadrature_orders": [
+        4,
+        8
+      ],
+      "quadrature_iou_difference_max": 1e-06,
+      "target_integral_error_mm3_max": 1e-05,
+      "mesh_integral_error_mm3_max": 0.0001,
+      "scope": "software_regression",
+      "manufacturing_tolerance_approved": false
+    }
+  },
+  "stock": {
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -3
+      ],
+      "max": [
+        4,
+        6,
+        0
+      ]
+    }
+  },
+  "tool": {
+    "id": "T1",
+    "kind": "ballnose",
+    "diameter_mm": 1.0,
+    "cutting_length_mm": 5.0,
+    "length_mm": 20.0,
+    "center_cutting": true
+  },
+  "parameters": {
+    "native_operation": "Surface",
+    "scan_type": "Planar",
+    "pattern": "Line",
+    "cut_mode": "Climb",
+    "layer_mode": "Multi-pass",
+    "step_down_mm": 0.25,
+    "stepover_percent": 10.0,
+    "sample_interval_mm": 0.05,
+    "linear_deflection_mm": 0.001,
+    "geometry_tolerance_mm": 0.005,
+    "boundary_adjustment_mm": 1.05,
+    "final_depth_mm": -3,
+    "start_depth_mm": 0,
+    "safe_height_mm": 2,
+    "clearance_height_mm": 3,
+    "spindle_rpm": 3000,
+    "feed_mm_min": 120,
+    "plunge_mm_min": 60
+  },
+  "setup": {
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3
+    }
+  },
+  "simulation_project": {
+    "units": "metric",
+    "resolution-mode": "manual",
+    "resolution": 0.025,
+    "tools": {
+      "1": {
+        "units": "metric",
+        "shape": "ballnose",
+        "diameter": 1.0,
+        "length": 4.5
+      }
+    },
+    "workpiece": {
+      "automatic": false,
+      "margin": 0,
+      "bounds": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          4,
+          6,
+          0
+        ]
+      }
+    },
+    "files": [
+      "program.nc"
+    ]
+  },
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -0.02499999999999995,
+      -0.025000000000000393,
+      -3.0250000000000004
+    ],
+    "steps": [
+      162,
+      242,
+      122
+    ],
+    "upper_mm": [
+      4.0249999999999995,
+      6.025,
+      0.02499999999999991
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "window": [
+    0,
+    0,
+    0,
+    162,
+    242,
+    122
+  ],
+  "budget": {
+    "allowed": true,
+    "cell_count": 4782888,
+    "xy_sample_points": 39609,
+    "maximum_cells_per_window": 5000000,
+    "maximum_xy_samples": 100000,
+    "original_stock_unchanged": true,
+    "nc_unchanged": true
+  },
+  "qualified_for_production": false,
+  "whole_real_card_complete": false
+}

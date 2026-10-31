@@ -1,0 +1,36 @@
+{
+  "schema": "genlaw.round-process-card.v1",
+  "id": "ROUND-shifted-datum-r2",
+  "cad": {
+    "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/target.brep",
+    "sha256": "44068b7d19724d504f2b0bcde89f3761b161c0058e564c8cf3afaed5c17d8398"
+  },
+  "operations": [
+    {
+      "id": "OP05",
+      "type": "incoming_inspection"
+    },
+    {
+      "id": "OP10",
+      "type": "setup",
+      "frame": "original_CAD",
+      "rotary_motion": false
+    },
+    {
+      "id": "OP20",
+      "type": "round_milling",
+      "radius_mm": 2,
+      "edges": [
+        "top_x_parallel_ymin",
+        "top_x_parallel_ymax"
+      ],
+      "tool_id": "T1"
+    },
+    {
+      "id": "OP30",
+      "type": "geometry_inspection"
+    }
+  ],
+  "manufacturing_approval": false,
+  "whole_real_card_complete": false
+}

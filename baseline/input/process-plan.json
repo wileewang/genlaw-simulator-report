@@ -1,0 +1,36 @@
+{
+  "schema": "genlaw.round-process-card.v1",
+  "id": "ROUND-baseline-r2",
+  "cad": {
+    "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/baseline/target.brep",
+    "sha256": "ef0d6c2bdacd3711ca5834489e5d3242aba7e90f47d4208553313b377c3ab9f1"
+  },
+  "operations": [
+    {
+      "id": "OP05",
+      "type": "incoming_inspection"
+    },
+    {
+      "id": "OP10",
+      "type": "setup",
+      "frame": "original_CAD",
+      "rotary_motion": false
+    },
+    {
+      "id": "OP20",
+      "type": "round_milling",
+      "radius_mm": 2,
+      "edges": [
+        "top_x_parallel_ymin",
+        "top_x_parallel_ymax"
+      ],
+      "tool_id": "T1"
+    },
+    {
+      "id": "OP30",
+      "type": "geometry_inspection"
+    }
+  ],
+  "manufacturing_approval": false,
+  "whole_real_card_complete": false
+}

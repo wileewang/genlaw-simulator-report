@@ -1,0 +1,220 @@
+{
+  "schema": "genlaw.round-surface-review-summary.v1",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "name": "两条 R2 圆角",
+      "case_kind": "normal",
+      "iou_percent": 99.82597809894287,
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          3,
+          6,
+          0
+        ]
+      },
+      "radius_mm": 2,
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "mesh": "baseline/frame-01.mesh",
+          "label": "加工中间状态 1",
+          "time_seconds": 1716.235769,
+          "kind": "native_time_cutoff",
+          "resolution_mm": 0.025
+        },
+        {
+          "mesh": "baseline/frame-02.mesh",
+          "label": "加工中间状态 2",
+          "time_seconds": 4004.550127,
+          "kind": "native_time_cutoff",
+          "resolution_mm": 0.025
+        }
+      ],
+      "profile_pass": true,
+      "radius_pass": true,
+      "retained_planes_pass": true,
+      "maximum_profile_deviation_mm": 0.025590554039461106,
+      "maximum_radius_deviation_mm": 0.019408173088708125,
+      "normal_NC_guard_rejected": false
+    },
+    {
+      "id": "larger-radius",
+      "name": "两条 R2.2 圆角",
+      "case_kind": "normal",
+      "iou_percent": 99.80531053736298,
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          3,
+          6,
+          0
+        ]
+      },
+      "radius_mm": 2.2,
+      "resolution_mm": 0.025,
+      "frames": [],
+      "profile_pass": true,
+      "radius_pass": true,
+      "retained_planes_pass": true,
+      "maximum_profile_deviation_mm": 0.02283057047009543,
+      "maximum_radius_deviation_mm": 0.02135866206641035,
+      "normal_NC_guard_rejected": false
+    },
+    {
+      "id": "longer",
+      "name": "延长直线段",
+      "case_kind": "normal",
+      "iou_percent": 99.83425818591347,
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          4,
+          6,
+          0
+        ]
+      },
+      "radius_mm": 2,
+      "resolution_mm": 0.025,
+      "frames": [],
+      "profile_pass": true,
+      "radius_pass": true,
+      "retained_planes_pass": true,
+      "maximum_profile_deviation_mm": 0.025598437356339057,
+      "maximum_radius_deviation_mm": 0.019408173088708125,
+      "normal_NC_guard_rejected": false
+    },
+    {
+      "id": "shifted-datum",
+      "name": "非零 CAD 坐标",
+      "case_kind": "normal",
+      "iou_percent": 99.82802145358397,
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          -3,
+          4,
+          1
+        ],
+        "max": [
+          0,
+          10,
+          4
+        ]
+      },
+      "radius_mm": 2,
+      "resolution_mm": 0.025,
+      "frames": [],
+      "profile_pass": true,
+      "radius_pass": true,
+      "retained_planes_pass": true,
+      "maximum_profile_deviation_mm": 0.02559054342786431,
+      "maximum_radius_deviation_mm": 0.019408559321628438,
+      "normal_NC_guard_rejected": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "insufficient-boundary",
+      "name": "刀路覆盖不足",
+      "case_kind": "negative_control",
+      "iou_percent": 98.7818504029923,
+      "geometry_pass": false,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          3,
+          6,
+          0
+        ]
+      },
+      "radius_mm": 2,
+      "resolution_mm": 0.025,
+      "frames": [],
+      "profile_pass": false,
+      "radius_pass": false,
+      "retained_planes_pass": true,
+      "maximum_profile_deviation_mm": 0.2680311336636336,
+      "maximum_radius_deviation_mm": 0.2361386874617355,
+      "normal_NC_guard_rejected": false
+    },
+    {
+      "id": "omitted-round",
+      "name": "漏加工圆角",
+      "case_kind": "negative_control",
+      "iou_percent": 90.44445854307848,
+      "geometry_pass": false,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          3,
+          6,
+          0
+        ]
+      },
+      "radius_mm": 2,
+      "resolution_mm": 0.025,
+      "frames": [],
+      "profile_pass": false,
+      "radius_pass": false,
+      "retained_planes_pass": true,
+      "maximum_profile_deviation_mm": 1.3755979501601603,
+      "maximum_radius_deviation_mm": 0.7586937143429067,
+      "normal_NC_guard_rejected": true
+    }
+  ],
+  "qualified_scope": "Two X-parallel upper exterior rounds on four synthetic box coupons",
+  "software_acceptance": {
+    "iou_percent_min": 99.0,
+    "bounds_deviation_mm_max": 0.025,
+    "volume_deviation_mm3_max": 0.15,
+    "profile_deviation_mm_max": 0.15,
+    "radius_deviation_mm_max": 0.15,
+    "numerical_guard_mm": 0.05,
+    "quadrature_orders": [
+      4,
+      8
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-05,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "scope": "software_regression",
+    "manufacturing_tolerance_approved": false
+  },
+  "input_rejections": 23,
+  "feed_and_NC_rejections": 8,
+  "whole_real_card_complete": false,
+  "production_approved": false,
+  "new_machine_models": 0,
+  "new_material_physics": 0
+}

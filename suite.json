@@ -1,0 +1,679 @@
+{
+  "schema": "genlaw.round-surface-suite.v1",
+  "status": "four_normal_two_geometry_controls_qualified",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "specification": {
+        "id": "baseline",
+        "name": "两条 R2 圆角",
+        "archive_revision": "r2",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            3,
+            6,
+            0
+          ]
+        },
+        "radius_mm": 2,
+        "round_edges": [
+          "top_x_parallel_ymin",
+          "top_x_parallel_ymax"
+        ],
+        "resolution_mm": 0.025,
+        "tool": {
+          "id": "T1",
+          "kind": "ballnose",
+          "diameter_mm": 1.0,
+          "cutting_length_mm": 5.0,
+          "length_mm": 20.0,
+          "center_cutting": true
+        },
+        "cam": {
+          "native_operation": "Surface",
+          "scan_type": "Planar",
+          "pattern": "Line",
+          "cut_mode": "Climb",
+          "layer_mode": "Multi-pass",
+          "step_down_mm": 0.25,
+          "stepover_percent": 10.0,
+          "sample_interval_mm": 0.05,
+          "linear_deflection_mm": 0.001,
+          "geometry_tolerance_mm": 0.005,
+          "boundary_adjustment_mm": 1.05,
+          "final_depth_mm": -3,
+          "start_depth_mm": 0,
+          "safe_height_mm": 2,
+          "clearance_height_mm": 3,
+          "spindle_rpm": 3000,
+          "feed_mm_min": 120,
+          "plunge_mm_min": 60
+        },
+        "software_acceptance": {
+          "iou_percent_min": 99.0,
+          "bounds_deviation_mm_max": 0.025,
+          "volume_deviation_mm3_max": 0.15,
+          "profile_deviation_mm_max": 0.15,
+          "radius_deviation_mm_max": 0.15,
+          "numerical_guard_mm": 0.05,
+          "quadrature_orders": [
+            4,
+            8
+          ],
+          "quadrature_iou_difference_max": 1e-06,
+          "target_integral_error_mm3_max": 1e-05,
+          "mesh_integral_error_mm3_max": 0.0001,
+          "scope": "software_regression",
+          "manufacturing_tolerance_approved": false
+        }
+      },
+      "case_result": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/partitioned-case-result.json",
+        "sha256": "f8dc728aae997b9f3fd21d0e12b949e12ec997ab7d720a8f7113badb80b2c1ff"
+      },
+      "preparation": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/preparation-result.json",
+        "sha256": "a2c69f60466a72fdbbb36d0e2a2cb84ab1bca9d3225e63036bf9518c27eb90b3"
+      },
+      "CAM": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/cam-result.json",
+        "sha256": "d041d268a27299e8042dad576b39a056fcd1bfa3bea4b028bba7e5c3ee0958c2"
+      },
+      "NC": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/program.nc",
+        "sha256": "fd96a1b3c5e945a399625e7472c11762a80298b878537e3101549502da518384"
+      },
+      "paper_card": {
+        "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/baseline/process-card.pdf",
+        "sha256": "7d00bae52c486306ff106a9f1e512f210851254a326c699246157109fcdaa85c"
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/baseline/target.brep",
+        "sha256": "ef0d6c2bdacd3711ca5834489e5d3242aba7e90f47d4208553313b377c3ab9f1"
+      },
+      "input_admission": {
+        "schema": "genlaw.reviewed-round-archive-admission.v1",
+        "status": "admitted",
+        "reviewed_archive": {
+          "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/manifest.json",
+          "sha256": "e91dfaa49a7bdb96906afccad31f92004d1e5f0c0fc6aa955956c77fbd4eecbe"
+        },
+        "input": {
+          "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/baseline/input.json",
+          "sha256": "47d18c6cd031d027553089d4cfb0cb0b65525e55df26f0b5bf09eacb72f52e09"
+        },
+        "input_artifacts": {
+          "CAD": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/baseline/target.brep",
+            "sha256": "ef0d6c2bdacd3711ca5834489e5d3242aba7e90f47d4208553313b377c3ab9f1"
+          },
+          "CAD_reference": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/baseline/reference.json",
+            "sha256": "9354ea7169dc95d850fcad046d5a71968d537b2f35f31467629a5f65e1776db1"
+          },
+          "process_plan": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/baseline/process-plan.json",
+            "sha256": "f524a91eedc675ebf21fb567894f06a0ec0f8bf16088adcc4f3150f4ed6b13d3"
+          },
+          "paper_card": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/baseline/process-card.pdf",
+            "sha256": "7d00bae52c486306ff106a9f1e512f210851254a326c699246157109fcdaa85c"
+          }
+        },
+        "source_code": {
+          "path": "genlaw_pipeline/round_archive.py",
+          "sha256": "9f59d1e7fcb4d585d94609b3199ff80bddbb64c80a72f95ca2d02f0ce457f4ab"
+        },
+        "arbitrary_PDF_semantics_parsed": false,
+        "input_kind": "developer-authored synthetic paper card with structured execution attachment",
+        "manufacturing_approval": false
+      },
+      "metrics": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/measurement-partitioned/metrics.json",
+        "sha256": "aa543ab6f54711b3f6a661840e10138ff342ff471b43a7fb55ff0342a6b2c1ef"
+      },
+      "inspection": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/measurement-partitioned/inspection.json",
+        "sha256": "6afcdbf33ac08133f6ad60533329522099ba5ae3bbee798dfdb8748d9983012f"
+      },
+      "material": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/material-partitioned/result.json",
+        "sha256": "38877c703c8ff12ac6c90ffd9d213af43e9f88274554c90c9bf08049011ab13c"
+      },
+      "mesh": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/baseline/material-partitioned/surface.stl",
+        "sha256": "41eee82a6a50d9131d6addb72fc573a2bcd5025f11f67d584678cd94d7f37588"
+      },
+      "iou_percent": 99.82597809894287,
+      "geometry_pass": true,
+      "maximum_profile_deviation_mm": 0.025590554039461106,
+      "maximum_radius_deviation_mm": 0.019408173088708125,
+      "volume_deviation_mm3": 0.05939838153467747,
+      "resolution_mm": 0.025,
+      "native_windows": 8
+    },
+    {
+      "id": "larger-radius",
+      "specification": {
+        "id": "larger-radius",
+        "name": "两条 R2.2 圆角",
+        "archive_revision": "r2",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            3,
+            6,
+            0
+          ]
+        },
+        "radius_mm": 2.2,
+        "round_edges": [
+          "top_x_parallel_ymin",
+          "top_x_parallel_ymax"
+        ],
+        "resolution_mm": 0.025,
+        "tool": {
+          "id": "T1",
+          "kind": "ballnose",
+          "diameter_mm": 1.0,
+          "cutting_length_mm": 5.0,
+          "length_mm": 20.0,
+          "center_cutting": true
+        },
+        "cam": {
+          "native_operation": "Surface",
+          "scan_type": "Planar",
+          "pattern": "Line",
+          "cut_mode": "Climb",
+          "layer_mode": "Multi-pass",
+          "step_down_mm": 0.25,
+          "stepover_percent": 10.0,
+          "sample_interval_mm": 0.05,
+          "linear_deflection_mm": 0.001,
+          "geometry_tolerance_mm": 0.005,
+          "boundary_adjustment_mm": 1.05,
+          "final_depth_mm": -3,
+          "start_depth_mm": 0,
+          "safe_height_mm": 2,
+          "clearance_height_mm": 3,
+          "spindle_rpm": 3000,
+          "feed_mm_min": 120,
+          "plunge_mm_min": 60
+        },
+        "software_acceptance": {
+          "iou_percent_min": 99.0,
+          "bounds_deviation_mm_max": 0.025,
+          "volume_deviation_mm3_max": 0.15,
+          "profile_deviation_mm_max": 0.15,
+          "radius_deviation_mm_max": 0.15,
+          "numerical_guard_mm": 0.05,
+          "quadrature_orders": [
+            4,
+            8
+          ],
+          "quadrature_iou_difference_max": 1e-06,
+          "target_integral_error_mm3_max": 1e-05,
+          "mesh_integral_error_mm3_max": 0.0001,
+          "scope": "software_regression",
+          "manufacturing_tolerance_approved": false
+        }
+      },
+      "case_result": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/larger-radius/partitioned-case-result.json",
+        "sha256": "109de8e4b915cda2070e0e337425d0ca2a9e40c6ae1c6fad7d6e061886bb1294"
+      },
+      "preparation": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/larger-radius/preparation-result.json",
+        "sha256": "8b5eaa49c5c5c287ffe57386db96f1fcb1e5dc0e4cbf5aa3f0b194b4a07a9477"
+      },
+      "CAM": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/larger-radius/cam-result.json",
+        "sha256": "c6bfc343f3b2f106a007c8da514b19a0ce6d1f9090cfc6dc9a01135a6696de28"
+      },
+      "NC": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/larger-radius/program.nc",
+        "sha256": "e0f3598107384c7d9d7b741ac31fffa3452186b0bfe3a6ce9781c066200131ef"
+      },
+      "paper_card": {
+        "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/process-card.pdf",
+        "sha256": "97c2e9c52f29ea4efd58228fb4a3516461d530f995516550ca3c1995e6ce1aa7"
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/target.brep",
+        "sha256": "0d27ffe968f5c61a512bd815bde228cf3623b2b7603bce3530e08efffeca82e0"
+      },
+      "input_admission": {
+        "schema": "genlaw.reviewed-round-archive-admission.v1",
+        "status": "admitted",
+        "reviewed_archive": {
+          "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/manifest.json",
+          "sha256": "e91dfaa49a7bdb96906afccad31f92004d1e5f0c0fc6aa955956c77fbd4eecbe"
+        },
+        "input": {
+          "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/input.json",
+          "sha256": "93832c1fff92bedf44a279b0d066adb54c1cc2b6a14b233501c9483862362467"
+        },
+        "input_artifacts": {
+          "CAD": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/target.brep",
+            "sha256": "0d27ffe968f5c61a512bd815bde228cf3623b2b7603bce3530e08efffeca82e0"
+          },
+          "CAD_reference": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/reference.json",
+            "sha256": "27fc8109572c5db0da6c1b2725874c2fd6083187fd18a16614ae09c609b077b8"
+          },
+          "process_plan": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/process-plan.json",
+            "sha256": "b645eb8e127c0c5d5d3ed8c87dfb1e77d181eb021a6cfed99a658613dcea967e"
+          },
+          "paper_card": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/process-card.pdf",
+            "sha256": "97c2e9c52f29ea4efd58228fb4a3516461d530f995516550ca3c1995e6ce1aa7"
+          }
+        },
+        "source_code": {
+          "path": "genlaw_pipeline/round_archive.py",
+          "sha256": "9f59d1e7fcb4d585d94609b3199ff80bddbb64c80a72f95ca2d02f0ce457f4ab"
+        },
+        "arbitrary_PDF_semantics_parsed": false,
+        "input_kind": "developer-authored synthetic paper card with structured execution attachment",
+        "manufacturing_approval": false
+      },
+      "metrics": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/larger-radius/measurement-partitioned/metrics.json",
+        "sha256": "3cb4d62373e77f9a7bdab33182aaaed070111d0c75566056b0f761925bce5896"
+      },
+      "inspection": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/larger-radius/measurement-partitioned/inspection.json",
+        "sha256": "8cd793e6408e1d3a299555a4403c1305ae99c1cafeef162e3e06ff26f1e5b8e7"
+      },
+      "material": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/larger-radius/material-partitioned/result.json",
+        "sha256": "3b827dfd015f9632de901b24f449584f0ef6e233955c759bb6e7b2affd441202"
+      },
+      "mesh": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/larger-radius/material-partitioned/surface.stl",
+        "sha256": "3648c6197768ca61e5b0889aba96cbcf60a066d22f9fa92222b3dca6b1a0c71c"
+      },
+      "iou_percent": 99.80531053736298,
+      "geometry_pass": true,
+      "maximum_profile_deviation_mm": 0.02283057047009543,
+      "maximum_radius_deviation_mm": 0.02135866206641035,
+      "volume_deviation_mm3": 0.06909698773363715,
+      "resolution_mm": 0.025,
+      "native_windows": 8
+    },
+    {
+      "id": "longer",
+      "specification": {
+        "id": "longer",
+        "name": "延长直线段",
+        "archive_revision": "r2",
+        "stock": {
+          "min": [
+            0,
+            0,
+            -3
+          ],
+          "max": [
+            4,
+            6,
+            0
+          ]
+        },
+        "radius_mm": 2,
+        "round_edges": [
+          "top_x_parallel_ymin",
+          "top_x_parallel_ymax"
+        ],
+        "resolution_mm": 0.025,
+        "tool": {
+          "id": "T1",
+          "kind": "ballnose",
+          "diameter_mm": 1.0,
+          "cutting_length_mm": 5.0,
+          "length_mm": 20.0,
+          "center_cutting": true
+        },
+        "cam": {
+          "native_operation": "Surface",
+          "scan_type": "Planar",
+          "pattern": "Line",
+          "cut_mode": "Climb",
+          "layer_mode": "Multi-pass",
+          "step_down_mm": 0.25,
+          "stepover_percent": 10.0,
+          "sample_interval_mm": 0.05,
+          "linear_deflection_mm": 0.001,
+          "geometry_tolerance_mm": 0.005,
+          "boundary_adjustment_mm": 1.05,
+          "final_depth_mm": -3,
+          "start_depth_mm": 0,
+          "safe_height_mm": 2,
+          "clearance_height_mm": 3,
+          "spindle_rpm": 3000,
+          "feed_mm_min": 120,
+          "plunge_mm_min": 60
+        },
+        "software_acceptance": {
+          "iou_percent_min": 99.0,
+          "bounds_deviation_mm_max": 0.025,
+          "volume_deviation_mm3_max": 0.15,
+          "profile_deviation_mm_max": 0.15,
+          "radius_deviation_mm_max": 0.15,
+          "numerical_guard_mm": 0.05,
+          "quadrature_orders": [
+            4,
+            8
+          ],
+          "quadrature_iou_difference_max": 1e-06,
+          "target_integral_error_mm3_max": 1e-05,
+          "mesh_integral_error_mm3_max": 0.0001,
+          "scope": "software_regression",
+          "manufacturing_tolerance_approved": false
+        }
+      },
+      "case_result": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/longer/partitioned-case-result.json",
+        "sha256": "3c34291489bf2efb7bacf6baf13a417e34102ecf77ad1c5c94f90c81b7cb28ed"
+      },
+      "preparation": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/longer/preparation-result.json",
+        "sha256": "dab3d0f5d760311b2664750f777317c9938384398286f2e08160595522d53aad"
+      },
+      "CAM": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/longer/cam-result.json",
+        "sha256": "1fc8ad250b673e3de43456636d6ceee8c6313707562827d9417e912bd9f6e911"
+      },
+      "NC": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/longer/program.nc",
+        "sha256": "c0f4f834647e0aeee8ef843f63f9f71a1d378673db0bcdfdecb682a41c08b177"
+      },
+      "paper_card": {
+        "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/process-card.pdf",
+        "sha256": "d7392effea8f45303c7d1e5f37290a603518cefc92b4a56ec57a9acd0bfece9f"
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/target.brep",
+        "sha256": "ec055c4bd087c54ef78db1b1117885c327320f49c708dd390dd608a2230097d9"
+      },
+      "input_admission": {
+        "schema": "genlaw.reviewed-round-archive-admission.v1",
+        "status": "admitted",
+        "reviewed_archive": {
+          "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/manifest.json",
+          "sha256": "e91dfaa49a7bdb96906afccad31f92004d1e5f0c0fc6aa955956c77fbd4eecbe"
+        },
+        "input": {
+          "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/input.json",
+          "sha256": "77681327071f6697f4a98b4faf030523c1bec30454d22d8ad8dd8ae5e61fa457"
+        },
+        "input_artifacts": {
+          "CAD": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/target.brep",
+            "sha256": "ec055c4bd087c54ef78db1b1117885c327320f49c708dd390dd608a2230097d9"
+          },
+          "CAD_reference": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/reference.json",
+            "sha256": "4fbf62adb51e4f86d5e4d6206f7e7f443c17224ec679dfcd7e4e47a501ce9548"
+          },
+          "process_plan": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/process-plan.json",
+            "sha256": "bbf888ae357293e4cc8d6eb851a5afd41fa2dc27ad4ea987925cd455fe0cd089"
+          },
+          "paper_card": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/longer/process-card.pdf",
+            "sha256": "d7392effea8f45303c7d1e5f37290a603518cefc92b4a56ec57a9acd0bfece9f"
+          }
+        },
+        "source_code": {
+          "path": "genlaw_pipeline/round_archive.py",
+          "sha256": "9f59d1e7fcb4d585d94609b3199ff80bddbb64c80a72f95ca2d02f0ce457f4ab"
+        },
+        "arbitrary_PDF_semantics_parsed": false,
+        "input_kind": "developer-authored synthetic paper card with structured execution attachment",
+        "manufacturing_approval": false
+      },
+      "metrics": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/longer/measurement-partitioned/metrics.json",
+        "sha256": "896a47dcee1a918e23d53174122db3a673c056f3f193568c247cc080427314d3"
+      },
+      "inspection": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/longer/measurement-partitioned/inspection.json",
+        "sha256": "e781e57430a65b06dffa000eccd8336d902c105dc2c3fc2ec1245c5101fcac79"
+      },
+      "material": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/longer/material-partitioned/result.json",
+        "sha256": "f23c462bf1e5cd96fb822b240c1abc672cc4b3e2920e5b8efdaf96872abb23b5"
+      },
+      "mesh": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/longer/material-partitioned/surface.stl",
+        "sha256": "4803566ec8c27d5b4b349506fab68c3237767d002736ec1e54637e19b02e50f5"
+      },
+      "iou_percent": 99.83425818591347,
+      "geometry_pass": true,
+      "maximum_profile_deviation_mm": 0.025598437356339057,
+      "maximum_radius_deviation_mm": 0.019408173088708125,
+      "volume_deviation_mm3": 0.08772353838597269,
+      "resolution_mm": 0.025,
+      "native_windows": 8
+    },
+    {
+      "id": "shifted-datum",
+      "specification": {
+        "id": "shifted-datum",
+        "name": "非零 CAD 坐标",
+        "archive_revision": "r2",
+        "stock": {
+          "min": [
+            -3,
+            4,
+            1
+          ],
+          "max": [
+            0,
+            10,
+            4
+          ]
+        },
+        "radius_mm": 2,
+        "round_edges": [
+          "top_x_parallel_ymin",
+          "top_x_parallel_ymax"
+        ],
+        "resolution_mm": 0.025,
+        "tool": {
+          "id": "T1",
+          "kind": "ballnose",
+          "diameter_mm": 1.0,
+          "cutting_length_mm": 5.0,
+          "length_mm": 20.0,
+          "center_cutting": true
+        },
+        "cam": {
+          "native_operation": "Surface",
+          "scan_type": "Planar",
+          "pattern": "Line",
+          "cut_mode": "Climb",
+          "layer_mode": "Multi-pass",
+          "step_down_mm": 0.25,
+          "stepover_percent": 10.0,
+          "sample_interval_mm": 0.05,
+          "linear_deflection_mm": 0.001,
+          "geometry_tolerance_mm": 0.005,
+          "boundary_adjustment_mm": 1.05,
+          "final_depth_mm": 1,
+          "start_depth_mm": 4,
+          "safe_height_mm": 6,
+          "clearance_height_mm": 7,
+          "spindle_rpm": 3000,
+          "feed_mm_min": 120,
+          "plunge_mm_min": 60
+        },
+        "software_acceptance": {
+          "iou_percent_min": 99.0,
+          "bounds_deviation_mm_max": 0.025,
+          "volume_deviation_mm3_max": 0.15,
+          "profile_deviation_mm_max": 0.15,
+          "radius_deviation_mm_max": 0.15,
+          "numerical_guard_mm": 0.05,
+          "quadrature_orders": [
+            4,
+            8
+          ],
+          "quadrature_iou_difference_max": 1e-06,
+          "target_integral_error_mm3_max": 1e-05,
+          "mesh_integral_error_mm3_max": 0.0001,
+          "scope": "software_regression",
+          "manufacturing_tolerance_approved": false
+        }
+      },
+      "case_result": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/partitioned-case-result.json",
+        "sha256": "f6abe2bd449e634ed5dd72fd16dc05e005e65858b29d9133fe5201dfd79204ba"
+      },
+      "preparation": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/preparation-result.json",
+        "sha256": "1edfa2cd54ea3ab09bf420c73ccb2cd4946f6d20b249ff060271bff221fd7b9a"
+      },
+      "CAM": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/cam-result.json",
+        "sha256": "f52b15fbef776bccbc582f35f7860325c03587d3fc14ebf787e37c240ea986eb"
+      },
+      "NC": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/program.nc",
+        "sha256": "e8c23fc1868e7baf59e9f53c952501edd76d07c4736b4056280c5da7148b1adf"
+      },
+      "paper_card": {
+        "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/process-card.pdf",
+        "sha256": "38fa093b91afd788552011aba2db7b502b447216171f98b1e117170f32341241"
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/target.brep",
+        "sha256": "44068b7d19724d504f2b0bcde89f3761b161c0058e564c8cf3afaed5c17d8398"
+      },
+      "input_admission": {
+        "schema": "genlaw.reviewed-round-archive-admission.v1",
+        "status": "admitted",
+        "reviewed_archive": {
+          "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/manifest.json",
+          "sha256": "e91dfaa49a7bdb96906afccad31f92004d1e5f0c0fc6aa955956c77fbd4eecbe"
+        },
+        "input": {
+          "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/input.json",
+          "sha256": "7e376d544a71fdbc8728657efc564150ddd0420b6f3374fa6dcecaba8a06a5ed"
+        },
+        "input_artifacts": {
+          "CAD": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/target.brep",
+            "sha256": "44068b7d19724d504f2b0bcde89f3761b161c0058e564c8cf3afaed5c17d8398"
+          },
+          "CAD_reference": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/reference.json",
+            "sha256": "abd66728282d6ba1b6f16c8476bd58d17754f2b060488b8116aeca33bb4d0bd7"
+          },
+          "process_plan": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/process-plan.json",
+            "sha256": "e45aa992ea48a276063d6fb4623c7abcd26248ecd7aff0af2c8be229345132ed"
+          },
+          "paper_card": {
+            "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/process-card.pdf",
+            "sha256": "38fa093b91afd788552011aba2db7b502b447216171f98b1e117170f32341241"
+          }
+        },
+        "source_code": {
+          "path": "genlaw_pipeline/round_archive.py",
+          "sha256": "9f59d1e7fcb4d585d94609b3199ff80bddbb64c80a72f95ca2d02f0ce457f4ab"
+        },
+        "arbitrary_PDF_semantics_parsed": false,
+        "input_kind": "developer-authored synthetic paper card with structured execution attachment",
+        "manufacturing_approval": false
+      },
+      "metrics": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/measurement-partitioned/metrics.json",
+        "sha256": "f433dac6bfc7a5a12ccc786110c6dea17fb36e849d1a2af15b9614c985c2d1e8"
+      },
+      "inspection": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/measurement-partitioned/inspection.json",
+        "sha256": "35232a5dde283d42e15b56934c862d0fe2e050691739e4b6f0674072b6bbfcde"
+      },
+      "material": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/material-partitioned/result.json",
+        "sha256": "c3fd98f7ddc90b35b425edb2d79061e22f8c214e7df29a69315b858725a6c39f"
+      },
+      "mesh": {
+        "path": "validation/runs/S4-ROUND-SURFACE-20261031-r2/shifted-datum/material-partitioned/surface.stl",
+        "sha256": "66c61d30c567d922b7c2bee90a9ac483ca34018e7a4bfbab8caff07b7534a15e"
+      },
+      "iou_percent": 99.82802145358397,
+      "geometry_pass": true,
+      "maximum_profile_deviation_mm": 0.02559054342786431,
+      "maximum_radius_deviation_mm": 0.019408559321628438,
+      "volume_deviation_mm3": 0.060681948477395053,
+      "resolution_mm": 0.025,
+      "native_windows": 8
+    }
+  ],
+  "controls": [
+    {
+      "id": "insufficient-boundary",
+      "metrics": {
+        "path": "validation/runs/S4-ROUND-SURFACE-PROBE-20261031-r6/baseline/measurement-indexed-02/metrics.json",
+        "sha256": "fbfcb120e6caee9af412fdbe5142204f3ce4e1c84ca4679e09491c60830e4664"
+      },
+      "iou_percent": 98.7818504029923,
+      "geometry_pass": false,
+      "native_material_reused": true,
+      "origin": "Rejected development configuration; not an artificially edited NC",
+      "inspection": {
+        "path": "validation/runs/S4-ROUND-SURFACE-PROBE-20261031-r6/baseline/measurement-indexed-02/inspection.json",
+        "sha256": "a8da22ac0c0c02141b7228596e177c39edbab600c4fa6ec35021609178579b4a"
+      },
+      "mesh": {
+        "path": "validation/runs/S4-ROUND-SURFACE-PROBE-20261031-r6/baseline/material/native/surface-0000.stl",
+        "sha256": "950154ecc178ece13777923c48af32d2d51838c806ab34e5d8beb4a5af6f04fc"
+      }
+    },
+    {
+      "id": "omitted-round",
+      "metrics": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/geometry-controls-01/omitted-round/measurement/metrics.json",
+        "sha256": "78581a9b13ebda4582f12d274c07e4e09a77a346eb9e3d06c55630dcc803ace7"
+      },
+      "iou_percent": 90.44445854307848,
+      "geometry_pass": false,
+      "native_material_reused": false,
+      "normal_NC_guard_also_rejected": true,
+      "inspection": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/geometry-controls-01/omitted-round/measurement/inspection.json",
+        "sha256": "0f48433cb15481db028166508a90f1c7aa0f156db88cb20e89f28dd6a8ef0fd1"
+      },
+      "mesh": {
+        "path": "docs/checkpoints/2026-10-31/round-surface-01/geometry-controls-01/omitted-round/material/native/surface-0000.stl",
+        "sha256": "4da88c4fae8c96445f08078d34738c71b17e4a36342d02d2e01cb337ab6a01ae"
+      }
+    }
+  ],
+  "all_regression_expectations_met": true,
+  "input_rejections": 23,
+  "feed_and_NC_rejections": 8,
+  "feature_cohort_qualified": true,
+  "qualified_scope": "Four synthetic rectangular coupons with two X-parallel upper exterior rounds, native fixed-Z ball-end Surface NC, original stock and coordinates.",
+  "scope_dimension": "part_features",
+  "new_machine_models": 0,
+  "new_material_physics": 0,
+  "continuous_five_axis_supported": false,
+  "arbitrary_production_PDF_parsing": false,
+  "whole_real_card_complete": false,
+  "manufacturing_approval": false,
+  "original_development_failures_retained": true
+}

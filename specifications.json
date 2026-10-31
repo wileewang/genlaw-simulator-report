@@ -1,0 +1,283 @@
+{
+  "schema": "genlaw.round-surface-specifications.v1",
+  "cases": [
+    {
+      "id": "baseline",
+      "name": "两条 R2 圆角",
+      "archive_revision": "r2",
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          3,
+          6,
+          0
+        ]
+      },
+      "radius_mm": 2,
+      "round_edges": [
+        "top_x_parallel_ymin",
+        "top_x_parallel_ymax"
+      ],
+      "resolution_mm": 0.025,
+      "tool": {
+        "id": "T1",
+        "kind": "ballnose",
+        "diameter_mm": 1.0,
+        "cutting_length_mm": 5.0,
+        "length_mm": 20.0,
+        "center_cutting": true
+      },
+      "cam": {
+        "native_operation": "Surface",
+        "scan_type": "Planar",
+        "pattern": "Line",
+        "cut_mode": "Climb",
+        "layer_mode": "Multi-pass",
+        "step_down_mm": 0.25,
+        "stepover_percent": 10.0,
+        "sample_interval_mm": 0.05,
+        "linear_deflection_mm": 0.001,
+        "geometry_tolerance_mm": 0.005,
+        "boundary_adjustment_mm": 1.05,
+        "final_depth_mm": -3,
+        "start_depth_mm": 0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "spindle_rpm": 3000,
+        "feed_mm_min": 120,
+        "plunge_mm_min": 60
+      },
+      "software_acceptance": {
+        "iou_percent_min": 99.0,
+        "bounds_deviation_mm_max": 0.025,
+        "volume_deviation_mm3_max": 0.15,
+        "profile_deviation_mm_max": 0.15,
+        "radius_deviation_mm_max": 0.15,
+        "numerical_guard_mm": 0.05,
+        "quadrature_orders": [
+          4,
+          8
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-05,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "scope": "software_regression",
+        "manufacturing_tolerance_approved": false
+      }
+    },
+    {
+      "id": "larger-radius",
+      "name": "两条 R2.2 圆角",
+      "archive_revision": "r2",
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          3,
+          6,
+          0
+        ]
+      },
+      "radius_mm": 2.2,
+      "round_edges": [
+        "top_x_parallel_ymin",
+        "top_x_parallel_ymax"
+      ],
+      "resolution_mm": 0.025,
+      "tool": {
+        "id": "T1",
+        "kind": "ballnose",
+        "diameter_mm": 1.0,
+        "cutting_length_mm": 5.0,
+        "length_mm": 20.0,
+        "center_cutting": true
+      },
+      "cam": {
+        "native_operation": "Surface",
+        "scan_type": "Planar",
+        "pattern": "Line",
+        "cut_mode": "Climb",
+        "layer_mode": "Multi-pass",
+        "step_down_mm": 0.25,
+        "stepover_percent": 10.0,
+        "sample_interval_mm": 0.05,
+        "linear_deflection_mm": 0.001,
+        "geometry_tolerance_mm": 0.005,
+        "boundary_adjustment_mm": 1.05,
+        "final_depth_mm": -3,
+        "start_depth_mm": 0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "spindle_rpm": 3000,
+        "feed_mm_min": 120,
+        "plunge_mm_min": 60
+      },
+      "software_acceptance": {
+        "iou_percent_min": 99.0,
+        "bounds_deviation_mm_max": 0.025,
+        "volume_deviation_mm3_max": 0.15,
+        "profile_deviation_mm_max": 0.15,
+        "radius_deviation_mm_max": 0.15,
+        "numerical_guard_mm": 0.05,
+        "quadrature_orders": [
+          4,
+          8
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-05,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "scope": "software_regression",
+        "manufacturing_tolerance_approved": false
+      }
+    },
+    {
+      "id": "longer",
+      "name": "延长直线段",
+      "archive_revision": "r2",
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          4,
+          6,
+          0
+        ]
+      },
+      "radius_mm": 2,
+      "round_edges": [
+        "top_x_parallel_ymin",
+        "top_x_parallel_ymax"
+      ],
+      "resolution_mm": 0.025,
+      "tool": {
+        "id": "T1",
+        "kind": "ballnose",
+        "diameter_mm": 1.0,
+        "cutting_length_mm": 5.0,
+        "length_mm": 20.0,
+        "center_cutting": true
+      },
+      "cam": {
+        "native_operation": "Surface",
+        "scan_type": "Planar",
+        "pattern": "Line",
+        "cut_mode": "Climb",
+        "layer_mode": "Multi-pass",
+        "step_down_mm": 0.25,
+        "stepover_percent": 10.0,
+        "sample_interval_mm": 0.05,
+        "linear_deflection_mm": 0.001,
+        "geometry_tolerance_mm": 0.005,
+        "boundary_adjustment_mm": 1.05,
+        "final_depth_mm": -3,
+        "start_depth_mm": 0,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "spindle_rpm": 3000,
+        "feed_mm_min": 120,
+        "plunge_mm_min": 60
+      },
+      "software_acceptance": {
+        "iou_percent_min": 99.0,
+        "bounds_deviation_mm_max": 0.025,
+        "volume_deviation_mm3_max": 0.15,
+        "profile_deviation_mm_max": 0.15,
+        "radius_deviation_mm_max": 0.15,
+        "numerical_guard_mm": 0.05,
+        "quadrature_orders": [
+          4,
+          8
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-05,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "scope": "software_regression",
+        "manufacturing_tolerance_approved": false
+      }
+    },
+    {
+      "id": "shifted-datum",
+      "name": "非零 CAD 坐标",
+      "archive_revision": "r2",
+      "stock": {
+        "min": [
+          -3,
+          4,
+          1
+        ],
+        "max": [
+          0,
+          10,
+          4
+        ]
+      },
+      "radius_mm": 2,
+      "round_edges": [
+        "top_x_parallel_ymin",
+        "top_x_parallel_ymax"
+      ],
+      "resolution_mm": 0.025,
+      "tool": {
+        "id": "T1",
+        "kind": "ballnose",
+        "diameter_mm": 1.0,
+        "cutting_length_mm": 5.0,
+        "length_mm": 20.0,
+        "center_cutting": true
+      },
+      "cam": {
+        "native_operation": "Surface",
+        "scan_type": "Planar",
+        "pattern": "Line",
+        "cut_mode": "Climb",
+        "layer_mode": "Multi-pass",
+        "step_down_mm": 0.25,
+        "stepover_percent": 10.0,
+        "sample_interval_mm": 0.05,
+        "linear_deflection_mm": 0.001,
+        "geometry_tolerance_mm": 0.005,
+        "boundary_adjustment_mm": 1.05,
+        "final_depth_mm": 1,
+        "start_depth_mm": 4,
+        "safe_height_mm": 6,
+        "clearance_height_mm": 7,
+        "spindle_rpm": 3000,
+        "feed_mm_min": 120,
+        "plunge_mm_min": 60
+      },
+      "software_acceptance": {
+        "iou_percent_min": 99.0,
+        "bounds_deviation_mm_max": 0.025,
+        "volume_deviation_mm3_max": 0.15,
+        "profile_deviation_mm_max": 0.15,
+        "radius_deviation_mm_max": 0.15,
+        "numerical_guard_mm": 0.05,
+        "quadrature_orders": [
+          4,
+          8
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-05,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "scope": "software_regression",
+        "manufacturing_tolerance_approved": false
+      }
+    }
+  ],
+  "selection": "Two longitudinal external rounds required by the fixed-plate card; standalone synthetic coupons, not scaled whole customer parts.",
+  "source_radius_mm": 2.0,
+  "source_radius_tolerance_mm": 0.2,
+  "uses_or_guesses_missing_H": false,
+  "whole_real_card_complete": false,
+  "manufacturing_approval": false
+}

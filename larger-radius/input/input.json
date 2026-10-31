@@ -1,0 +1,90 @@
+{
+  "schema": "genlaw.round-surface-input.v1",
+  "specification": {
+    "id": "larger-radius",
+    "name": "两条 R2.2 圆角",
+    "archive_revision": "r2",
+    "stock": {
+      "min": [
+        0,
+        0,
+        -3
+      ],
+      "max": [
+        3,
+        6,
+        0
+      ]
+    },
+    "radius_mm": 2.2,
+    "round_edges": [
+      "top_x_parallel_ymin",
+      "top_x_parallel_ymax"
+    ],
+    "resolution_mm": 0.025,
+    "tool": {
+      "id": "T1",
+      "kind": "ballnose",
+      "diameter_mm": 1.0,
+      "cutting_length_mm": 5.0,
+      "length_mm": 20.0,
+      "center_cutting": true
+    },
+    "cam": {
+      "native_operation": "Surface",
+      "scan_type": "Planar",
+      "pattern": "Line",
+      "cut_mode": "Climb",
+      "layer_mode": "Multi-pass",
+      "step_down_mm": 0.25,
+      "stepover_percent": 10.0,
+      "sample_interval_mm": 0.05,
+      "linear_deflection_mm": 0.001,
+      "geometry_tolerance_mm": 0.005,
+      "boundary_adjustment_mm": 1.05,
+      "final_depth_mm": -3,
+      "start_depth_mm": 0,
+      "safe_height_mm": 2,
+      "clearance_height_mm": 3,
+      "spindle_rpm": 3000,
+      "feed_mm_min": 120,
+      "plunge_mm_min": 60
+    },
+    "software_acceptance": {
+      "iou_percent_min": 99.0,
+      "bounds_deviation_mm_max": 0.025,
+      "volume_deviation_mm3_max": 0.15,
+      "profile_deviation_mm_max": 0.15,
+      "radius_deviation_mm_max": 0.15,
+      "numerical_guard_mm": 0.05,
+      "quadrature_orders": [
+        4,
+        8
+      ],
+      "quadrature_iou_difference_max": 1e-06,
+      "target_integral_error_mm3_max": 1e-05,
+      "mesh_integral_error_mm3_max": 0.0001,
+      "scope": "software_regression",
+      "manufacturing_tolerance_approved": false
+    }
+  },
+  "CAD": {
+    "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/target.brep",
+    "sha256": "0d27ffe968f5c61a512bd815bde228cf3623b2b7603bce3530e08efffeca82e0"
+  },
+  "CAD_reference": {
+    "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/reference.json",
+    "sha256": "27fc8109572c5db0da6c1b2725874c2fd6083187fd18a16614ae09c609b077b8"
+  },
+  "process_plan": {
+    "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/process-plan.json",
+    "sha256": "b645eb8e127c0c5d5d3ed8c87dfb1e77d181eb021a6cfed99a658613dcea967e"
+  },
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-ROUND-SURFACE-20261031-r2/larger-radius/process-card.pdf",
+    "sha256": "97c2e9c52f29ea4efd58228fb4a3516461d530f995516550ca3c1995e6ce1aa7"
+  },
+  "scope": "development_probe_not_yet_qualified",
+  "material_physics_verified": false,
+  "production_approved": false
+}
