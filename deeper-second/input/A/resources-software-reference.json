@@ -1,0 +1,124 @@
+{
+  "schema": "genlaw.preparation-resources.v1",
+  "id": "S4-STATIC-STAGES-20261031-r1-deeper-second-A",
+  "units": "mm",
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        4,
+        3,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "machine": {
+    "kind": "generic_XYZ_reference",
+    "axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "real_machine_qualified": false
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "tools": [
+    {
+      "id": "T1",
+      "kind": "flat_endmill",
+      "center_cutting": true,
+      "diameter_mm": 1,
+      "cutting_length_mm": 5,
+      "length_mm": 20,
+      "basis": "Explicit synthetic test tool, not a qualified physical tool or holder."
+    }
+  ],
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "Explicit software-only zero transform; real clamping excluded."
+  },
+  "cutting_presets": [
+    {
+      "id": "REFERENCE-ONLY",
+      "operation": "face_milling",
+      "tool_id": "T1",
+      "material_label": "6061-T6",
+      "feed_unit": "mm/min",
+      "speed_unit": "rpm",
+      "clearing_pattern": "Offset",
+      "cut_mode": "Climb",
+      "start_at": "Center",
+      "entry": "vertical_center_cutting",
+      "keep_tool_down": false,
+      "radial_allowance_mm": 0,
+      "axial_allowance_mm": 0,
+      "spindle_rpm": {
+        "value": 3000,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "feed_mm_min": {
+        "value": 120,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "plunge_mm_min": {
+        "value": 60,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_down_mm": {
+        "value": 0.25,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_over_percent": {
+        "value": 50,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "safe_height_mm": {
+        "value": 2,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "clearance_height_mm": {
+        "value": 3,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "path_tolerance_mm": {
+        "value": 0.001,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "boundary_shape": "Boundbox",
+      "clear_edges": true,
+      "exclude_raised_areas": false
+    }
+  ],
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Frozen .025 mm across all programs and setups before NC."
+  }
+}

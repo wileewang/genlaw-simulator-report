@@ -1,0 +1,392 @@
+{
+  "schema": "genlaw.static-stage-fixtures.v1",
+  "cases": [
+    {
+      "id": "baseline",
+      "name": "两面面铣后倒角",
+      "original_stock": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "first_removal_mm": 0.4,
+      "second_removal_mm": 0.3,
+      "chamfer_width_mm": 0.3,
+      "targets": {
+        "A": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            4,
+            3,
+            -0.4
+          ]
+        },
+        "B": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            -0.3
+          ]
+        },
+        "C": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            -0.3
+          ]
+        },
+        "final": {
+          "min": [
+            0,
+            0,
+            -1.2
+          ],
+          "max": [
+            4,
+            3,
+            -0.4
+          ]
+        }
+      },
+      "second_incoming": {
+        "min": [
+          0,
+          0,
+          -1.1
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "flip": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "wider-chamfer",
+      "name": "增加第二面倒角宽度",
+      "original_stock": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "first_removal_mm": 0.4,
+      "second_removal_mm": 0.3,
+      "chamfer_width_mm": 0.4,
+      "targets": {
+        "A": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            4,
+            3,
+            -0.4
+          ]
+        },
+        "B": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            -0.3
+          ]
+        },
+        "C": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            -0.3
+          ]
+        },
+        "final": {
+          "min": [
+            0,
+            0,
+            -1.2
+          ],
+          "max": [
+            4,
+            3,
+            -0.4
+          ]
+        }
+      },
+      "second_incoming": {
+        "min": [
+          0,
+          0,
+          -1.1
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "flip": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "deeper-second",
+      "name": "增加翻面后去除厚度",
+      "original_stock": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "first_removal_mm": 0.4,
+      "second_removal_mm": 0.5,
+      "chamfer_width_mm": 0.3,
+      "targets": {
+        "A": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            4,
+            3,
+            -0.4
+          ]
+        },
+        "B": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            -0.5
+          ]
+        },
+        "C": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            -0.5
+          ]
+        },
+        "final": {
+          "min": [
+            0,
+            0,
+            -1.0
+          ],
+          "max": [
+            4,
+            3,
+            -0.4
+          ]
+        }
+      },
+      "second_incoming": {
+        "min": [
+          0,
+          0,
+          -1.1
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "flip": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "shifted-datum",
+      "name": "保留非零原 CAD 坐标",
+      "original_stock": {
+        "min": [
+          -1,
+          2,
+          -0.5
+        ],
+        "max": [
+          3,
+          5,
+          1.0
+        ]
+      },
+      "first_removal_mm": 0.4,
+      "second_removal_mm": 0.3,
+      "chamfer_width_mm": 0.3,
+      "targets": {
+        "A": {
+          "min": [
+            -1,
+            2,
+            -0.5
+          ],
+          "max": [
+            3,
+            5,
+            0.6
+          ]
+        },
+        "B": {
+          "min": [
+            -1,
+            2,
+            -0.1
+          ],
+          "max": [
+            3,
+            5,
+            0.7
+          ]
+        },
+        "C": {
+          "min": [
+            -1,
+            2,
+            -0.1
+          ],
+          "max": [
+            3,
+            5,
+            0.7
+          ]
+        },
+        "final": {
+          "min": [
+            -1,
+            2,
+            -0.2
+          ],
+          "max": [
+            3,
+            5,
+            0.6
+          ]
+        }
+      },
+      "second_incoming": {
+        "min": [
+          -1,
+          2,
+          -0.1
+        ],
+        "max": [
+          3,
+          5,
+          1.0
+        ]
+      },
+      "flip": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        7,
+        0.5
+      ],
+      "resolution_mm": 0.025
+    }
+  ],
+  "selection": "Same original stock: face first side, statically flip, face opposite side, chamfer that side. Width, thickness and original coordinates vary independently. Synthetic inputs, not scaled customer parts.",
+  "manufacturing_approval": false,
+  "real_whole_card_tested": false
+}

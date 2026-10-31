@@ -1,0 +1,965 @@
+{
+  "schema": "genlaw.static-stage-metrics.v1",
+  "request": {
+    "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-C/measurement-request.json",
+    "sha256": "b6a1b4cb06bf845e700fd3b25d85946f5a651e7dc94da690d6323f003d3a0edb"
+  },
+  "case_kind": "normal",
+  "reference_stage_index": 2,
+  "executed_stage_ids": [
+    "A",
+    "B",
+    "C"
+  ],
+  "mesh": {
+    "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-C/native/surface-0000.stl",
+    "sha256": "14ed33afdf241fd6c7e4be1d8a47a068841ef0488f038953477a4ebd40281272"
+  },
+  "mesh_inspection": {
+    "source_sha256": "14ed33afdf241fd6c7e4be1d8a47a068841ef0488f038953477a4ebd40281272",
+    "raw_triangles": 111732,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 111732,
+    "vertices": 55868,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 9.001386286089721,
+    "bounds": {
+      "min": [
+        -1.000097632408142,
+        2.0000977516174316,
+        -0.19990234076976776
+      ],
+      "max": [
+        2.9999022483825684,
+        5.000097751617432,
+        0.599902331829071
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_CAD": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/shifted-datum/final/target.brep",
+    "sha256": "20ad30ae924a07aad8672c151cd7576d2cf7e6e1b8d9c305faaeecbb96264709"
+  },
+  "reference_to_material": [
+    1,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    7,
+    0.5
+  ],
+  "reference_bounds_in_original_material_frame": {
+    "min": [
+      -1.0000000000000027,
+      1.9999999999999982,
+      -0.20000000000000207
+    ],
+    "max": [
+      3.0000000000000018,
+      5.0,
+      0.6
+    ]
+  },
+  "reference_was_checked_against_native_CAD": true,
+  "reference_is_reconstructed_from_NC": false,
+  "iou": 0.9994046249527728,
+  "iou_percent": 99.94046249527729,
+  "volumes": {
+    "actual_volume_mm3": 9.001386285243091,
+    "target_volume_mm3": 9.006000000000043,
+    "intersection_mm3": 9.001012057380938,
+    "union_mm3": 9.006374227862198,
+    "iou": 0.9994046249527728,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 3
+  },
+  "coarse_quadrature": {
+    "actual_volume_mm3": 9.001386285134599,
+    "target_volume_mm3": 9.006000000000032,
+    "intersection_mm3": 9.001005208020315,
+    "union_mm3": 9.006381077114314,
+    "iou": 0.9994031044158613,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 2
+  },
+  "expected_volume_mm3": 9.006000000000041,
+  "maximum_bounds_error_mm": 9.775161743341698e-05,
+  "feature_observations": {
+    "method": "11 complete bevel sections, 3 retained-wall sections, four midline linear width/angle estimates and 25 retained-solid rays.",
+    "features": {
+      "C1": {
+        "sections": [
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.685000000000002,
+            "z_mm": 0.685000000000002,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.010675799187407105,
+            "missing_material_area_mm2": 0.0007801799886154889,
+            "excess_material_area_mm2": 0.00011014104874034129
+          },
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.658000000000002,
+            "z_mm": 0.658000000000002,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.012090005678712195,
+            "missing_material_area_mm2": 0.0009631107248113305,
+            "excess_material_area_mm2": 0.0002804429175295314
+          },
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.6310000000000021,
+            "z_mm": 0.6310000000000021,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.01350408489079792,
+            "missing_material_area_mm2": 0.001696552462865283,
+            "excess_material_area_mm2": 2.346987309636578e-05
+          },
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.6040000000000021,
+            "z_mm": 0.6040000000000021,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.014918241884629022,
+            "missing_material_area_mm2": 0.00162792646043233,
+            "excess_material_area_mm2": 0.00011468015366589889
+          },
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.5770000000000021,
+            "z_mm": 0.5770000000000021,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.016332575655153954,
+            "missing_material_area_mm2": 0.0018134767022283593,
+            "excess_material_area_mm2": 0.0002115836404567464
+          },
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.550000000000002,
+            "z_mm": 0.550000000000002,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.01774665486723897,
+            "missing_material_area_mm2": 0.0012101805442998425,
+            "excess_material_area_mm2": 0.00042531602691060836
+          },
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.523000000000002,
+            "z_mm": 0.523000000000002,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.0014832696106266787,
+            "missing_material_area_mm2": 0.0009257198113990764,
+            "excess_material_area_mm2": 0.00022502010348116486
+          },
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.49600000000000205,
+            "z_mm": 0.49600000000000205,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.0028974266044572315,
+            "missing_material_area_mm2": 0.001160127331271018,
+            "excess_material_area_mm2": 3.119937049663374e-05
+          },
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.4690000000000021,
+            "z_mm": 0.4690000000000021,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.004311760374982713,
+            "missing_material_area_mm2": 0.0010242482885258592,
+            "excess_material_area_mm2": 8.66204778788267e-05
+          },
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.44200000000000206,
+            "z_mm": 0.44200000000000206,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.005703897990727588,
+            "missing_material_area_mm2": 0.0007943090631777686,
+            "excess_material_area_mm2": 0.00025484654550727556
+          },
+          {
+            "region": "bevel",
+            "requested_z_mm": 0.4150000000000021,
+            "z_mm": 0.4150000000000021,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.009263961503819506,
+            "missing_material_area_mm2": 0.0011111118116491645,
+            "excess_material_area_mm2": 0.00016238433223246727
+          },
+          {
+            "region": "retained_wall",
+            "requested_z_mm": 4.163336342344337e-16,
+            "z_mm": 0.00954915255794747,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.01774685992820521,
+            "missing_material_area_mm2": 0.0009943039627096396,
+            "excess_material_area_mm2": 0.0006814430143338476
+          },
+          {
+            "region": "retained_wall",
+            "requested_z_mm": 0.15000000000000105,
+            "z_mm": 0.15000000000000105,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.01774685992820521,
+            "missing_material_area_mm2": 0.0009943039627223413,
+            "excess_material_area_mm2": 0.0006814429626979844
+          },
+          {
+            "region": "retained_wall",
+            "requested_z_mm": 0.3000000000000017,
+            "z_mm": 0.3000000000000017,
+            "expected_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "observed_topology": {
+              "material_components": 1,
+              "interior_loops_per_component": [
+                0
+              ]
+            },
+            "topology_matches": true,
+            "boundary_deviation_mm": 0.017746856392670426,
+            "missing_material_area_mm2": 0.0009943038382164288,
+            "excess_material_area_mm2": 0.0006814429631775956
+          }
+        ],
+        "section_count": 14,
+        "bevel_section_count": 11,
+        "contours_complete": true,
+        "topology_matches": true,
+        "max_boundary_deviation_mm": 0.01774685992820521,
+        "midlines": [
+          {
+            "z_mm": 0.685000000000002,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.28509767000000263,
+              "xmax": 0.28509761000000156,
+              "ymin": 0.28509785000000054,
+              "ymax": 0.28498035000000144
+            }
+          },
+          {
+            "z_mm": 0.658000000000002,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.25809763000000263,
+              "xmax": 0.2580977500000019,
+              "ymin": 0.25809775000000057,
+              "ymax": 0.2580352200000018
+            }
+          },
+          {
+            "z_mm": 0.6310000000000021,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.23109766000000265,
+              "xmax": 0.23109766000000187,
+              "ymin": 0.23109766000000054,
+              "ymax": 0.23109766000000054
+            }
+          },
+          {
+            "z_mm": 0.6040000000000021,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.2040976800000026,
+              "xmax": 0.2040975600000019,
+              "ymin": 0.20409756000000057,
+              "ymax": 0.2040975600000019
+            }
+          },
+          {
+            "z_mm": 0.5770000000000021,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.1770976400000026,
+              "xmax": 0.1770977000000018,
+              "ymin": 0.1770974600000006,
+              "ymax": 0.1770977000000018
+            }
+          },
+          {
+            "z_mm": 0.550000000000002,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.15009767000000263,
+              "xmax": 0.15009761000000177,
+              "ymin": 0.1500978500000003,
+              "ymax": 0.14990234000000147
+            }
+          },
+          {
+            "z_mm": 0.523000000000002,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.12309766000000266,
+              "xmax": 0.12309766000000177,
+              "ymin": 0.12309766000000044,
+              "ymax": 0.12291788000000192
+            }
+          },
+          {
+            "z_mm": 0.49600000000000205,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.09609768000000263,
+              "xmax": 0.0960975600000018,
+              "ymin": 0.09609756000000047,
+              "ymax": 0.09609756000000136
+            }
+          },
+          {
+            "z_mm": 0.4690000000000021,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.06909765000000267,
+              "xmax": 0.0690977000000017,
+              "ymin": 0.06909747000000044,
+              "ymax": 0.06905121000000136
+            }
+          },
+          {
+            "z_mm": 0.44200000000000206,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.04209767000000264,
+              "xmax": 0.04209761000000167,
+              "ymin": 0.04209785000000066,
+              "ymax": 0.041902440000002095
+            }
+          },
+          {
+            "z_mm": 0.4150000000000021,
+            "status": "measured",
+            "insets_mm": {
+              "xmin": 0.015097630000002638,
+              "xmax": 0.015097750000001575,
+              "ymin": 0.015097750000000243,
+              "ymax": 0.014980510000001779
+            }
+          }
+        ],
+        "widths": [
+          {
+            "edge": "xmin",
+            "extrapolated_top_width_mm": 0.3000976607070733,
+            "nominal_width_mm": 0.3,
+            "width_error_mm": 9.766070707328822e-05,
+            "max_fit_residual_mm": 2.999999987318702e-08,
+            "estimated_angle_degrees": 44.99999951771229,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "xmax",
+            "extrapolated_top_width_mm": 0.30009764070707245,
+            "nominal_width_mm": 0.3,
+            "width_error_mm": 9.764070707246608e-05,
+            "max_fit_residual_mm": 1.0618181844890273e-07,
+            "estimated_angle_degrees": 45.00000212206596,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "ymin",
+            "extrapolated_top_width_mm": 0.3000976982828287,
+            "nominal_width_mm": 0.3,
+            "width_error_mm": 9.769828282868431e-05,
+            "max_fit_residual_mm": 2.1881818157432065e-07,
+            "estimated_angle_degrees": 44.99999546649591,
+            "angle_manufacturing_acceptance": false
+          },
+          {
+            "edge": "ymax",
+            "extrapolated_top_width_mm": 0.3000574880808093,
+            "nominal_width_mm": 0.3,
+            "width_error_mm": 5.7488080809298125e-05,
+            "max_fit_residual_mm": 0.00011224454545444296,
+            "estimated_angle_degrees": 44.991807200049664,
+            "angle_manufacturing_acceptance": false
+          }
+        ],
+        "width_complete": true,
+        "max_width_deviation_mm": 0.00011224454545444296,
+        "probes": [
+          {
+            "xy_mm": [
+              -0.6000000000000026,
+              2.3999999999999995
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              -0.6000000000000026,
+              2.95
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              -0.6000000000000026,
+              3.5000000000000004
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              -0.6000000000000026,
+              4.050000000000001
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              -0.6000000000000026,
+              4.600000000000001
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              0.1999999999999985,
+              2.3999999999999995
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              0.1999999999999985,
+              2.95
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              0.1999999999999985,
+              3.5000000000000004
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              0.1999999999999985,
+              4.050000000000001
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              0.1999999999999985,
+              4.600000000000001
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              0.9999999999999997,
+              2.3999999999999995
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              0.9999999999999997,
+              2.95
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              0.9999999999999997,
+              3.5000000000000004
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              0.9999999999999997,
+              4.050000000000001
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              0.9999999999999997,
+              4.600000000000001
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              1.8000000000000007,
+              2.3999999999999995
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              1.8000000000000007,
+              2.95
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              1.8000000000000007,
+              3.5000000000000004
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              1.8000000000000007,
+              4.050000000000001
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              1.8000000000000007,
+              4.600000000000001
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              2.600000000000002,
+              2.3999999999999995
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              2.600000000000002,
+              2.95
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              2.600000000000002,
+              3.5000000000000004
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              2.600000000000002,
+              4.050000000000001
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          },
+          {
+            "xy_mm": [
+              2.600000000000002,
+              4.600000000000001
+            ],
+            "surface_z_mm": [
+              -0.09990233,
+              0.69990234
+            ],
+            "status": "measured",
+            "thickness_mm": 0.79980467,
+            "plane_deviation_mm": 9.767000000000803e-05
+          }
+        ],
+        "probe_count": 25,
+        "complete": true,
+        "thickness_band_mm": [
+          0.79980467,
+          0.79980467
+        ],
+        "max_plane_deviation_mm": 9.767000000000803e-05,
+        "resolution_mm": 0.025,
+        "numerical_guard_mm": 0.05,
+        "guard_is_certified_uncertainty": false,
+        "registration_applied": false,
+        "disconnected_material_discarded": false
+      }
+    },
+    "unassigned_contours_detected": false
+  },
+  "feature_verification": {
+    "chamfer_sections": {
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen 0.1 mm software allowance with two .025 mm cells; no manufacturing acceptance.",
+        "method": "sectioned_original_chamfer_boundary",
+        "max_deviation_mm": 0.1
+      },
+      "production_approved": false,
+      "reason": "Finite original-coordinate section/width observations with two grid cells as numerical guard; no certified angle acceptance."
+    },
+    "chamfer_width": {
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen 0.1 mm software allowance with two .025 mm cells; no manufacturing acceptance.",
+        "method": "sampled_extrapolated_chamfer_width",
+        "max_deviation_mm": 0.1
+      },
+      "production_approved": false,
+      "reason": "Finite original-coordinate section/width observations with two grid cells as numerical guard; no certified angle acceptance."
+    },
+    "retained_planes": {
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen 0.1 mm software allowance with two .025 mm cells; no manufacturing acceptance.",
+        "method": "sampled_original_top_bottom",
+        "max_deviation_mm": 0.1
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration."
+    },
+    "retained_thickness": {
+      "status": "numeric_pass",
+      "criterion_scope": "software_regression",
+      "criterion": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Frozen 0.1 mm software allowance with two .025 mm cells; no manufacturing acceptance.",
+        "method": "sampled_original_thickness",
+        "min_mm": 0.7000000000000021,
+        "max_mm": 0.900000000000002
+      },
+      "production_approved": false,
+      "reason": "Independent original-CAD finite measurements with a two-cell guard; no discarded waste or output registration."
+    }
+  },
+  "geometry_pass": true,
+  "regression_expectation_met": true,
+  "negative_control": false,
+  "full_native_material_measured": true,
+  "registration_applied": false,
+  "disconnected_material_discarded": false,
+  "manufacturing_angle_acceptance": false,
+  "production_approved": false,
+  "whole_process_card_complete": false
+}

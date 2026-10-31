@@ -1,0 +1,708 @@
+{
+  "schema": "genlaw.static-stage-suite.v1",
+  "status": "four_three_program_two_setup_chains_measured",
+  "request": {
+    "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/request.json",
+    "sha256": "fe21a0936fa529121b9805974e2152396cda3a0672af2f755f63d00ee171ec9e"
+  },
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "paper_card": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/process-card.pdf",
+        "sha256": "443cc6a2e22091a11dc50d5b6e79ff512cecf90215a8105ed5bbd8e51b1ff871"
+      },
+      "original_final_CAD": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/final/target.brep",
+        "sha256": "daf437d3b6153a548333ea05f5ea8a85fb4b86ce061fdb3b4ef274ef633f21ef"
+      },
+      "states": [
+        {
+          "stage_id": "A",
+          "setup_id": "S1",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-A/metrics.json",
+            "sha256": "204a99485f46ec23f1ca75e82bbfe2a9dd8fc38bba5f02fa166c2dddb5b308fb"
+          },
+          "iou_percent": 99.96160726004054,
+          "geometry_pass": true,
+          "native_reused": false
+        },
+        {
+          "stage_id": "B",
+          "setup_id": "S2",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-B/metrics.json",
+            "sha256": "476d8f13d225ee91a986657e9345a94193d6595016f19ad100e3dc441f353cbe"
+          },
+          "iou_percent": 99.95147185803592,
+          "geometry_pass": true,
+          "native_reused": false
+        },
+        {
+          "stage_id": "C",
+          "setup_id": "S2",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-C/metrics.json",
+            "sha256": "5f0f03ebdf8ffe3f19753aeb5453f3c5a8f5d52cf48d9c6a26136ddf530aa7ad"
+          },
+          "iou_percent": 99.95289070887708,
+          "geometry_pass": true,
+          "native_reused": false
+        }
+      ],
+      "final_iou_percent": 99.95289070887708,
+      "CAM_jobs": [
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/A/cam-job.FCStd",
+          "sha256": "7604b8fc554dc28fed5c6926f0125d031ceb272d31e058f6410522dbe7686239"
+        },
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/B/cam-job.FCStd",
+          "sha256": "20e75d5abbd27230249b05e7c1fe4f683d9465b84dcbdc4e2aa420ac80d133d1"
+        },
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/C/cam-job.FCStd",
+          "sha256": "345df75504ebaefc66c48e86259c807d2f781557b0305ac42caa19d518529211"
+        }
+      ],
+      "negative_controls": {
+        "omitted-chamfer": {
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/omitted-chamfer/metrics.json",
+            "sha256": "f02552c1d7934966488eff6dbc395db5f4ec0387e5ddc3219fd507ba0fe70d48"
+          },
+          "iou_percent": 93.76758364860486,
+          "geometry_pass": false,
+          "native_reused": true
+        },
+        "wrong-chamfer-pose": {
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/wrong-chamfer-pose/metrics.json",
+            "sha256": "39829c64296a8b4b9f6b6b7c278356dbb52eecea0580d4a7f00c2f60861a3838"
+          },
+          "iou_percent": 90.9778051291197,
+          "geometry_pass": false,
+          "native_reused": false
+        },
+        "omitted-second-facing": {
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/omitted-second-facing/metrics.json",
+            "sha256": "2a85e5fb13da36c62f721be760c62c74d3597f3921c600cbc6e55cd961db0ec3"
+          },
+          "iou_percent": 82.07803903997541,
+          "geometry_pass": false,
+          "native_reused": false
+        }
+      },
+      "specification": {
+        "id": "baseline",
+        "name": "两面面铣后倒角",
+        "original_stock": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            4,
+            3,
+            0.0
+          ]
+        },
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "chamfer_width_mm": 0.3,
+        "targets": {
+          "A": {
+            "min": [
+              0,
+              0,
+              -1.5
+            ],
+            "max": [
+              4,
+              3,
+              -0.4
+            ]
+          },
+          "B": {
+            "min": [
+              0,
+              0,
+              -1.1
+            ],
+            "max": [
+              4,
+              3,
+              -0.3
+            ]
+          },
+          "C": {
+            "min": [
+              0,
+              0,
+              -1.1
+            ],
+            "max": [
+              4,
+              3,
+              -0.3
+            ]
+          },
+          "final": {
+            "min": [
+              0,
+              0,
+              -1.2
+            ],
+            "max": [
+              4,
+              3,
+              -0.4
+            ]
+          }
+        },
+        "second_incoming": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            0.0
+          ]
+        },
+        "flip": [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          3,
+          -1.5
+        ],
+        "resolution_mm": 0.025
+      }
+    },
+    {
+      "id": "wider-chamfer",
+      "paper_card": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/process-card.pdf",
+        "sha256": "cf03673e9858291edd9e88942121674b6e350f9fc633c2e4c9b2a6b629911725"
+      },
+      "original_final_CAD": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/final/target.brep",
+        "sha256": "ef7d125d0b8442d780c286582c395be82cc4ea81fc03f204b6f67e567f2740cb"
+      },
+      "states": [
+        {
+          "stage_id": "A",
+          "setup_id": "S1",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/after-A/metrics.json",
+            "sha256": "2d08d507893ff88641109d8fbf4b5368404f78516f480fd29c326c048db478d6"
+          },
+          "iou_percent": 99.96160726004054,
+          "geometry_pass": true,
+          "native_reused": false
+        },
+        {
+          "stage_id": "B",
+          "setup_id": "S2",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/after-B/metrics.json",
+            "sha256": "a3ad044f1df01a080e44dfbcad07cd44c0846d1204d9cdfbd19b9d8feab7441b"
+          },
+          "iou_percent": 99.95147185803592,
+          "geometry_pass": true,
+          "native_reused": false
+        },
+        {
+          "stage_id": "C",
+          "setup_id": "S2",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/after-C/metrics.json",
+            "sha256": "641ca66b5f1b7ead23cbbb4ea7b11ba0175fb43c656e096fd75d92e4d14ad7bf"
+          },
+          "iou_percent": 99.95200708289674,
+          "geometry_pass": true,
+          "native_reused": false
+        }
+      ],
+      "final_iou_percent": 99.95200708289674,
+      "CAM_jobs": [
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/A/cam-job.FCStd",
+          "sha256": "ba23de4577d6a24fb5ae3d9fd8425a4077aecf28e6ccf351aa3cf355b0b6a871"
+        },
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/B/cam-job.FCStd",
+          "sha256": "a2fe7489af79ffb430592447714f6867dd51923be803833a2539874ef1ba138f"
+        },
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/C/cam-job.FCStd",
+          "sha256": "940f868874e332431273a38bb9873a036476a604883214d91ec557e30993e4a4"
+        }
+      ],
+      "specification": {
+        "id": "wider-chamfer",
+        "name": "增加第二面倒角宽度",
+        "original_stock": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            4,
+            3,
+            0.0
+          ]
+        },
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "chamfer_width_mm": 0.4,
+        "targets": {
+          "A": {
+            "min": [
+              0,
+              0,
+              -1.5
+            ],
+            "max": [
+              4,
+              3,
+              -0.4
+            ]
+          },
+          "B": {
+            "min": [
+              0,
+              0,
+              -1.1
+            ],
+            "max": [
+              4,
+              3,
+              -0.3
+            ]
+          },
+          "C": {
+            "min": [
+              0,
+              0,
+              -1.1
+            ],
+            "max": [
+              4,
+              3,
+              -0.3
+            ]
+          },
+          "final": {
+            "min": [
+              0,
+              0,
+              -1.2
+            ],
+            "max": [
+              4,
+              3,
+              -0.4
+            ]
+          }
+        },
+        "second_incoming": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            0.0
+          ]
+        },
+        "flip": [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          3,
+          -1.5
+        ],
+        "resolution_mm": 0.025
+      }
+    },
+    {
+      "id": "deeper-second",
+      "paper_card": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/deeper-second/process-card.pdf",
+        "sha256": "8894d266da9124de0e7449868edb917be64bc96ec43c1efcd2eca88d90560618"
+      },
+      "original_final_CAD": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/deeper-second/final/target.brep",
+        "sha256": "d21c1d51bf72eeb8356b3c26dade74a137d723a48dbde44e0e44fe45d8041544"
+      },
+      "states": [
+        {
+          "stage_id": "A",
+          "setup_id": "S1",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/after-A/metrics.json",
+            "sha256": "bb9ed319a44e339ec056a948061c6f1eeee71a2b178656db938b3a19a31f2d30"
+          },
+          "iou_percent": 99.96160726004054,
+          "geometry_pass": true,
+          "native_reused": false
+        },
+        {
+          "stage_id": "B",
+          "setup_id": "S2",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/after-B/metrics.json",
+            "sha256": "6561994068b0dd2f5edd0a880e67d9b6e270785d2b9bd04becfc31e7501b2675"
+          },
+          "iou_percent": 99.93909828362635,
+          "geometry_pass": true,
+          "native_reused": false
+        },
+        {
+          "stage_id": "C",
+          "setup_id": "S2",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/after-C/metrics.json",
+            "sha256": "59d32e2edfd9cec7c977950899a503cfa8f7f3a81b6aaaecc1c8aa3e999e0318"
+          },
+          "iou_percent": 99.93989540874739,
+          "geometry_pass": true,
+          "native_reused": false
+        }
+      ],
+      "final_iou_percent": 99.93989540874739,
+      "CAM_jobs": [
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/A/cam-job.FCStd",
+          "sha256": "aa7975162b36265cf4a59d1b5b2c27e868e41f2f278155388a311dd6f84ee6ed"
+        },
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/B/cam-job.FCStd",
+          "sha256": "7bd9e057efe3ac7300d4fb028eaf0dc753de229455b6d3984ae17be6a854bbfa"
+        },
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/C/cam-job.FCStd",
+          "sha256": "3d89c7e867c9324fbd7700a826ebb609e8f8431efb290c57b0385525226a09ad"
+        }
+      ],
+      "specification": {
+        "id": "deeper-second",
+        "name": "增加翻面后去除厚度",
+        "original_stock": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            4,
+            3,
+            0.0
+          ]
+        },
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.5,
+        "chamfer_width_mm": 0.3,
+        "targets": {
+          "A": {
+            "min": [
+              0,
+              0,
+              -1.5
+            ],
+            "max": [
+              4,
+              3,
+              -0.4
+            ]
+          },
+          "B": {
+            "min": [
+              0,
+              0,
+              -1.1
+            ],
+            "max": [
+              4,
+              3,
+              -0.5
+            ]
+          },
+          "C": {
+            "min": [
+              0,
+              0,
+              -1.1
+            ],
+            "max": [
+              4,
+              3,
+              -0.5
+            ]
+          },
+          "final": {
+            "min": [
+              0,
+              0,
+              -1.0
+            ],
+            "max": [
+              4,
+              3,
+              -0.4
+            ]
+          }
+        },
+        "second_incoming": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            0.0
+          ]
+        },
+        "flip": [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          3,
+          -1.5
+        ],
+        "resolution_mm": 0.025
+      }
+    },
+    {
+      "id": "shifted-datum",
+      "paper_card": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/shifted-datum/process-card.pdf",
+        "sha256": "a23d27b6f265ab3fff426448e2375dfd98b3048d773037bcd3f9a06cfc642297"
+      },
+      "original_final_CAD": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/shifted-datum/final/target.brep",
+        "sha256": "20ad30ae924a07aad8672c151cd7576d2cf7e6e1b8d9c305faaeecbb96264709"
+      },
+      "states": [
+        {
+          "stage_id": "A",
+          "setup_id": "S1",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-A/metrics.json",
+            "sha256": "ef1a229ff05a96ec660833c757cb140ee9d53d964d9a84aa44274bdeba37c5fd"
+          },
+          "iou_percent": 99.95205369126052,
+          "geometry_pass": true,
+          "native_reused": false
+        },
+        {
+          "stage_id": "B",
+          "setup_id": "S2",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-B/metrics.json",
+            "sha256": "4231dd37e7d429087151b76c1bc7ccc5c7a4085a5dadd470076b27b375c3dbd0"
+          },
+          "iou_percent": 99.91680263816392,
+          "geometry_pass": true,
+          "native_reused": false
+        },
+        {
+          "stage_id": "C",
+          "setup_id": "S2",
+          "metrics": {
+            "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-C/metrics.json",
+            "sha256": "a0fb87722ed1b142d4c12027bf36bab404deb00df920291b459db123b6019c33"
+          },
+          "iou_percent": 99.94046249527729,
+          "geometry_pass": true,
+          "native_reused": false
+        }
+      ],
+      "final_iou_percent": 99.94046249527729,
+      "CAM_jobs": [
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/A/cam-job.FCStd",
+          "sha256": "1ec012781c58adede191256f307728ed73dc6cefa794649540ca387a6cbebead"
+        },
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/B/cam-job.FCStd",
+          "sha256": "70c79f89a137641fdabff659d893e5da2acda481b0744bb9b8da098318f5680b"
+        },
+        {
+          "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/C/cam-job.FCStd",
+          "sha256": "d445a7ae41cd3bb40fb872d1281f039ef3e6838256f79d682e7125c4a9723bc4"
+        }
+      ],
+      "specification": {
+        "id": "shifted-datum",
+        "name": "保留非零原 CAD 坐标",
+        "original_stock": {
+          "min": [
+            -1,
+            2,
+            -0.5
+          ],
+          "max": [
+            3,
+            5,
+            1.0
+          ]
+        },
+        "first_removal_mm": 0.4,
+        "second_removal_mm": 0.3,
+        "chamfer_width_mm": 0.3,
+        "targets": {
+          "A": {
+            "min": [
+              -1,
+              2,
+              -0.5
+            ],
+            "max": [
+              3,
+              5,
+              0.6
+            ]
+          },
+          "B": {
+            "min": [
+              -1,
+              2,
+              -0.1
+            ],
+            "max": [
+              3,
+              5,
+              0.7
+            ]
+          },
+          "C": {
+            "min": [
+              -1,
+              2,
+              -0.1
+            ],
+            "max": [
+              3,
+              5,
+              0.7
+            ]
+          },
+          "final": {
+            "min": [
+              -1,
+              2,
+              -0.2
+            ],
+            "max": [
+              3,
+              5,
+              0.6
+            ]
+          }
+        },
+        "second_incoming": {
+          "min": [
+            -1,
+            2,
+            -0.1
+          ],
+          "max": [
+            3,
+            5,
+            1.0
+          ]
+        },
+        "flip": [
+          1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          -1,
+          0,
+          7,
+          0.5
+        ],
+        "resolution_mm": 0.025
+      }
+    }
+  ],
+  "negative_controls": {
+    "omitted-chamfer": {
+      "metrics": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/omitted-chamfer/metrics.json",
+        "sha256": "f02552c1d7934966488eff6dbc395db5f4ec0387e5ddc3219fd507ba0fe70d48"
+      },
+      "iou_percent": 93.76758364860486,
+      "geometry_pass": false,
+      "native_reused": true
+    },
+    "wrong-chamfer-pose": {
+      "metrics": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/wrong-chamfer-pose/metrics.json",
+        "sha256": "39829c64296a8b4b9f6b6b7c278356dbb52eecea0580d4a7f00c2f60861a3838"
+      },
+      "iou_percent": 90.9778051291197,
+      "geometry_pass": false,
+      "native_reused": false
+    },
+    "omitted-second-facing": {
+      "metrics": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/omitted-second-facing/metrics.json",
+        "sha256": "2a85e5fb13da36c62f721be760c62c74d3597f3921c600cbc6e55cd961db0ec3"
+      },
+      "iou_percent": 82.07803903997541,
+      "geometry_pass": false,
+      "native_reused": false
+    }
+  },
+  "NC_generated_by_FreeCAD": true,
+  "NC_text_modified": false,
+  "one_original_material_across_all_stages": true,
+  "predecessor_geometry_gates_next_material_execution": true,
+  "programs_per_case": 3,
+  "static_setups_per_case": 2,
+  "continuous_five_axis_supported": false,
+  "physical_fixture_or_toolholder_collision_verified": false,
+  "material_physics_verified": false,
+  "whole_process_card_complete": false,
+  "production_approved": false,
+  "public_site_updated": false
+}

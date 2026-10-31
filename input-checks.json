@@ -1,0 +1,146 @@
+{
+  "schema": "genlaw.static-stage-input-check.v1",
+  "status": "passed",
+  "input_manifest": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/manifest.json",
+    "sha256": "ab6a2d0e86edf8c027f9719af2d286bd10ecfd40e576cdd075b1699431427047"
+  },
+  "normal_inputs": [
+    {
+      "id": "baseline",
+      "input": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/input.json",
+        "sha256": "59bd1b5362c9099ea5e1a7e735298f1a07a85989b11329f60feee23455c3fc9a"
+      },
+      "status": "ready_for_declared_scope"
+    },
+    {
+      "id": "wider-chamfer",
+      "input": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/input.json",
+        "sha256": "f080e58f5eeda0a020d8319260610f85b95a355fd11222284768b96c20e5cedc"
+      },
+      "status": "ready_for_declared_scope"
+    },
+    {
+      "id": "deeper-second",
+      "input": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/deeper-second/input.json",
+        "sha256": "a11083222c470f77d6fc9de23b8bba53553ef7118b11f0f04d393cc5c2d45871"
+      },
+      "status": "ready_for_declared_scope"
+    },
+    {
+      "id": "shifted-datum",
+      "input": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/shifted-datum/input.json",
+        "sha256": "9ab0fde9b00162248adb8e8d78a60f04c84f03e783e73d6a20262cae97d53e91"
+      },
+      "status": "ready_for_declared_scope"
+    }
+  ],
+  "rejections": [
+    {
+      "id": "reset-stock",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/reset-stock/input.json",
+        "sha256": "757ed2bbb455df837874ea4cc0480a466012e88bb447f7ba7882346b428b4460"
+      },
+      "status": "rejected",
+      "reason": "Unsupported static stage input contract"
+    },
+    {
+      "id": "empty-programs",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/empty-programs/input.json",
+        "sha256": "873f4ed63b21eced3273e5b28fcc188a610b9e6f1fa3ad6569e1ad69eb138492"
+      },
+      "status": "rejected",
+      "reason": "Require one to eight ordered programs"
+    },
+    {
+      "id": "duplicate-id",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/duplicate-id/input.json",
+        "sha256": "f29b307ead650a00dac15d59f563d63c07d4e5d35c2004025ecc24abd4d67b6a"
+      },
+      "status": "rejected",
+      "reason": "Require unique stage IDs and explicit setup IDs"
+    },
+    {
+      "id": "lost-predecessor",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/lost-predecessor/input.json",
+        "sha256": "15b3ae47abe7fb0ed4e6cae127f12c4da0d7eff7415eddaca5b07b9682fbb46c"
+      },
+      "status": "rejected",
+      "reason": "Every program must consume the immediately preceding material state"
+    },
+    {
+      "id": "wrong-flip-center",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/wrong-flip-center/input.json",
+        "sha256": "dcc5e2209f75e0587548749ee87a4246b6144f8c0f054a1b0fdb38709803eb73"
+      },
+      "status": "rejected",
+      "reason": "Only identity and original-box static X flip are qualified"
+    },
+    {
+      "id": "pose-changed-in-setup",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/pose-changed-in-setup/input.json",
+        "sha256": "30030189949ffa0d75f2a0a7391cb2c5cc6c0ef8e7bf2a43ec0244f1cb1c32be"
+      },
+      "status": "rejected",
+      "reason": "A setup ID cannot silently change its placement"
+    },
+    {
+      "id": "unknown-stage-field",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/unknown-stage-field/input.json",
+        "sha256": "3454596cc1066adb302b1be80d3f8e290ce43e8a683ec9db1173b9eb68dc16c7"
+      },
+      "status": "rejected",
+      "reason": "Unknown or missing stage fields"
+    },
+    {
+      "id": "foreign-paper",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/foreign-paper/input.json",
+        "sha256": "e2f7b08b11835df00f988fcc5efb0c964de7450bb7212f5c99166303e6899680"
+      },
+      "status": "rejected",
+      "reason": "Stage card differs from the common archived process card"
+    },
+    {
+      "id": "wrong-final-CAD",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/wrong-final-CAD/input.json",
+        "sha256": "654484976ffe2f897d8b9266e46b34287036169e439f1d94d537d0f0738bd724"
+      },
+      "status": "rejected",
+      "reason": "Master process card is not bound to the final CAD"
+    },
+    {
+      "id": "weakened-criteria",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/weakened-criteria/input.json",
+        "sha256": "0a1aded4c40f7aa3f2a3e6863a8be71553c653b4bb4b44cf1070d3135c08529d"
+      },
+      "status": "rejected",
+      "reason": "The frozen software criteria changed"
+    },
+    {
+      "id": "replenished-second-CAM-stock",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/replenished-second-CAM-stock/input.json",
+        "sha256": "dbbd1ca98e946a040b995c51f0ac0142c0dad179f6dd58a84b6731d468943cf5"
+      },
+      "status": "rejected",
+      "reason": "Stage preparation blocked: B [{\"code\": \"unsupported_capability\", \"field\": \"stock\", \"message\": \"本面铣入口要求 XY 外形及底面相同、来料顶面高于目标；不得从成品 CAD 推断来料。\", \"severity\": \"blocking\", \"blocked_stage\": \"nc_generation\", \"owner\": \"input_maintenance\"}]"
+    }
+  ],
+  "new_CAM_jobs": 0,
+  "new_native_simulations": 0,
+  "original_inputs_unchanged": true
+}

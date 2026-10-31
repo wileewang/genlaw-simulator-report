@@ -1,0 +1,120 @@
+{
+  "schema": "genlaw.static-stage-input.v1",
+  "id": "S4-STATIC-STAGES-20261031-r1-wider-chamfer",
+  "mode": "software_geometry_reference",
+  "material_frame": "original_CAD_mm",
+  "stock_reset_between_stages": false,
+  "continuous_rotary_motion": false,
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/process-card.pdf",
+    "sha256": "cf03673e9858291edd9e88942121674b6e350f9fc633c2e4c9b2a6b629911725"
+  },
+  "process_plan": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/process-plan.json",
+    "sha256": "616b52a1acec04a07e7fc1a395a98510f72c1712cb2199ce21c4778ec396da3a"
+  },
+  "original_stock": {
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        4,
+        3,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6"
+  },
+  "stages": [
+    {
+      "id": "A",
+      "setup_id": "S1",
+      "input": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/A/input.json",
+        "sha256": "2f4261ec75c6dc88004505896b381f186d89fa15e7c717b6732558da973e1a3d"
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "predecessor": "original_stock"
+    },
+    {
+      "id": "B",
+      "setup_id": "S2",
+      "input": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/B/input.json",
+        "sha256": "14cb853a84cb168cac099d7c8df7ae57b7d545c56513c8f62cab498db3d73b0e"
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "predecessor": "A"
+    },
+    {
+      "id": "C",
+      "setup_id": "S2",
+      "input": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/C/input.json",
+        "sha256": "d28b7b0f32b72c6413785f0080959a427cb75839e042c192d97e86e96c2581c5"
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "predecessor": "B"
+    }
+  ],
+  "final_cad": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/final/target.brep",
+    "sha256": "ef7d125d0b8442d780c286582c395be82cc4ea81fc03f204b6f67e567f2740cb"
+  },
+  "final_reference": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/final/reference.json",
+    "sha256": "4cf69f355e6e83ec8d1249e4574841332bd70de4f89b602c331bf142bd4155ab"
+  },
+  "acceptance": {
+    "normal_iou_min": 0.99,
+    "control_iou_max": 0.98,
+    "bounds_error_mm_max": 0.025,
+    "volume_error_mm3_max": 0.03,
+    "quadrature_iou_difference_max": 1e-05,
+    "mesh_vs_integrated_volume_mm3_max": 0.0001,
+    "feature_deviation_mm_max": 0.1,
+    "numerical_guard_cells": 2
+  }
+}

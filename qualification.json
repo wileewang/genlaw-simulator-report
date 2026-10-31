@@ -1,0 +1,493 @@
+{
+  "schema": "genlaw.static-stage-combination-completion.v1",
+  "at_utc": "2026-10-31T06:36:13.998651+00:00",
+  "status": "four_synthetic_three_program_chains_qualified",
+  "suite": {
+    "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/summary.json",
+    "sha256": "8d33c24a986edab9e8b64bd0f22c683ae44f1c1f68cb5c8e9880d3e20375db58"
+  },
+  "input_archive": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/manifest.json",
+    "sha256": "ab6a2d0e86edf8c027f9719af2d286bd10ecfd40e576cdd075b1699431427047"
+  },
+  "input_checks": {
+    "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-01/result.json",
+    "sha256": "6dceade755e82b9d05ecd89819e9f5078d93d0d73e516f46926579a6c146662a"
+  },
+  "engine_build": {
+    "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/build-02/build.json",
+    "sha256": "55d5194d8ccb02b6c930539a3e6d574db1a45749a0be5ff6626f071d420b2f99"
+  },
+  "engine_qualification": {
+    "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/native-qualification-01/qualification.json",
+    "sha256": "38d2540f627151124f2abe295281b6e09c3ea978f8ad6ad323a0ba269bbf8b7c"
+  },
+  "native_guards": {
+    "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/native-guards-02/result.json",
+    "sha256": "e2b2011d140b07dbabec043d775db1a51a7f71632b819863c175f4553f0271f4"
+  },
+  "paper_review": {
+    "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/paper-review.json",
+    "sha256": "8975de341e9c694dad5b63bc7e11149c04eac493a6250d2ad0d88bcfbef0b35a"
+  },
+  "source_freeze": {
+    "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/source-freeze.json",
+    "sha256": "440313903143130768d335df256569955316b89c7e07c093ad5b4551da4b578a"
+  },
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "stage_iou_percent": [
+        99.96160726004054,
+        99.95147185803592,
+        99.95289070887708
+      ],
+      "final_iou_percent": 99.95289070887708
+    },
+    {
+      "id": "wider-chamfer",
+      "stage_iou_percent": [
+        99.96160726004054,
+        99.95147185803592,
+        99.95200708289674
+      ],
+      "final_iou_percent": 99.95200708289674
+    },
+    {
+      "id": "deeper-second",
+      "stage_iou_percent": [
+        99.96160726004054,
+        99.93909828362635,
+        99.93989540874739
+      ],
+      "final_iou_percent": 99.93989540874739
+    },
+    {
+      "id": "shifted-datum",
+      "stage_iou_percent": [
+        99.95205369126052,
+        99.91680263816392,
+        99.94046249527729
+      ],
+      "final_iou_percent": 99.94046249527729
+    }
+  ],
+  "negative_controls": {
+    "omitted-chamfer": 93.76758364860486,
+    "wrong-chamfer-pose": 90.9778051291197,
+    "omitted-second-facing": 82.07803903997541
+  },
+  "normal_input_count": 4,
+  "preparation_rejections": 11,
+  "native_rejections": 8,
+  "native_exact_equivalence_cases": 3,
+  "new_FreeCAD_CAM_jobs": 12,
+  "new_combination_native_surface_executions": 14,
+  "combination_measurements": 15,
+  "original_stock_shared_across_three_programs": true,
+  "native_incoming_CAD_continuity_verified": true,
+  "prefix_geometry_gates_next_native_execution": true,
+  "targets_frozen_before_NC": 16,
+  "positive_completed_workers_before_finalizer": 47,
+  "successful_resources": [
+    {
+      "file": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/archive-resources.json",
+        "sha256": "4c3e0865186130cf18ec5b7ad84f505f01bb19f63d329397c9f712bab1b140af"
+      },
+      "seconds": 0.9465599430259317,
+      "peak_rss_bytes": 54992896
+    },
+    {
+      "file": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/generate-cad-resources.json",
+        "sha256": "b992c73df4cf3d9f112335165dd9a1e5e529ece9c4df711042d494d4627be893"
+      },
+      "seconds": 1.3667984009953216,
+      "peak_rss_bytes": 132628480
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-A/measure-resources.json",
+        "sha256": "1806efa1d54ad337c86d33ff9101fe4601f244b976c60f55057649524f601707"
+      },
+      "seconds": 3.8777337089995854,
+      "peak_rss_bytes": 103407616
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-A/native-resources.json",
+        "sha256": "af83ab3bb80fa094da37e3634a75bf6436095be1b830b5eed9f026a2ef6bcc51"
+      },
+      "seconds": 0.7377320189843886,
+      "peak_rss_bytes": 11128832
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-B/measure-resources.json",
+        "sha256": "cc336dbedf25afdf1f7cf19c817c5efa414e196c8f098cca5db00a313611f46b"
+      },
+      "seconds": 3.146195419016294,
+      "peak_rss_bytes": 97034240
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-B/native-resources.json",
+        "sha256": "e3df9dd785f409318e81a07ffd2d5457e2ff12ef01140b706039434fd55f3876"
+      },
+      "seconds": 0.8393979290267453,
+      "peak_rss_bytes": 11083776
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-C/measure-resources.json",
+        "sha256": "dafa3affda1ecb682f1f4cd2e2c7419b4109ab9f749e77101dfbd51d3de934dc"
+      },
+      "seconds": 5.34519955603173,
+      "peak_rss_bytes": 97185792
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-C/native-resources.json",
+        "sha256": "666fac7569f6f8d340bd19fe585175389d46be08fe211956fcfbbb23ef58be7d"
+      },
+      "seconds": 0.9447556220111437,
+      "peak_rss_bytes": 11628544
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/freecad-resources.json",
+        "sha256": "f1ff427f681d53522ae254a17d38fe5d2cee018ee44d6f35eee511c80c9b6605"
+      },
+      "seconds": 2.105814979004208,
+      "peak_rss_bytes": 223444992
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/omitted-chamfer/measure-resources.json",
+        "sha256": "79a9bdf4bb97247ad80e89a00588808ccc18e0c83c4d81d79dea62a657848fe0"
+      },
+      "seconds": 3.248922778002452,
+      "peak_rss_bytes": 94597120
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/omitted-second-facing/measure-resources.json",
+        "sha256": "5d7d400b965b4e328d2196bc663c475fdeeb84cb851aa7b3128e45286616545b"
+      },
+      "seconds": 7.449495937034953,
+      "peak_rss_bytes": 102903808
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/omitted-second-facing/native-resources.json",
+        "sha256": "b0e00556dd4b1af460a837f91acdb07b637be8aaaa7d1d3a29910e828862ce4b"
+      },
+      "seconds": 0.8405675570247695,
+      "peak_rss_bytes": 11128832
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/wrong-chamfer-pose/measure-resources.json",
+        "sha256": "921d3355839f2333b5a175cc69a2aeaa4e75d47d18b68697666b501a30c68f93"
+      },
+      "seconds": 4.716383505961858,
+      "peak_rss_bytes": 95059968
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/wrong-chamfer-pose/native-resources.json",
+        "sha256": "0b30ea28690ffde86c4364a65f223c9b83b961133e45762fddb8c6bf7e631176"
+      },
+      "seconds": 0.9447971020126715,
+      "peak_rss_bytes": 11644928
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/after-A/measure-resources.json",
+        "sha256": "f99d1f0be46bda385244ffc475dbd5586ce1e0fe1e4bc7229754a3dc31ad030b"
+      },
+      "seconds": 3.8863153560087085,
+      "peak_rss_bytes": 98082816
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/after-A/native-resources.json",
+        "sha256": "98737ba639b753a75210bd04af8cdad7a8508e63d90b8fc60180655cffecadc0"
+      },
+      "seconds": 0.6327757129911333,
+      "peak_rss_bytes": 11116544
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/after-B/measure-resources.json",
+        "sha256": "b84df5b1648c4f9925945ff2ef8dfdf5aac297400c075fe5fd1aa2e3b02da2ca"
+      },
+      "seconds": 2.4135395230259746,
+      "peak_rss_bytes": 79310848
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/after-B/native-resources.json",
+        "sha256": "9b5045f954b01a39028445f7f4dfd38ce800f7ba5ece5982ead8fbb147f972c3"
+      },
+      "seconds": 0.8399989109602757,
+      "peak_rss_bytes": 11120640
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/after-C/measure-resources.json",
+        "sha256": "402aefe411d2c1f246b0dd167ea8f8c86c27164b2d045ffa263a36d689d329c1"
+      },
+      "seconds": 4.825852561974898,
+      "peak_rss_bytes": 91037696
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/after-C/native-resources.json",
+        "sha256": "9812b698ab8cb4d0342bf5629553adef1d0b6812858422b862a2c0bbbf9bc8c2"
+      },
+      "seconds": 1.0553178690024652,
+      "peak_rss_bytes": 11661312
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/deeper-second/freecad-resources.json",
+        "sha256": "71bb3ffe0c37152172e843cbd7f8e260406eac1eaed2c4920528c350d671dd5b"
+      },
+      "seconds": 1.787329700018745,
+      "peak_rss_bytes": 221392896
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-A/measure-resources.json",
+        "sha256": "2908dc4f9ed829a0fe2da8674029e8a654cf26db3e175cf670841078d0bd460b"
+      },
+      "seconds": 3.777436797041446,
+      "peak_rss_bytes": 101490688
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-A/native-resources.json",
+        "sha256": "2fd038ca3c5acbfdaca47cd7bcb8dbe3438cb29358e4e70e30d144a5cb869bc8"
+      },
+      "seconds": 0.6312108300044201,
+      "peak_rss_bytes": 11063296
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-B/measure-resources.json",
+        "sha256": "4231faffacb63155cebc256301b63ce42c98dc3738c24871805c60f624ea38a8"
+      },
+      "seconds": 2.942677184008062,
+      "peak_rss_bytes": 83488768
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-B/native-resources.json",
+        "sha256": "f1067ef94245e08a08338ef815006545c93b92a554fbaf7fa92b382bcbd66dee"
+      },
+      "seconds": 0.8451443209778517,
+      "peak_rss_bytes": 10944512
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-C/measure-resources.json",
+        "sha256": "829957258cabdeea34179fe9790d54d81242461c13d59d96d05498d63d1925d2"
+      },
+      "seconds": 4.9322102250298485,
+      "peak_rss_bytes": 94482432
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/after-C/native-resources.json",
+        "sha256": "2f085603415454bc39705b4c1cd4a7928e1bd68bb72d344eff316a9fb6b3ab53"
+      },
+      "seconds": 0.9459132329793647,
+      "peak_rss_bytes": 11112448
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/shifted-datum/freecad-resources.json",
+        "sha256": "55f30304c43e50f0d72eb0668ed6971adeaa1ebb6b5fc6e455e9fc259941d1dd"
+      },
+      "seconds": 1.6825338439666666,
+      "peak_rss_bytes": 219258880
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/after-A/measure-resources.json",
+        "sha256": "722f0aee92eb37bf239e3a07bf9caea4253cb253410ea7b7b72213b7993bf34c"
+      },
+      "seconds": 3.781131639960222,
+      "peak_rss_bytes": 85868544
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/after-A/native-resources.json",
+        "sha256": "670b544657512198eeac67799576114e4f5a87af42e3adfb28d0146a6cb84b54"
+      },
+      "seconds": 0.6295675139990635,
+      "peak_rss_bytes": 11059200
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/after-B/measure-resources.json",
+        "sha256": "2b4040989843300a76a4feab576f644b962dc0e652b2785ee4974f41d8126a7c"
+      },
+      "seconds": 3.149853358976543,
+      "peak_rss_bytes": 81707008
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/after-B/native-resources.json",
+        "sha256": "d07d792a9416e997f2a190c613ad961a962952f2af5cbc911109f65b46abf7cb"
+      },
+      "seconds": 0.7360398040036671,
+      "peak_rss_bytes": 11075584
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/after-C/measure-resources.json",
+        "sha256": "e93f2084fe130b3d9abff3e768d259c6818432dd941ab55f0aa3d1b1f28e7e06"
+      },
+      "seconds": 6.189309997018427,
+      "peak_rss_bytes": 95326208
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/after-C/native-resources.json",
+        "sha256": "462abff62a79d3b9f47d193fa96f4d3e85c4cc53e22fad58738ec4a6994c8c95"
+      },
+      "seconds": 0.944058695982676,
+      "peak_rss_bytes": 11710464
+    },
+    {
+      "file": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/wider-chamfer/freecad-resources.json",
+        "sha256": "0b39dcba49e712b431ab2c4f2be4651b025ce39422c0674a32c48b6200efe1fd"
+      },
+      "seconds": 2.0041790640098043,
+      "peak_rss_bytes": 221888512
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/build-02/compile-stages-resources.json",
+        "sha256": "20b991edc7a45ce113624645796b4d6306510c6a41362e505bd62eaab97e81bb"
+      },
+      "seconds": 2.623003360000439,
+      "peak_rss_bytes": 261402624
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/build-02/link-stages-resources.json",
+        "sha256": "9f14bd6cee7c65ffe60241573234b6e41f354316ae901e6a914c812ddd7570a0"
+      },
+      "seconds": 0.41955534100998193,
+      "peak_rss_bytes": 56487936
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/build-02/relink-reference-resources.json",
+        "sha256": "02534d127f508c82181341fb25f3fb4c83b1603b8a37b63182151d24767e250f"
+      },
+      "seconds": 0.4196753739961423,
+      "peak_rss_bytes": 56451072
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/native-qualification-01/finite-frustum/compare-resources.json",
+        "sha256": "a10b22d83bfb7b4971711a24c1f8c2db9847230ffdc7cca8096e6deec724099b"
+      },
+      "seconds": 0.734171211021021,
+      "peak_rss_bytes": 148123648
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/native-qualification-01/finite-frustum/native-resources.json",
+        "sha256": "a00dc7f5ed844527d0428feb4d0db6467a1c39d1158c01b3be4a1e082398885a"
+      },
+      "seconds": 2.3087629349902272,
+      "peak_rss_bytes": 26386432
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/native-qualification-01/shifted-flip/compare-resources.json",
+        "sha256": "0084a07564d42143ef96967020fca1be2488a24190226d4749885f62c2cb7b50"
+      },
+      "seconds": 0.3155191679834388,
+      "peak_rss_bytes": 51326976
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/native-qualification-01/shifted-flip/native-resources.json",
+        "sha256": "f71f12d1655453bbf6d63bd46b663401eb56c97e167845e70dfdf7d577c5917c"
+      },
+      "seconds": 0.83908415294718,
+      "peak_rss_bytes": 10940416
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/native-qualification-01/single-facing/compare-resources.json",
+        "sha256": "2f548ef7fe13b153ec107237f14d689da755fb8c0a5e8aea08ffba90e18aa48b"
+      },
+      "seconds": 0.3155647669918835,
+      "peak_rss_bytes": 56020992
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/native-qualification-01/single-facing/native-resources.json",
+        "sha256": "6212a9084b5da599c21ffae533e3102e50d47ebfa44c8f84ee383c750fa471cf"
+      },
+      "seconds": 0.6303646050509997,
+      "peak_rss_bytes": 11042816
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/input-check-resources.json",
+        "sha256": "34a3fc0cc62881435a324441cbd84ff87a04f9b9aacf6ef2539456f316e9848c"
+      },
+      "seconds": 0.2104605280328542,
+      "peak_rss_bytes": 17825792
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/paper-preview-resources.json",
+        "sha256": "af0070af2be5222a2917eb8b810d965ca7a0fcbe186c78a0ad0287bb7e07ce2d"
+      },
+      "seconds": 0.5252245789743029,
+      "peak_rss_bytes": 14381056
+    },
+    {
+      "file": {
+        "path": "docs/checkpoints/2026-10-31/static-stage-combination-01/native-guards-r2-resources.json",
+        "sha256": "f0be44751fa963608e058da82ba6d502d7b557f39bb771d93b78fadbde027276"
+      },
+      "seconds": 0.31614027003524825,
+      "peak_rss_bytes": 18927616
+    }
+  ],
+  "max_worker_seconds": 7.449495937034953,
+  "max_worker_rss_bytes": 261402624,
+  "existing_compute_and_disk_limits_unchanged": true,
+  "default_engine_changed": false,
+  "actual_material_states_for_replay": 4,
+  "program_specific_tool_tables": true,
+  "scope": "Synthetic first-side facing, static X flip, opposite facing and four-edge 45 degree chamfer. Every program uses its own explicit tool table and fresh interpreter; no continuous rotary NC or automatic tool-magazine qualification.",
+  "whole_real_process_card_complete": false,
+  "physical_fixture_or_machine_collision_verified": false,
+  "manufacturing_tolerance_or_angle_acceptance": false,
+  "material_physics_verified": false,
+  "production_approved": false,
+  "public_site_updated": false,
+  "goal_complete": false,
+  "retained_failures": [
+    "build-01 C++ type name qualification error",
+    "native-guards-01 expected a later error, but the existing XYZ-only interpreter correctly rejected rotary NC earlier"
+  ],
+  "next_required": [
+    "Publish four final numerical/visual results and four material states in the existing S4 equipment section, with a new independent reviewer",
+    "Continue the original-size stock collection from the terminal run-0021 (385/1015)",
+    "Extend real-card-required rounds, selected bevels, holes/profile combinations; actual H, resource data and full-card acceptance remain pending"
+  ]
+}

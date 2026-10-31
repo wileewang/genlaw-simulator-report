@@ -1,0 +1,126 @@
+{
+  "schema": "genlaw.process-plan.v1",
+  "id": "S4-STATIC-deeper-second-CARD-r1-B",
+  "cad_sha256": "9f39ced7a79cb46fb301df8bfcc539778f12a44156ae87804861fdc542d901ef",
+  "origin": "developer_authored_synthetic_paper_card",
+  "transcription": {
+    "status": "checked_against_source",
+    "reviewer_role": "developer_transcription",
+    "production_review": false
+  },
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "external_documents": [],
+  "operations": [
+    {
+      "id": "OP05",
+      "name": "来料核对",
+      "steps": [
+        {
+          "id": "OP05.1",
+          "type": "incoming_inspection",
+          "text": "核对 4 × 3 × 1.5 mm 单件来料、6061-T6 标签及独立 CAD 版本。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP05.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP10",
+      "name": "第一面面铣 / 程序 A",
+      "steps": [
+        {
+          "id": "OP10.1",
+          "type": "setup",
+          "text": "按原 CAD 建立 S1 装夹，安装本程序 T1 平底铣刀；实体夹具尚未建模。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.1"
+          }
+        },
+        {
+          "id": "OP10.2",
+          "type": "face_milling",
+          "feature_id": "P1",
+          "depends_on": [
+            "OP05.1",
+            "OP10.1"
+          ],
+          "constraints": {
+            "thickness_mm": 1.1,
+            "top_shape": "flat",
+            "tool_id": "T1"
+          },
+          "text": "第一面去除 0.4 mm，铣至厚度 1.1 mm；完整几何通过后才能翻面。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP20",
+      "name": "翻面面铣与倒角 / 程序 B、C",
+      "steps": [
+        {
+          "id": "OP20.1",
+          "type": "setup",
+          "text": "停机，围绕原始毛坯中心 X 轴翻转 180°并建立 S2；保留第一面实际剩料。",
+          "source": {
+            "document_id": "CARD",
+            "page": 3,
+            "location": "工序 / 工步 OP20.1"
+          }
+        },
+        {
+          "id": "OP20.2",
+          "type": "face_milling",
+          "feature_id": "P2",
+          "depends_on": [
+            "OP10.2",
+            "OP20.1"
+          ],
+          "constraints": {
+            "thickness_mm": 0.6000000000000001,
+            "top_shape": "flat",
+            "tool_id": "T1"
+          },
+          "text": "程序 B 用其 T1 平底铣刀再去除 0.5 mm，中央厚度至 0.6 mm；检验通过才继续。",
+          "source": {
+            "document_id": "CARD",
+            "page": 3,
+            "location": "工序 / 工步 OP20.2"
+          }
+        },
+        {
+          "id": "OP20.3",
+          "type": "chamfer_milling",
+          "feature_id": "C1",
+          "depends_on": [
+            "OP20.2"
+          ],
+          "constraints": {
+            "width_mm": 0.3,
+            "angle_degrees": 45,
+            "edge_selection": "all_four_top_edges",
+            "tool_id": "T1"
+          },
+          "text": "保持 S2，停机按程序 C 附件换装其 T1 倒角刀。上口四边 C0.3 × 45°，外侧下刀、顺时针一圈后抬刀；第一面与中央厚度保持。",
+          "source": {
+            "document_id": "CARD",
+            "page": 3,
+            "location": "工序 / 工步 OP20.3"
+          }
+        }
+      ]
+    }
+  ]
+}

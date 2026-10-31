@@ -1,0 +1,59 @@
+{
+  "schema": "genlaw.preparation-input.v14",
+  "id": "S4-STATIC-STAGES-20261031-r1-wider-chamfer-C",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP20.3"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP20.2": "由协调器验证前序同一块材料的几何；装夹与独立程序刀表按本纸卡附件，非重新放入毛坯。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "93c6ddb9e6f8804c57b8cf2c1436c2ff916f3cdab405f825482f28bbbc43d9df"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "d071500b655144f174905281b020c041a087b5956e075f132b07250f7f4fe6fc"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "8e2a9f8db64053a09b3ce4fefea58460ec63950f944f5021465d140cca7eeae4"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "8cf67c860cf2bd657e8a0e8369985106f00f7348e4c5199dcbeb3671269404f7"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "05295e91c634f9c303e57a926be6c588c0af5570ecca4ad045d407c1f898c329"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "491ba828e1f3a8b80cdf144f995904c6dcc4ed1b23d075a2c6fa60fe4ae6b186"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "a037b21cc1e794bf8d6ca54e79feed68f423f2bde79b727b50d2e3822367b2a0"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "cf03673e9858291edd9e88942121674b6e350f9fc633c2e4c9b2a6b629911725"
+    }
+  },
+  "capability": "rectangular_top_chamfer_xy"
+}

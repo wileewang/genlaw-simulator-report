@@ -1,0 +1,1251 @@
+{
+  "schema": "genlaw.cam-result.v1",
+  "status": "generated_and_checked",
+  "native_cad_binding": {
+    "schema": "genlaw.native-binding.v7",
+    "status": "verified",
+    "cad_sha256": "a9df1bf31d970b62ec3d6bb4b730c87fc6f1151fd3f2e75b41c741ea1e8ba299",
+    "reference_class": "axis_aligned_box_after_top_facing",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        4.0,
+        3.0,
+        -0.3999999999999999
+      ]
+    },
+    "incoming_stock_bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        4,
+        3,
+        0.0
+      ]
+    },
+    "volume_mm3": 13.200000000000001,
+    "valid_single_solid": true,
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "features": [
+      {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face6",
+        "top_z_mm": -0.3999999999999999,
+        "thickness_mm": 1.1,
+        "bounds_xy_mm": {
+          "min": [
+            0.0,
+            0.0
+          ],
+          "max": [
+            4.0,
+            3.0
+          ]
+        }
+      }
+    ],
+    "native_top_face": "Face6",
+    "native_top_area_mm2": 12.0,
+    "reference_for_iou": "Original target box checked by independent native boolean difference; incoming stock remains separate, not an NC-derived target."
+  },
+  "nc_sha256": "d21dc32bc3bdd44c3602d913409e64c8273878e6b595528a15556e873fe812b0",
+  "native_operation": "MillFace",
+  "native_stock": {
+    "construction": "FreeCAD Stock.CreateBox from declared incoming bounds",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        4.0,
+        3.0,
+        0.0
+      ]
+    },
+    "stock_type": "CreateBox"
+  },
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "gui_up": false,
+  "postprocessor": "FreeCAD bundled linuxcnc_post",
+  "post_arguments": "--no-show-editor --no-tlo --precision 5",
+  "native_path_sha256": "c26cab57fe684490c8fd24deb5af5bb3dcfb258d3155158336423b3a1fcd284e",
+  "operation_bindings": [
+    {
+      "step_id": "OP10.2",
+      "feature_id": "P1",
+      "cam_operation": "Face",
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face6"
+          ]
+        }
+      ]
+    }
+  ],
+  "parameters": {
+    "step_down_mm": 0.25,
+    "step_over_percent": 50,
+    "final_depth_mm": -0.3999999999999999,
+    "start_at": "Center",
+    "pattern": "Offset",
+    "geometry_tolerance_mm": 0.001,
+    "native_area_parameters": "{'Tolerance': 1e-07, 'FitArcs': True, 'Simplify': False, 'CleanDistance': 0.0, 'Accuracy': 0.001, 'Unit': 1.0, 'MinArcPoints': 4, 'MaxArcPoints': 100, 'ClipperScale': 10000000.0, 'Fill': 0, 'Coplanar': 0, 'Reorient': True, 'Outline': False, 'Explode': False, 'OpenMode': 0, 'Deflection': 0.001, 'SubjectFill': 0, 'ClipFill': 0, 'Offset': 0.0, 'ExtraPass': 0, 'Stepover': 0.0, 'LastStepover': 0.0, 'JoinType': 0, 'EndType': 0, 'MiterLimit': 2.0, 'RoundPrecision': 0.0, 'PocketMode': 2, 'ToolRadius': 0.5, 'PocketExtraOffset': 0.0, 'PocketStepover': 0.5, 'PocketLastStepover': 0.0, 'FromCenter': True, 'Angle': 45.0, 'AngleShift': 0.0, 'Shift': 0.0, 'Thicken': False, 'SectionCount': -1, 'Stepdown': 1.0, 'SectionOffset': 0.0, 'SectionTolerance': 1e-06, 'SectionMode': 2, 'Project': False}",
+    "boundary_shape": "Boundbox",
+    "clear_edges": true,
+    "exclude_raised_areas": false
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "nc_check": {
+    "status": "checked_declared_milling_envelope",
+    "executable_blocks": 75,
+    "post_decimal_places": 5,
+    "text_modified": false,
+    "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+    "step_map": [
+      {
+        "step_id": "OP10.2",
+        "feature_id": "P1",
+        "first_executable_block": 6,
+        "last_executable_block": 72
+      }
+    ],
+    "cutting_moves": 40,
+    "arc_moves": 0,
+    "cutting_levels_mm": [
+      -0.25,
+      -0.4
+    ],
+    "path_envelope_allowance_mm": 0.00202,
+    "feed_time_seconds": 53.80000000000002,
+    "rapid_time_not_included": true,
+    "motion_trace": [
+      {
+        "block": 6,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          null
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 7,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 8,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          2.6,
+          1.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 9,
+        "motion": "G0",
+        "start": [
+          2.6,
+          1.4,
+          3.0
+        ],
+        "end": [
+          2.6,
+          1.4,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 10,
+        "motion": "G1",
+        "start": [
+          2.6,
+          1.4,
+          2.0
+        ],
+        "end": [
+          2.6,
+          1.4,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2.25
+      },
+      {
+        "block": 11,
+        "motion": "G1",
+        "start": [
+          2.6,
+          1.4,
+          -0.25
+        ],
+        "end": [
+          2.6,
+          1.6,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2.35
+      },
+      {
+        "block": 12,
+        "motion": "G1",
+        "start": [
+          2.6,
+          1.6,
+          -0.25
+        ],
+        "end": [
+          1.4,
+          1.6,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2.95
+      },
+      {
+        "block": 13,
+        "motion": "G1",
+        "start": [
+          1.4,
+          1.6,
+          -0.25
+        ],
+        "end": [
+          1.4,
+          1.4,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 3.0500000000000003
+      },
+      {
+        "block": 14,
+        "motion": "G1",
+        "start": [
+          1.4,
+          1.4,
+          -0.25
+        ],
+        "end": [
+          2.6,
+          1.4,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 3.6500000000000004
+      },
+      {
+        "block": 15,
+        "motion": "G0",
+        "start": [
+          2.6,
+          1.4,
+          -0.25
+        ],
+        "end": [
+          2.6,
+          1.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 3.6500000000000004
+      },
+      {
+        "block": 16,
+        "motion": "G0",
+        "start": [
+          2.6,
+          1.4,
+          3.0
+        ],
+        "end": [
+          3.1,
+          0.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 3.6500000000000004
+      },
+      {
+        "block": 17,
+        "motion": "G0",
+        "start": [
+          3.1,
+          0.9,
+          3.0
+        ],
+        "end": [
+          3.1,
+          0.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 3.6500000000000004
+      },
+      {
+        "block": 18,
+        "motion": "G1",
+        "start": [
+          3.1,
+          0.9,
+          2.0
+        ],
+        "end": [
+          3.1,
+          0.9,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 5.9
+      },
+      {
+        "block": 19,
+        "motion": "G1",
+        "start": [
+          3.1,
+          0.9,
+          -0.25
+        ],
+        "end": [
+          3.1,
+          2.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 6.5
+      },
+      {
+        "block": 20,
+        "motion": "G1",
+        "start": [
+          3.1,
+          2.1,
+          -0.25
+        ],
+        "end": [
+          0.9,
+          2.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 7.6
+      },
+      {
+        "block": 21,
+        "motion": "G1",
+        "start": [
+          0.9,
+          2.1,
+          -0.25
+        ],
+        "end": [
+          0.9,
+          0.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 8.2
+      },
+      {
+        "block": 22,
+        "motion": "G1",
+        "start": [
+          0.9,
+          0.9,
+          -0.25
+        ],
+        "end": [
+          3.1,
+          0.9,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 9.299999999999999
+      },
+      {
+        "block": 23,
+        "motion": "G0",
+        "start": [
+          3.1,
+          0.9,
+          -0.25
+        ],
+        "end": [
+          3.1,
+          0.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 9.299999999999999
+      },
+      {
+        "block": 24,
+        "motion": "G0",
+        "start": [
+          3.1,
+          0.9,
+          3.0
+        ],
+        "end": [
+          3.6,
+          0.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 9.299999999999999
+      },
+      {
+        "block": 25,
+        "motion": "G0",
+        "start": [
+          3.6,
+          0.4,
+          3.0
+        ],
+        "end": [
+          3.6,
+          0.4,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 9.299999999999999
+      },
+      {
+        "block": 26,
+        "motion": "G1",
+        "start": [
+          3.6,
+          0.4,
+          2.0
+        ],
+        "end": [
+          3.6,
+          0.4,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 11.549999999999999
+      },
+      {
+        "block": 27,
+        "motion": "G1",
+        "start": [
+          3.6,
+          0.4,
+          -0.25
+        ],
+        "end": [
+          3.6,
+          2.6,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 12.649999999999999
+      },
+      {
+        "block": 28,
+        "motion": "G1",
+        "start": [
+          3.6,
+          2.6,
+          -0.25
+        ],
+        "end": [
+          0.4,
+          2.6,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 14.249999999999998
+      },
+      {
+        "block": 29,
+        "motion": "G1",
+        "start": [
+          0.4,
+          2.6,
+          -0.25
+        ],
+        "end": [
+          0.4,
+          0.4,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 15.349999999999998
+      },
+      {
+        "block": 30,
+        "motion": "G1",
+        "start": [
+          0.4,
+          0.4,
+          -0.25
+        ],
+        "end": [
+          3.6,
+          0.4,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 16.95
+      },
+      {
+        "block": 31,
+        "motion": "G0",
+        "start": [
+          3.6,
+          0.4,
+          -0.25
+        ],
+        "end": [
+          3.6,
+          0.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 16.95
+      },
+      {
+        "block": 32,
+        "motion": "G0",
+        "start": [
+          3.6,
+          0.4,
+          3.0
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 16.95
+      },
+      {
+        "block": 33,
+        "motion": "G0",
+        "start": [
+          4.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 16.95
+      },
+      {
+        "block": 34,
+        "motion": "G1",
+        "start": [
+          4.1,
+          -0.1,
+          2.0
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          -0.25
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 19.2
+      },
+      {
+        "block": 35,
+        "motion": "G1",
+        "start": [
+          4.1,
+          -0.1,
+          -0.25
+        ],
+        "end": [
+          4.1,
+          3.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 20.8
+      },
+      {
+        "block": 36,
+        "motion": "G1",
+        "start": [
+          4.1,
+          3.1,
+          -0.25
+        ],
+        "end": [
+          -0.1,
+          3.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 22.9
+      },
+      {
+        "block": 37,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          3.1,
+          -0.25
+        ],
+        "end": [
+          -0.1,
+          -0.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 24.5
+      },
+      {
+        "block": 38,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          -0.1,
+          -0.25
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          -0.25
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 26.6
+      },
+      {
+        "block": 39,
+        "motion": "G0",
+        "start": [
+          4.1,
+          -0.1,
+          -0.25
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 26.6
+      },
+      {
+        "block": 40,
+        "motion": "G0",
+        "start": [
+          4.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          2.6,
+          1.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 26.6
+      },
+      {
+        "block": 41,
+        "motion": "G0",
+        "start": [
+          2.6,
+          1.4,
+          3.0
+        ],
+        "end": [
+          2.6,
+          1.4,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 26.6
+      },
+      {
+        "block": 42,
+        "motion": "G1",
+        "start": [
+          2.6,
+          1.4,
+          2.0
+        ],
+        "end": [
+          2.6,
+          1.4,
+          -0.4
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 29.0
+      },
+      {
+        "block": 43,
+        "motion": "G1",
+        "start": [
+          2.6,
+          1.4,
+          -0.4
+        ],
+        "end": [
+          2.6,
+          1.6,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 29.1
+      },
+      {
+        "block": 44,
+        "motion": "G1",
+        "start": [
+          2.6,
+          1.6,
+          -0.4
+        ],
+        "end": [
+          1.4,
+          1.6,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 29.700000000000003
+      },
+      {
+        "block": 45,
+        "motion": "G1",
+        "start": [
+          1.4,
+          1.6,
+          -0.4
+        ],
+        "end": [
+          1.4,
+          1.4,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 29.800000000000004
+      },
+      {
+        "block": 46,
+        "motion": "G1",
+        "start": [
+          1.4,
+          1.4,
+          -0.4
+        ],
+        "end": [
+          2.6,
+          1.4,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 30.400000000000006
+      },
+      {
+        "block": 47,
+        "motion": "G0",
+        "start": [
+          2.6,
+          1.4,
+          -0.4
+        ],
+        "end": [
+          2.6,
+          1.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 30.400000000000006
+      },
+      {
+        "block": 48,
+        "motion": "G0",
+        "start": [
+          2.6,
+          1.4,
+          3.0
+        ],
+        "end": [
+          3.1,
+          0.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 30.400000000000006
+      },
+      {
+        "block": 49,
+        "motion": "G0",
+        "start": [
+          3.1,
+          0.9,
+          3.0
+        ],
+        "end": [
+          3.1,
+          0.9,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 30.400000000000006
+      },
+      {
+        "block": 50,
+        "motion": "G1",
+        "start": [
+          3.1,
+          0.9,
+          2.0
+        ],
+        "end": [
+          3.1,
+          0.9,
+          -0.4
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 32.800000000000004
+      },
+      {
+        "block": 51,
+        "motion": "G1",
+        "start": [
+          3.1,
+          0.9,
+          -0.4
+        ],
+        "end": [
+          3.1,
+          2.1,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 33.400000000000006
+      },
+      {
+        "block": 52,
+        "motion": "G1",
+        "start": [
+          3.1,
+          2.1,
+          -0.4
+        ],
+        "end": [
+          0.9,
+          2.1,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 34.50000000000001
+      },
+      {
+        "block": 53,
+        "motion": "G1",
+        "start": [
+          0.9,
+          2.1,
+          -0.4
+        ],
+        "end": [
+          0.9,
+          0.9,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 35.10000000000001
+      },
+      {
+        "block": 54,
+        "motion": "G1",
+        "start": [
+          0.9,
+          0.9,
+          -0.4
+        ],
+        "end": [
+          3.1,
+          0.9,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 36.20000000000001
+      },
+      {
+        "block": 55,
+        "motion": "G0",
+        "start": [
+          3.1,
+          0.9,
+          -0.4
+        ],
+        "end": [
+          3.1,
+          0.9,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 36.20000000000001
+      },
+      {
+        "block": 56,
+        "motion": "G0",
+        "start": [
+          3.1,
+          0.9,
+          3.0
+        ],
+        "end": [
+          3.6,
+          0.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 36.20000000000001
+      },
+      {
+        "block": 57,
+        "motion": "G0",
+        "start": [
+          3.6,
+          0.4,
+          3.0
+        ],
+        "end": [
+          3.6,
+          0.4,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 36.20000000000001
+      },
+      {
+        "block": 58,
+        "motion": "G1",
+        "start": [
+          3.6,
+          0.4,
+          2.0
+        ],
+        "end": [
+          3.6,
+          0.4,
+          -0.4
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 38.60000000000001
+      },
+      {
+        "block": 59,
+        "motion": "G1",
+        "start": [
+          3.6,
+          0.4,
+          -0.4
+        ],
+        "end": [
+          3.6,
+          2.6,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 39.70000000000001
+      },
+      {
+        "block": 60,
+        "motion": "G1",
+        "start": [
+          3.6,
+          2.6,
+          -0.4
+        ],
+        "end": [
+          0.4,
+          2.6,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 41.30000000000001
+      },
+      {
+        "block": 61,
+        "motion": "G1",
+        "start": [
+          0.4,
+          2.6,
+          -0.4
+        ],
+        "end": [
+          0.4,
+          0.4,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 42.40000000000001
+      },
+      {
+        "block": 62,
+        "motion": "G1",
+        "start": [
+          0.4,
+          0.4,
+          -0.4
+        ],
+        "end": [
+          3.6,
+          0.4,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 44.000000000000014
+      },
+      {
+        "block": 63,
+        "motion": "G0",
+        "start": [
+          3.6,
+          0.4,
+          -0.4
+        ],
+        "end": [
+          3.6,
+          0.4,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 44.000000000000014
+      },
+      {
+        "block": 64,
+        "motion": "G0",
+        "start": [
+          3.6,
+          0.4,
+          3.0
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 44.000000000000014
+      },
+      {
+        "block": 65,
+        "motion": "G0",
+        "start": [
+          4.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 44.000000000000014
+      },
+      {
+        "block": 66,
+        "motion": "G1",
+        "start": [
+          4.1,
+          -0.1,
+          2.0
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          -0.4
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 46.40000000000001
+      },
+      {
+        "block": 67,
+        "motion": "G1",
+        "start": [
+          4.1,
+          -0.1,
+          -0.4
+        ],
+        "end": [
+          4.1,
+          3.1,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 48.000000000000014
+      },
+      {
+        "block": 68,
+        "motion": "G1",
+        "start": [
+          4.1,
+          3.1,
+          -0.4
+        ],
+        "end": [
+          -0.1,
+          3.1,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 50.100000000000016
+      },
+      {
+        "block": 69,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          3.1,
+          -0.4
+        ],
+        "end": [
+          -0.1,
+          -0.1,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 51.70000000000002
+      },
+      {
+        "block": 70,
+        "motion": "G1",
+        "start": [
+          -0.1,
+          -0.1,
+          -0.4
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          -0.4
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 53.80000000000002
+      },
+      {
+        "block": 71,
+        "motion": "G0",
+        "start": [
+          4.1,
+          -0.1,
+          -0.4
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 53.80000000000002
+      },
+      {
+        "block": 72,
+        "motion": "G0",
+        "start": [
+          4.1,
+          -0.1,
+          3.0
+        ],
+        "end": [
+          4.1,
+          -0.1,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 53.80000000000002
+      }
+    ],
+    "final_uncovered_profile_mm2": 0.0,
+    "incoming_stock_bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        4,
+        3,
+        0.0
+      ]
+    },
+    "target_bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        4.0,
+        3.0,
+        -0.3999999999999999
+      ]
+    },
+    "facing_semantics": "Clear the complete incoming XY footprint to the original CAD top, with the declared step-down and unchanged NC."
+  },
+  "execution_plan_sha256": "b15d68130a8bdc6a50126e37e2abeda42093f7cb54ad774c5806fe54f51a1026"
+}

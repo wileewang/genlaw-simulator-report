@@ -1,0 +1,90 @@
+{
+  "id": "baseline",
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/process-card.pdf",
+    "sha256": "443cc6a2e22091a11dc50d5b6e79ff512cecf90215a8105ed5bbd8e51b1ff871"
+  },
+  "original_final_CAD": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/final/target.brep",
+    "sha256": "daf437d3b6153a548333ea05f5ea8a85fb4b86ce061fdb3b4ef274ef633f21ef"
+  },
+  "states": [
+    {
+      "stage_id": "A",
+      "setup_id": "S1",
+      "metrics": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-A/metrics.json",
+        "sha256": "204a99485f46ec23f1ca75e82bbfe2a9dd8fc38bba5f02fa166c2dddb5b308fb"
+      },
+      "iou_percent": 99.96160726004054,
+      "geometry_pass": true,
+      "native_reused": false
+    },
+    {
+      "stage_id": "B",
+      "setup_id": "S2",
+      "metrics": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-B/metrics.json",
+        "sha256": "476d8f13d225ee91a986657e9345a94193d6595016f19ad100e3dc441f353cbe"
+      },
+      "iou_percent": 99.95147185803592,
+      "geometry_pass": true,
+      "native_reused": false
+    },
+    {
+      "stage_id": "C",
+      "setup_id": "S2",
+      "metrics": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/after-C/metrics.json",
+        "sha256": "5f0f03ebdf8ffe3f19753aeb5453f3c5a8f5d52cf48d9c6a26136ddf530aa7ad"
+      },
+      "iou_percent": 99.95289070887708,
+      "geometry_pass": true,
+      "native_reused": false
+    }
+  ],
+  "final_iou_percent": 99.95289070887708,
+  "CAM_jobs": [
+    {
+      "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/A/cam-job.FCStd",
+      "sha256": "7604b8fc554dc28fed5c6926f0125d031ceb272d31e058f6410522dbe7686239"
+    },
+    {
+      "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/B/cam-job.FCStd",
+      "sha256": "20e75d5abbd27230249b05e7c1fe4f683d9465b84dcbdc4e2aa420ac80d133d1"
+    },
+    {
+      "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/C/cam-job.FCStd",
+      "sha256": "345df75504ebaefc66c48e86259c807d2f781557b0305ac42caa19d518529211"
+    }
+  ],
+  "negative_controls": {
+    "omitted-chamfer": {
+      "metrics": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/omitted-chamfer/metrics.json",
+        "sha256": "f02552c1d7934966488eff6dbc395db5f4ec0387e5ddc3219fd507ba0fe70d48"
+      },
+      "iou_percent": 93.76758364860486,
+      "geometry_pass": false,
+      "native_reused": true
+    },
+    "wrong-chamfer-pose": {
+      "metrics": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/wrong-chamfer-pose/metrics.json",
+        "sha256": "39829c64296a8b4b9f6b6b7c278356dbb52eecea0580d4a7f00c2f60861a3838"
+      },
+      "iou_percent": 90.9778051291197,
+      "geometry_pass": false,
+      "native_reused": false
+    },
+    "omitted-second-facing": {
+      "metrics": {
+        "path": "validation/runs/S4-STATIC-STAGES-20261031-r1/baseline/omitted-second-facing/metrics.json",
+        "sha256": "2a85e5fb13da36c62f721be760c62c74d3597f3921c600cbc6e55cd961db0ec3"
+      },
+      "iou_percent": 82.07803903997541,
+      "geometry_pass": false,
+      "native_reused": false
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "schema": "genlaw.static-stage-input.v1",
+  "id": "S4-STATIC-STAGES-20261031-r1-baseline",
+  "mode": "software_geometry_reference",
+  "material_frame": "original_CAD_mm",
+  "stock_reset_between_stages": false,
+  "continuous_rotary_motion": false,
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/process-card.pdf",
+    "sha256": "443cc6a2e22091a11dc50d5b6e79ff512cecf90215a8105ed5bbd8e51b1ff871"
+  },
+  "process_plan": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/process-plan.json",
+    "sha256": "f7d7d77c69e643c48cbc71795be62c1e8a6e283c25b783555d969743f15bbdf8"
+  },
+  "original_stock": {
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        4,
+        3,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6"
+  },
+  "stages": [
+    {
+      "id": "A",
+      "setup_id": "S1",
+      "input": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/A/input.json",
+        "sha256": "e4dffc2abdf2b7b7626d7aba3b5e314ee609df941012a2528d1d4bda31b9cc28"
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "predecessor": "original_stock"
+    },
+    {
+      "id": "B",
+      "setup_id": "S2",
+      "input": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/B/input.json",
+        "sha256": "a6b5f598a05c7b2a84c08537bae43e69834e271890fabcc75b046013be13e286"
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "predecessor": "A"
+    },
+    {
+      "id": "C",
+      "setup_id": "S2",
+      "input": {
+        "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/C/input.json",
+        "sha256": "4f63912695bc6c878de91b693bd212fe7c09212653c968e01ba20580b8f41286"
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "predecessor": "B"
+    }
+  ],
+  "final_cad": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/final/target.brep",
+    "sha256": "daf437d3b6153a548333ea05f5ea8a85fb4b86ce061fdb3b4ef274ef633f21ef"
+  },
+  "final_reference": {
+    "path": "validation/feature-inputs/S4-STATIC-STAGES-20261031-r1/baseline/final/reference.json",
+    "sha256": "6f4d47064e90b3bd2cfe61c44e2440702e4618cefaccf456d98810c71752b466"
+  },
+  "acceptance": {
+    "normal_iou_min": 0.99,
+    "control_iou_max": 0.98,
+    "bounds_error_mm_max": 0.025,
+    "volume_error_mm3_max": 0.03,
+    "quadrature_iou_difference_max": 1e-05,
+    "mesh_vs_integrated_volume_mm3_max": 0.0001,
+    "feature_deviation_mm_max": 0.1,
+    "numerical_guard_cells": 2
+  }
+}
