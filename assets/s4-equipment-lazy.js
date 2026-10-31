@@ -12,11 +12,23 @@ if (root) {
   });
   scope.querySelectorAll('[data-open-indexed-case]').forEach(button => button.addEventListener('click', async () => {
     const playback = scope.querySelector('#indexed-playback');
+    const select = scope.querySelector('#indexed-case-select');
+    const card = button.closest('article');
+    const staticImage = card?.querySelector('figure img');
+    select.value = button.dataset.openIndexedCase;
+    if (staticImage) {
+      const fallback = root.querySelector('.fallback img');
+      fallback.src = staticImage.src;
+      fallback.alt = staticImage.alt;
+      root.querySelector('.fallback p').textContent = '三维暂不可用，可查看当前用例的 CAD 与实际剩料图片。';
+      if (!window.__INDEXED_VIEWER__?.ready) {
+        root.querySelector('[data-resolution-note]').textContent = '静态图片对应当前用例；工艺卡、形状与验收数值可在上方直接审阅。';
+      }
+    }
     playback.open = true;
     playback.scrollIntoView({block:'start', behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
     await begin();
     if (!window.__INDEXED_VIEWER__?.ready) return;
-    const select = scope.querySelector('#indexed-case-select');
     select.value = button.dataset.openIndexedCase;
     select.dispatchEvent(new Event('change'));
   }));
