@@ -1,0 +1,36 @@
+{
+  "schema": "genlaw.selected-chamfer-card.v1",
+  "id": "SELECTED-one-edge-r1",
+  "CAD": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/target.brep",
+    "sha256": "01b73e4d919fc9ce40ae385db6af57479786c842e9d08a650da4260b232eb7e8"
+  },
+  "operations": [
+    {
+      "id": "OP05",
+      "type": "incoming_inspection"
+    },
+    {
+      "id": "OP10",
+      "type": "setup",
+      "frame": "original_CAD",
+      "rotary_motion": false
+    },
+    {
+      "id": "OP20",
+      "type": "selected_edge_chamfer",
+      "width_mm": 0.4,
+      "angle_degrees": 45,
+      "selected_sides": [
+        "ymin"
+      ],
+      "tool_id": "T1"
+    },
+    {
+      "id": "OP30",
+      "type": "geometry_inspection"
+    }
+  ],
+  "manufacturing_approval": false,
+  "whole_real_card_complete": false
+}

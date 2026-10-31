@@ -1,0 +1,44 @@
+--- engines/freecad/deburr-linear-height-r1/Deburr.py
++++ engines/freecad/deburr-selected-edge-side-r1/Deburr.py
+@@ -347,20 +347,28 @@
+                                 and edge.Vertexes[0].Point.z < max_h
+                                 and not PathGeom.isRoughly(edge.Vertexes[0].Point.z, max_h)
+                             ):
+-                                new_edge = Part.Edge(
+-                                    Part.LineSegment(
+-                                        FreeCAD.Vector(
+-                                            edge.Vertexes[0].Point.x,
+-                                            edge.Vertexes[0].Point.y,
+-                                            max_h,
+-                                        ),
+-                                        FreeCAD.Vector(
+-                                            edge.Vertexes[1].Point.x,
+-                                            edge.Vertexes[1].Point.y,
+-                                            max_h,
+-                                        ),
+-                                    )
++                                start = FreeCAD.Vector(
++                                    edge.Vertexes[0].Point.x, edge.Vertexes[0].Point.y, max_h
+                                 )
++                                end = FreeCAD.Vector(
++                                    edge.Vertexes[1].Point.x, edge.Vertexes[1].Point.y, max_h
++                                )
++                                # A projected chamfer edge lies above removed material.
++                                # Testing offset points against the finished solid at
++                                # that height cannot reliably determine the outside.
++                                # For an upward planar bevel, orient the source line
++                                # so Util.offsetWire's first XY offset follows its
++                                # actual outward face normal. Geometry/NC unchanged
++                                # after the native operation and postprocessor run.
++                                normal = sub.normalAt(0, 0)
++                                if (
++                                    isinstance(sub.Surface, Part.Plane)
++                                    and normal.z > 0
++                                    and normal.x * normal.x + normal.y * normal.y > 1e-12
++                                    and (end - start).cross(FreeCAD.Vector(0, 0, 1)).dot(normal) < 0
++                                ):
++                                    start, end = end, start
++                                new_edge = Part.Edge(Part.LineSegment(start, end))
+                                 edges.append(new_edge)
+ 
+                 elif sub.Wires:

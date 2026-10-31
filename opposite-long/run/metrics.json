@@ -1,0 +1,2947 @@
+{
+  "schema": "genlaw.selected-chamfer-metrics.v1",
+  "kind": "normal",
+  "negative_control": false,
+  "source_run": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long",
+  "target_run": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long",
+  "source_preparation": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/preparation-result.json",
+    "sha256": "90fc8431be371752438171ac62f4723f206f3140ecb70b502c4dd0bbf9c7547e"
+  },
+  "target_preparation": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/preparation-result.json",
+    "sha256": "90fc8431be371752438171ac62f4723f206f3140ecb70b502c4dd0bbf9c7547e"
+  },
+  "source_CAM": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/cam-result.json",
+    "sha256": "d06cb6f8f15a87e4d4b08e4217ea77fc731ea239ba020ee376aaa6b1d27c8506"
+  },
+  "target_CAM": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/cam-result.json",
+    "sha256": "d06cb6f8f15a87e4d4b08e4217ea77fc731ea239ba020ee376aaa6b1d27c8506"
+  },
+  "native_material": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/material/result.json",
+    "sha256": "2b95537f9629400c110db0974d9df6607537c6df3f87d20e5fab253a19685e06"
+  },
+  "mesh": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/material/native/surface-0000.stl",
+    "sha256": "e3fb92739dc9aa57acf2ba8f3a8076a058e6620b0c1bb84a6d3406e8ae5c6af6"
+  },
+  "original_target_CAD": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/target.brep",
+    "sha256": "5da355cf2f0dbdfe6e022923c25f8572eab5c252dc219665cf63aba7efe46e22"
+  },
+  "reference": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/native-geometry.json",
+    "sha256": "98eb96729a0cff74bdeb01b4530d1d71a113443775f7ca0f9435b3cd1a0730f7"
+  },
+  "mesh_inspection": {
+    "source_sha256": "e3fb92739dc9aa57acf2ba8f3a8076a058e6620b0c1bb84a6d3406e8ae5c6af6",
+    "raw_triangles": 286564,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 286564,
+    "vertices": 143284,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 47.039691958326465,
+    "bounds": {
+      "min": [
+        9.765625145519152e-05,
+        -9.765625145519152e-05,
+        -1.999902367591858
+      ],
+      "max": [
+        6.000097751617432,
+        4.000097751617432,
+        9.765625145519152e-05
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "target_NC_guard_rejection": null,
+  "new_simulation_for_this_measurement": false,
+  "source_NC_modified": false,
+  "quadrature": [
+    {
+      "actual_volume_mm3": 47.039691936627804,
+      "target_volume_mm3": 47.03999999999998,
+      "intersection_mm3": 47.03510353924074,
+      "union_mm3": 47.044588397387045,
+      "iou": 0.9997983857767829,
+      "alternative_intersection_mm3": 0.0,
+      "quadrature_order": 2
+    },
+    {
+      "actual_volume_mm3": 47.039691938404474,
+      "target_volume_mm3": 47.04000000000001,
+      "intersection_mm3": 47.03510666086331,
+      "union_mm3": 47.04458527754118,
+      "iou": 0.9997985184347583,
+      "alternative_intersection_mm3": 0.0,
+      "quadrature_order": 3
+    }
+  ],
+  "numerical_errors": {
+    "quadrature_iou_difference": 1.3265797538242197e-07,
+    "target_integral_error_mm3": 7.105427357601002e-15,
+    "mesh_integral_error_mm3": 1.992199116784832e-08
+  },
+  "numerical_stability_pass": true,
+  "iou_percent": 99.97985184347583,
+  "acceptance": {
+    "iou_percent_min": 99.0,
+    "bounds_deviation_mm_max": 0.025,
+    "volume_deviation_mm3_max": 0.03,
+    "section_deviation_mm_max": 0.1,
+    "selected_edge_width_deviation_mm_max": 0.1,
+    "retained_surface_deviation_mm_max": 0.1,
+    "numerical_guard_mm": 0.05,
+    "quadrature_orders": [
+      2,
+      3
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-08,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "scope": "software_regression",
+    "manufacturing_tolerance_approved": false
+  },
+  "maximum_bounds_error_mm": 9.775161743164062e-05,
+  "volume_deviation_mm3": 0.00030804167355569234,
+  "feature_observations": {
+    "method": "14 complete sections; 220 named-edge cross-lines including every unselected side; 25 retained top/bottom rays",
+    "contours": [
+      {
+        "region": "chamfer",
+        "z_mm": -0.37999999999999956,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.020255517947709363,
+        "missing_material_area_mm2": 0.001782933995444755,
+        "excess_material_area_mm2": 0.0006181125083404136
+      },
+      {
+        "region": "chamfer",
+        "z_mm": -0.3439999999999996,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.017746753862185494,
+        "missing_material_area_mm2": 0.0018234800281584597,
+        "excess_material_area_mm2": 0.000615383741436558
+      },
+      {
+        "region": "chamfer",
+        "z_mm": -0.3079999999999996,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.018756495822047907,
+        "missing_material_area_mm2": 0.0018529322129168693,
+        "excess_material_area_mm2": 0.0005789990248556194
+      },
+      {
+        "region": "chamfer",
+        "z_mm": -0.2719999999999996,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.017746796288592662,
+        "missing_material_area_mm2": 0.0017733174380987688,
+        "excess_material_area_mm2": 0.0006281952270749484
+      },
+      {
+        "region": "chamfer",
+        "z_mm": -0.23599999999999957,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.017795279636982377,
+        "missing_material_area_mm2": 0.0017562564611771426,
+        "excess_material_area_mm2": 0.0006456529966904754
+      },
+      {
+        "region": "chamfer",
+        "z_mm": -0.1999999999999996,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.01774665486723606,
+        "missing_material_area_mm2": 0.0017926627205065682,
+        "excess_material_area_mm2": 0.0005375871190428744
+      },
+      {
+        "region": "chamfer",
+        "z_mm": -0.16399999999999954,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.017746718506846535,
+        "missing_material_area_mm2": 0.0016892332859484022,
+        "excess_material_area_mm2": 0.0005822429117896179
+      },
+      {
+        "region": "chamfer",
+        "z_mm": -0.12799999999999956,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.019790526231052912,
+        "missing_material_area_mm2": 0.0016130547080080312,
+        "excess_material_area_mm2": 0.0006814936218156104
+      },
+      {
+        "region": "chamfer",
+        "z_mm": -0.09199999999999953,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.017677531565034203,
+        "missing_material_area_mm2": 0.0016875058341951224,
+        "excess_material_area_mm2": 0.0006220337083636388
+      },
+      {
+        "region": "chamfer",
+        "z_mm": -0.05599999999999955,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.019876438780840482,
+        "missing_material_area_mm2": 0.001726149461721477,
+        "excess_material_area_mm2": 0.0006191602720853091
+      },
+      {
+        "region": "chamfer",
+        "z_mm": -0.019999999999999574,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 0.017719159910851743,
+        "missing_material_area_mm2": 0.00150864537318136,
+        "excess_material_area_mm2": 0.000708158233962809
+      },
+      {
+        "region": "retained_wall",
+        "z_mm": -1.68,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 9.775000000011858e-05,
+        "missing_material_area_mm2": 0.00039064000000000053,
+        "excess_material_area_mm2": 0.0015610173589580855
+      },
+      {
+        "region": "retained_wall",
+        "z_mm": -1.1999999999999997,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 9.775000000011858e-05,
+        "missing_material_area_mm2": 0.0003906400000000006,
+        "excess_material_area_mm2": 0.001561017384326415
+      },
+      {
+        "region": "retained_wall",
+        "z_mm": -0.7199999999999995,
+        "topology_matches": true,
+        "expected_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "observed_topology": {
+          "material_components": 1,
+          "interior_loops_per_component": [
+            0
+          ]
+        },
+        "boundary_deviation_mm": 9.775000000011858e-05,
+        "missing_material_area_mm2": 0.0003906400000000004,
+        "excess_material_area_mm2": 0.0015610172846183448
+      }
+    ],
+    "edge_samples": [
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 0.614,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 1.307,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 2.693,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 3.386,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 0.614,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 1.307,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 2.693,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 3.386,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.02009766,
+        "observed_chamfer_width_mm": 0.40009766,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.02009766,
+        "observed_chamfer_width_mm": 0.40009766,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.02009766,
+        "observed_chamfer_width_mm": 0.40009766,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.020097658515630938,
+        "observed_chamfer_width_mm": 0.40009765851563095,
+        "deviation_mm": 9.765851563092731e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.01990234,
+        "observed_chamfer_width_mm": 0.39990234,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.02009775990867002,
+        "observed_chamfer_width_mm": 0.40009775990867,
+        "deviation_mm": 9.775990867000317e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.020097760000000076,
+        "observed_chamfer_width_mm": 0.4000977600000001,
+        "deviation_mm": 9.77600000000578e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.020097760000000076,
+        "observed_chamfer_width_mm": 0.4000977600000001,
+        "deviation_mm": 9.77600000000578e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.019902378015563826,
+        "observed_chamfer_width_mm": 0.39990237801556383,
+        "deviation_mm": 9.762198443619141e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.37999999999999956,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.020097760000000076,
+        "observed_chamfer_width_mm": 0.4000977600000001,
+        "deviation_mm": 9.77600000000578e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 0.6392,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 1.3196,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 2.6804,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 3.3608,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 0.6392,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 1.3196,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 2.6804,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 3.3608,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.05609765,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.05609765,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.05609765,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.05594881,
+        "observed_chamfer_width_mm": 0.39994881000000004,
+        "deviation_mm": 5.118999999997875e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.05590233,
+        "observed_chamfer_width_mm": 0.39990233000000003,
+        "deviation_mm": 9.766999999999415e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.05609770000000003,
+        "observed_chamfer_width_mm": 0.40009770000000006,
+        "deviation_mm": 9.770000000003387e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.05609770000000003,
+        "observed_chamfer_width_mm": 0.40009770000000006,
+        "deviation_mm": 9.770000000003387e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.05609770000000003,
+        "observed_chamfer_width_mm": 0.40009770000000006,
+        "deviation_mm": 9.770000000003387e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.0559023180061442,
+        "observed_chamfer_width_mm": 0.39990231800614423,
+        "deviation_mm": 9.768199385579157e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3439999999999996,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.05609770000000003,
+        "observed_chamfer_width_mm": 0.40009770000000006,
+        "deviation_mm": 9.770000000003387e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 0.6643999999999999,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 1.3321999999999998,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 2.6678,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 3.3356,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 0.6643999999999999,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 1.3321999999999998,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 2.6678,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 3.3356,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.09209765,
+        "observed_chamfer_width_mm": 0.4000976500000001,
+        "deviation_mm": 9.765000000006019e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.09209765,
+        "observed_chamfer_width_mm": 0.4000976500000001,
+        "deviation_mm": 9.765000000006019e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.09209765,
+        "observed_chamfer_width_mm": 0.4000976500000001,
+        "deviation_mm": 9.765000000006019e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.0919648492490204,
+        "observed_chamfer_width_mm": 0.3999648492490204,
+        "deviation_mm": 3.5150750979595635e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.09190236,
+        "observed_chamfer_width_mm": 0.39990236000000007,
+        "deviation_mm": 9.763999999995443e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.09209755000000008,
+        "observed_chamfer_width_mm": 0.40009755000000014,
+        "deviation_mm": 9.755000000011282e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.09209755000000008,
+        "observed_chamfer_width_mm": 0.40009755000000014,
+        "deviation_mm": 9.755000000011282e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.09209755000000008,
+        "observed_chamfer_width_mm": 0.40009755000000014,
+        "deviation_mm": 9.755000000011282e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.09190243799999998,
+        "observed_chamfer_width_mm": 0.399902438,
+        "deviation_mm": 9.756199999999549e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.3079999999999996,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.09209755000000008,
+        "observed_chamfer_width_mm": 0.40009755000000014,
+        "deviation_mm": 9.755000000011282e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 0.6896,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 1.3447999999999998,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 2.6552000000000002,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 3.3104,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 0.6896,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 1.3447999999999998,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 2.6552000000000002,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 3.3104,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.12809767,
+        "observed_chamfer_width_mm": 0.40009767,
+        "deviation_mm": 9.766999999999415e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.12809767,
+        "observed_chamfer_width_mm": 0.40009767,
+        "deviation_mm": 9.766999999999415e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.12809767,
+        "observed_chamfer_width_mm": 0.40009767,
+        "deviation_mm": 9.766999999999415e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.12790234,
+        "observed_chamfer_width_mm": 0.39990234,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.12790234,
+        "observed_chamfer_width_mm": 0.39990234,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.12809776000000017,
+        "observed_chamfer_width_mm": 0.4000977600000002,
+        "deviation_mm": 9.776000000016882e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.12809776000000017,
+        "observed_chamfer_width_mm": 0.4000977600000002,
+        "deviation_mm": 9.776000000016882e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.12809776000000017,
+        "observed_chamfer_width_mm": 0.4000977600000002,
+        "deviation_mm": 9.776000000016882e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.1279023780053059,
+        "observed_chamfer_width_mm": 0.3999023780053059,
+        "deviation_mm": 9.762199469409705e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.2719999999999996,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.12809776000000017,
+        "observed_chamfer_width_mm": 0.4000977600000002,
+        "deviation_mm": 9.776000000016882e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 0.7148,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 1.3574,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 1.9999999999999998,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 2.6426000000000003,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 3.2851999999999997,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 0.7148,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 1.3574,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 1.9999999999999998,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 2.6426000000000003,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 3.2851999999999997,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.16409765,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.16409765,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.16398828,
+        "observed_chamfer_width_mm": 0.39998828,
+        "deviation_mm": 1.1720000000048358e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.16390234,
+        "observed_chamfer_width_mm": 0.39990234,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.16390234,
+        "observed_chamfer_width_mm": 0.39990234,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.16409760984385713,
+        "observed_chamfer_width_mm": 0.4000976098438571,
+        "deviation_mm": 9.760984385709381e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.16409760999999978,
+        "observed_chamfer_width_mm": 0.40009760999999977,
+        "deviation_mm": 9.760999999974818e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.16409760999999978,
+        "observed_chamfer_width_mm": 0.40009760999999977,
+        "deviation_mm": 9.760999999974818e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.16390246800176866,
+        "observed_chamfer_width_mm": 0.39990246800176865,
+        "deviation_mm": 9.753199823137049e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.23599999999999957,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.16409760999999978,
+        "observed_chamfer_width_mm": 0.40009760999999977,
+        "deviation_mm": 9.760999999974818e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 0.7399999999999999,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 1.3699999999999999,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 1.9999999999999998,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 2.63,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 3.26,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 0.7399999999999999,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 1.3699999999999999,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 1.9999999999999998,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 2.63,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 3.26,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.20009765,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.20009765,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.20009765,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.20009765,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.19990234,
+        "observed_chamfer_width_mm": 0.39990234,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.20009756000000012,
+        "observed_chamfer_width_mm": 0.4000975600000002,
+        "deviation_mm": 9.756000000016307e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.20009756000000012,
+        "observed_chamfer_width_mm": 0.4000975600000002,
+        "deviation_mm": 9.756000000016307e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.20009756000000012,
+        "observed_chamfer_width_mm": 0.4000975600000002,
+        "deviation_mm": 9.756000000016307e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.19990233803735658,
+        "observed_chamfer_width_mm": 0.39990233803735664,
+        "deviation_mm": 9.766196264338056e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.1999999999999996,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.20009756000000012,
+        "observed_chamfer_width_mm": 0.4000975600000002,
+        "deviation_mm": 9.756000000016307e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 0.7651999999999999,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 1.3825999999999998,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 1.9999999999999998,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 2.6174,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 3.2348,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 0.7651999999999999,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 1.3825999999999998,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 1.9999999999999998,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 2.6174,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 3.2348,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.23598819,
+        "observed_chamfer_width_mm": 0.39998818999999997,
+        "deviation_mm": 1.1810000000056498e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.23598819,
+        "observed_chamfer_width_mm": 0.39998818999999997,
+        "deviation_mm": 1.1810000000056498e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.23609765,
+        "observed_chamfer_width_mm": 0.40009764999999997,
+        "deviation_mm": 9.764999999994917e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.23590234,
+        "observed_chamfer_width_mm": 0.39990233999999997,
+        "deviation_mm": 9.766000000005493e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.23590234,
+        "observed_chamfer_width_mm": 0.39990233999999997,
+        "deviation_mm": 9.766000000005493e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.23609765000000005,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.23609765000000005,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.23609765000000005,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.23590228800138968,
+        "observed_chamfer_width_mm": 0.39990228800138966,
+        "deviation_mm": 9.77119986103614e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.16399999999999954,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.23609765000000005,
+        "observed_chamfer_width_mm": 0.40009765,
+        "deviation_mm": 9.765000000000468e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 0.7903999999999999,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 1.3952,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 1.9999999999999998,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 2.6048,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 3.209599999999999,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 0.7903999999999999,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 1.3952,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 1.9999999999999998,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 2.6048,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 3.209599999999999,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.27209767,
+        "observed_chamfer_width_mm": 0.40009767,
+        "deviation_mm": 9.766999999999415e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.27209767,
+        "observed_chamfer_width_mm": 0.40009767,
+        "deviation_mm": 9.766999999999415e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.27209767,
+        "observed_chamfer_width_mm": 0.40009767,
+        "deviation_mm": 9.766999999999415e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.27190234,
+        "observed_chamfer_width_mm": 0.39990234,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.27190234,
+        "observed_chamfer_width_mm": 0.39990234,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.2720977598436636,
+        "observed_chamfer_width_mm": 0.4000977598436636,
+        "deviation_mm": 9.77598436635585e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.27209775999999986,
+        "observed_chamfer_width_mm": 0.40009775999999986,
+        "deviation_mm": 9.775999999983576e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.27209775999999986,
+        "observed_chamfer_width_mm": 0.40009775999999986,
+        "deviation_mm": 9.775999999983576e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.27190237800648553,
+        "observed_chamfer_width_mm": 0.39990237800648554,
+        "deviation_mm": 9.762199351448508e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.12799999999999956,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.27209775999999986,
+        "observed_chamfer_width_mm": 0.40009775999999986,
+        "deviation_mm": 9.775999999983576e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 0.8156000000000001,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 1.4078000000000002,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 2.5922,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 3.1844,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 0.8156000000000001,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 1.4078000000000002,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 2.5922,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 3.1844,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.30809765,
+        "observed_chamfer_width_mm": 0.40009764999999997,
+        "deviation_mm": 9.764999999994917e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.30809765,
+        "observed_chamfer_width_mm": 0.40009764999999997,
+        "deviation_mm": 9.764999999994917e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.30809765,
+        "observed_chamfer_width_mm": 0.40009764999999997,
+        "deviation_mm": 9.764999999994917e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.30796457,
+        "observed_chamfer_width_mm": 0.39996456999999996,
+        "deviation_mm": 3.543000000005847e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.30790236,
+        "observed_chamfer_width_mm": 0.39990235999999996,
+        "deviation_mm": 9.764000000006545e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.30809770991022445,
+        "observed_chamfer_width_mm": 0.4000977099102244,
+        "deviation_mm": 9.770991022439723e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.3080977100000002,
+        "observed_chamfer_width_mm": 0.40009771000000016,
+        "deviation_mm": 9.771000000013963e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.3080977100000002,
+        "observed_chamfer_width_mm": 0.40009771000000016,
+        "deviation_mm": 9.771000000013963e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.3079023379965662,
+        "observed_chamfer_width_mm": 0.39990233799656616,
+        "deviation_mm": 9.766200343386267e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.09199999999999953,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.3080977100000002,
+        "observed_chamfer_width_mm": 0.40009771000000016,
+        "deviation_mm": 9.771000000013963e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 0.8408,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 1.4204,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 2.5796,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 3.1592000000000002,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 0.8408,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 1.4204,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 2.5796,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 3.1592000000000002,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.34409765,
+        "observed_chamfer_width_mm": 0.40009764999999997,
+        "deviation_mm": 9.764999999994917e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.34409765,
+        "observed_chamfer_width_mm": 0.40009764999999997,
+        "deviation_mm": 9.764999999994917e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.34409765,
+        "observed_chamfer_width_mm": 0.40009764999999997,
+        "deviation_mm": 9.764999999994917e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.34394921,
+        "observed_chamfer_width_mm": 0.39994921,
+        "deviation_mm": 5.079000000002276e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.34390233,
+        "observed_chamfer_width_mm": 0.39990233,
+        "deviation_mm": 9.767000000004966e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.3440975599999998,
+        "observed_chamfer_width_mm": 0.4000975599999998,
+        "deviation_mm": 9.75599999997745e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.3440975599999998,
+        "observed_chamfer_width_mm": 0.4000975599999998,
+        "deviation_mm": 9.75599999997745e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.3440975599999998,
+        "observed_chamfer_width_mm": 0.4000975599999998,
+        "deviation_mm": 9.75599999997745e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.3439024280032421,
+        "observed_chamfer_width_mm": 0.3999024280032421,
+        "deviation_mm": 9.757199675791695e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.05599999999999955,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.3440975599999998,
+        "observed_chamfer_width_mm": 0.4000975599999998,
+        "deviation_mm": 9.75599999997745e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 0.866,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 1.4330000000000003,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 2.567,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmin",
+        "selected_for_chamfer": false,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 3.134,
+        "complete": true,
+        "inset_mm": 9.766e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.766e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 0.866,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 1.4330000000000003,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 2.0,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 2.567,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "xmax",
+        "selected_for_chamfer": false,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 3.134,
+        "complete": true,
+        "inset_mm": -9.77499999992304e-05,
+        "observed_chamfer_width_mm": null,
+        "deviation_mm": 9.77499999992304e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.37994095,
+        "observed_chamfer_width_mm": 0.39994095,
+        "deviation_mm": 5.905000000000493e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.37994095,
+        "observed_chamfer_width_mm": 0.39994095,
+        "deviation_mm": 5.905000000000493e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.38009766,
+        "observed_chamfer_width_mm": 0.40009766,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.37990234,
+        "observed_chamfer_width_mm": 0.39990234,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymin",
+        "selected_for_chamfer": true,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.37990234,
+        "observed_chamfer_width_mm": 0.39990234,
+        "deviation_mm": 9.765999999999941e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 0.9000000000000001,
+        "complete": true,
+        "inset_mm": 0.38009774984368017,
+        "observed_chamfer_width_mm": 0.4000977498436802,
+        "deviation_mm": 9.77498436801616e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 1.9500000000000004,
+        "complete": true,
+        "inset_mm": 0.38009775,
+        "observed_chamfer_width_mm": 0.40009775000000003,
+        "deviation_mm": 9.775000000000755e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 3.0000000000000004,
+        "complete": true,
+        "inset_mm": 0.38009775,
+        "observed_chamfer_width_mm": 0.40009775000000003,
+        "deviation_mm": 9.775000000000755e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 4.050000000000001,
+        "complete": true,
+        "inset_mm": 0.3799023780029187,
+        "observed_chamfer_width_mm": 0.3999023780029187,
+        "deviation_mm": 9.76219970812986e-05
+      },
+      {
+        "side": "ymax",
+        "selected_for_chamfer": true,
+        "z_mm": -0.019999999999999574,
+        "along_coordinate_mm": 5.1000000000000005,
+        "complete": true,
+        "inset_mm": 0.38009775,
+        "observed_chamfer_width_mm": 0.40009775000000003,
+        "deviation_mm": 9.775000000000755e-05
+      }
+    ],
+    "retained_plane_probes": [
+      {
+        "xy_mm": [
+          1.2000000000000002,
+          1.04
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.2000000000000002,
+          1.52
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.2000000000000002,
+          2.0
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.2000000000000002,
+          2.48
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          1.2000000000000002,
+          2.9600000000000004
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.1,
+          1.04
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.1,
+          1.52
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.1,
+          2.0
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.1,
+          2.48
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          2.1,
+          2.9600000000000004
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.0000000000000004,
+          1.04
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.0000000000000004,
+          1.52
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.0000000000000004,
+          2.0
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.0000000000000004,
+          2.48
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.0000000000000004,
+          2.9600000000000004
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.900000000000001,
+          1.04
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.900000000000001,
+          1.52
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.900000000000001,
+          2.0
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.900000000000001,
+          2.48
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          3.900000000000001,
+          2.9600000000000004
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          4.800000000000001,
+          1.04
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          4.800000000000001,
+          1.52
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          4.800000000000001,
+          2.0
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          4.800000000000001,
+          2.48
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      },
+      {
+        "xy_mm": [
+          4.800000000000001,
+          2.9600000000000004
+        ],
+        "surface_z_mm": [
+          -1.99990237,
+          9.766e-05
+        ],
+        "plane_error_mm": 9.765999999955591e-05,
+        "passed": true
+      }
+    ],
+    "maximum_boundary_deviation_mm": 0.020255517947709363,
+    "maximum_selected_width_deviation_mm": 9.776000000016882e-05,
+    "maximum_unselected_edge_deviation_mm": 9.77499999992304e-05,
+    "section_pass": true,
+    "selected_edges_pass": true,
+    "unselected_edges_pass": true,
+    "retained_planes_pass": true,
+    "numerical_guard_mm": 0.05,
+    "guard_is_certified_uncertainty": false,
+    "manufacturing_angle_acceptance": false
+  },
+  "geometry_pass": true,
+  "regression_expectation_met": true,
+  "complete_original_material_measured": true,
+  "registration_applied": false,
+  "material_discarded": false,
+  "source_code": [
+    {
+      "path": "genlaw_pipeline/selected_chamfer_measurement_v2.py",
+      "sha256": "188bbe83494d2262f9c27adb594745d39801dff1d8784aeeafd7bfa28e1b57e1"
+    },
+    {
+      "path": "genlaw_pipeline/selected_chamfer_geometry.py",
+      "sha256": "aa56f6c7ff6fb8ea041a95c4d2be8fecffae049e978ea516d8f88759bbfa4741"
+    },
+    {
+      "path": "genlaw_pipeline/indexed_sections.py",
+      "sha256": "66ceb253b8085e4424f4cc004a7f248eb83bec33d1551cffecedbdd6a819dfab"
+    },
+    {
+      "path": "genlaw_pipeline/reference_sections.py",
+      "sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+    },
+    {
+      "path": "genlaw_pipeline/verification.py",
+      "sha256": "d79b58ceb8a45c4be2ab0201be3d8fa31a29d7f5f5976465aa21259c12a8f58f"
+    },
+    {
+      "path": "web/tools/mesh_metrics.py",
+      "sha256": "741756ed20411cb81a99f7fe3a6200595cc8fc7b783bf72207f19da33979b4c4"
+    }
+  ],
+  "feature_cohort_qualified": false,
+  "production_approved": false,
+  "whole_real_card_complete": false
+}

@@ -1,0 +1,664 @@
+{
+  "schema": "genlaw.selected-chamfer-completion.v1",
+  "status": "passed_for_declared_synthetic_cohort",
+  "at_utc": "2026-10-31T09:31:26.893242+00:00",
+  "suite": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/summary.json",
+    "sha256": "2eddfd795e556bce8ee5cbcaf8d41717c057e0b4d4e8a3238010eefcf0589311"
+  },
+  "input_archive": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/manifest.json",
+    "sha256": "7d81eb9710d857454b9e684f69355cdba38ff0d62427644cd67ee01776509da8"
+  },
+  "input_review": {
+    "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/input-review-02.json",
+    "sha256": "1c22b3caed5539f778ff192396f241c7fe4fabe865e3e356364dc51013b96535"
+  },
+  "guard_checks": {
+    "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/cohort-phase-03/checks/result.json",
+    "sha256": "de9ed45fc94a8b83799a61a94421f07bd5fda37dfd3560efa342b60cd6773f63"
+  },
+  "replay": {
+    "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/replay-prefix.json",
+    "sha256": "02dc6b23d7f7a5702c82a9d80eb2a953b94a09617a1928db74fc06326b0a882a"
+  },
+  "native_regression": {
+    "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/native-correction-regression.json",
+    "sha256": "93b97f4ea9bfd86c32948343e598b7687db0978ed82f09df73985ce666b2cfff"
+  },
+  "retained_wrong_side_diagnosis": {
+    "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/native-side-diagnosis-01.json",
+    "sha256": "e9f3ca7da07ec074e04b5a116e6503c93fefae3e0f3ba71ce9b3e24335cfd14a"
+  },
+  "preserved_source_code": [
+    {
+      "execution_source": {
+        "path": "engines/freecad/deburr-selected-edge-side-r1/Deburr.py",
+        "sha256": "02faaa57d2d232614f561c6a0032cf3c46387a4b2afbab39a0545bf75aa6a32f"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/engines/freecad/deburr-selected-edge-side-r1/Deburr.py",
+        "sha256": "02faaa57d2d232614f561c6a0032cf3c46387a4b2afbab39a0545bf75aa6a32f"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "engines/freecad/deburr-selected-edge-side-r1/fix.patch",
+        "sha256": "38419131eb49c06d7ff038727acdaf0c12a7676d2e0d7447c589fc6740c669fc"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/engines/freecad/deburr-selected-edge-side-r1/fix.patch",
+        "sha256": "38419131eb49c06d7ff038727acdaf0c12a7676d2e0d7447c589fc6740c669fc"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+        "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+        "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/freecad_deburr.py",
+        "sha256": "830b4b68e1da01a48ec055ceb574466ebddc464cce64595fbea808bcebc29e80"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/freecad_deburr.py",
+        "sha256": "830b4b68e1da01a48ec055ceb574466ebddc464cce64595fbea808bcebc29e80"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/freecad_selected_deburr.py",
+        "sha256": "9157d03bab62a84722eaf48e4c8dd00a22793858027944b65c2c171e49367b63"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/freecad_selected_deburr.py",
+        "sha256": "9157d03bab62a84722eaf48e4c8dd00a22793858027944b65c2c171e49367b63"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/indexed_sections.py",
+        "sha256": "66ceb253b8085e4424f4cc004a7f248eb83bec33d1551cffecedbdd6a819dfab"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/indexed_sections.py",
+        "sha256": "66ceb253b8085e4424f4cc004a7f248eb83bec33d1551cffecedbdd6a819dfab"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/native_stock.py",
+        "sha256": "2f2167b0ace5bb3e9c8e962a7d0fbad6f4934a90df170fcd0021ea7deac5e39d"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/native_stock.py",
+        "sha256": "2f2167b0ace5bb3e9c8e962a7d0fbad6f4934a90df170fcd0021ea7deac5e39d"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/reference_sections.py",
+        "sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/reference_sections.py",
+        "sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/selected_chamfer_geometry.py",
+        "sha256": "aa56f6c7ff6fb8ea041a95c4d2be8fecffae049e978ea516d8f88759bbfa4741"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/selected_chamfer_geometry.py",
+        "sha256": "aa56f6c7ff6fb8ea041a95c4d2be8fecffae049e978ea516d8f88759bbfa4741"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/selected_chamfer_measurement.py",
+        "sha256": "04735d62f35ae87407c0e66b51404023b8c77c2012e480489933073858a942a8"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/selected_chamfer_measurement.py",
+        "sha256": "04735d62f35ae87407c0e66b51404023b8c77c2012e480489933073858a942a8"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/selected_chamfer_measurement_v2.py",
+        "sha256": "188bbe83494d2262f9c27adb594745d39801dff1d8784aeeafd7bfa28e1b57e1"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/selected_chamfer_measurement_v2.py",
+        "sha256": "188bbe83494d2262f9c27adb594745d39801dff1d8784aeeafd7bfa28e1b57e1"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/selected_chamfer_nc.py",
+        "sha256": "6b3df74f55028d1703ed2abc612416b7750ee79c2175563db0dc7923d6e5a65b"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/selected_chamfer_nc.py",
+        "sha256": "6b3df74f55028d1703ed2abc612416b7750ee79c2175563db0dc7923d6e5a65b"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/selected_chamfer_preparation.py",
+        "sha256": "3c0ef315c37eb68665e57a6af7ce3c7c90616ef6d671f9015d3739b0a5b12b8d"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/selected_chamfer_preparation.py",
+        "sha256": "3c0ef315c37eb68665e57a6af7ce3c7c90616ef6d671f9015d3739b0a5b12b8d"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/selected_chamfer_preparation_v2.py",
+        "sha256": "0f35c7313faba26b551a0b4d2dd6c3a43d7bf50ec620397ae46b0d8691a580df"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/selected_chamfer_preparation_v2.py",
+        "sha256": "0f35c7313faba26b551a0b4d2dd6c3a43d7bf50ec620397ae46b0d8691a580df"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/sequence_nc.py",
+        "sha256": "f30f04ea0255bb18e2d5400a0d22cf4e67ebfde58d932189157542f212d6bb85"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/sequence_nc.py",
+        "sha256": "f30f04ea0255bb18e2d5400a0d22cf4e67ebfde58d932189157542f212d6bb85"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "genlaw_pipeline/verification.py",
+        "sha256": "d79b58ceb8a45c4be2ab0201be3d8fa31a29d7f5f5976465aa21259c12a8f58f"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/genlaw_pipeline/verification.py",
+        "sha256": "d79b58ceb8a45c4be2ab0201be3d8fa31a29d7f5f5976465aa21259c12a8f58f"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/build_selected_chamfer_cad.py",
+        "sha256": "6221c6970e6808100e9ff60f47c5a23de3bac63116de937734bfd0e935aed853"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/build_selected_chamfer_cad.py",
+        "sha256": "6221c6970e6808100e9ff60f47c5a23de3bac63116de937734bfd0e935aed853"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/build_selected_chamfer_inputs.py",
+        "sha256": "2c2f3a08b95314ce9dd90345af614959e9c3a3e31b2ef85ade0c3a4d6e87ea58"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/build_selected_chamfer_inputs.py",
+        "sha256": "2c2f3a08b95314ce9dd90345af614959e9c3a3e31b2ef85ade0c3a4d6e87ea58"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/build_selected_chamfer_inputs_v2.py",
+        "sha256": "c3371f6d9ea84685911196eb2f9f953a3d3b1fd270ca01cfb96d1c85f1443e73"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/build_selected_chamfer_inputs_v2.py",
+        "sha256": "c3371f6d9ea84685911196eb2f9f953a3d3b1fd270ca01cfb96d1c85f1443e73"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/check_selected_chamfer.py",
+        "sha256": "cc2b45e481a259483d3da919b09c42db5c839cbadc13161b5754aa7400cae3ff"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/check_selected_chamfer.py",
+        "sha256": "cc2b45e481a259483d3da919b09c42db5c839cbadc13161b5754aa7400cae3ff"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/check_selected_chamfer_v2.py",
+        "sha256": "d3db55e29ebf39c702bc693c97f54f7166dcbbb0e8d1fdb276175835fe678862"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/check_selected_chamfer_v2.py",
+        "sha256": "d3db55e29ebf39c702bc693c97f54f7166dcbbb0e8d1fdb276175835fe678862"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/finalize_selected_chamfer.py",
+        "sha256": "5dfc04e62e8eac879741f06dd98f743cc7bd89b491bb9ca7eed5bb8619aaf63b"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/finalize_selected_chamfer.py",
+        "sha256": "5dfc04e62e8eac879741f06dd98f743cc7bd89b491bb9ca7eed5bb8619aaf63b"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/run_selected_chamfer.py",
+        "sha256": "ca044862964ebdefab2266363830f4ce912e52027f501b0ef30426a1d7507ec1"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/run_selected_chamfer.py",
+        "sha256": "ca044862964ebdefab2266363830f4ce912e52027f501b0ef30426a1d7507ec1"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/run_selected_chamfer_cohort.py",
+        "sha256": "edbedaecd4f5b9f90d6eea6486080b8aea36262329d892d7db113aa15059efd8"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/run_selected_chamfer_cohort.py",
+        "sha256": "edbedaecd4f5b9f90d6eea6486080b8aea36262329d892d7db113aa15059efd8"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/run_selected_chamfer_cohort_v2.py",
+        "sha256": "7664a50ae6b1b83cbb58587d288479f005705a25cadc7e6b66e1acc1744a8e63"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/run_selected_chamfer_cohort_v2.py",
+        "sha256": "7664a50ae6b1b83cbb58587d288479f005705a25cadc7e6b66e1acc1744a8e63"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/run_selected_chamfer_v2.py",
+        "sha256": "fa924a81761e7190934c438029ceae780655e0e71980c929813a06adce58a582"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/run_selected_chamfer_v2.py",
+        "sha256": "fa924a81761e7190934c438029ceae780655e0e71980c929813a06adce58a582"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/selected_chamfer_cam_worker.py",
+        "sha256": "afcca68e769b8f87e7c14408de3b8759859d9bc0e1a6059db01a83d3cb6c3c9d"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/selected_chamfer_cam_worker.py",
+        "sha256": "afcca68e769b8f87e7c14408de3b8759859d9bc0e1a6059db01a83d3cb6c3c9d"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "tools/selected_chamfer_cam_worker_v2.py",
+        "sha256": "4cc83c6a13d6551426f9092ac6606b9e32066a6b6e5d6fdd890acd6ca9a52091"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/tools/selected_chamfer_cam_worker_v2.py",
+        "sha256": "4cc83c6a13d6551426f9092ac6606b9e32066a6b6e5d6fdd890acd6ca9a52091"
+      }
+    },
+    {
+      "execution_source": {
+        "path": "web/tools/mesh_metrics.py",
+        "sha256": "741756ed20411cb81a99f7fe3a6200595cc8fc7b783bf72207f19da33979b4c4"
+      },
+      "preserved_source": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/qualified-source/web/tools/mesh_metrics.py",
+        "sha256": "741756ed20411cb81a99f7fe3a6200595cc8fc7b783bf72207f19da33979b4c4"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "record": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/archive-backend-r2-resources.json",
+        "sha256": "b1184c1069f6c4cdaa9a41d96f8ab4e6bc997b18caa7d21ad51b9076c2c03c4f"
+      },
+      "subprocess_success": true,
+      "seconds": 0.10691308201057836,
+      "peak_group_RSS_bytes": 8192
+    },
+    {
+      "record": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/cohort-phase-03/checks-resources.json",
+        "sha256": "683077cc7f2e9d8ef7fbdbd9cd03625f9b7839127c3dd35ada94a50c46931ec2"
+      },
+      "subprocess_success": true,
+      "seconds": 0.21185072202933952,
+      "peak_group_RSS_bytes": 18296832
+    },
+    {
+      "record": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/input-check-01-resources.json",
+        "sha256": "4f557345fb3d027634cbf0c008cab11940d30f7f2c54787880b83e657bfa9593"
+      },
+      "subprocess_success": false,
+      "seconds": 0.21044281200738624,
+      "peak_group_RSS_bytes": 23896064
+    },
+    {
+      "record": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/input-check-02-resources.json",
+        "sha256": "82b847698279e25765d58ed061eb7dd95d13fa08db524c11c0c12fadf6000b40"
+      },
+      "subprocess_success": true,
+      "seconds": 0.21326164301717654,
+      "peak_group_RSS_bytes": 18296832
+    },
+    {
+      "record": {
+        "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/input-check-r2-resources.json",
+        "sha256": "bcf10fc59b15b978b6f252b6ded8baca0c60ea4ded802d0867eee73934a8d7f9"
+      },
+      "subprocess_success": true,
+      "seconds": 0.21178925002459437,
+      "peak_group_RSS_bytes": 18284544
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/additional-unselected-edge/measure-resources.json",
+        "sha256": "652854e905c636bd7eed73649a14e1df9ea2f253d85310e3590220580c415aed"
+      },
+      "subprocess_success": true,
+      "seconds": 13.659762648050673,
+      "peak_group_RSS_bytes": 184565760
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/omitted-opposite-edge/measure-resources.json",
+        "sha256": "f2476dbea08175d443fee0c5e18ac2c0c2b709f7f61c04090ebd7dc78667f6d1"
+      },
+      "subprocess_success": true,
+      "seconds": 13.341169207997154,
+      "peak_group_RSS_bytes": 183324672
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/freecad-resources.json",
+        "sha256": "c76e98080c00d1bc400092fbb3885a0e1f7ae3e485fced119427bf854b597e6d"
+      },
+      "subprocess_success": true,
+      "seconds": 1.0541032060282305,
+      "peak_group_RSS_bytes": 208781312
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/material/native-resources.json",
+        "sha256": "2108f1e81d170625a1c802705d135644079eee2e6d6b85f9faf69a4665b8f318"
+      },
+      "subprocess_success": true,
+      "seconds": 1.2581465049879625,
+      "peak_group_RSS_bytes": 16121856
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/material/validate-resources.json",
+        "sha256": "8b66869f13ddce5e82bf5704cc832b6d5d3508bca62d8d132ee572dafd3e6e5d"
+      },
+      "subprocess_success": true,
+      "seconds": 0.21041664900258183,
+      "peak_group_RSS_bytes": 19369984
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/measure-resources.json",
+        "sha256": "3e9b046dc6e8231830e0b75451f805bf3aa44ab96d74d05f02b66de2b550dd6d"
+      },
+      "subprocess_success": true,
+      "seconds": 12.999458512000274,
+      "peak_group_RSS_bytes": 183205888
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/freecad-resources.json",
+        "sha256": "1601c45b0b6029380f64a93cc44a54df3b30a58ee27bb1f8bcc684b7f29c4380"
+      },
+      "subprocess_success": true,
+      "seconds": 1.162556429975666,
+      "peak_group_RSS_bytes": 208916480
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/material/native-resources.json",
+        "sha256": "ec4f602878fc7e16f9f6c98a5ba38139a118c53b3140ee4158a28aba7a34dad6"
+      },
+      "subprocess_success": true,
+      "seconds": 1.3647246740292758,
+      "peak_group_RSS_bytes": 16375808
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/material/validate-resources.json",
+        "sha256": "36bed66fbecde01246eb07278f713dfb9cc39806c2b92fef8907269b2cf7e5f8"
+      },
+      "subprocess_success": true,
+      "seconds": 0.21121885802131146,
+      "peak_group_RSS_bytes": 19525632
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/measure-resources.json",
+        "sha256": "9ef4b244fa2f50bf5baf2342e52efca8d1675fa39f9c5ad1e870fc3cfb235551"
+      },
+      "subprocess_success": true,
+      "seconds": 13.656709436967503,
+      "peak_group_RSS_bytes": 184164352
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-short/freecad-resources.json",
+        "sha256": "3891f5eccc02f78944f68c42a084576e0815d87db114306d53afd6975f5cbb54"
+      },
+      "subprocess_success": true,
+      "seconds": 1.161081561993342,
+      "peak_group_RSS_bytes": 208982016
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-short/material/native-resources.json",
+        "sha256": "94ff32e9bb058fcff66dfe6f24db77b6532ec0f6128995b2a5175bff96140519"
+      },
+      "subprocess_success": true,
+      "seconds": 1.367413169995416,
+      "peak_group_RSS_bytes": 16060416
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-short/material/validate-resources.json",
+        "sha256": "8064e36387ddf0c9bfe07e3073d6719542e8f873c9629ddc66da644a13f2ac58"
+      },
+      "subprocess_success": true,
+      "seconds": 0.21095996600342914,
+      "peak_group_RSS_bytes": 18165760
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-short/measure-resources.json",
+        "sha256": "5882aa118685020b6dc51beb6cf472ea2d5de9207a2ee89090f387e10dbadca3"
+      },
+      "subprocess_success": true,
+      "seconds": 12.511903011007234,
+      "peak_group_RSS_bytes": 181968896
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/freecad-resources.json",
+        "sha256": "ea435b124777c0605865526b67859ab615bc993d1c8419870b71200f0a2c101e"
+      },
+      "subprocess_success": true,
+      "seconds": 1.0541514650103636,
+      "peak_group_RSS_bytes": 208846848
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/material/native-resources.json",
+        "sha256": "a2142083430e22d7e57dec2a62988ddd4b3c2847e98fce120979c4e701de5bf1"
+      },
+      "subprocess_success": true,
+      "seconds": 1.3635004400275648,
+      "peak_group_RSS_bytes": 16285696
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/material/validate-resources.json",
+        "sha256": "a1d90b9c016ba73ad4ab9bc8d36f4548f8ba119b9229399811494179c3322855"
+      },
+      "subprocess_success": true,
+      "seconds": 0.21147711400408298,
+      "peak_group_RSS_bytes": 18452480
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/measure-resources.json",
+        "sha256": "bfc231e8ecfd986e5fd552349e9a476d6e0cc5184a54cd5b4bc6774517e0cb67"
+      },
+      "subprocess_success": true,
+      "seconds": 15.658877251960803,
+      "peak_group_RSS_bytes": 184713216
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/wrong-edge-axis/measure-resources.json",
+        "sha256": "56cd24a951a811bafce16aa0cca2f5918eefcef64a4fbacb71be3d76b09ece55"
+      },
+      "subprocess_success": true,
+      "seconds": 12.403560719045345,
+      "peak_group_RSS_bytes": 158351360
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/one-edge/freecad-resources.json",
+        "sha256": "de08730dcd78e469f214c6981b4e2fb841a1473bb2725690c81a18739b3536b1"
+      },
+      "subprocess_success": true,
+      "seconds": 1.2647053109831177,
+      "peak_group_RSS_bytes": 209047552
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/one-edge/material/native-resources.json",
+        "sha256": "c4ab165043005fb00028ee73ffc75e7dff9cb29b89b4349ba0fa623e66af1bba"
+      },
+      "subprocess_success": true,
+      "seconds": 1.2592858629650436,
+      "peak_group_RSS_bytes": 16297984
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/one-edge/material/validate-resources.json",
+        "sha256": "44f3b6a2d896e99d59760762823b2c1a15a8f3ab0d226be6a9348e62806bb474"
+      },
+      "subprocess_success": true,
+      "seconds": 0.21101734996773303,
+      "peak_group_RSS_bytes": 17657856
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/one-edge/measure-resources.json",
+        "sha256": "6ee9cfdde7457157d4b58de13ca5b83de2d205ee9af724b2b412444c1b8ab7e4"
+      },
+      "subprocess_success": true,
+      "seconds": 12.897621657990385,
+      "peak_group_RSS_bytes": 183283712
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/opposite-long/freecad-resources.json",
+        "sha256": "4056f6bc66fc1f12f921739f8f475cd9db08ac0c8962ec862c89e7a0811274d5"
+      },
+      "subprocess_success": true,
+      "seconds": 1.0484510509995744,
+      "peak_group_RSS_bytes": 208904192
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/opposite-long/material/native-resources.json",
+        "sha256": "7b49d8591737172f5c0b6a62a6d827e0519e102a23227c6effdd3aedae596627"
+      },
+      "subprocess_success": true,
+      "seconds": 1.3626570440246724,
+      "peak_group_RSS_bytes": 16044032
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/opposite-long/material/validate-resources.json",
+        "sha256": "d708980a237272ca2462f2b8dd374037b1ddfe3552412b167af1861b57c26cea"
+      },
+      "subprocess_success": true,
+      "seconds": 0.21032750100130215,
+      "peak_group_RSS_bytes": 19357696
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/opposite-long/measure-resources.json",
+        "sha256": "98f539aea3aaa55f51897476ee08043414f290fb5452fdfdff74217cd14f28bd"
+      },
+      "subprocess_success": true,
+      "seconds": 13.532990941021126,
+      "peak_group_RSS_bytes": 184385536
+    },
+    {
+      "record": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/opposite-short/freecad-resources.json",
+        "sha256": "96121440ce82f9f8daa7bbc2e434264ea09e14c02dd5611817d1a3ae598a07aa"
+      },
+      "subprocess_success": true,
+      "seconds": 1.050031156046316,
+      "peak_group_RSS_bytes": 209899520
+    },
+    {
+      "record": {
+        "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r1/archive-paper-resources.json",
+        "sha256": "343eb6a7b204a76b472f9655d12b291e78fb78e68a914d0212aed57acf3425bf"
+      },
+      "subprocess_success": true,
+      "seconds": 0.6296082000480965,
+      "peak_group_RSS_bytes": 54321152
+    },
+    {
+      "record": {
+        "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r1/generate-CAD-resources.json",
+        "sha256": "093366a0999e1d43614ccf1a89b3421c8c5620cefc2dbc7a2eeadac4e786e1cd"
+      },
+      "subprocess_success": true,
+      "seconds": 0.6311546959914267,
+      "peak_group_RSS_bytes": 112021504
+    }
+  ],
+  "bounded_worker_records": 35,
+  "subprocess_failures": 1,
+  "CAM_semantic_failure_despite_zero_subprocess_exit": [
+    {
+      "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/opposite-short/cam-failure.json",
+      "sha256": "9d742468906620801e9f976b2e50748ad7242766f090bc188a80a5e671676cc3"
+    }
+  ],
+  "maximum_worker_seconds": 15.658877251960803,
+  "maximum_worker_RSS_bytes": 209899520,
+  "development_dimension": "part_features",
+  "normal_cases": 4,
+  "geometry_controls": 3,
+  "input_rejections": 21,
+  "NC_rejections": 8,
+  "public_site_updated": false,
+  "web_review_and_publication_pending": true,
+  "actual_machine_or_material_physics_added": false,
+  "real_C3_part_size_tested": false,
+  "whole_real_card_complete": false,
+  "production_approved": false,
+  "goal_complete": false
+}

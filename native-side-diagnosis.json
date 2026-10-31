@@ -1,0 +1,30 @@
+{
+  "status": "native_wrong_side_detected_before_simulation",
+  "phase_owner_ended": true,
+  "phase_owner": {
+    "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/cohort-phase-02/owner.json",
+    "sha256": "4c2339661f167e9a78121affefa54926351a07ade9d178dd140ecfa1de2ffbc7"
+  },
+  "failure": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/opposite-short/cam-failure.json",
+    "sha256": "9d742468906620801e9f976b2e50748ad7242766f090bc188a80a5e671676cc3"
+  },
+  "native_NC": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r1/opposite-short/program.nc",
+    "sha256": "4cea43d7d8e7dd9bed070b5bc864930c979f69bf7524addda2678e1c4462c5f9"
+  },
+  "observed_wrong_cutting_X_mm": 0.3,
+  "required_original_outside_X_mm": -0.3,
+  "cause": "Native single-line offset direction was tested against the finished solid at top Z; the inward candidate lies in the removed bevel and was mistaken for an outside line.",
+  "completed_normals_retained": [
+    "one-edge",
+    "opposite-long"
+  ],
+  "rejected_case_material_started": false,
+  "candidate_backend": {
+    "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+    "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+  },
+  "old_sources_modified": false,
+  "public_site_updated": false
+}

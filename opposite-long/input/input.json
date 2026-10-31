@@ -1,0 +1,88 @@
+{
+  "schema": "genlaw.selected-chamfer-input.v1",
+  "specification": {
+    "id": "opposite-long",
+    "name": "两条相对长边倒角",
+    "revision": "r1",
+    "stock": {
+      "min": [
+        0,
+        0,
+        -2
+      ],
+      "max": [
+        6,
+        4,
+        0
+      ]
+    },
+    "material_label": "6061-T6 software reference",
+    "width_mm": 0.4,
+    "angle_degrees": 45,
+    "selected_sides": [
+      "ymin",
+      "ymax"
+    ],
+    "resolution_mm": 0.025,
+    "tool": {
+      "id": "T1",
+      "kind": "finite_frustum",
+      "diameter_mm": 2.0,
+      "tip_diameter_mm": 0.4,
+      "included_angle_degrees": 90.0,
+      "cutting_length_mm": 0.8,
+      "length_mm": 20.0
+    },
+    "cam": {
+      "native_operation": "Deburr",
+      "backend": {
+        "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+        "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+      },
+      "extra_depth_mm": 0.1,
+      "path_tolerance_mm": 0.001,
+      "safe_height_mm": 2,
+      "clearance_height_mm": 3,
+      "spindle_rpm": 3000,
+      "feed_mm_min": 120,
+      "plunge_mm_min": 60
+    },
+    "acceptance": {
+      "iou_percent_min": 99.0,
+      "bounds_deviation_mm_max": 0.025,
+      "volume_deviation_mm3_max": 0.03,
+      "section_deviation_mm_max": 0.1,
+      "selected_edge_width_deviation_mm_max": 0.1,
+      "retained_surface_deviation_mm_max": 0.1,
+      "numerical_guard_mm": 0.05,
+      "quadrature_orders": [
+        2,
+        3
+      ],
+      "quadrature_iou_difference_max": 1e-06,
+      "target_integral_error_mm3_max": 1e-08,
+      "mesh_integral_error_mm3_max": 0.0001,
+      "scope": "software_regression",
+      "manufacturing_tolerance_approved": false
+    }
+  },
+  "CAD": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/target.brep",
+    "sha256": "5da355cf2f0dbdfe6e022923c25f8572eab5c252dc219665cf63aba7efe46e22"
+  },
+  "CAD_reference": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/reference.json",
+    "sha256": "5d7ab4c528ff6fba22f35fe2b3135e07d3f07cd75cfb4398e823d609444852c3"
+  },
+  "process_plan": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/process-plan.json",
+    "sha256": "d352c5912710194869d898c6ef0d65e033de4e786972d17bce1f1d6327accd0b"
+  },
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/process-card.pdf",
+    "sha256": "e5a0008cbe5006317369bb561dfcbbd578d003b75af48c37896cce35679989d4"
+  },
+  "scope": "experimental_software_geometry",
+  "material_physics_verified": false,
+  "production_approved": false
+}

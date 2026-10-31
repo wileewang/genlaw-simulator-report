@@ -1,0 +1,88 @@
+{
+  "schema": "genlaw.selected-chamfer-input.v1",
+  "specification": {
+    "id": "shifted-wider",
+    "name": "非零坐标与加宽倒角",
+    "revision": "r1",
+    "stock": {
+      "min": [
+        -3,
+        4,
+        1
+      ],
+      "max": [
+        3,
+        8,
+        3
+      ]
+    },
+    "material_label": "6061-T6 software reference",
+    "width_mm": 0.6,
+    "angle_degrees": 45,
+    "selected_sides": [
+      "ymin",
+      "ymax"
+    ],
+    "resolution_mm": 0.025,
+    "tool": {
+      "id": "T1",
+      "kind": "finite_frustum",
+      "diameter_mm": 2.0,
+      "tip_diameter_mm": 0.4,
+      "included_angle_degrees": 90.0,
+      "cutting_length_mm": 0.8,
+      "length_mm": 20.0
+    },
+    "cam": {
+      "native_operation": "Deburr",
+      "backend": {
+        "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+        "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+      },
+      "extra_depth_mm": 0.1,
+      "path_tolerance_mm": 0.001,
+      "safe_height_mm": 5,
+      "clearance_height_mm": 6,
+      "spindle_rpm": 3000,
+      "feed_mm_min": 120,
+      "plunge_mm_min": 60
+    },
+    "acceptance": {
+      "iou_percent_min": 99.0,
+      "bounds_deviation_mm_max": 0.025,
+      "volume_deviation_mm3_max": 0.03,
+      "section_deviation_mm_max": 0.1,
+      "selected_edge_width_deviation_mm_max": 0.1,
+      "retained_surface_deviation_mm_max": 0.1,
+      "numerical_guard_mm": 0.05,
+      "quadrature_orders": [
+        2,
+        3
+      ],
+      "quadrature_iou_difference_max": 1e-06,
+      "target_integral_error_mm3_max": 1e-08,
+      "mesh_integral_error_mm3_max": 0.0001,
+      "scope": "software_regression",
+      "manufacturing_tolerance_approved": false
+    }
+  },
+  "CAD": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/target.brep",
+    "sha256": "5b8d3ed1c0d9dd3551f7ba83a1f5914cc67256ba1cd3b71556cd78e83df27759"
+  },
+  "CAD_reference": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/reference.json",
+    "sha256": "1eedd6ed62f678a6efb86af9d43e6cebf0e79db13b44ceb7c0ce94815ee84d2f"
+  },
+  "process_plan": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/process-plan.json",
+    "sha256": "102af2bfbba203d1c7fe370594ba55a26689ab9f3f39e0d3b846db3ea8206166"
+  },
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/process-card.pdf",
+    "sha256": "ebfe3efcef3e27b54e01c72696c428425a1cf36519e3ab798ac4f5a9513c0113"
+  },
+  "scope": "experimental_software_geometry",
+  "material_physics_verified": false,
+  "production_approved": false
+}

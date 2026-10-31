@@ -1,0 +1,285 @@
+{
+  "schema": "genlaw.selected-chamfer-review-summary.v1",
+  "normal_cases": [
+    {
+      "id": "one-edge",
+      "name": "单条长边倒角",
+      "case_kind": "normal",
+      "iou_percent": 99.97965354498058,
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "width_mm": 0.4,
+      "selected_sides": [
+        "ymin"
+      ],
+      "resolution_mm": 0.025,
+      "target_case": "one-edge",
+      "material_case": "one-edge",
+      "frames": [],
+      "section_pass": true,
+      "selected_edges_pass": true,
+      "unselected_edges_pass": true,
+      "retained_planes_pass": true,
+      "maximum_selected_width_deviation_mm": 9.767000000004966e-05,
+      "maximum_unselected_edge_deviation_mm": 9.775000000011858e-05
+    },
+    {
+      "id": "opposite-long",
+      "name": "两条相对长边倒角",
+      "case_kind": "normal",
+      "iou_percent": 99.97985184347583,
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "width_mm": 0.4,
+      "selected_sides": [
+        "ymin",
+        "ymax"
+      ],
+      "resolution_mm": 0.025,
+      "target_case": "opposite-long",
+      "material_case": "opposite-long",
+      "frames": [
+        {
+          "mesh": "one-edge/actual.mesh",
+          "label": "第一条指定边加工后",
+          "kind": "executed_exact_NC_prefix",
+          "resolution_mm": 0.025,
+          "fine_checkpoint_acceptance": true,
+          "feed_time_seconds": 5.5
+        }
+      ],
+      "section_pass": true,
+      "selected_edges_pass": true,
+      "unselected_edges_pass": true,
+      "retained_planes_pass": true,
+      "maximum_selected_width_deviation_mm": 9.776000000016882e-05,
+      "maximum_unselected_edge_deviation_mm": 9.77499999992304e-05
+    },
+    {
+      "id": "opposite-short",
+      "name": "两条相对短边倒角",
+      "case_kind": "normal",
+      "iou_percent": 99.98012582380925,
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "width_mm": 0.4,
+      "selected_sides": [
+        "xmin",
+        "xmax"
+      ],
+      "resolution_mm": 0.025,
+      "target_case": "opposite-short",
+      "material_case": "opposite-short",
+      "frames": [],
+      "section_pass": true,
+      "selected_edges_pass": true,
+      "unselected_edges_pass": true,
+      "retained_planes_pass": true,
+      "maximum_selected_width_deviation_mm": 9.785000000273048e-05,
+      "maximum_unselected_edge_deviation_mm": 9.775000000011858e-05
+    },
+    {
+      "id": "shifted-wider",
+      "name": "非零坐标与加宽倒角",
+      "case_kind": "normal",
+      "iou_percent": 99.9801829677552,
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          -3,
+          4,
+          1
+        ],
+        "max": [
+          3,
+          8,
+          3
+        ]
+      },
+      "width_mm": 0.6,
+      "selected_sides": [
+        "ymin",
+        "ymax"
+      ],
+      "resolution_mm": 0.025,
+      "target_case": "shifted-wider",
+      "material_case": "shifted-wider",
+      "frames": [],
+      "section_pass": true,
+      "selected_edges_pass": true,
+      "unselected_edges_pass": true,
+      "retained_planes_pass": true,
+      "maximum_selected_width_deviation_mm": 9.789000000426373e-05,
+      "maximum_unselected_edge_deviation_mm": 9.775000000011858e-05
+    }
+  ],
+  "controls": [
+    {
+      "id": "omitted-opposite-edge",
+      "name": "漏加工另一条指定边",
+      "case_kind": "negative_control",
+      "iou_percent": 98.96969249706292,
+      "geometry_pass": false,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "width_mm": 0.4,
+      "selected_sides": [
+        "ymin",
+        "ymax"
+      ],
+      "resolution_mm": 0.025,
+      "target_case": "opposite-long",
+      "material_case": "one-edge",
+      "frames": [],
+      "section_pass": false,
+      "selected_edges_pass": false,
+      "unselected_edges_pass": true,
+      "retained_planes_pass": true,
+      "normal_NC_guard_rejection": "Missing/extra selected edge or no final clearance retract",
+      "existing_actual_material_reused": true
+    },
+    {
+      "id": "wrong-edge-axis",
+      "name": "倒角方向选错",
+      "case_kind": "negative_control",
+      "iou_percent": 96.99779701416435,
+      "geometry_pass": false,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "width_mm": 0.4,
+      "selected_sides": [
+        "ymin",
+        "ymax"
+      ],
+      "resolution_mm": 0.025,
+      "target_case": "opposite-long",
+      "material_case": "opposite-short",
+      "frames": [],
+      "section_pass": false,
+      "selected_edges_pass": false,
+      "unselected_edges_pass": false,
+      "retained_planes_pass": true,
+      "normal_NC_guard_rejection": "Entry is not an endpoint of an unprocessed selected edge",
+      "existing_actual_material_reused": true
+    },
+    {
+      "id": "additional-unselected-edge",
+      "name": "多加工一条未选边",
+      "case_kind": "negative_control",
+      "iou_percent": 98.97014731630765,
+      "geometry_pass": false,
+      "numerical_stability_pass": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "width_mm": 0.4,
+      "selected_sides": [
+        "ymin"
+      ],
+      "resolution_mm": 0.025,
+      "target_case": "one-edge",
+      "material_case": "opposite-long",
+      "frames": [],
+      "section_pass": false,
+      "selected_edges_pass": true,
+      "unselected_edges_pass": false,
+      "retained_planes_pass": true,
+      "normal_NC_guard_rejection": "Entry is not an endpoint of an unprocessed selected edge",
+      "existing_actual_material_reused": true
+    }
+  ],
+  "input_rejections": 21,
+  "NC_rejections": 8,
+  "acceptance": {
+    "iou_percent_min": 99.0,
+    "bounds_deviation_mm_max": 0.025,
+    "volume_deviation_mm3_max": 0.03,
+    "section_deviation_mm_max": 0.1,
+    "selected_edge_width_deviation_mm_max": 0.1,
+    "retained_surface_deviation_mm_max": 0.1,
+    "numerical_guard_mm": 0.05,
+    "quadrature_orders": [
+      2,
+      3
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-08,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "scope": "software_regression",
+    "manufacturing_tolerance_approved": false
+  },
+  "qualified_scope": "One or two parallel full 45 degree top edges on four synthetic box coupons",
+  "whole_real_card_complete": false,
+  "production_approved": false,
+  "real_C3_part_size_tested": false,
+  "new_machine_models": 0,
+  "new_material_physics": 0
+}

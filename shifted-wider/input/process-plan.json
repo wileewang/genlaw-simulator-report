@@ -1,0 +1,37 @@
+{
+  "schema": "genlaw.selected-chamfer-card.v1",
+  "id": "SELECTED-shifted-wider-r1",
+  "CAD": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/target.brep",
+    "sha256": "5b8d3ed1c0d9dd3551f7ba83a1f5914cc67256ba1cd3b71556cd78e83df27759"
+  },
+  "operations": [
+    {
+      "id": "OP05",
+      "type": "incoming_inspection"
+    },
+    {
+      "id": "OP10",
+      "type": "setup",
+      "frame": "original_CAD",
+      "rotary_motion": false
+    },
+    {
+      "id": "OP20",
+      "type": "selected_edge_chamfer",
+      "width_mm": 0.6,
+      "angle_degrees": 45,
+      "selected_sides": [
+        "ymin",
+        "ymax"
+      ],
+      "tool_id": "T1"
+    },
+    {
+      "id": "OP30",
+      "type": "geometry_inspection"
+    }
+  ],
+  "manufacturing_approval": false,
+  "whole_real_card_complete": false
+}

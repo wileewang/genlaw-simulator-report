@@ -1,0 +1,327 @@
+{
+  "schema": "genlaw.selected-chamfer-cam.v1",
+  "status": "native_generated_and_checked",
+  "admission": {
+    "status": "admitted",
+    "archive": {
+      "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/manifest.json",
+      "sha256": "7d81eb9710d857454b9e684f69355cdba38ff0d62427644cd67ee01776509da8"
+    },
+    "input": {
+      "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/input.json",
+      "sha256": "50a065ed8d6fbfea4a6e74f82d075590b9f85f92eb55bf9a317056a195984cee"
+    },
+    "arbitrary_production_PDF_parsed": false,
+    "manufacturing_approval": false
+  },
+  "preparation": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/preparation-result.json",
+    "sha256": "8b900f0cb81dc9dff1414da0f04472b614837ea961f002bea20dfacd6cae4ba2"
+  },
+  "native_geometry": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/native-geometry.json",
+    "sha256": "ef317fdb24088f5dc0796fd0da9a630f7f48fe4f2a53c6ec14d7585b6764c437"
+  },
+  "NC": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/program.nc",
+    "sha256": "0fe810c9fd0e2e605365baa44ced977010b1875177f5f6d330d428e32cf6f862"
+  },
+  "native_path": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/native-path.json",
+    "sha256": "ba53008c8ed5db5d838f02a1b0c36bec4e50f0fa87572863a4bc8a5404fd1a1e"
+  },
+  "CAM_job": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/cam-job.FCStd",
+    "sha256": "c41eea19a53a4cffc90b81bd21dbe95984f32ddfb2d31cec0a1d53c8cb605866"
+  },
+  "native_operation": "Deburr",
+  "backend": {
+    "manifest": {
+      "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+      "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+    },
+    "module_sha256": "02faaa57d2d232614f561c6a0032cf3c46387a4b2afbab39a0545bf75aa6a32f",
+    "upstream_sha256": "03e18e4aaa70bf8958a8c8ce699a73439c9df00f6b8a7d0e6e1e17c3364e38ef"
+  },
+  "native_stock": {
+    "construction": "FreeCAD Stock.CreateBox from declared incoming bounds",
+    "bounds_mm": {
+      "min": [
+        -3.0,
+        4.0,
+        1.0
+      ],
+      "max": [
+        3.0,
+        8.0,
+        3.0
+      ]
+    },
+    "stock_type": "CreateBox"
+  },
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "postprocessor": "FreeCAD bundled linuxcnc_post",
+  "post_arguments": "--no-show-editor --no-tlo --precision 5 --preamble \"G17 G54 G40 G49 G80 G90\\nG21\\nM5\\nG0 Z6\"",
+  "linuxcnc_runtime_used": false,
+  "nc_check": {
+    "status": "checked_native_selected_edges",
+    "NC_text_modified": false,
+    "selected_sides": [
+      "ymin",
+      "ymax"
+    ],
+    "executed_sides": [
+      "ymin",
+      "ymax"
+    ],
+    "one_safe_entry_and_retract_per_edge": true,
+    "executable_blocks": 24,
+    "motion_trace": [
+      {
+        "block": 9,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          6
+        ],
+        "end": [
+          null,
+          null,
+          6.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "selected_side": null
+      },
+      {
+        "block": 10,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          6.0
+        ],
+        "end": [
+          3.0,
+          3.7,
+          6.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "selected_side": null
+      },
+      {
+        "block": 11,
+        "motion": "G0",
+        "start": [
+          3.0,
+          3.7,
+          6.0
+        ],
+        "end": [
+          3.0,
+          3.7,
+          5.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "selected_side": null
+      },
+      {
+        "block": 12,
+        "motion": "G1",
+        "start": [
+          3.0,
+          3.7,
+          5.0
+        ],
+        "end": [
+          3.0,
+          3.7,
+          2.3
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 2.7,
+        "selected_side": "ymin"
+      },
+      {
+        "block": 13,
+        "motion": "G1",
+        "start": [
+          3.0,
+          3.7,
+          2.3
+        ],
+        "end": [
+          -3.0,
+          3.7,
+          2.3
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 5.7,
+        "selected_side": "ymin"
+      },
+      {
+        "block": 14,
+        "motion": "G0",
+        "start": [
+          -3.0,
+          3.7,
+          2.3
+        ],
+        "end": [
+          -3.0,
+          3.7,
+          6.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 5.7,
+        "selected_side": null
+      },
+      {
+        "block": 15,
+        "motion": "G0",
+        "start": [
+          -3.0,
+          3.7,
+          6.0
+        ],
+        "end": [
+          -3.0,
+          3.7,
+          6.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 5.7,
+        "selected_side": null
+      },
+      {
+        "block": 16,
+        "motion": "G0",
+        "start": [
+          -3.0,
+          3.7,
+          6.0
+        ],
+        "end": [
+          -3.0,
+          8.3,
+          6.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 5.7,
+        "selected_side": null
+      },
+      {
+        "block": 17,
+        "motion": "G0",
+        "start": [
+          -3.0,
+          8.3,
+          6.0
+        ],
+        "end": [
+          -3.0,
+          8.3,
+          5.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 5.7,
+        "selected_side": null
+      },
+      {
+        "block": 18,
+        "motion": "G1",
+        "start": [
+          -3.0,
+          8.3,
+          5.0
+        ],
+        "end": [
+          -3.0,
+          8.3,
+          2.3
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 8.4,
+        "selected_side": "ymax"
+      },
+      {
+        "block": 19,
+        "motion": "G1",
+        "start": [
+          -3.0,
+          8.3,
+          2.3
+        ],
+        "end": [
+          3.0,
+          8.3,
+          2.3
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 11.4,
+        "selected_side": "ymax"
+      },
+      {
+        "block": 20,
+        "motion": "G0",
+        "start": [
+          3.0,
+          8.3,
+          2.3
+        ],
+        "end": [
+          3.0,
+          8.3,
+          6.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 11.4,
+        "selected_side": null
+      },
+      {
+        "block": 21,
+        "motion": "G0",
+        "start": [
+          3.0,
+          8.3,
+          6.0
+        ],
+        "end": [
+          3.0,
+          8.3,
+          6.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 11.4,
+        "selected_side": null
+      }
+    ],
+    "feed_time_seconds": 11.4,
+    "rapid_time_not_included": true,
+    "final_tip_z_mm": 2.3,
+    "step_map": [
+      {
+        "step_id": "OP20",
+        "first_executable_block": 9,
+        "last_executable_block": 21
+      }
+    ],
+    "scope": "One or two parallel complete top edges, fixed Z, explicit finite 90 degree frustum; no general NC interpreter."
+  },
+  "NC_text_modified": false,
+  "feature_cohort_qualified": false,
+  "whole_real_card_complete": false,
+  "production_approved": false
+}

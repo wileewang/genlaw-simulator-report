@@ -1,0 +1,37 @@
+{
+  "schema": "genlaw.selected-chamfer-card.v1",
+  "id": "SELECTED-opposite-short-r1",
+  "CAD": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/opposite-short/target.brep",
+    "sha256": "7cb9dd3c22f3fcd984c4d714c643b4c387e2cbfb0e20fd89fc42ded842eb2724"
+  },
+  "operations": [
+    {
+      "id": "OP05",
+      "type": "incoming_inspection"
+    },
+    {
+      "id": "OP10",
+      "type": "setup",
+      "frame": "original_CAD",
+      "rotary_motion": false
+    },
+    {
+      "id": "OP20",
+      "type": "selected_edge_chamfer",
+      "width_mm": 0.4,
+      "angle_degrees": 45,
+      "selected_sides": [
+        "xmin",
+        "xmax"
+      ],
+      "tool_id": "T1"
+    },
+    {
+      "id": "OP30",
+      "type": "geometry_inspection"
+    }
+  ],
+  "manufacturing_approval": false,
+  "whole_real_card_complete": false
+}

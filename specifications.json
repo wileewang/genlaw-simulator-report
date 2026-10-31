@@ -1,0 +1,274 @@
+{
+  "schema": "genlaw.selected-chamfer-specifications.v1",
+  "cases": [
+    {
+      "id": "one-edge",
+      "name": "单条长边倒角",
+      "revision": "r1",
+      "stock": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "material_label": "6061-T6 software reference",
+      "width_mm": 0.4,
+      "angle_degrees": 45,
+      "selected_sides": [
+        "ymin"
+      ],
+      "resolution_mm": 0.025,
+      "tool": {
+        "id": "T1",
+        "kind": "finite_frustum",
+        "diameter_mm": 2.0,
+        "tip_diameter_mm": 0.4,
+        "included_angle_degrees": 90.0,
+        "cutting_length_mm": 0.8,
+        "length_mm": 20.0
+      },
+      "cam": {
+        "native_operation": "Deburr",
+        "backend": {
+          "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+          "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+        },
+        "extra_depth_mm": 0.1,
+        "path_tolerance_mm": 0.001,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "spindle_rpm": 3000,
+        "feed_mm_min": 120,
+        "plunge_mm_min": 60
+      },
+      "acceptance": {
+        "iou_percent_min": 99.0,
+        "bounds_deviation_mm_max": 0.025,
+        "volume_deviation_mm3_max": 0.03,
+        "section_deviation_mm_max": 0.1,
+        "selected_edge_width_deviation_mm_max": 0.1,
+        "retained_surface_deviation_mm_max": 0.1,
+        "numerical_guard_mm": 0.05,
+        "quadrature_orders": [
+          2,
+          3
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-08,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "scope": "software_regression",
+        "manufacturing_tolerance_approved": false
+      }
+    },
+    {
+      "id": "opposite-long",
+      "name": "两条相对长边倒角",
+      "revision": "r1",
+      "stock": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "material_label": "6061-T6 software reference",
+      "width_mm": 0.4,
+      "angle_degrees": 45,
+      "selected_sides": [
+        "ymin",
+        "ymax"
+      ],
+      "resolution_mm": 0.025,
+      "tool": {
+        "id": "T1",
+        "kind": "finite_frustum",
+        "diameter_mm": 2.0,
+        "tip_diameter_mm": 0.4,
+        "included_angle_degrees": 90.0,
+        "cutting_length_mm": 0.8,
+        "length_mm": 20.0
+      },
+      "cam": {
+        "native_operation": "Deburr",
+        "backend": {
+          "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+          "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+        },
+        "extra_depth_mm": 0.1,
+        "path_tolerance_mm": 0.001,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "spindle_rpm": 3000,
+        "feed_mm_min": 120,
+        "plunge_mm_min": 60
+      },
+      "acceptance": {
+        "iou_percent_min": 99.0,
+        "bounds_deviation_mm_max": 0.025,
+        "volume_deviation_mm3_max": 0.03,
+        "section_deviation_mm_max": 0.1,
+        "selected_edge_width_deviation_mm_max": 0.1,
+        "retained_surface_deviation_mm_max": 0.1,
+        "numerical_guard_mm": 0.05,
+        "quadrature_orders": [
+          2,
+          3
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-08,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "scope": "software_regression",
+        "manufacturing_tolerance_approved": false
+      }
+    },
+    {
+      "id": "opposite-short",
+      "name": "两条相对短边倒角",
+      "revision": "r1",
+      "stock": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "material_label": "6061-T6 software reference",
+      "width_mm": 0.4,
+      "angle_degrees": 45,
+      "selected_sides": [
+        "xmin",
+        "xmax"
+      ],
+      "resolution_mm": 0.025,
+      "tool": {
+        "id": "T1",
+        "kind": "finite_frustum",
+        "diameter_mm": 2.0,
+        "tip_diameter_mm": 0.4,
+        "included_angle_degrees": 90.0,
+        "cutting_length_mm": 0.8,
+        "length_mm": 20.0
+      },
+      "cam": {
+        "native_operation": "Deburr",
+        "backend": {
+          "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+          "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+        },
+        "extra_depth_mm": 0.1,
+        "path_tolerance_mm": 0.001,
+        "safe_height_mm": 2,
+        "clearance_height_mm": 3,
+        "spindle_rpm": 3000,
+        "feed_mm_min": 120,
+        "plunge_mm_min": 60
+      },
+      "acceptance": {
+        "iou_percent_min": 99.0,
+        "bounds_deviation_mm_max": 0.025,
+        "volume_deviation_mm3_max": 0.03,
+        "section_deviation_mm_max": 0.1,
+        "selected_edge_width_deviation_mm_max": 0.1,
+        "retained_surface_deviation_mm_max": 0.1,
+        "numerical_guard_mm": 0.05,
+        "quadrature_orders": [
+          2,
+          3
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-08,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "scope": "software_regression",
+        "manufacturing_tolerance_approved": false
+      }
+    },
+    {
+      "id": "shifted-wider",
+      "name": "非零坐标与加宽倒角",
+      "revision": "r1",
+      "stock": {
+        "min": [
+          -3,
+          4,
+          1
+        ],
+        "max": [
+          3,
+          8,
+          3
+        ]
+      },
+      "material_label": "6061-T6 software reference",
+      "width_mm": 0.6,
+      "angle_degrees": 45,
+      "selected_sides": [
+        "ymin",
+        "ymax"
+      ],
+      "resolution_mm": 0.025,
+      "tool": {
+        "id": "T1",
+        "kind": "finite_frustum",
+        "diameter_mm": 2.0,
+        "tip_diameter_mm": 0.4,
+        "included_angle_degrees": 90.0,
+        "cutting_length_mm": 0.8,
+        "length_mm": 20.0
+      },
+      "cam": {
+        "native_operation": "Deburr",
+        "backend": {
+          "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+          "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+        },
+        "extra_depth_mm": 0.1,
+        "path_tolerance_mm": 0.001,
+        "safe_height_mm": 5,
+        "clearance_height_mm": 6,
+        "spindle_rpm": 3000,
+        "feed_mm_min": 120,
+        "plunge_mm_min": 60
+      },
+      "acceptance": {
+        "iou_percent_min": 99.0,
+        "bounds_deviation_mm_max": 0.025,
+        "volume_deviation_mm3_max": 0.03,
+        "section_deviation_mm_max": 0.1,
+        "selected_edge_width_deviation_mm_max": 0.1,
+        "retained_surface_deviation_mm_max": 0.1,
+        "numerical_guard_mm": 0.05,
+        "quadrature_orders": [
+          2,
+          3
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-08,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "scope": "software_regression",
+        "manufacturing_tolerance_approved": false
+      }
+    }
+  ],
+  "development_dimension": "part_features",
+  "selection": "Exercise explicit one/two parallel edge selection, preserving every unselected edge. Synthetic standalone coupons; no customer drawing identity assumed.",
+  "source_requirement_motivation": "Existing cards contain two specified C3 edges, which cannot be expanded to all edges without a drawing binding.",
+  "real_C3_part_size_tested": false,
+  "whole_real_card_complete": false,
+  "manufacturing_approval": false
+}

@@ -1,0 +1,220 @@
+{
+  "schema": "genlaw.selected-chamfer-execution-plan.v1",
+  "status": "prepared_for_native_probe",
+  "input": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/input.json",
+    "sha256": "10d35c7f0c9793dfc64a1ca8e9b84e0b9716840873ea6c918663c9e8ad53271b"
+  },
+  "input_bindings": {
+    "CAD": {
+      "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/target.brep",
+      "sha256": "01b73e4d919fc9ce40ae385db6af57479786c842e9d08a650da4260b232eb7e8"
+    },
+    "CAD_reference": {
+      "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/reference.json",
+      "sha256": "6dd17aa23b48acfa4757f97e53e6f244c79219d0394fde555d58e6dce0eb3a35"
+    },
+    "process_plan": {
+      "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/process-plan.json",
+      "sha256": "bff9aff6cc91c67c3f1bf751fd153c3f3e3a757906832af96549cf09198cf594"
+    },
+    "paper_card": {
+      "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/process-card.pdf",
+      "sha256": "266eaa433da1234f80080950e4cea1f19aab0fc68efb24d1637debc348c24c2a"
+    }
+  },
+  "specification": {
+    "id": "one-edge",
+    "name": "单条长边倒角",
+    "revision": "r1",
+    "stock": {
+      "min": [
+        0,
+        0,
+        -2
+      ],
+      "max": [
+        6,
+        4,
+        0
+      ]
+    },
+    "material_label": "6061-T6 software reference",
+    "width_mm": 0.4,
+    "angle_degrees": 45,
+    "selected_sides": [
+      "ymin"
+    ],
+    "resolution_mm": 0.025,
+    "tool": {
+      "id": "T1",
+      "kind": "finite_frustum",
+      "diameter_mm": 2.0,
+      "tip_diameter_mm": 0.4,
+      "included_angle_degrees": 90.0,
+      "cutting_length_mm": 0.8,
+      "length_mm": 20.0
+    },
+    "cam": {
+      "native_operation": "Deburr",
+      "backend": {
+        "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+        "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+      },
+      "extra_depth_mm": 0.1,
+      "path_tolerance_mm": 0.001,
+      "safe_height_mm": 2,
+      "clearance_height_mm": 3,
+      "spindle_rpm": 3000,
+      "feed_mm_min": 120,
+      "plunge_mm_min": 60
+    },
+    "acceptance": {
+      "iou_percent_min": 99.0,
+      "bounds_deviation_mm_max": 0.025,
+      "volume_deviation_mm3_max": 0.03,
+      "section_deviation_mm_max": 0.1,
+      "selected_edge_width_deviation_mm_max": 0.1,
+      "retained_surface_deviation_mm_max": 0.1,
+      "numerical_guard_mm": 0.05,
+      "quadrature_orders": [
+        2,
+        3
+      ],
+      "quadrature_iou_difference_max": 1e-06,
+      "target_integral_error_mm3_max": 1e-08,
+      "mesh_integral_error_mm3_max": 0.0001,
+      "scope": "software_regression",
+      "manufacturing_tolerance_approved": false
+    }
+  },
+  "stock": {
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -2
+      ],
+      "max": [
+        6,
+        4,
+        0
+      ]
+    }
+  },
+  "tool": {
+    "id": "T1",
+    "kind": "finite_frustum",
+    "diameter_mm": 2.0,
+    "tip_diameter_mm": 0.4,
+    "included_angle_degrees": 90.0,
+    "cutting_length_mm": 0.8,
+    "length_mm": 20.0
+  },
+  "parameters": {
+    "native_operation": "Deburr",
+    "backend": {
+      "path": "engines/freecad/deburr-selected-edge-side-r1/manifest.json",
+      "sha256": "a5d392b2b0fc4e5f28f91e1f5835d7ff278016066f0c1e6b9d422bb34cba3e30"
+    },
+    "extra_depth_mm": 0.1,
+    "path_tolerance_mm": 0.001,
+    "safe_height_mm": 2,
+    "clearance_height_mm": 3,
+    "spindle_rpm": 3000,
+    "feed_mm_min": 120,
+    "plunge_mm_min": 60
+  },
+  "faces_by_side": {
+    "ymin": "Face3"
+  },
+  "final_tip_z_mm": -0.5,
+  "setup": {
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3
+    }
+  },
+  "simulation_project": {
+    "units": "metric",
+    "resolution-mode": "manual",
+    "resolution": 0.025,
+    "tools": {
+      "1": {
+        "units": "metric",
+        "shape": "snubnose",
+        "diameter": 2.0,
+        "length": 0.8,
+        "snub_diameter": 0.4
+      }
+    },
+    "workpiece": {
+      "automatic": false,
+      "margin": 0,
+      "bounds": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      }
+    },
+    "files": [
+      "program.nc"
+    ]
+  },
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -0.025000000000000393,
+      -0.02499999999999995,
+      -2.0250000000000004
+    ],
+    "steps": [
+      242,
+      162,
+      82
+    ],
+    "upper_mm": [
+      6.025,
+      4.0249999999999995,
+      0.02499999999999991
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "window": [
+    0,
+    0,
+    0,
+    242,
+    162,
+    82
+  ],
+  "budget": {
+    "allowed": true,
+    "cell_count": 3214728,
+    "xy_sample_points": 39609,
+    "maximum_cells_per_window": 5000000,
+    "maximum_xy_samples": 100000,
+    "original_stock_unchanged": true,
+    "nc_unchanged": true
+  },
+  "feature_cohort_qualified": false,
+  "whole_real_card_complete": false,
+  "production_approved": false
+}

@@ -1,0 +1,101 @@
+{
+  "schema": "genlaw.selected-chamfer-suite.v1",
+  "status": "four_normal_three_controls_qualified",
+  "owner": {
+    "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/cohort-phase-03/owner.json",
+    "sha256": "6951f1e66a2bdde582ff24e4294faa950e68d17f4ea739210a4f52807da31e0c"
+  },
+  "archive": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/manifest.json",
+    "sha256": "7d81eb9710d857454b9e684f69355cdba38ff0d62427644cd67ee01776509da8"
+  },
+  "normal_cases": [
+    {
+      "id": "one-edge",
+      "metrics": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/metrics.json",
+        "sha256": "86c6a66eb88c3652c41d73fe4e27b3044387b91b9aeb9793015036a374dd31bb"
+      },
+      "iou_percent": 99.97965354498058,
+      "geometry_pass": true,
+      "prior_CAM_reused": false
+    },
+    {
+      "id": "opposite-long",
+      "metrics": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/metrics.json",
+        "sha256": "8088a0fd2836498e62afa50bad21a0a16eaf7a94b663d0332e4c40b336459ced"
+      },
+      "iou_percent": 99.97985184347583,
+      "geometry_pass": true,
+      "prior_CAM_reused": false
+    },
+    {
+      "id": "opposite-short",
+      "metrics": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-short/metrics.json",
+        "sha256": "b522ea5c8dc5b8d7d0fc72e02e3a81d577c0ecf64b15d08e09493279b00c8b54"
+      },
+      "iou_percent": 99.98012582380925,
+      "geometry_pass": true,
+      "prior_CAM_reused": false
+    },
+    {
+      "id": "shifted-wider",
+      "metrics": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/metrics.json",
+        "sha256": "f2e57f5751ce49e9816cab56485df20cb35d4053465f1e356ffb1a859f0fb4e4"
+      },
+      "iou_percent": 99.9801829677552,
+      "geometry_pass": true,
+      "prior_CAM_reused": false
+    }
+  ],
+  "geometry_controls": [
+    {
+      "id": "omitted-opposite-edge",
+      "metrics": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/omitted-opposite-edge/metrics.json",
+        "sha256": "9042ef975c76ddbed607bcc1a3d9ea2aa620fe19b0ff6c996779c88d288b6d57"
+      },
+      "iou_percent": 98.96969249706292,
+      "geometry_rejected": true,
+      "native_material_reused": true
+    },
+    {
+      "id": "wrong-edge-axis",
+      "metrics": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/wrong-edge-axis/metrics.json",
+        "sha256": "9a31abcc5d3035cc7964a5ab0d4d363fa2167d0eb656d50ed0361c005d35eddf"
+      },
+      "iou_percent": 96.99779701416435,
+      "geometry_rejected": true,
+      "native_material_reused": true
+    },
+    {
+      "id": "additional-unselected-edge",
+      "metrics": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/additional-unselected-edge/metrics.json",
+        "sha256": "ac01ce3b6557c81182bc6cec4270a300c816cb5e9fd1faace54eba2bc6dc2531"
+      },
+      "iou_percent": 98.97014731630765,
+      "geometry_rejected": true,
+      "native_material_reused": true
+    }
+  ],
+  "guard_checks": {
+    "path": "docs/checkpoints/2026-10-31/selected-chamfer-01/cohort-phase-03/checks/result.json",
+    "sha256": "de9ed45fc94a8b83799a61a94421f07bd5fda37dfd3560efa342b60cd6773f63"
+  },
+  "native_CAM_operation": "Deburr",
+  "NC_text_modified": false,
+  "complete_original_material_measured": true,
+  "feature_cohort_qualified": true,
+  "development_dimension": "part_features",
+  "scope": "One or two parallel full top edges on synthetic rectangular coupons; fixed Z and explicit finite 90 degree frustum.",
+  "actual_machine_or_material_physics_added": false,
+  "real_C3_part_size_tested": false,
+  "whole_real_card_complete": false,
+  "production_approved": false,
+  "public_site_updated": false
+}

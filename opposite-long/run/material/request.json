@@ -1,0 +1,67 @@
+{
+  "schema": "genlaw.native-stream-request.v1",
+  "inputs": {
+    "project": {
+      "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/simulation.camotics",
+      "sha256": "0c80d783211eabb979025b53066732ecd260e6b86f89f03ddb69d4895fee972e"
+    },
+    "nc_files": [
+      {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/program.nc",
+        "sha256": "bb66ab42196b7c1d42ca0dc4215a12dcdbc9cf3f4522f375c5b32845db7525b8"
+      }
+    ]
+  },
+  "build": {
+    "path": "docs/checkpoints/2026-10-31/native-stream-output-01/build-02/build.json",
+    "sha256": "715fe1b94ee1109c545adedab955b59eed49ec94bc0a7d55b894cfd0a05ee879"
+  },
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -0.025000000000000393,
+      -0.02499999999999995,
+      -2.0250000000000004
+    ],
+    "steps": [
+      242,
+      162,
+      82
+    ],
+    "upper_mm": [
+      6.025,
+      4.0249999999999995,
+      0.02499999999999991
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "window": [
+    0,
+    0,
+    0,
+    242,
+    162,
+    82
+  ],
+  "budget": {
+    "allowed": true,
+    "cell_count": 3214728,
+    "xy_sample_points": 39609,
+    "maximum_cells_per_window": 5000000,
+    "maximum_xy_samples": 100000,
+    "original_stock_unchanged": true,
+    "nc_unchanged": true
+  },
+  "facets_per_file": 500000,
+  "end_time_seconds": null,
+  "target_cad_used": false,
+  "source_code": {
+    "path": "genlaw_pipeline/native_stream.py",
+    "sha256": "49dfc0d5d071ff7bfa73f6e24f33e5e0b928a27df1cff9a484fdbb8f28748367"
+  },
+  "production_approved": false
+}

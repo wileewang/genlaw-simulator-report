@@ -1,0 +1,217 @@
+{
+  "schema": "genlaw.selected-chamfer-input-checks.v1",
+  "status": "passed",
+  "archive": {
+    "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/manifest.json",
+    "sha256": "7d81eb9710d857454b9e684f69355cdba38ff0d62427644cd67ee01776509da8"
+  },
+  "normal_inputs": [
+    {
+      "id": "one-edge",
+      "input": {
+        "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/input.json",
+        "sha256": "10d35c7f0c9793dfc64a1ca8e9b84e0b9716840873ea6c918663c9e8ad53271b"
+      },
+      "admission": {
+        "status": "admitted",
+        "archive": {
+          "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/manifest.json",
+          "sha256": "7d81eb9710d857454b9e684f69355cdba38ff0d62427644cd67ee01776509da8"
+        },
+        "input": {
+          "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/input.json",
+          "sha256": "10d35c7f0c9793dfc64a1ca8e9b84e0b9716840873ea6c918663c9e8ad53271b"
+        },
+        "arbitrary_production_PDF_parsed": false,
+        "manufacturing_approval": false
+      }
+    },
+    {
+      "id": "opposite-long",
+      "input": {
+        "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/input.json",
+        "sha256": "bfe0a0fa26eba4c8bf100a59854553ff3e6deb22c042c2347cb0db542a5ec4a4"
+      },
+      "admission": {
+        "status": "admitted",
+        "archive": {
+          "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/manifest.json",
+          "sha256": "7d81eb9710d857454b9e684f69355cdba38ff0d62427644cd67ee01776509da8"
+        },
+        "input": {
+          "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/input.json",
+          "sha256": "bfe0a0fa26eba4c8bf100a59854553ff3e6deb22c042c2347cb0db542a5ec4a4"
+        },
+        "arbitrary_production_PDF_parsed": false,
+        "manufacturing_approval": false
+      }
+    },
+    {
+      "id": "opposite-short",
+      "input": {
+        "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/opposite-short/input.json",
+        "sha256": "f5f945a8aa7d94b0d1dfc9315678e825e19234ef34dc27825679f53fd9c6cbdc"
+      },
+      "admission": {
+        "status": "admitted",
+        "archive": {
+          "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/manifest.json",
+          "sha256": "7d81eb9710d857454b9e684f69355cdba38ff0d62427644cd67ee01776509da8"
+        },
+        "input": {
+          "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/opposite-short/input.json",
+          "sha256": "f5f945a8aa7d94b0d1dfc9315678e825e19234ef34dc27825679f53fd9c6cbdc"
+        },
+        "arbitrary_production_PDF_parsed": false,
+        "manufacturing_approval": false
+      }
+    },
+    {
+      "id": "shifted-wider",
+      "input": {
+        "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/input.json",
+        "sha256": "50a065ed8d6fbfea4a6e74f82d075590b9f85f92eb55bf9a317056a195984cee"
+      },
+      "admission": {
+        "status": "admitted",
+        "archive": {
+          "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/manifest.json",
+          "sha256": "7d81eb9710d857454b9e684f69355cdba38ff0d62427644cd67ee01776509da8"
+        },
+        "input": {
+          "path": "validation/feature-inputs/S4-SELECTED-CHAMFER-20261031-r2/shifted-wider/input.json",
+          "sha256": "50a065ed8d6fbfea4a6e74f82d075590b9f85f92eb55bf9a317056a195984cee"
+        },
+        "arbitrary_production_PDF_parsed": false,
+        "manufacturing_approval": false
+      }
+    }
+  ],
+  "input_rejections": [
+    {
+      "id": "unselected-to-selected",
+      "rejection": "Original CAD, edge selection and declared reference disagree"
+    },
+    {
+      "id": "unknown-edge",
+      "rejection": "Select one or two parallel top edges in canonical order"
+    },
+    {
+      "id": "duplicate-edge",
+      "rejection": "Select one or two parallel top edges in canonical order"
+    },
+    {
+      "id": "adjacent-edges-unqualified",
+      "rejection": "Select one or two parallel top edges in canonical order"
+    },
+    {
+      "id": "boolean-width",
+      "rejection": "Require finite dimensions, excluding boolean values"
+    },
+    {
+      "id": "negative-width",
+      "rejection": "Chamfer must retain the top and original vertical walls"
+    },
+    {
+      "id": "zero-width",
+      "rejection": "Chamfer must retain the top and original vertical walls"
+    },
+    {
+      "id": "changed-width",
+      "rejection": "Original CAD, edge selection and declared reference disagree"
+    },
+    {
+      "id": "changed-stock",
+      "rejection": "Original CAD, edge selection and declared reference disagree"
+    },
+    {
+      "id": "changed-resolution",
+      "rejection": "Cutter reach, clearance or frozen resolution is unsupported"
+    },
+    {
+      "id": "insufficient-cutting-height",
+      "rejection": "Native snubnose must equal the declared 90 degree cutting frustum"
+    },
+    {
+      "id": "wrong-tool-angle",
+      "rejection": "Native snubnose must equal the declared 90 degree cutting frustum"
+    },
+    {
+      "id": "unsafe-rapid-plane",
+      "rejection": "Cutter reach, clearance or frozen resolution is unsupported"
+    },
+    {
+      "id": "tool-reach-exceeded",
+      "rejection": "Cutter reach, clearance or frozen resolution is unsupported"
+    },
+    {
+      "id": "zero-feed",
+      "rejection": "Positive finite number required: feed_mm_min"
+    },
+    {
+      "id": "weakened-acceptance",
+      "rejection": "Invalid specification or changed predeclared acceptance"
+    },
+    {
+      "id": "foreign-card",
+      "rejection": "Structured process card does not bind the selected original edges"
+    },
+    {
+      "id": "foreign-CAD",
+      "rejection": "Original CAD, edge selection and declared reference disagree"
+    },
+    {
+      "id": "unsupported-production-claim",
+      "rejection": "Unsupported selected-chamfer input contract"
+    },
+    {
+      "id": "foreign-paper-archive",
+      "rejection": "Input/specifications not in the unchanged archive"
+    },
+    {
+      "id": "unreviewed-copy-archive",
+      "rejection": "Input/specifications not in the unchanged archive"
+    }
+  ],
+  "native_NC_rejections": [
+    {
+      "id": "NC-wrong-units",
+      "rejection": "Ordered NC preamble, unloaded startup retract or shutdown differs"
+    },
+    {
+      "id": "NC-missing-operation",
+      "rejection": "Require one declared cutter and one selected-edge operation"
+    },
+    {
+      "id": "NC-undeclared-tool-length",
+      "rejection": "Native tool change or spindle differs from the card"
+    },
+    {
+      "id": "NC-wrong-spindle",
+      "rejection": "Native tool change or spindle differs from the card"
+    },
+    {
+      "id": "NC-wrong-horizontal-feed",
+      "rejection": "Native feed differs from the resource attachment"
+    },
+    {
+      "id": "NC-too-deep",
+      "rejection": "Native Z leaves the declared cutting/clearance envelope"
+    },
+    {
+      "id": "NC-too-shallow",
+      "rejection": "Wrong selected-edge cutting depth"
+    },
+    {
+      "id": "NC-wrong-side-position",
+      "rejection": "Entry is not an endpoint of an unprocessed selected edge"
+    }
+  ],
+  "new_CAM_or_simulation_runs": 0,
+  "source_code": {
+    "path": "tools/check_selected_chamfer_v2.py",
+    "sha256": "d3db55e29ebf39c702bc693c97f54f7166dcbbb0e8d1fdb276175835fe678862"
+  },
+  "arbitrary_production_PDF_parsed": false,
+  "production_approved": false
+}

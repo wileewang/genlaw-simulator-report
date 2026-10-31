@@ -1,0 +1,73 @@
+{
+  "schema": "genlaw.selected-edge-prefix-replay.v1",
+  "status": "actual_prefix_material_ready",
+  "representative_case": "opposite-long",
+  "original_full_NC": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/program.nc",
+    "sha256": "bb66ab42196b7c1d42ca0dc4215a12dcdbc9cf3f4522f375c5b32845db7525b8"
+  },
+  "executed_prefix_NC": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/program.nc",
+    "sha256": "5b11777f980f0f1a052510f50d9194bb2df0c941c360cd0fda465bbbcddb69b1"
+  },
+  "matching_executable_prefix_blocks": 15,
+  "prefix_followed_only_by_standard_shutdown": true,
+  "original_NC_rewritten": false,
+  "same_stock_tool_coordinates_and_lattice": true,
+  "motion_trace": {
+    "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/cam-result.json",
+    "sha256": "d06cb6f8f15a87e4d4b08e4217ea77fc731ea239ba020ee376aaa6b1d27c8506"
+  },
+  "frames": [
+    {
+      "kind": "original_stock",
+      "label": "完整毛坯",
+      "bounds": {
+        "min": [
+          0,
+          0,
+          -2
+        ],
+        "max": [
+          6,
+          4,
+          0
+        ]
+      },
+      "feed_time_seconds": 0.0,
+      "volume_mm3": 48.0
+    },
+    {
+      "kind": "executed_exact_NC_prefix",
+      "label": "第一条指定边加工后",
+      "surface": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/material/native/surface-0000.stl",
+        "sha256": "dd8e10ff81c2d052e65bb6814d0e1c5c94dd2d545eacd3f565804d68a39e820a"
+      },
+      "native_result": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/one-edge/material/result.json",
+        "sha256": "792fe17f82f7390fb06c51f7a2dd061fad9940d2a6b8ecc4f88affb4bd9d5b76"
+      },
+      "feed_time_seconds": 5.5,
+      "volume_mm3": 47.520422816618414
+    },
+    {
+      "kind": "full_NC_material",
+      "label": "两条指定边加工后",
+      "surface": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/material/native/surface-0000.stl",
+        "sha256": "e3fb92739dc9aa57acf2ba8f3a8076a058e6620b0c1bb84a6d3406e8ae5c6af6"
+      },
+      "native_result": {
+        "path": "validation/runs/S4-SELECTED-CHAMFER-20261031-r2/opposite-long/material/result.json",
+        "sha256": "2b95537f9629400c110db0974d9df6607537c6df3f87d20e5fab253a19685e06"
+      },
+      "feed_time_seconds": 11.0,
+      "volume_mm3": 47.039691958326465
+    }
+  ],
+  "intermediate_material_reconstructed_from_target": false,
+  "extra_simulations_for_replay": 0,
+  "browser_animation_verified": false,
+  "production_approved": false
+}
