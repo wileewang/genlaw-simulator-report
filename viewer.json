@@ -1,0 +1,341 @@
+{
+  "schema": "genlaw.stage-results-viewer.v1",
+  "stage": "s4",
+  "cases": [
+    {
+      "id": "baseline",
+      "name": "两条 R2 圆角",
+      "case_kind": "normal",
+      "iou_percent": 99.82597809894287,
+      "resolution_mm": 0.025,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          3,
+          6,
+          0
+        ]
+      },
+      "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/target.mesh",
+      "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/actual.mesh",
+      "frames": [
+        {
+          "mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/frame-01.mesh",
+          "label": "加工中间状态 1",
+          "time_seconds": 1716.235769,
+          "kind": "native_time_cutoff",
+          "resolution_mm": 0.025
+        },
+        {
+          "mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/frame-02.mesh",
+          "label": "加工中间状态 2",
+          "time_seconds": 4004.550127,
+          "kind": "native_time_cutoff",
+          "resolution_mm": 0.025
+        }
+      ],
+      "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/thumbnails/baseline.png",
+      "camera_position": [
+        8,
+        -10,
+        8
+      ],
+      "mesh_triangle_limit": 500000,
+      "total_triangle_limit": 2000000,
+      "frame_loading": "on_demand",
+      "state_loading": "exclusive"
+    },
+    {
+      "id": "larger-radius",
+      "name": "两条 R2.2 圆角",
+      "case_kind": "normal",
+      "iou_percent": 99.80531053736298,
+      "resolution_mm": 0.025,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          3,
+          6,
+          0
+        ]
+      },
+      "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/larger-radius/target.mesh",
+      "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/larger-radius/actual.mesh",
+      "frames": [],
+      "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/thumbnails/larger-radius.png",
+      "camera_position": [
+        8,
+        -10,
+        8
+      ],
+      "mesh_triangle_limit": 500000,
+      "total_triangle_limit": 2000000,
+      "frame_loading": "on_demand",
+      "state_loading": "exclusive"
+    },
+    {
+      "id": "longer",
+      "name": "延长直线段",
+      "case_kind": "normal",
+      "iou_percent": 99.83425818591347,
+      "resolution_mm": 0.025,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          4,
+          6,
+          0
+        ]
+      },
+      "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/longer/target.mesh",
+      "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/longer/actual.mesh",
+      "frames": [],
+      "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/thumbnails/longer.png",
+      "camera_position": [
+        8,
+        -10,
+        8
+      ],
+      "mesh_triangle_limit": 500000,
+      "total_triangle_limit": 2000000,
+      "frame_loading": "on_demand",
+      "state_loading": "exclusive"
+    },
+    {
+      "id": "shifted-datum",
+      "name": "非零 CAD 坐标",
+      "case_kind": "normal",
+      "iou_percent": 99.82802145358397,
+      "resolution_mm": 0.025,
+      "stock": {
+        "min": [
+          -3,
+          4,
+          1
+        ],
+        "max": [
+          0,
+          10,
+          4
+        ]
+      },
+      "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/shifted-datum/target.mesh",
+      "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/shifted-datum/actual.mesh",
+      "frames": [],
+      "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/thumbnails/shifted-datum.png",
+      "camera_position": [
+        8,
+        -10,
+        8
+      ],
+      "mesh_triangle_limit": 500000,
+      "total_triangle_limit": 2000000,
+      "frame_loading": "on_demand",
+      "state_loading": "exclusive"
+    },
+    {
+      "id": "insufficient-boundary",
+      "name": "刀路覆盖不足",
+      "case_kind": "negative_control",
+      "iou_percent": 98.7818504029923,
+      "resolution_mm": 0.025,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          3,
+          6,
+          0
+        ]
+      },
+      "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/insufficient-boundary/target.mesh",
+      "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/insufficient-boundary/actual.mesh",
+      "frames": [],
+      "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/thumbnails/insufficient-boundary.png",
+      "camera_position": [
+        8,
+        -10,
+        8
+      ],
+      "mesh_triangle_limit": 500000,
+      "total_triangle_limit": 2000000,
+      "frame_loading": "on_demand",
+      "state_loading": "exclusive"
+    },
+    {
+      "id": "omitted-round",
+      "name": "漏加工圆角",
+      "case_kind": "negative_control",
+      "iou_percent": 90.44445854307848,
+      "resolution_mm": 0.025,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -3
+        ],
+        "max": [
+          3,
+          6,
+          0
+        ]
+      },
+      "target_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/omitted-round/target.mesh",
+      "actual_mesh": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/omitted-round/actual.mesh",
+      "frames": [],
+      "thumbnail": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/thumbnails/omitted-round.png",
+      "camera_position": [
+        8,
+        -10,
+        8
+      ],
+      "mesh_triangle_limit": 500000,
+      "total_triangle_limit": 2000000,
+      "frame_loading": "on_demand",
+      "state_loading": "exclusive"
+    }
+  ],
+  "geometry_transport": {
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 17554,
+      "sha256": "c4ea3a534bb5a3f70ff83c09dfd2b8a83f66c73b697bff20a507f2fff8568027",
+      "decoded_bytes": 45616,
+      "decoded_sha256": "3053300b9d222e45579d1dea71bd3e51861b19fd2589e49a9dc35e9cbfc09101",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/target.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/target.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 1536363,
+      "sha256": "79c2e99a60592992a74d71b4eb5eb5441c9685cdc31631d9389180dccac773bd",
+      "decoded_bytes": 5129896,
+      "decoded_sha256": "463152e819258c89d7625c986f9ba248d9f2debb39dc5120920cedd097e10eaa",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/actual.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/actual.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/frame-01.mesh": {
+      "encoding": "gzip",
+      "bytes": 1506666,
+      "sha256": "e0bf0cf0ed44064804fd23c6e656a15e27473bcf33f0bac5b189cf25963c1caa",
+      "decoded_bytes": 5151280,
+      "decoded_sha256": "d1429e94017cb918edeed9ff94992153ec84161466dfffb0b3875985597f4c04",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/frame-01.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/frame-01.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/frame-02.mesh": {
+      "encoding": "gzip",
+      "bytes": 1513464,
+      "sha256": "426bbbcc70bd8d0fdde31c39e814f5a5588f5cf978e70d8f3dfe043dc4b8f074",
+      "decoded_bytes": 5130616,
+      "decoded_sha256": "2bc416f37d56e59f71d612dff528c7778b069b4e2004a2124029ab14e655c829",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/frame-02.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/baseline/frame-02.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/larger-radius/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 17589,
+      "sha256": "bce0b5a863a078224ce0584ccbc5784dbd2d4b5fd1a6da5b6e8a60ace31a4d95",
+      "decoded_bytes": 45616,
+      "decoded_sha256": "e9ed32d20618d58d85d885219c205bd0f03589dddd49731a0e4cc1263ce32b32",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/larger-radius/target.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/larger-radius/target.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/larger-radius/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 1517220,
+      "sha256": "b78d52008de47ae584ccf70f5c2bec609afd91d387f46a279ae7a001ab888884",
+      "decoded_bytes": 5057392,
+      "decoded_sha256": "711968d872d04e76e05d8462d7ace933877c7de946b6c8cc950f6780be43e398",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/larger-radius/actual.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/larger-radius/actual.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/longer/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 17680,
+      "sha256": "05543a845e3399d6653015ccc0350568614cec3c3688949885fd2ab61b1331c3",
+      "decoded_bytes": 45616,
+      "decoded_sha256": "e2627d8035776a881be42ba91d1e0488e230882a3ecf283ef51230573eba91be",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/longer/target.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/longer/target.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/longer/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 1879146,
+      "sha256": "4af50b86ce9f55b54ea76efd532e3daeda473344127938e21f7001a0773bb821",
+      "decoded_bytes": 6248632,
+      "decoded_sha256": "f376132ad9805a89386e9cc2b7bd3d10a7d24a3ea48e95605ac0b213eaab3254",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/longer/actual.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/longer/actual.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/shifted-datum/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 17775,
+      "sha256": "6e8228f132f93913a2edd5726353054d0c7cdb903c5bb68cef3b40caf15c243b",
+      "decoded_bytes": 45616,
+      "decoded_sha256": "cc254f32ec141055acb64e2f524a53c2b2320390a5557680f3f384b1c17be631",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/shifted-datum/target.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/shifted-datum/target.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/shifted-datum/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 1525179,
+      "sha256": "b527ddf4bbb7aefa0f21ed663e01ff6bf1dcaeb042b7b4d2c70d0c0f8064f2fd",
+      "decoded_bytes": 5138536,
+      "decoded_sha256": "f081f50d7e1cbf01d89b6fcbaf16610a6cdd07fbc6bcc6c3c7f7fb0e2aac5e9a",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/shifted-datum/actual.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/shifted-datum/actual.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/insufficient-boundary/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 17554,
+      "sha256": "c4ea3a534bb5a3f70ff83c09dfd2b8a83f66c73b697bff20a507f2fff8568027",
+      "decoded_bytes": 45616,
+      "decoded_sha256": "3053300b9d222e45579d1dea71bd3e51861b19fd2589e49a9dc35e9cbfc09101",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/insufficient-boundary/target.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/insufficient-boundary/target.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/insufficient-boundary/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 1603683,
+      "sha256": "2d712d4bf18206adfdf020ee80eb1cfee43c88128975054ac7484be35c77c2f3",
+      "decoded_bytes": 5163880,
+      "decoded_sha256": "4165139ff0fbf9ddf11086171efd1e5e8c533ddc034e7395a6b39e8d04722178",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/insufficient-boundary/actual.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/insufficient-boundary/actual.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/omitted-round/target.mesh": {
+      "encoding": "gzip",
+      "bytes": 17554,
+      "sha256": "c4ea3a534bb5a3f70ff83c09dfd2b8a83f66c73b697bff20a507f2fff8568027",
+      "decoded_bytes": 45616,
+      "decoded_sha256": "3053300b9d222e45579d1dea71bd3e51861b19fd2589e49a9dc35e9cbfc09101",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/omitted-round/target.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/omitted-round/target.mesh.gz"
+    },
+    "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/omitted-round/actual.mesh": {
+      "encoding": "gzip",
+      "bytes": 1550947,
+      "sha256": "490a447847ab4eed61eede0098643497fd2a214ae302c1014473f90dbe1022f9",
+      "decoded_bytes": 5183968,
+      "decoded_sha256": "abfebc20b978acccc3f1ddb3be333f3242daf7d355088e69a7674a4931251873",
+      "path": "https://cdn.jsdelivr.net/gh/wileewang/genlaw-simulator-report@2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/omitted-round/actual.mesh.gz",
+      "retry_path": "https://raw.githubusercontent.com/wileewang/genlaw-simulator-report/2b7603e650a5a04b71b8791b6e9bf152a9ff16d5/omitted-round/actual.mesh.gz"
+    }
+  }
+}
