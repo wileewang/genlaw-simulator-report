@@ -1,0 +1,373 @@
+{
+  "summary": {
+    "id": "rotated-layout",
+    "name": "轮廓沿 Y 排列",
+    "case_kind": "normal",
+    "parent_case": "rotated-layout",
+    "geometry_pass": true,
+    "numerical_stability_pass": true,
+    "iou_percent": 99.9166988312114,
+    "by_role_iou_percent": {
+      "whole": 99.9166988312114,
+      "P01": 99.78519438170751,
+      "P02": 99.78519526154375,
+      "R01": 99.9324957635492
+    },
+    "role_assignment_complete": true,
+    "native_shells": 3,
+    "native_faces": 398324,
+    "all_native_faces_accounted": true,
+    "stock": {
+      "min": [
+        0,
+        0,
+        -1
+      ],
+      "max": [
+        5,
+        8,
+        0
+      ]
+    },
+    "roles": [
+      "whole",
+      "P01",
+      "P02",
+      "R01"
+    ],
+    "resolution_mm": 0.025,
+    "arc_precision_mm": 0.0005,
+    "CAD": "rotated-layout/input/nominal-whole-material.step",
+    "paper_card": "rotated-layout/input/process-card.pdf",
+    "metrics": "rotated-layout/run/metrics.json",
+    "inspection": "rotated-layout/run/inspection.json",
+    "software_acceptance": {
+      "scope": "software_geometry_regression",
+      "iou_percent_min": 99.0,
+      "boundary_deviation_mm_max": 0.05,
+      "retained_plane_deviation_mm_max": 0.025,
+      "quadrature_orders": [
+        4,
+        8
+      ],
+      "quadrature_iou_difference_max": 1e-06,
+      "target_integral_error_mm3_max": 1e-05,
+      "mesh_integral_error_mm3_max": 0.0001,
+      "all_native_faces_accounted": true,
+      "discard_small_components": false,
+      "manufacturing_tolerance_approved": false
+    },
+    "new_machine_models": 0,
+    "new_material_physics": 0
+  },
+  "copied_sources": {
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/incoming-stock.brep": {
+      "path": "rotated-layout/input/incoming-stock.brep",
+      "sha256": "d840483dc2e9313c2a4b9f469684aa78ed9f285e16a994391af665afea407e5e"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/P02.brep": {
+      "path": "rotated-layout/input/P02.brep",
+      "sha256": "24b2617f1eef8159cc16f9f50514edb8c5b0297d3bb0af43ab5784739482c644"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/nominal-whole-material.brep": {
+      "path": "rotated-layout/input/nominal-whole-material.brep",
+      "sha256": "41683af235abc7eef5daa445827b3dda46c319eb6f6b3af33d4d326d2c0fcdd4"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/nominal-remainder.step": {
+      "path": "rotated-layout/input/nominal-remainder.step",
+      "sha256": "bf555b145356ccc69b7919097682d1a4db473d1f8b4126c8365778edc806ae2b"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/process-card.pdf": {
+      "path": "rotated-layout/input/process-card.pdf",
+      "sha256": "61ac676c59db916eaad275b12f2a8fcdd15f4b8230ea0f27ad3078b6b342e9e7"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/cad-result.json": {
+      "path": "rotated-layout/input/cad-result.json",
+      "sha256": "2e1dc6999604bd6dcfbff4fc8b7d156a2f64a1a755da1dc52623d04342318bef"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/planned-products.step": {
+      "path": "rotated-layout/input/planned-products.step",
+      "sha256": "4bbb58a240f09caca229549cba8e742068b8a3b3a13d3818193c8dc64550a49e"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/incoming-stock.step": {
+      "path": "rotated-layout/input/incoming-stock.step",
+      "sha256": "6673e41c509c5bf9c9bc0abfadb83079bd194d93daa56445db516a7c48b03609"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/planned-products.brep": {
+      "path": "rotated-layout/input/planned-products.brep",
+      "sha256": "91d25ea9baa017632a4fcd535d97ac6a13451f10dbc42599d621f40a10b2479c"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/process-plan.json": {
+      "path": "rotated-layout/input/process-plan.json",
+      "sha256": "a95bdd87c0da9e52f5465111e1b8a84934b282b6943f39c35277eb4ec2f650be"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/nominal-remainder.brep": {
+      "path": "rotated-layout/input/nominal-remainder.brep",
+      "sha256": "8f8af94f2e1488a5eb1cf812c8a36e50d766c3419bc6fb8b4d38dd40ab98619c"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/P01.brep": {
+      "path": "rotated-layout/input/P01.brep",
+      "sha256": "921cd6913f79edbd9abb170be3f56ce6592eeeb4fcc923ea54bfcf2e377777f6"
+    },
+    "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/nominal-whole-material.step": {
+      "path": "rotated-layout/input/nominal-whole-material.step",
+      "sha256": "c732d87a047d82d63798937eaaefd07a58b69d45e04d7ece8501340ac4a06ad0"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/preparation-result.json": {
+      "path": "rotated-layout/run/preparation-result.json",
+      "sha256": "e2cbdc3ef42a1a454f963a19b2a8f8fc17ec55bc4d231ef1c7dcaa80b0689baa"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/native-CAD-check.json": {
+      "path": "rotated-layout/run/native-CAD-check.json",
+      "sha256": "8eae1324ce0562d7784d9d768e8755b03e177bca728c36bf96ea32ec516afd52"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/cam-result.json": {
+      "path": "rotated-layout/run/cam-result.json",
+      "sha256": "9adbe39a98bd7c7a9829ffd560c671b30768d85126b6655e1bd7be7d15c9c251"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/native-paths.json": {
+      "path": "rotated-layout/run/native-paths.json",
+      "sha256": "113c91426911235a3a3c49ce880e87a7b334c04828b76aff8b253d351092d18c"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/cam-job.FCStd": {
+      "path": "rotated-layout/run/cam-job.FCStd",
+      "sha256": "da05918236de058bb2f6b871954761ea29e21c44b8b4e673aa29ec292a3e592a"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/program.nc": {
+      "path": "rotated-layout/program.nc",
+      "sha256": "63719071333ec1a3141d48c402af1553b7ae39d72b16e374a776aceb61d75484"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/simulation.camotics": {
+      "path": "rotated-layout/simulation.camotics",
+      "sha256": "820e05c32824c4feb2ddcc9dc3e42dd8f00c5fd3e30ec31e10df74b16ca61b7f"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/measurement-request.json": {
+      "path": "rotated-layout/run/request.json",
+      "sha256": "7e172de6adcc6eef2c3da5f51efa961c675e48abda1486881fa7678288ac889b"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/verification-01/measurement/metrics.json": {
+      "path": "rotated-layout/run/metrics.json",
+      "sha256": "d77baab825a7b701c6184af9b1e17d3dba7496ef23a412b4a1052a3199b1f839"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/verification-01/measurement/inspection.json": {
+      "path": "rotated-layout/run/inspection.json",
+      "sha256": "69f22def1ba241eb1b9d42ddfbd4ebd591f3a87df78b950622d8db79019b58d4"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/material/result.json": {
+      "path": "rotated-layout/run/material.json",
+      "sha256": "6f25239e466284d98bed59e2d6bc7dae5680f1dbbcba08e7d6af59c1f5d87db1"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/verification-01/measurement/part-0000.json": {
+      "path": "rotated-layout/run/part-0000.json",
+      "sha256": "451cb9065f04a7128f1af545d15ee6210388bac3b47e0f1f820a79503e4d7b2a"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/verification-01/measurement/part-0001.json": {
+      "path": "rotated-layout/run/part-0001.json",
+      "sha256": "2936aabe7496ad799c8ef5b844eb7d183e91adf80f633dbaaac5cccb928db469"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/verification-01/measurement/part-0002.json": {
+      "path": "rotated-layout/run/part-0002.json",
+      "sha256": "726d716692b0441b18ab883676ac8f4db8ed686b38990879f4e80c9a1c99128a"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/verification-01/measurement/part-0003.json": {
+      "path": "rotated-layout/run/part-0003.json",
+      "sha256": "dc5b23f250d2e88239ece2c7afb9faaa146721f4350a7072ea44e1c3f15827bd"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/lossless-archive-01/surface.stl.gz": {
+      "path": "rotated-layout/actual.stl.gz",
+      "sha256": "1707920174f0b171f46b3229cdf95ea7da7899328c248243ea31dc9c7a93d2eb"
+    },
+    "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/lossless-archive-01/manifest.json": {
+      "path": "rotated-layout/run/lossless-archive.json",
+      "sha256": "7ca0a620f288cd7ae0bc191e29ddd818185e0015beb0f2c01475b172542d5307"
+    }
+  },
+  "display_equivalence": {
+    "target-whole": {
+      "triangles": 20172,
+      "vertices": 10088,
+      "vertices_moved": false,
+      "faces_discarded_within_selected_role": false,
+      "original_CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/nominal-whole-material.brep",
+        "sha256": "41683af235abc7eef5daa445827b3dda46c319eb6f6b3af33d4d326d2c0fcdd4"
+      },
+      "display": {
+        "path": "docs/checkpoints/2026-10-31/batch-review-preparation-01/review-CAD/rotated-layout/whole.stl",
+        "sha256": "d10555f2af157479c1dbdc2a4b50cea821072e274535b138804038c3d3681749"
+      },
+      "display_only_CAD_triangulation": true
+    },
+    "actual-whole": {
+      "triangles": 398324,
+      "vertices": 199164,
+      "vertices_moved": false,
+      "faces_discarded_within_selected_role": false,
+      "source": {
+        "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/material/surface.stl",
+        "sha256": "fee29e3a8d42a7d4a6136f82428f5baee30ca59ef81cec57b062cd275c81309c"
+      },
+      "role": "whole",
+      "entire_connected_native_shell": false,
+      "whole_native_material": true,
+      "role_component": null,
+      "bbox_cropping": false
+    },
+    "target-P01": {
+      "triangles": 5036,
+      "vertices": 2520,
+      "vertices_moved": false,
+      "faces_discarded_within_selected_role": false,
+      "original_CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/P01.brep",
+        "sha256": "921cd6913f79edbd9abb170be3f56ce6592eeeb4fcc923ea54bfcf2e377777f6"
+      },
+      "display": {
+        "path": "docs/checkpoints/2026-10-31/batch-review-preparation-01/review-CAD/rotated-layout/P01.stl",
+        "sha256": "e4b715afcdb91898e518aa11175a8c14b13d1496b680be53a103b53dab9e5415"
+      },
+      "display_only_CAD_triangulation": true
+    },
+    "actual-P01": {
+      "triangles": 30096,
+      "vertices": 15050,
+      "vertices_moved": false,
+      "faces_discarded_within_selected_role": false,
+      "source": {
+        "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/material/surface.stl",
+        "sha256": "fee29e3a8d42a7d4a6136f82428f5baee30ca59ef81cec57b062cd275c81309c"
+      },
+      "role": "P01",
+      "entire_connected_native_shell": true,
+      "whole_native_material": false,
+      "role_component": 1,
+      "bbox_cropping": false
+    },
+    "target-P02": {
+      "triangles": 5036,
+      "vertices": 2520,
+      "vertices_moved": false,
+      "faces_discarded_within_selected_role": false,
+      "original_CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/P02.brep",
+        "sha256": "24b2617f1eef8159cc16f9f50514edb8c5b0297d3bb0af43ab5784739482c644"
+      },
+      "display": {
+        "path": "docs/checkpoints/2026-10-31/batch-review-preparation-01/review-CAD/rotated-layout/P02.stl",
+        "sha256": "065def64979861d9c2898e57867f431b4397747ae847a09d47321d2d99cf073c"
+      },
+      "display_only_CAD_triangulation": true
+    },
+    "actual-P02": {
+      "triangles": 30096,
+      "vertices": 15050,
+      "vertices_moved": false,
+      "faces_discarded_within_selected_role": false,
+      "source": {
+        "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/material/surface.stl",
+        "sha256": "fee29e3a8d42a7d4a6136f82428f5baee30ca59ef81cec57b062cd275c81309c"
+      },
+      "role": "P02",
+      "entire_connected_native_shell": true,
+      "whole_native_material": false,
+      "role_component": 2,
+      "bbox_cropping": false
+    },
+    "target-R01": {
+      "triangles": 10100,
+      "vertices": 5048,
+      "vertices_moved": false,
+      "faces_discarded_within_selected_role": false,
+      "original_CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/nominal-remainder.brep",
+        "sha256": "8f8af94f2e1488a5eb1cf812c8a36e50d766c3419bc6fb8b4d38dd40ab98619c"
+      },
+      "display": {
+        "path": "docs/checkpoints/2026-10-31/batch-review-preparation-01/review-CAD/rotated-layout/R01.stl",
+        "sha256": "095ea7f48b4bcd4a9a0dd4be0e97fd00cfdb45a4e6aaf437728ff330a9e66d68"
+      },
+      "display_only_CAD_triangulation": true
+    },
+    "actual-R01": {
+      "triangles": 338132,
+      "vertices": 169064,
+      "vertices_moved": false,
+      "faces_discarded_within_selected_role": false,
+      "source": {
+        "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/batch-material-02/material/surface.stl",
+        "sha256": "fee29e3a8d42a7d4a6136f82428f5baee30ca59ef81cec57b062cd275c81309c"
+      },
+      "role": "R01",
+      "entire_connected_native_shell": true,
+      "whole_native_material": false,
+      "role_component": 0,
+      "bbox_cropping": false
+    }
+  },
+  "geometry_delivery": {
+    "rotated-layout/target-whole.mesh": {
+      "encoding": "gzip",
+      "bytes": 121821,
+      "sha256": "30c4d5f7d796ae91ab1bed5dfd2d1c078acc3e0a6089d0bb2707ccde31080911",
+      "decoded_bytes": 363136,
+      "decoded_sha256": "d3ba8ced1135ab33e7301cd0be4fc2e74a0449c046f235813dd1b1c40c71eb2d",
+      "path": "rotated-layout/target-whole.mesh.gz"
+    },
+    "rotated-layout/actual-whole.mesh": {
+      "encoding": "gzip",
+      "bytes": 2159041,
+      "sha256": "696e94499da4adcf18736ec1ee859034fd254a1fa348a8210be674111054239f",
+      "decoded_bytes": 7169872,
+      "decoded_sha256": "2b65f30c1cefb331b8915df48dc9d4e88cd8850603f710617d77db3362605a8f",
+      "path": "rotated-layout/actual-whole.mesh.gz"
+    },
+    "rotated-layout/target-P01.mesh": {
+      "encoding": "gzip",
+      "bytes": 31163,
+      "sha256": "206acc92193461b7e59c01ed8d1c040546849ad425f331d28caa7e26616d7070",
+      "decoded_bytes": 90688,
+      "decoded_sha256": "7ca4c1c255ed3c3f555034e2c8b50e88f846286c97446cbd083584509d16726c",
+      "path": "rotated-layout/target-P01.mesh.gz"
+    },
+    "rotated-layout/actual-P01.mesh": {
+      "encoding": "gzip",
+      "bytes": 156166,
+      "sha256": "63cdbd4a61567d68d436eedc6339b763dcc0b2662e0768aedd8ec30ae94ead42",
+      "decoded_bytes": 541768,
+      "decoded_sha256": "ad9884b93762da2d7640ca5aa282f131007777340211475f5973817bc451aa29",
+      "path": "rotated-layout/actual-P01.mesh.gz"
+    },
+    "rotated-layout/target-P02.mesh": {
+      "encoding": "gzip",
+      "bytes": 31037,
+      "sha256": "e1d852deb73852fedeaa18065061318df9d5c0615b845c5984708c233ce4310f",
+      "decoded_bytes": 90688,
+      "decoded_sha256": "3006f3fb6da4f1cbe79240afcdbdf469d88e4efb17dd07b07c20fd939289cd67",
+      "path": "rotated-layout/target-P02.mesh.gz"
+    },
+    "rotated-layout/actual-P02.mesh": {
+      "encoding": "gzip",
+      "bytes": 155203,
+      "sha256": "90ed2400e3c00770602e056b9d028e820bb196f5390b61089c715bdd0e80d362",
+      "decoded_bytes": 541768,
+      "decoded_sha256": "dec9727b413f4d91f65a50bcfc0c4a466bc4af97d819ef103a2196ee064f66e7",
+      "path": "rotated-layout/actual-P02.mesh.gz"
+    },
+    "rotated-layout/target-R01.mesh": {
+      "encoding": "gzip",
+      "bytes": 58037,
+      "sha256": "9751e41d779542637339347c59fd6c7c830ce9038612f0e2d13b3fd8a737903f",
+      "decoded_bytes": 181792,
+      "decoded_sha256": "022ab8adeaf6effdaaaaa155a4d50f63f4dde953f078a41745daf05d2da1ee5a",
+      "path": "rotated-layout/target-R01.mesh.gz"
+    },
+    "rotated-layout/actual-R01.mesh": {
+      "encoding": "gzip",
+      "bytes": 1823292,
+      "sha256": "688e146aa7e8d8c28502847035eb100d114152761f92e1ade88522a9c4535830",
+      "decoded_bytes": 6086368,
+      "decoded_sha256": "f52ac824168356a9c3485902ff3fa216525cf0c7ab7e4db746aad0289c585d74",
+      "path": "rotated-layout/actual-R01.mesh.gz"
+    }
+  }
+}

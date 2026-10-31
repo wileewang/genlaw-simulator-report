@@ -1,0 +1,1982 @@
+{
+  "status": "native_batch_generated_and_checked",
+  "NC": {
+    "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/program.nc",
+    "sha256": "63719071333ec1a3141d48c402af1553b7ae39d72b16e374a776aceb61d75484"
+  },
+  "preparation": {
+    "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/preparation-result.json",
+    "sha256": "e2cbdc3ef42a1a454f963a19b2a8f8fc17ec55bc4d231ef1c7dcaa80b0689baa"
+  },
+  "native_CAD_check": {
+    "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/native-CAD-check.json",
+    "sha256": "8eae1324ce0562d7784d9d768e8755b03e177bca728c36bf96ea32ec516afd52"
+  },
+  "native_paths": {
+    "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/native-paths.json",
+    "sha256": "113c91426911235a3a3c49ce880e87a7b334c04828b76aff8b253d351092d18c"
+  },
+  "CAM_job": {
+    "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/cam-job.FCStd",
+    "sha256": "da05918236de058bb2f6b871954761ea29e21c44b8b4e673aa29ec292a3e592a"
+  },
+  "simulation_project": {
+    "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/simulation.camotics",
+    "sha256": "820e05c32824c4feb2ddcc9dc3e42dd8f00c5fd3e30ec31e10df74b16ca61b7f"
+  },
+  "nc_check": {
+    "status": "checked_all_batch_channels",
+    "operation_count": 2,
+    "checks": [
+      {
+        "feature_id": "P01",
+        "step_id": "PROFILE-P01",
+        "first_executable_block": 9,
+        "last_executable_block": 34,
+        "channel_area_mm2": 3.356194106959469,
+        "closed_layers": [
+          {
+            "z_mm": -0.5,
+            "start_xy": [
+              3.03033,
+              3.03003
+            ],
+            "end_xy": [
+              3.03033,
+              3.03003
+            ],
+            "length_mm": 6.710912059148693
+          },
+          {
+            "z_mm": -1.0,
+            "start_xy": [
+              3.03033,
+              3.03003
+            ],
+            "end_xy": [
+              3.03033,
+              3.03003
+            ],
+            "length_mm": 6.710912059148693
+          },
+          {
+            "z_mm": -1.05,
+            "start_xy": [
+              3.03033,
+              3.03003
+            ],
+            "end_xy": [
+              3.03033,
+              3.03003
+            ],
+            "length_mm": 6.710912059148693
+          }
+        ],
+        "milling_guard": {
+          "status": "checked_declared_milling_envelope",
+          "executable_blocks": 34,
+          "post_decimal_places": 5,
+          "text_modified": false,
+          "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+          "step_map": [
+            {
+              "step_id": "PROFILE-P01",
+              "feature_id": "P01",
+              "first_executable_block": 6,
+              "last_executable_block": 31
+            }
+          ],
+          "cutting_moves": 21,
+          "arc_moves": 12,
+          "cutting_levels_mm": [
+            -0.5,
+            -1.0,
+            -1.05
+          ],
+          "path_envelope_allowance_mm": 0.00202,
+          "feed_time_seconds": 33.30928341293529,
+          "rapid_time_not_included": true,
+          "motion_trace": [
+            {
+              "block": 6,
+              "motion": "G0",
+              "start": [
+                null,
+                null,
+                null
+              ],
+              "end": [
+                null,
+                null,
+                3.0
+              ],
+              "feed_mm_min": null,
+              "feed_time_end_seconds": 0.0
+            },
+            {
+              "block": 7,
+              "motion": "G0",
+              "start": [
+                null,
+                null,
+                3.0
+              ],
+              "end": [
+                3.03033,
+                3.03003,
+                3.0
+              ],
+              "feed_mm_min": null,
+              "feed_time_end_seconds": 0.0
+            },
+            {
+              "block": 8,
+              "motion": "G0",
+              "start": [
+                3.03033,
+                3.03003,
+                3.0
+              ],
+              "end": [
+                3.03033,
+                3.03003,
+                2.0
+              ],
+              "feed_mm_min": null,
+              "feed_time_end_seconds": 0.0
+            },
+            {
+              "block": 9,
+              "motion": "G1",
+              "start": [
+                3.03033,
+                3.03003,
+                2.0
+              ],
+              "end": [
+                3.03033,
+                3.03003,
+                -0.5
+              ],
+              "feed_mm_min": 20.0,
+              "feed_time_end_seconds": 7.5
+            },
+            {
+              "block": 10,
+              "motion": "G2",
+              "start": [
+                3.03033,
+                3.03003,
+                -0.5
+              ],
+              "end": [
+                3.25,
+                2.5,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 8.206498232655562
+            },
+            {
+              "block": 11,
+              "motion": "G1",
+              "start": [
+                3.25,
+                2.5,
+                -0.5
+              ],
+              "end": [
+                3.25,
+                1.5,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 9.406498232655562
+            },
+            {
+              "block": 12,
+              "motion": "G2",
+              "start": [
+                3.25,
+                1.5,
+                -0.5
+              ],
+              "end": [
+                2.62502,
+                0.76083,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 10.668945842159
+            },
+            {
+              "block": 13,
+              "motion": "G2",
+              "start": [
+                2.62502,
+                0.76083,
+                -0.5
+              ],
+              "end": [
+                1.75,
+                1.5,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 12.232879260168925
+            },
+            {
+              "block": 14,
+              "motion": "G1",
+              "start": [
+                1.75,
+                1.5,
+                -0.5
+              ],
+              "end": [
+                1.75,
+                2.5,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 13.432879260168924
+            },
+            {
+              "block": 15,
+              "motion": "G2",
+              "start": [
+                1.75,
+                2.5,
+                -0.5
+              ],
+              "end": [
+                3.03033,
+                3.03003,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 15.553094470978431
+            },
+            {
+              "block": 16,
+              "motion": "G1",
+              "start": [
+                3.03033,
+                3.03003,
+                -0.5
+              ],
+              "end": [
+                3.03033,
+                3.03003,
+                -1.0
+              ],
+              "feed_mm_min": 20.0,
+              "feed_time_end_seconds": 17.05309447097843
+            },
+            {
+              "block": 17,
+              "motion": "G2",
+              "start": [
+                3.03033,
+                3.03003,
+                -1.0
+              ],
+              "end": [
+                3.25,
+                2.5,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 17.75959270363399
+            },
+            {
+              "block": 18,
+              "motion": "G1",
+              "start": [
+                3.25,
+                2.5,
+                -1.0
+              ],
+              "end": [
+                3.25,
+                1.5,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 18.95959270363399
+            },
+            {
+              "block": 19,
+              "motion": "G2",
+              "start": [
+                3.25,
+                1.5,
+                -1.0
+              ],
+              "end": [
+                2.62502,
+                0.76083,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 20.222040313137427
+            },
+            {
+              "block": 20,
+              "motion": "G2",
+              "start": [
+                2.62502,
+                0.76083,
+                -1.0
+              ],
+              "end": [
+                1.75,
+                1.5,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 21.78597373114735
+            },
+            {
+              "block": 21,
+              "motion": "G1",
+              "start": [
+                1.75,
+                1.5,
+                -1.0
+              ],
+              "end": [
+                1.75,
+                2.5,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 22.98597373114735
+            },
+            {
+              "block": 22,
+              "motion": "G2",
+              "start": [
+                1.75,
+                2.5,
+                -1.0
+              ],
+              "end": [
+                3.03033,
+                3.03003,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 25.10618894195686
+            },
+            {
+              "block": 23,
+              "motion": "G1",
+              "start": [
+                3.03033,
+                3.03003,
+                -1.0
+              ],
+              "end": [
+                3.03033,
+                3.03003,
+                -1.05
+              ],
+              "feed_mm_min": 20.0,
+              "feed_time_end_seconds": 25.256188941956857
+            },
+            {
+              "block": 24,
+              "motion": "G2",
+              "start": [
+                3.03033,
+                3.03003,
+                -1.05
+              ],
+              "end": [
+                3.25,
+                2.5,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 25.96268717461242
+            },
+            {
+              "block": 25,
+              "motion": "G1",
+              "start": [
+                3.25,
+                2.5,
+                -1.05
+              ],
+              "end": [
+                3.25,
+                1.5,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 27.16268717461242
+            },
+            {
+              "block": 26,
+              "motion": "G2",
+              "start": [
+                3.25,
+                1.5,
+                -1.05
+              ],
+              "end": [
+                2.62502,
+                0.76083,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 28.425134784115855
+            },
+            {
+              "block": 27,
+              "motion": "G2",
+              "start": [
+                2.62502,
+                0.76083,
+                -1.05
+              ],
+              "end": [
+                1.75,
+                1.5,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 29.98906820212578
+            },
+            {
+              "block": 28,
+              "motion": "G1",
+              "start": [
+                1.75,
+                1.5,
+                -1.05
+              ],
+              "end": [
+                1.75,
+                2.5,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 31.189068202125778
+            },
+            {
+              "block": 29,
+              "motion": "G2",
+              "start": [
+                1.75,
+                2.5,
+                -1.05
+              ],
+              "end": [
+                3.03033,
+                3.03003,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 33.30928341293529
+            },
+            {
+              "block": 30,
+              "motion": "G0",
+              "start": [
+                3.03033,
+                3.03003,
+                -1.05
+              ],
+              "end": [
+                3.03033,
+                3.03003,
+                3.0
+              ],
+              "feed_mm_min": null,
+              "feed_time_end_seconds": 33.30928341293529
+            },
+            {
+              "block": 31,
+              "motion": "G0",
+              "start": [
+                3.03033,
+                3.03003,
+                3.0
+              ],
+              "end": [
+                3.03033,
+                3.03003,
+                3.0
+              ],
+              "feed_mm_min": null,
+              "feed_time_end_seconds": 33.30928341293529
+            }
+          ],
+          "final_uncovered_profile_mm2": 0.0
+        }
+      },
+      {
+        "feature_id": "P02",
+        "step_id": "PROFILE-P02",
+        "first_executable_block": 35,
+        "last_executable_block": 60,
+        "channel_area_mm2": 3.3561941069594847,
+        "closed_layers": [
+          {
+            "z_mm": -0.5,
+            "start_xy": [
+              3.03033,
+              7.03003
+            ],
+            "end_xy": [
+              3.03033,
+              7.03003
+            ],
+            "length_mm": 6.710912059148693
+          },
+          {
+            "z_mm": -1.0,
+            "start_xy": [
+              3.03033,
+              7.03003
+            ],
+            "end_xy": [
+              3.03033,
+              7.03003
+            ],
+            "length_mm": 6.710912059148693
+          },
+          {
+            "z_mm": -1.05,
+            "start_xy": [
+              3.03033,
+              7.03003
+            ],
+            "end_xy": [
+              3.03033,
+              7.03003
+            ],
+            "length_mm": 6.710912059148693
+          }
+        ],
+        "milling_guard": {
+          "status": "checked_declared_milling_envelope",
+          "executable_blocks": 34,
+          "post_decimal_places": 5,
+          "text_modified": false,
+          "scope": "G17/G54 absolute XYZ, incremental I/J planar arcs, one flat endmill; bounded envelope/depth/feed/coverage checks, not a general NC interpreter.",
+          "step_map": [
+            {
+              "step_id": "PROFILE-P02",
+              "feature_id": "P02",
+              "first_executable_block": 6,
+              "last_executable_block": 31
+            }
+          ],
+          "cutting_moves": 21,
+          "arc_moves": 12,
+          "cutting_levels_mm": [
+            -0.5,
+            -1.0,
+            -1.05
+          ],
+          "path_envelope_allowance_mm": 0.00202,
+          "feed_time_seconds": 33.30928341293529,
+          "rapid_time_not_included": true,
+          "motion_trace": [
+            {
+              "block": 6,
+              "motion": "G0",
+              "start": [
+                null,
+                null,
+                null
+              ],
+              "end": [
+                null,
+                null,
+                3.0
+              ],
+              "feed_mm_min": null,
+              "feed_time_end_seconds": 0.0
+            },
+            {
+              "block": 7,
+              "motion": "G0",
+              "start": [
+                null,
+                null,
+                3.0
+              ],
+              "end": [
+                3.03033,
+                7.03003,
+                3.0
+              ],
+              "feed_mm_min": null,
+              "feed_time_end_seconds": 0.0
+            },
+            {
+              "block": 8,
+              "motion": "G0",
+              "start": [
+                3.03033,
+                7.03003,
+                3.0
+              ],
+              "end": [
+                3.03033,
+                7.03003,
+                2.0
+              ],
+              "feed_mm_min": null,
+              "feed_time_end_seconds": 0.0
+            },
+            {
+              "block": 9,
+              "motion": "G1",
+              "start": [
+                3.03033,
+                7.03003,
+                2.0
+              ],
+              "end": [
+                3.03033,
+                7.03003,
+                -0.5
+              ],
+              "feed_mm_min": 20.0,
+              "feed_time_end_seconds": 7.5
+            },
+            {
+              "block": 10,
+              "motion": "G2",
+              "start": [
+                3.03033,
+                7.03003,
+                -0.5
+              ],
+              "end": [
+                3.25,
+                6.5,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 8.206498232655562
+            },
+            {
+              "block": 11,
+              "motion": "G1",
+              "start": [
+                3.25,
+                6.5,
+                -0.5
+              ],
+              "end": [
+                3.25,
+                5.5,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 9.406498232655562
+            },
+            {
+              "block": 12,
+              "motion": "G2",
+              "start": [
+                3.25,
+                5.5,
+                -0.5
+              ],
+              "end": [
+                2.62502,
+                4.76083,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 10.668945842159
+            },
+            {
+              "block": 13,
+              "motion": "G2",
+              "start": [
+                2.62502,
+                4.76083,
+                -0.5
+              ],
+              "end": [
+                1.75,
+                5.5,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 12.232879260168925
+            },
+            {
+              "block": 14,
+              "motion": "G1",
+              "start": [
+                1.75,
+                5.5,
+                -0.5
+              ],
+              "end": [
+                1.75,
+                6.5,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 13.432879260168924
+            },
+            {
+              "block": 15,
+              "motion": "G2",
+              "start": [
+                1.75,
+                6.5,
+                -0.5
+              ],
+              "end": [
+                3.03033,
+                7.03003,
+                -0.5
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 15.553094470978431
+            },
+            {
+              "block": 16,
+              "motion": "G1",
+              "start": [
+                3.03033,
+                7.03003,
+                -0.5
+              ],
+              "end": [
+                3.03033,
+                7.03003,
+                -1.0
+              ],
+              "feed_mm_min": 20.0,
+              "feed_time_end_seconds": 17.05309447097843
+            },
+            {
+              "block": 17,
+              "motion": "G2",
+              "start": [
+                3.03033,
+                7.03003,
+                -1.0
+              ],
+              "end": [
+                3.25,
+                6.5,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 17.75959270363399
+            },
+            {
+              "block": 18,
+              "motion": "G1",
+              "start": [
+                3.25,
+                6.5,
+                -1.0
+              ],
+              "end": [
+                3.25,
+                5.5,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 18.95959270363399
+            },
+            {
+              "block": 19,
+              "motion": "G2",
+              "start": [
+                3.25,
+                5.5,
+                -1.0
+              ],
+              "end": [
+                2.62502,
+                4.76083,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 20.222040313137427
+            },
+            {
+              "block": 20,
+              "motion": "G2",
+              "start": [
+                2.62502,
+                4.76083,
+                -1.0
+              ],
+              "end": [
+                1.75,
+                5.5,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 21.78597373114735
+            },
+            {
+              "block": 21,
+              "motion": "G1",
+              "start": [
+                1.75,
+                5.5,
+                -1.0
+              ],
+              "end": [
+                1.75,
+                6.5,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 22.98597373114735
+            },
+            {
+              "block": 22,
+              "motion": "G2",
+              "start": [
+                1.75,
+                6.5,
+                -1.0
+              ],
+              "end": [
+                3.03033,
+                7.03003,
+                -1.0
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 25.10618894195686
+            },
+            {
+              "block": 23,
+              "motion": "G1",
+              "start": [
+                3.03033,
+                7.03003,
+                -1.0
+              ],
+              "end": [
+                3.03033,
+                7.03003,
+                -1.05
+              ],
+              "feed_mm_min": 20.0,
+              "feed_time_end_seconds": 25.256188941956857
+            },
+            {
+              "block": 24,
+              "motion": "G2",
+              "start": [
+                3.03033,
+                7.03003,
+                -1.05
+              ],
+              "end": [
+                3.25,
+                6.5,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 25.96268717461242
+            },
+            {
+              "block": 25,
+              "motion": "G1",
+              "start": [
+                3.25,
+                6.5,
+                -1.05
+              ],
+              "end": [
+                3.25,
+                5.5,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 27.16268717461242
+            },
+            {
+              "block": 26,
+              "motion": "G2",
+              "start": [
+                3.25,
+                5.5,
+                -1.05
+              ],
+              "end": [
+                2.62502,
+                4.76083,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 28.425134784115855
+            },
+            {
+              "block": 27,
+              "motion": "G2",
+              "start": [
+                2.62502,
+                4.76083,
+                -1.05
+              ],
+              "end": [
+                1.75,
+                5.5,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 29.98906820212578
+            },
+            {
+              "block": 28,
+              "motion": "G1",
+              "start": [
+                1.75,
+                5.5,
+                -1.05
+              ],
+              "end": [
+                1.75,
+                6.5,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 31.189068202125778
+            },
+            {
+              "block": 29,
+              "motion": "G2",
+              "start": [
+                1.75,
+                6.5,
+                -1.05
+              ],
+              "end": [
+                3.03033,
+                7.03003,
+                -1.05
+              ],
+              "feed_mm_min": 50.0,
+              "feed_time_end_seconds": 33.30928341293529
+            },
+            {
+              "block": 30,
+              "motion": "G0",
+              "start": [
+                3.03033,
+                7.03003,
+                -1.05
+              ],
+              "end": [
+                3.03033,
+                7.03003,
+                3.0
+              ],
+              "feed_mm_min": null,
+              "feed_time_end_seconds": 33.30928341293529
+            },
+            {
+              "block": 31,
+              "motion": "G0",
+              "start": [
+                3.03033,
+                7.03003,
+                3.0
+              ],
+              "end": [
+                3.03033,
+                7.03003,
+                3.0
+              ],
+              "feed_mm_min": null,
+              "feed_time_end_seconds": 33.30928341293529
+            }
+          ],
+          "final_uncovered_profile_mm2": 0.0
+        }
+      }
+    ],
+    "executable_blocks": 63,
+    "motion_trace": [
+      {
+        "block": 9,
+        "motion": "G0",
+        "start": [
+          0.0,
+          0.0,
+          3
+        ],
+        "end": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 10,
+        "motion": "G0",
+        "start": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 11,
+        "motion": "G0",
+        "start": [
+          3.03033,
+          3.03003,
+          3.0
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 12,
+        "motion": "G1",
+        "start": [
+          3.03033,
+          3.03003,
+          2.0
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          -0.5
+        ],
+        "feed_mm_min": 20.0,
+        "feed_time_end_seconds": 7.5,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 13,
+        "motion": "G2",
+        "start": [
+          3.03033,
+          3.03003,
+          -0.5
+        ],
+        "end": [
+          3.25,
+          2.5,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 8.206498232655562,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 14,
+        "motion": "G1",
+        "start": [
+          3.25,
+          2.5,
+          -0.5
+        ],
+        "end": [
+          3.25,
+          1.5,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 9.406498232655562,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 15,
+        "motion": "G2",
+        "start": [
+          3.25,
+          1.5,
+          -0.5
+        ],
+        "end": [
+          2.62502,
+          0.76083,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 10.668945842159,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 16,
+        "motion": "G2",
+        "start": [
+          2.62502,
+          0.76083,
+          -0.5
+        ],
+        "end": [
+          1.75,
+          1.5,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 12.232879260168925,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 17,
+        "motion": "G1",
+        "start": [
+          1.75,
+          1.5,
+          -0.5
+        ],
+        "end": [
+          1.75,
+          2.5,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 13.432879260168924,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 18,
+        "motion": "G2",
+        "start": [
+          1.75,
+          2.5,
+          -0.5
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 15.553094470978431,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 19,
+        "motion": "G1",
+        "start": [
+          3.03033,
+          3.03003,
+          -0.5
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          -1.0
+        ],
+        "feed_mm_min": 20.0,
+        "feed_time_end_seconds": 17.05309447097843,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 20,
+        "motion": "G2",
+        "start": [
+          3.03033,
+          3.03003,
+          -1.0
+        ],
+        "end": [
+          3.25,
+          2.5,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 17.75959270363399,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 21,
+        "motion": "G1",
+        "start": [
+          3.25,
+          2.5,
+          -1.0
+        ],
+        "end": [
+          3.25,
+          1.5,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 18.95959270363399,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 22,
+        "motion": "G2",
+        "start": [
+          3.25,
+          1.5,
+          -1.0
+        ],
+        "end": [
+          2.62502,
+          0.76083,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 20.222040313137427,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 23,
+        "motion": "G2",
+        "start": [
+          2.62502,
+          0.76083,
+          -1.0
+        ],
+        "end": [
+          1.75,
+          1.5,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 21.78597373114735,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 24,
+        "motion": "G1",
+        "start": [
+          1.75,
+          1.5,
+          -1.0
+        ],
+        "end": [
+          1.75,
+          2.5,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 22.98597373114735,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 25,
+        "motion": "G2",
+        "start": [
+          1.75,
+          2.5,
+          -1.0
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 25.10618894195686,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 26,
+        "motion": "G1",
+        "start": [
+          3.03033,
+          3.03003,
+          -1.0
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          -1.05
+        ],
+        "feed_mm_min": 20.0,
+        "feed_time_end_seconds": 25.256188941956857,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 27,
+        "motion": "G2",
+        "start": [
+          3.03033,
+          3.03003,
+          -1.05
+        ],
+        "end": [
+          3.25,
+          2.5,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 25.96268717461242,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 28,
+        "motion": "G1",
+        "start": [
+          3.25,
+          2.5,
+          -1.05
+        ],
+        "end": [
+          3.25,
+          1.5,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 27.16268717461242,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 29,
+        "motion": "G2",
+        "start": [
+          3.25,
+          1.5,
+          -1.05
+        ],
+        "end": [
+          2.62502,
+          0.76083,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 28.425134784115855,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 30,
+        "motion": "G2",
+        "start": [
+          2.62502,
+          0.76083,
+          -1.05
+        ],
+        "end": [
+          1.75,
+          1.5,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 29.98906820212578,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 31,
+        "motion": "G1",
+        "start": [
+          1.75,
+          1.5,
+          -1.05
+        ],
+        "end": [
+          1.75,
+          2.5,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 31.189068202125778,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 32,
+        "motion": "G2",
+        "start": [
+          1.75,
+          2.5,
+          -1.05
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 33.30928341293529,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 33,
+        "motion": "G0",
+        "start": [
+          3.03033,
+          3.03003,
+          -1.05
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 33.30928341293529,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 34,
+        "motion": "G0",
+        "start": [
+          3.03033,
+          3.03003,
+          3.0
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 33.30928341293529,
+        "step_id": "PROFILE-P01",
+        "feature_id": "P01"
+      },
+      {
+        "block": 35,
+        "motion": "G0",
+        "start": [
+          3.03033,
+          3.03003,
+          3.0
+        ],
+        "end": [
+          3.03033,
+          3.03003,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 33.30928341293529,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 36,
+        "motion": "G0",
+        "start": [
+          3.03033,
+          3.03003,
+          3.0
+        ],
+        "end": [
+          3.03033,
+          7.03003,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 33.30928341293529,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 37,
+        "motion": "G0",
+        "start": [
+          3.03033,
+          7.03003,
+          3.0
+        ],
+        "end": [
+          3.03033,
+          7.03003,
+          2.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 33.30928341293529,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 38,
+        "motion": "G1",
+        "start": [
+          3.03033,
+          7.03003,
+          2.0
+        ],
+        "end": [
+          3.03033,
+          7.03003,
+          -0.5
+        ],
+        "feed_mm_min": 20.0,
+        "feed_time_end_seconds": 40.80928341293529,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 39,
+        "motion": "G2",
+        "start": [
+          3.03033,
+          7.03003,
+          -0.5
+        ],
+        "end": [
+          3.25,
+          6.5,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 41.51578164559085,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 40,
+        "motion": "G1",
+        "start": [
+          3.25,
+          6.5,
+          -0.5
+        ],
+        "end": [
+          3.25,
+          5.5,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 42.71578164559085,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 41,
+        "motion": "G2",
+        "start": [
+          3.25,
+          5.5,
+          -0.5
+        ],
+        "end": [
+          2.62502,
+          4.76083,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 43.978229255094284,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 42,
+        "motion": "G2",
+        "start": [
+          2.62502,
+          4.76083,
+          -0.5
+        ],
+        "end": [
+          1.75,
+          5.5,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 45.542162673104215,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 43,
+        "motion": "G1",
+        "start": [
+          1.75,
+          5.5,
+          -0.5
+        ],
+        "end": [
+          1.75,
+          6.5,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 46.74216267310421,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 44,
+        "motion": "G2",
+        "start": [
+          1.75,
+          6.5,
+          -0.5
+        ],
+        "end": [
+          3.03033,
+          7.03003,
+          -0.5
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 48.862377883913716,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 45,
+        "motion": "G1",
+        "start": [
+          3.03033,
+          7.03003,
+          -0.5
+        ],
+        "end": [
+          3.03033,
+          7.03003,
+          -1.0
+        ],
+        "feed_mm_min": 20.0,
+        "feed_time_end_seconds": 50.362377883913716,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 46,
+        "motion": "G2",
+        "start": [
+          3.03033,
+          7.03003,
+          -1.0
+        ],
+        "end": [
+          3.25,
+          6.5,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 51.06887611656928,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 47,
+        "motion": "G1",
+        "start": [
+          3.25,
+          6.5,
+          -1.0
+        ],
+        "end": [
+          3.25,
+          5.5,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 52.268876116569274,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 48,
+        "motion": "G2",
+        "start": [
+          3.25,
+          5.5,
+          -1.0
+        ],
+        "end": [
+          2.62502,
+          4.76083,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 53.53132372607271,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 49,
+        "motion": "G2",
+        "start": [
+          2.62502,
+          4.76083,
+          -1.0
+        ],
+        "end": [
+          1.75,
+          5.5,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 55.09525714408264,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 50,
+        "motion": "G1",
+        "start": [
+          1.75,
+          5.5,
+          -1.0
+        ],
+        "end": [
+          1.75,
+          6.5,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 56.29525714408264,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 51,
+        "motion": "G2",
+        "start": [
+          1.75,
+          6.5,
+          -1.0
+        ],
+        "end": [
+          3.03033,
+          7.03003,
+          -1.0
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 58.415472354892145,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 52,
+        "motion": "G1",
+        "start": [
+          3.03033,
+          7.03003,
+          -1.0
+        ],
+        "end": [
+          3.03033,
+          7.03003,
+          -1.05
+        ],
+        "feed_mm_min": 20.0,
+        "feed_time_end_seconds": 58.565472354892144,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 53,
+        "motion": "G2",
+        "start": [
+          3.03033,
+          7.03003,
+          -1.05
+        ],
+        "end": [
+          3.25,
+          6.5,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 59.271970587547706,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 54,
+        "motion": "G1",
+        "start": [
+          3.25,
+          6.5,
+          -1.05
+        ],
+        "end": [
+          3.25,
+          5.5,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 60.4719705875477,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 55,
+        "motion": "G2",
+        "start": [
+          3.25,
+          5.5,
+          -1.05
+        ],
+        "end": [
+          2.62502,
+          4.76083,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 61.73441819705114,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 56,
+        "motion": "G2",
+        "start": [
+          2.62502,
+          4.76083,
+          -1.05
+        ],
+        "end": [
+          1.75,
+          5.5,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 63.298351615061065,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 57,
+        "motion": "G1",
+        "start": [
+          1.75,
+          5.5,
+          -1.05
+        ],
+        "end": [
+          1.75,
+          6.5,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 64.49835161506107,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 58,
+        "motion": "G2",
+        "start": [
+          1.75,
+          6.5,
+          -1.05
+        ],
+        "end": [
+          3.03033,
+          7.03003,
+          -1.05
+        ],
+        "feed_mm_min": 50.0,
+        "feed_time_end_seconds": 66.61856682587057,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 59,
+        "motion": "G0",
+        "start": [
+          3.03033,
+          7.03003,
+          -1.05
+        ],
+        "end": [
+          3.03033,
+          7.03003,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 66.61856682587057,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      },
+      {
+        "block": 60,
+        "motion": "G0",
+        "start": [
+          3.03033,
+          7.03003,
+          3.0
+        ],
+        "end": [
+          3.03033,
+          7.03003,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 66.61856682587057,
+        "step_id": "PROFILE-P02",
+        "feature_id": "P02"
+      }
+    ],
+    "feed_time_seconds": 66.61856682587057,
+    "original_NC_modified": false,
+    "guard_projection_only": true,
+    "remainder_is_retained": true,
+    "clearing_scope": "Only each declared cutter-width channel, with all remaining stock preserved.",
+    "linuxcnc_runtime_used": false,
+    "physical_workholding_verified": false
+  },
+  "full_incoming_stock_CAD": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/incoming-stock.brep",
+    "sha256": "d840483dc2e9313c2a4b9f469684aa78ed9f285e16a994391af665afea407e5e"
+  },
+  "product_count": 2,
+  "NC_text_modified": false,
+  "postprocessor": {
+    "path": "step2gcode_demo/out_external_tools/freecad-1.1.4-linux/squashfs-root/usr/Mod/CAM/Path/Post/scripts/linuxcnc_post.py",
+    "sha256": "ca9f2aa3c0a40ca17f03a6000820c45a1748240226503990f5a529a9fdefa7e6"
+  },
+  "post_arguments": "--no-show-editor --no-tlo --precision 5 --preamble \"G17 G54 G40 G49 G80 G90\\nG21\\nM5\\nG0 Z3\"",
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "linuxcnc_runtime_used": false,
+  "whole_real_card_complete": false,
+  "production_approved": false,
+  "material_simulation_complete": false
+}

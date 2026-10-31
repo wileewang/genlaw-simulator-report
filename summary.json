@@ -1,0 +1,375 @@
+{
+  "schema": "genlaw.batch-review-summary.v1",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "name": "一坯两件",
+      "case_kind": "normal",
+      "parent_case": "baseline",
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "iou_percent": 99.91857304887608,
+      "by_role_iou_percent": {
+        "whole": 99.91857304887608,
+        "P01": 99.79295246329116,
+        "P02": 99.79295436023573,
+        "R01": 99.93366329850384
+      },
+      "role_assignment_complete": true,
+      "native_shells": 3,
+      "native_faces": 398324,
+      "all_native_faces_accounted": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -1
+        ],
+        "max": [
+          8,
+          5,
+          0
+        ]
+      },
+      "roles": [
+        "whole",
+        "P01",
+        "P02",
+        "R01"
+      ],
+      "resolution_mm": 0.025,
+      "arc_precision_mm": 0.0005,
+      "CAD": "baseline/input/nominal-whole-material.step",
+      "paper_card": "baseline/input/process-card.pdf",
+      "metrics": "baseline/run/metrics.json",
+      "inspection": "baseline/run/inspection.json",
+      "software_acceptance": {
+        "scope": "software_geometry_regression",
+        "iou_percent_min": 99.0,
+        "boundary_deviation_mm_max": 0.05,
+        "retained_plane_deviation_mm_max": 0.025,
+        "quadrature_orders": [
+          4,
+          8
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-05,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "all_native_faces_accounted": true,
+        "discard_small_components": false,
+        "manufacturing_tolerance_approved": false
+      },
+      "new_machine_models": 0,
+      "new_material_physics": 0
+    },
+    {
+      "id": "unequal-products",
+      "name": "两件尺寸不同",
+      "case_kind": "normal",
+      "parent_case": "unequal-products",
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "iou_percent": 99.9182389163949,
+      "by_role_iou_percent": {
+        "whole": 99.9182389163949,
+        "P01": 99.81544918728075,
+        "P02": 99.77906701528981,
+        "R01": 99.93323995634148
+      },
+      "role_assignment_complete": true,
+      "native_shells": 3,
+      "native_faces": 399996,
+      "all_native_faces_accounted": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -1
+        ],
+        "max": [
+          8,
+          5,
+          0
+        ]
+      },
+      "roles": [
+        "whole",
+        "P01",
+        "P02",
+        "R01"
+      ],
+      "resolution_mm": 0.025,
+      "arc_precision_mm": 0.0005,
+      "CAD": "unequal-products/input/nominal-whole-material.step",
+      "paper_card": "unequal-products/input/process-card.pdf",
+      "metrics": "unequal-products/run/metrics.json",
+      "inspection": "unequal-products/run/inspection.json",
+      "software_acceptance": {
+        "scope": "software_geometry_regression",
+        "iou_percent_min": 99.0,
+        "boundary_deviation_mm_max": 0.05,
+        "retained_plane_deviation_mm_max": 0.025,
+        "quadrature_orders": [
+          4,
+          8
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-05,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "all_native_faces_accounted": true,
+        "discard_small_components": false,
+        "manufacturing_tolerance_approved": false
+      },
+      "new_machine_models": 0,
+      "new_material_physics": 0
+    },
+    {
+      "id": "rotated-layout",
+      "name": "轮廓沿 Y 排列",
+      "case_kind": "normal",
+      "parent_case": "rotated-layout",
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "iou_percent": 99.9166988312114,
+      "by_role_iou_percent": {
+        "whole": 99.9166988312114,
+        "P01": 99.78519438170751,
+        "P02": 99.78519526154375,
+        "R01": 99.9324957635492
+      },
+      "role_assignment_complete": true,
+      "native_shells": 3,
+      "native_faces": 398324,
+      "all_native_faces_accounted": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -1
+        ],
+        "max": [
+          5,
+          8,
+          0
+        ]
+      },
+      "roles": [
+        "whole",
+        "P01",
+        "P02",
+        "R01"
+      ],
+      "resolution_mm": 0.025,
+      "arc_precision_mm": 0.0005,
+      "CAD": "rotated-layout/input/nominal-whole-material.step",
+      "paper_card": "rotated-layout/input/process-card.pdf",
+      "metrics": "rotated-layout/run/metrics.json",
+      "inspection": "rotated-layout/run/inspection.json",
+      "software_acceptance": {
+        "scope": "software_geometry_regression",
+        "iou_percent_min": 99.0,
+        "boundary_deviation_mm_max": 0.05,
+        "retained_plane_deviation_mm_max": 0.025,
+        "quadrature_orders": [
+          4,
+          8
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-05,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "all_native_faces_accounted": true,
+        "discard_small_components": false,
+        "manufacturing_tolerance_approved": false
+      },
+      "new_machine_models": 0,
+      "new_material_physics": 0
+    },
+    {
+      "id": "shifted-datum",
+      "name": "CAD 使用非零坐标",
+      "case_kind": "normal",
+      "parent_case": "shifted-datum",
+      "geometry_pass": true,
+      "numerical_stability_pass": true,
+      "iou_percent": 99.93846792479245,
+      "by_role_iou_percent": {
+        "whole": 99.93846792479245,
+        "P01": 99.8558894211641,
+        "P02": 99.85588772447412,
+        "R01": 99.94838778421169
+      },
+      "role_assignment_complete": true,
+      "native_shells": 3,
+      "native_faces": 403424,
+      "all_native_faces_accounted": true,
+      "stock": {
+        "min": [
+          -3,
+          4,
+          1
+        ],
+        "max": [
+          5,
+          9,
+          2
+        ]
+      },
+      "roles": [
+        "whole",
+        "P01",
+        "P02",
+        "R01"
+      ],
+      "resolution_mm": 0.025,
+      "arc_precision_mm": 0.0005,
+      "CAD": "shifted-datum/input/nominal-whole-material.step",
+      "paper_card": "shifted-datum/input/process-card.pdf",
+      "metrics": "shifted-datum/run/metrics.json",
+      "inspection": "shifted-datum/run/inspection.json",
+      "software_acceptance": {
+        "scope": "software_geometry_regression",
+        "iou_percent_min": 99.0,
+        "boundary_deviation_mm_max": 0.05,
+        "retained_plane_deviation_mm_max": 0.025,
+        "quadrature_orders": [
+          4,
+          8
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-05,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "all_native_faces_accounted": true,
+        "discard_small_components": false,
+        "manufacturing_tolerance_approved": false
+      },
+      "new_machine_models": 0,
+      "new_material_physics": 0
+    }
+  ],
+  "controls": [
+    {
+      "id": "not-through",
+      "name": "未切透：底部仍相连",
+      "case_kind": "negative_control",
+      "parent_case": "baseline",
+      "geometry_pass": false,
+      "numerical_stability_pass": true,
+      "iou_percent": 96.05281494594958,
+      "by_role_iou_percent": {
+        "whole": 96.05281494594958
+      },
+      "role_assignment_complete": false,
+      "native_shells": 1,
+      "native_faces": 421308,
+      "all_native_faces_accounted": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -1
+        ],
+        "max": [
+          8,
+          5,
+          0
+        ]
+      },
+      "roles": [
+        "whole"
+      ],
+      "resolution_mm": 0.025,
+      "arc_precision_mm": 0.0005,
+      "CAD": "not-through/input/nominal-whole-material.step",
+      "paper_card": "not-through/input/process-card.pdf",
+      "metrics": "not-through/run/metrics.json",
+      "inspection": "not-through/run/inspection.json",
+      "software_acceptance": {
+        "scope": "software_geometry_regression",
+        "iou_percent_min": 99.0,
+        "boundary_deviation_mm_max": 0.05,
+        "retained_plane_deviation_mm_max": 0.025,
+        "quadrature_orders": [
+          4,
+          8
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-05,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "all_native_faces_accounted": true,
+        "discard_small_components": false,
+        "manufacturing_tolerance_approved": false
+      },
+      "new_machine_models": 0,
+      "new_material_physics": 0
+    },
+    {
+      "id": "omitted-second-profile",
+      "name": "漏加工第二件",
+      "case_kind": "negative_control",
+      "parent_case": "baseline",
+      "geometry_pass": false,
+      "numerical_stability_pass": true,
+      "iou_percent": 90.79045263742296,
+      "by_role_iou_percent": {
+        "whole": 90.79045263742296
+      },
+      "role_assignment_complete": false,
+      "native_shells": 2,
+      "native_faces": 369240,
+      "all_native_faces_accounted": true,
+      "stock": {
+        "min": [
+          0,
+          0,
+          -1
+        ],
+        "max": [
+          8,
+          5,
+          0
+        ]
+      },
+      "roles": [
+        "whole"
+      ],
+      "resolution_mm": 0.025,
+      "arc_precision_mm": 0.0005,
+      "CAD": "omitted-second-profile/input/nominal-whole-material.step",
+      "paper_card": "omitted-second-profile/input/process-card.pdf",
+      "metrics": "omitted-second-profile/run/metrics.json",
+      "inspection": "omitted-second-profile/run/inspection.json",
+      "software_acceptance": {
+        "scope": "software_geometry_regression",
+        "iou_percent_min": 99.0,
+        "boundary_deviation_mm_max": 0.05,
+        "retained_plane_deviation_mm_max": 0.025,
+        "quadrature_orders": [
+          4,
+          8
+        ],
+        "quadrature_iou_difference_max": 1e-06,
+        "target_integral_error_mm3_max": 1e-05,
+        "mesh_integral_error_mm3_max": 0.0001,
+        "all_native_faces_accounted": true,
+        "discard_small_components": false,
+        "manufacturing_tolerance_approved": false
+      },
+      "new_machine_models": 0,
+      "new_material_physics": 0
+    }
+  ],
+  "source_integrity_rejections": 7,
+  "representative_id": "baseline",
+  "representative_actual_states_including_stock": 3,
+  "replay": {
+    "intermediate_mesh": "omitted-second-profile/actual-whole.mesh",
+    "label": "第一件外轮廓完成",
+    "native_prefix_proof": "replay-prefix-proof.json",
+    "final_geometry_acceptance_for_intermediate": false
+  },
+  "whole_real_card_complete": false,
+  "production_approved": false,
+  "new_machine_models": 0,
+  "new_material_physics": 0,
+  "physical_clamping_or_detached_part_motion_verified": false
+}

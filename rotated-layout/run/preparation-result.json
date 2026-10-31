@@ -1,0 +1,319 @@
+{
+  "schema": "genlaw.batch-profile-execution-plan.v1",
+  "id": "rotated-layout",
+  "stock": {
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1
+      ],
+      "max": [
+        5,
+        8,
+        0
+      ]
+    }
+  },
+  "tool": {
+    "id": "T1",
+    "type": "flat_endmill",
+    "diameter_mm": 0.5,
+    "cutting_length_mm": 3.0,
+    "length_mm": 15.0
+  },
+  "parameters": {
+    "step_down_mm": 0.5,
+    "final_z_mm": -1.05,
+    "safe_height_mm": 2,
+    "clearance_height_mm": 3,
+    "feed_mm_min": 50.0,
+    "plunge_mm_min": 20.0,
+    "spindle_rpm": 12000.0,
+    "path_tolerance_mm": 0.001,
+    "outside_profiles": [
+      "P01",
+      "P02"
+    ]
+  },
+  "operations": [
+    {
+      "step_id": "PROFILE-P01",
+      "feature_id": "P01",
+      "geometry": {
+        "id": "P01",
+        "kind": "capsule_outline",
+        "major_axis": "Y",
+        "center_xy_mm": [
+          2.5,
+          2.0
+        ],
+        "length_mm": 2.0,
+        "width_mm": 1.0,
+        "thickness_mm": 1.0,
+        "top_z_mm": 0,
+        "top_face": "Face6"
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/P01.brep",
+        "sha256": "921cd6913f79edbd9abb170be3f56ce6592eeeb4fcc923ea54bfcf2e377777f6"
+      },
+      "final_z_mm": -1.05,
+      "bounds_mm": {
+        "min": [
+          2.0,
+          1.0,
+          -1
+        ],
+        "max": [
+          3.0,
+          3.0,
+          0
+        ]
+      }
+    },
+    {
+      "step_id": "PROFILE-P02",
+      "feature_id": "P02",
+      "geometry": {
+        "id": "P02",
+        "kind": "capsule_outline",
+        "major_axis": "Y",
+        "center_xy_mm": [
+          2.5,
+          6.0
+        ],
+        "length_mm": 2.0,
+        "width_mm": 1.0,
+        "thickness_mm": 1.0,
+        "top_z_mm": 0,
+        "top_face": "Face6"
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/P02.brep",
+        "sha256": "24b2617f1eef8159cc16f9f50514edb8c5b0297d3bb0af43ab5784739482c644"
+      },
+      "final_z_mm": -1.05,
+      "bounds_mm": {
+        "min": [
+          2.0,
+          5.0,
+          -1
+        ],
+        "max": [
+          3.0,
+          7.0,
+          0
+        ]
+      }
+    }
+  ],
+  "CAD": {
+    "incoming-stock": {
+      "STEP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/incoming-stock.step",
+        "sha256": "6673e41c509c5bf9c9bc0abfadb83079bd194d93daa56445db516a7c48b03609"
+      },
+      "BREP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/incoming-stock.brep",
+        "sha256": "d840483dc2e9313c2a4b9f469684aa78ed9f285e16a994391af665afea407e5e"
+      },
+      "solids": 1,
+      "nominal_volume_mm3": 39.99999999999999,
+      "bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "max": [
+          5.0,
+          8.0,
+          0.0
+        ]
+      }
+    },
+    "planned-products": {
+      "STEP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/planned-products.step",
+        "sha256": "4bbb58a240f09caca229549cba8e742068b8a3b3a13d3818193c8dc64550a49e"
+      },
+      "BREP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/planned-products.brep",
+        "sha256": "91d25ea9baa017632a4fcd535d97ac6a13451f10dbc42599d621f40a10b2479c"
+      },
+      "solids": 2,
+      "nominal_volume_mm3": 3.5707963267948966,
+      "bounds_mm": {
+        "min": [
+          2.0,
+          1.0,
+          -1.0
+        ],
+        "max": [
+          3.0,
+          7.0,
+          0.0
+        ]
+      }
+    },
+    "nominal-remainder": {
+      "STEP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/nominal-remainder.step",
+        "sha256": "bf555b145356ccc69b7919097682d1a4db473d1f8b4126c8365778edc806ae2b"
+      },
+      "BREP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/nominal-remainder.brep",
+        "sha256": "8f8af94f2e1488a5eb1cf812c8a36e50d766c3419bc6fb8b4d38dd40ab98619c"
+      },
+      "solids": 1,
+      "nominal_volume_mm3": 29.716814692820414,
+      "bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "max": [
+          5.0,
+          8.0,
+          0.0
+        ]
+      }
+    },
+    "nominal-whole-material": {
+      "STEP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/nominal-whole-material.step",
+        "sha256": "c732d87a047d82d63798937eaaefd07a58b69d45e04d7ece8501340ac4a06ad0"
+      },
+      "BREP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/nominal-whole-material.brep",
+        "sha256": "41683af235abc7eef5daa445827b3dda46c319eb6f6b3af33d4d326d2c0fcdd4"
+      },
+      "solids": 3,
+      "nominal_volume_mm3": 33.28761101961531,
+      "bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "max": [
+          5.0,
+          8.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "simulation_project": {
+    "units": "metric",
+    "resolution-mode": "manual",
+    "resolution": 0.025,
+    "tools": {
+      "1": {
+        "units": "metric",
+        "shape": "cylindrical",
+        "diameter": 0.5,
+        "length": 3.0
+      }
+    },
+    "workpiece": {
+      "automatic": false,
+      "margin": 0,
+      "bounds": {
+        "min": [
+          0,
+          0,
+          -1
+        ],
+        "max": [
+          5,
+          8,
+          0
+        ]
+      }
+    },
+    "files": [
+      "program.nc"
+    ]
+  },
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -0.025000000000000393,
+      -0.024999999999999505,
+      -1.025
+    ],
+    "steps": [
+      202,
+      322,
+      42
+    ],
+    "upper_mm": [
+      5.025,
+      8.025,
+      0.025000000000000133
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "setup": {
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3.0
+    }
+  },
+  "acceptance": {
+    "scope": "software_geometry_regression",
+    "iou_percent_min": 99.0,
+    "boundary_deviation_mm_max": 0.05,
+    "retained_plane_deviation_mm_max": 0.025,
+    "quadrature_orders": [
+      4,
+      8
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-05,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "all_native_faces_accounted": true,
+    "discard_small_components": false,
+    "manufacturing_tolerance_approved": false
+  },
+  "incoming_blank_count": 1,
+  "expected_product_ids": [
+    "P01",
+    "P02"
+  ],
+  "expected_remainder_ids": [
+    "R01"
+  ],
+  "whole_real_card_complete": false,
+  "production_approved": false,
+  "physical_separation_simulated": false,
+  "card": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/process-plan.json",
+    "sha256": "a95bdd87c0da9e52f5465111e1b8a84934b282b6943f39c35277eb4ec2f650be"
+  },
+  "input_archive": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/manifest.json",
+    "sha256": "8a7eeca7ad1b4fc864fd43501ba6f7918f4c648a2e380c66d91d7482874797b3"
+  },
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/process-card.pdf",
+    "sha256": "61ac676c59db916eaad275b12f2a8fcdd15f4b8230ea0f27ad3078b6b342e9e7"
+  },
+  "native_CAD_qualification": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/rotated-layout/cad-result.json",
+    "sha256": "2e1dc6999604bd6dcfbff4fc8b7d156a2f64a1a755da1dc52623d04342318bef"
+  }
+}

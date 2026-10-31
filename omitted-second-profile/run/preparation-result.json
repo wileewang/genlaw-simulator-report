@@ -1,0 +1,319 @@
+{
+  "schema": "genlaw.batch-profile-execution-plan.v1",
+  "id": "baseline",
+  "stock": {
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1
+      ],
+      "max": [
+        8,
+        5,
+        0
+      ]
+    }
+  },
+  "tool": {
+    "id": "T1",
+    "type": "flat_endmill",
+    "diameter_mm": 0.5,
+    "cutting_length_mm": 3.0,
+    "length_mm": 15.0
+  },
+  "parameters": {
+    "step_down_mm": 0.5,
+    "final_z_mm": -1.05,
+    "safe_height_mm": 2,
+    "clearance_height_mm": 3,
+    "feed_mm_min": 50.0,
+    "plunge_mm_min": 20.0,
+    "spindle_rpm": 12000.0,
+    "path_tolerance_mm": 0.001,
+    "outside_profiles": [
+      "P01",
+      "P02"
+    ]
+  },
+  "operations": [
+    {
+      "step_id": "PROFILE-P01",
+      "feature_id": "P01",
+      "geometry": {
+        "id": "P01",
+        "kind": "capsule_outline",
+        "major_axis": "X",
+        "center_xy_mm": [
+          2.0,
+          2.5
+        ],
+        "length_mm": 2.0,
+        "width_mm": 1.0,
+        "thickness_mm": 1.0,
+        "top_z_mm": 0,
+        "top_face": "Face6"
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/P01.brep",
+        "sha256": "5194e306fc6d6f352d4a05759259b1428c85e960c3dab42dcc482b98e7551156"
+      },
+      "final_z_mm": -1.05,
+      "bounds_mm": {
+        "min": [
+          1.0,
+          2.0,
+          -1
+        ],
+        "max": [
+          3.0,
+          3.0,
+          0
+        ]
+      }
+    },
+    {
+      "step_id": "PROFILE-P02",
+      "feature_id": "P02",
+      "geometry": {
+        "id": "P02",
+        "kind": "capsule_outline",
+        "major_axis": "X",
+        "center_xy_mm": [
+          6.0,
+          2.5
+        ],
+        "length_mm": 2.0,
+        "width_mm": 1.0,
+        "thickness_mm": 1.0,
+        "top_z_mm": 0,
+        "top_face": "Face6"
+      },
+      "CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/P02.brep",
+        "sha256": "82857c93446de0bd97d290d1b5975ed4cbf595f17bde0ba41660d3b78dd1af54"
+      },
+      "final_z_mm": -1.05,
+      "bounds_mm": {
+        "min": [
+          5.0,
+          2.0,
+          -1
+        ],
+        "max": [
+          7.0,
+          3.0,
+          0
+        ]
+      }
+    }
+  ],
+  "CAD": {
+    "incoming-stock": {
+      "STEP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/incoming-stock.step",
+        "sha256": "705bd2a786ca62181b4c852845f2400d12ed7ddbb5f61ace783a0e15337bd866"
+      },
+      "BREP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/incoming-stock.brep",
+        "sha256": "cc6ae05d008a5e6aa42dbfbad9251d5330d2a52f77dcf91d501a9f3e6f579a90"
+      },
+      "solids": 1,
+      "nominal_volume_mm3": 39.99999999999999,
+      "bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "max": [
+          8.0,
+          5.0,
+          0.0
+        ]
+      }
+    },
+    "planned-products": {
+      "STEP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/planned-products.step",
+        "sha256": "e001ad077241afd142eb3e8e953eda75b4ea6bad40d463bfc6e09256ffff9204"
+      },
+      "BREP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/planned-products.brep",
+        "sha256": "18117720bf1535fce69a42f4748a785f8a97f6f58f53bf95c8e12c9380bca183"
+      },
+      "solids": 2,
+      "nominal_volume_mm3": 3.5707963267948966,
+      "bounds_mm": {
+        "min": [
+          1.0,
+          2.0,
+          -1.0
+        ],
+        "max": [
+          7.0,
+          3.0,
+          0.0
+        ]
+      }
+    },
+    "nominal-remainder": {
+      "STEP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/nominal-remainder.step",
+        "sha256": "409bd098646986b1919453e3adf5ca1d1b9f3d9cc3cc0468bd1e081db50a30cd"
+      },
+      "BREP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/nominal-remainder.brep",
+        "sha256": "654465b4d3368992a00ba2908c62a1832fac90258cb9df43e5f992c0e010128e"
+      },
+      "solids": 1,
+      "nominal_volume_mm3": 29.7168146928204,
+      "bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "max": [
+          8.0,
+          5.0,
+          0.0
+        ]
+      }
+    },
+    "nominal-whole-material": {
+      "STEP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/nominal-whole-material.step",
+        "sha256": "7fdd33a686568ecf95545c9feb8b7fa6387b01b0e9babf3d21a2dadc5dfe2aa0"
+      },
+      "BREP": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/nominal-whole-material.brep",
+        "sha256": "5407a61a6ae1a707017496ecc2504f2769759b64cafb8f27bf726538cdb791b1"
+      },
+      "solids": 3,
+      "nominal_volume_mm3": 33.2876110196153,
+      "bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "max": [
+          8.0,
+          5.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "simulation_project": {
+    "units": "metric",
+    "resolution-mode": "manual",
+    "resolution": 0.025,
+    "tools": {
+      "1": {
+        "units": "metric",
+        "shape": "cylindrical",
+        "diameter": 0.5,
+        "length": 3.0
+      }
+    },
+    "workpiece": {
+      "automatic": false,
+      "margin": 0,
+      "bounds": {
+        "min": [
+          0,
+          0,
+          -1
+        ],
+        "max": [
+          8,
+          5,
+          0
+        ]
+      }
+    },
+    "files": [
+      "program.nc"
+    ]
+  },
+  "grid": {
+    "schema": "genlaw.camotics-grid.v1",
+    "units": "mm",
+    "resolution_mm": 0.025,
+    "padding_resolution_factor": 0.9,
+    "offset_mm": [
+      -0.024999999999999505,
+      -0.025000000000000393,
+      -1.025
+    ],
+    "steps": [
+      322,
+      202,
+      42
+    ],
+    "upper_mm": [
+      8.025,
+      5.025,
+      0.025000000000000133
+    ],
+    "nc_executed": false,
+    "surface_computed": false
+  },
+  "setup": {
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3.0
+    }
+  },
+  "acceptance": {
+    "scope": "software_geometry_regression",
+    "iou_percent_min": 99.0,
+    "boundary_deviation_mm_max": 0.05,
+    "retained_plane_deviation_mm_max": 0.025,
+    "quadrature_orders": [
+      4,
+      8
+    ],
+    "quadrature_iou_difference_max": 1e-06,
+    "target_integral_error_mm3_max": 1e-05,
+    "mesh_integral_error_mm3_max": 0.0001,
+    "all_native_faces_accounted": true,
+    "discard_small_components": false,
+    "manufacturing_tolerance_approved": false
+  },
+  "incoming_blank_count": 1,
+  "expected_product_ids": [
+    "P01",
+    "P02"
+  ],
+  "expected_remainder_ids": [
+    "R01"
+  ],
+  "whole_real_card_complete": false,
+  "production_approved": false,
+  "physical_separation_simulated": false,
+  "card": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/process-plan.json",
+    "sha256": "710276e75b23f7b6447d7aaf26beceda05dac2f05e7ad1299a84fbf1f3d163ab"
+  },
+  "input_archive": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/manifest.json",
+    "sha256": "8a7eeca7ad1b4fc864fd43501ba6f7918f4c648a2e380c66d91d7482874797b3"
+  },
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/process-card.pdf",
+    "sha256": "ec6fc451d6c7734b76477f13e40658a7c69801323293c56426279b5e67ff2fc1"
+  },
+  "native_CAD_qualification": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/baseline/cad-result.json",
+    "sha256": "b3d6c1241412365d50508beb88d05075e940287439f75ccc9df6b73d3f909d91"
+  }
+}

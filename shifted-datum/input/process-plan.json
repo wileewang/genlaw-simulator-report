@@ -1,0 +1,114 @@
+{
+  "schema": "genlaw.batch-profile-review-card.v1",
+  "id": "shifted-datum",
+  "state": "pre_CAM_software_review_draft",
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/shifted-datum/process-card.pdf",
+    "sha256": "26ef156f1e9bf02f40e676d75cc81463cde8837c6c47394b00165052a9206f3e"
+  },
+  "specification": {
+    "id": "shifted-datum",
+    "name": "非零 CAD 坐标两件",
+    "stock_bounds_mm": {
+      "min": [
+        -3,
+        4,
+        1
+      ],
+      "max": [
+        5,
+        9,
+        2
+      ]
+    },
+    "products": [
+      {
+        "id": "P01",
+        "major_axis": "X",
+        "lower_xy_mm": [
+          -2,
+          6.0
+        ],
+        "length_mm": 2.0,
+        "width_mm": 1.0,
+        "thickness_mm": 1.0
+      },
+      {
+        "id": "P02",
+        "major_axis": "X",
+        "lower_xy_mm": [
+          2,
+          6.0
+        ],
+        "length_mm": 2.0,
+        "width_mm": 1.0,
+        "thickness_mm": 1.0
+      }
+    ],
+    "material_label": "6061-T6",
+    "tool": {
+      "id": "T1",
+      "type": "flat_endmill",
+      "diameter_mm": 0.5,
+      "cutting_length_mm": 3.0,
+      "length_mm": 15.0
+    },
+    "candidate_programming": {
+      "step_down_mm": 0.5,
+      "final_z_mm": 0.95,
+      "safe_height_mm": 4,
+      "clearance_height_mm": 5,
+      "feed_mm_min": 50.0,
+      "plunge_mm_min": 20.0,
+      "spindle_rpm": 12000.0,
+      "path_tolerance_mm": 0.001,
+      "outside_profiles": [
+        "P01",
+        "P02"
+      ]
+    },
+    "simulation_resolution_mm": 0.025,
+    "software_geometry_tolerance_mm": 0.05,
+    "machine_reference": "generic_XYZ_mm_G54_zero_offset",
+    "material_physics_verified": false,
+    "actual_fixture_bound": false,
+    "part_motion_after_separation_simulated": false,
+    "manufacturing_approval": false
+  },
+  "CAD": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/shifted-datum/cad-result.json",
+    "sha256": "b30f724a1d3a10be38f6f8aa559bc3ab6134113e677f1759c9b8715f84dcf8f8"
+  },
+  "expected_outputs": [
+    {
+      "id": "P01",
+      "role": "planned_product",
+      "CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/shifted-datum/P01.brep",
+        "sha256": "37aef0908907207f9932632c34f36288df60ba295a11f0fa4cf1980a56275c22"
+      }
+    },
+    {
+      "id": "P02",
+      "role": "planned_product",
+      "CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/shifted-datum/P02.brep",
+        "sha256": "20b07e84a03c837f4969db89c5cca838bb2c109b2ca060784726f7ca696261dd"
+      }
+    },
+    {
+      "id": "R01",
+      "role": "retained_remainder",
+      "CAD": {
+        "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/shifted-datum/nominal-remainder.brep",
+        "sha256": "04530c531a50476d5972b4bcbfa2570546b678771cd483af65c60f71b65f62fb"
+      }
+    }
+  ],
+  "complete_material_reference": {
+    "path": "validation/feature-inputs/S4-BATCH-PROFILE-20261031-r1/shifted-datum/nominal-whole-material.brep",
+    "sha256": "debea6009b1e4367b44fafafa4e3d9ea22c17a5c3b773ba7f7a5b37a52549d2c"
+  },
+  "whole_real_process_card_complete": false,
+  "manufacturing_approval": false
+}

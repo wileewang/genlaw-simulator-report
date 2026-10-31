@@ -1,0 +1,300 @@
+{
+  "schema": "genlaw.precision-stage-qualification.v1",
+  "status": "passed",
+  "build": {
+    "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/build-02/build.json",
+    "sha256": "f03d8230a9d7698401f71bb4b4eac77b021f8af1e957e6887ec0fd7d4e520d0c"
+  },
+  "source": {
+    "path": "tools/qualify_precision_stage_engine_v2.py",
+    "sha256": "e4091b6730f69bc7cae903e0238288ae8376610e0ff653dd380fd21bb1ce27f1"
+  },
+  "native_path_checks": {
+    "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/path-check.json",
+    "sha256": "bafa758c92ac5e561fadf21295f471903f7c5994ebaa606042863f79ea256e1c"
+  },
+  "exact_default_surface_cases": [
+    {
+      "id": "single-facing",
+      "comparison": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/single-facing/comparison.json",
+        "sha256": "528013cfe4cbcc4d0da43a6c42229fadd13a3cd7f975908caf1890be51609678"
+      }
+    },
+    {
+      "id": "shifted-flip",
+      "comparison": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/shifted-flip/comparison.json",
+        "sha256": "45dddce5b03a657d863f3b8a55d530be8546c5b6e58cfb05576053931a664b88"
+      }
+    },
+    {
+      "id": "finite-frustum",
+      "comparison": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/finite-frustum/comparison.json",
+        "sha256": "c837a7cf42edfc125f95f813a8ccbf30545cd9e0e9d4053f15b55d43b9cf7dc1"
+      }
+    },
+    {
+      "id": "original-batch-arc-window",
+      "comparison": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/original-batch-arc-window/comparison.json",
+        "sha256": "2c8bc7fd96287fef97075db5a90407a6ac88eeb51ac4b6ddea22eb7ff2c1cb45"
+      }
+    }
+  ],
+  "native_input_rejections": [
+    {
+      "id": "zero-error",
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/zero-error/native-resources.json",
+        "sha256": "2150c200a1a82ab0cb506ba8b47e3a6da588944d94d30a3e03784cea78903deb"
+      },
+      "log": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/zero-error/native.log",
+        "sha256": "e3f4d7f625d3fc063ac7f19ed03bcfd0daaec9e16e10a5f84acec8ab33002c93"
+      }
+    },
+    {
+      "id": "negative-error",
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/negative-error/native-resources.json",
+        "sha256": "78fe8dcc19f8dda386ac721ceb43c9d09f5bcdd3cf7090858de0b69b2eb215c6"
+      },
+      "log": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/negative-error/native.log",
+        "sha256": "e3f4d7f625d3fc063ac7f19ed03bcfd0daaec9e16e10a5f84acec8ab33002c93"
+      }
+    },
+    {
+      "id": "below-range",
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/below-range/native-resources.json",
+        "sha256": "6b25e26b54537d0942a44c94b75788786ddf065db3332e9e9340e453bb4fe1c5"
+      },
+      "log": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/below-range/native.log",
+        "sha256": "e3f4d7f625d3fc063ac7f19ed03bcfd0daaec9e16e10a5f84acec8ab33002c93"
+      }
+    },
+    {
+      "id": "above-range",
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/above-range/native-resources.json",
+        "sha256": "1abaeb885ed8ea63e7697f8380ed152870ea2f9675c26062b8789e595fdc1a19"
+      },
+      "log": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/above-range/native.log",
+        "sha256": "e3f4d7f625d3fc063ac7f19ed03bcfd0daaec9e16e10a5f84acec8ab33002c93"
+      }
+    },
+    {
+      "id": "boolean-error",
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/boolean-error/native-resources.json",
+        "sha256": "a4f0009de8bdeb65f0ad034cfbe627f088ed8053a491e78ee91b09061040f487"
+      },
+      "log": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/boolean-error/native.log",
+        "sha256": "b029101c58eb70e3a82fe11201dfa964bdee3c9159200436cb78891893addcb9"
+      }
+    },
+    {
+      "id": "text-error",
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/text-error/native-resources.json",
+        "sha256": "0639035e552de6193dfb3d5e178e6b2320f127952c97367908bf167f56aac74a"
+      },
+      "log": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/text-error/native.log",
+        "sha256": "b029101c58eb70e3a82fe11201dfa964bdee3c9159200436cb78891893addcb9"
+      }
+    },
+    {
+      "id": "missing-error",
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/missing-error/native-resources.json",
+        "sha256": "01ed7da4142522107bd5e6024565a4faaf9f8fb2273e4c43a26254a28418b8c4"
+      },
+      "log": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/missing-error/native.log",
+        "sha256": "9ce7447f7686f0146342a9d7489f84751d96edf87e4a4be30007d0bd842b92e2"
+      }
+    },
+    {
+      "id": "extra-field",
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/extra-field/native-resources.json",
+        "sha256": "81c9d1a3739a74dd0b094092e622d5d9c0c223d2f308da3464314ba9f17d6859"
+      },
+      "log": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/extra-field/native.log",
+        "sha256": "9ce7447f7686f0146342a9d7489f84751d96edf87e4a4be30007d0bd842b92e2"
+      }
+    },
+    {
+      "id": "unknown-NC",
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/unknown-NC/native-resources.json",
+        "sha256": "127fbfba9ac38b518752d46e4b983fe5dce6e92e3156eed7cf28189c16d54c83"
+      },
+      "log": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/unknown-NC/native.log",
+        "sha256": "e93be4bc881a60af9ad94079705b7fe08287a4f757fc1923157ec5c8e4bffb18"
+      }
+    }
+  ],
+  "path_equivalence": [
+    {
+      "original": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/baseline/default/paths.json",
+        "sha256": "10e753d622fd919dcd525b00ea507e655538a3f608c42d4c319c4bf4b0560789"
+      },
+      "new": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-00/native/paths.json",
+        "sha256": "10e753d622fd919dcd525b00ea507e655538a3f608c42d4c319c4bf4b0560789"
+      },
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/baseline/default-request.json",
+        "sha256": "7f8a29da72561420feb6656118e399ab6c8a131fba32d40fa16fe780298c4117"
+      },
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-00/native-resources.json",
+        "sha256": "4edbeadbd24385ba979b9e7525882bec90de53691411b5d21b0e2117add4e84a"
+      }
+    },
+    {
+      "original": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/baseline/fine/paths.json",
+        "sha256": "ae82f76d5d640900494355594bd928d886ecd0f7e8100f303da04dfd4d8d9b3b"
+      },
+      "new": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-01/native/paths.json",
+        "sha256": "ae82f76d5d640900494355594bd928d886ecd0f7e8100f303da04dfd4d8d9b3b"
+      },
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/baseline/fine-request.json",
+        "sha256": "b416c608de100562b64aea4937a68fe63c3732d68de780bf487a57bd1e4c5262"
+      },
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-01/native-resources.json",
+        "sha256": "935c28aa6141948aa56949bd95e31894c9873bb26d6b1820fae53b37bc5b19ab"
+      }
+    },
+    {
+      "original": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/unequal-products/default/paths.json",
+        "sha256": "28c33ea74aad0cb1867e5d7365d09a2efd52cdcbc2aaaf98685f360083547d4a"
+      },
+      "new": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-02/native/paths.json",
+        "sha256": "28c33ea74aad0cb1867e5d7365d09a2efd52cdcbc2aaaf98685f360083547d4a"
+      },
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/unequal-products/default-request.json",
+        "sha256": "5023750ef2db65393f0360f00d6b09025f7014e0be69f6ba3b51a920fb5f0f53"
+      },
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-02/native-resources.json",
+        "sha256": "4f5c2a2b3c199a1867af4725da0f98173bb2198c31f7672d8caf3c423de470a2"
+      }
+    },
+    {
+      "original": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/unequal-products/fine/paths.json",
+        "sha256": "774a3d45b14b847623344bc35f162bfc546d19d88e45b6b302ee2a0568a2cf8c"
+      },
+      "new": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-03/native/paths.json",
+        "sha256": "774a3d45b14b847623344bc35f162bfc546d19d88e45b6b302ee2a0568a2cf8c"
+      },
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/unequal-products/fine-request.json",
+        "sha256": "d77991d0ec89042722a03f3db3670933d4c4b1fcdf1d37eb73a7273a1dfcf71e"
+      },
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-03/native-resources.json",
+        "sha256": "1a1cb057fb0e6593167325c0a6690ae93d4da1295d5b7e01ec83f5a796c8c5a6"
+      }
+    },
+    {
+      "original": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/rotated-layout/default/paths.json",
+        "sha256": "a740c1f7ae1c5220cb7ac88d0bc0162c22154578d32145d6e2e768d544b2219e"
+      },
+      "new": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-04/native/paths.json",
+        "sha256": "a740c1f7ae1c5220cb7ac88d0bc0162c22154578d32145d6e2e768d544b2219e"
+      },
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/rotated-layout/default-request.json",
+        "sha256": "77e8c3b5682c3940ce2fe21cafbeb0c390904164f922e4b16971e177badaafdb"
+      },
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-04/native-resources.json",
+        "sha256": "6669cb1fe9a30a4308bf914b849954f6fb47ae74d971406917e812319d39f774"
+      }
+    },
+    {
+      "original": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/rotated-layout/fine/paths.json",
+        "sha256": "563d712b1f74c4c057bc24295b6118a8f83108848dd2c22ed7900e48627425bc"
+      },
+      "new": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-05/native/paths.json",
+        "sha256": "563d712b1f74c4c057bc24295b6118a8f83108848dd2c22ed7900e48627425bc"
+      },
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/rotated-layout/fine-request.json",
+        "sha256": "ef7fc6638eba9f030d34813e3f086832a6034bd0aad27da55a80dd35d42be79f"
+      },
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-05/native-resources.json",
+        "sha256": "b5fac453cd478ce719acc6c65d4ba578d7c6ba47c6454fbdf24eee65b51f218b"
+      }
+    },
+    {
+      "original": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/shifted-datum/default/paths.json",
+        "sha256": "0b3a062bc6e446d44203d3a606d0c22ddd45e8a7784c1f93c9bf4f16d7674f9c"
+      },
+      "new": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-06/native/paths.json",
+        "sha256": "0b3a062bc6e446d44203d3a606d0c22ddd45e8a7784c1f93c9bf4f16d7674f9c"
+      },
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/shifted-datum/default-request.json",
+        "sha256": "425735c3c88dafc486686343672bd137fb5c4b0e94a1c4dba62506e1cc6b8c92"
+      },
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-06/native-resources.json",
+        "sha256": "6103e4f4897b47c89ceb28b0088a64ec93cd256528c2abd509bd29b8d70c9dc7"
+      }
+    },
+    {
+      "original": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/shifted-datum/fine/paths.json",
+        "sha256": "c78fcb301f0819b1fb8d74df93b391643174f08b1b48dbf865b024b7532e8451"
+      },
+      "new": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-07/native/paths.json",
+        "sha256": "c78fcb301f0819b1fb8d74df93b391643174f08b1b48dbf865b024b7532e8451"
+      },
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/path-inspection-01/shifted-datum/fine-request.json",
+        "sha256": "47bfe2363093db8ace9a24ba6994c02cf0bb401c4ddc7a1a1e7354da0d9a4aa2"
+      },
+      "resources": {
+        "path": "docs/checkpoints/2026-10-31/batch-arc-precision-01/qualification-02/path-equivalence-07/native-resources.json",
+        "sha256": "93ad030c625047cf11e4de23be053036b7c6dfebc526be7daf7909b32ab40fe7"
+      }
+    }
+  ],
+  "qualified_precision_mm": [
+    0.01,
+    0.0005
+  ],
+  "fine_precision_full_material_geometry_pending": true,
+  "original_engine_modified": false,
+  "whole_real_card_complete": false
+}

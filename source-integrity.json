@@ -1,0 +1,77 @@
+{
+  "status": "seven_material_source_controls_rejected",
+  "source": {
+    "path": "tools/check_batch_material_integrity.py",
+    "sha256": "d0e74588c3596dcb8fbccaaea936c7b3908130cf056d392eb64030655ff30e1c"
+  },
+  "original_request": {
+    "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/baseline/batch-material-02/measurement-request.json",
+    "sha256": "c9b56ab4718f4b7fbc0f931763ac4d7e0a5010710ecacce4e1d78234b29f3e2a"
+  },
+  "full_material_baseline": {
+    "path": "validation/runs/S4-BATCH-PROFILE-20261031-r1/baseline/batch-material-02/verification-01/measurement/metrics.json",
+    "sha256": "711f5c67b242d16be9d3a0016df602223fe4a40a0816e0982086fb76daed6cf6"
+  },
+  "cases": [
+    {
+      "id": "drop-entire-remainder",
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-integrity-01/drop-entire-remainder/request.json",
+        "sha256": "f1ade34d152976464b4aa50e40e0e7801b7fa9ddaf861cab9b61e057c5ce0c76"
+      },
+      "rejection": "Native triangle bytes were modified"
+    },
+    {
+      "id": "append-native-facet",
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-integrity-01/append-native-facet/request.json",
+        "sha256": "1a86727c74e72a8c96eb052d041c05fc5b4a2e490a6ad4fcaf6a63f659a8bb3b"
+      },
+      "rejection": "Added native geometry"
+    },
+    {
+      "id": "omit-window-evidence",
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-integrity-01/omit-window-evidence/request.json",
+        "sha256": "337e01e7dfc61616f706754ea016a78708391343f3625e394de4bdfc1560d68e"
+      },
+      "rejection": "Complete cumulative material provenance changed"
+    },
+    {
+      "id": "substitute-another-NC",
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-integrity-01/substitute-another-NC/request.json",
+        "sha256": "f0f10aad4b48db850855e74799a1000facd812b6db362688c784abba77d6ecf2"
+      },
+      "rejection": "Executed NC or complete stock/tool configuration changed"
+    },
+    {
+      "id": "substitute-stock",
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-integrity-01/substitute-stock/request.json",
+        "sha256": "d780417991b73f9a74cf3f7f789acf219d3bd081e027951e7f2db142602d532b"
+      },
+      "rejection": "Executed NC or complete stock/tool configuration changed"
+    },
+    {
+      "id": "substitute-precision",
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-integrity-01/substitute-precision/request.json",
+        "sha256": "3fece18c9cc1e84dde5730e385cc980faa86024b88c468331dcd348a25aaf96d"
+      },
+      "rejection": "Unbound or changed explicit simulation precision"
+    },
+    {
+      "id": "substitute-unqualified-engine",
+      "request": {
+        "path": "docs/checkpoints/2026-10-31/batch-integrity-01/substitute-unqualified-engine/request.json",
+        "sha256": "78b3753c72d5f9b7372767aa5a736002d01acec13105d364980fa594a0175366"
+      },
+      "rejection": "Precision engine has no matching complete qualification"
+    }
+  ],
+  "original_native_files_unchanged": true,
+  "discarded_remainder_faces_in_test_only": 338132,
+  "new_native_simulations": 0,
+  "whole_real_card_complete": false
+}
