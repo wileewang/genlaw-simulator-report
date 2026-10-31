@@ -1,0 +1,616 @@
+{
+  "schema": "genlaw.indexed-facing-measurement-request.v1",
+  "case_kind": "final",
+  "preparation": {
+    "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/preparation-result.json",
+    "sha256": "d9646773ada64356d9d8732fa4925e6dc50b8cd6501e89d39109e597ce529fe6"
+  },
+  "CAD_chain": {
+    "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/native-cad-chain.json",
+    "sha256": "770189b1dd1ea1391c4d2c2ee8193688b7e52355f6a96f4010b1b1628754f045"
+  },
+  "cam_resources": {
+    "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/freecad-resources.json",
+    "sha256": "1fdcea6c7fa3337083fe3bc25b9c0f49fbd990512d6c1f68f0fbbf7a51ee0371"
+  },
+  "cam_command": [
+    "/home/team-member-01/GenLaw_simulator/step2gcode_demo/out_external_tools/freecad-1.1.4-linux/squashfs-root/AppRun",
+    "freecadcmd",
+    "/home/team-member-01/GenLaw_simulator/tools/indexed_facing_cam_worker.py"
+  ],
+  "native_manifest": {
+    "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/final/native/native.json",
+    "sha256": "c370f5afaf88acd32f91387276725d2884013accf2ce509195a456058cce04e8"
+  },
+  "native_resources": {
+    "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/final/native-resources.json",
+    "sha256": "02e5873571166ef470ea427bb43fbd67de4da2c5afc9419f4d9037dd1900d45d"
+  },
+  "native_command": [
+    "/home/team-member-01/GenLaw_simulator/engines/camotics/.work/indexed-material-r2/camsim-indexed",
+    "--cell-window",
+    "0,0,0,162,122,62",
+    "--facets-per-file",
+    "500000",
+    "--second-project",
+    "/home/team-member-01/GenLaw_simulator/validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/S2/simulation.camotics",
+    "--second-pose",
+    "1,0,0,0,-1,0,0,0,-1,0,3,-1.5",
+    "/home/team-member-01/GenLaw_simulator/validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/S1/simulation.camotics",
+    "/home/team-member-01/GenLaw_simulator/validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/final/native"
+  ],
+  "bound_artifacts": [
+    {
+      "path": "docs/checkpoints/2026-10-31/indexed-material-01/build-02/build.json",
+      "sha256": "11003148283cc050daed32893b1060831fb23d5cf4a25b9802540ad341b079da"
+    },
+    {
+      "path": "engines/camotics/.work/indexed-material-r2/camsim-indexed",
+      "sha256": "1035962034500035e8042cbf80b73f9e8842000917300412a0f8e7bbd845b82f"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/cam-result.json",
+      "sha256": "cc3107c8481f92c1ad39ea0ddf91e187df19cb55c2c367f57ac45241b016c760"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/request.json",
+      "sha256": "502e63d041fb1aef21eb8c7085d8e578841290360331ee77e2d579236b524131"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/S1/program.nc",
+      "sha256": "d361ecd5cd42e56c1f240d0e408fee0874b52d3ae615e46e490695a194fb6d42"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/S1/simulation.camotics",
+      "sha256": "71f9358d7288964054fcba08cd63f14d6f0e8e2d285ec8546de6800e7ed755cf"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/S1/cam-result.json",
+      "sha256": "040f9a39f0ad376f0d50f2d4a1e6310e5dac73e5b7b5d050a591b511d3b70498"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/S2/program.nc",
+      "sha256": "7604b7ed355933ad513d1ecc057db4771e28811519edb0fdb7469f48c37cb357"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/S2/simulation.camotics",
+      "sha256": "71f9358d7288964054fcba08cd63f14d6f0e8e2d285ec8546de6800e7ed755cf"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/deeper-first/S2/cam-result.json",
+      "sha256": "7141ea7a8db7f81fa07a88a891c6a53b3cc0309bfc3e2d7a90a49339e2bae776"
+    }
+  ],
+  "source_code": [
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/__init__.py",
+      "sha256": "efa8f59200b1bd9b267b22368099635da387e3a7061c628450c7d861b1ed2e1c"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/admission_wait.py",
+      "sha256": "8b95a38e4de1c4b6f177618fa202f8f4f982ec5a9f0eae84150aff9b6cbe585f"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/blind_verification.py",
+      "sha256": "e3ab08dd86b14dd235573397df26469145944b23db4e589a2f629568f582207a"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/bucket_directory.py",
+      "sha256": "bbfe79096ca78408d913f380af06f4d45eca161c4cade7f61023756db4c6e8af"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/cell_windows.py",
+      "sha256": "ab43287ef3c5657d20d82a7b98344e84f353c29b558ab206e61205875c209eec"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/certified_box_merge.py",
+      "sha256": "8ab34bc865f3e56914e63833001fa9f614103f89528482cc1394e1c06c12e3d2"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/chamfer_cam.py",
+      "sha256": "de34110a3ac195992db1c1fbedd87eecbbc2ee2fe1f21fe550ec4a725534b92e"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/chamfer_geometry.py",
+      "sha256": "0585d381bf5933722f0b2a8644f1840167c638d7ccee24510746dbba507f34a6"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/chamfer_measurement.py",
+      "sha256": "6461ccf996eeb14140d17e1a376cb8f2a5dec5c78e3240944af7133247d5c45e"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/chamfer_nc.py",
+      "sha256": "7529b76c2f25870565096a7520df0472ca4226473d9b54106e1b8fd7e5b53182"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/chamfer_shards.py",
+      "sha256": "3e76ea8824261666bc0d5477cf22f067e772dc586e5462952d5ac74525fb8c48"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/chamfer_verification.py",
+      "sha256": "e5653faaca8c0d649122e6db793251d34ac4a33d59276fdb4247bfa324863559"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/chamfer_window_qualification.py",
+      "sha256": "5e20c51d0137d33fc7658fab47de8195f8b00c5c815c80679b5ffd573f93ff7b"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/checkpoint_context.py",
+      "sha256": "f99b3fd7f381c22a2a11ac0cef5d42aa4376fc50289e622bca8245d2d4799b84"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/collection_followup.py",
+      "sha256": "21a077920038959ce1a8017ab4179b8aba3397670bae3ba155543b919be7e887"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/compact_feature_observations.py",
+      "sha256": "e584c2430b51e0dea5c38205e064df9ce84c71149a0a74b16fa873a93ff631e2"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/compact_sections.py",
+      "sha256": "966a36295fbf5b5fff1343e7fa357498007ddf39d220742b6bb4e0b635c72cbc"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/coordinate_backend.py",
+      "sha256": "0f3d0114d132334094455df920d600ddf7fc2a43ccda879f8d04f87c1d94dc8e"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/coordinate_setup.py",
+      "sha256": "6de19013b2ebf9e2be55dbf29bb88d245f01e8f42f2e33ec656780eaa3895ba2"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/declared_dimensions.py",
+      "sha256": "5fc3776ae4cafd0c61964527c8372e1a354697035cd69b4bc1066a11d6a8a4a2"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/dimension_contract.py",
+      "sha256": "883a3c478c8d3aa8049eaf8a1b69852b2980cdde30563871212a7d73c2f12f0b"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/dimension_inspection.py",
+      "sha256": "d2aa94b5b5985e52f2a4194fd126dc87db9e5c668160239bb192403de2c91541"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/directory_material.py",
+      "sha256": "fb1ecf2b1619b60c479b9bb8d146622b490c3ed52fb9c6203d39f6b92c97e6d0"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/directory_material_entry.py",
+      "sha256": "04127b67f25cc030749d04bcb3c732dbb1c31da1983845b948bf110d63b227e7"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/drilling_geometry.py",
+      "sha256": "1245ea6601960f074bcadfb2f5f290ae3d13b248633a87b559b4ca89698ce7d8"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/facing_cam.py",
+      "sha256": "4912400558f689e08c4e0a918258b4d583737bbe5d9973ae44389d0f7889de1a"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/facing_geometry.py",
+      "sha256": "09a0666ca51bd5c0a16fa8942d85b5125691c1bb5139f2df3094ea45eee2f725"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/facing_nc.py",
+      "sha256": "b29c7e7dbc956a42311c0892aee8063c9723860aefc4335d494a42385c700a87"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/facing_verification.py",
+      "sha256": "1050ed3789df5ba7b67d54caf71b3d21d9dc6654cc1fc6f07266839175cdd2ac"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/fixture_clearance.py",
+      "sha256": "c267998d8b1a0e99ed3a67cf849d62dadb57e5511632448ba69b47ebc92df027"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/fixture_inspection.py",
+      "sha256": "cb83be16e5ce5e6ae9e0b0a795326d4097b75a6277ce3248f31cc52be65dfd07"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/fixture_preparation.py",
+      "sha256": "7c3a42c0827835e980c79355983bd90aa5b946936ffec5d4504f1dfdca3ae96c"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/fixture_runtime.py",
+      "sha256": "8b9ba5c19eae4245888742705f4dd4fe77ff62f284617a5938ada22f6dbb3bb5"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/fixture_setup.py",
+      "sha256": "73d6b7e45dd431cfbe08801eace991fa7065c6ffb2bbbe1fa8fb02448d45fef7"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/freecad_deburr.py",
+      "sha256": "830b4b68e1da01a48ec055ceb574466ebddc464cce64595fbea808bcebc29e80"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/freecad_worker.py",
+      "sha256": "9573070364423ff6015d963a488bbc514f02c4caf9f846db58eaa06d9cf75b36"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/helix_cam.py",
+      "sha256": "124d0cb731a19d87c436c1905c0165fe4da5571d3551bce7534a27c8f3a51715"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/helix_geometry.py",
+      "sha256": "099accd431bf543e34ec1c0c492e79a3cbf4ae3bfb45a2ab3598815394f6151d"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/helix_nc.py",
+      "sha256": "94e485b4a63f98a5c7c05696c9ddd3937a6e7f54aefbb44d95fc9553b06b45b6"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/indexed_facing.py",
+      "sha256": "c43367e0253f556db18041b06c3694f2baff5a563a897a56a0af0e83dd91f843"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/indexed_facing_measurement.py",
+      "sha256": "db886cf5c910023879ca8ed07c18f6cd8241d2e1d8909f8fe47d7fdcf90110d9"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/material_blocks.py",
+      "sha256": "64ab6bd91e5cd2b461d5bd549ac4972e9ce3ab2d6187d5964a0c7fca51acc7ef"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/material_chamfer_entry.py",
+      "sha256": "2dfd1eaf9dcd671100cda85633a539e88f8cbe1ec041412fc5d2d7dcb6d3c9f9"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/material_chamfer_measurement.py",
+      "sha256": "9fd513d2b6184cd2d5c1f25d10610bce52971e4beb0b5e3ce25c3ccc8b5c9d26"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/material_surfaces.py",
+      "sha256": "38d661471cede149dd6d8e7e8ec2c6617fd13351a2dbd488eee0c6859335d948"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/measure_worker.py",
+      "sha256": "0f6b33826d112d24511b105924639c3a219b3c0cf6763a9df00ad7f8807feb99"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/measurement.py",
+      "sha256": "9e253ca7591a33f90d77906bad979374f441de0420c13bbbba0334abe1a681b9"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/milling_features.py",
+      "sha256": "3e1ea6b3e6dff0ae7e6c6d59885a56d27f92ae5a878ff8d966e47a5c7f0d6434"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/milling_nc.py",
+      "sha256": "56c3ed6538568c7603d16f3f668e3203306b6d0905e9fd0092ac7f058a8de5d3"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/milling_preparation.py",
+      "sha256": "68710ebccc1de3de51c01904d0acb6f0048414e465b16d4f04de1a856b0c3c15"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/multi_pocket_cam.py",
+      "sha256": "ed95c3c14a94c462b02f06866a83dfd366f34b3b23d1f9b0d0bf111a55177e0c"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/multi_pocket_geometry.py",
+      "sha256": "2ad6f6df2618d8c71ed8e535e6fab1a61c9f9797023791a624ba4a4e1e0da652"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_chamfer_entry.py",
+      "sha256": "e0af1a7bf6e4acec9376e3c448ae95469616595676aab11511581d4abf928d9e"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_chamfer_measurement.py",
+      "sha256": "245bb209e1414d450ac1961d2291c6574bc07be74796914d6412f9fbfb1692a8"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_collection.py",
+      "sha256": "5d613318ebf087b9d7f7a399d1faea998ca1a751d771215ef8bd398cba1ad13b"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_collection_entry.py",
+      "sha256": "76cc3cbdec700db681df48e447074a277de5baf58960a23ebad9b90b2f32748a"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_material.py",
+      "sha256": "c9b2cf6a530bd1be28cbd4c38bc3b14014bfc144b63bb06a1215c56d03f2c131"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_material_entry.py",
+      "sha256": "1661da9bb8d1809ca53161f334103b578f86e5ef4b46aa84ac5a56892370f726"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_planar.py",
+      "sha256": "818079e45518d7ce5a0049902fcbdd3f2c7b48f89a1f059e2563f349118a9894"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_planar_cam.py",
+      "sha256": "7356c8fe11d347efe80681f28e0439b5beb7a965db2b6539c6ec256fd2a1f076"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_region.py",
+      "sha256": "0f4392da3f61d245117012c3f77a73e99a1815bd19196b2dff26d854daee8b28"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_sections.py",
+      "sha256": "7620b685a00963710ed886f7fe4da12578c8af2d994cbf7515842eef42faa3ad"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_stock.py",
+      "sha256": "2f2167b0ace5bb3e9c8e962a7d0fbad6f4934a90df170fcd0021ea7deac5e39d"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_stream.py",
+      "sha256": "49dfc0d5d071ff7bfa73f6e24f33e5e0b928a27df1cff9a484fdbb8f28748367"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/native_stream_metadata.py",
+      "sha256": "169b62a2d1a30bbfa76d2dd81ee22a84887103f3504b30fa1e681312ba181eaf"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/observer_source_replay.py",
+      "sha256": "22be8eb32a9c493d7ef7aca7b06e7e8226e08ffd7043c9ca4b7e1f800ad208a1"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/packed_sparse_plan.py",
+      "sha256": "f14aeecd5bbb47fce6b9e152f7cf56f2ec0a9f7139a9fe7bf645556fc8669007"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/planar_audit_batches.py",
+      "sha256": "3edbd2987d60b68bb9ba98e0342c6cb5bb7332cf4c42dd6aa0b32e3084d30fb6"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/planar_chamfer_entry.py",
+      "sha256": "ce7849f404139efdc718785771230e4b4c5dcc7cee7184f4de3e75d9568d9fb1"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/planar_chamfer_measurement.py",
+      "sha256": "3b2077a30bc722e49b5ebe7563706f7f3bc9455e910449d9ff86918b0d1f0a24"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/planar_dimensions.py",
+      "sha256": "19873bccd119f86b9148ab6f319d3e07b3fe8e4b2e79eb0cb639d04939b80a6f"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/planar_directory.py",
+      "sha256": "c670f486116692bb38d5ae63d51065f28668043f53f8b82c2d858369a5ace46e"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/planar_directory_entry.py",
+      "sha256": "c562e08dd0eefb3e2e7561fcff5b2bf17b477551376077c440a7de5667aa74ad"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/planar_display.py",
+      "sha256": "6c131d3ca9b234eb5c0f6aff57f05d802eb9b686561e83f351396faf769899d2"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/planar_material.py",
+      "sha256": "76497b7afd4f94c73654ecd91ca07e8a8c73d198fa036a5fe281cb72eb49d2bc"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/planar_resume.py",
+      "sha256": "3dc64332fc17b71aa3b5586eace21960e204400b983789e3aab6ad69ef6c5d3b"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/planar_sections.py",
+      "sha256": "79a00e314c8c597c9280cb38252ea91deb222181f0bdbc28bf3f4212be062801"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/pocket_cam.py",
+      "sha256": "f11722da9598dc67c18d2452e1f609340c773fa76f555c0d12fc1d0fd234b16b"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/pocket_geometry.py",
+      "sha256": "8cef161bd05c1e3871839c94b9cdcecba8c2627b59043ad2c2312b81590f3a4f"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/pocket_nc.py",
+      "sha256": "8c868f902300cac9f0151698a5457b2eca91c1c2aa6aee23e1771cb85fcdd942"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/pocket_preparation.py",
+      "sha256": "6d134300fbcd946c49e960abc0cdf86c2fbb814b4ab8ae1d76870214733acc80"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/pocket_sequence_cam.py",
+      "sha256": "e07a02230e22aa1b306de3da326d3f00599cb2a49f46d8813938d0b274affa55"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/pocket_sequence_geometry.py",
+      "sha256": "41f3581c369b9c51f63d7ffbeea9a12fb20576b5c33efbcaa2f78817ffc19408"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/pocket_sequence_verification.py",
+      "sha256": "1c11118f4f9652e21f091802c7a16a78547e70e593b43a107e6dcde1bfa9f368"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/pocket_verification.py",
+      "sha256": "0e67e8a24508bb6595d18b0b503b9deb4bc6f3f27627de4f42f9320aee697e4b"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/preparation.py",
+      "sha256": "22e44e6311898296970626c2053d5e261c21fa56e039c30cda3aac034d413da2"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/profile_cam.py",
+      "sha256": "763590b442b4d3665846e49f4e2991ba2d62453d7d033ea7f0a123794a0f7a57"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/profile_geometry.py",
+      "sha256": "0e630b2b4ce9118be5b7cab3d7b56f62b9e0ce5a30f81389b317a6ae24beb9bb"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/profile_nc.py",
+      "sha256": "340306e988b70477068fe755f6aaea907963a91e14c228cee7e8c552654c07c7"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/profile_sequence_geometry.py",
+      "sha256": "74b9583548b6db1f519eac1b57723018007b6fdcaad6d11b6021aadbb079a6a9"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/profile_sequence_verification.py",
+      "sha256": "af81238aedb3641e5a8d454e4a29347b6facfc6c228168d0d55d697f0a0da748"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/profile_verification.py",
+      "sha256": "1759b44dda2dcd7c106257500cb96fcd67ba77dc7d5efa7062e447c96bdf0041"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/profile_window_qualification.py",
+      "sha256": "d34765343f7da2e7fe398f470523553309657673d547e1b1ff3a8ddcebf94513"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/programming.py",
+      "sha256": "6d7e3bc8fc5e5f8d4ffb3c288d97686a7b76a253bd887af5fe6cafc22470f12d"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/rectangular_tiles.py",
+      "sha256": "c206f4a46b8a733817655bc9db87d3ab0f7f4665b85673a260f61aa064d8ae32"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/reference_sections.py",
+      "sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/region_cam.py",
+      "sha256": "ae700d7efe469ae1d720158eb6381760ba87426c3f02701b680231b68115b373"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/region_geometry.py",
+      "sha256": "14cd3a3e65d34c401909db2adad3de4f5ed3b5e76f817e4a0286e60d569a4d8f"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/region_nc.py",
+      "sha256": "0c5f24b97437c7f9c7fc4af0e3847f07ffa57e83bb48c8a9ba46db3977d22108"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/region_verification.py",
+      "sha256": "80bb1c17796c50f57d06fcd53dff611a7766eac24ac4985052f9d17c82adeb03"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/run.py",
+      "sha256": "dc76ef1dc47463148bf5c1f6044333698c0bfa4b470f7a5950cd76a43af7a389"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sequence_cam.py",
+      "sha256": "b8c7db3e7bb88153624162120afde6b767fbeb04bc02b5171012c44807f14d84"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sequence_checkpoints.py",
+      "sha256": "9350af6c07c977ca5df46e208fd2929e4b845f3f42ef153e0c9aa1584d05c168"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sequence_geometry.py",
+      "sha256": "2865a32068b8da67fe371147f7f13e8fe4ed594944677acadbeca5bc417e09db"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sequence_nc.py",
+      "sha256": "f30f04ea0255bb18e2d5400a0d22cf4e67ebfde58d932189157542f212d6bb85"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sequence_preparation.py",
+      "sha256": "05e90f4a5e6acf32a5df2af939fe670a72623d616572484110d64ad0400ccac8"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sequence_verification.py",
+      "sha256": "c5ba4723f62d12a06f315643637d53cb5e7cae2158b31f65813e50a701009055"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sharded_measure.py",
+      "sha256": "693c3d960d0857af0d6e2a5d4252d4a25a0ab743bfeacdb7dcee96a799b04665"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sharded_measurement.py",
+      "sha256": "b2b85e60ca8a3185dc0f43917b14e2992a09b706ecd5e71e43d55678c53a7bcb"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sharded_requirements.py",
+      "sha256": "89d77ba49d7c92ea2f66310cbffa5a12354314c4d5758b30a0a296aafe243ae5"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sharded_surface.py",
+      "sha256": "4afc1b39b8b0ce61e423f932e83d214c6152e98b41ea6907262af40ffec44bb0"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sharded_verification.py",
+      "sha256": "ee54d05cfaebb21ca06f3bd49cdd49dbe18571ef5d2277e967e0a149d7cb39ae"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/simulation_engine.py",
+      "sha256": "9f948f46e580566f19bb00b4f6f5fff2235ba7304b23d10b8ab2a842b7488f58"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/span_histogram.py",
+      "sha256": "40d9cdd7cfaaa297e7a4960fb18b357e3b31b14e3eaf9fffabc23a241f7f9b79"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sparse_chamfer_entry.py",
+      "sha256": "810516144272e83aaf1e3c687f0c9bc05bf249d93a5dbe0390d8ba6799bb117b"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sparse_chamfer_measurement.py",
+      "sha256": "8b2adf36c03a665c7ee706560d035bebd5b15d46ce1e58bb004c2157bb38db8b"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sparse_material.py",
+      "sha256": "9efb0b3b42b466a1a286a002a212a3ab821d9bf6ef3d223ff3e1dd405dfc5f01"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sparse_sections.py",
+      "sha256": "f91f4da30103d102c6cfa137ac11ee264206e2c05fa455819b3d21111f244994"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sparse_stream_surface.py",
+      "sha256": "80d02ffd95ba6363cc1873f367c6c6d3f74dcf8cdbdc78e1469b066bf47b36ed"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/sparse_surface.py",
+      "sha256": "e8b05fb33b931fec79e9afd1a4ef331ca9b8b8ab875cb929c23a047048b84de7"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/step_cam.py",
+      "sha256": "a7b8221dda315baf4efc98abcaaab6556ed768132b7107ae87165e5de502d24b"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/step_geometry.py",
+      "sha256": "a4bf2fb738c106e9c62b1fc0897eebd22f38c3115dfcb713b164113f4e62e31a"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/step_nc.py",
+      "sha256": "90ca75f07651805849f892276aa73f80325a9cb6a73c237e085340cf7db6caf1"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/step_verification.py",
+      "sha256": "11ad6c14346909a665bda8a8b0b3045e41e144b9ab6b0c4cee605521398274a6"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/surface_records.py",
+      "sha256": "a262690d9e49918bdb1c6d190ca05b99e3ee9e6e51dccb799a3cde0f6e5e5b43"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/tool_length_backend.py",
+      "sha256": "1d72dba5c8a2ec7d9dc923a04b3f53ddfeefb292ada8ddb648ec21d6103cf486"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/tool_length_setup.py",
+      "sha256": "1af320ec7b3f2d330519e04aa08cc78cafbc3d96f6660ebcaf69eac0502c5a6a"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/verification.py",
+      "sha256": "d79b58ceb8a45c4be2ab0201be3d8fa31a29d7f5f5976465aa21259c12a8f58f"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/genlaw_pipeline/window_controls.py",
+      "sha256": "8bf4d37daf34df017e6279b892e7d2e22f2cccba78b9accd68d667b9621fd481"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/tools/indexed_facing_cam_worker.py",
+      "sha256": "8047dcfd307f7879a81b896298a87723ab8a85560bbb20ab01b5dfecdebcc4e8"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/tools/run_indexed_facing_suite.py",
+      "sha256": "a9145b5db1a9799ed8ca0157b8fc2d51a0d6f8b51b7e87979cb098e8e73c2a62"
+    },
+    {
+      "path": "validation/runs/S4-INDEXED-FACING-20261031-r1/sources/web/tools/mesh_metrics.py",
+      "sha256": "741756ed20411cb81a99f7fe3a6200595cc8fc7b783bf72207f19da33979b4c4"
+    }
+  ],
+  "test_only_wrong_pose": false,
+  "reuse_completed_first_setup_as_omission_control": false
+}

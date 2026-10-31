@@ -1,0 +1,223 @@
+{
+  "schema": "genlaw.execution-plan.v7",
+  "capability": "top_facing_xy",
+  "input_id": "INDEXED-deeper-second-S1",
+  "mode": "software_geometry_reference",
+  "source_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "4b920594681724412bd254394ab2ecdf72f1299fb2ecbaaa3e444cdc828a0961"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "a9df1bf31d970b62ec3d6bb4b730c87fc6f1151fd3f2e75b41c741ea1e8ba299"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "5486902ab615e581f223183d9671f6437073c50488a8311a00fd326c5683b949"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "90a7731c00a8e9af4b0792f1704944ae83cb7d10c2719d4f62137bb67c1100a9"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "66bf1eb83ee02f49c6231a0b6da02ad0d7f73d39503aa2b2541bafba79f64a4a"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "7688b6ba0524d981a3f3374684481b7c349557101d1004ce0d47bac38e958540"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "e28ca0c2f485e2e0eea2cffb50d6420a58ffdab55595b03f8364bba21b7ca46e"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "332e8e8c5d3d39937cd4605032fec05f4e71ee1d7a22845104f300efdfa1dd7e"
+    }
+  },
+  "cad_ref": {
+    "path": "target.brep",
+    "sha256": "a9df1bf31d970b62ec3d6bb4b730c87fc6f1151fd3f2e75b41c741ea1e8ba299"
+  },
+  "cad_observation_ref": {
+    "path": "geometry-observation.json",
+    "sha256": "90a7731c00a8e9af4b0792f1704944ae83cb7d10c2719d4f62137bb67c1100a9"
+  },
+  "operations": [
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "face_milling",
+      "feature_id": "P1",
+      "geometry": {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face6",
+        "top_z_mm": -0.3999999999999999,
+        "thickness_mm": 1.1,
+        "bounds_xy_mm": {
+          "min": [
+            0.0,
+            0.0
+          ],
+          "max": [
+            4.0,
+            3.0
+          ]
+        }
+      },
+      "final_z_mm": -0.3999999999999999,
+      "removal_depth_mm": 0.3999999999999999
+    }
+  ],
+  "target_bounds_mm": {
+    "min": [
+      0.0,
+      0.0,
+      -1.5
+    ],
+    "max": [
+      4.0,
+      3.0,
+      -0.3999999999999999
+    ]
+  },
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        4,
+        3,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "tool": {
+    "id": "T1",
+    "kind": "flat_endmill",
+    "center_cutting": true,
+    "diameter_mm": 1,
+    "cutting_length_mm": 5,
+    "length_mm": 20,
+    "basis": "Explicit synthetic test tool, not a qualified physical tool or holder."
+  },
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "Explicit software-only zero transform; real clamping excluded."
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "parameters": {
+    "spindle_rpm": 3000.0,
+    "feed_mm_min": 120.0,
+    "plunge_mm_min": 60.0,
+    "step_down_mm": 0.25,
+    "step_over_percent": 50.0,
+    "safe_height_mm": 2.0,
+    "clearance_height_mm": 3.0,
+    "path_tolerance_mm": 0.001
+  },
+  "strategy": {
+    "clearing_pattern": "Offset",
+    "cut_mode": "Climb",
+    "start_at": "Center",
+    "entry": "vertical_center_cutting",
+    "keep_tool_down": false,
+    "radial_allowance_mm": 0,
+    "axial_allowance_mm": 0,
+    "boundary_shape": "Boundbox",
+    "clear_edges": true,
+    "exclude_raised_areas": false
+  },
+  "parameter_provenance": {
+    "spindle_rpm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "feed_mm_min": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "plunge_mm_min": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "step_down_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "step_over_percent": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "safe_height_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "clearance_height_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "path_tolerance_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    }
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Explicit grid selected before NC under the unchanged 5,000,000-cell budget; no physical-part scaling."
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "明确参考来料及静态装夹，实际工艺师傅尚未批准。",
+      "OP10.1": "明确参考来料及静态装夹，实际工艺师傅尚未批准。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "requirements_ref": {
+    "path": "requirements.json",
+    "sha256": "7688b6ba0524d981a3f3374684481b7c349557101d1004ce0d47bac38e958540"
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false
+}

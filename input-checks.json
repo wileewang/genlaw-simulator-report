@@ -1,0 +1,118 @@
+{
+  "schema": "genlaw.indexed-facing-input-check.v1",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "input": {
+        "path": "validation/feature-inputs/S4-INDEXED-FACING-20261031-r2/baseline/input.json",
+        "sha256": "0ca53e697e10ba87d00e19930f4b8709362c00f883a8dbdca4bbc7fe1b6275cf"
+      },
+      "budget": {
+        "allowed": true,
+        "cell_count": 1225368,
+        "xy_sample_points": 20049,
+        "maximum_cells_per_window": 5000000,
+        "maximum_xy_samples": 100000,
+        "original_stock_unchanged": true,
+        "nc_unchanged": true
+      }
+    },
+    {
+      "id": "deeper-second",
+      "input": {
+        "path": "validation/feature-inputs/S4-INDEXED-FACING-20261031-r2/deeper-second/input.json",
+        "sha256": "260db32106efe26eb670fe2d72f77ea24c2282aa5657cf2ff4a1d3074d507a3a"
+      },
+      "budget": {
+        "allowed": true,
+        "cell_count": 1225368,
+        "xy_sample_points": 20049,
+        "maximum_cells_per_window": 5000000,
+        "maximum_xy_samples": 100000,
+        "original_stock_unchanged": true,
+        "nc_unchanged": true
+      }
+    },
+    {
+      "id": "deeper-first",
+      "input": {
+        "path": "validation/feature-inputs/S4-INDEXED-FACING-20261031-r2/deeper-first/input.json",
+        "sha256": "7d884a6b1f09b5e6210ef1a99275c12d3b125b6495fa780754a9b4ce961280a5"
+      },
+      "budget": {
+        "allowed": true,
+        "cell_count": 1225368,
+        "xy_sample_points": 20049,
+        "maximum_cells_per_window": 5000000,
+        "maximum_xy_samples": 100000,
+        "original_stock_unchanged": true,
+        "nc_unchanged": true
+      }
+    },
+    {
+      "id": "shifted-datum",
+      "input": {
+        "path": "validation/feature-inputs/S4-INDEXED-FACING-20261031-r2/shifted-datum/input.json",
+        "sha256": "9adaaa98943a32f35ffe364eb16a1950042a28e49d2026e19ba80b8f111d7cfd"
+      },
+      "budget": {
+        "allowed": true,
+        "cell_count": 1225368,
+        "xy_sample_points": 20049,
+        "maximum_cells_per_window": 5000000,
+        "maximum_xy_samples": 100000,
+        "original_stock_unchanged": true,
+        "nc_unchanged": true
+      }
+    }
+  ],
+  "negative_controls": [
+    {
+      "id": "reversed-setups",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/indexed-facing-01/input-check-02/reversed-setups.json",
+        "sha256": "1fe355eacc1c61479e573fcb744804b1231d04b4f6b8eba093bacfb87d0c3e4d"
+      },
+      "error": "Exactly two ordered static setups are required",
+      "native_started": false
+    },
+    {
+      "id": "wrong-flip-origin",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/indexed-facing-01/input-check-02/wrong-flip-origin.json",
+        "sha256": "34de8002a7c4c1bb64adefef6b3e914f54dce811703b84d2a6d904058ff72e8a"
+      },
+      "error": "Setup pose differs from the declared original-box X flip",
+      "native_started": false
+    },
+    {
+      "id": "reset-material-history",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/indexed-facing-01/input-check-02/reset-material-history.json",
+        "sha256": "a6fafd727d0ef14f5ceef4eebb8c26e6430ca201411a11d46a5625fc9188c06a"
+      },
+      "error": "The second setup must consume the first setup result",
+      "native_started": false
+    },
+    {
+      "id": "wrong-final-CAD",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/indexed-facing-01/input-check-02/wrong-final-CAD.json",
+        "sha256": "2e1c1ed5c018ea55815e5bdc39bb265c4a4bb0cf79f1a6d133bdf2e55128e33c"
+      },
+      "error": "The second setup target does not match the original final CAD",
+      "native_started": false
+    },
+    {
+      "id": "reset-CAM-incoming-stock",
+      "input": {
+        "path": "docs/checkpoints/2026-10-31/indexed-facing-01/input-check-02/reset-CAM-incoming-stock.json",
+        "sha256": "b410cdf5c0bb716e8ab50930ead261283259ea87bc8a059bc7b91e9ae4decceb"
+      },
+      "error": "Facing preparation blocked: S2 [{\"code\": \"unsupported_capability\", \"field\": \"stock\", \"message\": \"本面铣入口要求 XY 外形及底面相同、来料顶面高于目标；不得从成品 CAD 推断来料。\", \"severity\": \"blocking\", \"blocked_stage\": \"nc_generation\", \"owner\": \"input_maintenance\"}]",
+      "native_started": false
+    }
+  ],
+  "all_expectations_met": true,
+  "native_execution_count": 0
+}

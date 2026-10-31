@@ -1,0 +1,60 @@
+{
+  "schema": "genlaw.preparation-input.v7",
+  "id": "INDEXED-baseline-S2",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP20.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP10.2": "由两装夹协调器先验证第一面几何；不是重新放入毛坯。",
+      "OP20.1": "明确参考来料及静态装夹，实际工艺师傅尚未批准。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "7b8f3b4e181573908c9a56a28ee28bd28b0154840357ae63c71577f338e161b6"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "ab964191a17712b5507916855380ac8f97eaaa694aaf41762ecd8d91399a8c4c"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "b96386dd4c9464919ff13c964f9dc0f3702ce7844e4e28ff3db4930e6162e148"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "b97a320c98f8fc425814e704d29111b3ac5d75c0ae3bf7b284dc7a352958871f"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "cdd057ac23cecfa114b7de3edda095c316e2c2f1d5b31a9f2ef708aea7c6c99f"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "0c1e69df7093b989d4f7f1a69152f83b4f91cd363a542ba3fbc0c732d4ac5915"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "a6bd5ec9e2eeb9d5987c626af1f8901fa66170e1ce8b96090645ecb0465bb57e"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "b1d51b46d96c9648aa7ef9bb2040332a4e05ff0513f314fae8d155ebd2a9acea"
+    }
+  },
+  "capability": "top_facing_xy"
+}

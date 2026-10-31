@@ -1,0 +1,339 @@
+{
+  "schema": "genlaw.indexed-facing-fixtures.v1",
+  "cases": [
+    {
+      "id": "baseline",
+      "name": "两面不同去除厚度",
+      "original_stock": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "first_removal_mm": 0.4,
+      "second_removal_mm": 0.3,
+      "targets": {
+        "S1": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            4,
+            3,
+            -0.4
+          ]
+        },
+        "S2": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            -0.3
+          ]
+        },
+        "final": {
+          "min": [
+            0,
+            0,
+            -1.2
+          ],
+          "max": [
+            4,
+            3,
+            -0.4
+          ]
+        }
+      },
+      "second_CAM_incoming_stock": {
+        "min": [
+          0,
+          0,
+          -1.1
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "second_to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "deeper-second",
+      "name": "增加第二面去除厚度",
+      "original_stock": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "first_removal_mm": 0.4,
+      "second_removal_mm": 0.6,
+      "targets": {
+        "S1": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            4,
+            3,
+            -0.4
+          ]
+        },
+        "S2": {
+          "min": [
+            0,
+            0,
+            -1.1
+          ],
+          "max": [
+            4,
+            3,
+            -0.6
+          ]
+        },
+        "final": {
+          "min": [
+            0,
+            0,
+            -0.9
+          ],
+          "max": [
+            4,
+            3,
+            -0.4
+          ]
+        }
+      },
+      "second_CAM_incoming_stock": {
+        "min": [
+          0,
+          0,
+          -1.1
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "second_to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "deeper-first",
+      "name": "增加第一面去除厚度",
+      "original_stock": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "first_removal_mm": 0.6,
+      "second_removal_mm": 0.3,
+      "targets": {
+        "S1": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            4,
+            3,
+            -0.6
+          ]
+        },
+        "S2": {
+          "min": [
+            0,
+            0,
+            -0.9
+          ],
+          "max": [
+            4,
+            3,
+            -0.3
+          ]
+        },
+        "final": {
+          "min": [
+            0,
+            0,
+            -1.2
+          ],
+          "max": [
+            4,
+            3,
+            -0.6
+          ]
+        }
+      },
+      "second_CAM_incoming_stock": {
+        "min": [
+          0,
+          0,
+          -0.9
+        ],
+        "max": [
+          4,
+          3,
+          0.0
+        ]
+      },
+      "second_to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "shifted-datum",
+      "name": "保留非零原始 CAD 坐标",
+      "original_stock": {
+        "min": [
+          -1,
+          2,
+          -0.5
+        ],
+        "max": [
+          3,
+          5,
+          1.0
+        ]
+      },
+      "first_removal_mm": 0.4,
+      "second_removal_mm": 0.3,
+      "targets": {
+        "S1": {
+          "min": [
+            -1,
+            2,
+            -0.5
+          ],
+          "max": [
+            3,
+            5,
+            0.6
+          ]
+        },
+        "S2": {
+          "min": [
+            -1,
+            2,
+            -0.1
+          ],
+          "max": [
+            3,
+            5,
+            0.7
+          ]
+        },
+        "final": {
+          "min": [
+            -1,
+            2,
+            -0.2
+          ],
+          "max": [
+            3,
+            5,
+            0.6
+          ]
+        }
+      },
+      "second_CAM_incoming_stock": {
+        "min": [
+          -1,
+          2,
+          -0.1
+        ],
+        "max": [
+          3,
+          5,
+          1.0
+        ]
+      },
+      "second_to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        7,
+        0.5
+      ],
+      "resolution_mm": 0.025
+    }
+  ],
+  "selection": "Synthetic static two-sided facing; unequal cuts and nonzero coordinates expose wrong-side or material-reset mistakes. No customer part was scaled.",
+  "production_approved": false
+}

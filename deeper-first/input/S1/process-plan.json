@@ -1,0 +1,106 @@
+{
+  "schema": "genlaw.process-plan.v1",
+  "id": "S4-INDEXED-deeper-first-CARD-r1-S1",
+  "cad_sha256": "cdd3d749ce99bdc687e8d8f9d5dc44126b6163f86219bf0247c494a67b67882c",
+  "origin": "developer_authored_synthetic_paper_card",
+  "transcription": {
+    "status": "checked_against_source",
+    "reviewer_role": "developer_transcription",
+    "production_review": false
+  },
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "external_documents": [],
+  "operations": [
+    {
+      "id": "OP05",
+      "name": "来料核对",
+      "steps": [
+        {
+          "id": "OP05.1",
+          "type": "incoming_inspection",
+          "text": "核对 4 × 3 × 1.5 mm 单件来料、6061-T6 材料标签和 CAD 版本。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP05.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP10",
+      "name": "第一面面铣",
+      "steps": [
+        {
+          "id": "OP10.1",
+          "type": "setup",
+          "text": "按原始 CAD 坐标建立第一装夹；本例未模拟实体夹具。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.1"
+          }
+        },
+        {
+          "id": "OP10.2",
+          "type": "face_milling",
+          "feature_id": "P1",
+          "text": "第一面去除 0.6 mm，铣至中间厚度 0.9 mm；保留其余外形。",
+          "depends_on": [
+            "OP05.1",
+            "OP10.1"
+          ],
+          "constraints": {
+            "thickness_mm": 0.9,
+            "top_shape": "flat",
+            "tool_id": "T1"
+          },
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP20",
+      "name": "翻面及第二面面铣",
+      "steps": [
+        {
+          "id": "OP20.1",
+          "type": "setup",
+          "text": "第一面几何检验通过后，围绕原毛坯中心 X 轴翻转 180°、重新装夹；保留第一面实际剩料。",
+          "source": {
+            "document_id": "CARD",
+            "page": 3,
+            "location": "工序 / 工步 OP20.1"
+          }
+        },
+        {
+          "id": "OP20.2",
+          "type": "face_milling",
+          "feature_id": "P2",
+          "text": "第二面去除 0.3 mm，铣至最终厚度 0.6 mm；第一面不再补回。",
+          "depends_on": [
+            "OP10.2",
+            "OP20.1"
+          ],
+          "constraints": {
+            "thickness_mm": 0.6000000000000001,
+            "top_shape": "flat",
+            "tool_id": "T1"
+          },
+          "source": {
+            "document_id": "CARD",
+            "page": 3,
+            "location": "工序 / 工步 OP20.2"
+          }
+        }
+      ]
+    }
+  ]
+}

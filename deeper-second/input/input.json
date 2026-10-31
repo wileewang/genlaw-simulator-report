@@ -1,0 +1,89 @@
+{
+  "schema": "genlaw.indexed-facing-input.v1",
+  "id": "INDEXED-deeper-second",
+  "mode": "software_geometry_reference",
+  "material_frame": "original_CAD_mm",
+  "stock_reset_between_setups": false,
+  "continuous_rotary_motion": false,
+  "paper_card": {
+    "path": "validation/feature-inputs/S4-INDEXED-FACING-20261031-r2/deeper-second/process-card.pdf",
+    "sha256": "332e8e8c5d3d39937cd4605032fec05f4e71ee1d7a22845104f300efdfa1dd7e"
+  },
+  "original_stock": {
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        4,
+        3,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6"
+  },
+  "setups": [
+    {
+      "id": "S1",
+      "input": {
+        "path": "validation/feature-inputs/S4-INDEXED-FACING-20261031-r2/deeper-second/S1/input.json",
+        "sha256": "6d13b67d37aa28b885d861852693492c15bf5d4056667249dfcd1b7d080116cb"
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "predecessor": "original_stock"
+    },
+    {
+      "id": "S2",
+      "input": {
+        "path": "validation/feature-inputs/S4-INDEXED-FACING-20261031-r2/deeper-second/S2/input.json",
+        "sha256": "7555cea0263432f454805603f0c71d5b534f7165a14a78bbe28f557569c9a7f9"
+      },
+      "to_material": [
+        1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        3,
+        -1.5
+      ],
+      "predecessor": "S1"
+    }
+  ],
+  "final_cad": {
+    "path": "validation/feature-inputs/S4-INDEXED-FACING-20261031-r2/deeper-second/final/target.brep",
+    "sha256": "379a7489ca00d2f3263b23b22dce61055fb18c389e43d6dd2b88905e2d7886cb"
+  },
+  "final_reference": {
+    "path": "validation/feature-inputs/S4-INDEXED-FACING-20261031-r2/deeper-second/final/reference.json",
+    "sha256": "c0675b87cd286fbee74f9a9b421cc3c5b3f0fb9d1b604a18403a19b14381ab16"
+  },
+  "acceptance": {
+    "normal_iou_min": 0.99,
+    "control_iou_max": 0.9,
+    "bounds_error_mm_max": 0.025,
+    "volume_error_mm3_max": 0.03,
+    "quadrature_iou_difference_max": 1e-05,
+    "mesh_vs_integrated_volume_mm3_max": 0.0001
+  }
+}
