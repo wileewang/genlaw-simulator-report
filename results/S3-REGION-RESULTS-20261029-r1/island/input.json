@@ -1,0 +1,60 @@
+{
+  "schema": "genlaw.preparation-input.v6",
+  "id": "S3-REGION-island-r2",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "381beeafd5bc7787263fd19e6083129be37ff6ebc0f508bd595f42ec575e216b"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "b8b00b9fc72e90c4f652ba233302a67f8b0b7cacac6ea17cfbad3aa71d05db62"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "0a454d48edcb0bcc9cf05b872ac09bed5f533e85a6b89c7caa08ac180aef56bc"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "1bb7b8ddd346cca40d8bb7ff66ce7fc5984d0c05a99c5f03a82a7b5f03ae63d2"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "2d95080dbd9f7d92c655c4afa1eed8317028d9ee2891c498e0dc649e41a0c8de"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "37dbf6742bf42046b8fbaa138feb8c122d2cf5bab844d49c07c05906dd475942"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "ac1fb0865b5bc309f29ca7d2fc71b36ea6acb0ada6ac41d7248b61ab854c938e"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "910754f9217fdad30c6dc6f812810c779977afe67b63d0246febe3878c1f6c24"
+    }
+  },
+  "capability": "planar_floor_xy"
+}

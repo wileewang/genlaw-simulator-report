@@ -1,0 +1,238 @@
+{
+  "schema": "genlaw.execution-plan.v3",
+  "input_id": "S2-BLIND-two-depths-r3",
+  "mode": "software_geometry_reference",
+  "source_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "a80bd3f4fc8161635565d5c3b0383a527779c169c7895bbf7b36e08b74beb8cf"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "36a2be1e506ef293fc43d10b7a64912dd1d04dfea1264442ae44f80f750dadbd"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "8bc960555588c051e400ff8cb946760cf650c6c98daa89f6ed11a5c7c6da4590"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "e15ac1ef7d01ea948362324c3e65be83fbc2fd1081a923978014c6ed9e5e9e4b"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "55abb88214ce4edf10648d484d756b6568643fb03d87663c5761c5acd446a87f"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "2bc8498bf5ccd0f5869c6dd1a95dacbed4d79be4837e2ead31834e977615b860"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "5618d47635e0f2b0fbc1420b461c45cadafbee6e2fb1698f986612d266e7ef6a"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "58c9faebc05962440dff0fcd41a1eda20230fe487a4415b7c0c6261d151c28ac"
+    }
+  },
+  "cad_ref": {
+    "path": "target.brep",
+    "sha256": "36a2be1e506ef293fc43d10b7a64912dd1d04dfea1264442ae44f80f750dadbd"
+  },
+  "cad_observation_ref": {
+    "path": "geometry-observation.json",
+    "sha256": "e15ac1ef7d01ea948362324c3e65be83fbc2fd1081a923978014c6ed9e5e9e4b"
+  },
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "tool": {
+    "id": "T1",
+    "kind": "drill",
+    "diameter_mm": 2,
+    "tip_angle_degrees": 118,
+    "length_mm": 20,
+    "basis": "S1 软件参考钻头；真实设备与刀柄未批准。"
+  },
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "明确的软件参考条件，复用历史探针；不代表真实装夹已确认。"
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false
+  },
+  "parameters": {
+    "spindle_rpm": 1000.0,
+    "feed_mm_min": 60.0,
+    "retract_plane_mm": 1.0,
+    "safe_height_mm": 2.0,
+    "clearance_height_mm": 3.0,
+    "drill_tip_length_mm": 0.6008606190275603
+  },
+  "parameter_provenance": {
+    "tool_selection": {
+      "kind": "derived",
+      "rule": "unique-drill.v1: exact diameter and optional explicit card tool_id",
+      "inputs": [
+        "resources.tools",
+        "process_plan.constraints",
+        "geometry_observation.feature"
+      ]
+    },
+    "spindle_rpm": {
+      "kind": "resource_preset",
+      "ref": "resources",
+      "field": "cutting_presets/spindle_rpm",
+      "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+    },
+    "feed_mm_min": {
+      "kind": "resource_preset",
+      "ref": "resources",
+      "field": "cutting_presets/feed_mm_min",
+      "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+    },
+    "retract_plane_mm": {
+      "kind": "resource_preset",
+      "ref": "resources",
+      "field": "cutting_presets/retract_plane_mm",
+      "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+    },
+    "safe_height_mm": {
+      "kind": "resource_preset",
+      "ref": "resources",
+      "field": "cutting_presets/safe_height_mm",
+      "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+    },
+    "clearance_height_mm": {
+      "kind": "resource_preset",
+      "ref": "resources",
+      "field": "cutting_presets/clearance_height_mm",
+      "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+    },
+    "hole_center_xy_mm": {
+      "kind": "cad_observation",
+      "ref": "geometry_observation",
+      "features": [
+        "H1",
+        "H2"
+      ]
+    },
+    "drill_tip_length_mm": {
+      "kind": "derived",
+      "rule": "cone-tip.v1: diameter / (2*tan(tip_angle/2))",
+      "inputs": [
+        "tool.diameter_mm",
+        "tool.tip_angle_degrees"
+      ]
+    }
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2",
+      "OP10.3"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "requirements_ref": {
+    "path": "requirements.json",
+    "sha256": "2bc8498bf5ccd0f5869c6dd1a95dacbed4d79be4837e2ead31834e977615b860"
+  },
+  "required_downstream_checks": [
+    "Re-read original CAD and confirm feature binding in CAM adapter.",
+    "Preserve this configuration and final NC together for simulation."
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "operations": [
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "drilling",
+      "feature_id": "H1",
+      "hole_center_xy_mm": [
+        2,
+        2
+      ],
+      "diameter_mm": 2,
+      "through": false,
+      "cylindrical_depth_mm": 0.5,
+      "bottom_angle_degrees": 118,
+      "parameters": {
+        "cam_final_depth_mm": -0.5,
+        "final_tip_z_mm": -1.1008606190275603
+      },
+      "depth_provenance": {
+        "kind": "derived",
+        "reference": "CAD and card cylindrical depth from stock top",
+        "drill_tip_compensation": "tool cone height added by FreeCAD Drill Tip; no breakthrough applied to a blind hole"
+      }
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.3",
+      "type": "drilling",
+      "feature_id": "H2",
+      "hole_center_xy_mm": [
+        5.5,
+        4
+      ],
+      "diameter_mm": 2,
+      "through": false,
+      "cylindrical_depth_mm": 0.7,
+      "bottom_angle_degrees": 118,
+      "parameters": {
+        "cam_final_depth_mm": -0.7,
+        "final_tip_z_mm": -1.3008606190275602
+      },
+      "depth_provenance": {
+        "kind": "derived",
+        "reference": "CAD and card cylindrical depth from stock top",
+        "drill_tip_compensation": "tool cone height added by FreeCAD Drill Tip; no breakthrough applied to a blind hole"
+      }
+    }
+  ],
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Explicit 0.025 mm numerical grid, same stock and unchanged 5,000,000-cell budget as the preceding small through-hole cases."
+  }
+}

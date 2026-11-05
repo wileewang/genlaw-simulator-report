@@ -1,0 +1,92 @@
+{
+  "schema": "genlaw.profile-sequence-transcription-binding.v1",
+  "draft_sha256": "5a1d74dfdd4a73d69c3c2a23482872b28cee7cbe173133bc9d7b68e6251b26f9",
+  "cad_sha256": "820cf60e6d9cef39245fcf5a495546fa8d6652e771ccfe3bfdda02649d9b99b6",
+  "stock_assertions": {
+    "stock_dimensions_mm": "STOCK-SIZE",
+    "material_label": "STOCK-MATERIAL"
+  },
+  "order_assertions": {
+    "OP10.2": "SOURCE-ORDER"
+  },
+  "actions": [
+    {
+      "step_id": "OP10.2.P1",
+      "source_step_id": "OP10.2",
+      "feature_id": "P1",
+      "assertions": {
+        "operation_type": "P1-operation_type",
+        "tool_id": "P1-tool_id",
+        "thickness_mm": "P1-thickness_mm",
+        "top_shape": "P1-top_shape"
+      },
+      "depends_on": [
+        "OP05.1",
+        "OP10.1"
+      ]
+    },
+    {
+      "step_id": "OP10.2.C1",
+      "source_step_id": "OP10.2",
+      "feature_id": "C1",
+      "assertions": {
+        "operation_type": "C1-operation_type",
+        "tool_id": "C1-tool_id",
+        "length_mm": "C1-length_mm",
+        "width_mm": "C1-width_mm",
+        "thickness_mm": "C1-thickness_mm",
+        "center_xy_mm": "C1-center_xy_mm",
+        "major_axis": "C1-major_axis",
+        "end_condition": "C1-end_condition"
+      },
+      "depends_on": [
+        "OP10.2.P1"
+      ]
+    },
+    {
+      "step_id": "OP10.2.H1",
+      "source_step_id": "OP10.2",
+      "feature_id": "H1",
+      "assertions": {
+        "operation_type": "H1-operation_type",
+        "tool_id": "H1-tool_id",
+        "diameter_mm": "H1-diameter_mm",
+        "center_xy_mm": "H1-center_xy_mm",
+        "end_condition": "H1-end_condition"
+      },
+      "depends_on": [
+        "OP10.2.C1"
+      ]
+    },
+    {
+      "step_id": "OP10.2.H2",
+      "source_step_id": "OP10.2",
+      "feature_id": "H2",
+      "assertions": {
+        "operation_type": "H2-operation_type",
+        "tool_id": "H2-tool_id",
+        "diameter_mm": "H2-diameter_mm",
+        "center_xy_mm": "H2-center_xy_mm",
+        "end_condition": "H2-end_condition"
+      },
+      "depends_on": [
+        "OP10.2.H1"
+      ]
+    },
+    {
+      "step_id": "OP10.2.H3",
+      "source_step_id": "OP10.2",
+      "feature_id": "H3",
+      "assertions": {
+        "operation_type": "H3-operation_type",
+        "tool_id": "H3-tool_id",
+        "diameter_mm": "H3-diameter_mm",
+        "center_xy_mm": "H3-center_xy_mm",
+        "end_condition": "H3-end_condition"
+      },
+      "depends_on": [
+        "OP10.2.H2"
+      ]
+    }
+  ]
+}

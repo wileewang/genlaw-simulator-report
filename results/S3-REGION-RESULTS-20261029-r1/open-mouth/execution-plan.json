@@ -1,0 +1,289 @@
+{
+  "schema": "genlaw.execution-plan.v6",
+  "capability": "planar_floor_xy",
+  "input_id": "S3-REGION-open-mouth-r2",
+  "mode": "software_geometry_reference",
+  "source_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "ebe3af3dd3c27b512bf774e1ecd03b13f85bc6958aa731bc35f938545b9a130b"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "d28e08dddc70a50aa4f3b9ae44475cb9310f6d2cdcf58a6af1a9496c6d374abe"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "a918c00a008f2da9c281359086cf27d1db4e7aeba5d9d4a22c495cd71dbdc3c2"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "097aa29d2d0a0ab99b8715ef359df4c0bf351b82acf79bca59b7c5fa89993d21"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "5b6026ae12ab0155327240254a488e24bc3e20f03f241eb4383df3d41b28acae"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "283589c4a8ef713562d3f2a8446c0ee86d82093b019461116dd8da7e7a44ff35"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "0002545bf64e7c87b41eba460732adee14c58d0df79fe9fa6f45a37e0d00f99c"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "9411dd03037bf23c4b9050b3e5ffbfeb798d1d59bebeb71a12b61e0d42fe43da"
+    }
+  },
+  "cad_ref": {
+    "path": "target.brep",
+    "sha256": "d28e08dddc70a50aa4f3b9ae44475cb9310f6d2cdcf58a6af1a9496c6d374abe"
+  },
+  "cad_observation_ref": {
+    "path": "geometry-observation.json",
+    "sha256": "097aa29d2d0a0ab99b8715ef359df4c0bf351b82acf79bca59b7c5fa89993d21"
+  },
+  "operations": [
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "region_milling",
+      "feature_id": "P1",
+      "geometry": {
+        "id": "P1",
+        "kind": "planar_floor",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "depth_mm": 0.5,
+        "floor_face": "Face1",
+        "profile": {
+          "outer": [
+            {
+              "start": [
+                3.5,
+                1.0
+              ],
+              "end": [
+                8.0,
+                1.0
+              ],
+              "kind": "line"
+            },
+            {
+              "start": [
+                8.0,
+                1.0
+              ],
+              "end": [
+                8.0,
+                5.0
+              ],
+              "kind": "line"
+            },
+            {
+              "start": [
+                8.0,
+                5.0
+              ],
+              "end": [
+                3.5,
+                5.0
+              ],
+              "kind": "line"
+            },
+            {
+              "start": [
+                3.5,
+                5.0
+              ],
+              "end": [
+                3.0,
+                4.5
+              ],
+              "kind": "arc",
+              "center": [
+                3.5,
+                4.5
+              ],
+              "direction": "ccw"
+            },
+            {
+              "start": [
+                3.0,
+                4.5
+              ],
+              "end": [
+                3.0,
+                1.5
+              ],
+              "kind": "line"
+            },
+            {
+              "start": [
+                3.0,
+                1.5
+              ],
+              "end": [
+                3.5,
+                1.0
+              ],
+              "kind": "arc",
+              "center": [
+                3.5,
+                1.5
+              ],
+              "direction": "ccw"
+            }
+          ],
+          "islands": []
+        },
+        "open_edge_groups": [
+          [
+            6
+          ]
+        ]
+      },
+      "final_z_mm": -0.5
+    }
+  ],
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "tool": {
+    "id": "T1",
+    "kind": "flat_endmill",
+    "center_cutting": true,
+    "diameter_mm": 1,
+    "cutting_length_mm": 5,
+    "length_mm": 20,
+    "basis": "Explicit synthetic test tool, not a qualified physical tool or holder."
+  },
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "Explicit software-only zero transform; real clamping excluded."
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "parameters": {
+    "spindle_rpm": 3000.0,
+    "feed_mm_min": 120.0,
+    "plunge_mm_min": 60.0,
+    "step_down_mm": 0.25,
+    "step_over_percent": 50.0,
+    "safe_height_mm": 2.0,
+    "clearance_height_mm": 3.0,
+    "path_tolerance_mm": 0.001,
+    "edge_extension_mm": 1.0
+  },
+  "strategy": {
+    "clearing_pattern": "Offset",
+    "cut_mode": "Climb",
+    "start_at": "Center",
+    "entry": "vertical_center_cutting",
+    "keep_tool_down": false,
+    "radial_allowance_mm": 0,
+    "axial_allowance_mm": 0,
+    "edge_extension_mode": "declared_native_stock_edge_groups",
+    "extension_corners": true
+  },
+  "parameter_provenance": {
+    "spindle_rpm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "feed_mm_min": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "plunge_mm_min": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "step_down_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "step_over_percent": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "safe_height_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "clearance_height_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "path_tolerance_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+    },
+    "edge_extension_mm": {
+      "kind": "resource_preset",
+      "basis": "Explicit native stock-opening extension; zero for a closed CAD floor."
+    }
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Explicit 0.025 mm numerical grid, same stock and unchanged 5,000,000-cell budget as the preceding small through-hole cases."
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "requirements_ref": {
+    "path": "requirements.json",
+    "sha256": "283589c4a8ef713562d3f2a8446c0ee86d82093b019461116dd8da7e7a44ff35"
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false
+}

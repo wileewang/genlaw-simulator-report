@@ -1,0 +1,89 @@
+{
+  "schema": "genlaw.rough-finish-native-controls.v1",
+  "status": "passed",
+  "controls": [
+    {
+      "id": "omit-finish",
+      "nc_rejected": true,
+      "rejection_reason": "Unexpected tool/spindle transition or operation count",
+      "stage": "finish",
+      "diagnostic_geometry": {
+        "stage": "finish",
+        "iou": 0.9455108332080014,
+        "iou_percent": 94.55108332080015,
+        "all_software_checks_passed": false,
+        "metrics_sha256": "1a7c7c5b19daf18abde81731bba4660e946f57a34675fe56ca1eb37f3161b677",
+        "stage_verification_sha256": "00cf29084b1b1a4930be31744ee1f102ba8c97205db4f51cfdfda18bef85214b"
+      },
+      "expected_geometry_pass": false,
+      "expectation_met": true,
+      "production_approved": false,
+      "guard_rejection_sha256": "1891e475867eb90e194c068e5c59a32da2306bccfaf1c920301bca9f319550f2",
+      "simulation_result_sha256": "f9b5f886581d34686ca40662de5d9283f8b3567bff733abce7524762fa37fd57"
+    },
+    {
+      "id": "wrong-rough-allowance",
+      "nc_rejected": true,
+      "rejection_reason": "Cutter center leaves the declared milling envelope",
+      "stage": "rough",
+      "diagnostic_geometry": {
+        "stage": "rough",
+        "iou": 0.9457749853176247,
+        "iou_percent": 94.57749853176247,
+        "all_software_checks_passed": false,
+        "metrics_sha256": "4b4327062e8faeabf9589c88596d011f9197c713d68a2f234f27a1ed537c3712",
+        "stage_verification_sha256": "a8a68abdb519cae2cb225dabf323ede2684a47631302635a5f45ce02d11bd510"
+      },
+      "expected_geometry_pass": false,
+      "expectation_met": true,
+      "production_approved": false,
+      "guard_rejection_sha256": "1f74bfdc40064b92e74750aa9ee825a989fffff345506b8bcc950befb4473542",
+      "simulation_result_sha256": "ecd7d517a62b400d167e96b2230ea8b1a510866838826fb09f4e25cc37fc3e32"
+    },
+    {
+      "id": "finish-before-rough",
+      "nc_rejected": true,
+      "rejection_reason": "NC rough/finish order differs from the process card",
+      "stage": "finish",
+      "diagnostic_geometry": {
+        "stage": "finish",
+        "iou": 0.9994530443961366,
+        "iou_percent": 99.94530443961366,
+        "all_software_checks_passed": true,
+        "metrics_sha256": "e059efe0655728298390e702d2a4e10ba6f5022fd5837cccfbec643b01d2a518",
+        "stage_verification_sha256": "afb1e16259e39767abae6bdf0c79bb87d9416dc0b4caef00387f0f3061006ec6"
+      },
+      "expected_geometry_pass": true,
+      "expectation_met": true,
+      "production_approved": false,
+      "guard_rejection_sha256": "dbed52a851bad77ebb47fd3006ac4e811cc7e01b7e02279defb5d97abda0f13b",
+      "simulation_result_sha256": "92534e3ce031b749bbb964588d0d79dfc6dd1d94da6c20ba1c98e8ea638ca2f6"
+    },
+    {
+      "id": "finish-overcut",
+      "nc_rejected": true,
+      "rejection_reason": "Actual descent exceeds declared step-down",
+      "stage": "finish",
+      "diagnostic_geometry": {
+        "stage": "finish",
+        "iou": 0.954118866265582,
+        "iou_percent": 95.4118866265582,
+        "all_software_checks_passed": false,
+        "metrics_sha256": "5bb06549c29fc67c8a048ebc052f25c58ae47fe2f3c2541881a03c2ad2f2bbb0",
+        "stage_verification_sha256": "cd1418cf653843b83e68276bec0fb0b20dffd75fec0886a8d3ac822f82f6d609"
+      },
+      "expected_geometry_pass": false,
+      "expectation_met": true,
+      "production_approved": false,
+      "guard_rejection_sha256": "eece48913b0e2581a4316c9ee7d7f25cabd2ffc63c2cd9e5c2ca9383ddfdf9ba",
+      "simulation_result_sha256": "f48147b7650d1454e9250c2562d197cd075df85545fb66f0d85a9e1d4d0dd1ac"
+    }
+  ],
+  "label_spoof_rejected": true,
+  "label_spoof_reason": "Cutter center leaves the declared milling envelope",
+  "baseline_run_sha256": "218ca6b187f3eb93d86813044e850cdc6e3ae940b68296dcc7cbe4dd22dcdcad",
+  "frozen_stage_policy_sha256": "538c2f35e4ac638ff98ffa091afa909b1f407a655fe5b7f8699a961d6956546e",
+  "raw_pdf_agent_integration_tested": false,
+  "all_controls_are_diagnostic_only": true,
+  "production_approved": false
+}

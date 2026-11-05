@@ -1,0 +1,35 @@
+{
+  "schema": "genlaw.software-geometry-policy.v4",
+  "cad_sha256": "13966436957889236a88f2508e6e23412e664e65ca8b27a2eefdba83684de90e",
+  "production_approved": false,
+  "features": {
+    "P1": {
+      "profile_xy": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_boundary_distance",
+        "max_deviation_mm": 0.1
+      },
+      "pocket_depth": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_floor_depth",
+        "min_mm": 0.4,
+        "max_mm": 0.6
+      },
+      "floor_geometry": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_flat_floor",
+        "max_flatness_mm": 0.1,
+        "min_remaining_floor_mm": 0.1
+      }
+    }
+  }
+}

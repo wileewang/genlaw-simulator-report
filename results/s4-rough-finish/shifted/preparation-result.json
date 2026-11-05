@@ -1,0 +1,418 @@
+{
+  "schema": "genlaw.preparation-result.v1",
+  "adapter": "genlaw.preparation.rough-finish.v1",
+  "status": "ready_for_declared_scope",
+  "execution_plan": {
+    "schema": "genlaw.execution-plan.rough-finish.v1",
+    "capability": "rounded_pocket_rough_finish_xy",
+    "input_id": "S4-ROUGH-FINISH-shifted-r2",
+    "mode": "software_geometry_reference",
+    "source_bindings": {
+      "process_plan": {
+        "path": "process-plan.json",
+        "sha256": "39721b46f32988cc218f418aed23b0a3508f446452cf52fc0d58fc9402e13a78"
+      },
+      "cad": {
+        "path": "target.brep",
+        "sha256": "7c8e716d95abff303876e7c24dc457e408fcd3b3958d0f0b4dad7c6a72f135db"
+      },
+      "display_cad": {
+        "path": "target.step",
+        "sha256": "96ca793ed05fe1a4ae8b63cb7b168c01640ecbc3ada2f963a82347333fd39336"
+      },
+      "native_reference": {
+        "path": "target-reference.json",
+        "sha256": "02b72ecfad6cd97edfa6b8e057dfe32141660e6c5e0ee4f5cf03059296a1a1ec"
+      },
+      "rough_cad": {
+        "path": "rough-expected.brep",
+        "sha256": "2e4cc6000d3ac78eaf605c5722487d3d6e566bf4ee03fa44f88c90f4f63b44a8"
+      },
+      "rough_display_cad": {
+        "path": "rough-expected.step",
+        "sha256": "c02d001b1f48d740ec817cdbf422c905f33a029011b5b8df42be8dc8ac7b11ea"
+      },
+      "rough_reference": {
+        "path": "rough-expected-reference.json",
+        "sha256": "859e1dc8a8f2cce02de1bb20746612b9a9196d2de21e7fe73eca02b4106b1a0b"
+      },
+      "requirements": {
+        "path": "requirements.json",
+        "sha256": "613fb2028dd9f5b20b07da673fc48eb16b86a1c97733687336e0d5398efb8e01"
+      },
+      "resources": {
+        "path": "resources.json",
+        "sha256": "41ddda2817d28490481cd229255d7440c3bc46c630043903689e228ad4bf3da7"
+      },
+      "paper_card": {
+        "path": "process-card.pdf",
+        "sha256": "ecf629fa263c0a5a66055da1587e781e7cdc03b8460a21e66167313b2e14a9de"
+      },
+      "stage_policy": {
+        "path": "stage-policy.json",
+        "sha256": "fe6cb8ddb0618df9295800784692b1ce3fd33a014eed08619af80ad43eab4a7e"
+      }
+    },
+    "cad_ref": {
+      "path": "target.brep",
+      "sha256": "7c8e716d95abff303876e7c24dc457e408fcd3b3958d0f0b4dad7c6a72f135db"
+    },
+    "rough_cad_ref": {
+      "path": "rough-expected.brep",
+      "sha256": "2e4cc6000d3ac78eaf605c5722487d3d6e566bf4ee03fa44f88c90f4f63b44a8"
+    },
+    "operations": [
+      {
+        "operation_id": "OP10",
+        "step_id": "OP10.2",
+        "stage": "rough",
+        "type": "pocket_milling",
+        "feature_id": "P1",
+        "geometry": {
+          "id": "P1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            4.5,
+            3.2
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.75,
+          "depth_mm": 0.75
+        },
+        "expected_feature": {
+          "id": "P1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            4.5,
+            3.2
+          ],
+          "width_mm": 3.7,
+          "height_mm": 2.7,
+          "corner_radius_mm": 0.6,
+          "depth_mm": 0.5
+        },
+        "allowance_mm": {
+          "radial": 0.15,
+          "axial": 0.25
+        },
+        "parameters": {
+          "spindle_rpm": 3000.0,
+          "feed_mm_min": 120.0,
+          "plunge_mm_min": 60.0,
+          "step_down_mm": 0.25,
+          "step_over_percent": 50.0,
+          "safe_height_mm": 2.0,
+          "clearance_height_mm": 3.0,
+          "path_tolerance_mm": 0.001
+        },
+        "final_z_mm": -0.5,
+        "preset_id": "P-ROUGH"
+      },
+      {
+        "operation_id": "OP10",
+        "step_id": "OP10.3",
+        "stage": "finish",
+        "type": "pocket_milling",
+        "feature_id": "P1",
+        "geometry": {
+          "id": "P1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            4.5,
+            3.2
+          ],
+          "width_mm": 4,
+          "height_mm": 3,
+          "corner_radius_mm": 0.75,
+          "depth_mm": 0.75
+        },
+        "expected_feature": {
+          "id": "P1",
+          "kind": "rounded_rectangular_pocket",
+          "axis": [
+            0,
+            0,
+            1
+          ],
+          "center_xy_mm": [
+            4.5,
+            3.2
+          ],
+          "width_mm": 4.0,
+          "height_mm": 3.0,
+          "corner_radius_mm": 0.75,
+          "depth_mm": 0.75
+        },
+        "allowance_mm": {
+          "radial": 0.0,
+          "axial": 0.0
+        },
+        "parameters": {
+          "spindle_rpm": 3000.0,
+          "feed_mm_min": 120.0,
+          "plunge_mm_min": 60.0,
+          "step_down_mm": 0.25,
+          "step_over_percent": 50.0,
+          "safe_height_mm": 2.0,
+          "clearance_height_mm": 3.0,
+          "path_tolerance_mm": 0.001
+        },
+        "final_z_mm": -0.75,
+        "preset_id": "P-FINISH"
+      }
+    ],
+    "stock": {
+      "shape": "box",
+      "bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -1.5
+        ],
+        "max": [
+          8.0,
+          6.0,
+          0.0
+        ]
+      },
+      "material_label": "6061-T6",
+      "material_physics_verified": false
+    },
+    "tool": {
+      "id": "T1",
+      "kind": "flat_endmill",
+      "center_cutting": true,
+      "diameter_mm": 1,
+      "cutting_length_mm": 5,
+      "length_mm": 20,
+      "basis": "Explicit synthetic test tool, not a qualified physical tool or holder."
+    },
+    "setup": {
+      "work_offset": "G54",
+      "origin_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "tool_length_offset_mm": 0,
+      "fixture_mode": "unmodelled_explicitly_excluded",
+      "basis": "Explicit software-only zero transform; real clamping excluded."
+    },
+    "controller": {
+      "profile": "reference_NC_subset",
+      "return_mode": "initial_plane",
+      "linuxcnc_runtime_required": false,
+      "arc_centers": "incremental_IJK"
+    },
+    "simulation": {
+      "resolution_mm": 0.025,
+      "basis": "Explicit 0.025 mm numerical grid, same stock and unchanged 5,000,000-cell budget as the preceding small through-hole cases."
+    },
+    "requirements_ref": {
+      "path": "requirements.json",
+      "sha256": "613fb2028dd9f5b20b07da673fc48eb16b86a1c97733687336e0d5398efb8e01"
+    },
+    "scope": {
+      "selected_steps": [
+        "OP10.2",
+        "OP10.3"
+      ],
+      "whole_process_card": false,
+      "declared_preconditions": {
+        "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+        "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+      },
+      "excluded_checks": [
+        "fixture_collision",
+        "holder_collision",
+        "material_physics",
+        "surface_roughness",
+        "whole_process_completion"
+      ]
+    },
+    "production_approved": false,
+    "whole_process_card_complete": false
+  },
+  "issues": [
+    {
+      "code": "missing_information",
+      "field": "requirements/P1-profile_xy",
+      "message": "Manufacturing acceptance remains separate from software stage criteria.",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "input_maintenance"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/P1-pocket_depth",
+      "message": "Manufacturing acceptance remains separate from software stage criteria.",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "input_maintenance"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/P1-floor_geometry",
+      "message": "Manufacturing acceptance remains separate from software stage criteria.",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "input_maintenance"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/P1-surface_roughness",
+      "message": "Manufacturing acceptance remains separate from software stage criteria.",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "input_maintenance"
+    },
+    {
+      "code": "unsupported_capability",
+      "field": "scope",
+      "message": "Same-tool XYZ rough/finish software verification; not whole-card or production approval.",
+      "severity": "scope",
+      "blocked_stage": null,
+      "owner": "input_maintenance"
+    }
+  ],
+  "coverage": [
+    {
+      "operation_id": "OP05",
+      "step_id": "OP05.1",
+      "type": "incoming_inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.1",
+      "type": "setup",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "pocket_milling",
+      "status": "selected_for_preparation"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.3",
+      "type": "pocket_milling",
+      "status": "selected_for_preparation"
+    },
+    {
+      "operation_id": "OP20",
+      "step_id": "OP20.1",
+      "type": "deburring",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP30",
+      "step_id": "OP30.1",
+      "type": "inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP35",
+      "step_id": "OP35.1",
+      "type": "postprocess",
+      "status": "not_verified"
+    }
+  ],
+  "requirement_readiness": [
+    {
+      "id": "P1-profile_xy",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "P1-pocket_depth",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "P1-floor_geometry",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "P1-surface_roughness",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    }
+  ],
+  "input_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "39721b46f32988cc218f418aed23b0a3508f446452cf52fc0d58fc9402e13a78"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "7c8e716d95abff303876e7c24dc457e408fcd3b3958d0f0b4dad7c6a72f135db"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "96ca793ed05fe1a4ae8b63cb7b168c01640ecbc3ada2f963a82347333fd39336"
+    },
+    "native_reference": {
+      "path": "target-reference.json",
+      "sha256": "02b72ecfad6cd97edfa6b8e057dfe32141660e6c5e0ee4f5cf03059296a1a1ec"
+    },
+    "rough_cad": {
+      "path": "rough-expected.brep",
+      "sha256": "2e4cc6000d3ac78eaf605c5722487d3d6e566bf4ee03fa44f88c90f4f63b44a8"
+    },
+    "rough_display_cad": {
+      "path": "rough-expected.step",
+      "sha256": "c02d001b1f48d740ec817cdbf422c905f33a029011b5b8df42be8dc8ac7b11ea"
+    },
+    "rough_reference": {
+      "path": "rough-expected-reference.json",
+      "sha256": "859e1dc8a8f2cce02de1bb20746612b9a9196d2de21e7fe73eca02b4106b1a0b"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "613fb2028dd9f5b20b07da673fc48eb16b86a1c97733687336e0d5398efb8e01"
+    },
+    "resources": {
+      "path": "resources.json",
+      "sha256": "41ddda2817d28490481cd229255d7440c3bc46c630043903689e228ad4bf3da7"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "ecf629fa263c0a5a66055da1587e781e7cdc03b8460a21e66167313b2e14a9de"
+    },
+    "stage_policy": {
+      "path": "stage-policy.json",
+      "sha256": "fe6cb8ddb0618df9295800784692b1ce3fd33a014eed08619af80ad43eab4a7e"
+    }
+  },
+  "source_pdf_automatically_recognized": false,
+  "cad_native_geometry_reparsed_this_run": false,
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "input_id": "S4-ROUGH-FINISH-shifted-r2",
+  "input_manifest_sha256": "cdb8c4551a578fe92e9984bf6802544668420b1d0885886978731588856d06d3",
+  "execution_plan_sha256": "470a5b4fb97075e673f6d63d751d60b31e47a6b18c9e45f741ba2047f59136ca"
+}

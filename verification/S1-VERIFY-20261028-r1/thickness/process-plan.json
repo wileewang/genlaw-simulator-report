@@ -1,0 +1,117 @@
+{
+  "schema": "genlaw.process-plan.v1",
+  "id": "S1-thickness-CARD-r1",
+  "cad_sha256": "e4df88235e0114fa3810e5bbf7cc95f867d53b5fd591b7702735085b7c18c2a3",
+  "origin": "developer_authored_synthetic_paper_card",
+  "transcription": {
+    "status": "checked_against_source",
+    "reviewer_role": "developer_transcription",
+    "production_review": false
+  },
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "external_documents": [],
+  "operations": [
+    {
+      "id": "OP05",
+      "name": "来料核对",
+      "steps": [
+        {
+          "id": "OP05.1",
+          "type": "incoming_inspection",
+          "text": "核对来料外形、厚度、材料状态及版本；确认等大毛坯前提。",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "工序 / 工步 05.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP10",
+      "name": "钻",
+      "steps": [
+        {
+          "id": "OP10.1",
+          "type": "setup",
+          "text": "按确认后的定位基准与装夹方案找正；建立 CAD 与工件坐标的对应关系。",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "工序 / 工步 10.1"
+          }
+        },
+        {
+          "id": "OP10.2",
+          "type": "drilling",
+          "text": "在 (3, 2) 加工 φ2 通孔，贯穿名义板厚 1.0 mm。",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "工序 / 工步 10.2"
+          },
+          "feature_id": "F_HOLE_1",
+          "depends_on": [
+            "OP05.1",
+            "OP10.1"
+          ],
+          "constraints": {
+            "diameter_mm": 2,
+            "through": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP20",
+      "name": "去毛刺",
+      "steps": [
+        {
+          "id": "OP20.1",
+          "type": "deburring",
+          "text": "孔口/外缘是否处理及是否倒角，由制造要求决定，尺寸待审。",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "工序 / 工步 20.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP30",
+      "name": "检验",
+      "steps": [
+        {
+          "id": "OP30.1",
+          "type": "inspection",
+          "text": "按批准的 CAD 与要求逐项检验孔径、孔位、贯穿和外形。",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "工序 / 工步 30.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP35",
+      "name": "后续处置",
+      "steps": [
+        {
+          "id": "OP35.1",
+          "type": "postprocess",
+          "text": "是否需要清洗、标识、包装，由实际交付要求决定。",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "工序 / 工步 35.1"
+          }
+        }
+      ]
+    }
+  ]
+}

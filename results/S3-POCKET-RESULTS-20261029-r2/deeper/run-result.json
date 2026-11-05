@@ -1,0 +1,143 @@
+{
+  "schema": "genlaw.pipeline-run.v1",
+  "status": "software_chain_measured",
+  "input_sha256": "86814052c680d6f96b311d097f40e41b453717c74bbd4fbb0dffb1af19f57a0a",
+  "input_id": "S3-POCKET-deeper-r2",
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "native_stages": [
+    "freecad_cam",
+    "camotics"
+  ],
+  "source_code_sha256": {
+    "pocket_nc.py": "db2015bd1c3545ac6fa2c70d7303492e2358d861dd5bc3ce081f41134ecb11d0",
+    "run.py": "f60da3151624f2be3e798dec779a3833c1b9c8a5f7d639d0942aad92488dcbaa",
+    "measurement.py": "9e253ca7591a33f90d77906bad979374f441de0420c13bbbba0334abe1a681b9",
+    "preparation.py": "d7c73aba79def4ee517673a4768d832d77334837cb311f462ad473eb3e448c7e",
+    "programming.py": "903de2cc94ade2ea4da979e0c3c0f5c52990445ea601b3d00408a04d2c1d4f9f",
+    "verification.py": "be6e39763e2bfa9f8e887f7e064fe11e0d59153e0c9ba727433fba2c4614fc29",
+    "simulation_engine.py": "ca8b49d1cbc3bfac38044c4cd0250a9b413f9cb3d3fcccba5360bd3ab1884ba8",
+    "drilling_geometry.py": "9ff1321f73a09e34d6343f7f8eb3a5a9d68d3be6bd60488298907bd95fb033e5",
+    "measure_worker.py": "ad4f7ecdfcae30fd358f65b4328b9cd512bacbe904e8bddb9749874cb239f41d",
+    "pocket_preparation.py": "f76d9698e1407810083095a4e2bfc4e6265a1fd9ae0d960402eadc526f8756e9",
+    "pocket_geometry.py": "8cef161bd05c1e3871839c94b9cdcecba8c2627b59043ad2c2312b81590f3a4f",
+    "pocket_cam.py": "88f4119976964570c3cd723ef58640626a35baca9705354e5b7ba955b21dcbbb",
+    "blind_verification.py": "e3ab08dd86b14dd235573397df26469145944b23db4e589a2f629568f582207a",
+    "pocket_verification.py": "0e67e8a24508bb6595d18b0b503b9deb4bc6f3f27627de4f42f9320aee697e4b",
+    "__init__.py": "efa8f59200b1bd9b267b22368099635da387e3a7061c628450c7d861b1ed2e1c",
+    "freecad_worker.py": "c893df7d8001d20b6792a710b628ee4c582332296d31d71c059cb01e793b4aad",
+    "reference_sections.py": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+  },
+  "execution_plan_sha256": "3363eec40f8ec6ac516c561539b942315c8d37d4cd3b58955b9ee83bc3ee74fc",
+  "nc_sha256": "9457b9efc8f1a8c72e7d8da9f57d87156f3d6cda3a9b9772956d8c87c959aae4",
+  "simulation_config_sha256": "3a08ba1887a35af375b5c502aad7b92ef2e6257dd61f580caa478ad24df0dd17",
+  "mesh_sha256": "bf203719b1a2bdfc38831600f1e47dbb498ccd472c0a893f1e433c2bba1dfb0f",
+  "iou": 0.999688309805904,
+  "iou_percent": 99.9688309805904,
+  "requirement_readiness": [
+    {
+      "id": "P1-profile_xy",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "P1-pocket_depth",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "P1-floor_geometry",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "P1-surface_roughness",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    }
+  ],
+  "coverage": [
+    {
+      "operation_id": "OP05",
+      "step_id": "OP05.1",
+      "type": "incoming_inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.1",
+      "type": "setup",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "pocket_milling",
+      "status": "software_geometry_measured"
+    },
+    {
+      "operation_id": "OP20",
+      "step_id": "OP20.1",
+      "type": "deburring",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP30",
+      "step_id": "OP30.1",
+      "type": "inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP35",
+      "step_id": "OP35.1",
+      "type": "postprocess",
+      "status": "not_verified"
+    }
+  ],
+  "full_tolerance_acceptance": false,
+  "source_pdf_automatically_recognized": false,
+  "metrics_sha256": "8a8f5c95bbd3c4c1cd99f025cfa3e96c6dbb436163c0ab269f14d8dd3e3cda0b",
+  "feature_verification_sha256": "78c58832e059d2986e9a4a36863a3ccdcffcb7aa33471889ced207b6bb724fe6",
+  "requirement_checks": [
+    {
+      "id": "P1-profile_xy",
+      "feature_id": "P1",
+      "kind": "profile_xy",
+      "nominal": {
+        "center_xy_mm": [
+          4,
+          3
+        ],
+        "width_mm": 4,
+        "height_mm": 2,
+        "corner_radius_mm": 0.5
+      },
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "P1-pocket_depth",
+      "feature_id": "P1",
+      "kind": "pocket_depth",
+      "nominal": 0.75,
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "P1-floor_geometry",
+      "feature_id": "P1",
+      "kind": "floor_geometry",
+      "nominal": "flat",
+      "status": "pending_criteria",
+      "reason": "No approved numerical criterion supplied."
+    },
+    {
+      "id": "P1-surface_roughness",
+      "feature_id": "P1",
+      "kind": "surface_roughness",
+      "nominal": null,
+      "status": "unsupported_measurement",
+      "reason": "No roughness, material physics or general GD&T evaluator."
+    }
+  ]
+}

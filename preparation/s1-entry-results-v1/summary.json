@@ -1,0 +1,57 @@
+{
+  "schema": "genlaw.preparation-milestone.v1",
+  "status": "prototype_checked",
+  "package_id": "S1-PREP-20261028-r1",
+  "implementation": "genlaw_pipeline/preparation.py",
+  "implementation_sha256": "e8d19b68cb95fb70c7d01e8b7ce1ce8bb93792cfb5fb89798740dc2882f5750e",
+  "tests_passed": 41,
+  "python_version": "3.10.12",
+  "default_input": "input.json",
+  "source_card": "process-card.pdf",
+  "human_cad": "target.step",
+  "cases": [
+    {
+      "id": "draft",
+      "title": "原草案保留缺项",
+      "status": "missing_information",
+      "result": "draft-result.json",
+      "meaning": "装夹/坐标和切削参数待补，不生成执行方案。"
+    },
+    {
+      "id": "software_reference",
+      "title": "显式软件参考配置",
+      "status": "ready_for_declared_scope",
+      "result": "software-reference-result.json",
+      "meaning": "解析出执行方案；工艺和生产批准仍为否。"
+    },
+    {
+      "id": "conflict",
+      "title": "卡片孔径与 CAD 冲突",
+      "status": "conflicting_information",
+      "result": "conflict-result.json",
+      "meaning": "返回冲突，不覆盖原始 CAD / 要求。"
+    }
+  ],
+  "draft_blocking_issues": 2,
+  "pending_acceptance_requirements": 4,
+  "derived_final_tip_z_mm": -2.2008606190275604,
+  "reference_consistency": "Derived depth matches saved historical NC parameter record in unit test; no new NC was generated.",
+  "scope": [
+    "manual_source_checked_transcription",
+    "one_axial_through_hole",
+    "prior_native_cad_observation",
+    "explicit_software_resources"
+  ],
+  "not_implemented": [
+    "PDF_OCR",
+    "native_CAD_feature_extraction_in_this_entry",
+    "NC_generation_from_this_execution_plan",
+    "new_material_simulation",
+    "full_tolerance_acceptance",
+    "production_qualification"
+  ],
+  "source_pdf_automatically_recognized": false,
+  "new_native_cad_cam_simulation_runs": 0,
+  "production_approved": false,
+  "next": "Consume the execution plan in a FreeCAD CAM adapter, re-check CAD feature binding, then simulate the same NC; actual engineering input gaps remain explicit."
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "genlaw.rough-finish-input.v1",
+  "id": "S4-ROUGH-FINISH-combined-r2",
+  "mode": "software_geometry_reference",
+  "capability": "rounded_pocket_rough_finish_xy",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2",
+      "OP10.3"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "99dfe520eceab77491ce7d17ed54654604c84c42395ee9251e78f3913adc470f"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "07a971e29602a41a94a0a529c600d5253825d01b8e1f969f883b6f0298fc9a1a"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "fb9b3a203207ced3a39eecacbd428a3f9d96a8022c5cb6a252f0bab56adbf3fc"
+    },
+    "native_reference": {
+      "path": "target-reference.json",
+      "sha256": "aedec01a948663488c3b884d2cfa82ab4b36c7242a47230a151d1cdf4931b815"
+    },
+    "rough_cad": {
+      "path": "rough-expected.brep",
+      "sha256": "ef82229a0adee836add2099ae9bfbd4ffa39ee5a49aa5c21f0443fcb1098a3fd"
+    },
+    "rough_display_cad": {
+      "path": "rough-expected.step",
+      "sha256": "86d275ea11cb521ed1a6c68ac83fa965a5b753b997d87beff777ad6d61c743fd"
+    },
+    "rough_reference": {
+      "path": "rough-expected-reference.json",
+      "sha256": "dda1421652cd6cf566833e120abb93c1b47b11cbae9d16d4ff37418d0c8c90a0"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "e26aafccdf3a310207dc6cf28fb7a8ad9cc2f84c24f4200046e09e754aac97bd"
+    },
+    "resources": {
+      "path": "resources.json",
+      "sha256": "45e35d6ec2051d0837c1bc9c07982ea4b5729a962858dc35489f645733a8572c"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "951cee2c53314d06278c4eb0fa2b3cbbf140e32d9d16f9f4d0dd3450174e6744"
+    },
+    "stage_policy": {
+      "path": "stage-policy.json",
+      "sha256": "538c2f35e4ac638ff98ffa091afa909b1f407a655fe5b7f8699a961d6956546e"
+    }
+  }
+}

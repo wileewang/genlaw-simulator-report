@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S3 · 基础铣削结果导航 · GenLaw</title><meta name="description" content="GenLaw 五模块设计，以及加工准备、NC 生成、仿真检验的起始点与支持范围。">
+<meta name="color-scheme" content="light"><link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=5b56718776"><link rel="stylesheet" href="../../../assets/overview.css?v=ec4cecf825">
+<script src="../../../assets/site.js?v=9e504ac0c0" defer></script><link rel="stylesheet" href="../../../assets/s3.css?v=ea183d420c"></head><body>
+<a class="skip" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../../../index.html" aria-label="GenLaw 开发进度"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13Z" fill="#172a40"/><path d="m22 11-6-3-7 4v8l7 4 7-4v-5h-8v4h4l-3 1.7-3-1.7v-5l3-1.7 4 2Z" fill="#fff"/></svg>GenLaw<small>DESIGN → VERIFY</small></a><nav class="nav" aria-label="主导航"><a href="../../../index.html">开发进度</a><a href="../../../system/development/">开发路线</a><a href="../../../system/">系统设计</a><a href="../../../system/development/results/" aria-current="page">结果库</a></nav></div></header>
+<main id="main" class="wrap"><nav class="crumb" aria-label="面包屑"><a href="../../../index.html">GenLaw</a><span aria-hidden="true">/</span><a href="../../../system/development/results/">结果库</a><span aria-hidden="true">/</span><strong aria-current="page">S3 特征导航</strong></nav><p class="sim-notice" data-site-notice><b>全部结果均为软件仿真，未做真实切削。</b>真实工艺卡整卡通过 0 份。工艺卡和判据多为开发方编写，未经工艺师傅批准。<a href="../../../index.html">开发进度 →</a></p><div class="page-head"><div class="eyebrow">S3 / 特征导航</div>
+      <div class="page-head-row"><h1>基础铣削结果</h1><span class="pill current"><span class="dot" aria-hidden="true"></span>5 类特征 · 20 个用例</span></div>
+      <p>先选择加工特征，再查看该类全部用例。每页包含 IoU、形状对比、加工回放和模块验收。</p></div>
+      <section class="section" aria-label="按加工特征查看结果"><div class="s3-feature-grid"><a class="s3-feature-card" data-s3-feature="pocket" href="pocket/">
+          <div class="s3-feature-copy"><div class="s3-feature-title"><h2>圆角槽</h2><span aria-hidden="true">↗</span></div>
+          <p>封闭圆角槽的分层铣削</p><span class="s3-feature-count">4 个验证用例 · 3 个错误 NC 反例</span></div>
+          <figure><figcaption class="s3-feature-labels"><span>● 输入 CAD</span><span>● 仿真结果</span></figcaption><img src="../../../results/s3-thumbnails/baseline.png" width="1186" height="448" alt="圆角槽代表例：左侧输入 CAD，右侧实际仿真结果" loading="lazy"></figure>
+          <div class="s3-feature-bottom"><p>圆角单槽基准 · 槽深增加 · 槽位偏置 · 槽宽增加</p><strong>查看这类全部结果 →</strong></div></a><a class="s3-feature-card" data-s3-feature="step" href="step/">
+          <div class="s3-feature-copy"><div class="s3-feature-title"><h2>外缘台阶</h2><span aria-hidden="true">↗</span></div>
+          <p>开放边、台肩与外缘清料</p><span class="s3-feature-count">4 个验证用例 · 4 个错误 NC 反例</span></div>
+          <figure><figcaption class="s3-feature-labels"><span>● 输入 CAD</span><span>● 仿真结果</span></figcaption><img src="../../../results/s3-step-thumbnails/baseline.png" width="1186" height="448" alt="外缘台阶代表例：左侧输入 CAD，右侧实际仿真结果" loading="lazy"></figure>
+          <div class="s3-feature-bottom"><p>外缘台阶基准 · 台阶加深 · 台阶加宽 · 改为 Y 向台阶</p><strong>查看这类全部结果 →</strong></div></a><a class="s3-feature-card" data-s3-feature="region" href="region/">
+          <div class="s3-feature-copy"><div class="s3-feature-title"><h2>平面轮廓</h2><span aria-hidden="true">↗</span></div>
+          <p>凹形槽、保留岛台与开口槽</p><span class="s3-feature-count">4 个验证用例 · 4 个错误 NC 反例</span></div>
+          <figure><figcaption class="s3-feature-labels"><span>● 输入 CAD</span><span>● 仿真结果</span></figcaption><img src="../../../results/s3-region-thumbnails/island.png" width="1186" height="448" alt="平面轮廓代表例：左侧输入 CAD，右侧实际仿真结果" loading="lazy"></figure>
+          <div class="s3-feature-bottom"><p>凹形 L 槽 · 保留圆形岛台 · 单侧开口槽 · 两端开口通槽</p><strong>查看这类全部结果 →</strong></div></a><a class="s3-feature-card" data-s3-feature="facing" href="facing/">
+          <div class="s3-feature-copy"><div class="s3-feature-title"><h2>面铣减薄</h2><span aria-hidden="true">↗</span></div>
+          <p>从较厚毛坯铣到目标厚度</p><span class="s3-feature-count">4 个验证用例 · 3 个错误 NC 反例</span></div>
+          <figure><figcaption class="s3-feature-labels"><span>● 输入 CAD</span><span>● 仿真结果</span></figcaption><img src="../../../results/s3-facing-thumbnails/baseline.png" width="1186" height="448" alt="面铣减薄代表例：左侧输入 CAD，右侧实际仿真结果" loading="lazy"></figure>
+          <div class="s3-feature-bottom"><p>面铣减薄 · 增加去除厚度 · 3 mm 来料铣至 2 mm · 保留非零 CAD 坐标</p><strong>查看这类全部结果 →</strong></div></a><a class="s3-feature-card" data-s3-feature="helix" href="helix/">
+          <div class="s3-feature-copy"><div class="s3-feature-title"><h2>螺旋铣孔</h2><span aria-hidden="true">↗</span></div>
+          <p>用铣刀加工通孔并清除中心余料</p><span class="s3-feature-count">4 个验证用例 · 4 个错误 NC 反例</span></div>
+          <figure><figcaption class="s3-feature-labels"><span>● 输入 CAD</span><span>● 仿真结果</span></figcaption><img src="../../../results/s3-helix-thumbnails/wider.png" width="1186" height="448" alt="螺旋铣孔代表例：左侧输入 CAD，右侧实际仿真结果" loading="lazy"></figure>
+          <div class="s3-feature-bottom"><p>螺旋铣通孔 · 加大孔径并清除中心 · 改变孔位 · 增加板厚</p><strong>查看这类全部结果 →</strong></div></a></div>
+      <p class="input-note">共 20 个正常验证用例、18 个错误 NC 反例；当前为软件几何验证，制造批准范围见各页。</p></section>
+      <nav class="stage-nav"><a href="../../../system/development/results/">← 返回结果库</a></nav></main>
+<footer class="footer wrap"><div>GenLaw · 系统设计与开发记录</div><div>站点更新于 2026.11.05 <span aria-hidden="true"> · </span><a href="../../../index.html">开发进度</a> <span aria-hidden="true"> · </span><a href="../../../system/development/results/">结果库</a></div></footer></body></html>

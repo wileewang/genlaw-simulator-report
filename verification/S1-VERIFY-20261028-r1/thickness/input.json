@@ -1,0 +1,64 @@
+{
+  "schema": "genlaw.preparation-input.v1",
+  "id": "S1-FEATURE-thickness-r1",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card",
+    "HISTORICAL": "historical_parameters"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "a2bc76918da5ec3a7bc671a3a3d56aae4437977f8488f69b23b36c59326f4b08"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "e4df88235e0114fa3810e5bbf7cc95f867d53b5fd591b7702735085b7c18c2a3"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "708fabc23e3290dce4d767849f00e05a9ea86c52e177448d28584cef78c2c867"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "a997863ef720043fb97d5fd948dcb655d056ee5446dea55cea1856514d911a39"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "85e98602ff4a5a99bea86260ab5c3b436bf139a2a4d534c056d855da8ee8497c"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "2b388b9d8dbc037590fe5ccfc8ac9b8c045c3c06e205e12c22df56b86c289694"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "e498441853bba2d0c3aa36e8c7a5db5130a6757f7a5468f192b564f298d6a3fc"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "c1b27bff905e6bf4ffc2a02e4d2941ad6074de60f20959c2b520422b0d724155"
+    },
+    "historical_parameters": {
+      "path": "historical-parameters.json",
+      "sha256": "2c80d7dcd0ce419cd7b215177a0d2f153f1080d5dd986bca961f8f7827724de6"
+    }
+  }
+}

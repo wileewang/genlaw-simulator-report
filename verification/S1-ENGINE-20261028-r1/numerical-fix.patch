@@ -1,0 +1,20 @@
+--- a/src/camotics/sim/ConicSweep.cpp
++++ b/src/camotics/sim/ConicSweep.cpp
+@@ -55,6 +55,17 @@
+ 
+   // Check z-height
+   if (Pz < min(Az, Bz) || max(Az, Bz) + l < Pz) return -1;
++
++  // Pure Z translation has an analytic swept-frustum cross section.
++  // Avoid the repeated quadratic root on the tool axis: cancellation in
++  // gamma^2 - epsilon*rho can otherwise reject points inside the sweep.
++  if (Ax == Bx && Ay == By && 0 < l) {
++    const double hMin = max(0.0, Pz - max(Az, Bz));
++    const double hMax = min(l, Pz - min(Az, Bz));
++    if (hMax < hMin) return -1;
++    const double radius = rb + Tm * (Tm < 0 ? hMin : hMax);
++    return sqr(Px - Ax) + sqr(Py - Ay) <= sqr(radius) ? 1 : -1;
++  }
+ 
+   // epsilon * beta^2 + gamma * beta + rho = 0
+   double epsilon = sqr(Bx - Ax) + sqr(By - Ay) - sqr(Tm * (Bz - Az));

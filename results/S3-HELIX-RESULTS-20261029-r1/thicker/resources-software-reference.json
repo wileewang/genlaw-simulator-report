@@ -1,0 +1,131 @@
+{
+  "schema": "genlaw.preparation-resources.v1",
+  "id": "S3-HELIX-thicker-RESOURCES-r2",
+  "units": "mm",
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -2.0
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "machine": {
+    "kind": "generic_XYZ_reference",
+    "axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "real_machine_qualified": false
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "tools": [
+    {
+      "id": "T1",
+      "kind": "flat_endmill",
+      "center_cutting": true,
+      "diameter_mm": 1,
+      "cutting_length_mm": 5,
+      "length_mm": 20,
+      "basis": "Explicit synthetic test tool, not a qualified physical tool or holder."
+    }
+  ],
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "Explicit software-only zero transform; real clamping excluded."
+  },
+  "cutting_presets": [
+    {
+      "id": "REFERENCE-ONLY",
+      "operation": "helical_hole_milling",
+      "tool_id": "T1",
+      "material_label": "6061-T6",
+      "feed_unit": "mm/min",
+      "speed_unit": "rpm",
+      "clearing_pattern": "ConcentricHelix",
+      "cut_mode": "Climb",
+      "start_at": "Inside",
+      "entry": "helical",
+      "keep_tool_down": false,
+      "radial_allowance_mm": 0,
+      "axial_allowance_mm": 0,
+      "spindle_rpm": {
+        "value": 3000,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "feed_mm_min": {
+        "value": 120,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "plunge_mm_min": {
+        "value": 60,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_down_mm": {
+        "value": 0.25,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "step_over_percent": {
+        "value": 50,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "safe_height_mm": {
+        "value": 2,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "clearance_height_mm": {
+        "value": 3,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "path_tolerance_mm": {
+        "value": 0.001,
+        "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+      },
+      "start_radius_mm": 0,
+      "rapid_policy": "air_entry_or_proven_cleared_hole",
+      "entry_clearance_mm": {
+        "value": 0.1,
+        "basis": "Explicit software test attachment: 0.1 mm air entry and exit allowance; not a physical fixture approval."
+      },
+      "breakthrough_mm": {
+        "value": 0.1,
+        "basis": "Explicit software test attachment: 0.1 mm air entry and exit allowance; not a physical fixture approval."
+      }
+    }
+  ],
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "simulation": {
+    "resolution_mm": 0.03,
+    "basis": "Explicit grid frozen before CAM under the unchanged 5,000,000-cell budget; no scaling of the physical target."
+  }
+}

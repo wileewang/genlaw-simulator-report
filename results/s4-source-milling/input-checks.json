@@ -1,0 +1,249 @@
+{
+  "status": "source_milling_checks_passed",
+  "positive_compilations": [
+    {
+      "id": "baseline",
+      "status": "candidate_ready_for_software_geometry",
+      "feature_order": [
+        "P1",
+        "C1",
+        "H1",
+        "H2"
+      ],
+      "actions": 4,
+      "cad_and_resource_semantics_unchanged": true
+    },
+    {
+      "id": "three-holes",
+      "status": "candidate_ready_for_software_geometry",
+      "feature_order": [
+        "P1",
+        "C1",
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "actions": 5,
+      "cad_and_resource_semantics_unchanged": true
+    },
+    {
+      "id": "tool-change",
+      "status": "candidate_ready_for_software_geometry",
+      "feature_order": [
+        "P1",
+        "C1",
+        "H1",
+        "H2"
+      ],
+      "actions": 4,
+      "cad_and_resource_semantics_unchanged": true
+    },
+    {
+      "id": "holes-first",
+      "status": "candidate_ready_for_software_geometry",
+      "feature_order": [
+        "P1",
+        "H2",
+        "H1",
+        "C1"
+      ],
+      "actions": 4,
+      "cad_and_resource_semantics_unchanged": true
+    }
+  ],
+  "rejection_controls": [
+    {
+      "id": "wrong-draft-binding",
+      "code": "changed_input",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-cad-binding",
+      "code": "changed_input",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "unread-source-page",
+      "code": "unread_page",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "unresolved-source",
+      "code": "unresolved_source",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "explicit-hole-tolerance",
+      "code": "unsupported_source_tolerance",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-source-unit",
+      "code": "assertion_semantics",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-source-diameter",
+      "code": "cad_mismatch",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-source-center",
+      "code": "cad_mismatch",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-source-thickness",
+      "code": "cad_mismatch",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-source-axis",
+      "code": "cad_mismatch",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-stock-dimensions",
+      "code": "resource_mismatch",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-material-label",
+      "code": "resource_mismatch",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "replace-milling-with-drilling",
+      "code": "unsupported_operation",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "replace-through-with-blind",
+      "code": "cad_mismatch",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "missing-declared-tool",
+      "code": "missing_tool",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "duplicate-target-feature",
+      "code": "feature_coverage",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "omit-target-hole",
+      "code": "feature_coverage",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "source-id-as-generated-id",
+      "code": "duplicate_action",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "missing-setup-prerequisite",
+      "code": "dropped_source_dependency",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "forward-action-dependency",
+      "code": "invalid_dependency",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "whole-card-promotion",
+      "code": "invalid_scope",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "missing-stage-targets",
+      "code": "missing_context",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "inject-process-plan",
+      "code": "invalid_context",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "cross-row-claim-link",
+      "code": "assertion_semantics",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "unknown-hard-requirement",
+      "code": "unconsumed_requirement",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "reorder-against-source",
+      "code": "source_order",
+      "status": "blocked_at_source_binding",
+      "expectation_met": true
+    },
+    {
+      "id": "reorder-with-stale-stage-targets",
+      "code": "conflicting_information",
+      "status": "blocked_at_preparation",
+      "expectation_met": true
+    },
+    {
+      "id": "missing-cutting-presets",
+      "code": "missing_information",
+      "status": "blocked_at_preparation",
+      "expectation_met": true
+    },
+    {
+      "id": "insufficient-tool-reach",
+      "code": "conflicting_information",
+      "status": "blocked_at_preparation",
+      "expectation_met": true
+    },
+    {
+      "id": "rehash-generated-tool",
+      "normal_entry": true,
+      "expectation_met": true
+    },
+    {
+      "id": "promote-candidate-status",
+      "normal_entry": true,
+      "expectation_met": true
+    },
+    {
+      "id": "remove-source-evidence-and-promote",
+      "normal_entry": true,
+      "expectation_met": true
+    }
+  ],
+  "original_factory_card_status": "blocked_at_source_binding",
+  "original_factory_card_code": "source_conflict",
+  "actual_model_calls": 0,
+  "fixture_manifest_sha256": "0190190f06d93b4486b48e5154d67229ce666d629c655ca84fc604e1dc12e919"
+}

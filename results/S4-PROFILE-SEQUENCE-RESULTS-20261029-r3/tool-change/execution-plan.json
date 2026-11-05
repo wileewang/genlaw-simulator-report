@@ -1,0 +1,660 @@
+{
+  "schema": "genlaw.execution-plan.v11",
+  "capability": "profiled_planar_milling_xy",
+  "input_id": "S4-PROFILE-SEQUENCE-tool-change-r3",
+  "mode": "software_geometry_reference",
+  "source_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "2117fee256764a388bf4464c79573484807f25504196643bbcf9a43e4228d3c4"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "6bb2241279908b5fcf48ae2b3de1d7bc3ca6fbbc6b5479c907050d6c3089715e"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "b417c06ea15c07b6ad05eb6c0d746de33c4994199bcc2edb1beb22abba653f3c"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "bdeb963a461591a355ff5a3531ab5f31151a302a39ab824f0683181f8d0976f2"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "a47a92b43240d452521f4f484d788eacaa107526fa3f2730131d74bf0bdab136"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "86efd831b20c0a96c061482a31c768dcdc175f3a7c4058f9651debef90c6c165"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "1f61c4cc347694a523a638648c806fe877f1115a01f7f4adad436084ccdaa5f1"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "ffb58f9a1bb7cabe13b09a4b8f0141f7b38208f5e00827e1bd425dfde3ca0190"
+    },
+    "expected_states": {
+      "path": "expected-states.json",
+      "sha256": "2065ca19fa8a21f3795e8a7f6b8039ac2d5c1639c4e74c498739366f9594316b"
+    },
+    "after_01": {
+      "path": "expected-state-01.brep",
+      "sha256": "a6e01208357d6012697f5308a68bb3f6360b5cb917a01a0cda6069d8cbf96ffa"
+    },
+    "after_02": {
+      "path": "expected-state-02.brep",
+      "sha256": "8176f267c2a1234f77d2ccb288fedc73051432510d467fd6904570dd64dce7fd"
+    },
+    "after_03": {
+      "path": "expected-state-03.brep",
+      "sha256": "706bf652d1ee36fe508d26d7e5a6de6162b89964de2f65019b55754b1eb4679f"
+    },
+    "after_04": {
+      "path": "expected-state-04.brep",
+      "sha256": "987e7bb666a63e9d20090359fb184c94f5cc8b5679a8bb3b8c162dddf109e513"
+    }
+  },
+  "cad_ref": {
+    "path": "target.brep",
+    "sha256": "6bb2241279908b5fcf48ae2b3de1d7bc3ca6fbbc6b5479c907050d6c3089715e"
+  },
+  "cad_observation_ref": {
+    "path": "geometry-observation.json",
+    "sha256": "bdeb963a461591a355ff5a3531ab5f31151a302a39ab824f0683181f8d0976f2"
+  },
+  "requirements_ref": {
+    "path": "requirements.json",
+    "sha256": "86efd831b20c0a96c061482a31c768dcdc175f3a7c4058f9651debef90c6c165"
+  },
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        4,
+        0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "target_bounds_mm": {
+    "min": [
+      0,
+      0,
+      -1.5
+    ],
+    "max": [
+      8,
+      4,
+      -0.5
+    ]
+  },
+  "tools": [
+    {
+      "id": "T1",
+      "kind": "flat_endmill",
+      "center_cutting": true,
+      "diameter_mm": 2,
+      "cutting_length_mm": 5,
+      "length_mm": 20,
+      "basis": "Explicit synthetic test tool, not a qualified physical tool or holder.",
+      "number": 1
+    },
+    {
+      "id": "T2",
+      "kind": "flat_endmill",
+      "center_cutting": true,
+      "diameter_mm": 1,
+      "cutting_length_mm": 5,
+      "length_mm": 20,
+      "basis": "Explicit synthetic test tool, not a qualified physical tool or holder.",
+      "number": 2
+    }
+  ],
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "Explicit software-only zero transform; real clamping excluded.",
+    "startup": {
+      "position_mm": [
+        0,
+        0,
+        0
+      ],
+      "tool": "unloaded",
+      "spindle": "stopped",
+      "retract_before_tool_selection_z_mm": 3,
+      "basis": "Explicit CAMotics reference initial state: no selected tool. Native post moves to declared clearance before M6; no spindle-head or holder geometry is represented."
+    }
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false,
+    "arc_centers": "incremental_IJK"
+  },
+  "operations": [
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "face_milling",
+      "feature_id": "P1",
+      "geometry": {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face5",
+        "top_z_mm": -0.5,
+        "thickness_mm": 1.0,
+        "bounds_xy_mm": {
+          "min": [
+            0,
+            0
+          ],
+          "max": [
+            8,
+            4
+          ]
+        }
+      },
+      "tool_id": "T1",
+      "tool_number": 1,
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "step_down_mm": 0.25,
+        "step_over_percent": 50.0,
+        "safe_height_mm": 2.0,
+        "clearance_height_mm": 3.0,
+        "path_tolerance_mm": 0.001
+      },
+      "strategy": {
+        "clearing_pattern": "Offset",
+        "cut_mode": "Climb",
+        "start_at": "Center",
+        "entry": "vertical_center_cutting",
+        "keep_tool_down": false,
+        "radial_allowance_mm": 0,
+        "axial_allowance_mm": 0,
+        "boundary_shape": "Boundbox",
+        "clear_edges": true,
+        "exclude_raised_areas": false
+      },
+      "parameter_provenance": {
+        "spindle_rpm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "feed_mm_min": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "plunge_mm_min": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "step_down_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "step_over_percent": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "safe_height_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "clearance_height_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "path_tolerance_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        }
+      },
+      "start_z_mm": 0.0,
+      "final_z_mm": -0.5,
+      "material_before_id": "raw",
+      "material_after_id": "after-01",
+      "removal_depth_mm": 0.5
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.3",
+      "type": "external_profile_milling",
+      "feature_id": "C1",
+      "geometry": {
+        "id": "C1",
+        "kind": "capsule_outline",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face5",
+        "major_axis": "X",
+        "center_xy_mm": [
+          4.0,
+          2.0
+        ],
+        "length_mm": 8,
+        "width_mm": 4,
+        "thickness_mm": 1.0,
+        "top_z_mm": -0.5
+      },
+      "tool_id": "T1",
+      "tool_number": 1,
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "step_down_mm": 0.25,
+        "safe_height_mm": 2.0,
+        "clearance_height_mm": 3.0,
+        "path_tolerance_mm": 0.001,
+        "breakthrough_mm": 0.1
+      },
+      "strategy": {
+        "clearing_pattern": "ClosedProfile",
+        "cut_mode": "CW",
+        "start_at": "NativeBoundary",
+        "entry": "outside_vertical",
+        "keep_tool_down": true,
+        "radial_allowance_mm": 0,
+        "axial_allowance_mm": 0,
+        "side": "Outside",
+        "compensation": "CAM_radius_offset_G40",
+        "profile_passes": 1,
+        "join_type": "Round",
+        "layer_transition": "closed_profile_feed_down"
+      },
+      "parameter_provenance": {
+        "spindle_rpm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "feed_mm_min": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "plunge_mm_min": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "step_down_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "safe_height_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "clearance_height_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "path_tolerance_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "breakthrough_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software through-stock margin, not a physical clamping allowance."
+        }
+      },
+      "start_z_mm": -0.5,
+      "final_z_mm": -1.6,
+      "material_before_id": "after-01",
+      "material_after_id": "after-02"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.4",
+      "type": "helical_hole_milling",
+      "feature_id": "H1",
+      "geometry": {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          2,
+          2
+        ],
+        "diameter_mm": 2,
+        "cylinder_face": "Face7"
+      },
+      "tool_id": "T2",
+      "tool_number": 2,
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "step_down_mm": 0.25,
+        "step_over_percent": 50.0,
+        "safe_height_mm": 2.0,
+        "clearance_height_mm": 3.0,
+        "path_tolerance_mm": 0.001,
+        "entry_clearance_mm": 0.1,
+        "breakthrough_mm": 0.1
+      },
+      "strategy": {
+        "clearing_pattern": "ConcentricHelix",
+        "cut_mode": "Climb",
+        "start_at": "Inside",
+        "entry": "helical",
+        "keep_tool_down": false,
+        "radial_allowance_mm": 0,
+        "axial_allowance_mm": 0,
+        "start_radius_mm": 0,
+        "rapid_policy": "air_entry_or_proven_cleared_hole"
+      },
+      "parameter_provenance": {
+        "spindle_rpm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "feed_mm_min": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "plunge_mm_min": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "step_down_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "step_over_percent": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "safe_height_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "clearance_height_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "path_tolerance_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "entry_clearance_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software test attachment: 0.1 mm air entry and exit allowance; not a physical fixture approval."
+        },
+        "breakthrough_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software test attachment: 0.1 mm air entry and exit allowance; not a physical fixture approval."
+        }
+      },
+      "start_z_mm": -0.4,
+      "final_z_mm": -1.6,
+      "material_before_id": "after-02",
+      "material_after_id": "after-03",
+      "hole_center_xy_mm": [
+        2,
+        2
+      ],
+      "diameter_mm": 2,
+      "through": true
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.5",
+      "type": "helical_hole_milling",
+      "feature_id": "H2",
+      "geometry": {
+        "id": "H2",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          6,
+          2
+        ],
+        "diameter_mm": 2,
+        "cylinder_face": "Face8"
+      },
+      "tool_id": "T2",
+      "tool_number": 2,
+      "parameters": {
+        "spindle_rpm": 3000.0,
+        "feed_mm_min": 120.0,
+        "plunge_mm_min": 60.0,
+        "step_down_mm": 0.25,
+        "step_over_percent": 50.0,
+        "safe_height_mm": 2.0,
+        "clearance_height_mm": 3.0,
+        "path_tolerance_mm": 0.001,
+        "entry_clearance_mm": 0.1,
+        "breakthrough_mm": 0.1
+      },
+      "strategy": {
+        "clearing_pattern": "ConcentricHelix",
+        "cut_mode": "Climb",
+        "start_at": "Inside",
+        "entry": "helical",
+        "keep_tool_down": false,
+        "radial_allowance_mm": 0,
+        "axial_allowance_mm": 0,
+        "start_radius_mm": 0,
+        "rapid_policy": "air_entry_or_proven_cleared_hole"
+      },
+      "parameter_provenance": {
+        "spindle_rpm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "feed_mm_min": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "plunge_mm_min": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "step_down_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "step_over_percent": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "safe_height_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "clearance_height_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "path_tolerance_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software reference only, not a production recommendation or inferred missing field."
+        },
+        "entry_clearance_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software test attachment: 0.1 mm air entry and exit allowance; not a physical fixture approval."
+        },
+        "breakthrough_mm": {
+          "kind": "resource_preset",
+          "basis": "Explicit software test attachment: 0.1 mm air entry and exit allowance; not a physical fixture approval."
+        }
+      },
+      "start_z_mm": -0.4,
+      "final_z_mm": -1.6,
+      "material_before_id": "after-03",
+      "material_after_id": "after-04",
+      "hole_center_xy_mm": [
+        6,
+        2
+      ],
+      "diameter_mm": 2,
+      "through": true
+    }
+  ],
+  "material_states": [
+    {
+      "id": "raw",
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          4,
+          0
+        ]
+      },
+      "completed_features": []
+    },
+    {
+      "id": "after-01",
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          4,
+          -0.5
+        ]
+      },
+      "completed_features": [
+        "P1"
+      ]
+    },
+    {
+      "id": "after-02",
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          4,
+          -0.5
+        ]
+      },
+      "completed_features": [
+        "P1",
+        "C1"
+      ]
+    },
+    {
+      "id": "after-03",
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          4,
+          -0.5
+        ]
+      },
+      "completed_features": [
+        "P1",
+        "C1",
+        "H1"
+      ]
+    },
+    {
+      "id": "after-04",
+      "bounds_mm": {
+        "min": [
+          0,
+          0,
+          -1.5
+        ],
+        "max": [
+          8,
+          4,
+          -0.5
+        ]
+      },
+      "completed_features": [
+        "P1",
+        "C1",
+        "H1",
+        "H2"
+      ]
+    }
+  ],
+  "expected_states_ref": {
+    "path": "expected-states.json",
+    "sha256": "2065ca19fa8a21f3795e8a7f6b8039ac2d5c1639c4e74c498739366f9594316b"
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Explicit grid frozen before CAM under the unchanged 5,000,000-cell budget; no scaling of the physical target."
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2",
+      "OP10.3",
+      "OP10.4",
+      "OP10.5"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "显式完整矩形来料；各工步连续去料，不从预期成品重新创建来料。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false
+}

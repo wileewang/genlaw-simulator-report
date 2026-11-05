@@ -1,0 +1,130 @@
+{
+  "schema": "genlaw.cam-result.v1",
+  "status": "generated_and_checked",
+  "execution_plan_sha256": "d6e6c29fcf0c14ef6ee4aaf3de5a7079078c63ea2112b814fad14c44a209c789",
+  "native_cad_binding": {
+    "schema": "genlaw.native-binding.v1",
+    "status": "verified",
+    "cad_sha256": "2026181589986e17c523da5b007fb3a24a74ade6cd0568cf8ea91ad1ff93c458",
+    "reference_class": "axis_aligned_box_minus_one_z_through_cylinder",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "volume_mm3": 64.63689221814892,
+    "valid_single_solid": true,
+    "hole_center_xy": [
+      3.0,
+      2.0
+    ],
+    "hole_radius_mm": 1.25,
+    "cylinder_face": "Face7",
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "reference_for_iou": "Analytic box minus cylinder checked by native BREP boolean difference."
+  },
+  "nc_sha256": "9bceb26ea0a32b1909740d0767689249dcad73ae756de600f8f972763d391f5e",
+  "nc_check": {
+    "status": "matched_declared_trace",
+    "executable_blocks": 16,
+    "post_decimal_places": 5,
+    "text_modified": false,
+    "scope": "single-hole XYZ/G54/G81 reference; not a general NC interpreter"
+  },
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "gui_up": false,
+  "postprocessor": "FreeCAD bundled linuxcnc_post",
+  "post_arguments": "--no-show-editor --no-tlo --precision 5",
+  "postprocessor_sha256": "ca9f2aa3c0a40ca17f03a6000820c45a1748240226503990f5a529a9fdefa7e6",
+  "drilling_module_sha256": "61a480d63940776cde6ed0baf66b951942b478d472cf3778afd8a3ac9f7a2b79",
+  "selected_features": [
+    {
+      "object": "Clone",
+      "subelements": [
+        "Face7"
+      ]
+    }
+  ],
+  "tool_number_mapping": {
+    "T1": 1
+  },
+  "path_commands": [
+    {
+      "name": "(Drilling)",
+      "parameters": {}
+    },
+    {
+      "name": "(Begin Drilling)",
+      "parameters": {}
+    },
+    {
+      "name": "G90",
+      "parameters": {}
+    },
+    {
+      "name": "G0",
+      "parameters": {
+        "F": 0.0,
+        "Z": 3.0
+      }
+    },
+    {
+      "name": "G98",
+      "parameters": {}
+    },
+    {
+      "name": "G0",
+      "parameters": {
+        "F": 0.0,
+        "X": 3.0,
+        "Y": 2.0
+      }
+    },
+    {
+      "name": "G0",
+      "parameters": {
+        "F": 0.0,
+        "Z": 2.0
+      }
+    },
+    {
+      "name": "G81",
+      "parameters": {
+        "F": 1.0,
+        "R": 1.0,
+        "X": 3.0,
+        "Y": 2.0,
+        "Z": -2.3510757737844505
+      }
+    },
+    {
+      "name": "G80",
+      "parameters": {}
+    },
+    {
+      "name": "G0",
+      "parameters": {
+        "Z": 3.0
+      }
+    }
+  ],
+  "linuxcnc_runtime_used": false,
+  "production_approved": false
+}

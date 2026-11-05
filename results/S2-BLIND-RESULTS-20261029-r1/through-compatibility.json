@@ -1,0 +1,359 @@
+{
+  "schema": "genlaw.pattern-suite.v1",
+  "id": "S2-THROUGH-AFTER-BLIND-20261029-r1",
+  "status": "completed",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "specification": {
+        "id": "baseline",
+        "name": "双孔基准",
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ],
+        "features": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              5.5,
+              4
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "order": [
+          "H1",
+          "H2"
+        ]
+      },
+      "iou_percent": 99.97240505789905,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "executed_feature_order": [
+        "H1",
+        "H2"
+      ]
+    },
+    {
+      "id": "reverse-order",
+      "specification": {
+        "id": "reverse-order",
+        "name": "反向孔序",
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ],
+        "features": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              5.5,
+              4
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "order": [
+          "H2",
+          "H1"
+        ]
+      },
+      "iou_percent": 99.9724050578991,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "executed_feature_order": [
+        "H2",
+        "H1"
+      ]
+    },
+    {
+      "id": "three-holes",
+      "specification": {
+        "id": "three-holes",
+        "name": "增加第三孔",
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ],
+        "features": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              5.5,
+              4
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H3",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              5.5,
+              1.5
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "order": [
+          "H1",
+          "H2",
+          "H3"
+        ]
+      },
+      "iou_percent": 99.9689895791705,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H3": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "executed_feature_order": [
+        "H1",
+        "H2",
+        "H3"
+      ]
+    },
+    {
+      "id": "larger-plate",
+      "specification": {
+        "id": "larger-plate",
+        "name": "外形与孔距放大",
+        "size_mm": [
+          10,
+          7.5,
+          1.5
+        ],
+        "features": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              2.5,
+              2.5
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              6.875,
+              5
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "order": [
+          "H1",
+          "H2"
+        ]
+      },
+      "iou_percent": 99.97861166533181,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "executed_feature_order": [
+        "H1",
+        "H2"
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "missing-hole",
+      "affected_feature": "H2",
+      "unaffected_feature": "H1",
+      "guard_rejected": true,
+      "iou_percent": 92.97367683890575,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "regression_expectation_met": true
+    },
+    {
+      "id": "wrong-position",
+      "affected_feature": "H2",
+      "unaffected_feature": "H1",
+      "guard_rejected": true,
+      "iou_percent": 95.34207316919698,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_fail",
+          "through": "numeric_pass"
+        }
+      },
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "regression_expectation_met": true
+    },
+    {
+      "id": "not-through",
+      "affected_feature": "H2",
+      "unaffected_feature": "H1",
+      "guard_rejected": true,
+      "iou_percent": 95.64798854571886,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "verifier_sha256": "5f2bb8695e4e8cbb1a0c24bbc00979356be101ec5dfc92233a5ae1648fb59383",
+      "regression_expectation_met": true
+    }
+  ],
+  "all_regression_expectations_met": true,
+  "input_archive": "S2-PATTERNS-20261028-r2",
+  "input_manifest_sha256": "a613df6bce4d623ab8a2087a5d0ce8289d0f2ed5d8f8692fc49e2ac83ebd8b6c",
+  "production_approved": false,
+  "blind_holes_verified": false,
+  "whole_process_card_complete": false
+}

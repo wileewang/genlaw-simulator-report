@@ -1,0 +1,61 @@
+{
+  "schema": "genlaw.preparation-input.v2",
+  "id": "S2-three-holes-r2",
+  "mode": "software_geometry_reference",
+  "source_documents": {
+    "CARD": "paper_card"
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2",
+      "OP10.3",
+      "OP10.4"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "files": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "4fdfda62b4bcef66f4f595dfae7fb87c1c3c7ce6abb75d3e84d9fb997bed21bd"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "503e8f08009cf3cb2b210df25bae38d1afcb1abc35395d77cc32e67c257119a4"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "269d512515f7b829c190f06050b9a6d34745b1eb94197c405f4216f1321ecbf9"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "0aec7ec9c2728a0d706a01e91c8c0e7253cb5dd2d86246927999ef61a762b327"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "e3970ae142df052666eea28cbadb13071bf7bb9ca42d1d6a374725413535c6d9"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "e45fdc7b597c26ac446f7b6295ebf601c7684300e359a3af5fd384702854513e"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "ea18da5770cb6bdafa6b403cde4f594daf8b5fee42e7f130f9ebd15635ec66e0"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "e968b1dc33a769a4c4430cc4fec9ab2439d2257a481cbdb9b3acabcb83fb6377"
+    }
+  }
+}

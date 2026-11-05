@@ -1,0 +1,651 @@
+{
+  "schema": "genlaw.cam-result.v1",
+  "status": "generated_and_checked",
+  "native_cad_binding": {
+    "schema": "genlaw.native-binding.v8",
+    "status": "verified",
+    "cad_sha256": "ffe875932077ea3b9e144f4a71a5354485a281dfe9403e6d782780025164c02a",
+    "reference_class": "axis_aligned_box_minus_disjoint_z_through_cylinders",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "volume_mm3": 67.2876110196153,
+    "valid_single_solid": true,
+    "features": [
+      {
+        "id": "H1",
+        "kind": "through_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          5,
+          3.5
+        ],
+        "diameter_mm": 2,
+        "cylinder_face": "Face7"
+      }
+    ],
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "reference_for_iou": "Original CAD box minus through-cylinder checked by independent native boolean difference; milling intent does not change the CAD target."
+  },
+  "nc_sha256": "2a0911b622f9e1009a2fd9426b3ead334dc9d60ca9f1699e533073ec201ed9d7",
+  "native_operation": "Helix",
+  "native_stock": {
+    "construction": "FreeCAD Stock.CreateBox from declared incoming bounds",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "stock_type": "CreateBox"
+  },
+  "freecad_version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "gui_up": false,
+  "postprocessor": "FreeCAD bundled linuxcnc_post",
+  "post_arguments": "--no-show-editor --no-tlo --precision 5",
+  "native_path_sha256": "a41903f2f99d7249f1e9d3a9484fe557b07a372dc88aa0f7e80116e22c3fec04",
+  "operation_bindings": [
+    {
+      "step_id": "OP10.2",
+      "feature_id": "H1",
+      "cam_operation": "Helix",
+      "selected_features": [
+        {
+          "object": "Clone",
+          "subelements": [
+            "Face7"
+          ]
+        }
+      ]
+    }
+  ],
+  "parameters": {
+    "start_depth_mm": 0.1,
+    "final_depth_mm": -1.6,
+    "step_down_mm": 0.25,
+    "step_over_percent": 50,
+    "start_radius_mm": 0.0,
+    "offset_extra_mm": 0.0,
+    "start_side": "Inside",
+    "cut_mode": "Climb",
+    "direction": "CCW"
+  },
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "nc_check": {
+    "status": "checked_declared_helical_hole",
+    "text_modified": false,
+    "executable_blocks": 33,
+    "scope": "Fixed-axis G17/G54, incremental I/J, CCW helical clearing with explicit air entry and breakthrough; no general NC interpreter.",
+    "step_map": [
+      {
+        "step_id": "OP10.2",
+        "feature_id": "H1",
+        "first_executable_block": 6,
+        "last_executable_block": 30
+      }
+    ],
+    "radial_passes": [
+      {
+        "radius_mm": 0.5,
+        "first_executable_block": 11,
+        "last_executable_block": 27,
+        "bottom_angle_radians": 6.283185307179586,
+        "descending_arc_count": 14,
+        "max_pitch_mm_per_turn": 0.2428600000000003
+      }
+    ],
+    "cleared_radius_mm": 1.0,
+    "arc_moves": 16,
+    "helical_arc_moves": 14,
+    "feed_time_seconds": 12.599175804938596,
+    "rapid_time_not_included": true,
+    "motion_trace": [
+      {
+        "block": 6,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          null
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 7,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          null,
+          null,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 8,
+        "motion": "G0",
+        "start": [
+          null,
+          null,
+          3.0
+        ],
+        "end": [
+          5.0,
+          3.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 9,
+        "motion": "G0",
+        "start": [
+          5.0,
+          3.5,
+          3.0
+        ],
+        "end": [
+          5.0,
+          3.5,
+          0.1
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 10,
+        "motion": "G0",
+        "start": [
+          5.0,
+          3.5,
+          0.1
+        ],
+        "end": [
+          5.5,
+          3.5,
+          0.1
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 11,
+        "motion": "G1",
+        "start": [
+          5.5,
+          3.5,
+          0.1
+        ],
+        "end": [
+          5.5,
+          3.5,
+          0.1
+        ],
+        "feed_mm_min": 60.0,
+        "feed_time_end_seconds": 0.0
+      },
+      {
+        "block": 12,
+        "motion": "G3",
+        "start": [
+          5.5,
+          3.5,
+          0.1
+        ],
+        "end": [
+          4.5,
+          3.5,
+          -0.02143
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 0.7877414463471405,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24286000000000002
+      },
+      {
+        "block": 13,
+        "motion": "G3",
+        "start": [
+          4.5,
+          3.5,
+          -0.02143
+        ],
+        "end": [
+          5.5,
+          3.5,
+          -0.14286
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 1.575482892694281,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24285999999999996
+      },
+      {
+        "block": 14,
+        "motion": "G3",
+        "start": [
+          5.5,
+          3.5,
+          -0.14286
+        ],
+        "end": [
+          4.5,
+          3.5,
+          -0.26429
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 2.3632243390414214,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24286000000000008
+      },
+      {
+        "block": 15,
+        "motion": "G3",
+        "start": [
+          4.5,
+          3.5,
+          -0.26429
+        ],
+        "end": [
+          5.5,
+          3.5,
+          -0.38571
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 3.1509654000304272,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24283999999999994
+      },
+      {
+        "block": 16,
+        "motion": "G3",
+        "start": [
+          5.5,
+          3.5,
+          -0.38571
+        ],
+        "end": [
+          4.5,
+          3.5,
+          -0.50714
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 3.938706846377568,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24286000000000008
+      },
+      {
+        "block": 17,
+        "motion": "G3",
+        "start": [
+          4.5,
+          3.5,
+          -0.50714
+        ],
+        "end": [
+          5.5,
+          3.5,
+          -0.62857
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 4.726448292724708,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24285999999999985
+      },
+      {
+        "block": 18,
+        "motion": "G3",
+        "start": [
+          5.5,
+          3.5,
+          -0.62857
+        ],
+        "end": [
+          4.5,
+          3.5,
+          -0.75
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 5.514189739071848,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24286000000000008
+      },
+      {
+        "block": 19,
+        "motion": "G3",
+        "start": [
+          4.5,
+          3.5,
+          -0.75
+        ],
+        "end": [
+          5.5,
+          3.5,
+          -0.87143
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 6.301931185418988,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24286000000000008
+      },
+      {
+        "block": 20,
+        "motion": "G3",
+        "start": [
+          5.5,
+          3.5,
+          -0.87143
+        ],
+        "end": [
+          4.5,
+          3.5,
+          -0.99286
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 7.0896726317661285,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24285999999999985
+      },
+      {
+        "block": 21,
+        "motion": "G3",
+        "start": [
+          4.5,
+          3.5,
+          -0.99286
+        ],
+        "end": [
+          5.5,
+          3.5,
+          -1.11429
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 7.877414078113269,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24286000000000008
+      },
+      {
+        "block": 22,
+        "motion": "G3",
+        "start": [
+          5.5,
+          3.5,
+          -1.11429
+        ],
+        "end": [
+          4.5,
+          3.5,
+          -1.23571
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 8.665155139102275,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24284000000000017
+      },
+      {
+        "block": 23,
+        "motion": "G3",
+        "start": [
+          4.5,
+          3.5,
+          -1.23571
+        ],
+        "end": [
+          5.5,
+          3.5,
+          -1.35714
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 9.452896585449416,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24285999999999985
+      },
+      {
+        "block": 24,
+        "motion": "G3",
+        "start": [
+          5.5,
+          3.5,
+          -1.35714
+        ],
+        "end": [
+          4.5,
+          3.5,
+          -1.47857
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 10.240638031796557,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.24285999999999985
+      },
+      {
+        "block": 25,
+        "motion": "G3",
+        "start": [
+          4.5,
+          3.5,
+          -1.47857
+        ],
+        "end": [
+          5.5,
+          3.5,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 11.028379478143698,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": 0.2428600000000003
+      },
+      {
+        "block": 26,
+        "motion": "G3",
+        "start": [
+          5.5,
+          3.5,
+          -1.6
+        ],
+        "end": [
+          4.5,
+          3.5,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 11.813777641541147,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0
+      },
+      {
+        "block": 27,
+        "motion": "G3",
+        "start": [
+          4.5,
+          3.5,
+          -1.6
+        ],
+        "end": [
+          5.5,
+          3.5,
+          -1.6
+        ],
+        "feed_mm_min": 120.0,
+        "feed_time_end_seconds": 12.599175804938596,
+        "arc_center_xy_mm": [
+          5.0,
+          3.5
+        ],
+        "radius_mm": 0.5,
+        "sweep_radians": 3.141592653589793,
+        "helical_pitch_mm_per_turn": -0.0
+      },
+      {
+        "block": 28,
+        "motion": "G0",
+        "start": [
+          5.5,
+          3.5,
+          -1.6
+        ],
+        "end": [
+          5.0,
+          3.5,
+          -1.6
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 12.599175804938596
+      },
+      {
+        "block": 29,
+        "motion": "G0",
+        "start": [
+          5.0,
+          3.5,
+          -1.6
+        ],
+        "end": [
+          5.0,
+          3.5,
+          0.1
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 12.599175804938596
+      },
+      {
+        "block": 30,
+        "motion": "G0",
+        "start": [
+          5.0,
+          3.5,
+          0.1
+        ],
+        "end": [
+          5.0,
+          3.5,
+          3.0
+        ],
+        "feed_mm_min": null,
+        "feed_time_end_seconds": 12.599175804938596
+      }
+    ],
+    "entry_height_mm": 0.1,
+    "final_depth_mm": -1.6,
+    "rapid_in_stock_requires_previously_cleared_volume": true
+  },
+  "execution_plan_sha256": "ef109ca813a4fe7e5700d0ba051e2b4c51eed46a5854bd22c0a8cee8dba2d852"
+}

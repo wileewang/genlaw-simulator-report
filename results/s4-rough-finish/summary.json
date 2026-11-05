@@ -1,0 +1,201 @@
+{
+  "schema": "genlaw.rough-finish-publication.v1",
+  "status": "verified_reference_cases",
+  "normal_cases": [
+    {
+      "id": "combined",
+      "name": "侧壁与槽底组合余量",
+      "allowance_mm": {
+        "radial": 0.2,
+        "axial": 0.2
+      },
+      "stages": [
+        {
+          "stage": "rough",
+          "iou": 0.9996435730254646,
+          "iou_percent": 99.96435730254646,
+          "all_software_checks_passed": true,
+          "metrics_sha256": "e04cf01786e77caf1c03660436361fae4519601b9736dd2265316a689a7ab28b",
+          "stage_verification_sha256": "6a329749bb383fb43732e1d8babb0f12e66c45e7e66b301b6729e0ad3a567ae8"
+        },
+        {
+          "stage": "finish",
+          "iou": 0.9994530443961366,
+          "iou_percent": 99.94530443961366,
+          "all_software_checks_passed": true,
+          "metrics_sha256": "b6f09a97dd3ed1c65d10b0c8c80b0ad46a16308e2893b90d50c7083bf2f80ce7",
+          "stage_verification_sha256": "efd74db013d16e34bcbc947a7284fa28a2a7ed79490f328a23ec7ad197c941bc"
+        }
+      ],
+      "iou_percent": 99.94530443961366,
+      "run_result_sha256": "218ca6b187f3eb93d86813044e850cdc6e3ae940b68296dcc7cbe4dd22dcdcad"
+    },
+    {
+      "id": "radial",
+      "name": "仅侧壁留余量",
+      "allowance_mm": {
+        "radial": 0.2,
+        "axial": 0.0
+      },
+      "stages": [
+        {
+          "stage": "rough",
+          "iou": 0.9995958445820763,
+          "iou_percent": 99.95958445820763,
+          "all_software_checks_passed": true,
+          "metrics_sha256": "a30251267be72ebc4084a0b67981f2c8dd5a0965e24e6c791a0f8cde4ab14fc6",
+          "stage_verification_sha256": "404c477aee0ac9a2d377d8c7e2d5913a71946a42a1885b2e8c2d0f087394770d"
+        },
+        {
+          "stage": "finish",
+          "iou": 0.9994530443961366,
+          "iou_percent": 99.94530443961366,
+          "all_software_checks_passed": true,
+          "metrics_sha256": "003c0a2b16bd32ccdd8f3a34f1a1b7e398cd1b5e3022350da4f8e4b22926fbae",
+          "stage_verification_sha256": "84b57640cdad2691601ae3af91063fb9667d0fd4bc19ed37b1880c00ec18da70"
+        }
+      ],
+      "iou_percent": 99.94530443961366,
+      "run_result_sha256": "24629028fb7525a6edbd43e6d88b13f9e8903e1f576948e847e7c8bdcb373caf"
+    },
+    {
+      "id": "axial",
+      "name": "仅槽底留余量",
+      "allowance_mm": {
+        "radial": 0.0,
+        "axial": 0.2
+      },
+      "stages": [
+        {
+          "stage": "rough",
+          "iou": 0.9995439234620522,
+          "iou_percent": 99.95439234620522,
+          "all_software_checks_passed": true,
+          "metrics_sha256": "6ff51031df33ae6d3a031beae4589a721837445d1fd7aba8973d66fd62faecd1",
+          "stage_verification_sha256": "1c93ca61d217443c0b207d7e5297d9f87dc2446cd00288f36247353adb047a1b"
+        },
+        {
+          "stage": "finish",
+          "iou": 0.9994530443961366,
+          "iou_percent": 99.94530443961366,
+          "all_software_checks_passed": true,
+          "metrics_sha256": "003c0a2b16bd32ccdd8f3a34f1a1b7e398cd1b5e3022350da4f8e4b22926fbae",
+          "stage_verification_sha256": "96a773a82bbbfdb5f0fa5e344ff9a9c7a7c1840bcb73fc6ebdc4db519bbb954e"
+        }
+      ],
+      "iou_percent": 99.94530443961366,
+      "run_result_sha256": "c45f11649bd3765d298129afaf96c9ceec15966f8a8aa86b83189a843709828c"
+    },
+    {
+      "id": "shifted",
+      "name": "偏置槽与不同余量",
+      "allowance_mm": {
+        "radial": 0.15,
+        "axial": 0.25
+      },
+      "stages": [
+        {
+          "stage": "rough",
+          "iou": 0.9996700100049435,
+          "iou_percent": 99.96700100049435,
+          "all_software_checks_passed": true,
+          "metrics_sha256": "8a91a778f75742854011f9142831cb67f814ba063311fa5bb7ce7af13d37b6ff",
+          "stage_verification_sha256": "047607d8df36d45349fbf89e514156f845b75041b1c69b8adc1da25591b24c35"
+        },
+        {
+          "stage": "finish",
+          "iou": 0.9994530460196391,
+          "iou_percent": 99.94530460196391,
+          "all_software_checks_passed": true,
+          "metrics_sha256": "399123ffcdd113cc73ae8737534a365116f8dc08f4d49a37dd61e3a5b50d28b1",
+          "stage_verification_sha256": "d632f37c2ea1fcae797738d3109582e8471f621d7f88d91476a28644bdc62a65"
+        }
+      ],
+      "iou_percent": 99.94530460196391,
+      "run_result_sha256": "f05623c7274dfc4dbb87ec9cf0bf947a353af28b810e4bc7fe53188119761009"
+    }
+  ],
+  "controls": [
+    {
+      "id": "omit-finish",
+      "nc_rejected": true,
+      "rejection_reason": "Unexpected tool/spindle transition or operation count",
+      "stage": "finish",
+      "diagnostic_geometry": {
+        "stage": "finish",
+        "iou": 0.9455108332080014,
+        "iou_percent": 94.55108332080015,
+        "all_software_checks_passed": false,
+        "metrics_sha256": "1a7c7c5b19daf18abde81731bba4660e946f57a34675fe56ca1eb37f3161b677",
+        "stage_verification_sha256": "00cf29084b1b1a4930be31744ee1f102ba8c97205db4f51cfdfda18bef85214b"
+      },
+      "expected_geometry_pass": false,
+      "expectation_met": true,
+      "production_approved": false,
+      "guard_rejection_sha256": "1891e475867eb90e194c068e5c59a32da2306bccfaf1c920301bca9f319550f2",
+      "simulation_result_sha256": "f9b5f886581d34686ca40662de5d9283f8b3567bff733abce7524762fa37fd57"
+    },
+    {
+      "id": "wrong-rough-allowance",
+      "nc_rejected": true,
+      "rejection_reason": "Cutter center leaves the declared milling envelope",
+      "stage": "rough",
+      "diagnostic_geometry": {
+        "stage": "rough",
+        "iou": 0.9457749853176247,
+        "iou_percent": 94.57749853176247,
+        "all_software_checks_passed": false,
+        "metrics_sha256": "4b4327062e8faeabf9589c88596d011f9197c713d68a2f234f27a1ed537c3712",
+        "stage_verification_sha256": "a8a68abdb519cae2cb225dabf323ede2684a47631302635a5f45ce02d11bd510"
+      },
+      "expected_geometry_pass": false,
+      "expectation_met": true,
+      "production_approved": false,
+      "guard_rejection_sha256": "1f74bfdc40064b92e74750aa9ee825a989fffff345506b8bcc950befb4473542",
+      "simulation_result_sha256": "ecd7d517a62b400d167e96b2230ea8b1a510866838826fb09f4e25cc37fc3e32"
+    },
+    {
+      "id": "finish-before-rough",
+      "nc_rejected": true,
+      "rejection_reason": "NC rough/finish order differs from the process card",
+      "stage": "finish",
+      "diagnostic_geometry": {
+        "stage": "finish",
+        "iou": 0.9994530443961366,
+        "iou_percent": 99.94530443961366,
+        "all_software_checks_passed": true,
+        "metrics_sha256": "e059efe0655728298390e702d2a4e10ba6f5022fd5837cccfbec643b01d2a518",
+        "stage_verification_sha256": "afb1e16259e39767abae6bdf0c79bb87d9416dc0b4caef00387f0f3061006ec6"
+      },
+      "expected_geometry_pass": true,
+      "expectation_met": true,
+      "production_approved": false,
+      "guard_rejection_sha256": "dbed52a851bad77ebb47fd3006ac4e811cc7e01b7e02279defb5d97abda0f13b",
+      "simulation_result_sha256": "92534e3ce031b749bbb964588d0d79dfc6dd1d94da6c20ba1c98e8ea638ca2f6"
+    },
+    {
+      "id": "finish-overcut",
+      "nc_rejected": true,
+      "rejection_reason": "Actual descent exceeds declared step-down",
+      "stage": "finish",
+      "diagnostic_geometry": {
+        "stage": "finish",
+        "iou": 0.954118866265582,
+        "iou_percent": 95.4118866265582,
+        "all_software_checks_passed": false,
+        "metrics_sha256": "5bb06549c29fc67c8a048ebc052f25c58ae47fe2f3c2541881a03c2ad2f2bbb0",
+        "stage_verification_sha256": "cd1418cf653843b83e68276bec0fb0b20dffd75fec0886a8d3ac822f82f6d609"
+      },
+      "expected_geometry_pass": false,
+      "expectation_met": true,
+      "production_approved": false,
+      "guard_rejection_sha256": "eece48913b0e2581a4316c9ee7d7f25cabd2ffc63c2cd9e5c2ca9383ddfdf9ba",
+      "simulation_result_sha256": "f48147b7650d1454e9250c2562d197cd075df85545fb66f0d85a9e1d4d0dd1ac"
+    }
+  ],
+  "input_manifest_sha256": "aed9949dfbd365ac98cdbfa88fafd9c263a62c5f8c7e7bdf93e2aadfe8d874c5",
+  "native_controls_sha256": "fa633ccc2ca7e60a0db51bfa2c2c1b77725beb16d796ffeb7b044ad51182ff1b",
+  "pdf_automatic_intake_tested": false,
+  "whole_process_card_complete": false,
+  "production_approved": false
+}

@@ -1,0 +1,213 @@
+{
+  "schema": "genlaw.execution-plan.v3",
+  "input_id": "S2-BLIND-deeper-r3",
+  "mode": "software_geometry_reference",
+  "source_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "ec18cadc0dc5171aff0cc1bf0e924924f56d5e161401bc6586050df76d220b62"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "2b1c76d281022bc88cc8afee8c8b9208e57feac323bb7f5c128cc897da3828a4"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "413e3e50890aa167cf23126843ad43667e79e9b1dcb3e8f1849e4d2c678ed23c"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "b57884284ffbcb992579bd5cd10fab33d2238b37ce46fcc19efe5e8c34921a64"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "9b094399cff11775166541e78167380d7c882192e72e166d65e05f07d0be9fb4"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "5eb51791ce2803ee362b0e18577d4490f6b501dc5b3af618858a5087de0df32d"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "3227e82536bd76c222e9bcff002ec96bd3cef12bbf15111a9f64b04d254dfeb0"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "c727bc3b7fb1e8b66efd58fd4cd07303ffae54508a3c1e24b3a52e48eab65e73"
+    }
+  },
+  "cad_ref": {
+    "path": "target.brep",
+    "sha256": "2b1c76d281022bc88cc8afee8c8b9208e57feac323bb7f5c128cc897da3828a4"
+  },
+  "cad_observation_ref": {
+    "path": "geometry-observation.json",
+    "sha256": "b57884284ffbcb992579bd5cd10fab33d2238b37ce46fcc19efe5e8c34921a64"
+  },
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "tool": {
+    "id": "T1",
+    "kind": "drill",
+    "diameter_mm": 2,
+    "tip_angle_degrees": 118,
+    "length_mm": 20,
+    "basis": "S1 软件参考钻头；真实设备与刀柄未批准。"
+  },
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "明确的软件参考条件，复用历史探针；不代表真实装夹已确认。"
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false
+  },
+  "parameters": {
+    "spindle_rpm": 1000.0,
+    "feed_mm_min": 60.0,
+    "retract_plane_mm": 1.0,
+    "safe_height_mm": 2.0,
+    "clearance_height_mm": 3.0,
+    "drill_tip_length_mm": 0.6008606190275603
+  },
+  "parameter_provenance": {
+    "tool_selection": {
+      "kind": "derived",
+      "rule": "unique-drill.v1: exact diameter and optional explicit card tool_id",
+      "inputs": [
+        "resources.tools",
+        "process_plan.constraints",
+        "geometry_observation.feature"
+      ]
+    },
+    "spindle_rpm": {
+      "kind": "resource_preset",
+      "ref": "resources",
+      "field": "cutting_presets/spindle_rpm",
+      "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+    },
+    "feed_mm_min": {
+      "kind": "resource_preset",
+      "ref": "resources",
+      "field": "cutting_presets/feed_mm_min",
+      "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+    },
+    "retract_plane_mm": {
+      "kind": "resource_preset",
+      "ref": "resources",
+      "field": "cutting_presets/retract_plane_mm",
+      "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+    },
+    "safe_height_mm": {
+      "kind": "resource_preset",
+      "ref": "resources",
+      "field": "cutting_presets/safe_height_mm",
+      "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+    },
+    "clearance_height_mm": {
+      "kind": "resource_preset",
+      "ref": "resources",
+      "field": "cutting_presets/clearance_height_mm",
+      "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+    },
+    "hole_center_xy_mm": {
+      "kind": "cad_observation",
+      "ref": "geometry_observation",
+      "features": [
+        "H1"
+      ]
+    },
+    "drill_tip_length_mm": {
+      "kind": "derived",
+      "rule": "cone-tip.v1: diameter / (2*tan(tip_angle/2))",
+      "inputs": [
+        "tool.diameter_mm",
+        "tool.tip_angle_degrees"
+      ]
+    }
+  },
+  "scope": {
+    "selected_steps": [
+      "OP10.2"
+    ],
+    "whole_process_card": false,
+    "declared_preconditions": {
+      "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+      "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+    },
+    "excluded_checks": [
+      "fixture_collision",
+      "holder_collision",
+      "material_physics",
+      "surface_roughness",
+      "whole_process_completion"
+    ]
+  },
+  "requirements_ref": {
+    "path": "requirements.json",
+    "sha256": "5eb51791ce2803ee362b0e18577d4490f6b501dc5b3af618858a5087de0df32d"
+  },
+  "required_downstream_checks": [
+    "Re-read original CAD and confirm feature binding in CAM adapter.",
+    "Preserve this configuration and final NC together for simulation."
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "operations": [
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "drilling",
+      "feature_id": "H1",
+      "hole_center_xy_mm": [
+        3,
+        2
+      ],
+      "diameter_mm": 2,
+      "through": false,
+      "cylindrical_depth_mm": 0.7,
+      "bottom_angle_degrees": 118,
+      "parameters": {
+        "cam_final_depth_mm": -0.7,
+        "final_tip_z_mm": -1.3008606190275602
+      },
+      "depth_provenance": {
+        "kind": "derived",
+        "reference": "CAD and card cylindrical depth from stock top",
+        "drill_tip_compensation": "tool cone height added by FreeCAD Drill Tip; no breakthrough applied to a blind hole"
+      }
+    }
+  ],
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Explicit 0.025 mm numerical grid, same stock and unchanged 5,000,000-cell budget as the preceding small through-hole cases."
+  }
+}

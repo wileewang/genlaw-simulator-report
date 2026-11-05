@@ -1,0 +1,44 @@
+{
+  "schema": "genlaw.software-geometry-policy.v5",
+  "cad_sha256": "c70dc3b554b38d081ad2e64b3c3b1fac03528abbfb95b5359de57b18ebf7c3a0",
+  "production_approved": false,
+  "features": {
+    "S1": {
+      "shoulder_position": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_shoulder_position",
+        "max_deviation_mm": 0.1
+      },
+      "step_depth": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_floor_depth",
+        "min_mm": 0.65,
+        "max_mm": 0.85
+      },
+      "floor_geometry": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_flat_floor",
+        "max_flatness_mm": 0.1,
+        "min_remaining_floor_mm": 0.1
+      },
+      "edge_clearance": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Predeclared numerical regression conditions, not approved manufacturing tolerances.",
+        "method": "sampled_open_edge_depth",
+        "min_mm": 0.65,
+        "max_mm": 0.85
+      }
+    }
+  }
+}

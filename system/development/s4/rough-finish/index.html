@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S4 · 粗精工序 · GenLaw</title><meta name="description" content="GenLaw 五模块设计，以及加工准备、NC 生成、仿真检验的起始点与支持范围。">
+<meta name="color-scheme" content="light"><link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=5b56718776"><link rel="stylesheet" href="../../../../assets/overview.css?v=ec4cecf825">
+<script src="../../../../assets/site.js?v=9e504ac0c0" defer></script><script type="importmap">{"imports":{"three":"../../../../assets/vendor/three/three.module.js"}}</script><script type="module" src="../../../../assets/s1-viewer.js?v=947e89196a"></script><link rel="stylesheet" href="../../../../assets/s1.css?v=febe5c4828"><link rel="stylesheet" href="../../../../assets/s3.css?v=ea183d420c"><link rel="stylesheet" href="../../../../assets/s4.css?v=6ae94ab6ae"></head><body>
+<a class="skip" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../../../../index.html" aria-label="GenLaw 开发进度"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13Z" fill="#172a40"/><path d="m22 11-6-3-7 4v8l7 4 7-4v-5h-8v4h4l-3 1.7-3-1.7v-5l3-1.7 4 2Z" fill="#fff"/></svg>GenLaw<small>DESIGN → VERIFY</small></a><nav class="nav" aria-label="主导航"><a href="../../../../index.html">开发进度</a><a href="../../../../system/development/">开发路线</a><a href="../../../../system/">系统设计</a><a href="../../../../system/development/results/" aria-current="page">结果库</a></nav></div></header>
+<main id="main" class="wrap"><nav class="crumb" aria-label="面包屑"><a href="../../../../index.html">GenLaw</a><span aria-hidden="true">/</span><a href="../../../../system/development/results/">结果库</a><span aria-hidden="true">/</span><a href="../">S4 开发结果</a><span aria-hidden="true">/</span><strong aria-current="page">粗精工序</strong></nav><p class="sim-notice" data-site-notice><b>全部结果均为软件仿真，未做真实切削。</b>真实工艺卡整卡通过 0 份。工艺卡和判据多为开发方编写，未经工艺师傅批准。<a href="../../../../index.html">开发进度 →</a></p><nav class="stage-nav"><a data-s4-back href="../#parts">← S4 · 零件特征与工序</a></nav>
+    <div class="page-head compact-head"><div class="eyebrow">S4 / 粗精工序</div><div class="page-head-row"><h1>先留余量，再加工到目标形状</h1><span class="pill current"><span class="dot" aria-hidden="true"></span>4 种配置通过</span></div>
+    <p>新增：侧壁 / 槽底留量、两个原生工步、粗后与精后分别验收。</p></div>
+    <nav class="s3-page-nav" aria-label="本页内容"><a href="#result">四种配置</a><a href="#machining-process">粗精过程</a><a href="#inputs">模块输入输出</a><a href="#negative-controls">四个反例</a></nav>
+    <p class="input-note"><b>当前入口：</b>与合成 PDF 同源生成的结构化工艺卡。尚未完成真实 PDF 的 Agent 自动转录与整卡验证。</p>
+    <section class="section" id="result"><div class="s1-results-grid"><article class="s1-case" data-result-case="combined">
+        <header><div><h3>侧壁与槽底组合余量</h3><p>粗加工留量：侧壁 0.2 / 槽底 0.2 mm</p></div>
+        <div class="s1-iou"><small>最终体积 IoU</small><strong>99.9453<span>%</span></strong></div></header>
+        <figure><figcaption class="stage-shape-labels"><span>● 输入成品 CAD</span><span>● 精加工后实际形状</span></figcaption>
+        <img src="../../../../results/s4-rough-finish/thumbnails/combined.png" width="1186" height="448" alt="侧壁与槽底组合余量：输入成品 CAD 与实际精加工结果" loading="lazy"></figure>
+        <p class="input-note" style="margin:12px 20px">粗后 IoU 99.9644%（对照独立粗后预期 CAD）。两阶段轮廓、深度、底面检查通过。</p>
+        <div class="s1-case-actions"><a class="btn small primary" href="#machining-process" data-select-case="combined" data-select-mode="replay">查看粗 → 精过程</a>
+        <a class="link" href="../../../../results/s4-rough-finish/combined/process-card.pdf">工艺卡 PDF ↗</a><a class="link" href="../../../../results/s4-rough-finish/combined/target.step">输入 CAD ↗</a>
+        <a class="link" href="../../../../results/s4-rough-finish/combined/simulated.stl.gz">实际剩料 STL.gz ↗</a><a class="link" href="../../../../results/s4-rough-finish/combined/run-result.json">阶段数值 ↗</a></div></article><article class="s1-case" data-result-case="radial">
+        <header><div><h3>仅侧壁留余量</h3><p>粗加工留量：侧壁 0.2 / 槽底 0 mm</p></div>
+        <div class="s1-iou"><small>最终体积 IoU</small><strong>99.9453<span>%</span></strong></div></header>
+        <figure><figcaption class="stage-shape-labels"><span>● 输入成品 CAD</span><span>● 精加工后实际形状</span></figcaption>
+        <img src="../../../../results/s4-rough-finish/thumbnails/radial.png" width="1186" height="448" alt="仅侧壁留余量：输入成品 CAD 与实际精加工结果" loading="lazy"></figure>
+        <p class="input-note" style="margin:12px 20px">粗后 IoU 99.9596%（对照独立粗后预期 CAD）。两阶段轮廓、深度、底面检查通过。</p>
+        <div class="s1-case-actions"><a class="btn small primary" href="#machining-process" data-select-case="radial" data-select-mode="replay">查看粗 → 精过程</a>
+        <a class="link" href="../../../../results/s4-rough-finish/radial/process-card.pdf">工艺卡 PDF ↗</a><a class="link" href="../../../../results/s4-rough-finish/radial/target.step">输入 CAD ↗</a>
+        <a class="link" href="../../../../results/s4-rough-finish/radial/simulated.stl.gz">实际剩料 STL.gz ↗</a><a class="link" href="../../../../results/s4-rough-finish/radial/run-result.json">阶段数值 ↗</a></div></article><article class="s1-case" data-result-case="axial">
+        <header><div><h3>仅槽底留余量</h3><p>粗加工留量：侧壁 0 / 槽底 0.2 mm</p></div>
+        <div class="s1-iou"><small>最终体积 IoU</small><strong>99.9453<span>%</span></strong></div></header>
+        <figure><figcaption class="stage-shape-labels"><span>● 输入成品 CAD</span><span>● 精加工后实际形状</span></figcaption>
+        <img src="../../../../results/s4-rough-finish/thumbnails/axial.png" width="1186" height="448" alt="仅槽底留余量：输入成品 CAD 与实际精加工结果" loading="lazy"></figure>
+        <p class="input-note" style="margin:12px 20px">粗后 IoU 99.9544%（对照独立粗后预期 CAD）。两阶段轮廓、深度、底面检查通过。</p>
+        <div class="s1-case-actions"><a class="btn small primary" href="#machining-process" data-select-case="axial" data-select-mode="replay">查看粗 → 精过程</a>
+        <a class="link" href="../../../../results/s4-rough-finish/axial/process-card.pdf">工艺卡 PDF ↗</a><a class="link" href="../../../../results/s4-rough-finish/axial/target.step">输入 CAD ↗</a>
+        <a class="link" href="../../../../results/s4-rough-finish/axial/simulated.stl.gz">实际剩料 STL.gz ↗</a><a class="link" href="../../../../results/s4-rough-finish/axial/run-result.json">阶段数值 ↗</a></div></article><article class="s1-case" data-result-case="shifted">
+        <header><div><h3>偏置槽与不同余量</h3><p>粗加工留量：侧壁 0.15 / 槽底 0.25 mm</p></div>
+        <div class="s1-iou"><small>最终体积 IoU</small><strong>99.9453<span>%</span></strong></div></header>
+        <figure><figcaption class="stage-shape-labels"><span>● 输入成品 CAD</span><span>● 精加工后实际形状</span></figcaption>
+        <img src="../../../../results/s4-rough-finish/thumbnails/shifted.png" width="1186" height="448" alt="偏置槽与不同余量：输入成品 CAD 与实际精加工结果" loading="lazy"></figure>
+        <p class="input-note" style="margin:12px 20px">粗后 IoU 99.9670%（对照独立粗后预期 CAD）。两阶段轮廓、深度、底面检查通过。</p>
+        <div class="s1-case-actions"><a class="btn small primary" href="#machining-process" data-select-case="shifted" data-select-mode="replay">查看粗 → 精过程</a>
+        <a class="link" href="../../../../results/s4-rough-finish/shifted/process-card.pdf">工艺卡 PDF ↗</a><a class="link" href="../../../../results/s4-rough-finish/shifted/target.step">输入 CAD ↗</a>
+        <a class="link" href="../../../../results/s4-rough-finish/shifted/simulated.stl.gz">实际剩料 STL.gz ↗</a><a class="link" href="../../../../results/s4-rough-finish/shifted/run-result.json">阶段数值 ↗</a></div></article></div>
+    <p class="input-note">同一类圆角单槽的四种工序配置；不是四种新零件特征。矩形坯 8 × 6 × 1.5 mm，通用 XYZ、同刀同装夹，φ1 平底铣刀，6061-T6 仅为材料标签。</p></section>
+    <section class="section" id="machining-process"><div class="section-head"><div><h2>原毛坯 → 粗加工后 → 精加工后</h2><p>三个状态均来自实际几何；粗后与精后分别有验收记录。</p></div>
+    <label class="s1-case-choice">选择配置 <select id="s1-case-select"><option value="combined">侧壁与槽底组合余量</option><option value="radial">仅侧壁留余量</option><option value="axial">仅槽底留余量</option><option value="shifted">偏置槽与不同余量</option></select></label></div>
+    <div class="viewer s1-viewer" data-s1-viewer data-mode="replay" data-config="../../../../data/s4-rough-finish-viewer.json">
+    <div class="viewer-toolbar"><div class="segments"><button data-s1-mode="replay" aria-pressed="true">粗精状态回放</button><button data-s1-mode="compare" aria-pressed="false">输入 / 输出对比</button></div><button class="icon-button" data-reset aria-label="重置三维视角">↺</button></div>
+    <div class="canvas-wrap"><div class="view-divider"></div><div class="view-labels"><div class="view-label target"><span class="dot"></span><b>输入成品 CAD</b></div><div class="view-label actual"><span class="dot"></span><b>实际去料状态</b></div></div>
+    <div class="viewer-status" role="status"></div><div class="viewer-loading">正在载入实际形状…</div></div>
+    <div class="replay-controls"><button class="btn small" data-play disabled>播放</button><input type="range" min="0" max="2" value="0" step="1" disabled aria-label="选择粗精加工状态"><span class="frame-caption" aria-live="polite">毛坯 · 未加工</span></div>
+    <div class="fallback" hidden><img src="../../../../results/s4-rough-finish/thumbnails/combined.png" alt="组合余量例：成品 CAD 与实际精加工结果"><p>可查看各例图片或下载形状。</p></div><div class="viewer-note" data-resolution-note></div></div>
+    <p class="input-note">这是实际工步状态回放，不是连续刀具动画。精加工当前仍用全槽清除刀路，会经过已清除的区域；尚未做剩料刀路优化。</p></section>
+    <section class="section" id="inputs"><div class="section-head"><h2>代表例：侧壁与槽底各留 0.2 mm</h2><p>三个模块的输入、输出和验收依据</p></div><div class="s1-modules"><article class="s1-module"><header><span>模块 3 · 本地程序</span><h3>加工准备</h3></header>
+        <div class="s1-io"><small>输入</small><p><a class="link" href="../../../../results/s4-rough-finish/combined/process-plan.json">结构化卡片 ↗</a> + <a class="link" href="../../../../results/s4-rough-finish/combined/target.step">CAD ↗</a> + <a class="link" href="../../../../results/s4-rough-finish/combined/resources.json">资源 ↗</a></p><span class="s1-down">↓</span><small>输出</small><p><a class="link" href="../../../../results/s4-rough-finish/combined/execution-plan.json">执行方案 ↗</a></p></div>
+        <div class="s1-accept"><strong>如何验收</strong><p>核对原文件、工步顺序、粗精依赖、双向余量与刀具可达性。本组另有 14 项准备阶段拒绝测试。</p><a class="link" href="../../../../results/s4-rough-finish/combined/preparation-result.json">验收记录 ↗</a></div></article><article class="s1-module"><header><span>模块 4 · FreeCAD CAM + 程序</span><h3>NC 生成</h3></header>
+        <div class="s1-io"><small>输入</small><p><a class="link" href="../../../../results/s4-rough-finish/combined/execution-plan.json">执行方案 ↗</a> + <a class="link" href="../../../../results/s4-rough-finish/combined/target.step">同一个成品 CAD ↗</a></p><span class="s1-down">↓</span><small>输出</small><p><a class="link" href="../../../../results/s4-rough-finish/combined/program.nc">NC ↗</a> + <a class="link" href="../../../../results/s4-rough-finish/combined/cam-job.FCStd">FreeCAD Job ↗</a></p></div>
+        <div class="s1-accept"><strong>如何验收</strong><p>两个原生 PocketShape 工步；逐段检查刀路范围、深度、进给与顺序。粗后检查用的 NC 必须与完整 NC 的执行前缀一致。</p><a class="link" href="../../../../results/s4-rough-finish/combined/cam-result.json">验收记录 ↗</a></div></article><article class="s1-module"><header><span>模块 5 · CAMotics + 程序</span><h3>仿真检验</h3></header>
+        <div class="s1-io"><small>输入</small><p><a class="link" href="../../../../results/s4-rough-finish/combined/program.nc">完整 NC ↗</a> + <a class="link" href="../../../../results/s4-rough-finish/combined/simulation.camotics">原毛坯与刀具 ↗</a> + <a class="link" href="../../../../results/s4-rough-finish/combined/stage-policy.json">阶段条件 ↗</a></p><span class="s1-down">↓</span><small>输出</small><p><a class="link" href="../../../../results/s4-rough-finish/combined/rough/simulated.stl.gz">粗后形状 ↗</a> + <a class="link" href="../../../../results/s4-rough-finish/combined/simulated.stl.gz">精后形状 ↗</a> + <a class="link" href="../../../../results/s4-rough-finish/combined/metrics.json">IoU ↗</a></p></div>
+        <div class="s1-accept"><strong>如何验收</strong><p>完整 NC 一次连续执行，精加工继承真实粗后剩料。粗后与精后分别验收轮廓、深度和底面；不把预期 CAD 当成来料。</p><a class="link" href="../../../../results/s4-rough-finish/combined/stage-verification.json">验收记录 ↗</a></div></article></div>
+    <details><summary>输入存档与软件验收条件</summary><p>CAD、PDF、资源、粗后预期 CAD 和阶段条件均在生成 NC 前存档。11 层轮廓与 25 个底面取点；形状偏差上限 0.1 mm，深度名义值 ±0.1 mm，网格 0.025 mm，数值保护带 0.05 mm。IoU 不单独决定通过，也不代表制造公差认证。</p>
+    <a class="link" href="../../../../results/s4-rough-finish/input-cards-and-cad.zip">四份 PDF 与 CAD 存档 ↗</a> · <a class="link" href="../../../../results/s4-rough-finish/summary.json">完整数值结果 ↗</a> · <a class="link" href="../../../../results/s4-rough-finish/preparation-tests.json">准备阶段 14 项拒绝记录 ↗</a></details>
+    <details><summary>FreeCAD 本次接入了什么？</summary><p>复用现有 PocketShape 的侧向偏置和最终深度参数，新增双工步适配与验收。本次没有修改 FreeCAD 原生算法；未来遇到原生缺失能力时，仍须扩展并单独验证。</p></details></section>
+    <section class="section" id="negative-controls"><div class="section-head"><h2>四个工序反例 · 均被正常入口拒绝</h2><p>专用测试通道才执行错误 NC，检查几何检验能发现什么。</p></div>
+    <div style="overflow-x:auto"><table><thead><tr><th>错误</th><th>NC 检查</th><th>对照 IoU</th><th>实际去料检查</th><th>证据</th></tr></thead><tbody><tr data-control-case="omit-finish"><th>漏精加工</th><td>已拒绝</td>
+        <td>94.5511%</td><td>最终几何不符</td>
+        <td><a class="link" href="../../../../results/s4-rough-finish/controls/omit-finish/control-result.json">检查记录 ↗</a></td></tr><tr data-control-case="wrong-rough-allowance"><th>粗加工未留余量</th><td>已拒绝</td>
+        <td>94.5775%</td><td>粗后几何不符</td>
+        <td><a class="link" href="../../../../results/s4-rough-finish/controls/wrong-rough-allowance/control-result.json">检查记录 ↗</a></td></tr><tr data-control-case="finish-before-rough"><th>先精后粗</th><td>已拒绝</td>
+        <td>99.9453%</td><td>最终几何通过，工序仍不合格</td>
+        <td><a class="link" href="../../../../results/s4-rough-finish/controls/finish-before-rough/control-result.json">检查记录 ↗</a></td></tr><tr data-control-case="finish-overcut"><th>精加工过切 0.25 mm</th><td>已拒绝</td>
+        <td>95.4119%</td><td>最终几何不符</td>
+        <td><a class="link" href="../../../../results/s4-rough-finish/controls/finish-overcut/control-result.json">检查记录 ↗</a></td></tr></tbody></table></div>
+    <p class="input-note">“未留余量”对照粗后预期 CAD，其余对照成品 CAD。先精后粗仍可能得到相同形状，所以必须单独检查工序顺序。</p></section>
+    <nav class="stage-nav"><a data-s4-back href="../#parts">← 返回 S4 · 零件特征与工序</a><a href="../../../../system/development/results/">返回结果库 →</a></nav></main>
+<footer class="footer wrap"><div>GenLaw · 系统设计与开发记录</div><div>站点更新于 2026.11.05 <span aria-hidden="true"> · </span><a href="../../../../index.html">开发进度</a> <span aria-hidden="true"> · </span><a href="../../../../system/development/results/">结果库</a></div></footer></body></html>

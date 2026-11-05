@@ -1,0 +1,164 @@
+{
+  "schema": "genlaw.sectional-iou.v2",
+  "status": "measured_numerical_estimate",
+  "iou": 0.9904595560687477,
+  "iou_percent": 99.04595560687477,
+  "volumes": {
+    "actual_volume_mm3": 48.44664442455712,
+    "target_volume_mm3": 48.00000000000003,
+    "intersection_mm3": 47.992183679298975,
+    "union_mm3": 48.454460745258174,
+    "iou": 0.9904595560687477,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 0.45446074525814595,
+  "missing_material_mm3": 0.007816320701053314,
+  "actual_mesh": {
+    "source_sha256": "31f9f1aef2b6843e22f045cd0e22e9f0d22b68fb2c1d19b2e178c7eb76171893",
+    "raw_triangles": 417596,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 417596,
+    "vertices": 208800,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 48.44664447127307,
+    "bounds": {
+      "min": [
+        -9.765625145519152e-05,
+        9.765625145519152e-05,
+        -1.500097632408142
+      ],
+      "max": [
+        8.000097274780273,
+        6.000097751617432,
+        -9.765625145519152e-05
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "schema": "genlaw.native-binding.v7",
+    "status": "verified",
+    "cad_sha256": "542404bf6cfce4ab0119d10e677b03e348437589e1ad19ba8aea8d0517293c2d",
+    "reference_class": "axis_aligned_box_after_top_facing",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        -0.5
+      ]
+    },
+    "incoming_stock_bounds": {
+      "min": [
+        0,
+        0,
+        -1.5
+      ],
+      "max": [
+        8,
+        6,
+        0
+      ]
+    },
+    "volume_mm3": 47.99999999999999,
+    "valid_single_solid": true,
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "features": [
+      {
+        "id": "P1",
+        "kind": "planar_top",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "top_face": "Face6",
+        "top_z_mm": -0.5,
+        "thickness_mm": 1.0,
+        "bounds_xy_mm": {
+          "min": [
+            0.0,
+            0.0
+          ],
+          "max": [
+            8.0,
+            6.0
+          ]
+        }
+      }
+    ],
+    "native_top_face": "Face6",
+    "native_top_area_mm2": 48.0,
+    "reference_for_iou": "Original target box checked by independent native boolean difference; incoming stock remains separate, not an NC-derived target."
+  },
+  "native_geometry_sha256": "560aee642a9562cb6e9fdfa7e166a3bc739d7eb096c092d2e91627427bb0f88a",
+  "absolute_iou_refinement_difference": 1.687316952825313e-12,
+  "section_levels": 63,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "method": "Closed STL cross-sections, all vertex-height intervals, 3-point Gauss integration against native-checked analytic CAD section.",
+  "registration": "none; same CAD/G54 coordinates",
+  "full_tolerance_acceptance": false,
+  "production_approved": false,
+  "limits": [
+    "Numerical estimate, not a certified error bound.",
+    "Incoming stock and original target CAD have separate bounds; no output registration.",
+    "Use the separate top height, thickness, top-plane and outline observations; no manufacturing acceptance."
+  ],
+  "reference_sections": "Original target box, with empty sections above its final top. The incoming stock is not used as target geometry.",
+  "reference_source_code_sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b",
+  "facing_reference_source_code_sha256": "09a0666ca51bd5c0a16fa8942d85b5125691c1bb5139f2df3094ea45eee2f725",
+  "section_topology_observations": [
+    {
+      "requested_z_mm": -1.4,
+      "z_mm": -1.415450811141811,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": -1.0,
+      "z_mm": -0.9904508588255267,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": -0.6,
+      "z_mm": -0.5904508599004362,
+      "interior_loops": 0,
+      "holes": []
+    }
+  ]
+}

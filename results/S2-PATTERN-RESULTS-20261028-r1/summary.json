@@ -1,0 +1,682 @@
+{
+  "schema": "genlaw.stage-results.v1",
+  "id": "S2-PATTERN-RESULTS-20261028-r1",
+  "stage_id": "s2",
+  "title": "孔系与尺寸变化",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "specification": {
+        "id": "baseline",
+        "name": "双孔基准",
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ],
+        "features": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              5.5,
+              4
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "order": [
+          "H1",
+          "H2"
+        ]
+      },
+      "iou_percent": 99.97240505789905,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "296c690b25131f9372bf20e0a32375292906ec76dc4c4dee6ec256ca19e896ca",
+      "executed_feature_order": [
+        "H1",
+        "H2"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 1.760473,
+          "label": "首孔钻削",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "688784e17496c61065465109537d2709ae494ded63aef346a23b39b28cb6b587",
+          "nc_sha256": "c753df45ebe7c7124df0fb6bc8ba1f7cebb1c8e9152d6693c0d00d3172481e1b",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "184b4d4b7e13d5493b519439fb56d3be9a54270aa02a21990c60f86df076696c",
+          "watertight": true,
+          "volume_mm3": 71.04041336331406,
+          "triangles": 114936
+        },
+        {
+          "index": 2,
+          "time_seconds": 3.584964,
+          "label": "首孔完成，继续加工",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "797378c0d2dce4d04f8bb7b355ac0baa42a471b97de6533b9343fbc8359e7b45",
+          "nc_sha256": "c753df45ebe7c7124df0fb6bc8ba1f7cebb1c8e9152d6693c0d00d3172481e1b",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "4bf8843e9b8a4d5a9cf427f769610a612f68c42849e1b4c95c7926d5c6583cab",
+          "watertight": true,
+          "volume_mm3": 67.30993445601585,
+          "triangles": 117040
+        },
+        {
+          "index": 3,
+          "time_seconds": 6.017618,
+          "label": "最后一孔钻削",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "f68ccb567fd42bc8cd44984d8c2cb8980314bd7d07774f4153a7438fd528c829",
+          "nc_sha256": "c753df45ebe7c7124df0fb6bc8ba1f7cebb1c8e9152d6693c0d00d3172481e1b",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "b2f72232268a1cda7879330d9b46e22f0197ffc3cd55f0955d81c7af128e21bd",
+          "watertight": true,
+          "volume_mm3": 63.245162966159164,
+          "triangles": 125624
+        }
+      ]
+    },
+    {
+      "id": "reverse-order",
+      "specification": {
+        "id": "reverse-order",
+        "name": "反向孔序",
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ],
+        "features": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              5.5,
+              4
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "order": [
+          "H2",
+          "H1"
+        ]
+      },
+      "iou_percent": 99.9724050578991,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "296c690b25131f9372bf20e0a32375292906ec76dc4c4dee6ec256ca19e896ca",
+      "executed_feature_order": [
+        "H2",
+        "H1"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 1.760473,
+          "label": "首孔钻削",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "00e4ec8f66525c756391ae5b279515ae12e6f00cb390e4db6ab47e7b3f3a4c5f",
+          "nc_sha256": "e7f6f9e57e732054a8ac3d5476c617ee730e8458420dac80bab57fd7bf8e2c96",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "a1f4ab1a7569f3d8aa5675a3e781d3ebd756069cca17157338b57b40572e07e9",
+          "watertight": true,
+          "volume_mm3": 71.11621716489496,
+          "triangles": 114760
+        },
+        {
+          "index": 2,
+          "time_seconds": 3.584964,
+          "label": "首孔完成，继续加工",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "5d02aa3007a5f35c37ae14be9f25bf7165136f18ca6af859ce191e5f29a80413",
+          "nc_sha256": "e7f6f9e57e732054a8ac3d5476c617ee730e8458420dac80bab57fd7bf8e2c96",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "3f7bcfcdbddf48d8479fad3753caf213bfbb2f6106b31a5f81f25c9d7b17bf37",
+          "watertight": true,
+          "volume_mm3": 67.30985113083253,
+          "triangles": 117272
+        },
+        {
+          "index": 3,
+          "time_seconds": 6.017618,
+          "label": "最后一孔钻削",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "17498ad00ff798ad1347437e3ee8f98b7e77762e581550d43e4312de05029e11",
+          "nc_sha256": "e7f6f9e57e732054a8ac3d5476c617ee730e8458420dac80bab57fd7bf8e2c96",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "156bc1445fc664f355156c2290746549aef43f378ed9b12ec290bb4fc5cfe614",
+          "watertight": true,
+          "volume_mm3": 63.31473028295986,
+          "triangles": 125680
+        }
+      ]
+    },
+    {
+      "id": "three-holes",
+      "specification": {
+        "id": "three-holes",
+        "name": "增加第三孔",
+        "size_mm": [
+          8,
+          6,
+          1.5
+        ],
+        "features": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              5.5,
+              4
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H3",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              5.5,
+              1.5
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "order": [
+          "H1",
+          "H2",
+          "H3"
+        ]
+      },
+      "iou_percent": 99.9689895791705,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H3": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "296c690b25131f9372bf20e0a32375292906ec76dc4c4dee6ec256ca19e896ca",
+      "executed_feature_order": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 1.760473,
+          "label": "首孔钻削",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "e44ccfb219459233d814051d793cc1ff132f27a89c339f2b658868ea15620de4",
+          "nc_sha256": "d4bdeb8fe37d8db70b361269539ba2c945a91c1bc334e2374b1339613abd8947",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "184b4d4b7e13d5493b519439fb56d3be9a54270aa02a21990c60f86df076696c",
+          "watertight": true,
+          "volume_mm3": 71.04041336331406,
+          "triangles": 114936
+        },
+        {
+          "index": 2,
+          "time_seconds": 3.584964,
+          "label": "首孔完成，继续加工",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "ef84247dc9afeb4955dff9c15d221b7efbe010e67370928f58831570f23de52e",
+          "nc_sha256": "d4bdeb8fe37d8db70b361269539ba2c945a91c1bc334e2374b1339613abd8947",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "4bf8843e9b8a4d5a9cf427f769610a612f68c42849e1b4c95c7926d5c6583cab",
+          "watertight": true,
+          "volume_mm3": 67.30993445601585,
+          "triangles": 117040
+        },
+        {
+          "index": 3,
+          "time_seconds": 9.218479,
+          "label": "最后一孔钻削",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "4e8272b6f8881035409d6f2b1092be2d843657f3720097608ca5627b3d571932",
+          "nc_sha256": "d4bdeb8fe37d8db70b361269539ba2c945a91c1bc334e2374b1339613abd8947",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "ce542696d82ea28cafea166abf56f3a82a5b4f901f8bf8fdf78500e339fd9bb6",
+          "watertight": true,
+          "volume_mm3": 58.70175976489309,
+          "triangles": 130692
+        }
+      ]
+    },
+    {
+      "id": "larger-plate",
+      "specification": {
+        "id": "larger-plate",
+        "name": "外形与孔距放大",
+        "size_mm": [
+          10,
+          7.5,
+          1.5
+        ],
+        "features": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              2.5,
+              2.5
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "center_xy_mm": [
+              6.875,
+              5
+            ],
+            "diameter_mm": 2,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "order": [
+          "H1",
+          "H2"
+        ]
+      },
+      "iou_percent": 99.97861166533181,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "296c690b25131f9372bf20e0a32375292906ec76dc4c4dee6ec256ca19e896ca",
+      "executed_feature_order": [
+        "H1",
+        "H2"
+      ],
+      "resolution_mm": 0.03,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 1.760473,
+          "label": "首孔钻削",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "403f85f527f5b6ffd66e01b2eb20e0f9a42392aee8d0d8ff55d43cb405545ec3",
+          "nc_sha256": "a3a92b14922abe9c139d5a752fb8296ae4abae30ff447407f23f71aa7134fd07",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "ae190c62b4320728ab5ad07902f119025ed4103ba1047b07cdfdf41e395e3c64",
+          "watertight": true,
+          "volume_mm3": 111.55850865955796,
+          "triangles": 166148
+        },
+        {
+          "index": 2,
+          "time_seconds": 3.584964,
+          "label": "首孔完成，继续加工",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "0afe65b9e148bc79b19de07ce0ed9d0efb6742c1c50fd777acac1a9dd5156ce6",
+          "nc_sha256": "a3a92b14922abe9c139d5a752fb8296ae4abae30ff447407f23f71aa7134fd07",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "6361f8d20b8167d3555ca6d7c8282d0edac2f3171e5bdd8ddb19d9926d065d2f",
+          "watertight": true,
+          "volume_mm3": 107.81501200444934,
+          "triangles": 168316
+        },
+        {
+          "index": 3,
+          "time_seconds": 6.017618,
+          "label": "最后一孔钻削",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "050de400063c32e55753d0c57901606a49ef3a06e3b672489df02eeb5ba9679e",
+          "nc_sha256": "a3a92b14922abe9c139d5a752fb8296ae4abae30ff447407f23f71aa7134fd07",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "43ebb2b749c83ffd92bbee0d9a980445521daf44836f8dfd6f3e8b50692c105c",
+          "watertight": true,
+          "volume_mm3": 103.78086639337904,
+          "triangles": 176644
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "missing-hole",
+      "affected_feature": "H2",
+      "unaffected_feature": "H1",
+      "guard_rejected": true,
+      "iou_percent": 92.97367683890575,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "verifier_sha256": "296c690b25131f9372bf20e0a32375292906ec76dc4c4dee6ec256ca19e896ca",
+      "regression_expectation_met": true,
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "wrong-position",
+      "affected_feature": "H2",
+      "unaffected_feature": "H1",
+      "guard_rejected": true,
+      "iou_percent": 95.34207316919698,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_fail",
+          "through": "numeric_pass"
+        }
+      },
+      "verifier_sha256": "296c690b25131f9372bf20e0a32375292906ec76dc4c4dee6ec256ca19e896ca",
+      "regression_expectation_met": true,
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "not-through",
+      "affected_feature": "H2",
+      "unaffected_feature": "H1",
+      "guard_rejected": true,
+      "iou_percent": 95.64798854571886,
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "verifier_sha256": "47e8b621a53cfea119621357ef1e0f6817163bf66ac1b26b9c83d0a669772686",
+      "regression_expectation_met": true,
+      "resolution_mm": 0.025
+    }
+  ],
+  "resources": [
+    {
+      "case": "baseline",
+      "stage": "camotics-resources",
+      "seconds": 5.245692570984829,
+      "peak_rss_mib": 511.69921875
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-resources",
+      "seconds": 14.751033331005601,
+      "peak_rss_mib": 266.96484375
+    },
+    {
+      "case": "baseline",
+      "stage": "freecad-resources",
+      "seconds": 1.571850729000289,
+      "peak_rss_mib": 217.703125
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-software-resources",
+      "seconds": 2.7193615610012785,
+      "peak_rss_mib": 268.4140625
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-features-resources",
+      "seconds": 2.718788610975025,
+      "peak_rss_mib": 273.640625
+    },
+    {
+      "case": "reverse-order",
+      "stage": "camotics-resources",
+      "seconds": 4.9199328609975055,
+      "peak_rss_mib": 512.296875
+    },
+    {
+      "case": "reverse-order",
+      "stage": "measure-resources",
+      "seconds": 14.633794363995548,
+      "peak_rss_mib": 267.109375
+    },
+    {
+      "case": "reverse-order",
+      "stage": "freecad-resources",
+      "seconds": 1.5698177969898097,
+      "peak_rss_mib": 223.3203125
+    },
+    {
+      "case": "reverse-order",
+      "stage": "verify-software-resources",
+      "seconds": 2.824511951999739,
+      "peak_rss_mib": 268.21484375
+    },
+    {
+      "case": "reverse-order",
+      "stage": "verify-features-resources",
+      "seconds": 2.7210228919866495,
+      "peak_rss_mib": 273.98046875
+    },
+    {
+      "case": "three-holes",
+      "stage": "camotics-resources",
+      "seconds": 5.022037201997591,
+      "peak_rss_mib": 512.10546875
+    },
+    {
+      "case": "three-holes",
+      "stage": "measure-resources",
+      "seconds": 17.993986426008632,
+      "peak_rss_mib": 275.83984375
+    },
+    {
+      "case": "three-holes",
+      "stage": "freecad-resources",
+      "seconds": 2.8223651539883576,
+      "peak_rss_mib": 366.01953125
+    },
+    {
+      "case": "three-holes",
+      "stage": "verify-software-resources",
+      "seconds": 3.4523336800048128,
+      "peak_rss_mib": 277.1953125
+    },
+    {
+      "case": "three-holes",
+      "stage": "verify-features-resources",
+      "seconds": 3.3464464859862346,
+      "peak_rss_mib": 277.09765625
+    },
+    {
+      "case": "larger-plate",
+      "stage": "camotics-resources",
+      "seconds": 4.39079144099378,
+      "peak_rss_mib": 467.34375
+    },
+    {
+      "case": "larger-plate",
+      "stage": "measure-resources",
+      "seconds": 12.548753890005173,
+      "peak_rss_mib": 267.07421875
+    },
+    {
+      "case": "larger-plate",
+      "stage": "freecad-resources",
+      "seconds": 1.5742992680170573,
+      "peak_rss_mib": 219.16796875
+    },
+    {
+      "case": "larger-plate",
+      "stage": "verify-software-resources",
+      "seconds": 2.824320764018921,
+      "peak_rss_mib": 268.2890625
+    },
+    {
+      "case": "larger-plate",
+      "stage": "verify-features-resources",
+      "seconds": 2.931404533999739,
+      "peak_rss_mib": 268.20703125
+    }
+  ],
+  "input_archive": "S2-PATTERNS-20261028-r2",
+  "run_archive": "S2-PATTERN-SUITE-20261028-r2",
+  "replay_archive": "S2-PATTERN-REPLAY-20261028-r1",
+  "input_manifest_sha256": "a613df6bce4d623ab8a2087a5d0ce8289d0f2ed5d8f8692fc49e2ac83ebd8b6c",
+  "suite_summary_sha256": "bc69def12dfece1f65822df389e9dcdb1527efb5056366ec4d99b124bbd0fc9b",
+  "tests_passed": 100,
+  "normal_cases_passed": 4,
+  "negative_controls_detected": 3,
+  "s1_compatibility_ref": "s1-compatibility.json",
+  "s1_compatibility_sha256": "8d120b73100bb35334d6c8815fc7cc416bd07b6eed46affc27619c3d08d1eaf0",
+  "new_features": [
+    "多孔与工步绑定",
+    "保持工艺卡规定的孔序",
+    "逐孔定位漏孔、错位与未贯穿",
+    "显式网格精度与计算预算"
+  ],
+  "remaining": [
+    "盲孔的原始 CAD、深度编程与底部检验",
+    "接入已核对配对的真实工艺卡与 CAD"
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "blind_holes_verified": false
+}

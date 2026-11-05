@@ -1,0 +1,376 @@
+{
+  "schema": "genlaw.preparation-result.v1",
+  "adapter": "genlaw.preparation.single-hole.v1",
+  "status": "ready_for_declared_scope",
+  "execution_plan": {
+    "schema": "genlaw.execution-plan.v1",
+    "input_id": "S1-FEATURE-thickness-r1",
+    "mode": "software_geometry_reference",
+    "source_bindings": {
+      "process_plan": {
+        "path": "process-plan.json",
+        "sha256": "a2bc76918da5ec3a7bc671a3a3d56aae4437977f8488f69b23b36c59326f4b08"
+      },
+      "cad": {
+        "path": "target.brep",
+        "sha256": "e4df88235e0114fa3810e5bbf7cc95f867d53b5fd591b7702735085b7c18c2a3"
+      },
+      "display_cad": {
+        "path": "target.step",
+        "sha256": "708fabc23e3290dce4d767849f00e05a9ea86c52e177448d28584cef78c2c867"
+      },
+      "geometry_observation": {
+        "path": "geometry-observation.json",
+        "sha256": "a997863ef720043fb97d5fd948dcb655d056ee5446dea55cea1856514d911a39"
+      },
+      "native_reference": {
+        "path": "reference.json",
+        "sha256": "85e98602ff4a5a99bea86260ab5c3b436bf139a2a4d534c056d855da8ee8497c"
+      },
+      "requirements": {
+        "path": "requirements.json",
+        "sha256": "2b388b9d8dbc037590fe5ccfc8ac9b8c045c3c06e205e12c22df56b86c289694"
+      },
+      "resources": {
+        "path": "resources-software-reference.json",
+        "sha256": "e498441853bba2d0c3aa36e8c7a5db5130a6757f7a5468f192b564f298d6a3fc"
+      },
+      "paper_card": {
+        "path": "process-card.pdf",
+        "sha256": "c1b27bff905e6bf4ffc2a02e4d2941ad6074de60f20959c2b520422b0d724155"
+      },
+      "historical_parameters": {
+        "path": "historical-parameters.json",
+        "sha256": "2c80d7dcd0ce419cd7b215177a0d2f153f1080d5dd986bca961f8f7827724de6"
+      }
+    },
+    "cad_ref": {
+      "path": "target.brep",
+      "sha256": "e4df88235e0114fa3810e5bbf7cc95f867d53b5fd591b7702735085b7c18c2a3"
+    },
+    "cad_observation_ref": {
+      "path": "geometry-observation.json",
+      "sha256": "a997863ef720043fb97d5fd948dcb655d056ee5446dea55cea1856514d911a39"
+    },
+    "operation": {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "drilling",
+      "feature_id": "F_HOLE_1",
+      "hole_center_xy_mm": [
+        3.0,
+        2.0
+      ],
+      "diameter_mm": 2.0,
+      "through": true
+    },
+    "stock": {
+      "shape": "box",
+      "bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "max": [
+          8.0,
+          6.0,
+          0.0
+        ]
+      },
+      "material_label": "6061-T6",
+      "material_physics_verified": false
+    },
+    "tool": {
+      "id": "T1",
+      "kind": "drill",
+      "diameter_mm": 2,
+      "tip_angle_degrees": 118,
+      "length_mm": 20,
+      "basis": "Synthetic validation drill matches target diameter; not production-qualified."
+    },
+    "setup": {
+      "work_offset": "G54",
+      "origin_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "tool_length_offset_mm": 0,
+      "fixture_mode": "unmodelled_explicitly_excluded",
+      "basis": "明确的软件参考条件，复用历史探针；不代表真实装夹已确认。"
+    },
+    "controller": {
+      "profile": "reference_NC_subset",
+      "return_mode": "initial_plane",
+      "linuxcnc_runtime_required": false
+    },
+    "parameters": {
+      "spindle_rpm": 1000.0,
+      "feed_mm_min": 60.0,
+      "breakthrough_mm": 0.1,
+      "retract_plane_mm": 1.0,
+      "safe_height_mm": 2.0,
+      "clearance_height_mm": 3.0,
+      "drill_tip_length_mm": 0.6008606190275603,
+      "cam_final_depth_mm": -1.1,
+      "final_tip_z_mm": -1.7008606190275604
+    },
+    "parameter_provenance": {
+      "tool_selection": {
+        "kind": "derived",
+        "rule": "unique-drill.v1: exact diameter and optional explicit card tool_id",
+        "inputs": [
+          "resources.tools",
+          "process_plan.constraints",
+          "geometry_observation.feature"
+        ]
+      },
+      "spindle_rpm": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/spindle_rpm",
+        "basis": "软件测试明确选用历史探针参数；见 historical-parameters.json / spindle_rpm"
+      },
+      "feed_mm_min": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/feed_mm_min",
+        "basis": "软件测试明确选用历史探针参数；见 historical-parameters.json / feed_mm_min"
+      },
+      "breakthrough_mm": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/breakthrough_mm",
+        "basis": "软件测试显式提供的附加贯穿量；不是现场卡缺项时的默认值，也不是生产推荐。"
+      },
+      "retract_plane_mm": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/retract_plane_mm",
+        "basis": "软件测试明确选用历史探针参数；见 historical-parameters.json / retract_plane_mm"
+      },
+      "safe_height_mm": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/safe_height_mm",
+        "basis": "软件测试明确选用历史探针参数；见 historical-parameters.json / safe_height_mm"
+      },
+      "clearance_height_mm": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/clearance_height_mm",
+        "basis": "软件测试明确选用历史探针参数；见 historical-parameters.json / clearance_height_mm"
+      },
+      "hole_center_xy_mm": {
+        "kind": "cad_observation",
+        "ref": "geometry_observation",
+        "field": "F_HOLE_1"
+      },
+      "drill_tip_length_mm": {
+        "kind": "derived",
+        "rule": "cone-tip.v1: diameter / (2*tan(tip_angle/2))",
+        "inputs": [
+          "tool.diameter_mm",
+          "tool.tip_angle_degrees"
+        ]
+      },
+      "final_tip_z_mm": {
+        "kind": "derived",
+        "rule": "through-hole-tip.v1: stock_bottom - breakthrough - tip_length",
+        "inputs": [
+          "stock.bounds_mm.min[2]",
+          "breakthrough_mm",
+          "drill_tip_length_mm"
+        ]
+      },
+      "cam_final_depth_mm": {
+        "kind": "derived",
+        "rule": "through-depth.v1: stock_bottom - breakthrough",
+        "inputs": [
+          "stock.bounds_mm.min[2]",
+          "breakthrough_mm"
+        ]
+      }
+    },
+    "scope": {
+      "selected_steps": [
+        "OP10.2"
+      ],
+      "whole_process_card": false,
+      "declared_preconditions": {
+        "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+        "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+      },
+      "excluded_checks": [
+        "fixture_collision",
+        "holder_collision",
+        "material_physics",
+        "surface_roughness",
+        "whole_process_completion"
+      ]
+    },
+    "requirements_ref": {
+      "path": "requirements.json",
+      "sha256": "2b388b9d8dbc037590fe5ccfc8ac9b8c045c3c06e205e12c22df56b86c289694"
+    },
+    "required_downstream_checks": [
+      "Re-read original CAD and confirm feature binding in CAM adapter.",
+      "Preserve this configuration and final NC together for simulation."
+    ],
+    "production_approved": false,
+    "whole_process_card_complete": false
+  },
+  "issues": [
+    {
+      "code": "missing_information",
+      "field": "requirements/R_DIAMETER/acceptance",
+      "message": "验收要求待确认；不能用整体 IoU 代替。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "process_engineer"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/R_POSITION/acceptance",
+      "message": "验收要求待确认；不能用整体 IoU 代替。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "process_engineer"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/R_THROUGH/acceptance",
+      "message": "验收要求待确认；不能用整体 IoU 代替。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "process_engineer"
+    },
+    {
+      "code": "missing_information",
+      "field": "requirements/R_ROUGHNESS/acceptance",
+      "message": "验收要求待确认；不能用整体 IoU 代替。",
+      "severity": "acceptance",
+      "blocked_stage": "requirement_acceptance",
+      "owner": "process_engineer"
+    },
+    {
+      "code": "unverified_scope",
+      "field": "review",
+      "message": "工艺输入尚未作生产批准；当前只处理明确的软件参考范围。",
+      "severity": "notice",
+      "blocked_stage": null,
+      "owner": "process_engineer"
+    }
+  ],
+  "coverage": [
+    {
+      "operation_id": "OP05",
+      "step_id": "OP05.1",
+      "type": "incoming_inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.1",
+      "type": "setup",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "drilling",
+      "status": "selected_for_preparation"
+    },
+    {
+      "operation_id": "OP20",
+      "step_id": "OP20.1",
+      "type": "deburring",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP30",
+      "step_id": "OP30.1",
+      "type": "inspection",
+      "status": "not_verified"
+    },
+    {
+      "operation_id": "OP35",
+      "step_id": "OP35.1",
+      "type": "postprocess",
+      "status": "not_verified"
+    }
+  ],
+  "requirement_readiness": [
+    {
+      "id": "R_DIAMETER",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "R_POSITION",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "R_THROUGH",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    },
+    {
+      "id": "R_ROUGHNESS",
+      "acceptance_defined": false,
+      "verification_status": "not_verified"
+    }
+  ],
+  "input_bindings": {
+    "process_plan": {
+      "path": "process-plan.json",
+      "sha256": "a2bc76918da5ec3a7bc671a3a3d56aae4437977f8488f69b23b36c59326f4b08"
+    },
+    "cad": {
+      "path": "target.brep",
+      "sha256": "e4df88235e0114fa3810e5bbf7cc95f867d53b5fd591b7702735085b7c18c2a3"
+    },
+    "display_cad": {
+      "path": "target.step",
+      "sha256": "708fabc23e3290dce4d767849f00e05a9ea86c52e177448d28584cef78c2c867"
+    },
+    "geometry_observation": {
+      "path": "geometry-observation.json",
+      "sha256": "a997863ef720043fb97d5fd948dcb655d056ee5446dea55cea1856514d911a39"
+    },
+    "native_reference": {
+      "path": "reference.json",
+      "sha256": "85e98602ff4a5a99bea86260ab5c3b436bf139a2a4d534c056d855da8ee8497c"
+    },
+    "requirements": {
+      "path": "requirements.json",
+      "sha256": "2b388b9d8dbc037590fe5ccfc8ac9b8c045c3c06e205e12c22df56b86c289694"
+    },
+    "resources": {
+      "path": "resources-software-reference.json",
+      "sha256": "e498441853bba2d0c3aa36e8c7a5db5130a6757f7a5468f192b564f298d6a3fc"
+    },
+    "paper_card": {
+      "path": "process-card.pdf",
+      "sha256": "c1b27bff905e6bf4ffc2a02e4d2941ad6074de60f20959c2b520422b0d724155"
+    },
+    "historical_parameters": {
+      "path": "historical-parameters.json",
+      "sha256": "2c80d7dcd0ce419cd7b215177a0d2f153f1080d5dd986bca961f8f7827724de6"
+    }
+  },
+  "source_pdf_automatically_recognized": false,
+  "cad_native_geometry_reparsed_this_run": false,
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "input_id": "S1-FEATURE-thickness-r1",
+  "input_manifest_sha256": "1be254ba71f9514aaa40d859a8fe556970b4db4529db159cc1c2bdf7f8703a35",
+  "execution_plan_sha256": "75c442df8c7251133ca2bea080f80340c47ee258f6c66479a7897fea6b9d3525"
+}

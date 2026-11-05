@@ -1,0 +1,893 @@
+{
+  "schema": "genlaw.drilling-compatibility.v1",
+  "status": "passed",
+  "new_complete_chains": 3,
+  "original_meshes_reinspected": 43,
+  "pocket_included": true,
+  "step_included": true,
+  "region_included": true,
+  "fresh_milling_only": true,
+  "engine_review_sha256": "9be065e1c7c9c168ea6b07c4b9f1265db8a706ebc0f3099e46ce072d490a0857",
+  "nc_order_review_sha256": "0bfce2b66e9df85e92d91c09fc8aeab99d051c6fb334a74ad928378938f99c70",
+  "fresh_chains": [
+    {
+      "id": "s3-pocket",
+      "source_case": "validation/runs/S3-POCKET-SUITE-20261029-r1/baseline",
+      "new_complete_chain": true,
+      "iou_percent": 99.97124592988968,
+      "engine_changed": true,
+      "original_engine_sha256": "7a217a0493fddd618324a3bc219c6d8af58ca320e40f68d461dfac4770a1d6fd",
+      "engine_sha256": "202383ae1332d72c5295bac38177b5d6e53525d8ec3b3be70c2f74229973592e",
+      "iou_delta_percentage_points": -8.684512224022001e-05,
+      "executable_nc_words_unchanged": true,
+      "nc_order_review_sha256": null,
+      "software_statuses": {
+        "P1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "report_sha256": "5dba59459080b28bc511696d9a51f7c377dded7f249c83e7d7a03c32c3dfb38d",
+      "passed": true
+    },
+    {
+      "id": "s3-step",
+      "source_case": "validation/runs/S3-STEP-SUITE-20261029-r1/baseline",
+      "new_complete_chain": true,
+      "iou_percent": 99.97078114431166,
+      "engine_changed": true,
+      "original_engine_sha256": "7a217a0493fddd618324a3bc219c6d8af58ca320e40f68d461dfac4770a1d6fd",
+      "engine_sha256": "202383ae1332d72c5295bac38177b5d6e53525d8ec3b3be70c2f74229973592e",
+      "iou_delta_percentage_points": -0.0004403487391755334,
+      "executable_nc_words_unchanged": true,
+      "nc_order_review_sha256": null,
+      "software_statuses": {
+        "S1": {
+          "shoulder_position": "numeric_pass",
+          "step_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "edge_clearance": "numeric_pass"
+        }
+      },
+      "report_sha256": "de62f43776d83a0845eec14dff2396c11b0e1819b27bf9ed31e49836a4938feb",
+      "passed": true
+    },
+    {
+      "id": "s3-region",
+      "source_case": "validation/runs/S3-REGION-SUITE-20261029-r2/island",
+      "new_complete_chain": true,
+      "iou_percent": 99.93587620506248,
+      "engine_changed": false,
+      "original_engine_sha256": "202383ae1332d72c5295bac38177b5d6e53525d8ec3b3be70c2f74229973592e",
+      "engine_sha256": "202383ae1332d72c5295bac38177b5d6e53525d8ec3b3be70c2f74229973592e",
+      "iou_delta_percentage_points": 0.0,
+      "executable_nc_words_unchanged": false,
+      "nc_order_review_sha256": "0bfce2b66e9df85e92d91c09fc8aeab99d051c6fb334a74ad928378938f99c70",
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_pass",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "island_retention": "numeric_pass"
+        }
+      },
+      "report_sha256": "6b4068b907b5713ebddeab37439250876469d7366671346848c461451437b2ce",
+      "passed": true
+    }
+  ],
+  "retained_cases": [
+    {
+      "id": "s1/baseline",
+      "source_case": "validation/runs/S1-AFTER-BLIND-20261029-r1/baseline",
+      "material_simulation_reused": true,
+      "old_report_sha256": "b273cf3d2c1c55c21fed985dca77cab65b3d0e05a9ce812062c69664da7b92b3",
+      "new_report_sha256": "0a3e5ee6aad9bd400459bc2135b4d934ea83f2d6579000c2831c84857136cb20",
+      "mesh_sha256": "bd385a0bfe07080e80bb9c7278d19030fdf6127ac4a8fbacd467c75c593ba1f1",
+      "software_statuses": {
+        "F_HOLE_1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s1/diameter",
+      "source_case": "validation/runs/S1-AFTER-BLIND-20261029-r1/diameter",
+      "material_simulation_reused": true,
+      "old_report_sha256": "d589c2e0500661e9a1d750e9344c5e86bafa2f4063bddf708a0488d46fa7a832",
+      "new_report_sha256": "7d31eece1b0bc4061ab095477f5c336c9ebd84959149b771499d3a343130628e",
+      "mesh_sha256": "a3befc92f8c90aaab43467c949d2beef14ff75d847f5e25d7ca15b1e9c660495",
+      "software_statuses": {
+        "F_HOLE_1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s1/position",
+      "source_case": "validation/runs/S1-AFTER-BLIND-20261029-r1/position",
+      "material_simulation_reused": true,
+      "old_report_sha256": "ada6280609f26887790ae19ed9129cbbebc95c37bdf0c6b3c6cbcbda7a918152",
+      "new_report_sha256": "4926072326e9db80f7173b6829b2ad79d9a5f2713b0e925b806a4f0450fb1161",
+      "mesh_sha256": "6db52788df53954829eae36160481496691e2fbe1a1bd3ee05af0e85626a0c18",
+      "software_statuses": {
+        "F_HOLE_1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s1/thickness",
+      "source_case": "validation/runs/S1-AFTER-BLIND-20261029-r1/thickness",
+      "material_simulation_reused": true,
+      "old_report_sha256": "65a0212abe23e4897be05c205962d107df7d02e621507460d115e0001d82f7fd",
+      "new_report_sha256": "1584fb4c94fef4d8cb169287fbf59f2e3f998984d1531142134c1de33f9b0afe",
+      "mesh_sha256": "87b3bfeb38b4762f2436ce21fc378c6aedaaeb7f6dc8c0a360f89d264bd2f90a",
+      "software_statuses": {
+        "F_HOLE_1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s1/wrong-position",
+      "source_case": "validation/runs/S1-AFTER-BLIND-20261029-r1/wrong-position",
+      "material_simulation_reused": true,
+      "old_report_sha256": "f21bad46ebbbd4f5d1b8c9fe737d6e019ef646e874d099da6f4c08dbd49e0f36",
+      "new_report_sha256": "46998b5e6f659a5792020a28f9c3ef74d8391bf4ef3fec17e77339ee261102c7",
+      "mesh_sha256": "a63d4d70c75ebb334101ed36f54d515b28b52f75ed5cabff55e3457026438109",
+      "software_statuses": {
+        "F_HOLE_1": {
+          "diameter": "indeterminate",
+          "position_xy": "numeric_fail",
+          "through": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s1/not-through",
+      "source_case": "validation/runs/S1-AFTER-BLIND-20261029-r1/not-through",
+      "material_simulation_reused": true,
+      "old_report_sha256": "da7098bcb522601d7bebf9cae579793b2b794b79148a09dac2d4a73fe0c0e775",
+      "new_report_sha256": "995468dd6a436c998a45c7b9d3c3a73ab32964f67f276d44876dd9b07c2b3d44",
+      "mesh_sha256": "8f752c3829e44be038007476083f580694ec5652c276af6b8202bb47ea2192f8",
+      "software_statuses": {
+        "F_HOLE_1": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-through/baseline",
+      "source_case": "validation/runs/S2-THROUGH-AFTER-BLIND-20261029-r1/baseline",
+      "material_simulation_reused": true,
+      "old_report_sha256": "4cacf6b6403757901d500496fcfd4645871050e951b825be7e661580b3d547e4",
+      "new_report_sha256": "72cca67807fb3d31736dc6a0b95ede801ac5fa3b6b52584986bead599f3e9bf8",
+      "mesh_sha256": "47115f934563f7f4f4bd3714f72b7c0a00c283597903977ee3a5bedfee500cc8",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-through/reverse-order",
+      "source_case": "validation/runs/S2-THROUGH-AFTER-BLIND-20261029-r1/reverse-order",
+      "material_simulation_reused": true,
+      "old_report_sha256": "4f585b9f1f99e248dfda620020c854fcda42c7f7284b2bf3328aacfc079bd72c",
+      "new_report_sha256": "474507ec789c24800a1b32cb7b55fdce2033a50d7d5aea45086452e3a5246ddc",
+      "mesh_sha256": "a8d4aaaa6ca0eae65d77d1ead656ad46389e392e1592889a1d5698ff30681d24",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-through/three-holes",
+      "source_case": "validation/runs/S2-THROUGH-AFTER-BLIND-20261029-r1/three-holes",
+      "material_simulation_reused": true,
+      "old_report_sha256": "8484db0bc4bb65ee34972af72b6c29e0b6669135d2c416a208340fe9becb12e9",
+      "new_report_sha256": "525de2f75cf234cb9abdafdc47cd6fc4d987ae0c6df5efb962024a4d9d0eef09",
+      "mesh_sha256": "4ff103fed0bbcc7b586661ddac0a57a6622315c3fe60b4c297ce5d48eccc6836",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H3": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-through/larger-plate",
+      "source_case": "validation/runs/S2-THROUGH-AFTER-BLIND-20261029-r1/larger-plate",
+      "material_simulation_reused": true,
+      "old_report_sha256": "4b4b1d9dd88d834b63c8f827eb225a42811f87788a6d0e5b33231f8c707a39b1",
+      "new_report_sha256": "7f55e61176290b6bbcb3e76e2364fa04780752e2c28084eb6b7ae234cded4c26",
+      "mesh_sha256": "3883f6a229b50fd2e872fb2f11d010e3b632600696af3766e345c7a7fc10dcdc",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-through/missing-hole",
+      "source_case": "validation/runs/S2-THROUGH-AFTER-BLIND-20261029-r1/missing-hole",
+      "material_simulation_reused": true,
+      "old_report_sha256": "b68acfa272b09770404be73bf3cac688222a8c9e5952c4b34db340e31694ccb8",
+      "new_report_sha256": "5b922dc3d3c49cae462f9a927cc9bda5be9255a3d76414eec078ddfb08bff570",
+      "mesh_sha256": "b98946825be34da2152de794ab4e82b9900bf8ea6108d9b84fce87ef2b25c661",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-through/wrong-position",
+      "source_case": "validation/runs/S2-THROUGH-AFTER-BLIND-20261029-r1/wrong-position",
+      "material_simulation_reused": true,
+      "old_report_sha256": "41306457d843dff4c11195f06097d74661d70749d6b2734f7cc7eb36fe091967",
+      "new_report_sha256": "06ac045375da8ed5818c5ab83fd5f77da3478532300fc29c54626a878f0d4525",
+      "mesh_sha256": "cd0b1d57df115bdfb951100a08e97f1cf89accdfc8e0ac70c53fe86ddafcf9ed",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_fail",
+          "through": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-through/not-through",
+      "source_case": "validation/runs/S2-THROUGH-AFTER-BLIND-20261029-r1/not-through",
+      "material_simulation_reused": true,
+      "old_report_sha256": "8168b967e283a27baf02417bb8021ff8a4b8757307c8d33bcb97cbcfe2f09bb3",
+      "new_report_sha256": "28fa7067b00289aea17e5240a2daf43e0abf8d022e0dd6077dfca97918b415fe",
+      "mesh_sha256": "504ca0234aaa212f58ecbfc297f9323590f16da0c32323e46c40f2e6a156495f",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "not_measurable",
+          "position_xy": "not_measurable",
+          "through": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-blind/baseline",
+      "source_case": "validation/runs/S2-BLIND-SUITE-20261029-r3/baseline",
+      "material_simulation_reused": true,
+      "old_report_sha256": "2811ac9d9dee8f846eb934f2ee881a7e10b89e03d1435bee86322d2819ebc0f8",
+      "new_report_sha256": "f457356bb2b73598ad6988066c7cd73eea737aa8989fbbd0f83d0e99c8827f43",
+      "mesh_sha256": "ac297bd1be5495738cd3eb817ebf59e16a8a57558f4e8510ded1182ae39bcbca",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_pass",
+          "conical_bottom": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-blind/deeper",
+      "source_case": "validation/runs/S2-BLIND-SUITE-20261029-r3/deeper",
+      "material_simulation_reused": true,
+      "old_report_sha256": "a1a3b209523e12427bb7a96ee824ed9db594470714118f10adae27e5c7cf05c4",
+      "new_report_sha256": "556aae386cab620682d46ce59ff35bc51feec9815de9a20e9be82d35ef644736",
+      "mesh_sha256": "aac5301bbb3bc6760ff9de9ee5731ef8759b677cb6a3882665bcda61ce92ce7b",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_pass",
+          "conical_bottom": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-blind/mixed",
+      "source_case": "validation/runs/S2-BLIND-SUITE-20261029-r3/mixed",
+      "material_simulation_reused": true,
+      "old_report_sha256": "99ce9b6107f75a294a45523d92f90fe1166911f28a43e4870e15cf5caca7bb61",
+      "new_report_sha256": "6504a625eba53901173068cba818536d04f5712619e2f50e01b8449ac3796d47",
+      "mesh_sha256": "31be50ec2c9e1b5c7e780bb2c6a231ab8b68cc765c7c0f572a58c17acf82ee47",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_pass",
+          "conical_bottom": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-blind/two-depths",
+      "source_case": "validation/runs/S2-BLIND-SUITE-20261029-r3/two-depths",
+      "material_simulation_reused": true,
+      "old_report_sha256": "14260f9c6aa1ff6785a95cf86748c23a3a6205bcb758b69954a755ba04c788f4",
+      "new_report_sha256": "be3ac6a2df791e228844d7a259cbe1cb12100565b2569a4b2ec478e4506da005",
+      "mesh_sha256": "3dce404774b7f45346113cc1349771b1b4189e61fa78640df4ea86cf64c98e19",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_pass",
+          "conical_bottom": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_pass",
+          "conical_bottom": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-blind/too-shallow",
+      "source_case": "validation/runs/S2-BLIND-SUITE-20261029-r3/too-shallow",
+      "material_simulation_reused": true,
+      "old_report_sha256": "1bae5419cbf3ac0d40bd836ac7036227b47da9bfd5822e9c7a596deb0f2d6b22",
+      "new_report_sha256": "2c828ef2ac8c8fc954534702e955e3763cdf12eeb1472e8d62394fb39343660a",
+      "mesh_sha256": "bfef1cf973436bab9c516130f3cfac238c29d8f730c50dfa64de6c7da3e44acb",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_fail",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_fail",
+          "conical_bottom": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-blind/too-deep",
+      "source_case": "validation/runs/S2-BLIND-SUITE-20261029-r3/too-deep",
+      "material_simulation_reused": true,
+      "old_report_sha256": "76c7b6390474f83839bc967ac9ab8fb2d650a80c78507cea3584170628c51898",
+      "new_report_sha256": "6b192ad955a7423e10df7ccc71ca1a12f45e9b22c9acfd568c95c1194f957ae9",
+      "mesh_sha256": "8ffa8f261fd2becea0e9ab7c8a07cc9ddba50b4852d2a52736da062bed4bf31a",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "numeric_fail",
+          "conical_bottom": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s2-blind/drilled-through",
+      "source_case": "validation/runs/S2-BLIND-SUITE-20261029-r3/drilled-through",
+      "material_simulation_reused": true,
+      "old_report_sha256": "1bb6c47be1d808c3e56eb755044abb8eeb03441977535ccaf61be28906fa0df1",
+      "new_report_sha256": "f409a80b6475ea8ddbec4bd8f0b4a63f8b567e422900014234ca253c569067f8",
+      "mesh_sha256": "47115f934563f7f4f4bd3714f72b7c0a00c283597903977ee3a5bedfee500cc8",
+      "software_statuses": {
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "cylindrical_depth": "not_measurable",
+          "conical_bottom": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-pocket/baseline",
+      "source_case": "validation/runs/S3-POCKET-SUITE-20261029-r1/baseline",
+      "material_simulation_reused": true,
+      "old_report_sha256": "cee441ff8ed1e840ac707a8fa108e23a4cdafc5569a9b44571eb9e2ab078d5d5",
+      "new_report_sha256": "bd8f3539926ec51bfefdabc535c411579545fdfa0bcb9ddf4d4c55c65d18732d",
+      "mesh_sha256": "0549c10a99d8a48ca6c316bc25774f805ddc7d1c4bd881da0dd36feac185fd57",
+      "software_statuses": {
+        "P1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-pocket/deeper",
+      "source_case": "validation/runs/S3-POCKET-SUITE-20261029-r1/deeper",
+      "material_simulation_reused": true,
+      "old_report_sha256": "42e40efdc2b554262bffd91f23bc3c3fbc1b7b2bd506a247e6059b7398ddc5fe",
+      "new_report_sha256": "adc05f2d4b082fc9c21e0bb43a888171f5596a2ab42a0aaf65c6308b0c249f73",
+      "mesh_sha256": "bf203719b1a2bdfc38831600f1e47dbb498ccd472c0a893f1e433c2bba1dfb0f",
+      "software_statuses": {
+        "P1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-pocket/shifted",
+      "source_case": "validation/runs/S3-POCKET-SUITE-20261029-r1/shifted",
+      "material_simulation_reused": true,
+      "old_report_sha256": "785294fd4b968e0e7d929ad4e110e1caa22fa7c53846a6b3f0c77370108a1b3d",
+      "new_report_sha256": "8ac56b96f6c5e497579400d8b43215ed30a8de455df2c2d3de8cf60aed101904",
+      "mesh_sha256": "724c55d609f93403f8b53931732fa5a603e6362f5af39b658f7b92daa74b1b6a",
+      "software_statuses": {
+        "P1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-pocket/wider",
+      "source_case": "validation/runs/S3-POCKET-SUITE-20261029-r1/wider",
+      "material_simulation_reused": true,
+      "old_report_sha256": "7a96080c11b23ec38c70f2c0e112d4331a61657cee0b5af11e666c409de5b911",
+      "new_report_sha256": "efd0322da996cde7c1fa73954ac24411a763829d0af1dbd17558c95acb08b3c3",
+      "mesh_sha256": "6ec4d42fbf76ec07431681437e2e9574121e2eb0ba004479f08b65ef3ddaf1e8",
+      "software_statuses": {
+        "P1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-pocket/too-shallow",
+      "source_case": "validation/runs/S3-POCKET-SUITE-20261029-r1/too-shallow",
+      "material_simulation_reused": true,
+      "old_report_sha256": "eeb0333127a1a99a60c734b89c3bd2f1ca8809e6532bacc094a99215a14d30ca",
+      "new_report_sha256": "838f30b085b2857d47033305518537d101fbeb9a73e15f40ebbe031f2ed66568",
+      "mesh_sha256": "93c239e3bee518364601509a00cc30619da1ff468833ade6ccd4fa9106f328ff",
+      "software_statuses": {
+        "P1": {
+          "profile_xy": "not_measurable",
+          "pocket_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-pocket/too-deep",
+      "source_case": "validation/runs/S3-POCKET-SUITE-20261029-r1/too-deep",
+      "material_simulation_reused": true,
+      "old_report_sha256": "69644f76b8f71c602dda65148135bf05d061db8035ee9207e2bba02cd1c7a93b",
+      "new_report_sha256": "6952bbcf02dd7d4d43e6b2a9baeca63515d14ee39a2b0e4174e1342589907522",
+      "mesh_sha256": "d8cd4521078cb360de9769b052f80f7f2c78cdf91e3a75ba64d660cfd896a6a4",
+      "software_statuses": {
+        "P1": {
+          "profile_xy": "numeric_pass",
+          "pocket_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-pocket/wrong-position",
+      "source_case": "validation/runs/S3-POCKET-SUITE-20261029-r1/wrong-position",
+      "material_simulation_reused": true,
+      "old_report_sha256": "8c1817bfa9ff112721ccdd457cfeb558c31c396eff07f83d01ae2d83012dcef6",
+      "new_report_sha256": "0cbd26c965b6f9bebacdf9490807adc19143cca8cc10922dcb5081df296565e5",
+      "mesh_sha256": "2ce705b150f4ecebf7a3f44c5451125bfc88eedc75a5f202eb278df0d9aaa873",
+      "software_statuses": {
+        "P1": {
+          "profile_xy": "numeric_fail",
+          "pocket_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-step/baseline",
+      "source_case": "validation/runs/S3-STEP-SUITE-20261029-r1/baseline",
+      "material_simulation_reused": true,
+      "old_report_sha256": "a2ab3ef778b02869dc4f49d1939b2af38c72d8c4217d5dbbf1f1aea425d1c068",
+      "new_report_sha256": "5f5c7ea06fa64cd02374c63f26bdc6b3dbc52ca3c809e4f6b52ceffccaaa6380",
+      "mesh_sha256": "046859366335b719359d15d334e5c3a6af978c5092e4e0ef0b6c31c4eb781bd6",
+      "software_statuses": {
+        "S1": {
+          "shoulder_position": "numeric_pass",
+          "step_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "edge_clearance": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-step/deeper",
+      "source_case": "validation/runs/S3-STEP-SUITE-20261029-r1/deeper",
+      "material_simulation_reused": true,
+      "old_report_sha256": "1bd033cf0555fdcd9dee1bc6cc2bfae152063cd0226a4d0c195ecfa3fc736048",
+      "new_report_sha256": "c696eb228ea1fa5f12de29056768dad3dc89ea77bcb92e51a47e771f94a7a6b5",
+      "mesh_sha256": "d4d75cd45a541f4c0455f55e6b580b3cd9cdb6473d8015f5b64839d92d7a718e",
+      "software_statuses": {
+        "S1": {
+          "shoulder_position": "numeric_pass",
+          "step_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "edge_clearance": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-step/wider",
+      "source_case": "validation/runs/S3-STEP-SUITE-20261029-r1/wider",
+      "material_simulation_reused": true,
+      "old_report_sha256": "3ddb43be2461f9743565f9bf41f8005fcd7d04e8272cd585eb27867e327a52a1",
+      "new_report_sha256": "5e2b065c77df342e6c5fd0e6ec5966736380003de987ff8d6f3cc5a4ab41edf8",
+      "mesh_sha256": "808c055e6f6124fd572af036d3aaf49c22cf51dca8e460a964e462ae8c117e26",
+      "software_statuses": {
+        "S1": {
+          "shoulder_position": "numeric_pass",
+          "step_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "edge_clearance": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-step/cross",
+      "source_case": "validation/runs/S3-STEP-SUITE-20261029-r1/cross",
+      "material_simulation_reused": true,
+      "old_report_sha256": "930a50a7e7e3f74055aff78d12a31e34c1a588757101959acc91864a45889442",
+      "new_report_sha256": "6fc9505d2b47350f39d0d149e579fbf663bccf86c72490519102ff757cd1fc38",
+      "mesh_sha256": "c26e94a9d82f57ca9603bbd7047ea493a62f543d341af3d1b6547a436a9fe326",
+      "software_statuses": {
+        "S1": {
+          "shoulder_position": "numeric_pass",
+          "step_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "edge_clearance": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-step/too-shallow",
+      "source_case": "validation/runs/S3-STEP-SUITE-20261029-r1/too-shallow",
+      "material_simulation_reused": true,
+      "old_report_sha256": "186309f5d36ad8389d5ccbd702e50983edb8e8f35cdab6173421010a13dd87b6",
+      "new_report_sha256": "b2d8a1ef6880078febf1f57f6bc68af3f2fd05ca0d2dc0d651bb7c3ecdcf3cf0",
+      "mesh_sha256": "14e3ce3de715ff32e5279062130a90f87e145171354b40e54f19669a7893fca3",
+      "software_statuses": {
+        "S1": {
+          "shoulder_position": "numeric_fail",
+          "step_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass",
+          "edge_clearance": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-step/too-deep",
+      "source_case": "validation/runs/S3-STEP-SUITE-20261029-r1/too-deep",
+      "material_simulation_reused": true,
+      "old_report_sha256": "a5254f3601209672477665f357ccbf87d37441ad4980e8006d51e176dbe0d497",
+      "new_report_sha256": "99619e72d874b8aeafecf40572ad2cc1da7cb0baeca63c86f32eace399bb56f3",
+      "mesh_sha256": "f76dbe2d628391b59d8f7a66a6f5e61511a5f82def0d03c99f47f59db218973b",
+      "software_statuses": {
+        "S1": {
+          "shoulder_position": "numeric_pass",
+          "step_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass",
+          "edge_clearance": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-step/wrong-position",
+      "source_case": "validation/runs/S3-STEP-SUITE-20261029-r1/wrong-position",
+      "material_simulation_reused": true,
+      "old_report_sha256": "d66dbac995e8d2dfc1ba356c308354cda345ed28bc09c200329c22e9c188b656",
+      "new_report_sha256": "2f14d9da190e892854757b2efcd3bf80cb474ac243ca0f6502616bf5994c0246",
+      "mesh_sha256": "439304051576a54493d309c23242f9774280add83bf549b2d4519ead7f113589",
+      "software_statuses": {
+        "S1": {
+          "shoulder_position": "numeric_fail",
+          "step_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "edge_clearance": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-step/uncleared-edges",
+      "source_case": "validation/runs/S3-STEP-SUITE-20261029-r1/uncleared-edges",
+      "material_simulation_reused": true,
+      "old_report_sha256": "6508678d5b1b8c00617839457fd05a75f172c039acc8b471aff276c9fca7604c",
+      "new_report_sha256": "63aee6aff1e2c1af7bb24d37f31e56033a91f6a7f129c4d2116658201ee711b8",
+      "mesh_sha256": "5c84d5a76f5764e3c95f77323b005667dbcfedc594be731437ef60b90a8890a1",
+      "software_statuses": {
+        "S1": {
+          "shoulder_position": "not_measurable",
+          "step_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "edge_clearance": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-region/baseline",
+      "source_case": "validation/runs/S3-REGION-SUITE-20261029-r2/baseline",
+      "material_simulation_reused": true,
+      "old_report_sha256": "e07f2d577e2650e82099c4764cead685826b43842e21ee8e2ec39e48412c1b18",
+      "new_report_sha256": "f57c6de4656c6aa903c2371c203253bafea925b498f20452f2cecba487a13bfb",
+      "mesh_sha256": "303c2e95eb51acbab69e5de7f7535c0318cb881d594689ee77e3ce41580b3fde",
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_pass",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-region/island",
+      "source_case": "validation/runs/S3-REGION-SUITE-20261029-r2/island",
+      "material_simulation_reused": true,
+      "old_report_sha256": "6163b906da66c43ff781dbda69f745feef754f81c0426c9cef77f2c6b9f7e061",
+      "new_report_sha256": "7a0f5b3085afb6965b5a336f69afa2e1e6465a4a35f093f1b9376433c3bf674d",
+      "mesh_sha256": "e589e6dae72e47c84367b9b1490523fe1637255fad7fd6704894604387d346e9",
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_pass",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "island_retention": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-region/open-mouth",
+      "source_case": "validation/runs/S3-REGION-SUITE-20261029-r2/open-mouth",
+      "material_simulation_reused": true,
+      "old_report_sha256": "8afc5692b8e8016fac1bf8ba14bb7eb45ad3ea021d816f14d9d461f9242f1c8e",
+      "new_report_sha256": "47d17b8ec68493ec0db0cc4ba2dd23417da67027fcdf1cde47532a362d26c96b",
+      "mesh_sha256": "255f3962310695e90d808c676d88d30d4bff28c717a2d5fd254f7ab72ca788e6",
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_pass",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "open_edge_clearance": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-region/channel",
+      "source_case": "validation/runs/S3-REGION-SUITE-20261029-r2/channel",
+      "material_simulation_reused": true,
+      "old_report_sha256": "8a66154fe6f6508a75e3afee2b089fdf02ddd777c958a48dffa24699a9eed6bf",
+      "new_report_sha256": "69aab2d2d85f51756a6d1e76372c0eb45b4ed4d25f3371c04ef15eb6b29472b1",
+      "mesh_sha256": "c7c99947eb7ddc891813b54c70059266b3dbb19a1c405c271c1672a2b8f2cbf3",
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_pass",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "open_edge_clearance": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-region/too-shallow",
+      "source_case": "validation/runs/S3-REGION-SUITE-20261029-r2/too-shallow",
+      "material_simulation_reused": true,
+      "old_report_sha256": "9ceec68c7797dfcdd763b08f5f150cef9ab2c4dc51d187b0322ac039d14da49b",
+      "new_report_sha256": "5a5a35672e3e4c6cf143bb9e92927d40f6505bde481f626e4145e15506ffb944",
+      "mesh_sha256": "66249e63e0bcdd3842a8c08de81dc8250eccc33d05e30a352459e7be7c0d57d2",
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_fail",
+          "cut_depth": "numeric_fail",
+          "floor_geometry": "numeric_pass"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-region/wrong-position",
+      "source_case": "validation/runs/S3-REGION-SUITE-20261029-r2/wrong-position",
+      "material_simulation_reused": true,
+      "old_report_sha256": "d077a84d188c2f4b523e70e6da53f594a0ba22a27b15ea5636dced5f1635b2ea",
+      "new_report_sha256": "6636702dc37ba2fdcfb38d9a942dba59b70196d6f3a4f4887e31a776fc129128",
+      "mesh_sha256": "262ba39372907b4d2a9d4318360d6be2498d1283d9737ee9d83af44f3a6d3e71",
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_fail",
+          "cut_depth": "numeric_fail",
+          "floor_geometry": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-region/removed-island",
+      "source_case": "validation/runs/S3-REGION-SUITE-20261029-r2/removed-island",
+      "material_simulation_reused": true,
+      "old_report_sha256": "5581315e4d49366104ae9b20b7f0c43968de0d6ec52bac61d67c7735ce78a093",
+      "new_report_sha256": "ccd6cfe022db149955286a20fa78e3c896c7c9a0854dcc37e7616a88c1720756",
+      "mesh_sha256": "66cbd9c4ccff6ab57a1d4a34c61c585dc8923242c7c5f743ac7f44bdb7507186",
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_fail",
+          "cut_depth": "numeric_pass",
+          "floor_geometry": "numeric_pass",
+          "island_retention": "numeric_fail"
+        }
+      },
+      "passed": true
+    },
+    {
+      "id": "s3-region/closed-mouth",
+      "source_case": "validation/runs/S3-REGION-SUITE-20261029-r2/closed-mouth",
+      "material_simulation_reused": true,
+      "old_report_sha256": "08f014bd87b4e4885ffcc245bce43de64720168eb20e9183ef715616f83cb70d",
+      "new_report_sha256": "d9dba32bec0f8567311d38dc874255ab48f62e5215ea568db63277a2dacb5f28",
+      "mesh_sha256": "5b8308297ef8f30387441e2311ed6179adcdf8d8006f9c7db9f5396c058fa7b6",
+      "software_statuses": {
+        "P1": {
+          "contour_xy": "numeric_fail",
+          "cut_depth": "numeric_fail",
+          "floor_geometry": "numeric_fail",
+          "open_edge_clearance": "numeric_fail"
+        }
+      },
+      "passed": true
+    }
+  ],
+  "source_code_sha256": {
+    "pocket_nc.py": "8c868f902300cac9f0151698a5457b2eca91c1c2aa6aee23e1771cb85fcdd942",
+    "run.py": "ad81915561c416381d10309cc60eb8f6b12c24b0247d1596216f8bdcc0cd2829",
+    "measurement.py": "9e253ca7591a33f90d77906bad979374f441de0420c13bbbba0334abe1a681b9",
+    "region_nc.py": "0c5f24b97437c7f9c7fc4af0e3847f07ffa57e83bb48c8a9ba46db3977d22108",
+    "step_geometry.py": "a4bf2fb738c106e9c62b1fc0897eebd22f38c3115dfcb713b164113f4e62e31a",
+    "preparation.py": "97f031b9927f299de0eeb33325bb2280537757eab6b7d9f618e26b5b784f3ba5",
+    "facing_nc.py": "b29c7e7dbc956a42311c0892aee8063c9723860aefc4335d494a42385c700a87",
+    "programming.py": "72ce942135f9151ef3eab5032f6922168b20d6aa22e19a6f73da4b79d1b52210",
+    "verification.py": "f4ccc838ca01ed78dd77282775510233f50bba6550c3f25a18bb72508ce6d8da",
+    "native_region.py": "0f4392da3f61d245117012c3f77a73e99a1815bd19196b2dff26d854daee8b28",
+    "milling_features.py": "0cbb2a59acb06e51004cd423229c99be572b928d6b6c2c17db2f7f4c262f0320",
+    "simulation_engine.py": "9f948f46e580566f19bb00b4f6f5fff2235ba7304b23d10b8ab2a842b7488f58",
+    "milling_preparation.py": "1e9a8a7a5e4cd40c5aa8a0f30c5699b8c5c150d287f9f54da4fe3da7d471237b",
+    "step_verification.py": "11ad6c14346909a665bda8a8b0b3045e41e144b9ab6b0c4cee605521398274a6",
+    "drilling_geometry.py": "1b14ce8cd63b08ee0ad68217eb8c1d4df467dff6030a931bf3967f401b4e9518",
+    "measure_worker.py": "479c92a552ea5d621c576345580606802b7ea9c5ed8012cac0ec4dfb8b0ba6d2",
+    "milling_nc.py": "56c3ed6538568c7603d16f3f668e3203306b6d0905e9fd0092ac7f058a8de5d3",
+    "facing_verification.py": "1050ed3789df5ba7b67d54caf71b3d21d9dc6654cc1fc6f07266839175cdd2ac",
+    "step_cam.py": "a7b8221dda315baf4efc98abcaaab6556ed768132b7107ae87165e5de502d24b",
+    "pocket_preparation.py": "6d134300fbcd946c49e960abc0cdf86c2fbb814b4ab8ae1d76870214733acc80",
+    "facing_cam.py": "4912400558f689e08c4e0a918258b4d583737bbe5d9973ae44389d0f7889de1a",
+    "pocket_geometry.py": "8cef161bd05c1e3871839c94b9cdcecba8c2627b59043ad2c2312b81590f3a4f",
+    "region_geometry.py": "14cd3a3e65d34c401909db2adad3de4f5ed3b5e76f817e4a0286e60d569a4d8f",
+    "region_verification.py": "80bb1c17796c50f57d06fcd53dff611a7766eac24ac4985052f9d17c82adeb03",
+    "pocket_cam.py": "f11722da9598dc67c18d2452e1f609340c773fa76f555c0d12fc1d0fd234b16b",
+    "blind_verification.py": "e3ab08dd86b14dd235573397df26469145944b23db4e589a2f629568f582207a",
+    "step_nc.py": "90ca75f07651805849f892276aa73f80325a9cb6a73c237e085340cf7db6caf1",
+    "native_planar_cam.py": "7356c8fe11d347efe80681f28e0439b5beb7a965db2b6539c6ec256fd2a1f076",
+    "pocket_verification.py": "0e67e8a24508bb6595d18b0b503b9deb4bc6f3f27627de4f42f9320aee697e4b",
+    "region_cam.py": "ae700d7efe469ae1d720158eb6381760ba87426c3f02701b680231b68115b373",
+    "__init__.py": "efa8f59200b1bd9b267b22368099635da387e3a7061c628450c7d861b1ed2e1c",
+    "freecad_worker.py": "fb16a5aa5810c10292134667461bd16efc057e29310e68f13493e0f88b074152",
+    "native_stock.py": "2f2167b0ace5bb3e9c8e962a7d0fbad6f4934a90df170fcd0021ea7deac5e39d",
+    "reference_sections.py": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b",
+    "facing_geometry.py": "09a0666ca51bd5c0a16fa8942d85b5125691c1bb5139f2df3094ea45eee2f725"
+  },
+  "production_approved": false
+}

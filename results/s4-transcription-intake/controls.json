@@ -1,0 +1,248 @@
+{
+  "input_rejections": [
+    {
+      "id": "wrong-hole-diameter",
+      "status": "blocked_at_source_binding",
+      "reason": "cad_mismatch",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-hole-position",
+      "status": "blocked_at_source_binding",
+      "reason": "cad_mismatch",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-blank-thickness",
+      "status": "blocked_at_source_binding",
+      "reason": "resource_mismatch",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-material-label",
+      "status": "blocked_at_source_binding",
+      "reason": "resource_mismatch",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "micrometre-misread-as-mm",
+      "status": "blocked_at_source_binding",
+      "reason": "assertion_semantics",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "wrong-assertion-subject",
+      "status": "blocked_at_source_binding",
+      "reason": "assertion_semantics",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "blind-hole-must-not-be-through",
+      "status": "blocked_at_source_binding",
+      "reason": "unsupported_operation",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "milling-is-not-drilling",
+      "status": "blocked_at_source_binding",
+      "reason": "unsupported_operation",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "unknown-cad-feature",
+      "status": "blocked_at_source_binding",
+      "reason": "unknown_feature",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "missing-step-binding",
+      "status": "blocked_at_source_binding",
+      "reason": "missing_step_binding",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "explicit-tolerance-cannot-disappear",
+      "status": "blocked_at_source_binding",
+      "reason": "unsupported_source_tolerance",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "missing-resource-file",
+      "status": "blocked_at_source_binding",
+      "reason": "missing_context",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "declared-whole-card-completion",
+      "status": "blocked_at_source_binding",
+      "reason": "invalid_scope",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "unread-source-page",
+      "status": "blocked_at_source_binding",
+      "reason": "unread_page",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "extra-selected-requirement",
+      "status": "blocked_at_source_binding",
+      "reason": "unconsumed_requirement",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "unowned-global-requirement",
+      "status": "blocked_at_source_binding",
+      "reason": "unconsumed_requirement",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "conflicting-source-values",
+      "status": "blocked_at_source_binding",
+      "reason": "source_conflict",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "unresolved-source-symbol",
+      "status": "blocked_at_source_binding",
+      "reason": "unresolved_source",
+      "nc_started": false,
+      "expectation_met": true
+    },
+    {
+      "id": "proposal-does-not-fill-resource",
+      "status": "blocked_at_preparation",
+      "expectation_met": true,
+      "issues": [
+        {
+          "code": "missing_information",
+          "field": "requirements/R_DIAMETER/acceptance",
+          "message": "验收要求待确认；不能用整体 IoU 代替。",
+          "severity": "acceptance",
+          "blocked_stage": "requirement_acceptance",
+          "owner": "process_engineer"
+        },
+        {
+          "code": "missing_information",
+          "field": "requirements/R_POSITION/acceptance",
+          "message": "验收要求待确认；不能用整体 IoU 代替。",
+          "severity": "acceptance",
+          "blocked_stage": "requirement_acceptance",
+          "owner": "process_engineer"
+        },
+        {
+          "code": "missing_information",
+          "field": "requirements/R_THROUGH/acceptance",
+          "message": "验收要求待确认；不能用整体 IoU 代替。",
+          "severity": "acceptance",
+          "blocked_stage": "requirement_acceptance",
+          "owner": "process_engineer"
+        },
+        {
+          "code": "missing_information",
+          "field": "requirements/R_ROUGHNESS/acceptance",
+          "message": "验收要求待确认；不能用整体 IoU 代替。",
+          "severity": "acceptance",
+          "blocked_stage": "requirement_acceptance",
+          "owner": "process_engineer"
+        },
+        {
+          "code": "missing_information",
+          "field": "resources/cutting_presets/spindle_rpm",
+          "message": "需要补齐该字段，未使用默认值。",
+          "severity": "blocking",
+          "blocked_stage": "nc_generation",
+          "owner": "input_maintenance"
+        }
+      ]
+    },
+    {
+      "id": "forged-reviewed-status",
+      "status": "invalid_input",
+      "expectation_met": true,
+      "normal_entry": true
+    },
+    {
+      "id": "changed-compiled-diameter",
+      "status": "invalid_input",
+      "expectation_met": true,
+      "normal_entry": true
+    },
+    {
+      "id": "missing-candidate-evidence",
+      "status": "invalid_input",
+      "expectation_met": true,
+      "normal_entry": true
+    },
+    {
+      "id": "factory-source-conflict",
+      "status": "blocked_at_source_binding",
+      "reason": "source_conflict",
+      "expectation_met": true
+    }
+  ],
+  "legacy_preparation_cases": [
+    {
+      "id": "diameter",
+      "status": "ready_for_declared_scope",
+      "plan_sha256": "78549016b5231496e1833c8094da7ad58521ca709ae426652ee2e43f2cacf5ff"
+    },
+    {
+      "id": "position",
+      "status": "ready_for_declared_scope",
+      "plan_sha256": "7b307bf0943192ebf14e48c1afdcff0dc790cc9a9e1aac2aef368ce24bea55f7"
+    },
+    {
+      "id": "thickness",
+      "status": "ready_for_declared_scope",
+      "plan_sha256": "486b5b9230b28a7be5b15fa8c582af36025b565c7f128e9de63458966cc1d837"
+    },
+    {
+      "id": "rough-finish-combined",
+      "status": "ready_for_declared_scope",
+      "plan_sha256": "d6b41900aaf0ba787e4230a635d5a604330c57818e65c43feff5fc781bd22be8"
+    },
+    {
+      "id": "rough-finish-radial",
+      "status": "ready_for_declared_scope",
+      "plan_sha256": "08b96d86ebf79e0a66cbb0d39b3dabab9290ddadd01ca285ee28784ebbe19e5d"
+    },
+    {
+      "id": "rough-finish-axial",
+      "status": "ready_for_declared_scope",
+      "plan_sha256": "cb6d871375137ef963905ab66915a66d35fb1f133796fe905fa7351771738de6"
+    },
+    {
+      "id": "rough-finish-shifted",
+      "status": "ready_for_declared_scope",
+      "plan_sha256": "470a5b4fb97075e673f6d63d751d60b31e47a6b18c9e45f741ba2047f59136ca"
+    }
+  ],
+  "native_cad_mismatch": {
+    "expected_rejection_observed": true,
+    "error": "Native CAM did not succeed: Native CAD disagrees with the planned hole/stock: symmetric difference 9.053497746093097",
+    "nc_generated": false,
+    "simulation_started": false
+  },
+  "source_contract_regression_controls": 24,
+  "fixed_schema_comparisons": 6426,
+  "model_accuracy_measured": false,
+  "factory_card_executable": false
+}

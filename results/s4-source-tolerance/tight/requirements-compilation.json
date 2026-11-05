@@ -1,0 +1,44 @@
+{
+  "schema": "genlaw.source-tolerance-compilation.v1",
+  "base_requirements_sha256": "4557096797105ce3a083d2553eb369eb1feffa6cbdd4f9cdaa7d6282b91e820f",
+  "draft_sha256": "0df704f90deee4789e98c42f0df4b80436cb788f4b29b829ab5672ca059dde12",
+  "interpretation_sha256": "06c66f9a92ad7210d7723a8853e049eab083a2ef70d7c9305a42111544b031f1",
+  "cad_sha256": "2026181589986e17c523da5b007fb3a24a74ade6cd0568cf8ea91ad1ff93c458",
+  "derived_requirements_sha256": "999ef15a90aedfda7f8b8b66aa9709720a6073d523777ab7da437fcf8294c855",
+  "bindings": [
+    {
+      "assertion_id": "CLAIM-diameter_mm",
+      "requirement_id": "R_DIAMETER",
+      "step_id": "OP10.2",
+      "feature_id": "F_HOLE_1",
+      "nominal_mm": 2.5,
+      "tolerance_minus_plus_mm": [
+        0.01,
+        0.01
+      ],
+      "limits_mm": [
+        2.49,
+        2.51
+      ],
+      "method": "sampled_radial_diameter_band",
+      "evidence": [
+        {
+          "page": 2,
+          "bbox_pixels": [
+            0,
+            0,
+            1190,
+            1684
+          ],
+          "mode": "visual",
+          "quote": "合成通孔工艺卡：尺寸要求补充页\n样本：tight\n本页与前页合用，仅用于软件接口测试，未经生产审核。\nOP10.2 / F_HOLE_1\n孔径名义值：2.5 mm\n下偏差：-0.01 mm\n上偏差：+0.01 mm\n孔位 (3, 2) mm，通孔，名义板厚 1.5 mm。\n孔径公差不改变目标 CAD、刀具或进给参数。\n原卡工序、来料与资源配置按前页和显式上下文保留。\n转录草案由测试编写数据生成；未调用模型读取 PDF。\n本例不证明粗糙度、形位公差、材料性能或现场加工能力。",
+          "ocr_line_ids": []
+        }
+      ]
+    }
+  ],
+  "source_semantics_verified": false,
+  "production_approved": false,
+  "unmapped_requirements_preserved": true,
+  "cad_nominals_changed": false
+}

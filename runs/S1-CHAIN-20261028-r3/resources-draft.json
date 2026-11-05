@@ -1,0 +1,52 @@
+{
+  "schema": "genlaw.preparation-resources.v1",
+  "id": "S1-RESOURCE-DRAFT-r1",
+  "units": "mm",
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "machine": {
+    "kind": "generic_XYZ_reference",
+    "axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "real_machine_qualified": false
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false
+  },
+  "tools": [
+    {
+      "id": "T1",
+      "kind": "drill",
+      "diameter_mm": 2,
+      "tip_angle_degrees": 118,
+      "length_mm": 20,
+      "basis": "S1 软件参考钻头；真实设备与刀柄未批准。"
+    }
+  ],
+  "setup": null,
+  "cutting_presets": [],
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  }
+}

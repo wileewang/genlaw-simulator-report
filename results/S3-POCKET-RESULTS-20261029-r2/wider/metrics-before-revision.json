@@ -1,0 +1,153 @@
+{
+  "schema": "genlaw.sectional-iou.v2",
+  "status": "measured_numerical_estimate",
+  "iou": 0.9997042903194366,
+  "iou_percent": 99.97042903194367,
+  "volumes": {
+    "actual_volume_mm3": 67.10646921405548,
+    "target_volume_mm3": 67.10730095680368,
+    "intersection_mm3": 67.09696154040931,
+    "union_mm3": 67.11680863044985,
+    "iou": 0.9997042903194366,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 0.009507673646169224,
+  "missing_material_mm3": 0.010339416394373302,
+  "actual_mesh": {
+    "source_sha256": "6ec4d42fbf76ec07431681437e2e9574121e2eb0ba004479f08b65ef3ddaf1e8",
+    "raw_triangles": 466796,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 466796,
+    "vertices": 233400,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 67.10646928490299,
+    "bounds": {
+      "min": [
+        -9.765625145519152e-05,
+        9.765625145519152e-05,
+        -1.500097632408142
+      ],
+      "max": [
+        8.000097274780273,
+        6.000097751617432,
+        -9.765625145519152e-05
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "schema": "genlaw.native-binding.v4",
+    "status": "verified",
+    "cad_sha256": "cb19b39139d8b0308e37ab75e67f352e633086e8a5e973217688f40f35d3a03f",
+    "reference_class": "axis_aligned_box_minus_one_z_rounded_rectangular_pocket",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "volume_mm3": 67.10730091830126,
+    "valid_single_solid": true,
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "features": [
+      {
+        "id": "P1",
+        "kind": "rounded_rectangular_pocket",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "center_xy_mm": [
+          4,
+          3
+        ],
+        "width_mm": 4,
+        "height_mm": 2.5,
+        "corner_radius_mm": 0.5,
+        "depth_mm": 0.5
+      }
+    ],
+    "reference_for_iou": "Independent union of rectangles and circular corners, native boolean difference checked against original CAD.",
+    "pocket_floor_face": "Face15"
+  },
+  "native_geometry_sha256": "1992e11b7a595b4bf944a0e7177f09a7f7d15264ae6ef4a1bfd54a967861c1f6",
+  "absolute_iou_refinement_difference": 7.43508227207812e-08,
+  "section_levels": 64,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "section_hole_observations": [
+    {
+      "requested_z_mm": -1.35,
+      "z_mm": -1.3404508826673847,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": -0.75,
+      "z_mm": -0.7404508588255267,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": -0.1499999999999999,
+      "z_mm": -0.140450853402517,
+      "interior_loops": 1,
+      "holes": [
+        {
+          "centroid_xy_mm": [
+            3.9999564020116516,
+            3.0000282916709633
+          ],
+          "area_equivalent_diameter_mm": 3.5291051529231607
+        }
+      ]
+    }
+  ],
+  "method": "Closed STL cross-sections, all vertex-height intervals, 3-point Gauss integration against native-checked analytic CAD section.",
+  "registration": "none; same CAD/G54 coordinates",
+  "full_tolerance_acceptance": false,
+  "production_approved": false,
+  "limits": [
+    "Numerical estimate, not a certified error bound.",
+    "Section diameters are area-equivalent, not a GD&T acceptance.",
+    "Three interior slices do not certify through-hole or roughness acceptance."
+  ],
+  "reference_sections": "Height-dependent cylinders and conical bottoms; CAD critical heights included.",
+  "reference_source_code_sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+}

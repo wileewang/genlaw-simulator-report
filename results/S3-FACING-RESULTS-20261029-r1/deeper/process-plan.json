@@ -1,0 +1,118 @@
+{
+  "schema": "genlaw.process-plan.v1",
+  "id": "S3-FACING-deeper-CARD-r1",
+  "cad_sha256": "f167db923eb58e2ab964cee20cf955cee9ea64352c8bb290c800fb70934061cc",
+  "origin": "developer_authored_synthetic_paper_card",
+  "transcription": {
+    "status": "checked_against_source",
+    "reviewer_role": "developer_transcription",
+    "production_review": false
+  },
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "external_documents": [],
+  "operations": [
+    {
+      "id": "OP05",
+      "name": "来料核对",
+      "steps": [
+        {
+          "id": "OP05.1",
+          "type": "incoming_inspection",
+          "text": "核对 8 × 6 × 1.5 mm 来料、材料标签和版本；明确毛坯与成品厚度不同。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP05.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP10",
+      "name": "铣",
+      "steps": [
+        {
+          "id": "OP10.1",
+          "type": "setup",
+          "text": "按确认后的定位基准与装夹方案找正；建立 CAD 与工件坐标的对应关系。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.1"
+          }
+        },
+        {
+          "id": "OP10.2",
+          "type": "face_milling",
+          "text": "铣平 P1 上表面至成品厚 0.75 mm，顶面坐标 Z-0.75；去除 0.75 mm。按附件分层清除整个顶面，保留 XY 外形及底面。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP10.2"
+          },
+          "feature_id": "P1",
+          "depends_on": [
+            "OP05.1",
+            "OP10.1"
+          ],
+          "constraints": {
+            "thickness_mm": 0.75,
+            "top_shape": "flat",
+            "tool_id": "T1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP20",
+      "name": "去毛刺",
+      "steps": [
+        {
+          "id": "OP20.1",
+          "type": "deburring",
+          "text": "外缘去毛刺、锐边处理按制造要求确认；不自行增加倒角。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP20.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP30",
+      "name": "检验",
+      "steps": [
+        {
+          "id": "OP30.1",
+          "type": "inspection",
+          "text": "检查成品厚度、顶面高度及平整情况、外形和底基面保留；制造公差与粗糙度验收依据待确认。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP30.1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP35",
+      "name": "后续处置",
+      "steps": [
+        {
+          "id": "OP35.1",
+          "type": "postprocess",
+          "text": "是否需要清洗、标识、包装，由实际交付要求决定。",
+          "source": {
+            "document_id": "CARD",
+            "page": 2,
+            "location": "工序 / 工步 OP35.1"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema": "genlaw.preparation-resources.v1",
+  "id": "S2-BLIND-deeper-RESOURCES-r3",
+  "units": "mm",
+  "stock": {
+    "shape": "box",
+    "bounds_mm": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "material_label": "6061-T6",
+    "material_physics_verified": false
+  },
+  "machine": {
+    "kind": "generic_XYZ_reference",
+    "axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "real_machine_qualified": false
+  },
+  "controller": {
+    "profile": "reference_NC_subset",
+    "return_mode": "initial_plane",
+    "linuxcnc_runtime_required": false
+  },
+  "tools": [
+    {
+      "id": "T1",
+      "kind": "drill",
+      "diameter_mm": 2,
+      "tip_angle_degrees": 118,
+      "length_mm": 20,
+      "basis": "S1 软件参考钻头；真实设备与刀柄未批准。"
+    }
+  ],
+  "setup": {
+    "work_offset": "G54",
+    "origin_mm": [
+      0,
+      0,
+      0
+    ],
+    "rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "tool_length_offset_mm": 0,
+    "fixture_mode": "unmodelled_explicitly_excluded",
+    "basis": "明确的软件参考条件，复用历史探针；不代表真实装夹已确认。"
+  },
+  "cutting_presets": [
+    {
+      "id": "REFERENCE-ONLY",
+      "operation": "drilling",
+      "tool_id": "T1",
+      "material_label": "6061-T6",
+      "feed_unit": "mm/min",
+      "speed_unit": "rpm",
+      "spindle_rpm": {
+        "value": 1000,
+        "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+      },
+      "feed_mm_min": {
+        "value": 60,
+        "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+      },
+      "retract_plane_mm": {
+        "value": 1,
+        "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+      },
+      "safe_height_mm": {
+        "value": 2,
+        "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+      },
+      "clearance_height_mm": {
+        "value": 3,
+        "basis": "开发者显式指定的软件参考条件；不是现场卡缺项时的默认值，也不是生产推荐。"
+      }
+    }
+  ],
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "simulation": {
+    "resolution_mm": 0.025,
+    "basis": "Explicit 0.025 mm numerical grid, same stock and unchanged 5,000,000-cell budget as the preceding small through-hole cases."
+  }
+}

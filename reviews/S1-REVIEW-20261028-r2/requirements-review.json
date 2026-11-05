@@ -1,0 +1,53 @@
+{
+  "schema": "genlaw.requirements-review.v0",
+  "status": "draft_not_executable_acceptance",
+  "cad_ref": {
+    "path": "inputs/target.step",
+    "sha256": "643a38d842d172b1866875c435e738e220f8155a57d23099c98e5d8aa195e4cb"
+  },
+  "requirements": [
+    {
+      "id": "REQ-01",
+      "feature": "外形",
+      "nominal": "8 × 6 × 1.5 mm；X: 0–8，Y: 0–6，Z: −1.5–0",
+      "acceptance": null,
+      "review": "外形/厚度公差、毛坯是否预加工到尺寸、余量待定。"
+    },
+    {
+      "id": "REQ-02",
+      "feature": "F_HOLE_1 孔径",
+      "nominal": "φ2 mm 直圆柱通孔",
+      "acceptance": null,
+      "review": "孔径上下偏差或公差等级、检验工具待定。"
+    },
+    {
+      "id": "REQ-03",
+      "feature": "F_HOLE_1 孔位",
+      "nominal": "孔心 X=3、Y=2 mm；轴线沿 Z",
+      "acceptance": null,
+      "review": "X/Y 尺寸公差或位置度、实际定位基准与检测方法待定；不自动等同。"
+    },
+    {
+      "id": "REQ-04",
+      "feature": "F_HOLE_1 贯穿",
+      "nominal": "贯穿 1.5 mm 厚板；目标 CAD 无孔底",
+      "acceptance": null,
+      "review": "贯穿判据、出口毛刺、允许过钻量和底部让刀空间待定。"
+    },
+    {
+      "id": "REQ-05",
+      "feature": "表面与边缘",
+      "nominal": "CAD 未建倒角；未提供粗糙度/去毛刺标注",
+      "acceptance": null,
+      "review": "是否需要倒角、去毛刺及粗糙度要求，须由工艺师傅补充。"
+    },
+    {
+      "id": "REQ-06",
+      "feature": "材料与来料",
+      "nominal": "6061-T6 为软件案例标签；矩形毛坯与目标外形等大",
+      "acceptance": null,
+      "review": "真实材料/状态、来料形式、尺寸与余量、可用设备资源待确认。"
+    }
+  ],
+  "historical_note": "早期选型草案曾提出 0.05 mm 数值建议，未定义完整公差类型、基准与测量规则，也未经工艺审核；本包不将其补写为已批准的制造公差。"
+}

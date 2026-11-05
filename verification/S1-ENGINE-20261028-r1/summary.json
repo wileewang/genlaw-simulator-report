@@ -1,0 +1,1486 @@
+{
+  "schema": "genlaw.full-engine-regression.v1",
+  "id": "S1-ENGINE-20261028-r1",
+  "status": "regression_passed",
+  "engine_manifest_sha256": "ed764acbd1611abb467e2fc40d7c92df15a207435c3438417c5eff7e660d47a2",
+  "engine": {
+    "schema": "genlaw.camotics-build.v1",
+    "id": "1.2.0-genlaw-axis-r1",
+    "binary": "engines/camotics/releases/1.2.0-genlaw-axis-r1/camsim",
+    "binary_sha256": "7a217a0493fddd618324a3bc219c6d8af58ca320e40f68d461dfac4770a1d6fd",
+    "version_output": "1.2",
+    "patched_vertical_conic_sweep": true,
+    "complete_nc_material_removal_engine": true,
+    "build_features": {
+      "gui": false,
+      "tpl": false,
+      "openssl": false,
+      "event_http_service": false,
+      "nc_interpreter": true,
+      "sweep_and_surface": true,
+      "binary_stl": true
+    },
+    "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+    "compile_options": "num_jobs=1 debug=0 optimize=0 ccflags=-O2 strict=0 cxxstd=c++11",
+    "upstreams": [
+      {
+        "project": "CAMotics",
+        "commit": "a26af50604877e3c863091103b6667b207fa79ad",
+        "url": "https://codeload.github.com/CauldronDevelopmentLLC/CAMotics/tar.gz/a26af50604877e3c863091103b6667b207fa79ad",
+        "archive_sha256": "5027d84d22fe0752ca641e67d2ee67ccc6906420af83bc357ef24d156c57f2d2",
+        "source_directory": "engines/camotics/source"
+      },
+      {
+        "project": "cbang",
+        "commit": "e231d612a6fbb3424b7b211d08bb367f6d9ca0f8",
+        "url": "https://codeload.github.com/CauldronDevelopmentLLC/cbang/tar.gz/e231d612a6fbb3424b7b211d08bb367f6d9ca0f8",
+        "archive_sha256": "039a21f03a2b63e12e60e01379dc4d3fc2bb957043b6819e1e555a1d185c450b",
+        "source_directory": "engines/camotics/vendor/cbang"
+      }
+    ],
+    "modified_source_files": [
+      {
+        "project": "CAMotics",
+        "path": "engines/camotics/source/SConstruct",
+        "upstream_sha256": "9a1cb28ba8f11285e8de7c817f033e665a3e19adebead26909bbf374ca022907",
+        "modified_sha256": "d864702678ce66ba80a4d9c92868a662a98904b970d4fdb142cf4909f04cfd04"
+      },
+      {
+        "project": "CAMotics",
+        "path": "engines/camotics/source/src/camotics/sim/ConicSweep.cpp",
+        "upstream_sha256": "fbc00eb1b5f274d929c59338145da2f054569e831ab1309dd36f2652b61d5dab",
+        "modified_sha256": "a156d384b528ac481df7b0cdcf45e8b46a3b17ca4ac9979279032eeabc0102e4"
+      },
+      {
+        "project": "cbang",
+        "path": "engines/camotics/vendor/cbang/SConstruct",
+        "upstream_sha256": "41f127481c48592209795a4e4e08118117a1ecc9d6da4e67f352acf13b50f3e3",
+        "modified_sha256": "e24b79fbab814fa6117af8b7c9008609711a2beb4b98563f74f12c0230247d81"
+      },
+      {
+        "project": "cbang",
+        "path": "engines/camotics/vendor/cbang/config/__init__.py",
+        "upstream_sha256": "2b76b71801120c8aa00b6efda31a2b2dbd08e70c0a901b16ac2c145523b11192",
+        "modified_sha256": "40e908f74315eae0e89a1d5c39828de8a936f78845975f1c9cb616f6be5af543"
+      },
+      {
+        "project": "cbang",
+        "path": "engines/camotics/vendor/cbang/config/build_info/__init__.py",
+        "upstream_sha256": "4b132af6b94ec706f23c16fbd0fa1b23343f322a6811867c1b79a2445ec45688",
+        "modified_sha256": "b65928f1f975f291bcd01e4f3d977959d162c6946defbda39ec176c665a99b26"
+      }
+    ],
+    "library_directories": [
+      "engines/camotics/.work/sysroot/usr/lib/x86_64-linux-gnu"
+    ],
+    "linked_libraries": [
+      {
+        "path": "/lib/x86_64-linux-gnu/libstdc++.so.6",
+        "sha256": "ff0825e113603c3866680d5d52216bc6d8eedf3a59f52a0aef67ff01994db128",
+        "inside_workspace": false
+      },
+      {
+        "path": "/lib/x86_64-linux-gnu/libexpat.so.1",
+        "sha256": "683e2e41db14581194bf1f6616e95a8f02cd4ab599f0fba807e46325ec01d21f",
+        "inside_workspace": false
+      },
+      {
+        "path": "/lib/x86_64-linux-gnu/libm.so.6",
+        "sha256": "3dd5511ae94785c9f921429b0f2b2f7aabb461b6f0e6de6dfdbef15f24bdfee6",
+        "inside_workspace": false
+      },
+      {
+        "path": "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+        "sha256": "fc9d43b2f6c20e53b009238f767c5b949d202389e20de9e202ea684b4ba3729a",
+        "inside_workspace": false
+      },
+      {
+        "path": "/lib/x86_64-linux-gnu/libc.so.6",
+        "sha256": "b2cf6c33b74d2f22543b7a469a75b538911e690f769d0b238843a49465b83793",
+        "inside_workspace": false
+      },
+      {
+        "path": "/lib64/ld-linux-x86-64.so.2",
+        "sha256": "41daf7836f7fce21a40ca63a00c5caf21b05a35a76ccc075d86f1716212cdf01",
+        "inside_workspace": false
+      }
+    ],
+    "source_manifest_sha256": "c63aac71a4969feddb606f6b50b07f7b8d90423938024a17ae33a9e528e5badc",
+    "build_script_sha256": {
+      "build.py": "5025b3875d7f5403ed4dd9f5e452f17324b99f9e3c8d6bf752c6fc40c39c7218",
+      "build_chunk.py": "8719d094683e85e420d53b8cd45908a466ab4989b3beafd7d57b96ac20f4693b"
+    },
+    "numerical_patch_sha256": "2d08e76b6558f5934824dd531bce4783ff52a0ccd81f8a5c9a6e8c1080895df0",
+    "production_approved": false
+  },
+  "new_material_simulations": 6,
+  "new_freecad_runs": 0,
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "regression_expectation_met": true,
+      "test_only_control": false,
+      "iou_percent": 99.97534453562862,
+      "previous_iou_percent": 99.97532870087849,
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "numeric_pass"
+      },
+      "previous_software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "indeterminate"
+      },
+      "through": {
+        "method": "axial_probe_clear",
+        "probe_count": 9,
+        "clear_count": 9,
+        "blocked_count": 0,
+        "indeterminate_count": 0,
+        "probes": [
+          {
+            "xy_mm": [
+              3.0,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.25,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.176776695296637,
+              2.176776695296637
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.0,
+              2.25
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.823223304703363,
+              2.176776695296637
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.75,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.823223304703363,
+              1.823223304703363
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.0,
+              1.75
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.176776695296637,
+              1.823223304703363
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          }
+        ],
+        "observation": "axial_rays_clear"
+      },
+      "diameter": {
+        "radial_band_mm": [
+          1.999630098517921,
+          2.000193962400066
+        ],
+        "fit_range_mm": [
+          1.999904377669748,
+          1.999904377669748
+        ]
+      },
+      "position": {
+        "max_center_deviation_mm": 4.756649332601728e-06,
+        "centers_xy_mm": [
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ]
+        ]
+      },
+      "nc_sha256": "73744e8ebff36d0b95536b24c523c08df4eb6ba315ee2f82962e102f8463a7c9",
+      "project_sha256": "7d95487b8b2a1e5fef55aa78c0aa8bbac4e0ac5e9ef100651c9f2649c0bfa8ac",
+      "mesh_sha256": "0dbf63ee53dcf6dff08ee297fdc9fb464a48d1311f45e69476c7cefc80a53d81",
+      "requirements": [
+        {
+          "id": "R_DIAMETER",
+          "kind": "diameter",
+          "nominal": 2,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_POSITION",
+          "kind": "position_xy",
+          "nominal": [
+            3,
+            2
+          ],
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_THROUGH",
+          "kind": "through",
+          "nominal": true,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_ROUGHNESS",
+          "kind": "surface_roughness",
+          "nominal": null,
+          "status": "unsupported_measurement",
+          "reason": "No roughness/material or general GD&T evaluator."
+        }
+      ],
+      "normal_guard_rejection": null,
+      "production_approved": false,
+      "whole_process_card_complete": false
+    },
+    {
+      "id": "diameter",
+      "regression_expectation_met": true,
+      "test_only_control": false,
+      "iou_percent": 99.97438478402793,
+      "previous_iou_percent": 99.97438768018316,
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "numeric_pass"
+      },
+      "previous_software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "indeterminate"
+      },
+      "through": {
+        "method": "axial_probe_clear",
+        "probe_count": 9,
+        "clear_count": 9,
+        "blocked_count": 0,
+        "indeterminate_count": 0,
+        "probes": [
+          {
+            "xy_mm": [
+              3.0,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.3125,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.220970869120796,
+              2.220970869120796
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.0,
+              2.3125
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.779029130879204,
+              2.220970869120796
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.6875,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.779029130879204,
+              1.779029130879204
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.0,
+              1.6875
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.220970869120796,
+              1.779029130879204
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          }
+        ],
+        "observation": "axial_rays_clear"
+      },
+      "diameter": {
+        "radial_band_mm": [
+          2.499695893279466,
+          2.5001941631328397
+        ],
+        "fit_range_mm": [
+          2.499897017747846,
+          2.499897017747846
+        ]
+      },
+      "position": {
+        "max_center_deviation_mm": 5.773889853425718e-06,
+        "centers_xy_mm": [
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ],
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ],
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ],
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ],
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ],
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ],
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ],
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ],
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ],
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ],
+          [
+            2.999994264933915,
+            2.0000006684467357
+          ]
+        ]
+      },
+      "nc_sha256": "9bceb26ea0a32b1909740d0767689249dcad73ae756de600f8f972763d391f5e",
+      "project_sha256": "b04d30c9a1d88548320c233da883d529ecda133d932268118b75816f7dac0e81",
+      "mesh_sha256": "c8f91c9700dac83571ed1ab1d41509a36d7b0ec295a3786ee6c1f85db15d00b5",
+      "requirements": [
+        {
+          "id": "R_DIAMETER",
+          "kind": "diameter",
+          "nominal": 2.5,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_POSITION",
+          "kind": "position_xy",
+          "nominal": [
+            3,
+            2
+          ],
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_THROUGH",
+          "kind": "through",
+          "nominal": true,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_ROUGHNESS",
+          "kind": "surface_roughness",
+          "nominal": null,
+          "status": "unsupported_measurement",
+          "reason": "No roughness/material or general GD&T evaluator."
+        }
+      ],
+      "normal_guard_rejection": null,
+      "production_approved": false,
+      "whole_process_card_complete": false
+    },
+    {
+      "id": "position",
+      "regression_expectation_met": true,
+      "test_only_control": false,
+      "iou_percent": 99.97534456384761,
+      "previous_iou_percent": 99.97534625601178,
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "numeric_pass"
+      },
+      "previous_software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "indeterminate"
+      },
+      "through": {
+        "method": "axial_probe_clear",
+        "probe_count": 9,
+        "clear_count": 9,
+        "blocked_count": 0,
+        "indeterminate_count": 0,
+        "probes": [
+          {
+            "xy_mm": [
+              4.0,
+              3.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              4.25,
+              3.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              4.1767766952966365,
+              3.176776695296637
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              4.0,
+              3.25
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.823223304703363,
+              3.176776695296637
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.75,
+              3.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.823223304703363,
+              2.823223304703363
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              4.0,
+              2.75
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              4.1767766952966365,
+              2.823223304703363
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          }
+        ],
+        "observation": "axial_rays_clear"
+      },
+      "diameter": {
+        "radial_band_mm": [
+          1.9996300191417968,
+          2.0001938183544024
+        ],
+        "fit_range_mm": [
+          1.999907451964709,
+          1.999907451964709
+        ]
+      },
+      "position": {
+        "max_center_deviation_mm": 4.796629610483934e-06,
+        "centers_xy_mm": [
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ],
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ],
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ],
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ],
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ],
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ],
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ],
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ],
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ],
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ],
+          [
+            3.9999952776431846,
+            3.0000008408339482
+          ]
+        ]
+      },
+      "nc_sha256": "ac11691a3f33f4420afb1f54e740ad53e9d0c21ef06b268f305ebde11cce6eaa",
+      "project_sha256": "7d95487b8b2a1e5fef55aa78c0aa8bbac4e0ac5e9ef100651c9f2649c0bfa8ac",
+      "mesh_sha256": "0cf90e0e3a9952ef345b5f91d348fd384cb8ca4326e477f721c60529dca6046f",
+      "requirements": [
+        {
+          "id": "R_DIAMETER",
+          "kind": "diameter",
+          "nominal": 2,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_POSITION",
+          "kind": "position_xy",
+          "nominal": [
+            4,
+            3
+          ],
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_THROUGH",
+          "kind": "through",
+          "nominal": true,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_ROUGHNESS",
+          "kind": "surface_roughness",
+          "nominal": null,
+          "status": "unsupported_measurement",
+          "reason": "No roughness/material or general GD&T evaluator."
+        }
+      ],
+      "normal_guard_rejection": null,
+      "production_approved": false,
+      "whole_process_card_complete": false
+    },
+    {
+      "id": "thickness",
+      "regression_expectation_met": true,
+      "test_only_control": false,
+      "iou_percent": 99.96644226007425,
+      "previous_iou_percent": 99.96637881579203,
+      "software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "numeric_pass"
+      },
+      "previous_software_statuses": {
+        "diameter": "numeric_pass",
+        "position_xy": "numeric_pass",
+        "through": "numeric_fail"
+      },
+      "through": {
+        "method": "axial_probe_clear",
+        "probe_count": 9,
+        "clear_count": 9,
+        "blocked_count": 0,
+        "indeterminate_count": 0,
+        "probes": [
+          {
+            "xy_mm": [
+              3.0,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.25,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.176776695296637,
+              2.176776695296637
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.0,
+              2.25
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.823223304703363,
+              2.176776695296637
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.75,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.823223304703363,
+              1.823223304703363
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.0,
+              1.75
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.176776695296637,
+              1.823223304703363
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          }
+        ],
+        "observation": "axial_rays_clear"
+      },
+      "diameter": {
+        "radial_band_mm": [
+          1.999630098517921,
+          2.000193962400066
+        ],
+        "fit_range_mm": [
+          1.999904377669748,
+          1.999904377669748
+        ]
+      },
+      "position": {
+        "max_center_deviation_mm": 4.756649332601728e-06,
+        "centers_xy_mm": [
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ],
+          [
+            2.999995305892785,
+            2.0000007688109833
+          ]
+        ]
+      },
+      "nc_sha256": "82dff4ea69c1741aa0cc0799030791f10f77279e3ebd68e3be8ec2e508f4fb58",
+      "project_sha256": "d51e7337e5dd987fc2bd20bc2b7a28c56a790b6b2e01be1c0b1251863bd286bd",
+      "mesh_sha256": "87c8c332583408345066dbfc44f47280a67517b73d2861c184fb17c2106d072d",
+      "requirements": [
+        {
+          "id": "R_DIAMETER",
+          "kind": "diameter",
+          "nominal": 2,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_POSITION",
+          "kind": "position_xy",
+          "nominal": [
+            3,
+            2
+          ],
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_THROUGH",
+          "kind": "through",
+          "nominal": true,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_ROUGHNESS",
+          "kind": "surface_roughness",
+          "nominal": null,
+          "status": "unsupported_measurement",
+          "reason": "No roughness/material or general GD&T evaluator."
+        }
+      ],
+      "normal_guard_rejection": null,
+      "production_approved": false,
+      "whole_process_card_complete": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "wrong-position",
+      "regression_expectation_met": true,
+      "test_only_control": true,
+      "iou_percent": 95.64827622279712,
+      "previous_iou_percent": 95.64827393165231,
+      "software_statuses": {
+        "diameter": "indeterminate",
+        "position_xy": "numeric_fail",
+        "through": "numeric_pass"
+      },
+      "previous_software_statuses": {
+        "diameter": "indeterminate",
+        "position_xy": "numeric_fail",
+        "through": "numeric_pass"
+      },
+      "through": {
+        "method": "axial_probe_clear",
+        "probe_count": 9,
+        "clear_count": 9,
+        "blocked_count": 0,
+        "indeterminate_count": 0,
+        "probes": [
+          {
+            "xy_mm": [
+              3.0,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.25,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.176776695296637,
+              2.176776695296637
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.0,
+              2.25
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.823223304703363,
+              2.176776695296637
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.75,
+              2.0
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              2.823223304703363,
+              1.823223304703363
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.0,
+              1.75
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          },
+          {
+            "xy_mm": [
+              3.176776695296637,
+              1.823223304703363
+            ],
+            "surface_z_mm": [],
+            "material_spans_mm": [],
+            "classification": "clear"
+          }
+        ],
+        "observation": "axial_rays_clear"
+      },
+      "diameter": {
+        "radial_band_mm": [
+          1.9990668522426132,
+          2.000391205786057
+        ],
+        "fit_range_mm": [
+          1.9997297416647195,
+          1.9997297416647195
+        ]
+      },
+      "position": {
+        "max_center_deviation_mm": 0.4999998971225269,
+        "centers_xy_mm": [
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ],
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ],
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ],
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ],
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ],
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ],
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ],
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ],
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ],
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ],
+          [
+            3.499999897112156,
+            2.0000032203917875
+          ]
+        ]
+      },
+      "nc_sha256": "798f6c80c2ccf67baa1eb979e19e6bf3e97b6e88f20e55f40258de66c455f3f6",
+      "project_sha256": "b94cc354f1eb603c00532600c45cc35a8bd3cec2542b878c2b4757b458077779",
+      "mesh_sha256": "a63d4d70c75ebb334101ed36f54d515b28b52f75ed5cabff55e3457026438109",
+      "requirements": [
+        {
+          "id": "R_DIAMETER",
+          "kind": "diameter",
+          "nominal": 2,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_POSITION",
+          "kind": "position_xy",
+          "nominal": [
+            3,
+            2
+          ],
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_THROUGH",
+          "kind": "through",
+          "nominal": true,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_ROUGHNESS",
+          "kind": "surface_roughness",
+          "nominal": null,
+          "status": "unsupported_measurement",
+          "reason": "No roughness/material or general GD&T evaluator."
+        }
+      ],
+      "normal_guard_rejection": "NC block 9 disagrees with the execution plan",
+      "production_approved": false,
+      "whole_process_card_complete": false
+    },
+    {
+      "id": "not-through",
+      "regression_expectation_met": true,
+      "test_only_control": true,
+      "iou_percent": 95.92685245575724,
+      "previous_iou_percent": 95.92684894778883,
+      "software_statuses": {
+        "diameter": "not_measurable",
+        "position_xy": "not_measurable",
+        "through": "numeric_fail"
+      },
+      "previous_software_statuses": {
+        "diameter": "not_measurable",
+        "position_xy": "not_measurable",
+        "through": "numeric_fail"
+      },
+      "through": {
+        "method": "axial_probe_clear",
+        "probe_count": 9,
+        "clear_count": 0,
+        "blocked_count": 9,
+        "indeterminate_count": 0,
+        "probes": [
+          {
+            "xy_mm": [
+              3.0,
+              2.0
+            ],
+            "surface_z_mm": [
+              -1.50019526,
+              -0.99980468
+            ],
+            "material_spans_mm": [
+              0.5003905799999999
+            ],
+            "classification": "blocked"
+          },
+          {
+            "xy_mm": [
+              3.25,
+              2.0
+            ],
+            "surface_z_mm": [
+              -1.50019526,
+              -0.8498047
+            ],
+            "material_spans_mm": [
+              0.65039056
+            ],
+            "classification": "blocked"
+          },
+          {
+            "xy_mm": [
+              3.176776695296637,
+              2.176776695296637
+            ],
+            "surface_z_mm": [
+              -1.50019526,
+              -0.84838895
+            ],
+            "material_spans_mm": [
+              0.6518063099999999
+            ],
+            "classification": "blocked"
+          },
+          {
+            "xy_mm": [
+              3.0,
+              2.25
+            ],
+            "surface_z_mm": [
+              -1.50019526,
+              -0.8498047
+            ],
+            "material_spans_mm": [
+              0.65039056
+            ],
+            "classification": "blocked"
+          },
+          {
+            "xy_mm": [
+              2.823223304703363,
+              2.176776695296637
+            ],
+            "surface_z_mm": [
+              -1.50019526,
+              -0.84838895
+            ],
+            "material_spans_mm": [
+              0.6518063099999999
+            ],
+            "classification": "blocked"
+          },
+          {
+            "xy_mm": [
+              2.75,
+              2.0
+            ],
+            "surface_z_mm": [
+              -1.50019526,
+              -0.8498047
+            ],
+            "material_spans_mm": [
+              0.65039056
+            ],
+            "classification": "blocked"
+          },
+          {
+            "xy_mm": [
+              2.823223304703363,
+              1.823223304703363
+            ],
+            "surface_z_mm": [
+              -1.50019526,
+              -0.84838893
+            ],
+            "material_spans_mm": [
+              0.6518063299999999
+            ],
+            "classification": "blocked"
+          },
+          {
+            "xy_mm": [
+              3.0,
+              1.75
+            ],
+            "surface_z_mm": [
+              -1.50019526,
+              -0.8498047
+            ],
+            "material_spans_mm": [
+              0.65039056
+            ],
+            "classification": "blocked"
+          },
+          {
+            "xy_mm": [
+              3.176776695296637,
+              1.823223304703363
+            ],
+            "surface_z_mm": [
+              -1.50019526,
+              -0.84838893
+            ],
+            "material_spans_mm": [
+              0.6518063299999999
+            ],
+            "classification": "blocked"
+          }
+        ],
+        "observation": "blocked_material_detected"
+      },
+      "diameter": null,
+      "position": null,
+      "nc_sha256": "8d5dbb6e8469df10cbd5c7ad78087a4c67d9b323fbfe69dac5c9f429dd7066f0",
+      "project_sha256": "b94cc354f1eb603c00532600c45cc35a8bd3cec2542b878c2b4757b458077779",
+      "mesh_sha256": "8f752c3829e44be038007476083f580694ec5652c276af6b8202bb47ea2192f8",
+      "requirements": [
+        {
+          "id": "R_DIAMETER",
+          "kind": "diameter",
+          "nominal": 2,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_POSITION",
+          "kind": "position_xy",
+          "nominal": [
+            3,
+            2
+          ],
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_THROUGH",
+          "kind": "through",
+          "nominal": true,
+          "status": "pending_criteria",
+          "reason": "No approved numerical criterion supplied."
+        },
+        {
+          "id": "R_ROUGHNESS",
+          "kind": "surface_roughness",
+          "nominal": null,
+          "status": "unsupported_measurement",
+          "reason": "No roughness/material or general GD&T evaluator."
+        }
+      ],
+      "normal_guard_rejection": "NC block 11 disagrees with the execution plan",
+      "production_approved": false,
+      "whole_process_card_complete": false
+    }
+  ],
+  "nc_and_configuration_unchanged": true,
+  "measurement_code_unchanged": true,
+  "verifier_sha256": "ea07f92456fbca97b706f80ffdeca879bc13a278c2a6a08d91657cea604b60a0",
+  "production_approved": false,
+  "full_tolerance_acceptance": false,
+  "whole_process_card_complete": false,
+  "resources": [
+    {
+      "case": "baseline",
+      "step": "axis-resources",
+      "seconds": 1.5733232640195638,
+      "peak_rss_mib": 258.59765625
+    },
+    {
+      "case": "baseline",
+      "step": "camotics-resources",
+      "seconds": 4.606777168024564,
+      "peak_rss_mib": 498.8984375
+    },
+    {
+      "case": "baseline",
+      "step": "measure-resources",
+      "seconds": 11.829864653991535,
+      "peak_rss_mib": 258.03125
+    },
+    {
+      "case": "baseline",
+      "step": "verify-resources",
+      "seconds": 2.094413735001581,
+      "peak_rss_mib": 264.01953125
+    },
+    {
+      "case": "diameter",
+      "step": "axis-resources",
+      "seconds": 1.6839280810090713,
+      "peak_rss_mib": 258.34375
+    },
+    {
+      "case": "diameter",
+      "step": "camotics-resources",
+      "seconds": 4.717107978998683,
+      "peak_rss_mib": 509.640625
+    },
+    {
+      "case": "diameter",
+      "step": "measure-resources",
+      "seconds": 12.265798701002495,
+      "peak_rss_mib": 257.296875
+    },
+    {
+      "case": "diameter",
+      "step": "verify-resources",
+      "seconds": 2.203957958990941,
+      "peak_rss_mib": 258.3828125
+    },
+    {
+      "case": "position",
+      "step": "axis-resources",
+      "seconds": 1.57107013600762,
+      "peak_rss_mib": 251.85546875
+    },
+    {
+      "case": "position",
+      "step": "camotics-resources",
+      "seconds": 4.833329821994994,
+      "peak_rss_mib": 508.08984375
+    },
+    {
+      "case": "position",
+      "step": "measure-resources",
+      "seconds": 11.635060612985399,
+      "peak_rss_mib": 257.91796875
+    },
+    {
+      "case": "position",
+      "step": "verify-resources",
+      "seconds": 2.097068237984786,
+      "peak_rss_mib": 259.0703125
+    },
+    {
+      "case": "thickness",
+      "step": "axis-resources",
+      "seconds": 1.3625093699956778,
+      "peak_rss_mib": 230.9375
+    },
+    {
+      "case": "thickness",
+      "step": "camotics-resources",
+      "seconds": 3.3528197199921124,
+      "peak_rss_mib": 359.81640625
+    },
+    {
+      "case": "thickness",
+      "step": "measure-resources",
+      "seconds": 8.17203093599528,
+      "peak_rss_mib": 230.52734375
+    },
+    {
+      "case": "thickness",
+      "step": "verify-resources",
+      "seconds": 1.8855640550027601,
+      "peak_rss_mib": 231.30078125
+    },
+    {
+      "case": "wrong-position",
+      "step": "camotics-resources",
+      "seconds": 1.0510126769950148,
+      "peak_rss_mib": 70.50390625
+    },
+    {
+      "case": "wrong-position",
+      "step": "measure-resources",
+      "seconds": 3.147398165980121,
+      "peak_rss_mib": 82.7578125
+    },
+    {
+      "case": "wrong-position",
+      "step": "verify-resources",
+      "seconds": 0.8384905210114084,
+      "peak_rss_mib": 83.72265625
+    },
+    {
+      "case": "not-through",
+      "step": "camotics-resources",
+      "seconds": 0.9456620929995552,
+      "peak_rss_mib": 70.45703125
+    },
+    {
+      "case": "not-through",
+      "step": "measure-resources",
+      "seconds": 14.266338341025403,
+      "peak_rss_mib": 93.70703125
+    },
+    {
+      "case": "not-through",
+      "step": "verify-resources",
+      "seconds": 0.7345771079999395,
+      "peak_rss_mib": 83.7734375
+    }
+  ]
+}

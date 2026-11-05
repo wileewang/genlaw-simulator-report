@@ -1,0 +1,412 @@
+{
+  "schema": "genlaw.transcription-bridge-result.v1",
+  "status": "candidate_ready_for_software_geometry",
+  "execution_plan": {
+    "schema": "genlaw.execution-plan.v1",
+    "input_id": "SOURCE-TOLERANCE-asymmetric-20261103-r1",
+    "mode": "software_geometry_reference",
+    "source_bindings": {
+      "cad": {
+        "path": "assets/000.brep",
+        "sha256": "2026181589986e17c523da5b007fb3a24a74ade6cd0568cf8ea91ad1ff93c458"
+      },
+      "display_cad": {
+        "path": "assets/001.step",
+        "sha256": "012a48f98a83dbd3544dad63c1c0be91e72bd5c02548418d57216c0d753934bc"
+      },
+      "geometry_observation": {
+        "path": "assets/002.json",
+        "sha256": "f47c37c07d3caaa1e9b11dc6ca4fabcbe17d52865803f068c95c87f747e2f423"
+      },
+      "native_reference": {
+        "path": "assets/003.json",
+        "sha256": "2080b34efcec73b1f8529934184239a5cd5e8d087e0c4befa3711b5f94cd6952"
+      },
+      "requirements": {
+        "path": "requirements.json",
+        "sha256": "16a36a0745d9a67c16f88d1e0507a2dbf4c8d142b3f997d334740f07997da9d2"
+      },
+      "resources": {
+        "path": "assets/005.json",
+        "sha256": "18fb0013b165dbaa1e56f3d7ce781c87807fd2bb3b4ab8bca3ddc11181dc21b4"
+      },
+      "historical_parameters": {
+        "path": "assets/006.json",
+        "sha256": "2c80d7dcd0ce419cd7b215177a0d2f153f1080d5dd986bca961f8f7827724de6"
+      },
+      "transcription_requirements_base": {
+        "path": "assets/004.json",
+        "sha256": "4557096797105ce3a083d2553eb369eb1feffa6cbdd4f9cdaa7d6282b91e820f"
+      },
+      "transcription_requirements_compilation": {
+        "path": "requirements-compilation.json",
+        "sha256": "c92fe27291800d825422c41ba962c4f5dc0496a5ff1b923be4263eebca9b0ffe"
+      },
+      "process_plan": {
+        "path": "process-plan.json",
+        "sha256": "5b7f3a965837ae6110c461a25f90111124dcbfab0dd49c96a80960139f28b9cf"
+      },
+      "paper_card": {
+        "path": "source/source.pdf",
+        "sha256": "5b9a4e1700442842e1023717060e5b7c79446b4d96ccf78b84823c769f6079e9"
+      },
+      "transcription_source": {
+        "path": "source/source-manifest.json",
+        "sha256": "137c605dde1f190d9299b9b97de611c9290cdddcfafe835fdf4d5cbe15e413e0"
+      },
+      "transcription_draft": {
+        "path": "draft.json",
+        "sha256": "084ba1a9eff48dfcc2d256d404103b58ca93893edd97bd0eccb013db1098c31d"
+      },
+      "transcription_interpretation": {
+        "path": "interpretation.json",
+        "sha256": "fea9ef5349b48db92306c377eaca55554a6e7ba4e0b088cc8b96d2a6fde33e3a"
+      },
+      "transcription_context": {
+        "path": "context.json",
+        "sha256": "10e8c51fd91f2665ee5af764ece6015bb527d00450188309e8bfbb9b1bde0c1e"
+      }
+    },
+    "cad_ref": {
+      "path": "assets/000.brep",
+      "sha256": "2026181589986e17c523da5b007fb3a24a74ade6cd0568cf8ea91ad1ff93c458"
+    },
+    "cad_observation_ref": {
+      "path": "assets/002.json",
+      "sha256": "f47c37c07d3caaa1e9b11dc6ca4fabcbe17d52865803f068c95c87f747e2f423"
+    },
+    "operation": {
+      "operation_id": "OP10",
+      "step_id": "OP10.2",
+      "type": "drilling",
+      "feature_id": "F_HOLE_1",
+      "hole_center_xy_mm": [
+        3,
+        2
+      ],
+      "diameter_mm": 2.5,
+      "through": true
+    },
+    "stock": {
+      "shape": "box",
+      "bounds_mm": {
+        "min": [
+          0.0,
+          0.0,
+          -1.5
+        ],
+        "max": [
+          8.0,
+          6.0,
+          0.0
+        ]
+      },
+      "material_label": "6061-T6",
+      "material_physics_verified": false
+    },
+    "tool": {
+      "id": "T1",
+      "kind": "drill",
+      "diameter_mm": 2.5,
+      "tip_angle_degrees": 118,
+      "length_mm": 20,
+      "basis": "Synthetic validation drill matches target diameter; not production-qualified."
+    },
+    "setup": {
+      "work_offset": "G54",
+      "origin_mm": [
+        0,
+        0,
+        0
+      ],
+      "rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "tool_length_offset_mm": 0,
+      "fixture_mode": "unmodelled_explicitly_excluded",
+      "basis": "明确的软件参考条件，复用历史探针；不代表真实装夹已确认。"
+    },
+    "controller": {
+      "profile": "reference_NC_subset",
+      "return_mode": "initial_plane",
+      "linuxcnc_runtime_required": false
+    },
+    "parameters": {
+      "spindle_rpm": 1000.0,
+      "feed_mm_min": 60.0,
+      "breakthrough_mm": 0.1,
+      "retract_plane_mm": 1.0,
+      "safe_height_mm": 2.0,
+      "clearance_height_mm": 3.0,
+      "drill_tip_length_mm": 0.7510757737844503,
+      "cam_final_depth_mm": -1.6,
+      "final_tip_z_mm": -2.3510757737844505
+    },
+    "parameter_provenance": {
+      "tool_selection": {
+        "kind": "derived",
+        "rule": "unique-drill.v1: exact diameter and optional explicit card tool_id",
+        "inputs": [
+          "resources.tools",
+          "process_plan.constraints",
+          "geometry_observation.feature"
+        ]
+      },
+      "spindle_rpm": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/spindle_rpm",
+        "basis": "软件测试明确选用历史探针参数；见 historical-parameters.json / spindle_rpm"
+      },
+      "feed_mm_min": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/feed_mm_min",
+        "basis": "软件测试明确选用历史探针参数；见 historical-parameters.json / feed_mm_min"
+      },
+      "breakthrough_mm": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/breakthrough_mm",
+        "basis": "软件测试显式提供的附加贯穿量；不是现场卡缺项时的默认值，也不是生产推荐。"
+      },
+      "retract_plane_mm": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/retract_plane_mm",
+        "basis": "软件测试明确选用历史探针参数；见 historical-parameters.json / retract_plane_mm"
+      },
+      "safe_height_mm": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/safe_height_mm",
+        "basis": "软件测试明确选用历史探针参数；见 historical-parameters.json / safe_height_mm"
+      },
+      "clearance_height_mm": {
+        "kind": "resource_preset",
+        "ref": "resources",
+        "field": "cutting_presets/clearance_height_mm",
+        "basis": "软件测试明确选用历史探针参数；见 historical-parameters.json / clearance_height_mm"
+      },
+      "hole_center_xy_mm": {
+        "kind": "cad_observation",
+        "ref": "geometry_observation",
+        "field": "F_HOLE_1"
+      },
+      "drill_tip_length_mm": {
+        "kind": "derived",
+        "rule": "cone-tip.v1: diameter / (2*tan(tip_angle/2))",
+        "inputs": [
+          "tool.diameter_mm",
+          "tool.tip_angle_degrees"
+        ]
+      },
+      "final_tip_z_mm": {
+        "kind": "derived",
+        "rule": "through-hole-tip.v1: stock_bottom - breakthrough - tip_length",
+        "inputs": [
+          "stock.bounds_mm.min[2]",
+          "breakthrough_mm",
+          "drill_tip_length_mm"
+        ]
+      },
+      "cam_final_depth_mm": {
+        "kind": "derived",
+        "rule": "through-depth.v1: stock_bottom - breakthrough",
+        "inputs": [
+          "stock.bounds_mm.min[2]",
+          "breakthrough_mm"
+        ]
+      }
+    },
+    "scope": {
+      "selected_steps": [
+        "OP10.2"
+      ],
+      "whole_process_card": false,
+      "declared_preconditions": {
+        "OP05.1": "软件试验直接声明完整等大矩形来料；不代表现场来料验收。",
+        "OP10.1": "仅在明确资源配置时采用参考坐标；真实装夹仍待审核。"
+      },
+      "excluded_checks": [
+        "fixture_collision",
+        "holder_collision",
+        "material_physics",
+        "surface_roughness",
+        "whole_process_completion"
+      ]
+    },
+    "requirements_ref": {
+      "path": "requirements.json",
+      "sha256": "16a36a0745d9a67c16f88d1e0507a2dbf4c8d142b3f997d334740f07997da9d2"
+    },
+    "required_downstream_checks": [
+      "Re-read original CAD and confirm feature binding in CAM adapter.",
+      "Preserve this configuration and final NC together for simulation."
+    ],
+    "production_approved": false,
+    "whole_process_card_complete": false,
+    "source_transcription": {
+      "status": "source_bound_candidate",
+      "source_semantics_verified": false,
+      "automatic_model_invocation_tested": false,
+      "source_manifest_sha256": "137c605dde1f190d9299b9b97de611c9290cdddcfafe835fdf4d5cbe15e413e0",
+      "draft_sha256": "084ba1a9eff48dfcc2d256d404103b58ca93893edd97bd0eccb013db1098c31d",
+      "interpretation_sha256": "fea9ef5349b48db92306c377eaca55554a6e7ba4e0b088cc8b96d2a6fde33e3a",
+      "context_sha256": "10e8c51fd91f2665ee5af764ece6015bb527d00450188309e8bfbb9b1bde0c1e",
+      "selected_step_ids": [
+        "OP10.2"
+      ],
+      "preserved_step_ids": [
+        "OP05.1",
+        "OP10.1",
+        "OP10.2",
+        "OP20.1",
+        "OP30.1",
+        "OP35.1"
+      ],
+      "source_assertions_consumed": [
+        "CLAIM-center_xy_mm",
+        "CLAIM-diameter_mm",
+        "CLAIM-hole_kind",
+        "CLAIM-material_label",
+        "CLAIM-operation_type",
+        "CLAIM-stock_thickness_mm"
+      ],
+      "retained_unselected_assertions": [],
+      "agent_proposals_not_used": 0,
+      "requires_source_semantic_review": true,
+      "whole_process_card_complete": false,
+      "production_approved": false,
+      "source_requirement_compilation": {
+        "schema": "genlaw.source-tolerance-compilation.v1",
+        "base_requirements_sha256": "4557096797105ce3a083d2553eb369eb1feffa6cbdd4f9cdaa7d6282b91e820f",
+        "draft_sha256": "084ba1a9eff48dfcc2d256d404103b58ca93893edd97bd0eccb013db1098c31d",
+        "interpretation_sha256": "fea9ef5349b48db92306c377eaca55554a6e7ba4e0b088cc8b96d2a6fde33e3a",
+        "cad_sha256": "2026181589986e17c523da5b007fb3a24a74ade6cd0568cf8ea91ad1ff93c458",
+        "derived_requirements_sha256": "16a36a0745d9a67c16f88d1e0507a2dbf4c8d142b3f997d334740f07997da9d2",
+        "bindings": [
+          {
+            "assertion_id": "CLAIM-diameter_mm",
+            "requirement_id": "R_DIAMETER",
+            "step_id": "OP10.2",
+            "feature_id": "F_HOLE_1",
+            "nominal_mm": 2.5,
+            "tolerance_minus_plus_mm": [
+              0.08,
+              0.12
+            ],
+            "limits_mm": [
+              2.42,
+              2.62
+            ],
+            "method": "sampled_radial_diameter_band",
+            "evidence": [
+              {
+                "page": 2,
+                "bbox_pixels": [
+                  0,
+                  0,
+                  1190,
+                  1684
+                ],
+                "mode": "visual",
+                "quote": "合成通孔工艺卡：尺寸要求补充页\n样本：asymmetric\n本页与前页合用，仅用于软件接口测试，未经生产审核。\nOP10.2 / F_HOLE_1\n孔径名义值：2.5 mm\n下偏差：-0.08 mm\n上偏差：+0.12 mm\n孔位 (3, 2) mm，通孔，名义板厚 1.5 mm。\n孔径公差不改变目标 CAD、刀具或进给参数。\n原卡工序、来料与资源配置按前页和显式上下文保留。\n转录草案由测试编写数据生成；未调用模型读取 PDF。\n本例不证明粗糙度、形位公差、材料性能或现场加工能力。",
+                "ocr_line_ids": []
+              }
+            ]
+          }
+        ],
+        "source_semantics_verified": false,
+        "production_approved": false,
+        "unmapped_requirements_preserved": true,
+        "cad_nominals_changed": false
+      }
+    }
+  },
+  "source_semantics_verified": false,
+  "automatic_model_invocation_tested": false,
+  "nc_generation_started": false,
+  "whole_process_card_complete": false,
+  "production_approved": false,
+  "execution_plan_sha256": "65464143eceb583439ee9bfaf4a4b7e372aeb775ef3f4167b97f8d489b917186",
+  "source_transcription": {
+    "status": "source_bound_candidate",
+    "source_semantics_verified": false,
+    "automatic_model_invocation_tested": false,
+    "source_manifest_sha256": "137c605dde1f190d9299b9b97de611c9290cdddcfafe835fdf4d5cbe15e413e0",
+    "draft_sha256": "084ba1a9eff48dfcc2d256d404103b58ca93893edd97bd0eccb013db1098c31d",
+    "interpretation_sha256": "fea9ef5349b48db92306c377eaca55554a6e7ba4e0b088cc8b96d2a6fde33e3a",
+    "context_sha256": "10e8c51fd91f2665ee5af764ece6015bb527d00450188309e8bfbb9b1bde0c1e",
+    "selected_step_ids": [
+      "OP10.2"
+    ],
+    "preserved_step_ids": [
+      "OP05.1",
+      "OP10.1",
+      "OP10.2",
+      "OP20.1",
+      "OP30.1",
+      "OP35.1"
+    ],
+    "source_assertions_consumed": [
+      "CLAIM-center_xy_mm",
+      "CLAIM-diameter_mm",
+      "CLAIM-hole_kind",
+      "CLAIM-material_label",
+      "CLAIM-operation_type",
+      "CLAIM-stock_thickness_mm"
+    ],
+    "retained_unselected_assertions": [],
+    "agent_proposals_not_used": 0,
+    "requires_source_semantic_review": true,
+    "whole_process_card_complete": false,
+    "production_approved": false,
+    "source_requirement_compilation": {
+      "schema": "genlaw.source-tolerance-compilation.v1",
+      "base_requirements_sha256": "4557096797105ce3a083d2553eb369eb1feffa6cbdd4f9cdaa7d6282b91e820f",
+      "draft_sha256": "084ba1a9eff48dfcc2d256d404103b58ca93893edd97bd0eccb013db1098c31d",
+      "interpretation_sha256": "fea9ef5349b48db92306c377eaca55554a6e7ba4e0b088cc8b96d2a6fde33e3a",
+      "cad_sha256": "2026181589986e17c523da5b007fb3a24a74ade6cd0568cf8ea91ad1ff93c458",
+      "derived_requirements_sha256": "16a36a0745d9a67c16f88d1e0507a2dbf4c8d142b3f997d334740f07997da9d2",
+      "bindings": [
+        {
+          "assertion_id": "CLAIM-diameter_mm",
+          "requirement_id": "R_DIAMETER",
+          "step_id": "OP10.2",
+          "feature_id": "F_HOLE_1",
+          "nominal_mm": 2.5,
+          "tolerance_minus_plus_mm": [
+            0.08,
+            0.12
+          ],
+          "limits_mm": [
+            2.42,
+            2.62
+          ],
+          "method": "sampled_radial_diameter_band",
+          "evidence": [
+            {
+              "page": 2,
+              "bbox_pixels": [
+                0,
+                0,
+                1190,
+                1684
+              ],
+              "mode": "visual",
+              "quote": "合成通孔工艺卡：尺寸要求补充页\n样本：asymmetric\n本页与前页合用，仅用于软件接口测试，未经生产审核。\nOP10.2 / F_HOLE_1\n孔径名义值：2.5 mm\n下偏差：-0.08 mm\n上偏差：+0.12 mm\n孔位 (3, 2) mm，通孔，名义板厚 1.5 mm。\n孔径公差不改变目标 CAD、刀具或进给参数。\n原卡工序、来料与资源配置按前页和显式上下文保留。\n转录草案由测试编写数据生成；未调用模型读取 PDF。\n本例不证明粗糙度、形位公差、材料性能或现场加工能力。",
+              "ocr_line_ids": []
+            }
+          ]
+        }
+      ],
+      "source_semantics_verified": false,
+      "production_approved": false,
+      "unmapped_requirements_preserved": true,
+      "cad_nominals_changed": false
+    }
+  }
+}

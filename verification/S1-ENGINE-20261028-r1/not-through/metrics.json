@@ -1,0 +1,140 @@
+{
+  "schema": "genlaw.sectional-iou.v2",
+  "status": "measured_numerical_estimate",
+  "iou": 0.9592685245575724,
+  "iou_percent": 95.92685245575724,
+  "volumes": {
+    "actual_volume_mm3": 70.13986877997057,
+    "target_volume_mm3": 67.2876114816448,
+    "intersection_mm3": 67.28524169702237,
+    "union_mm3": 70.14223856459299,
+    "iou": 0.9592685245575724,
+    "alternative_intersection_mm3": 0.0,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 2.8546270829481983,
+  "missing_material_mm3": 0.0023697846224308705,
+  "actual_mesh": {
+    "source_sha256": "8f752c3829e44be038007476083f580694ec5652c276af6b8202bb47ea2192f8",
+    "raw_triangles": 116760,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 116760,
+    "vertices": 58382,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 70.13986884172307,
+    "bounds": {
+      "min": [
+        -0.00019531250291038305,
+        0.00019531250291038305,
+        -1.5001952648162842
+      ],
+      "max": [
+        8.000195503234863,
+        6.000195503234863,
+        0.00019531250291038305
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "schema": "genlaw.native-binding.v1",
+    "status": "verified",
+    "cad_sha256": "56d8e9e29dc98dac54add8b310ad43cd900842c22ee7aa8e5b75ef6dfa15c71a",
+    "reference_class": "axis_aligned_box_minus_one_z_through_cylinder",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "volume_mm3": 67.2876110196153,
+    "valid_single_solid": true,
+    "hole_center_xy": [
+      3.0,
+      2.0
+    ],
+    "hole_radius_mm": 1.0,
+    "cylinder_face": "Face7",
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "reference_for_iou": "Analytic box minus cylinder checked by native BREP boolean difference."
+  },
+  "native_geometry_sha256": "c10807f592be5450fef0198212e71738082ff324af0ec7679a11fdc3b17a7293",
+  "absolute_iou_refinement_difference": 1.798006721287493e-08,
+  "section_levels": 180,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "section_hole_observations": [
+    {
+      "requested_z_mm": -1.35,
+      "z_mm": -1.3309016959590145,
+      "interior_loops": 0
+    },
+    {
+      "requested_z_mm": -0.75,
+      "z_mm": -0.7481349315856929,
+      "interior_loops": 1,
+      "area_mm2": 0.5508360143409226,
+      "area_equivalent_diameter_mm": 0.8374641461717438,
+      "centroid_xy_mm": [
+        2.99999999900168,
+        1.9999999937714417
+      ],
+      "center_error_mm": 6.3080569076867835e-09
+    },
+    {
+      "requested_z_mm": -0.1499999999999999,
+      "z_mm": -0.13090170369043808,
+      "interior_loops": 1,
+      "area_mm2": 3.1406699003725835,
+      "area_equivalent_diameter_mm": 1.9997062569572104,
+      "centroid_xy_mm": [
+        2.999984702747439,
+        2.000003200977191
+      ],
+      "center_error_mm": 1.5628569700864276e-05
+    }
+  ],
+  "method": "Closed STL cross-sections, all vertex-height intervals, 3-point Gauss integration against native-checked analytic CAD section.",
+  "registration": "none; same CAD/G54 coordinates",
+  "full_tolerance_acceptance": false,
+  "production_approved": false,
+  "limits": [
+    "Numerical estimate, not a certified error bound.",
+    "Section diameters are area-equivalent, not a GD&T acceptance.",
+    "Three interior slices do not certify through-hole or roughness acceptance."
+  ]
+}

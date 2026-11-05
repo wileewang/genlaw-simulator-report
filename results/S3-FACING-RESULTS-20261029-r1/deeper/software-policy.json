@@ -1,0 +1,43 @@
+{
+  "schema": "genlaw.software-geometry-policy.v7",
+  "cad_sha256": "f167db923eb58e2ab964cee20cf955cee9ea64352c8bb290c800fb70934061cc",
+  "production_approved": false,
+  "features": {
+    "P1": {
+      "top_height": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Four declared grid cells are the regression allowance; two cells remain an explicit numerical guard. Not manufacturing tolerances.",
+        "method": "sampled_top_height_and_mesh_max",
+        "min_mm": -0.85,
+        "max_mm": -0.65
+      },
+      "target_thickness": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Four declared grid cells are the regression allowance; two cells remain an explicit numerical guard. Not manufacturing tolerances.",
+        "method": "sampled_remaining_thickness",
+        "min_mm": 0.65,
+        "max_mm": 0.85
+      },
+      "top_geometry": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Four declared grid cells are the regression allowance; two cells remain an explicit numerical guard. Not manufacturing tolerances.",
+        "method": "sampled_top_plane",
+        "max_flatness_mm": 0.1
+      },
+      "outline_xy": {
+        "schema": "genlaw.numeric-acceptance.v1",
+        "units": "mm",
+        "scope": "software_regression",
+        "basis": "Four declared grid cells are the regression allowance; two cells remain an explicit numerical guard. Not manufacturing tolerances.",
+        "method": "sampled_original_box_boundary",
+        "max_deviation_mm": 0.1
+      }
+    }
+  }
+}

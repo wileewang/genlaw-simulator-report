@@ -1,0 +1,2155 @@
+{
+  "schema": "genlaw.stage-results.v1",
+  "id": "S4-PROFILE-SEQUENCE-RESULTS-20261029-r3",
+  "stage_id": "s4",
+  "title": "面铣、圆头外形与孔的连续加工",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "specification": {
+        "id": "baseline",
+        "name": "面铣 → 圆头外形 → 双孔",
+        "major_axis": "X",
+        "length_mm": 8,
+        "width_mm": 4,
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            4,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            4,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face8"
+          }
+        ],
+        "order": [
+          "P1",
+          "C1",
+          "H1",
+          "H2"
+        ],
+        "two_tools": false,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face5",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                4
+              ]
+            }
+          },
+          {
+            "id": "C1",
+            "kind": "capsule_outline",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face5",
+            "major_axis": "X",
+            "center_xy_mm": [
+              4.0,
+              2.0
+            ],
+            "length_mm": 8,
+            "width_mm": 4,
+            "thickness_mm": 1.0,
+            "top_z_mm": -0.5
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face8"
+          }
+        ]
+      },
+      "iou_percent": 99.31135110977523,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass"
+        },
+        "C1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "C1",
+        "H1",
+        "H2"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.9732476523125,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.66938849899934,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.51225287304052,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 3,
+        "material_checkpoints_sha256": "0f904f8aabe12265341f2175a70eea354727ca5f1e42fd1b00716872585a3dcb",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "c0e7da7164ead580060d457edfd4b0c92942a1dde1e44315aabe80ef927d5b87",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-01",
+          "time_seconds": null,
+          "label": "P1 完成 · 工步边界",
+          "prefix_binding_sha256": "6a31487c71f4eef1123c1e1daac2074b6233b02eb551895b9c10b2ea069d02f4",
+          "simulation_reused": true,
+          "index": 1,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-01/simulated.stl",
+          "stl_sha256": "f868bc135fd23cfd1c2a421d94734ad5adb6fb02adead2b59c0aed512fefbcd6",
+          "nc_sha256": "a2dbb48ed04a6b62a2dce5af92597c57a27fbdfe116153213ef257b777c2dda0",
+          "full_nc_sha256": "102ed64aefe5ac8adff710ded149d66c531cd799dc9c99fe624dd2c60ad199b5",
+          "display_retessellation": {
+            "method": "Existing exact axis-aligned planar retessellation, display copy only.",
+            "original_stl_sha256": "f868bc135fd23cfd1c2a421d94734ad5adb6fb02adead2b59c0aed512fefbcd6",
+            "original_triangles": 283840,
+            "display_triangles": 8300,
+            "boundary_edges_identical": true,
+            "absolute_signed_volume_difference_mm3": 7.815970093361102e-14,
+            "nonplanar_triangles_retained": true,
+            "quantitative_mesh_modified": false,
+            "patches": [
+              {
+                "retained_original": false,
+                "input_triangles": 12480,
+                "output_triangles": 396,
+                "axis": 0,
+                "plane_mm": -9.765625145519152e-05,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 12480,
+                "output_triangles": 396,
+                "axis": 0,
+                "plane_mm": 8.000097274780273,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 24960,
+                "output_triangles": 716,
+                "axis": 1,
+                "plane_mm": -9.765625145519152e-05,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 24960,
+                "output_triangles": 716,
+                "axis": 1,
+                "plane_mm": 4.000097751617432,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 102400,
+                "output_triangles": 958,
+                "axis": 2,
+                "plane_mm": -1.500097632408142,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 2.842170943040401e-14
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 102400,
+                "output_triangles": 958,
+                "axis": 2,
+                "plane_mm": -0.5000976324081421,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 2.842170943040401e-14
+              }
+            ],
+            "source_code_sha256": "6c131d3ca9b234eb5c0f6aff57f05d802eb9b686561e83f351396faf769899d2",
+            "exporter_source_code_sha256": "1798def3c7e19ea9bd027cf4d8918d1958bd54f504a924415cbe924b245fc704"
+          },
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "569ee7b11648922f4ae73115455f096fcf010215262121da6ab8ea2876cbf665",
+          "watertight": true,
+          "volume_mm3": 32.00231371850271,
+          "triangles": 283840,
+          "stl_download_encoding": "xz"
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-02",
+          "time_seconds": null,
+          "label": "C1 完成 · 工步边界",
+          "prefix_binding_sha256": "5c8c74d727a0c3eb2a597011c39a1410613d96dd7461999a07e72f9b6a7da911",
+          "simulation_reused": true,
+          "index": 2,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-02/simulated.stl",
+          "stl_sha256": "6dfa5e708c411b57782bb2948e142cf5209928ced8362befeb66daeb19fed4d6",
+          "nc_sha256": "d93c54c6985c16232d2ea35093f6bc63a3774614c020008e93e4e73bcfefe959",
+          "full_nc_sha256": "102ed64aefe5ac8adff710ded149d66c531cd799dc9c99fe624dd2c60ad199b5",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "baad68daea365cbc76c7b22ab07d44adaf2fe8366de24ec0932af1046c673e35",
+          "watertight": true,
+          "volume_mm3": 28.478215606851887,
+          "triangles": 258888,
+          "stl_download_encoding": "xz"
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-03",
+          "time_seconds": null,
+          "label": "H1 完成 · 工步边界",
+          "prefix_binding_sha256": "6a24869508894587155804469f29f07392df4aa0656dd2d57f61f714129c0e8a",
+          "simulation_reused": true,
+          "index": 3,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-03/simulated.stl",
+          "stl_sha256": "e67c71918cdc09dae92db43215a58308c6f0d9cc94aadc241912ce7d2938aec4",
+          "nc_sha256": "3e99d171509dbcb8d5149169229037b5d02938986ee82aaddd9421bc90b542f3",
+          "full_nc_sha256": "102ed64aefe5ac8adff710ded149d66c531cd799dc9c99fe624dd2c60ad199b5",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "edcbd928c7b84e2d89aa66221cf10d0134aed1928d300356742e693a25950883",
+          "watertight": true,
+          "volume_mm3": 25.366312324130416,
+          "triangles": 264812,
+          "stl_download_encoding": "xz"
+        }
+      ],
+      "final_download_encoding": "xz"
+    },
+    {
+      "id": "three-holes",
+      "specification": {
+        "id": "three-holes",
+        "name": "面铣 → 圆头外形 → 三孔",
+        "major_axis": "X",
+        "length_mm": 12,
+        "width_mm": 4,
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            12,
+            4,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            12,
+            4,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face8"
+          },
+          {
+            "id": "H3",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              10,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face9"
+          }
+        ],
+        "order": [
+          "P1",
+          "C1",
+          "H1",
+          "H2",
+          "H3"
+        ],
+        "two_tools": false,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face5",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                12,
+                4
+              ]
+            }
+          },
+          {
+            "id": "C1",
+            "kind": "capsule_outline",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face5",
+            "major_axis": "X",
+            "center_xy_mm": [
+              6.0,
+              2.0
+            ],
+            "length_mm": 12,
+            "width_mm": 4,
+            "thickness_mm": 1.0,
+            "top_z_mm": -0.5
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face8"
+          },
+          {
+            "id": "H3",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              10,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face9"
+          }
+        ]
+      },
+      "iou_percent": 99.4643810616929,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass"
+        },
+        "C1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H3": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "C1",
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.97404938340512,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.77656025665527,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.68812413195819,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-04",
+          "iou_percent": 99.58533471383751,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 4,
+        "material_checkpoints_sha256": "266c8a3849f4b1c642ac9eae5cfa17fe9635033c237669f6ba981d9c46c469ab",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "c0e7da7164ead580060d457edfd4b0c92942a1dde1e44315aabe80ef927d5b87",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-01",
+          "time_seconds": null,
+          "label": "P1 完成 · 工步边界",
+          "prefix_binding_sha256": "261b0995c5b0c8399d6afa57643c14e897d828a6198b570654c7255b2796c18f",
+          "simulation_reused": true,
+          "index": 1,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-01/simulated.stl",
+          "stl_sha256": "5be27cdaf6194c234a1fbd31a08486ac05afc8087fb01117d40e84f9b6e54cc2",
+          "nc_sha256": "6240588b60923f0c4c36a8234911af0af8f04dace25cfd040d404a97bc3efc28",
+          "full_nc_sha256": "5836650c0636e1255dc4c8d8c51f1601ae8b32d408725fa56e11423872a8c5ff",
+          "display_retessellation": {
+            "method": "Existing exact axis-aligned planar retessellation, display copy only.",
+            "original_stl_sha256": "5be27cdaf6194c234a1fbd31a08486ac05afc8087fb01117d40e84f9b6e54cc2",
+            "original_triangles": 412480,
+            "display_triangles": 10860,
+            "boundary_edges_identical": true,
+            "absolute_signed_volume_difference_mm3": 1.6342482922482304e-13,
+            "nonplanar_triangles_retained": true,
+            "quantitative_mesh_modified": false,
+            "patches": [
+              {
+                "retained_original": false,
+                "input_triangles": 12480,
+                "output_triangles": 396,
+                "axis": 0,
+                "plane_mm": -9.765625145519152e-05,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 12480,
+                "output_triangles": 396,
+                "axis": 0,
+                "plane_mm": 12.000097274780273,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 37440,
+                "output_triangles": 1036,
+                "axis": 1,
+                "plane_mm": -9.765625145519152e-05,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 37440,
+                "output_triangles": 1036,
+                "axis": 1,
+                "plane_mm": 4.000097751617432,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 153600,
+                "output_triangles": 1278,
+                "axis": 2,
+                "plane_mm": -1.500097632408142,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 3.552713678800501e-14
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 153600,
+                "output_triangles": 1278,
+                "axis": 2,
+                "plane_mm": -0.5000976324081421,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 3.552713678800501e-14
+              }
+            ],
+            "source_code_sha256": "6c131d3ca9b234eb5c0f6aff57f05d802eb9b686561e83f351396faf769899d2",
+            "exporter_source_code_sha256": "1798def3c7e19ea9bd027cf4d8918d1958bd54f504a924415cbe924b245fc704"
+          },
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "b21adf2cb696561e83487ffa1f8e66d5a59a5d5b9ffb7bff57d3bc13d86f0b18",
+          "watertight": true,
+          "volume_mm3": 48.00308557960782,
+          "triangles": 412480,
+          "stl_download_encoding": "xz"
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-02",
+          "time_seconds": null,
+          "label": "C1 完成 · 工步边界",
+          "prefix_binding_sha256": "d9c4c1ad6a3c3780027c1141f4caf05061adab3ec2ca48b6ab9a03280af2936b",
+          "simulation_reused": true,
+          "index": 2,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-02/simulated.stl",
+          "stl_sha256": "91ec1e4fa17876bac1cbb57f6dc48055e1c1bef66edaa3a12d599c3886a7be15",
+          "nc_sha256": "9666d33c9e06da9ddfd461137355786936b2e96f767bf8d3976f4676fb9470aa",
+          "full_nc_sha256": "5836650c0636e1255dc4c8d8c51f1601ae8b32d408725fa56e11423872a8c5ff",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "560790fd2fd71db36bcf6a64d85a9c8edb0e3d03bec7457e378fd5dce45a0132",
+          "watertight": true,
+          "volume_mm3": 44.47696529086995,
+          "triangles": 386888,
+          "stl_download_encoding": "xz"
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-03",
+          "time_seconds": null,
+          "label": "H1 完成 · 工步边界",
+          "prefix_binding_sha256": "f0e49f90087956d8d0f4d891fa160c435cad6ea30d32007b97e19c25727621f9",
+          "simulation_reused": true,
+          "index": 3,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-03/simulated.stl",
+          "stl_sha256": "290c43bf087d3d8c0a3bdbc12c1900525b2c6bc496c549917436b0947957e2c9",
+          "nc_sha256": "6da0cbc070513cf44c34a3838dc8a7750a41151e035451b9dafccf5ac086d982",
+          "full_nc_sha256": "5836650c0636e1255dc4c8d8c51f1601ae8b32d408725fa56e11423872a8c5ff",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "4418f13be1ed07683dccad205ccb024cf58c52721a327d8daa7b36e264013457",
+          "watertight": true,
+          "volume_mm3": 41.365069796358206,
+          "triangles": 392656,
+          "stl_download_encoding": "xz"
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-04",
+          "time_seconds": null,
+          "label": "H2 完成 · 工步边界",
+          "prefix_binding_sha256": "24cb6137eccf91f409aad66fa73899b1fe7f1602f031c5e92d6b98f4ea6a9dca",
+          "simulation_reused": true,
+          "index": 4,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-04/simulated.stl",
+          "stl_sha256": "73525c95932c90d513f645373b41a5b31712e87a4780e496fe222a6356f74b0a",
+          "nc_sha256": "08106f1006d2a8c9492af0695a343ff25922cfc73b36cd4a56bd8c9addda7c72",
+          "full_nc_sha256": "5836650c0636e1255dc4c8d8c51f1601ae8b32d408725fa56e11423872a8c5ff",
+          "mesh": "frame-4.mesh",
+          "mesh_sha256": "e118a965a31f0c8b1051355477768e16f68521ba0d61db5fd62ea2b9a1bbd1f5",
+          "watertight": true,
+          "volume_mm3": 38.2531743974962,
+          "triangles": 398424,
+          "stl_download_encoding": "xz"
+        }
+      ],
+      "final_download_encoding": "xz"
+    },
+    {
+      "id": "tool-change",
+      "specification": {
+        "id": "tool-change",
+        "name": "φ2 面铣 / 外形 → 换 φ1 铣孔",
+        "major_axis": "X",
+        "length_mm": 8,
+        "width_mm": 4,
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            4,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            4,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face8"
+          }
+        ],
+        "order": [
+          "P1",
+          "C1",
+          "H1",
+          "H2"
+        ],
+        "two_tools": true,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face5",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                4
+              ]
+            }
+          },
+          {
+            "id": "C1",
+            "kind": "capsule_outline",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face5",
+            "major_axis": "X",
+            "center_xy_mm": [
+              4.0,
+              2.0
+            ],
+            "length_mm": 8,
+            "width_mm": 4,
+            "thickness_mm": 1.0,
+            "top_z_mm": -0.5
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face8"
+          }
+        ]
+      },
+      "iou_percent": 99.27545835334618,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass"
+        },
+        "C1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "C1",
+        "H1",
+        "H2"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        },
+        {
+          "tool_number": 2,
+          "tool_id": "T2",
+          "first_executable_block": 95,
+          "last_executable_block": 97
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.9732476523125,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.64131492663135,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.4807476134481,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 3,
+        "material_checkpoints_sha256": "ec972adf171b130a64bf2efabfa287fc184ea48a144de4d8f04586eb1a231835",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "c0e7da7164ead580060d457edfd4b0c92942a1dde1e44315aabe80ef927d5b87",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-01",
+          "time_seconds": null,
+          "label": "P1 完成 · 工步边界",
+          "prefix_binding_sha256": "11b34daea151a8d71ac57af4ff574b51f55cdc795de3d3ea88cb9199a07eb29d",
+          "simulation_reused": true,
+          "index": 1,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-01/simulated.stl",
+          "stl_sha256": "e310dd016fd24c60f858d590171fd2a993c5696b4a75d7a5b8d305556bf51329",
+          "nc_sha256": "4c73dda89588f78d6da928b327e45a18736a208fb634692bac4c1f1c9401039b",
+          "full_nc_sha256": "c76c22e91808f6a2a34434b470560ebc9aa050034e2d79561c288b14e5cf6f5b",
+          "display_retessellation": {
+            "method": "Existing exact axis-aligned planar retessellation, display copy only.",
+            "original_stl_sha256": "e310dd016fd24c60f858d590171fd2a993c5696b4a75d7a5b8d305556bf51329",
+            "original_triangles": 283840,
+            "display_triangles": 8300,
+            "boundary_edges_identical": true,
+            "absolute_signed_volume_difference_mm3": 7.815970093361102e-14,
+            "nonplanar_triangles_retained": true,
+            "quantitative_mesh_modified": false,
+            "patches": [
+              {
+                "retained_original": false,
+                "input_triangles": 12480,
+                "output_triangles": 396,
+                "axis": 0,
+                "plane_mm": -9.765625145519152e-05,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 12480,
+                "output_triangles": 396,
+                "axis": 0,
+                "plane_mm": 8.000097274780273,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 24960,
+                "output_triangles": 716,
+                "axis": 1,
+                "plane_mm": -9.765625145519152e-05,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 24960,
+                "output_triangles": 716,
+                "axis": 1,
+                "plane_mm": 4.000097751617432,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 102400,
+                "output_triangles": 958,
+                "axis": 2,
+                "plane_mm": -1.500097632408142,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 2.842170943040401e-14
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 102400,
+                "output_triangles": 958,
+                "axis": 2,
+                "plane_mm": -0.5000976324081421,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 2.842170943040401e-14
+              }
+            ],
+            "source_code_sha256": "6c131d3ca9b234eb5c0f6aff57f05d802eb9b686561e83f351396faf769899d2",
+            "exporter_source_code_sha256": "1798def3c7e19ea9bd027cf4d8918d1958bd54f504a924415cbe924b245fc704"
+          },
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "569ee7b11648922f4ae73115455f096fcf010215262121da6ab8ea2876cbf665",
+          "watertight": true,
+          "volume_mm3": 32.00231371850271,
+          "triangles": 283840,
+          "stl_download_encoding": "xz"
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-02",
+          "time_seconds": null,
+          "label": "C1 完成 · 工步边界",
+          "prefix_binding_sha256": "42b9006686aca6a2b206141ef14d59ec68486e3e4cdfe04e1c696a55f3a1f869",
+          "simulation_reused": true,
+          "index": 2,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-02/simulated.stl",
+          "stl_sha256": "bbc6d67b9f9d1fe716601c17e3f32705d2cca778a0c129ca52f4ae829f590c77",
+          "nc_sha256": "2002f8063d4978ec5d9efc343a2a8d13c5a00932ac86f237ab9e2fab595cf9e1",
+          "full_nc_sha256": "c76c22e91808f6a2a34434b470560ebc9aa050034e2d79561c288b14e5cf6f5b",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "b32bf6f36a8a64ab3506e891459c35525417d1f5edbb296545dc68c26ddc93b7",
+          "watertight": true,
+          "volume_mm3": 28.470185934011408,
+          "triangles": 258884,
+          "stl_download_encoding": "xz"
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-03",
+          "time_seconds": null,
+          "label": "H1 完成 · 工步边界",
+          "prefix_binding_sha256": "465a3f6722ff4ab753ff101742b0d04f0909ee048be838ed6d98f4e6241e4f23",
+          "simulation_reused": true,
+          "index": 3,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-03/simulated.stl",
+          "stl_sha256": "5163c935513dbeab89eafeb16090bf4c1c5ba44d40c5338205ab99c8cbdac421",
+          "nc_sha256": "2a74df2ddcebc3573c6d85cfb30a489a859decad830bc47c7c2c0bcdc4bb1b97",
+          "full_nc_sha256": "c76c22e91808f6a2a34434b470560ebc9aa050034e2d79561c288b14e5cf6f5b",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "93ab07fe89a47de24aa7b9258ab383c7fb01760294a2941245ae280ed9806676",
+          "watertight": true,
+          "volume_mm3": 25.35828265129055,
+          "triangles": 264808,
+          "stl_download_encoding": "xz"
+        }
+      ],
+      "final_download_encoding": "xz"
+    },
+    {
+      "id": "holes-first",
+      "specification": {
+        "id": "holes-first",
+        "name": "另一张明确卡片：先双孔，后外形",
+        "major_axis": "X",
+        "length_mm": 8,
+        "width_mm": 4,
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            4,
+            0
+          ]
+        },
+        "target_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            4,
+            -0.5
+          ]
+        },
+        "resolution_mm": 0.025,
+        "holes": [
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face8"
+          }
+        ],
+        "order": [
+          "P1",
+          "H2",
+          "H1",
+          "C1"
+        ],
+        "two_tools": false,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "planar_top",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face5",
+            "top_z_mm": -0.5,
+            "thickness_mm": 1.0,
+            "bounds_xy_mm": {
+              "min": [
+                0,
+                0
+              ],
+              "max": [
+                8,
+                4
+              ]
+            }
+          },
+          {
+            "id": "C1",
+            "kind": "capsule_outline",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face5",
+            "major_axis": "X",
+            "center_xy_mm": [
+              4.0,
+              2.0
+            ],
+            "length_mm": 8,
+            "width_mm": 4,
+            "thickness_mm": 1.0,
+            "top_z_mm": -0.5
+          },
+          {
+            "id": "H1",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              2,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face7"
+          },
+          {
+            "id": "H2",
+            "kind": "through_hole",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "center_xy_mm": [
+              6,
+              2
+            ],
+            "diameter_mm": 2,
+            "cylinder_face": "Face8"
+          }
+        ]
+      },
+      "iou_percent": 99.3113511097753,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass"
+        },
+        "C1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "executed_feature_order": [
+        "P1",
+        "H2",
+        "H1",
+        "C1"
+      ],
+      "tool_transitions": [
+        {
+          "tool_number": 1,
+          "tool_id": "T1",
+          "first_executable_block": 6,
+          "last_executable_block": 8
+        }
+      ],
+      "checkpoints": [
+        {
+          "id": "after-01",
+          "iou_percent": 99.9732476523125,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-02",
+          "iou_percent": 99.86752394008724,
+          "all_regression_expectations_met": true
+        },
+        {
+          "id": "after-03",
+          "iou_percent": 99.73627850933465,
+          "all_regression_expectations_met": true
+        }
+      ],
+      "process_conformance": {
+        "status": "matched_card_and_measured_checkpoints",
+        "material_checkpoint_count": 3,
+        "material_checkpoints_sha256": "f01f5c31edc6e18af5d42a9cf902ad98bc023c704f9bc2d485d4c5aa5cb610bc",
+        "manufacturing_acceptance": false
+      },
+      "verifier_sha256": "c0e7da7164ead580060d457edfd4b0c92942a1dde1e44315aabe80ef927d5b87",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-01",
+          "time_seconds": null,
+          "label": "P1 完成 · 工步边界",
+          "prefix_binding_sha256": "86eb075571ecae67bbfa50ffc492fdbc0c6037e4f22d820e7a217e1751d98b9b",
+          "simulation_reused": true,
+          "index": 1,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-01/simulated.stl",
+          "stl_sha256": "5bf72df8158101000e450361e4a739d85469724cd46f31b4ad92c44d8897c545",
+          "nc_sha256": "ddffb3b8cc1d03219bcf7119c1f6c04212ee1e4abd2ca906f634f225f2c39f09",
+          "full_nc_sha256": "c90662461e42236c7304003511d68866beee4d1abc859718536e5792a22d6fd3",
+          "display_retessellation": {
+            "method": "Existing exact axis-aligned planar retessellation, display copy only.",
+            "original_stl_sha256": "5bf72df8158101000e450361e4a739d85469724cd46f31b4ad92c44d8897c545",
+            "original_triangles": 283840,
+            "display_triangles": 8300,
+            "boundary_edges_identical": true,
+            "absolute_signed_volume_difference_mm3": 7.815970093361102e-14,
+            "nonplanar_triangles_retained": true,
+            "quantitative_mesh_modified": false,
+            "patches": [
+              {
+                "retained_original": false,
+                "input_triangles": 12480,
+                "output_triangles": 396,
+                "axis": 0,
+                "plane_mm": -9.765625145519152e-05,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 12480,
+                "output_triangles": 396,
+                "axis": 0,
+                "plane_mm": 8.000097274780273,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 24960,
+                "output_triangles": 716,
+                "axis": 1,
+                "plane_mm": -9.765625145519152e-05,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 24960,
+                "output_triangles": 716,
+                "axis": 1,
+                "plane_mm": 4.000097751617432,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 0.0
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 102400,
+                "output_triangles": 958,
+                "axis": 2,
+                "plane_mm": -1.500097632408142,
+                "signed_normal": -1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 2.842170943040401e-14
+              },
+              {
+                "retained_original": false,
+                "input_triangles": 102400,
+                "output_triangles": 958,
+                "axis": 2,
+                "plane_mm": -0.5000976324081421,
+                "signed_normal": 1,
+                "boundary_edges_identical": true,
+                "symmetric_difference_mm2": 0.0,
+                "overlap_area_mm2": 2.842170943040401e-14
+              }
+            ],
+            "source_code_sha256": "6c131d3ca9b234eb5c0f6aff57f05d802eb9b686561e83f351396faf769899d2",
+            "exporter_source_code_sha256": "1798def3c7e19ea9bd027cf4d8918d1958bd54f504a924415cbe924b245fc704"
+          },
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "569ee7b11648922f4ae73115455f096fcf010215262121da6ab8ea2876cbf665",
+          "watertight": true,
+          "volume_mm3": 32.00231371850271,
+          "triangles": 283840,
+          "stl_download_encoding": "xz"
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-02",
+          "time_seconds": null,
+          "label": "H2 完成 · 工步边界",
+          "prefix_binding_sha256": "5833756b3de27500897dc7f47aca474a15b01adb436532f9caf3c3c657a69e4d",
+          "simulation_reused": true,
+          "index": 2,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-02/simulated.stl",
+          "stl_sha256": "33e349941c0da28ff49c8fa71139a62d9cd987e9cf709c334cbf52c53c4d42aa",
+          "nc_sha256": "69fd96c63d59b25f68b5dc26b292e0995d7eac4a4cea29e9662c584f02886e08",
+          "full_nc_sha256": "c90662461e42236c7304003511d68866beee4d1abc859718536e5792a22d6fd3",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "b49eed67672859fac353fdd7f18225c15dc2c9e5c5f2780a46283872aa2d8a98",
+          "watertight": true,
+          "volume_mm3": 28.890410531354064,
+          "triangles": 289764,
+          "stl_download_encoding": "xz"
+        },
+        {
+          "kind": "cumulative_native_prefix",
+          "checkpoint_id": "after-03",
+          "time_seconds": null,
+          "label": "H1 完成 · 工步边界",
+          "prefix_binding_sha256": "d92891264b9402a25006a5ba70e7b5b95a08fca477a93d07e48fd42a4da473b2",
+          "simulation_reused": true,
+          "index": 3,
+          "resolution_mm": 0.025,
+          "stl": "../checkpoints/after-03/simulated.stl",
+          "stl_sha256": "cc2559a5fa9b59341857b057bd97fcd245b88e4341ade7baa924a5b9b58d7814",
+          "nc_sha256": "374da53ee5165bfc3740fff90aa97a7959a97f1fc5c1c1c85913c1ba87b9d238",
+          "full_nc_sha256": "c90662461e42236c7304003511d68866beee4d1abc859718536e5792a22d6fd3",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "3dc7c11ebc0cee5bce16f7083bd37291c2701bfea354bf51204ad3655e6cd463",
+          "watertight": true,
+          "volume_mm3": 25.77850724862779,
+          "triangles": 295688,
+          "stl_download_encoding": "xz"
+        }
+      ],
+      "final_download_encoding": "xz"
+    }
+  ],
+  "controls": [
+    {
+      "id": "missing-profile",
+      "parent_case": "baseline",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Native operation order / feature association differs from the card",
+      "iou_percent": 86.42058801479803,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass"
+        },
+        "C1": {
+          "outer_profile_xy": "numeric_fail",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_fail"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": false,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Native operation order / feature association differs from the card",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "c0e7da7164ead580060d457edfd4b0c92942a1dde1e44315aabe80ef927d5b87",
+      "resolution_mm": 0.025,
+      "final_download_encoding": "xz"
+    },
+    {
+      "id": "shifted-hole",
+      "parent_case": "baseline",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Helix radius leaves target hole",
+      "iou_percent": 91.00729671958003,
+      "software_statuses": {
+        "P1": {
+          "top_height": "not_measurable",
+          "target_thickness": "not_measurable",
+          "top_geometry": "not_measurable"
+        },
+        "C1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "not_measurable",
+          "retained_planes": "not_measurable",
+          "exterior_clearance": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_fail",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": false,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Helix radius leaves target hole",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "c0e7da7164ead580060d457edfd4b0c92942a1dde1e44315aabe80ef927d5b87",
+      "resolution_mm": 0.025,
+      "final_download_encoding": "xz"
+    },
+    {
+      "id": "wrong-tool",
+      "parent_case": "tool-change",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Native tool change or spindle differs from the card",
+      "iou_percent": 64.66342478153933,
+      "software_statuses": {
+        "P1": {
+          "top_height": "not_measurable",
+          "target_thickness": "not_measurable",
+          "top_geometry": "not_measurable"
+        },
+        "C1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "not_measurable",
+          "retained_planes": "not_measurable",
+          "exterior_clearance": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_fail",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_fail",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": false,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Native tool change or spindle differs from the card",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "c0e7da7164ead580060d457edfd4b0c92942a1dde1e44315aabe80ef927d5b87",
+      "resolution_mm": 0.025,
+      "final_download_encoding": "xz"
+    },
+    {
+      "id": "wrong-order",
+      "parent_case": "baseline",
+      "guard_rejected": true,
+      "normal_guard_rejection": "Native operation order / feature association differs from the card",
+      "iou_percent": 99.31135110977523,
+      "software_statuses": {
+        "P1": {
+          "top_height": "numeric_pass",
+          "target_thickness": "numeric_pass",
+          "top_geometry": "numeric_pass"
+        },
+        "C1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_pass"
+        },
+        "H1": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        },
+        "H2": {
+          "diameter": "numeric_pass",
+          "position_xy": "numeric_pass",
+          "through": "numeric_pass"
+        }
+      },
+      "geometry_checks_pass": true,
+      "process_conformance": {
+        "status": "rejected",
+        "reason": "Native operation order / feature association differs from the card",
+        "modified_control_nc": true,
+        "checkpoints": "not_applicable_to_modified_control_nc"
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "c0e7da7164ead580060d457edfd4b0c92942a1dde1e44315aabe80ef927d5b87",
+      "resolution_mm": 0.025,
+      "final_download_encoding": "xz"
+    }
+  ],
+  "resources": [
+    {
+      "case": "baseline",
+      "stage": "camotics-resources",
+      "seconds": 5.687221400003182,
+      "peak_rss_mib": 338.890625
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-plan-resources",
+      "seconds": 1.1635043479909655,
+      "peak_rss_mib": 145.3828125
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-resources",
+      "seconds": 8.845813811989501,
+      "peak_rss_mib": 166.6640625
+    },
+    {
+      "case": "baseline",
+      "stage": "freecad-resources",
+      "seconds": 9.832473449991085,
+      "peak_rss_mib": 381.30078125
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-software-resources",
+      "seconds": 7.892686855979264,
+      "peak_rss_mib": 169.703125
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-features-resources",
+      "seconds": 7.890910115005681,
+      "peak_rss_mib": 166.47265625
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-03/camotics-resources",
+      "seconds": 4.9489461070043035,
+      "peak_rss_mib": 335.9609375
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-03/measure-plan-resources",
+      "seconds": 0.8433488940063398,
+      "peak_rss_mib": 164.359375
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-03/measure-resources",
+      "seconds": 7.480114409001544,
+      "peak_rss_mib": 164.48046875
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-03/observe-resources",
+      "seconds": 7.268269820982823,
+      "peak_rss_mib": 165.4140625
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-01/camotics-resources",
+      "seconds": 3.476638322987128,
+      "peak_rss_mib": 334.01171875
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-01/measure-plan-resources",
+      "seconds": 0.8427363960072398,
+      "peak_rss_mib": 150.34375
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-01/measure-resources",
+      "seconds": 5.479966600018088,
+      "peak_rss_mib": 150.37109375
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-01/observe-resources",
+      "seconds": 2.109588310995605,
+      "peak_rss_mib": 157.85546875
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-02/camotics-resources",
+      "seconds": 4.215625379991252,
+      "peak_rss_mib": 337.33203125
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-02/measure-plan-resources",
+      "seconds": 0.8428956559801009,
+      "peak_rss_mib": 161.51953125
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-02/measure-resources",
+      "seconds": 5.689830952003831,
+      "peak_rss_mib": 146.0625
+    },
+    {
+      "case": "baseline",
+      "stage": "checkpoints/after-02/observe-resources",
+      "seconds": 6.542724798986455,
+      "peak_rss_mib": 159.7421875
+    },
+    {
+      "case": "three-holes",
+      "stage": "camotics-resources",
+      "seconds": 8.206179176981095,
+      "peak_rss_mib": 506.31640625
+    },
+    {
+      "case": "three-holes",
+      "stage": "measure-plan-resources",
+      "seconds": 1.055316092009889,
+      "peak_rss_mib": 231.8515625
+    },
+    {
+      "case": "three-holes",
+      "stage": "measure-resources",
+      "seconds": 12.196405128022889,
+      "peak_rss_mib": 209.609375
+    },
+    {
+      "case": "three-holes",
+      "stage": "freecad-resources",
+      "seconds": 8.102685681980802,
+      "peak_rss_mib": 549.0625
+    },
+    {
+      "case": "three-holes",
+      "stage": "verify-software-resources",
+      "seconds": 11.793440231005661,
+      "peak_rss_mib": 230.41796875
+    },
+    {
+      "case": "three-holes",
+      "stage": "verify-features-resources",
+      "seconds": 13.110926109016873,
+      "peak_rss_mib": 211.5390625
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-03/camotics-resources",
+      "seconds": 7.057172061002348,
+      "peak_rss_mib": 503.12890625
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-03/measure-plan-resources",
+      "seconds": 1.0589638450182974,
+      "peak_rss_mib": 222.15625
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-03/measure-resources",
+      "seconds": 8.949795936990995,
+      "peak_rss_mib": 226.17578125
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-03/observe-resources",
+      "seconds": 10.134106559009524,
+      "peak_rss_mib": 204.8203125
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-01/camotics-resources",
+      "seconds": 5.590675504005048,
+      "peak_rss_mib": 506.3046875
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-01/measure-plan-resources",
+      "seconds": 1.053817481995793,
+      "peak_rss_mib": 235.56640625
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-01/measure-resources",
+      "seconds": 7.162055245018564,
+      "peak_rss_mib": 231.0703125
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-01/observe-resources",
+      "seconds": 2.63370682799723,
+      "peak_rss_mib": 236.7578125
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-04/camotics-resources",
+      "seconds": 7.796099608996883,
+      "peak_rss_mib": 505.4375
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-04/measure-plan-resources",
+      "seconds": 0.9473767759918701,
+      "peak_rss_mib": 229.04296875
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-04/measure-resources",
+      "seconds": 10.409230543999001,
+      "peak_rss_mib": 229.1015625
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-04/observe-resources",
+      "seconds": 10.516099018015666,
+      "peak_rss_mib": 216.00390625
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-02/camotics-resources",
+      "seconds": 6.637307095981669,
+      "peak_rss_mib": 500.26171875
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-02/measure-plan-resources",
+      "seconds": 0.9495250240142923,
+      "peak_rss_mib": 222.77734375
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-02/measure-resources",
+      "seconds": 7.264120567007922,
+      "peak_rss_mib": 222.89453125
+    },
+    {
+      "case": "three-holes",
+      "stage": "checkpoints/after-02/observe-resources",
+      "seconds": 8.414344905992039,
+      "peak_rss_mib": 224.390625
+    },
+    {
+      "case": "tool-change",
+      "stage": "camotics-resources",
+      "seconds": 5.998517206026008,
+      "peak_rss_mib": 331.44921875
+    },
+    {
+      "case": "tool-change",
+      "stage": "measure-plan-resources",
+      "seconds": 0.7373732200067025,
+      "peak_rss_mib": 166.65625
+    },
+    {
+      "case": "tool-change",
+      "stage": "measure-resources",
+      "seconds": 8.624622016010107,
+      "peak_rss_mib": 166.6328125
+    },
+    {
+      "case": "tool-change",
+      "stage": "freecad-resources",
+      "seconds": 4.736361341987504,
+      "peak_rss_mib": 387.27734375
+    },
+    {
+      "case": "tool-change",
+      "stage": "verify-software-resources",
+      "seconds": 7.777808802988147,
+      "peak_rss_mib": 169.80859375
+    },
+    {
+      "case": "tool-change",
+      "stage": "verify-features-resources",
+      "seconds": 7.6620010859915055,
+      "peak_rss_mib": 169.671875
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-03/camotics-resources",
+      "seconds": 5.259476644016104,
+      "peak_rss_mib": 337.64453125
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-03/measure-plan-resources",
+      "seconds": 0.736807143985061,
+      "peak_rss_mib": 142.42578125
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-03/measure-resources",
+      "seconds": 7.043408626981545,
+      "peak_rss_mib": 164.26953125
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-03/observe-resources",
+      "seconds": 7.05182798099122,
+      "peak_rss_mib": 165.23828125
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-01/camotics-resources",
+      "seconds": 3.5806676789943594,
+      "peak_rss_mib": 333.9609375
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-01/measure-plan-resources",
+      "seconds": 0.8453144950035494,
+      "peak_rss_mib": 150.5234375
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-01/measure-resources",
+      "seconds": 5.473688780009979,
+      "peak_rss_mib": 173.203125
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-01/observe-resources",
+      "seconds": 1.8927841410040855,
+      "peak_rss_mib": 174.12890625
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-02/camotics-resources",
+      "seconds": 4.52118918200722,
+      "peak_rss_mib": 325.87890625
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-02/measure-plan-resources",
+      "seconds": 0.7389715260069352,
+      "peak_rss_mib": 140.33984375
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-02/measure-resources",
+      "seconds": 5.147843572020065,
+      "peak_rss_mib": 140.5703125
+    },
+    {
+      "case": "tool-change",
+      "stage": "checkpoints/after-02/observe-resources",
+      "seconds": 6.2029983260144945,
+      "peak_rss_mib": 135.609375
+    },
+    {
+      "case": "holes-first",
+      "stage": "camotics-resources",
+      "seconds": 5.681275665003341,
+      "peak_rss_mib": 344.50390625
+    },
+    {
+      "case": "holes-first",
+      "stage": "measure-plan-resources",
+      "seconds": 0.7364737860043533,
+      "peak_rss_mib": 138.8984375
+    },
+    {
+      "case": "holes-first",
+      "stage": "measure-resources",
+      "seconds": 8.721584724989953,
+      "peak_rss_mib": 166.55078125
+    },
+    {
+      "case": "holes-first",
+      "stage": "freecad-resources",
+      "seconds": 4.946032403997378,
+      "peak_rss_mib": 385.37890625
+    },
+    {
+      "case": "holes-first",
+      "stage": "verify-software-resources",
+      "seconds": 7.667330853000749,
+      "peak_rss_mib": 169.84765625
+    },
+    {
+      "case": "holes-first",
+      "stage": "verify-features-resources",
+      "seconds": 8.105702483997447,
+      "peak_rss_mib": 147.8984375
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-03/camotics-resources",
+      "seconds": 4.317875083012041,
+      "peak_rss_mib": 329.26953125
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-03/measure-plan-resources",
+      "seconds": 0.8473153539816849,
+      "peak_rss_mib": 155.01171875
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-03/measure-resources",
+      "seconds": 8.946357200009516,
+      "peak_rss_mib": 154.625
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-03/observe-resources",
+      "seconds": 3.792118092009332,
+      "peak_rss_mib": 179.95703125
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-01/camotics-resources",
+      "seconds": 3.5786214109975845,
+      "peak_rss_mib": 342.515625
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-01/measure-plan-resources",
+      "seconds": 0.7363706750038546,
+      "peak_rss_mib": 173.2109375
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-01/measure-resources",
+      "seconds": 5.256008950993419,
+      "peak_rss_mib": 173.25
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-01/observe-resources",
+      "seconds": 1.8943463590112515,
+      "peak_rss_mib": 171.0859375
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-02/camotics-resources",
+      "seconds": 3.999854140012758,
+      "peak_rss_mib": 339.26953125
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-02/measure-plan-resources",
+      "seconds": 0.8415942199935671,
+      "peak_rss_mib": 152.71484375
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-02/measure-resources",
+      "seconds": 7.156748970010085,
+      "peak_rss_mib": 176.42578125
+    },
+    {
+      "case": "holes-first",
+      "stage": "checkpoints/after-02/observe-resources",
+      "seconds": 2.83631328100455,
+      "peak_rss_mib": 177.27734375
+    }
+  ],
+  "input_archive": "S4-PROFILE-SEQUENCE-20261029-r3",
+  "run_archive": "S4-PROFILE-SEQUENCE-SUITE-20261029-r1",
+  "replay_archive": "S4-PROFILE-SEQUENCE-REPLAY-20261029-r1",
+  "input_manifest_sha256": "4740706c79e10a006050cff5fdaa56fedafe332e7d0d9c929df74ac167aca6dd",
+  "suite_summary_sha256": "591d6d76e234b528c77225fced4c643378d34d61b667d80b7d25916295fc1773",
+  "tests_passed": 309,
+  "normal_cases_passed": 4,
+  "negative_controls_detected": 4,
+  "new_features": [
+    "同一原始毛坯连续面铣 / 外形 / 铣孔",
+    "保持卡片工步顺序与换刀",
+    "各累计工步独立 CAD 与实际剩料检验"
+  ],
+  "remaining": [
+    "圆头连接板原尺寸与真实卡资源",
+    "型腔与孔组合",
+    "非零偏置、夹具与拼板"
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "blind_holes_verified": false,
+  "ordered_milling_verified": true,
+  "s4_complete": false,
+  "input_review_bundle_ref": "validation-inputs.zip",
+  "input_review_bundle_sha256": "60beb249c1b7d89707ff85c1e9138861a5f364c8dd10664c8975cc2187f35568",
+  "legacy_compatibility_ref": "legacy-compatibility.json",
+  "legacy_compatibility_sha256": "0aa365a9904b53dc5bd937f08bf093d5bce035168da507e8f6a5d59c05a2d254",
+  "native_cad_guard_ref": "native-cad-guard.json",
+  "native_cad_guard_sha256": "553a904e333b33a490adbf41c37823f3d56e316409d6dc83b4296df0d4272c6c",
+  "engine_build_ref": "engine-build.json",
+  "engine_build_sha256": "152473f86f52597ed2ed1524d99fc7f45d5220c7c52445f8514ad86851bd25e6",
+  "engine_evidence_archive": "S3-REGION-RESULTS-20261029-r1",
+  "sampling_scope": "25 original retained-solid rays, 11 sections, 9 full incoming-height rays per hole, 20 exterior probes, plus independently measured cumulative native prefixes.",
+  "scope_qualification": "Synthetic face/profile/helix cases, same stock and zero-offset XYZ. Actual card-order pattern is exercised; no panel, fixture retention, material physics or full real-card approval.",
+  "profiled_sequence_verified": true,
+  "checkpoint_download_encoding": "xz",
+  "download_encoding_report": "download-encoding.json",
+  "final_download_encoding": "xz",
+  "checkpoint_download_encoding_report": "checkpoint-download-encoding.json"
+}

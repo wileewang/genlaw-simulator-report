@@ -1,0 +1,203 @@
+{
+  "schema": "genlaw.sectional-iou.v2",
+  "status": "measured_numerical_estimate",
+  "iou": 0.9997348932054341,
+  "iou_percent": 99.97348932054341,
+  "volumes": {
+    "actual_volume_mm3": 66.97069994333432,
+    "target_volume_mm3": 66.97164977098818,
+    "intersection_mm3": 66.96229642354737,
+    "alternative_intersection_mm3": 0.0,
+    "union_mm3": 66.98005329077515,
+    "iou": 0.9997348932054341,
+    "quadrature_order": 3
+  },
+  "excess_material_mm3": 0.008403519786952529,
+  "missing_material_mm3": 0.009353347440807624,
+  "actual_mesh": {
+    "source_sha256": "3dce404774b7f45346113cc1349771b1b4189e61fa78640df4ea86cf64c98e19",
+    "raw_triangles": 488456,
+    "exact_duplicate_faces_removed": 0,
+    "triangles": 488456,
+    "vertices": 244230,
+    "watertight": true,
+    "consistent_winding": true,
+    "volume_mm3": 66.97070001576834,
+    "bounds": {
+      "min": [
+        -9.765625145519152e-05,
+        9.765625145519152e-05,
+        -1.500097632408142
+      ],
+      "max": [
+        8.000097274780273,
+        6.000097751617432,
+        -9.765625145519152e-05
+      ]
+    },
+    "registration_or_alignment": false,
+    "holes_filled": false,
+    "vertex_displacement_mm": 0
+  },
+  "reference_cad": {
+    "schema": "genlaw.native-binding.v3",
+    "status": "verified",
+    "cad_sha256": "36a2be1e506ef293fc43d10b7a64912dd1d04dfea1264442ae44f80f750dadbd",
+    "reference_class": "axis_aligned_box_minus_disjoint_z_drilled_holes",
+    "bounds": {
+      "min": [
+        0.0,
+        0.0,
+        -1.5
+      ],
+      "max": [
+        8.0,
+        6.0,
+        0.0
+      ]
+    },
+    "volume_mm3": 66.97164927797999,
+    "valid_single_solid": true,
+    "symmetric_difference_mm3": 0.0,
+    "original_cad_reparsed": true,
+    "reference_for_iou": "Analytic box minus drilled-hole volumes checked by native BREP boolean difference.",
+    "features": [
+      {
+        "id": "H1",
+        "center_xy_mm": [
+          2,
+          2
+        ],
+        "diameter_mm": 2.0,
+        "kind": "blind_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "cylinder_face": "Face7",
+        "cylindrical_depth_mm": 0.5,
+        "bottom_angle_degrees": 118
+      },
+      {
+        "id": "H2",
+        "center_xy_mm": [
+          5.5,
+          4
+        ],
+        "diameter_mm": 2.0,
+        "kind": "blind_hole",
+        "axis": [
+          0,
+          0,
+          1
+        ],
+        "cylinder_face": "Face8",
+        "cylindrical_depth_mm": 0.7,
+        "bottom_angle_degrees": 118
+      }
+    ]
+  },
+  "native_geometry_sha256": "da920389c3763401df6fba1684b09c424a4c6a46ed016ca2146d7b2a7f6365eb",
+  "absolute_iou_refinement_difference": 1.6120789148033055e-08,
+  "section_levels": 1022,
+  "controls": [
+    {
+      "case": "identical_cube",
+      "expected": 1,
+      "measured": 1.0,
+      "pass": true
+    },
+    {
+      "case": "same_volume_shifted_cube",
+      "expected": 0.6,
+      "measured": 0.6,
+      "pass": true
+    },
+    {
+      "case": "disjoint_cube",
+      "expected": 0,
+      "measured": 0.0,
+      "pass": true
+    },
+    {
+      "case": "hole_not_drilled",
+      "expected": 0.9345501530502127,
+      "measured": 0.9345501594672894,
+      "pass": true
+    }
+  ],
+  "section_hole_observations": [
+    {
+      "requested_z_mm": -1.35,
+      "z_mm": -1.3404508826673847,
+      "interior_loops": 0,
+      "holes": []
+    },
+    {
+      "requested_z_mm": -0.75,
+      "z_mm": -0.7499627077384933,
+      "interior_loops": 2,
+      "holes": [
+        {
+          "centroid_xy_mm": [
+            1.9999999971073135,
+            1.999999997131564
+          ],
+          "area_equivalent_diameter_mm": 1.1677539279600877
+        },
+        {
+          "centroid_xy_mm": [
+            5.500000000467475,
+            4.0000000050441304
+          ],
+          "area_equivalent_diameter_mm": 1.8335886460959698
+        }
+      ]
+    },
+    {
+      "requested_z_mm": -0.1499999999999999,
+      "z_mm": -0.140450853402517,
+      "interior_loops": 2,
+      "holes": [
+        {
+          "centroid_xy_mm": [
+            1.9999953926546383,
+            2.000000787748354
+          ],
+          "area_equivalent_diameter_mm": 1.9999067853476118
+        },
+        {
+          "centroid_xy_mm": [
+            5.499995395323016,
+            3.9999999941297886
+          ],
+          "area_equivalent_diameter_mm": 1.9999075492684426
+        }
+      ]
+    }
+  ],
+  "method": "Closed STL cross-sections, all vertex-height intervals, 3-point Gauss integration against native-checked analytic CAD section.",
+  "registration": "none; same CAD/G54 coordinates",
+  "full_tolerance_acceptance": false,
+  "production_approved": false,
+  "limits": [
+    "Numerical estimate, not a certified error bound.",
+    "Section diameters are area-equivalent, not a GD&T acceptance.",
+    "Three interior slices do not certify through-hole or roughness acceptance."
+  ],
+  "bounded_partition_count": 8,
+  "all_vertex_height_intervals_preserved": true,
+  "partition_files_sha256": {
+    "part-000.json": "7e9dd031b30de38956eb807cfbd267b088918fc01fe77aef5c1b33ffb98498c9",
+    "part-001.json": "73398c29e96f3c23f04f415f5538c3e83143c31dc0a250b2529de1d23a86be2c",
+    "part-002.json": "1638c9e38991ebf7259fdf41a4b70f1683ac3dff167743c2d5507e79905aef0e",
+    "part-003.json": "49bce31863de1e493706ca52499eefda31f01f80f6a14cfba33e616015aa402e",
+    "part-004.json": "c801fe948c7f9b5193c35b155af97116f3e125c2b3f557cb1681696666a925ab",
+    "part-005.json": "39b6953ea62aad81d6b60c4f84dc463ec5b85245e7de38d37780a50e7db05111",
+    "part-006.json": "c53ec383154c56117439df58ae01f176f81e0bb4c82172d63ef9c097e7a62e61",
+    "part-007.json": "04b9cca168cefaafc168744f528c4399be46ebefa0dcc993a02f5f5d5e4909ec"
+  },
+  "reference_sections": "Height-dependent cylinders and conical bottoms; CAD critical heights included.",
+  "reference_source_code_sha256": "099c6a2e05b65955231147a53bb35b71b22758374639ad11eab3d54ef2d7303b"
+}

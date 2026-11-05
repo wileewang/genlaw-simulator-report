@@ -1,0 +1,124 @@
+{
+  "schema": "genlaw.process-plan.v1",
+  "id": "S1-BRIDGE-diameter-r1-CARD",
+  "cad_sha256": "2026181589986e17c523da5b007fb3a24a74ade6cd0568cf8ea91ad1ff93c458",
+  "origin": "source_bound_transcription_candidate",
+  "transcription": {
+    "status": "source_bound_candidate",
+    "source_semantics_verified": false,
+    "production_review": false,
+    "draft_sha256": "cba537c848d8e462c84cb1e3d1be99fd61fd3504b30dbcce6fab9c6cdd273de4",
+    "source_manifest_sha256": "cc92bc4a9af4371de88d133adc9d8ba0c4a555367268d0dcd92c43cca3487e1b"
+  },
+  "review": {
+    "input_suitability_approved": false,
+    "production_approved": false
+  },
+  "external_documents": [],
+  "operations": [
+    {
+      "id": "OP05",
+      "name": "来料核对",
+      "steps": [
+        {
+          "id": "OP05.1",
+          "text": "OP05.1\n来料核对：确认外形、板厚、材料状态与版本。",
+          "type": "not_selected",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "Source step OP05.1; all page/bbox quotations retained in transcription_draft"
+          },
+          "depends_on": []
+        }
+      ]
+    },
+    {
+      "id": "OP10",
+      "name": "钻",
+      "steps": [
+        {
+          "id": "OP10.1",
+          "text": "OP10.1\n定位装夹：按确认的基准找正；软件采用 G54 零偏置。",
+          "type": "not_selected",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "Source step OP10.1; all page/bbox quotations retained in transcription_draft"
+          },
+          "depends_on": []
+        },
+        {
+          "id": "OP10.2",
+          "text": "OP10.2\n钻：在 (3, 2) 加工 φ2.5 通孔，贯穿名义板厚 1.5 mm。",
+          "type": "drilling",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "Source step OP10.2; all page/bbox quotations retained in transcription_draft"
+          },
+          "depends_on": [
+            "OP05.1",
+            "OP10.1"
+          ],
+          "feature_id": "F_HOLE_1",
+          "constraints": {
+            "diameter_mm": 2.5,
+            "through": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "OP20",
+      "name": "去毛刺",
+      "steps": [
+        {
+          "id": "OP20.1",
+          "text": "OP20.1\n去毛刺：孔口 / 外缘处理方式与尺寸待确认。",
+          "type": "not_selected",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "Source step OP20.1; all page/bbox quotations retained in transcription_draft"
+          },
+          "depends_on": []
+        }
+      ]
+    },
+    {
+      "id": "OP30",
+      "name": "检验",
+      "steps": [
+        {
+          "id": "OP30.1",
+          "text": "OP30.1\n检验：按批准的 CAD 与制造要求逐项检查。",
+          "type": "not_selected",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "Source step OP30.1; all page/bbox quotations retained in transcription_draft"
+          },
+          "depends_on": []
+        }
+      ]
+    },
+    {
+      "id": "OP35",
+      "name": "后续处置",
+      "steps": [
+        {
+          "id": "OP35.1",
+          "text": "OP35.1\n后续处置：清洗、标识、包装要求待确认。",
+          "type": "not_selected",
+          "source": {
+            "document_id": "CARD",
+            "page": 1,
+            "location": "Source step OP35.1; all page/bbox quotations retained in transcription_draft"
+          },
+          "depends_on": []
+        }
+      ]
+    }
+  ]
+}

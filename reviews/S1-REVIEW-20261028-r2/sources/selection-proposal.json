@@ -1,0 +1,64 @@
+{
+  "schema": "genlaw.predevelopment-case-proposal.v0",
+  "case_id": "S1-offset-through-hole",
+  "status": "proposed_for_user_review",
+  "accepted_as_development_baseline": false,
+  "purpose": "A small complete fixed-axis software integration case, independent of historical R0 and customer parts.",
+  "units": "mm",
+  "stock": {"type": "box", "min": [0, 0, -1.5], "max": [8, 6, 0]},
+  "target": {
+    "outer_dimensions": [8, 6, 1.5],
+    "hole": {"type": "through_cylinder", "axis": [0, 0, 1], "center_xy": [3, 2], "diameter": 2},
+    "independent_target_required": true,
+    "target_must_not_be_derived_from_nc_or_simulated_stock": true
+  },
+  "resource_scope": {
+    "material_label": "6061-T6 (geometry-only synthetic label)",
+    "machine": "reference XYZ, rotary axes fixed; not an identified factory controller",
+    "setups": 1,
+    "work_offset": "G54 with zero translation for the first probe; origin at a stock top-face corner (0,0,0), X along the 8 mm edge, Y along the 6 mm edge, Z upward",
+    "tools": [{"number": 1, "type": "drill", "diameter": 2, "tip_included_angle_degrees": 118}],
+    "fixture": "proposed side clamping with unobstructed underside; actual clamping and collision validation deferred",
+    "feeds_speeds_qualified_for_manufacturing": false
+  },
+  "proposal_acceptance": {
+    "dimensions_and_hole_center_mm": 0.05,
+    "through_hole_required": true,
+    "outer_shape_retained_required": true,
+    "geometry_error_budget_must_be_established": true,
+    "numerical_ambiguity_result": "indeterminate, never automatic pass",
+    "roughness_force_deflection_and_physical_process_validation": false
+  },
+  "simulation_budget": {
+    "initial_tool_smoke_resolution_mm": 0.05,
+    "initial_tool_smoke_equivalent_cells": 576000,
+    "candidate_acceptance_resolution_mm": 0.025,
+    "candidate_acceptance_equivalent_cells": 4608000,
+    "maximum_equivalent_cells": 5000000,
+    "resolution_is_not_a_geometric_accuracy_guarantee": true,
+    "native_cpu_count": 1,
+    "native_memory_gib": 2,
+    "native_wall_seconds": 60
+  },
+  "selection_reasons": [
+    "Only one operation, one tool, one setup and one feature, so failures can be isolated.",
+    "Unequal stock lengths and an off-center hole expose axis swaps, origin shifts and mirror errors.",
+    "An independent box-minus-cylinder target has simple hole diameter, position, breakthrough and exterior checks.",
+    "The full declared stock fits the current conservative grid gate at 0.025 mm; admission still requires measured runtime and numerical validation.",
+    "The same family can add a second hole, then a pocket/slot, then orientation; size and feature complexity are tested separately."
+  ],
+  "negative_cases_after_selection": [
+    {"id": "wrong_xy", "change": "Shift the NC hole center by +0.25 mm in X; keep original target unchanged."},
+    {"id": "not_through", "change": "Stop the drill above the stock bottom; keep original target unchanged."},
+    {"id": "wrong_tool", "change": "Use a different drill diameter; keep original target unchanged."}
+  ],
+  "route_after_s1": [
+    "Increase stock size to historical R0, 30 x 20 x 5 mm / diameter 4, without adding feature types; qualify a resource-feasible representation independently.",
+    "Add multiple holes and basic slot, step and pocket operations one capability at a time.",
+    "Validate one simple real single part from the existing customer drawings.",
+    "Add indexed 3+2 operations and then continuous five-axis on simple test geometry.",
+    "Extend to complex single parts and multiple setups before assemblies."
+  ],
+  "historical_r0_superseded": false,
+  "new_customer_manufacturing_passes": 0
+}

@@ -1,0 +1,716 @@
+{
+  "schema": "genlaw.stage-results.v1",
+  "id": "S4-PROFILE-RESULTS-20261029-r1",
+  "stage_id": "s4",
+  "title": "圆头外轮廓与全厚清料",
+  "normal_cases": [
+    {
+      "id": "baseline",
+      "specification": {
+        "id": "baseline",
+        "name": "圆头外轮廓",
+        "length_mm": 8,
+        "width_mm": 4,
+        "major_axis": "X",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            4,
+            0
+          ]
+        },
+        "resolution_mm": 0.025,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "capsule_outline",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face6",
+            "major_axis": "X",
+            "center_xy_mm": [
+              4.0,
+              2.0
+            ],
+            "length_mm": 8,
+            "width_mm": 4,
+            "thickness_mm": 1.5,
+            "top_z_mm": 0
+          }
+        ]
+      },
+      "iou_percent": 99.65116757807382,
+      "software_statuses": {
+        "P1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "measured_profile_deviation_mm": 0.009592622564447225,
+      "cutting_levels_mm": [
+        -0.25,
+        -0.5,
+        -0.75,
+        -1.0,
+        -1.25,
+        -1.5,
+        -1.6
+      ],
+      "executed_feature_order": [
+        "P1"
+      ],
+      "verifier_sha256": "a4f7296136d6d97bbf98e350a1ebd5358581867e24d1abdee93da2e856ce78f4",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 24.392205,
+          "label": "外轮廓初层",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "bd6bcdde6e7751a78a92beee942e9f7895ee449cff368f3b8635cf31525c61d8",
+          "nc_sha256": "3ec446c086e5f1656070cda6630817b6e33382ebe3d5cb059250666021c31279",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "346b7966ca504219418c88fbc9e6b60799b10059461af97b98db206e4a7498ae",
+          "watertight": true,
+          "volume_mm3": 46.46750058658714,
+          "triangles": 81368
+        },
+        {
+          "index": 2,
+          "time_seconds": 53.662852,
+          "label": "逐层清除四角",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "0d373a1833c35e309a16e263971272b4f010f5d06d7f64f4055ad165060dbf2b",
+          "nc_sha256": "3ec446c086e5f1656070cda6630817b6e33382ebe3d5cb059250666021c31279",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "eacd4447e4d4966b513969240769733bd44e12e2d9a754eddad007c7f1c2a199",
+          "watertight": true,
+          "volume_mm3": 44.51847192367712,
+          "triangles": 81168
+        },
+        {
+          "index": 3,
+          "time_seconds": 82.933499,
+          "label": "接近全厚贯穿",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "296b23fc7d173fca00ef2d11f5c73aaef519deedf44911aa11d123b4beb4d94f",
+          "nc_sha256": "3ec446c086e5f1656070cda6630817b6e33382ebe3d5cb059250666021c31279",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "85fc5713b7159016d7ff6f5f411555acf72fdcd662a22c5e9c99063f747d24f8",
+          "watertight": true,
+          "volume_mm3": 42.75667438274014,
+          "triangles": 75076
+        }
+      ]
+    },
+    {
+      "id": "wider",
+      "specification": {
+        "id": "wider",
+        "name": "加宽圆头",
+        "length_mm": 8,
+        "width_mm": 5,
+        "major_axis": "X",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            8,
+            5,
+            0
+          ]
+        },
+        "resolution_mm": 0.025,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "capsule_outline",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face6",
+            "major_axis": "X",
+            "center_xy_mm": [
+              4.0,
+              2.5
+            ],
+            "length_mm": 8,
+            "width_mm": 5,
+            "thickness_mm": 1.5,
+            "top_z_mm": 0
+          }
+        ]
+      },
+      "iou_percent": 99.64410279101554,
+      "software_statuses": {
+        "P1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "measured_profile_deviation_mm": 0.01005859,
+      "cutting_levels_mm": [
+        -0.25,
+        -0.5,
+        -0.75,
+        -1.0,
+        -1.25,
+        -1.5,
+        -1.6
+      ],
+      "executed_feature_order": [
+        "P1"
+      ],
+      "verifier_sha256": "a4f7296136d6d97bbf98e350a1ebd5358581867e24d1abdee93da2e856ce78f4",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 25.391264,
+          "label": "外轮廓初层",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "64e79075d6d7b85d3f99b7fd51ffd6d1450974b38a7abebb1fee8beef9c2e156",
+          "nc_sha256": "eb62efa32b826b053abd1a7f630a9d743c204156751a329568ab6048692e368c",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "b218deede83f2811a2559b609637ba9ada210b4326868b1a1d1242edfb671f29",
+          "watertight": true,
+          "volume_mm3": 57.656064284790936,
+          "triangles": 96708
+        },
+        {
+          "index": 2,
+          "time_seconds": 55.860781,
+          "label": "逐层清除四角",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "d0f9d3be0b96caa9519ecab4a9b91540e80b6c3e3791d5701a111d48ade4093e",
+          "nc_sha256": "eb62efa32b826b053abd1a7f630a9d743c204156751a329568ab6048692e368c",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "80cde953054655c0408341c20abcc5348a0d04bb2e326579d373d07bf670310e",
+          "watertight": true,
+          "volume_mm3": 54.59345887341569,
+          "triangles": 96528
+        },
+        {
+          "index": 3,
+          "time_seconds": 86.330298,
+          "label": "接近全厚贯穿",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "7b2489d1869938c4e7957c7466a62af3a34608aae903d3c34e49500cc6a5a2b1",
+          "nc_sha256": "eb62efa32b826b053abd1a7f630a9d743c204156751a329568ab6048692e368c",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "8af17f46586acb5b981e23786a8e8d746b6fe60ea1b2e8063d83e4816a3df574",
+          "watertight": true,
+          "volume_mm3": 51.852494307899235,
+          "triangles": 87416
+        }
+      ]
+    },
+    {
+      "id": "vertical",
+      "specification": {
+        "id": "vertical",
+        "name": "Y 向圆头",
+        "length_mm": 8,
+        "width_mm": 4,
+        "major_axis": "Y",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -1.5
+          ],
+          "max": [
+            4,
+            8,
+            0
+          ]
+        },
+        "resolution_mm": 0.025,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "capsule_outline",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face6",
+            "major_axis": "Y",
+            "center_xy_mm": [
+              2.0,
+              4.0
+            ],
+            "length_mm": 8,
+            "width_mm": 4,
+            "thickness_mm": 1.5,
+            "top_z_mm": 0
+          }
+        ]
+      },
+      "iou_percent": 99.64889704295625,
+      "software_statuses": {
+        "P1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "measured_profile_deviation_mm": 0.01027113606599209,
+      "cutting_levels_mm": [
+        -0.25,
+        -0.5,
+        -0.75,
+        -1.0,
+        -1.25,
+        -1.5,
+        -1.6
+      ],
+      "executed_feature_order": [
+        "P1"
+      ],
+      "verifier_sha256": "a4f7296136d6d97bbf98e350a1ebd5358581867e24d1abdee93da2e856ce78f4",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 24.392025,
+          "label": "外轮廓初层",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "55cbe5cb62e973694ab703686a4c7f466fc925aade9397e925d275e07e180cb3",
+          "nc_sha256": "7ff34ac35f2f5122fd2821865a77aa2c00fb562b29ce08adb7d2d457b336813f",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "181ceabfcc6eb22aa45e28b3331060139a9880982f945185301d34f803d165ad",
+          "watertight": true,
+          "volume_mm3": 46.50689498561817,
+          "triangles": 81288
+        },
+        {
+          "index": 2,
+          "time_seconds": 53.662455,
+          "label": "逐层清除四角",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "864aa880390c501842fb9c229d5e8eac831011b665c287b73534cee89e884d0e",
+          "nc_sha256": "7ff34ac35f2f5122fd2821865a77aa2c00fb562b29ce08adb7d2d457b336813f",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "dabfddacbc2479f350609e2ac9803fa7ccb818637ac8f14482e05bf477c0f285",
+          "watertight": true,
+          "volume_mm3": 44.71056106474157,
+          "triangles": 81208
+        },
+        {
+          "index": 3,
+          "time_seconds": 82.932886,
+          "label": "接近全厚贯穿",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "a046fc102ccd3a481b3a31208af7f192dc093135e81d29d490b2f253d77ab573",
+          "nc_sha256": "7ff34ac35f2f5122fd2821865a77aa2c00fb562b29ce08adb7d2d457b336813f",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "33bd683b879758560d15c03ef9ecf23bf0672229e6d94518a7265d8a595b9dce",
+          "watertight": true,
+          "volume_mm3": 42.75588248117122,
+          "triangles": 75052
+        }
+      ]
+    },
+    {
+      "id": "thicker",
+      "specification": {
+        "id": "thicker",
+        "name": "增加厚度",
+        "length_mm": 8,
+        "width_mm": 4,
+        "major_axis": "X",
+        "stock_bounds_mm": {
+          "min": [
+            0,
+            0,
+            -2
+          ],
+          "max": [
+            8,
+            4,
+            0
+          ]
+        },
+        "resolution_mm": 0.025,
+        "features": [
+          {
+            "id": "P1",
+            "kind": "capsule_outline",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "top_face": "Face6",
+            "major_axis": "X",
+            "center_xy_mm": [
+              4.0,
+              2.0
+            ],
+            "length_mm": 8,
+            "width_mm": 4,
+            "thickness_mm": 2,
+            "top_z_mm": 0
+          }
+        ]
+      },
+      "iou_percent": 99.65609530370527,
+      "software_statuses": {
+        "P1": {
+          "outer_profile_xy": "numeric_pass",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "measured_profile_deviation_mm": 0.009592622564447225,
+      "cutting_levels_mm": [
+        -0.25,
+        -0.5,
+        -0.75,
+        -1.0,
+        -1.25,
+        -1.5,
+        -1.75,
+        -2.0,
+        -2.1
+      ],
+      "executed_feature_order": [
+        "P1"
+      ],
+      "verifier_sha256": "a4f7296136d6d97bbf98e350a1ebd5358581867e24d1abdee93da2e856ce78f4",
+      "resolution_mm": 0.025,
+      "frames": [
+        {
+          "index": 1,
+          "time_seconds": 31.229264,
+          "label": "外轮廓初层",
+          "resolution_mm": 0.05,
+          "stl": "frame-1.stl",
+          "stl_sha256": "07e8341b2bee0de163924bf8226614211609bd00d11fc27845514a1b101ebe38",
+          "nc_sha256": "d73a566cf8b4cdf36586b4cf248be9b615eda07b4ab1b072804c435b22b2c026",
+          "mesh": "frame-1.mesh",
+          "mesh_sha256": "535d8f1ced2aa8070a016109df5dbc74ee01843dbaf6e8274124936c2382e61b",
+          "watertight": true,
+          "volume_mm3": 62.01671633805022,
+          "triangles": 89996
+        },
+        {
+          "index": 2,
+          "time_seconds": 68.704381,
+          "label": "逐层清除四角",
+          "resolution_mm": 0.05,
+          "stl": "frame-2.stl",
+          "stl_sha256": "a5fbdb984e18e390bfe0f5cf224ba6f315016682300832474dab956841944515",
+          "nc_sha256": "d73a566cf8b4cdf36586b4cf248be9b615eda07b4ab1b072804c435b22b2c026",
+          "mesh": "frame-2.mesh",
+          "mesh_sha256": "b30c3549a89a690764154203786ea25f06bb4fec327f7fdb787767ed3da645c3",
+          "watertight": true,
+          "volume_mm3": 59.608840884636855,
+          "triangles": 89796
+        },
+        {
+          "index": 3,
+          "time_seconds": 106.179498,
+          "label": "接近全厚贯穿",
+          "resolution_mm": 0.05,
+          "stl": "frame-3.stl",
+          "stl_sha256": "66232db289df33915be0d2141a3289858ec550c21f34d0a01ef0cbdc8a7a10b8",
+          "nc_sha256": "d73a566cf8b4cdf36586b4cf248be9b615eda07b4ab1b072804c435b22b2c026",
+          "mesh": "frame-3.mesh",
+          "mesh_sha256": "b9fa1e13ca7213747811d2e6ee813c11a1e1165510c56c007062aa6e82f35b40",
+          "watertight": true,
+          "volume_mm3": 57.17506821374864,
+          "triangles": 85472
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "id": "wrong-position",
+      "parent_case": "baseline",
+      "affected_feature": "P1",
+      "guard_rejected": true,
+      "iou_percent": 89.47130248385402,
+      "software_statuses": {
+        "P1": {
+          "outer_profile_xy": "numeric_fail",
+          "retained_thickness": "not_measurable",
+          "retained_planes": "not_measurable",
+          "exterior_clearance": "numeric_fail"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "a4f7296136d6d97bbf98e350a1ebd5358581867e24d1abdee93da2e856ce78f4",
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "overcut",
+      "parent_case": "baseline",
+      "affected_feature": "P1",
+      "guard_rejected": true,
+      "iou_percent": 74.32939361204667,
+      "software_statuses": {
+        "P1": {
+          "outer_profile_xy": "numeric_fail",
+          "retained_thickness": "not_measurable",
+          "retained_planes": "not_measurable",
+          "exterior_clearance": "numeric_pass"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "a4f7296136d6d97bbf98e350a1ebd5358581867e24d1abdee93da2e856ce78f4",
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "uncut-corners",
+      "parent_case": "baseline",
+      "affected_feature": "P1",
+      "guard_rejected": true,
+      "iou_percent": 89.6403930302906,
+      "software_statuses": {
+        "P1": {
+          "outer_profile_xy": "numeric_fail",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_fail"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "a4f7296136d6d97bbf98e350a1ebd5358581867e24d1abdee93da2e856ce78f4",
+      "resolution_mm": 0.025
+    },
+    {
+      "id": "not-through",
+      "parent_case": "baseline",
+      "affected_feature": "P1",
+      "guard_rejected": true,
+      "iou_percent": 94.50071784538694,
+      "software_statuses": {
+        "P1": {
+          "outer_profile_xy": "numeric_fail",
+          "retained_thickness": "numeric_pass",
+          "retained_planes": "numeric_pass",
+          "exterior_clearance": "numeric_fail"
+        }
+      },
+      "regression_expectation_met": true,
+      "verifier_sha256": "a4f7296136d6d97bbf98e350a1ebd5358581867e24d1abdee93da2e856ce78f4",
+      "resolution_mm": 0.025
+    }
+  ],
+  "resources": [
+    {
+      "case": "baseline",
+      "stage": "camotics-resources",
+      "seconds": 4.411527464981191,
+      "peak_rss_mib": 336.4375
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-plan-resources",
+      "seconds": 0.7351208000036422,
+      "peak_rss_mib": 179.8125
+    },
+    {
+      "case": "baseline",
+      "stage": "measure-resources",
+      "seconds": 7.5536059660080355,
+      "peak_rss_mib": 179.640625
+    },
+    {
+      "case": "baseline",
+      "stage": "freecad-resources",
+      "seconds": 1.260524021985475,
+      "peak_rss_mib": 211.24609375
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-software-resources",
+      "seconds": 5.982510324014584,
+      "peak_rss_mib": 156.8984375
+    },
+    {
+      "case": "baseline",
+      "stage": "verify-features-resources",
+      "seconds": 5.985284360998776,
+      "peak_rss_mib": 157.01953125
+    },
+    {
+      "case": "wider",
+      "stage": "camotics-resources",
+      "seconds": 5.681202500010841,
+      "peak_rss_mib": 421.7734375
+    },
+    {
+      "case": "wider",
+      "stage": "measure-plan-resources",
+      "seconds": 0.9464322789863218,
+      "peak_rss_mib": 198.359375
+    },
+    {
+      "case": "wider",
+      "stage": "measure-resources",
+      "seconds": 8.514944034977816,
+      "peak_rss_mib": 182.53125
+    },
+    {
+      "case": "wider",
+      "stage": "freecad-resources",
+      "seconds": 1.3693354889983311,
+      "peak_rss_mib": 210.22265625
+    },
+    {
+      "case": "wider",
+      "stage": "verify-software-resources",
+      "seconds": 7.1575218079960905,
+      "peak_rss_mib": 204.1953125
+    },
+    {
+      "case": "wider",
+      "stage": "verify-features-resources",
+      "seconds": 6.718781223986298,
+      "peak_rss_mib": 204.14453125
+    },
+    {
+      "case": "vertical",
+      "stage": "camotics-resources",
+      "seconds": 4.410544836020563,
+      "peak_rss_mib": 330.7265625
+    },
+    {
+      "case": "vertical",
+      "stage": "measure-plan-resources",
+      "seconds": 0.7364362629887182,
+      "peak_rss_mib": 179.74609375
+    },
+    {
+      "case": "vertical",
+      "stage": "measure-resources",
+      "seconds": 7.5655255379970185,
+      "peak_rss_mib": 172.9140625
+    },
+    {
+      "case": "vertical",
+      "stage": "freecad-resources",
+      "seconds": 1.3679517489799764,
+      "peak_rss_mib": 210.5859375
+    },
+    {
+      "case": "vertical",
+      "stage": "verify-software-resources",
+      "seconds": 5.9842432139848825,
+      "peak_rss_mib": 170.296875
+    },
+    {
+      "case": "vertical",
+      "stage": "verify-features-resources",
+      "seconds": 6.094124275987269,
+      "peak_rss_mib": 157.19140625
+    },
+    {
+      "case": "thicker",
+      "stage": "camotics-resources",
+      "seconds": 6.09380807200796,
+      "peak_rss_mib": 442.4765625
+    },
+    {
+      "case": "thicker",
+      "stage": "measure-plan-resources",
+      "seconds": 0.8434197430033237,
+      "peak_rss_mib": 197.97265625
+    },
+    {
+      "case": "thicker",
+      "stage": "measure-resources",
+      "seconds": 10.085546413989505,
+      "peak_rss_mib": 198.2421875
+    },
+    {
+      "case": "thicker",
+      "stage": "freecad-resources",
+      "seconds": 1.2623004699999,
+      "peak_rss_mib": 210.66796875
+    },
+    {
+      "case": "thicker",
+      "stage": "verify-software-resources",
+      "seconds": 6.303581704996759,
+      "peak_rss_mib": 200.40625
+    },
+    {
+      "case": "thicker",
+      "stage": "verify-features-resources",
+      "seconds": 6.406551340012811,
+      "peak_rss_mib": 191.8125
+    }
+  ],
+  "input_archive": "S4-PROFILE-20261029-r2",
+  "run_archive": "S4-PROFILE-SUITE-20261029-r1",
+  "replay_archive": "S4-PROFILE-REPLAY-20261029-r2",
+  "input_manifest_sha256": "a440fe5540356bbc12a1c09e18a2e28a03026ded93c7bb8432a508453879df6f",
+  "suite_summary_sha256": "bd085792d2557959b710f78e22c9b39511981ca17e5f40c84900566829a08d95",
+  "tests_passed": 297,
+  "normal_cases_passed": 4,
+  "negative_controls_detected": 4,
+  "new_features": [
+    "FreeCAD 原生外轮廓加工",
+    "完整外形及保留面检查",
+    "四角余料全厚清空检查"
+  ],
+  "remaining": [
+    "外形与孔 / 型腔的连续组合",
+    "非零偏置与夹具",
+    "真实工艺卡整卡及资源验证"
+  ],
+  "production_approved": false,
+  "whole_process_card_complete": false,
+  "blind_holes_verified": false,
+  "capsule_profile_verified": true,
+  "s4_complete": false,
+  "input_review_bundle_ref": "validation-inputs.zip",
+  "input_review_bundle_sha256": "597fe237d97427d5b74bc557df2bbf9c7a0e6b5c7e0af71e9b579d476485d718",
+  "legacy_compatibility_ref": "legacy-compatibility.json",
+  "legacy_compatibility_sha256": "162a27c702bf1945ffb90a4234ed47de57cb08ea724cae87c46a132f5be8b225",
+  "native_cad_guard_ref": "native-cad-guard.json",
+  "native_cad_guard_sha256": "b46e56c95a058b5c9fbec2a7a05c82fe8ba399dc8f63da1940d877393749746a",
+  "engine_build_ref": "engine-build.json",
+  "engine_build_sha256": "152473f86f52597ed2ed1524d99fc7f45d5220c7c52445f8514ad86851bd25e6",
+  "engine_evidence_archive": "S3-REGION-RESULTS-20261029-r1",
+  "sampling_scope": "11 complete contours, 25 retained-body rays and 20 exterior rays; all actual material included without registration.",
+  "scope_qualification": "Four synthetic capsule profiles, explicit single-pass stock/tool coverage and closed-layer feed-down. Not arbitrary external profiles, physical clamping, a real-card scale model or complete S4."
+}

@@ -1,0 +1,189 @@
+{
+  "status": "source_tolerance_controls_passed",
+  "positive_compilations": [
+    {
+      "id": "symmetric",
+      "limits_mm": [
+        2.4,
+        2.6
+      ],
+      "status": "candidate_ready_for_software_geometry",
+      "requirements_sha256": "13ffff6052afc6e8dc5c9ec6fef36144908e470efc869d3b405785194b64857c"
+    },
+    {
+      "id": "asymmetric",
+      "limits_mm": [
+        2.42,
+        2.62
+      ],
+      "status": "candidate_ready_for_software_geometry",
+      "requirements_sha256": "16a36a0745d9a67c16f88d1e0507a2dbf4c8d142b3f997d334740f07997da9d2"
+    },
+    {
+      "id": "tight",
+      "limits_mm": [
+        2.49,
+        2.51
+      ],
+      "status": "candidate_ready_for_software_geometry",
+      "requirements_sha256": "999ef15a90aedfda7f8b8b66aa9709720a6073d523777ab7da437fcf8294c855"
+    }
+  ],
+  "rejection_controls": [
+    {
+      "id": "missing-tolerance-binding",
+      "code": "unbound_source_tolerance",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "duplicate-tolerance-binding",
+      "code": "unbound_source_tolerance",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "unselected-assertion-binding",
+      "code": "unbound_source_tolerance",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "unknown-requirement",
+      "code": "unknown_requirement",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "position-is-not-diameter",
+      "code": "tolerance_requirement_mismatch",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "unsupported-method",
+      "code": "unsupported_tolerance_method",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "drop-source-tolerance",
+      "code": "unbound_source_tolerance",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "vector-position-tolerance",
+      "code": "unsupported_source_tolerance",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "stock-thickness-tolerance",
+      "code": "unsupported_source_tolerance",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "wrong-unit",
+      "code": "assertion_semantics",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "zero-width-interval",
+      "code": "invalid_source_tolerance",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "nonpositive-lower-limit",
+      "code": "invalid_source_tolerance",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "conflicting-base-criterion",
+      "code": "existing_criterion_requires_reconciliation",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "wrong-base-feature",
+      "code": "tolerance_requirement_mismatch",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "wrong-base-nominal",
+      "code": "tolerance_requirement_mismatch",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "duplicate-requirement-id",
+      "code": "invalid_requirements_base",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "wrong-base-units",
+      "code": "invalid_requirements_base",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "injected-derived-file",
+      "code": "invalid_context",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "legacy-v1-still-rejects",
+      "code": "unsupported_source_tolerance",
+      "expectation_met": true,
+      "nc_started": false
+    },
+    {
+      "id": "loosen-generated-limits",
+      "status": "invalid_input",
+      "normal_entry": true,
+      "expectation_met": true
+    },
+    {
+      "id": "drop-generated-criterion",
+      "status": "invalid_input",
+      "normal_entry": true,
+      "expectation_met": true
+    },
+    {
+      "id": "alter-derivation-record",
+      "status": "invalid_input",
+      "normal_entry": true,
+      "expectation_met": true
+    },
+    {
+      "id": "remove-transcription_requirements_base",
+      "status": "invalid_input",
+      "normal_entry": true,
+      "expectation_met": true
+    },
+    {
+      "id": "remove-transcription_requirements_compilation",
+      "status": "invalid_input",
+      "normal_entry": true,
+      "expectation_met": true
+    }
+  ],
+  "actual_model_calls": 0,
+  "source_semantics_verified": false,
+  "native_geometry_checks_pending": true,
+  "production_approved": false,
+  "fixture_manifest_sha256": "ff4a63cf2c5e3eda309516dd45fc05192f681d06c91a72830245f4c32e4e06e0",
+  "source_code_sha256": {
+    "source_tolerance_requirements.py": "71f1c8e2f3ad1b98762d0def80b10fe1fd2fabe0c00ecbebeae8d32271e64a42",
+    "check_source_tolerance.py": "ba647c980e67af5ee2632397df2f2a10ee8d6afd14438fac5c418150aff01cfa",
+    "transcription_bridge.py": "bc1f98d5bc2abf8765ddb839de8fe8d9291bc1c2b8ad41664a35e6d8a18c1876",
+    "build_source_tolerance_fixture.py": "f908027f2acb33f87525746bdbed90966c329ff1db83b95fab5120de0e92bce6"
+  }
+}
