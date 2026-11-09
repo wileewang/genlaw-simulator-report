@@ -6,303 +6,54 @@
 <a class="skip" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../index.html" aria-label="GenLaw 开发进度"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13Z" fill="#172a40"/><path d="m22 11-6-3-7 4v8l7 4 7-4v-5h-8v4h4l-3 1.7-3-1.7v-5l3-1.7 4 2Z" fill="#fff"/></svg>GenLaw<small>DESIGN → VERIFY</small></a><nav class="nav" aria-label="主导航"><a href="../index.html">开发进度</a><a href="../system/development/">开发路线</a><a href="../system/" aria-current="page">系统设计</a><a href="../system/development/results/">结果库</a></nav></div></header>
 <main id="main" class="wrap"><nav class="crumb" aria-label="面包屑"><a href="../index.html">GenLaw</a><span aria-hidden="true">/</span><strong aria-current="page">系统设计</strong></nav><p class="sim-notice" data-site-notice><b>全部结果均为软件仿真，未做真实切削。</b>真实工艺卡整卡通过 0 份。<a href="../index.html">开发进度 →</a></p><div class="page-head compact-head"><div class="eyebrow">SYSTEM DESIGN</div><h1>两阶段，以结构化工艺计划衔接。</h1><p>第一阶段从图纸到工艺卡和结构化工艺计划，第二阶段从计划到仿真加工。2026-11-09 调整，新增部分待开发。</p></div>
     <style>
-.dz{margin:8px 0 40px;padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper)}
-.dz h2{margin-bottom:6px}.dz h3{margin:30px 0 10px}.dz p{margin:8px 0;max-width:820px}
-.dz .lead{color:var(--muted)}
-.dz-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0 6px;padding:0;list-style:none;counter-reset:dz}
-.dz-points li{counter-increment:dz;padding:14px 16px;border-radius:12px;background:var(--blue-soft)}
-.dz-points li::before{content:counter(dz);display:inline-block;width:22px;height:22px;margin-right:8px;border-radius:50%;background:var(--blue);color:#fff;text-align:center;font-size:12px;line-height:22px}
-.dz-points b{display:block;margin:6px 0 2px}
-.dz-flow{display:grid;gap:10px;margin:14px 0}
-.dz-lane{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:12px 14px;border:1px solid var(--line);border-radius:12px}
-.dz-lane>strong{flex:0 0 100%;font-size:13px;color:var(--muted);font-weight:600}
-.dz-lane span{padding:4px 10px;border-radius:8px;background:var(--bg);font-size:14px}
-.dz-lane span.prog{background:var(--blue-soft);color:var(--blue)}
-.dz-lane span.agent{background:var(--orange-soft);color:var(--orange);font-weight:600}
-.dz-lane span.key{background:var(--ink);color:#fff;font-weight:600}
-.dz-lane b{color:#a1aab8;font-weight:400}
-.dz-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
-.dz-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
-.dz-table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
-.dz-table th,.dz-table td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-.dz-table th{font-size:13px;color:var(--muted);font-weight:600}
-.dz-wrap{overflow-x:auto}
-.dz-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.dz-box{padding:14px 16px;border-radius:12px;border:1px solid var(--line)}
-.dz-box.yes{border-color:#b9d4c8;background:#f1f8f4}.dz-box.no{border-color:#ecd2bd;background:var(--orange-soft)}
-.dz-box ul{margin:6px 0 0;padding-left:18px}
-.dz pre{margin:10px 0;padding:14px;border-radius:12px;background:var(--bg);font-size:13px;line-height:1.55;overflow-x:auto}
-.dz .state{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;background:var(--bg);color:var(--muted);white-space:nowrap}
-.dz .old{margin-top:26px;padding:12px 14px;border-radius:10px;background:var(--bg);font-size:14px}
-@media (max-width:760px){.dz{padding:18px 16px}.dz-points,.dz-two{grid-template-columns:1fr}}
-</style><section class="dz" id="design-2026-11-09" aria-labelledby="dz-title">
+.dz{margin:8px 0 40px;padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper)}
+.dz h3{margin:30px 0 4px}.dz .cap{color:var(--muted);font-size:14px;margin:0 0 10px}
+.dz-chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0 4px}
+.dz-chain span{padding:7px 13px;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-weight:600;font-size:14px}
+.dz-chain span.k{background:var(--ink);color:#fff}
+.dz-chain span.p{background:var(--bg);color:var(--ink);font-weight:500}
+.dz-chain span.w{background:var(--orange-soft);color:var(--orange)}
+.dz-chain b{color:#a1aab8;font-weight:400}
+.dz-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted);margin:6px 0}
+.dz-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px;border:1px solid var(--line)}
+.dz-svg{overflow-x:auto;margin:6px 0}.dz-svg svg{display:block;width:100%;min-width:780px;height:auto}
+.dz svg text{font-family:inherit}
+.dz-layers{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:10px 0}
+.dz-layer{border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px}
+.dz-layer strong{display:block;font-size:15px;margin-bottom:8px}
+.dz-layer div{margin:4px 0;color:var(--muted)}.dz-layer em{font-style:normal;color:var(--ink)}
+.dz-layer .gold{display:inline-block;padding:1px 7px;border-radius:6px;background:var(--orange-soft);color:var(--orange);font-weight:600}
+.dz-swap{display:grid;gap:6px;margin:8px 0;font-size:13px}
+.dz-swap .row{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.dz-swap .row span{padding:3px 9px;border-radius:7px;background:var(--bg)}
+.dz-swap .row span.t{background:#e6f2ec;color:var(--green)}
+.dz-swap .row .r{margin-left:8px;font-weight:600}
+.dz-hint{display:none;font-size:12px;color:var(--muted)}
+@media (max-width:760px){.dz{padding:18px 14px}.dz-layers{grid-template-columns:1fr 1fr}.dz-hint{display:block}}
+</style><section class="dz" id="design-2026-11-09" aria-label="2026-11-09 系统设计调整">
 <div class="eyebrow">DESIGN UPDATE · 2026-11-09</div>
-<h2 id="dz-title">系统设计调整：两阶段 + 结构化工艺计划</h2>
-<p class="lead">在用真实零件摸底后，我们重新梳理了系统分层。本节说明三件事：设计怎么变了，每个环节怎么验证，以及因此需要先准备什么数据。<b>状态：方向已确定；新增和调整的部分都待开发，现有的 FreeCAD → CAMotics 链路继续沿用。</b></p>
-<ol class="dz-points">
-<li><b>系统设计变了</b>分两个阶段：先出工艺卡，再从工艺卡到仿真加工。中间新增“结构化工艺计划”作为正式接口。</li>
-<li><b>每层都要能单独验证</b>每一层要有标准答案。整体出错时，能定位到是哪一层出了问题。</li>
-<li><b>因此要先准备数据</b>结构化工艺计划是新模块，没有现成参考。要先定义格式，人工写出标准答案，并请工艺工程师核对。</li>
-</ol>
+<div class="dz-chain"><span class="p">设计变了</span><b>→</b><span class="p">每层要能单独验证</span><b>→</b><span class="p">缺一层标准答案</span><b>→</b><span class="w">先补“黄金计划”，工程师核对</span></div>
 
-<h3>1　新的系统分层</h3>
-<div class="dz-legend"><span><i style="background:var(--blue-soft)"></i>程序</span><span><i style="background:var(--orange-soft)"></i>需要 agent 判断</span><span><i style="background:var(--ink)"></i>关键中间结果</span></div>
-<div class="dz-flow">
-<div class="dz-lane"><strong>第一阶段：从图纸到工艺（里程碑一：工艺卡可交付）</strong><span>三视图</span><b>→</b><span class="agent">① 几何理解</span><b>→</b><span>CAD + 公差 + 粗糙度</span><b>→</b><span class="agent">② 工艺规划</span><b>→</b><span>工艺卡（给人看）</span><span class="key">结构化工艺计划（给机器用）</span></div>
-<div class="dz-lane"><strong>外部入口：已有的真实工艺卡</strong><span>工艺卡 PDF + CAD</span><b>→</b><span class="prog">读卡（本地 OCR + 规则）</span><b>→</b><span class="agent">③ 工步与 CAD 特征对应</span><b>→</b><span class="key">结构化工艺计划</span></div>
-<div class="dz-lane"><strong>第二阶段：从计划到仿真加工（里程碑二）</strong><span class="key">结构化工艺计划</span><b>→</b><span class="prog">④ 加工准备</span><b>→</b><span>可执行方案（JSON）</span><b>→</b><span class="prog">NC 生成（FreeCAD）</span><b>→</b><span class="prog">⑤ 仿真（CAMotics）</span><b>→</b><span class="prog">与 CAD 比对</span></div>
-<div class="dz-lane"><strong>自动迭代</strong><span class="prog">比对得到差异清单</span><b>→</b><span>参数、刀路问题：回到 ④，由程序自动修正</span><b>·</b><span>工艺路线不可行：回到 ②</span></div>
+<h3>1　系统分层</h3>
+<div class="dz-legend"><span><i style="background:#eaf0f8"></i>程序</span><span><i style="background:#fbf0e7"></i>agent</span><span><i style="background:#172a40"></i>关键接口</span><span><i style="background:#fff"></i>数据</span></div>
+<p class="dz-hint">← 左右滑动查看完整图 →</p><div class="dz-svg"><svg viewBox="0 0 1000 450" role="img" aria-label="系统分层：第一阶段、外部入口、第二阶段与自动迭代"><defs><marker id="dz-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8b97a8"/></marker></defs><rect x="6" y="8" width="988" height="104" rx="14" fill="#f6f7f9"/><text x="20" y="28" font-size="12.5" font-weight="600" fill="#657184">第一阶段 · 图纸 → 工艺（里程碑一）</text><rect x="6" y="122" width="988" height="100" rx="14" fill="#f6f7f9"/><text x="20" y="142" font-size="12.5" font-weight="600" fill="#657184">外部入口 · 已有的真实工艺卡</text><rect x="6" y="236" width="988" height="116" rx="14" fill="#f6f7f9"/><text x="20" y="256" font-size="12.5" font-weight="600" fill="#657184">第二阶段 · 计划 → 仿真加工（里程碑二）</text><rect x="20" y="50" width="100" height="46" rx="10" fill="#fff" stroke="#c8d0db" stroke-width="1.4"/><text x="70.0" y="78.0" text-anchor="middle" font-size="15" font-weight="600" fill="#172a40">三视图</text><rect x="155" y="50" width="130" height="46" rx="10" fill="#fbf0e7" stroke="#bd6d31" stroke-width="1.4"/><text x="220.0" y="78.0" text-anchor="middle" font-size="15" font-weight="600" fill="#9a5622">① 几何理解</text><rect x="320" y="50" width="165" height="46" rx="10" fill="#fff" stroke="#c8d0db" stroke-width="1.4"/><text x="402.5" y="69.0" text-anchor="middle" font-size="15" font-weight="600" fill="#172a40">CAD · 公差</text><text x="402.5" y="87.0" text-anchor="middle" font-size="11.5" fill="#172a40" opacity=".8">粗糙度</text><rect x="520" y="50" width="130" height="46" rx="10" fill="#fbf0e7" stroke="#bd6d31" stroke-width="1.4"/><text x="585.0" y="78.0" text-anchor="middle" font-size="15" font-weight="600" fill="#9a5622">② 工艺规划</text><rect x="690" y="50" width="150" height="46" rx="10" fill="#fff" stroke="#c8d0db" stroke-width="1.4"/><text x="765.0" y="69.0" text-anchor="middle" font-size="15" font-weight="600" fill="#172a40">工艺卡</text><text x="765.0" y="87.0" text-anchor="middle" font-size="11.5" fill="#172a40" opacity=".8">交付物，给人看</text><path d="M120 73H153" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><path d="M285 73H318" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><path d="M485 73H518" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><path d="M650 73H688" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><rect x="20" y="158" width="150" height="46" rx="10" fill="#fff" stroke="#c8d0db" stroke-width="1.4"/><text x="95.0" y="186.0" text-anchor="middle" font-size="15" font-weight="600" fill="#172a40">真实工艺卡 + CAD</text><rect x="205" y="158" width="150" height="46" rx="10" fill="#eaf0f8" stroke="#345e91" stroke-width="1.4"/><text x="280.0" y="177.0" text-anchor="middle" font-size="15" font-weight="600" fill="#2b4f7c">读卡</text><text x="280.0" y="195.0" text-anchor="middle" font-size="11.5" fill="#2b4f7c" opacity=".8">本地 OCR + 规则</text><rect x="390" y="158" width="170" height="46" rx="10" fill="#fbf0e7" stroke="#bd6d31" stroke-width="1.4"/><text x="475.0" y="177.0" text-anchor="middle" font-size="15" font-weight="600" fill="#9a5622">③ 工步 ↔ CAD 特征</text><text x="475.0" y="195.0" text-anchor="middle" font-size="11.5" fill="#9a5622" opacity=".8">只有这里需要 agent</text><path d="M170 181H203" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><path d="M355 181H388" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><rect x="620" y="150" width="240" height="60" rx="10" fill="#172a40" stroke="#172a40" stroke-width="1.4"/><text x="740.0" y="176.0" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">结构化工艺计划</text><text x="740.0" y="194.0" text-anchor="middle" font-size="11.5" fill="#fff" opacity=".8">两阶段之间的正式接口</text><path d="M560 181H618" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><path d="M640 96V148" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><rect x="20" y="282" width="140" height="50" rx="10" fill="#eaf0f8" stroke="#345e91" stroke-width="1.4"/><text x="90.0" y="303.0" text-anchor="middle" font-size="15" font-weight="600" fill="#2b4f7c">④ 加工准备</text><text x="90.0" y="321.0" text-anchor="middle" font-size="11.5" fill="#2b4f7c" opacity=".8">选刀 · 参数 · 刀路</text><rect x="195" y="282" width="140" height="50" rx="10" fill="#fff" stroke="#c8d0db" stroke-width="1.4"/><text x="265.0" y="303.0" text-anchor="middle" font-size="15" font-weight="600" fill="#172a40">可执行方案</text><text x="265.0" y="321.0" text-anchor="middle" font-size="11.5" fill="#172a40" opacity=".8">JSON</text><rect x="370" y="282" width="145" height="50" rx="10" fill="#eaf0f8" stroke="#345e91" stroke-width="1.4"/><text x="442.5" y="303.0" text-anchor="middle" font-size="15" font-weight="600" fill="#2b4f7c">NC 生成</text><text x="442.5" y="321.0" text-anchor="middle" font-size="11.5" fill="#2b4f7c" opacity=".8">FreeCAD</text><rect x="550" y="282" width="145" height="50" rx="10" fill="#eaf0f8" stroke="#345e91" stroke-width="1.4"/><text x="622.5" y="303.0" text-anchor="middle" font-size="15" font-weight="600" fill="#2b4f7c">⑤ 仿真</text><text x="622.5" y="321.0" text-anchor="middle" font-size="11.5" fill="#2b4f7c" opacity=".8">CAMotics</text><rect x="730" y="282" width="140" height="50" rx="10" fill="#eaf0f8" stroke="#345e91" stroke-width="1.4"/><text x="800.0" y="303.0" text-anchor="middle" font-size="15" font-weight="600" fill="#2b4f7c">与 CAD 比对</text><text x="800.0" y="321.0" text-anchor="middle" font-size="11.5" fill="#2b4f7c" opacity=".8">差异清单</text><path d="M740 210V268H90V280" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><path d="M160 307H193" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><path d="M335 307H368" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><path d="M515 307H548" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><path d="M695 307H728" fill="none" stroke="#8b97a8" stroke-width="1.6" marker-end="url(#dz-ar)"/><path d="M800 332V400H90V334" fill="none" stroke="#28725a" stroke-width="1.6" marker-end="url(#dz-ar)"/><text x="445" y="420" text-anchor="middle" font-size="13" fill="#28725a" font-weight="600">参数、刀路问题 → 回到 ④，程序自动修正</text><path d="M870 300H960V30H585V48" fill="none" stroke="#bd6d31" stroke-width="1.6" stroke-dasharray="6 5" marker-end="url(#dz-ar)"/><text x="955" y="160" text-anchor="end" font-size="12.5" fill="#bd6d31" font-weight="600" transform="rotate(-90 955 160)">路线不可行 → 回到 ②</text></svg></div>
+
+<h3>2　新模块：结构化工艺计划</h3>
+<p class="cap">只写“做什么”，不写“怎么做”。</p>
+<p class="dz-hint">← 左右滑动查看完整图 →</p><div class="dz-svg"><svg viewBox="0 0 1000 330" role="img" aria-label="结构化工艺计划包含什么、不包含什么"><rect x="400" y="140" width="200" height="54" rx="10" fill="#172a40" stroke="#172a40" stroke-width="1.4"/><text x="500.0" y="172.0" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">结构化工艺计划</text><rect x="250" y="146" width="110" height="42" rx="21" fill="#e6f2ec" stroke="#28725a"/><text x="305" y="172" text-anchor="middle" font-size="14" font-weight="700" fill="#28725a">包含 · 做什么</text><path d="M400 167H360" stroke="#28725a" stroke-width="1.6"/><path d="M250 167C220 167 225 39 200 39" fill="none" stroke="#9cc4b1" stroke-width="1.5"/><rect x="14" y="22" width="186" height="34" rx="9" fill="#fff" stroke="#9cc4b1"/><text x="107" y="44" text-anchor="middle" font-size="13" fill="#172a40">毛坯：材料 · 尺寸</text><path d="M250 167C220 167 225 89 200 89" fill="none" stroke="#9cc4b1" stroke-width="1.5"/><rect x="14" y="72" width="186" height="34" rx="9" fill="#fff" stroke="#9cc4b1"/><text x="107" y="94" text-anchor="middle" font-size="13" fill="#172a40">装夹：基准 · 朝向</text><path d="M250 167C220 167 225 139 200 139" fill="none" stroke="#9cc4b1" stroke-width="1.5"/><rect x="14" y="122" width="186" height="34" rx="9" fill="#fff" stroke="#9cc4b1"/><text x="107" y="144" text-anchor="middle" font-size="13" fill="#172a40">工步 → 加工哪些 CAD 特征</text><path d="M250 167C220 167 225 189 200 189" fill="none" stroke="#9cc4b1" stroke-width="1.5"/><rect x="14" y="172" width="186" height="34" rx="9" fill="#fff" stroke="#9cc4b1"/><text x="107" y="194" text-anchor="middle" font-size="13" fill="#172a40">做到尺寸 / 留余量</text><path d="M250 167C220 167 225 239 200 239" fill="none" stroke="#9cc4b1" stroke-width="1.5"/><rect x="14" y="222" width="186" height="34" rx="9" fill="#fff" stroke="#9cc4b1"/><text x="107" y="244" text-anchor="middle" font-size="13" fill="#172a40">公差 · 粗糙度（注明来源）</text><path d="M250 167C220 167 225 289 200 289" fill="none" stroke="#9cc4b1" stroke-width="1.5"/><rect x="14" y="272" width="186" height="34" rx="9" fill="#fff" stroke="#9cc4b1"/><text x="107" y="294" text-anchor="middle" font-size="13" fill="#172a40">非切削工步：只记录</text><rect x="640" y="146" width="120" height="42" rx="21" fill="#fbf0e7" stroke="#bd6d31"/><text x="700" y="172" text-anchor="middle" font-size="14" font-weight="700" fill="#bd6d31">不包含 · 怎么做</text><path d="M600 167H640" stroke="#bd6d31" stroke-width="1.6"/><path d="M760 167C790 167 785 69 810 69" fill="none" stroke="#e2bd9e" stroke-width="1.5"/><rect x="810" y="52" width="120" height="34" rx="9" fill="#fff" stroke="#e2bd9e"/><text x="870" y="74" text-anchor="middle" font-size="13" fill="#172a40">刀具</text><path d="M760 167C790 167 785 129 810 129" fill="none" stroke="#e2bd9e" stroke-width="1.5"/><rect x="810" y="112" width="120" height="34" rx="9" fill="#fff" stroke="#e2bd9e"/><text x="870" y="134" text-anchor="middle" font-size="13" fill="#172a40">转速 · 进给</text><path d="M760 167C790 167 785 189 810 189" fill="none" stroke="#e2bd9e" stroke-width="1.5"/><rect x="810" y="172" width="120" height="34" rx="9" fill="#fff" stroke="#e2bd9e"/><text x="870" y="194" text-anchor="middle" font-size="13" fill="#172a40">刀路</text><path d="M760 167C790 167 785 249 810 249" fill="none" stroke="#e2bd9e" stroke-width="1.5"/><rect x="810" y="232" width="120" height="34" rx="9" fill="#fff" stroke="#e2bd9e"/><text x="870" y="254" text-anchor="middle" font-size="13" fill="#172a40">分几层切</text><path d="M940 69C975 69 975 280 940 280" fill="none" stroke="#bd6d31" stroke-width="1.4"/><text x="985" y="175" text-anchor="middle" font-size="12" fill="#bd6d31" font-weight="600" transform="rotate(90 985 175)">由 ④ 程序决定</text><text x="500" y="230" text-anchor="middle" font-size="12.5" fill="#657184">自定 JSON · 术语参照 ISO 14649（STEP-NC）</text><text x="500" y="250" text-anchor="middle" font-size="12.5" fill="#657184">先只覆盖铣削</text></svg></div>
+
+<h3>3　怎么验证、缺什么数据</h3>
+<p class="cap">每层单独测；<span style="color:var(--orange);font-weight:600">黄金计划</span>目前没有，要人工写、工程师核对。</p>
+<div class="dz-layers"><div class="dz-layer"><strong>① 几何理解</strong><div>输入 <em>图纸</em></div><div>对照 <em>真实 STEP</em></div></div><div class="dz-layer"><strong>② 工艺规划</strong><div>输入 <em>真实 STEP</em></div><div>对照 <em>真实卡 · <span class="gold">黄金计划</span></em></div></div><div class="dz-layer"><strong>③ 卡 → 计划</strong><div>输入 <em>真实卡 + STEP</em></div><div>对照 <em><span class="gold">黄金计划</span></em></div></div><div class="dz-layer"><strong>④ 计划 → NC</strong><div>输入 <em><span class="gold">黄金计划</span></em></div><div>对照 <em>真实 CAD</em></div></div><div class="dz-layer"><strong>⑤ 仿真器</strong><div>输入 <em>已知 NC</em></div><div>对照 <em>解析形状</em></div></div></div>
+<p class="cap" style="margin-top:14px">出错时逐层换成标准答案，第一次变好的那一层就是问题所在。</p>
+<div class="dz-swap">
+<div class="row"><span>图纸</span>→<span>①</span>→<span>②</span>→<span>④⑤</span><span class="r" style="color:#bd6d31">✗ 不合格</span></div>
+<div class="row"><span class="t">真实 STEP</span>→<span>②</span>→<span>④⑤</span><span class="r" style="color:#28725a">✓ → 问题在 ①</span></div>
+<div class="row"><span class="t">黄金计划</span>→<span>④⑤</span><span class="r" style="color:#bd6d31">✗ → 问题在 ④⑤</span></div>
 </div>
-<p><b>和原设计相比的变化：</b></p>
-<ul class="rules">
-<li>工艺规划除了工艺卡，还要输出一份<b>结构化工艺计划</b>。工艺卡是给人看的，省略了很多指代，例如没写清“铣 R6 圆弧”是图上哪一处 R6。规划时这些信息本来是清楚的，所以直接写进计划，第二阶段就不需要再猜。</li>
-<li>原来的“加工准备”拆成两部分：③ 理解卡片、把工步对应到 CAD 特征，需要 agent；④ 选刀、定参数、定刀路策略，由程序完成。</li>
-<li><b>只有外部的真实工艺卡</b>才需要 ③ 的 agent。系统自己规划出来的工艺，直接带着特征编号进入第二阶段。</li>
-<li>第二阶段从结构化计划开始全部是程序，<b>开发时不依赖 agent</b>。</li>
-<li>迭代环写成明确的一环，并规定好出了问题该回到哪一层。</li>
-</ul>
 
-<h3>2　每个环节怎么验证</h3>
-<p>只做端到端闭环，最后只能知道“这个零件没做对”，不知道错在哪一层。所以每一层都要有标准答案，并能单独测试：</p>
-<div class="dz-wrap"><table class="dz-table">
-<thead><tr><th>层</th><th>测试时的输入（标准答案）</th><th>输出和什么比</th><th>看什么</th></tr></thead>
-<tbody>
-<tr><td>① 几何理解</td><td>图纸</td><td>真实 STEP、图上的公差</td><td>形状差异（IoU）、特征有没有漏、公差读得对不对</td></tr>
-<tr><td>② 工艺规划</td><td>真实 STEP + 公差</td><td>真实工艺卡、黄金计划</td><td>每个特征都有工步负责；公差都有工步保证；顺序可行。<br>不要求和真实卡逐字一致，因为正确的工艺不止一种</td></tr>
-<tr><td>③ 工艺卡转计划</td><td>真实工艺卡 + STEP</td><td>黄金计划</td><td>工步对应到的特征对不对</td></tr>
-<tr><td>④ 计划 → NC</td><td>黄金计划</td><td>真实 CAD</td><td>仿真结果和 CAD 是否一致，关键尺寸是否在公差内</td></tr>
-<tr><td>⑤ 仿真器本身</td><td>结果已知的简单 NC</td><td>解析计算的形状</td><td>仿真器有没有算错</td></tr>
-</tbody></table></div>
-<p><b>替换法定位。</b>端到端不合格时，从上游开始，逐层把输出换成标准答案再跑。哪一层换完结果变好，问题就在哪一层。这套过程会做成程序自动执行。</p>
-<pre>全自动：            图纸 → ①几何 → ②规划 → 计划 → ④NC → ⑤仿真    ✗
-换掉 ①：                 真实 STEP → ②规划 → 计划 → ④ → ⑤        ✓  → 问题在 ①
-换掉 ①②：                         黄金计划 → ④ → ⑤                ✗  → 问题在 ④⑤</pre>
-<p><b>编号贯穿。</b>比对时，差异按 CAD 特征报告，例如“F12 多料 0.4 mm”。从 F12 能查到负责它的工步，再查到这个工步来自卡片的哪一行，或规划时的哪条决策。还可以按工步逐个仿真，检查每一步只去掉了目标特征的材料。</p>
-
-<h3>3　对数据的要求</h3>
-<p>手上已有一批真实零件的工艺卡和对应 CAD。各层标准答案的情况如下：</p>
-<div class="dz-wrap"><table class="dz-table">
-<thead><tr><th>层的输出</th><th>标准答案</th></tr></thead>
-<tbody>
-<tr><td>CAD、公差、粗糙度</td><td>有：真实 STEP 和图纸</td></tr>
-<tr><td>工艺卡</td><td>有：真实工艺卡</td></tr>
-<tr><td><b>结构化工艺计划</b></td><td><b>没有。</b>这是新增的中间层，需要人工补齐（见下一节）</td></tr>
-<tr><td>加工后的形状</td><td>有：真实 CAD</td></tr>
-</tbody></table></div>
-
-<h3>4　新增模块：结构化工艺计划</h3>
-<p>这个格式把工艺卡的内容写成程序能直接读的数据。每一步都写明加工 CAD 上的哪些特征，不留需要人去理解的指代。</p>
-<div class="dz-two">
-<div class="dz-box yes"><b>包含：做什么</b><ul>
-<li>引用的 CAD，以及 CAD 特征编号表</li>
-<li>毛坯：材料、形状、尺寸</li>
-<li>装夹：基准、夹持位置、朝向</li>
-<li>工序和工步：加工类型、加工哪些特征、做到尺寸还是留余量、先后顺序</li>
-<li>要求：尺寸公差和粗糙度，并注明来源（图纸或工艺卡）</li>
-<li>非切削工步：只记录，仿真时跳过</li>
-</ul></div>
-<div class="dz-box no"><b>不包含：怎么做</b><ul>
-<li>用什么刀</li>
-<li>转速和进给</li>
-<li>刀路怎么走</li>
-<li>分几层切</li>
-</ul><p style="margin-top:8px">这些由 ④ 加工准备的程序决定。结果有问题时，迭代环会自动调整。</p></div>
-</div>
-<p>工步示例（示意，非真实零件）：</p>
-<pre>{
-  "step_id": "OP20-S3",
-  "operation": "contour_mill",      // 加工类型
-  "setup": "SETUP-2",               // 第几次装夹
-  "targets": ["F12", "F13"],        // 加工 CAD 上的哪些特征
-  "requirements": [{"feature": "F12", "type": "radius",
-                    "nominal": 6.0, "tol": [0.0, 0.1]}],
-  "leave_stock_mm": 0,              // 做到尺寸
-  "depends_on": ["OP20-S2"]
-}</pre>
-<p><b>和标准的关系。</b>STEP-NC（ISO 14649）、STEP AP224 和 AP240 都有类似概念，但都太重，开源工具也很少，而且 STEP-NC 把刀具和参数也放在里面。所以我们自定一种精简的 JSON 格式，特征类型、层级（工艺计划 → 装夹 → 工步 → 特征）和术语参照 ISO 14649，公差分类参照 ISO GD&amp;T。第一版先只覆盖铣削。</p>
-<p><b>需要工艺工程师核对。</b>人工写出的计划（“黄金计划”）是所有分层验证的基准，必须由工程师确认。我们会为工程师准备专门的核对页面，不需要读 JSON。每个工步一行：</p>
-<ul class="rules">
-<li>左边是卡片原文；</li>
-<li>中间是 CAD 上高亮出的、这一步要加工的特征；</li>
-<li>右边是计划内容的中文表述。</li>
-</ul>
-<p>工程师逐项选择“对 / 不对 / 不确定”，可以写意见。核对页面只私下分享，不放到本站。工程师确认之前，计划只算草稿答案，可以用于开发，但不能作为正式验收依据。</p>
-
-<h3>5　接下来的顺序</h3>
-<div class="dz-wrap"><table class="dz-table">
-<thead><tr><th>#</th><th>内容</th><th>状态</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>结构化工艺计划格式第一版</td><td><span class="state">待开始</span></td></tr>
-<tr><td>2</td><td>STEP 面和特征编号的最小程序（同一文件每次读出的编号都相同）</td><td><span class="state">待开始</span></td></tr>
-<tr><td>3</td><td>3–5 个真实铣削件的黄金计划，以及工程师核对页面</td><td><span class="state">待开始 · 工程师人选待定</span></td></tr>
-<tr><td>4</td><td>④ 计划 → NC：加工准备扩展到任意平面轮廓、型腔、斜角、倒角；配置真实的三轴设备</td><td><span class="state">待开始 · 设备信息待提供</span></td></tr>
-<tr><td>5</td><td>⑤ 仿真器自测</td><td><span class="state">待开始</span></td></tr>
-<tr><td>6</td><td>③ 读卡与工步特征对应，用黄金计划验收</td><td><span class="state">待开始</span></td></tr>
-<tr><td>7</td><td>替换法定位程序：人为在某一层注入错误，程序能指出是哪一层</td><td><span class="state">待开始</span></td></tr>
-</tbody></table></div>
-<p>①② 属于第一阶段，按其开发进度，用同样的标准答案测试。</p>
-<p class="old"><b>下方是调整前的五模块设计，作为历史保留。</b>其中“03 加工准备”在新设计里已拆成 ③ 和 ④。开发路线页的阶段划分也会按本节更新。</p>
-</section><p class="input-note" id="route-adjustment"><b>开发顺序见<a class="link" href="development/">开发路线</a>。</b>真实工艺卡通常配图纸而不是 CAD，也常不写刀具和切削参数。因此几何识别（CAD 来源）和工艺决策不能继续简单视为“暂缓”，详见 <a class="link" href="development/requirements/#REQ-03">REQ-03</a> 与 <a class="link" href="development/requirements/#REQ-05">REQ-05</a>。</p><section class="section" id="overall-flow" aria-label="五个模块的整体流程"><div class="workflow-bands"><span>后续开发</span><strong>当前开发范围</strong></div><div class="workflow"><a class="workflow-node later" href="#interface-geometry" data-open-contract="geometry"><span class="workflow-number">01</span><svg viewBox="0 0 58 58" role="img" aria-label="几何识别" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7h23l9 9v35H12Z M35 7v10h9"/><path d="m20 29 8-5 8 5v10l-8 5-8-5Z M20 29l8 5 8-5 M28 34v10"/></svg><strong>几何识别</strong><span class="node-state">暂缓</span><small>模型 + CAD 程序</small></a><a class="workflow-node later" href="#interface-planning" data-open-contract="planning"><span class="workflow-number">02</span><svg viewBox="0 0 58 58" role="img" aria-label="工艺规划" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7h29v44H14Z"/><path d="m19 19 2 2 4-5 M29 19h9 m-19 12 2 2 4-5 M29 31h9 m-19 12 2 2 4-5 M29 43h9"/></svg><strong>工艺规划</strong><span class="node-state">暂缓</span><small>Agent（后续）</small></a><a class="workflow-node active" href="#interface-preparation" data-open-contract="preparation"><span class="workflow-number">03</span><svg viewBox="0 0 58 58" role="img" aria-label="加工准备" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 15h40 M8 29h40 M8 43h40"/><rect x="17" y="10" width="7" height="10" rx="2"/><rect x="34" y="24" width="7" height="10" rx="2"/><rect x="22" y="38" width="7" height="10" rx="2"/></svg><strong>加工准备</strong><span class="node-state">当前</span><small>Agent（待接入）+ 程序</small></a><a class="workflow-node active" href="#interface-programming" data-open-contract="programming"><span class="workflow-number">04</span><svg viewBox="0 0 58 58" role="img" aria-label="NC 生成" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7h24l9 9v35H12Z M36 7v10h9 M23 26l-6 6 6 6 m12-12 6 6-6 6 M31 24l-5 17"/></svg><strong>NC 生成</strong><span class="node-state">当前</span><small>FreeCAD CAM + 后处理</small></a><a class="workflow-node active" href="#interface-verification" data-open-contract="verification"><span class="workflow-number">05</span><svg viewBox="0 0 58 58" role="img" aria-label="仿真检验" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m7 17 12-7 12 7v15l-12 7-12-7Z M7 17l12 7 12-7 M19 24v15"/><circle cx="38" cy="35" r="10"/><path d="m34 35 3 3 5-6 m3 11 8 8"/></svg><strong>仿真检验</strong><span class="node-state">当前</span><small>CAMotics + 几何比较</small></a></div><p class="diagram-caption">零件视图 → CAD 与制造要求 → 工艺卡 → 执行方案 → NC 与配置 → 几何与报告</p></section>
-    <section class="section" id="process-handoff"><div class="section-head"><h2>从现有输入，到加工验证</h2><span class="muted small">流程示意</span></div><div class="entry-strip"><strong>开发入口 ↓</strong><span>已有工艺卡</span><span>CAD / 制造要求</span><span>毛坯、设备、刀具与夹具</span></div><div class="process-grid"><article class="process-card" data-current-module="preparation"><div class="row"><h3><span>03</span>加工准备</h3><span class="pill current"><span class="dot" aria-hidden="true"></span>通孔 / 铣削草案已测</span></div><div class="process-picture"><div class="diagram-plan"><span>PDF</span><b>→</b><span>Agent 草案</span><b>→</b><span>程序校验</span></div></div><dl><div><dt>输入</dt><dd>PDF 工艺卡 + CAD + 资源</dd></div><div><dt>输出</dt><dd><strong>候选执行方案 / 缺项与冲突表</strong></dd></div></dl><p>通孔、复合铣削草案已接入执行；通孔孔径公差可检验。草案 / 映射人工给定，PDF 自动转录待接。</p></article><article class="process-card" data-current-module="programming"><div class="row"><h3><span>04</span>NC 生成</h3><span class="pill blue"><span class="dot" aria-hidden="true"></span>面铣 / 铣孔与换刀出码已测</span></div><div class="process-picture"><div class="diagram-code"><span>加工方案</span><b>→</b><div><strong>NC</strong><i></i><i></i><i></i></div></div></div><dl><div><dt>输入</dt><dd>执行方案 + CAD</dd></div><div><dt>输出</dt><dd><strong>NC + 加工配置</strong></dd></div></dl><p>FreeCAD CAM 计算刀路，后处理导出 NC。</p></article><article class="process-card" data-current-module="verification"><div class="row"><h3><span>05</span>仿真检验</h3><span class="pill blue"><span class="dot" aria-hidden="true"></span>最终与中间剩料均已仿真</span></div><div class="process-picture"><div class="diagram-compare"><div><svg viewBox="0 0 260 190" role="img" aria-label="原始 CAD 示意">
-      <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
-      <path d="M30 87 150 135 150 153 30 105Z" fill="#6d8eaf" stroke="#557a9e" stroke-width=".8"/>
-      <path d="M150 135 210 93 210 111 150 153Z" fill="#4f7196" stroke="#486b8f" stroke-width=".8"/>
-      <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
-      <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0ZM2,2a1,1 0 1 0 2,0a1,1 0 1 0 -2,0Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
-      </svg><small>原 CAD</small></div><b>↔</b><div><svg viewBox="0 0 260 190" role="img" aria-label="加工后几何示意，非新增仿真结果">
-      <ellipse cx="126" cy="155" rx="95" ry="14" fill="#273f5b" opacity=".06"/>
-      <path d="M30 87 150 135 150 153 30 105Z" fill="#6d8eaf" stroke="#557a9e" stroke-width=".8"/>
-      <path d="M150 135 210 93 210 111 150 153Z" fill="#4f7196" stroke="#486b8f" stroke-width=".8"/>
-      <path d="M90 45 210 93 150 135 30 87Z" fill="#486581"/>
-      <g transform="matrix(15 6 -10 7 90 45)"><path d="M0 0H8V6H0ZM2,2a1,1 0 1 0 2,0a1,1 0 1 0 -2,0Z" fill="#a9bfd5" fill-rule="evenodd" stroke="#6083a7" stroke-width=".055"/></g>
-      </svg><small>加工后几何</small></div></div></div><dl><div><dt>输入</dt><dd>NC + 配置 + 原 CAD / 要求</dd></div><div><dt>输出</dt><dd><strong>加工后几何 + 检验报告</strong></dd></div></dl><p>从毛坯去料，再与原始 CAD 比较。</p></article></div><div class="flow-footnotes"><span>原 CAD 与制造要求贯穿全程，作为检验基准。</span><span>缺项 / 冲突 ↩ 返回加工准备或工艺师傅处理。</span></div><p class="input-note">报告区分已验证、未验证与失败；几何通过不等于整张工艺卡完成。</p><details id="preparation-boundary"><summary>模块 3 已测哪一段？FreeCAD 不支持时开发什么？</summary>
-      <ul class="rules"><li><b>新增已测：</b>4 份合成复合铣削草案与明确动作映射 → 本地方案 → 现有面铣 / 外形 / 铣孔 → 实际去料。此前通孔草案与明确孔径公差已接入检验。</li>
-      <li><b>真实 PDF：</b>1 份 5 页原卡完成来源与草案检查；毛坯矛盾、配对 CAD / 资源等缺项仍阻断执行。</li>
-      <li><b>仍待接通：</b>模型自动转录、原文语义核对、铣削尺寸 / 形位公差及粗糙度、其他铣削和粗精工序的草案接入。</li>
-      <li><b>FreeCAD：</b>已有功能开发适配器；原生不足则扩展操作或后处理，均需验收 NC、去料几何和旧用例。</li></ul>
-      <p class="input-note">纸卡与草案同源编写，动作映射、顺序和切削参数预先给定，程序核对并展开；候选标记贯穿执行。真实卡仍有来源与资料缺项，未证明模型转录精度或整卡制造通过。</p>
-      <p><a class="link" href="development/s4/source-milling/">复合铣削草案结果 ↗</a> · <a class="link" href="development/s4/source-tolerance/">孔径公差传递结果 ↗</a> · <a class="link" href="../data/transcription-response-schema.json">Agent 返回数据接口 ↗</a></p></details></section>
-    <section class="section next-link"><div><span class="eyebrow">START HERE / B0-S1-XYZ-AL</span><h3>偏心单通孔薄板 · 通用 XYZ 软件参考 · 6061-T6 矩形板坯</h3><p>起始点、支持范围和下一步，在开发路线中持续更新。</p></div><a class="btn primary" href="development/results/#starting-point">查看起始点 →</a></section>
-    <section class="section technical-details"><details id="interfaces"><summary>模块输入输出与接口定义</summary><p class="input-note">孔、圆角槽和外缘台阶的具体软件用例已接通三个模块；更多特征与制造验收待扩展。点击上方任一模块，也可展开对应接口。</p><div class="panel"><div class="contract-tabs" role="tablist" aria-label="选择模块接口"><button id="tab-geometry" role="tab" data-contract-tab="geometry" aria-controls="interface-geometry" aria-selected="false" tabindex="-1">几何识别</button><button id="tab-planning" role="tab" data-contract-tab="planning" aria-controls="interface-planning" aria-selected="false" tabindex="-1">工艺规划</button><button id="tab-preparation" role="tab" data-contract-tab="preparation" aria-controls="interface-preparation" aria-selected="true" tabindex="0">加工准备</button><button id="tab-programming" role="tab" data-contract-tab="programming" aria-controls="interface-programming" aria-selected="false" tabindex="-1">NC 生成</button><button id="tab-verification" role="tab" data-contract-tab="verification" aria-controls="interface-verification" aria-selected="false" tabindex="-1">仿真检验</button></div><section class="contract-body" id="interface-geometry" role="tabpanel" aria-labelledby="tab-geometry" hidden><div class="contract-title"><h3>几何识别</h3><span class="pill "><span class="dot" aria-hidden="true"></span>暂缓开发</span></div><p class="contract-desc">从零件视图重建 CAD，把尺寸、公差、粗糙度等要求关联到对应的面、边或特征。</p><div class="contract-columns"><div><h4>输入</h4><div class="field"><code>part_views</code><p>图像 / 图纸视图及其视向、来源与比例信息</p></div><div class="field"><code>context</code><p>单位、已知尺寸、可用材料标注等辅助信息</p></div></div><div><h4>输出</h4><div class="field"><code>cad_ref</code><p>原始 CAD 文件 / CadQuery 及对应导出几何，含版本、单位、坐标系、哈希</p></div><div class="field"><code>features</code><p>稳定的特征 ID 与当前 CAD 实体的映射</p></div><div class="field"><code>requirements</code><p>要求类型、数值、公差、单位、关联特征和来源标注</p></div><div class="field"><code>issues</code><p>识别歧义、缺失信息与待确认项</p></div></div></div><details><summary>展开接口示例 · JSON</summary><pre><code>{
-  &quot;schema&quot;: &quot;genlaw.geometry-packet.v0&quot;,
-  &quot;cad_ref&quot;: {
-    &quot;path&quot;: &quot;target.step&quot;,
-    &quot;revision&quot;: &quot;s1-v1&quot;,
-    &quot;units&quot;: &quot;mm&quot;,
-    &quot;sha256&quot;: &quot;&lt;artifact hash&gt;&quot;
-  },
-  &quot;features&quot;: [
-    {
-      &quot;id&quot;: &quot;F_HOLE_1&quot;,
-      &quot;kind&quot;: &quot;through_hole&quot;,
-      &quot;entity_ref&quot;: &quot;&lt;CAD revision + face/feature binding&gt;&quot;
-    }
-  ],
-  &quot;requirements&quot;: [
-    {
-      &quot;id&quot;: &quot;R_DIAMETER&quot;,
-      &quot;feature_id&quot;: &quot;F_HOLE_1&quot;,
-      &quot;kind&quot;: &quot;diameter&quot;,
-      &quot;nominal_mm&quot;: 2,
-      &quot;tolerance_mm&quot;: null,
-      &quot;source&quot;: {
-        &quot;view_id&quot;: &quot;top&quot;,
-        &quot;annotation_id&quot;: &quot;D1&quot;
-      },
-      &quot;binding_status&quot;: &quot;bound&quot;,
-      &quot;acceptance_status&quot;: &quot;pending_review&quot;
-    }
-  ],
-  &quot;issues&quot;: [
-    {
-      &quot;code&quot;: &quot;missing_information&quot;,
-      &quot;field&quot;: &quot;R_DIAMETER.tolerance_mm&quot;,
-      &quot;effect&quot;: &quot;直径公差尚待工艺审阅，名义尺寸不是验收公差。&quot;
-    }
-  ]
-}</code></pre></details></section><section class="contract-body" id="interface-planning" role="tabpanel" aria-labelledby="tab-planning" hidden><div class="contract-title"><h3>工艺规划</h3><span class="pill "><span class="dot" aria-hidden="true"></span>暂缓开发</span></div><p class="contract-desc">根据 CAD、制造要求与可用资源确定工序、工步、装夹和质量约束。当前沿用已有工艺卡，本模块暂缓；具体执行方案由加工准备落实。</p><div class="contract-columns"><div><h4>输入</h4><div class="field"><code>geometry_packet</code><p>上游 CAD、特征与已关联要求，原始版本保持不变</p></div><div class="field"><code>available_resources</code><p>可用毛坯 / 材料、机床 / 控制器、刀具与夹具</p></div></div><div><h4>输出</h4><div class="field"><code>process_plan</code><p>工艺卡的结构化表达：工序/工步、资源与装夹约束、中间要求、条件与依赖</p></div><div class="field"><code>review / provenance</code><p>原文、来源位置、版次、审阅及决策状态；保留原 CAD / 最终要求引用</p></div><div class="field"><code>issues</code><p>缺项、冲突或尚无法确定的工艺决策</p></div></div></div><details><summary>展开接口示例 · JSON</summary><pre><code>{
-  &quot;schema&quot;: &quot;genlaw.process-plan.v0&quot;,
-  &quot;example_status&quot;: &quot;design_only_not_executable&quot;,
-  &quot;plan_id&quot;: &quot;S1-INTENT-DRAFT&quot;,
-  &quot;geometry_ref&quot;: &quot;target.step@s1-v1&quot;,
-  &quot;final_requirements_ref&quot;: &quot;original-requirements@pending-review&quot;,
-  &quot;operations&quot;: [
-    {
-      &quot;id&quot;: &quot;OP10&quot;,
-      &quot;type&quot;: &quot;drilling&quot;,
-      &quot;setup_constraints&quot;: &quot;单次装夹；实际定位与夹具待确认&quot;,
-      &quot;steps&quot;: [
-        {
-          &quot;id&quot;: &quot;OP10.1&quot;,
-          &quot;intent&quot;: &quot;钻 φ2 通孔&quot;,
-          &quot;feature_id&quot;: &quot;F_HOLE_1&quot;,
-          &quot;requirement_refs&quot;: [
-            &quot;R_DIAMETER&quot;
-          ],
-          &quot;source_ref&quot;: &quot;synthetic-card@draft/OP10.1&quot;
-        }
-      ]
-    }
-  ],
-  &quot;review&quot;: {
-    &quot;origin&quot;: &quot;manual_structured_draft&quot;,
-    &quot;input_suitability_approved&quot;: false,
-    &quot;production_approved&quot;: false
-  },
-  &quot;issues&quot;: [
-    {
-      &quot;code&quot;: &quot;missing_information&quot;,
-      &quot;fields&quot;: [
-        &quot;setup&quot;,
-        &quot;resource_profile&quot;,
-        &quot;acceptance_requirements&quot;
-      ]
-    }
-  ]
-}</code></pre></details></section><section class="contract-body" id="interface-preparation" role="tabpanel" aria-labelledby="tab-preparation" ><div class="contract-title"><h3>加工准备</h3><span class="pill current"><span class="dot" aria-hidden="true"></span>通孔 / 铣削草案已测</span></div><p class="contract-desc">合成通孔、复合铣削草案已接入本地准备、NC 与仿真；通孔明确孔径公差可传到检查。草案、动作映射和参数仍人工给定，程序负责核对与编译。真实 Agent 转录、铣削公差与真实原卡 CAD / 资源配对仍待完成。</p><div class="contract-columns"><div><h4>输入</h4><div class="field"><code>process_card / preparation_draft</code><p>原始 PDF / 表格工艺卡，或带原文、页码、版次及缺项的结构化草案；Agent 提案不自动等于已核对</p></div><div class="field"><code>geometry_packet</code><p>配对且同版本的 CAD、特征及制造要求</p></div><div class="field"><code>resources / capabilities</code><p>毛坯、设备/控制器、刀具/夹具、坐标与已验证能力范围</p></div></div><div><h4>输出</h4><div class="field"><code>execution_plan</code><p>已明确的工步、资源、坐标、参数与依据、执行及检验范围</p></div><div class="field"><code>issues / readiness</code><p>转录歧义、缺项、冲突、不支持或声明范围内就绪；阻断问题未处理不进入 CAM</p></div></div></div><details><summary>展开接口示例 · JSON</summary><pre><code>{
-  &quot;schema&quot;: &quot;genlaw.preparation-result.v1&quot;,
-  &quot;status&quot;: &quot;missing_information&quot;,
-  &quot;execution_plan&quot;: null,
-  &quot;issues&quot;: [
-    {
-      &quot;code&quot;: &quot;missing_information&quot;,
-      &quot;field&quot;: &quot;resources/setup&quot;,
-      &quot;message&quot;: &quot;需要补齐该字段，未使用默认值。&quot;,
-      &quot;severity&quot;: &quot;blocking&quot;,
-      &quot;blocked_stage&quot;: &quot;nc_generation&quot;,
-      &quot;owner&quot;: &quot;input_maintenance&quot;
-    },
-    {
-      &quot;code&quot;: &quot;missing_information&quot;,
-      &quot;field&quot;: &quot;resources/cutting_presets&quot;,
-      &quot;message&quot;: &quot;需要唯一且有依据的钻削参数配置；不会套用历史 S1 默认值。&quot;,
-      &quot;severity&quot;: &quot;blocking&quot;,
-      &quot;blocked_stage&quot;: &quot;nc_generation&quot;,
-      &quot;owner&quot;: &quot;input_maintenance&quot;
-    }
-  ],
-  &quot;production_approved&quot;: false
-}</code></pre></details></section><section class="contract-body" id="interface-programming" role="tabpanel" aria-labelledby="tab-programming" hidden><div class="contract-title"><h3>NC 生成</h3><span class="pill current"><span class="dot" aria-hidden="true"></span>面铣 / 铣孔与换刀出码已测</span></div><p class="contract-desc">本地适配器将已检查方案交给 FreeCAD CAM 与后处理。能力扩展分为已有原生功能接入、FreeCAD 本身扩展；每项均验证原生刀路、输出 NC 与实际仿真结果。当前已测样例不代表任意工艺卡可生成 NC。</p><div class="contract-columns"><div><h4>输入</h4><div class="field"><code>execution_plan</code><p>加工准备已核对并明确的工步、资源、坐标、参数和范围</p></div><div class="field"><code>cad_ref</code><p>同版本原始 CAD；仿真检验保留相同目标引用</p></div></div><div><h4>输出</h4><div class="field"><code>nc_ref / machining_config</code><p>最终 NC 及哈希、实际毛坯/刀具/夹具/坐标与控制器配置</p></div><div class="field"><code>provenance / issues</code><p>执行方案、工步与程序段绑定，CAM/后处理版本及生成错误</p></div></div></div><details><summary>展开接口示例 · JSON</summary><pre><code>{
-  &quot;schema&quot;: &quot;genlaw.program-artifact.v0&quot;,
-  &quot;example_status&quot;: &quot;design_only&quot;,
-  &quot;execution_plan_ref&quot;: &quot;&lt;frozen plan + hash&gt;&quot;,
-  &quot;target_ref&quot;: &quot;&lt;original CAD + hash&gt;&quot;,
-  &quot;nc_ref&quot;: &quot;&lt;generated NC + hash&gt;&quot;,
-  &quot;machining_config_ref&quot;: &quot;&lt;resolved config + hash&gt;&quot;,
-  &quot;implementation&quot;: {
-    &quot;cam&quot;: &quot;FreeCAD CAM&quot;,
-    &quot;postprocessor&quot;: &quot;selected_by_controller_profile&quot;,
-    &quot;linuxcnc_runtime_required&quot;: false
-  }
-}</code></pre></details></section><section class="contract-body" id="interface-verification" role="tabpanel" aria-labelledby="tab-verification" hidden><div class="contract-title"><h3>仿真检验</h3><span class="pill current"><span class="dot" aria-hidden="true"></span>最终与中间剩料均已仿真</span></div><p class="contract-desc">CAMotics 按同一 NC 连续去料，与原 CAD 比较最终形状；工步边界另外检查实际剩料。IoU、特征几何与工序一致性分别判定。</p><div class="contract-columns"><div><h4>输入</h4><div class="field"><code>nc_ref / execution_plan</code><p>模块 4 的同一份最终 NC、工步关联、执行和检验范围</p></div><div class="field"><code>machining_config / incoming_state</code><p>实际来料、刀具、装夹/坐标与控制器语义；多工序传递实际剩料</p></div><div class="field"><code>target_ref / requirements</code><p>原始 CAD / 最终要求、独立中间要求及所需外部资料</p></div></div><div><h4>输出</h4><div class="field"><code>result_geometry / material_states</code><p>实际加工实体/网格、数据格式、精度、材料来源及工序交接</p></div><div class="field"><code>metrics</code><p>体积 IoU、过切/欠切等几何指标及方法/精度</p></div><div class="field"><code>requirement_results</code><p>最终与中间要求分别返回通过、失败、未验证或不可判定</p></div><div class="field"><code>scope / coverage</code><p>计划工步、已执行/未执行及未验证项；整卡完成状态与局部结果分开</p></div><div class="field"><code>replay / provenance</code><p>实际加工状态、轨迹、NC/配置/结果版本与错误反馈</p></div><div class="field"><code>feature_observations / software_regression</code><p>逐特征及中间剩料观测，软件测试条件单列，不写入制造要求</p></div></div></div><details><summary>展开接口示例 · JSON</summary><pre><code>{
-  &quot;schema&quot;: &quot;genlaw.verification-result.v0&quot;,
-  &quot;job_id&quot;: &quot;S1-JOB-01&quot;,
-  &quot;result_ref&quot;: &quot;simulated.stl&quot;,
-  &quot;metrics&quot;: {
-    &quot;volume_iou&quot;: &quot;&lt;measured value&gt;&quot;,
-    &quot;method&quot;: &quot;&lt;numeric method and resolution&gt;&quot;
-  },
-  &quot;requirement_results&quot;: [
-    {
-      &quot;id&quot;: &quot;R_DIAMETER&quot;,
-      &quot;status&quot;: &quot;not_verified&quot;
-    }
-  ],
-  &quot;replay_ref&quot;: &quot;frames.json&quot;,
-  &quot;physical_process_verified&quot;: false,
-  &quot;example_status&quot;: &quot;design_only&quot;,
-  &quot;scope&quot;: {
-    &quot;simulated_operations&quot;: [
-      &quot;OP10&quot;
-    ],
-    &quot;verification&quot;: &quot;geometric_subset&quot;,
-    &quot;whole_process_card_complete&quot;: false
-  },
-  &quot;unverified_requirements&quot;: [
-    &quot;surface_roughness&quot;,
-    &quot;physical_process&quot;
-  ]
-}</code></pre></details></section></div><p><a class="link" href="../data/system.json" download>下载完整接口定义 ↓</a></p></details>
-    <details id="handoff-details"><summary>参数由谁确定，缺项怎样处理？</summary><ul class="rules"><li><strong>卡上明确规定</strong>：作为约束传递；修改须回到工艺规划或工艺师傅。</li><li><strong>资源提供</strong>：引用有版本的毛坯、设备、刀具、夹具及坐标配置。</li><li><strong>程序 / CAM 推导</strong>：记录依据、输入、规则或引擎版本；只能在已定义的工艺与能力范围内选择。</li><li><strong>无法确定</strong>：明确缺什么、影响哪步、交给谁处理；不得静默补默认值。</li></ul><p class="input-note">缺关键执行数据阻止对应 NC 生成；缺验收依据阻止对应质量判定。范围和前置条件必须明确，软件就绪与工艺批准分别记录。</p><p><a class="link" href="../data/process-handoff.json" download>工艺衔接定义 ↓</a></p></details>
-    <details id="extensibility"><summary>扩展与验收约定</summary><div id="extension-contracts"><ul class="rules"><li>新尺寸/孔位等变体由数据驱动，主流程没有零件编号分支。</li><li>新组合保持实际剩料连续，单位、坐标与要求绑定一致。</li><li>不支持的工艺、设备语义或精度在执行前报告；检验不足时返回不可判定。</li><li>新增能力通过小型独立正常/错误案例，同时保留旧能力的回归结果。</li><li>工艺卡约束与派生参数来源可追溯；缺项和资料冲突在受影响阶段拦截，不复用历史案例默认值。</li><li>工步与最终/中间要求分别报告；非几何或未支持步骤不被误计为整卡完成。</li></ul><p class="input-note">目标是将修改集中在适配器、配置和必要的版本演进，并用测试证明兼容；不承诺任何新零件都无需算法开发或永远无需调整公共接口。</p><p><a class="link" href="../data/extension-design.json" download>扩展设计 ↓</a></p></div></details></section></main>
+<h3>4　接下来</h3>
+<div class="dz-chain"><span>计划格式</span><b>→</b><span>STEP 特征编号</span><b>→</b><span class="w">黄金计划 + 工程师核对</span><b>→</b><span>④ 计划 → NC</span><b>→</b><span>⑤ 仿真自测</span><b>→</b><span>③ 读卡对应</span><b>→</b><span>替换法定位</span></div>
+<p class="cap">全部待开始。工程师人选、三轴设备信息待提供。</p>
+</section></main>
 <footer class="footer wrap"><div>GenLaw · 系统设计与开发记录</div><div>站点更新于 2026.11.05 <span aria-hidden="true"> · </span><a href="../index.html">开发进度</a> <span aria-hidden="true"> · </span><a href="../system/development/results/">结果库</a></div></footer></body></html>
