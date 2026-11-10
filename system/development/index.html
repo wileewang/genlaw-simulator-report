@@ -27,9 +27,9 @@
 <h3>必须支持的加工方式</h3><p class="cap">包括经济精度较高的精加工方法：精铣、精车、铰、镗、平面磨。</p>
 <div class="rt-methods"><div class="rt-m"><span class="rt-tag">M0</span><strong>铣</strong><small>平面 · 轮廓 · 型腔 · 槽</small></div><div class="rt-m"><span class="rt-tag">M0 / M2</span><strong>钻孔</strong><small>钻 · 扩 · 铰 · 镗</small></div><div class="rt-m"><span class="rt-tag">M0 / M2</span><strong>倒角圆角</strong><small>铣床和车床上</small></div><div class="rt-m"><span class="rt-tag">M0 后 / M2</span><strong>螺纹</strong><small>攻丝 · 螺纹铣 · 车螺纹</small></div><div class="rt-m"><span class="rt-tag">M2</span><strong>车</strong><small>外圆 · 端面 · 内孔 · 锥面 · 切断</small></div><div class="rt-m"><span class="rt-tag">M4</span><strong>线切割</strong><small>二维轮廓 · 切分</small></div><div class="rt-m"><span class="rt-tag must">M5</span><strong>平面磨</strong><small>平面精磨</small></div></div>
 <h3>经济精度怎么落地</h3>
-<div class="rt-chips"><span>每种方法写可达公差 IT 和粗糙度 Ra</span><span>要求超出方法能力 → 报出，不默认通过</span><span><b>风险：</b>铣削仿真比对约 0.025 mm，精加工需更细的局部比对或尺寸测量</span><span>粗糙度只检查方法能力，不仿真</span></div>
+<div class="rt-chips"><span>每种方法写可达公差 IT 和粗糙度 Ra</span><span>要求超出方法能力 → 报出，不默认通过</span><span><b>自测结论：</b>真实件整件仿真的网格判不了工艺卡上的公差，关键尺寸改用解析计算</span><span>粗糙度只检查方法能力，不仿真</span></div>
 <h3>验收怎么判</h3>
-<div class="rt-chips"><span>逐特征检查为主：都加工到、没有过切</span><span>尺寸合格 = 落在公差带内，不是等于 CAD 名义值</span><span>仿真合格只说明程序编对了；车间能否达到看经济精度</span><span>受焊接、配做影响的部位在计划里标出，比对时排除</span></div>
+<div class="rt-chips"><span><b>第一层：</b>整件仿真（粗网格），查每个面是否加工到、有没有过切和碎片</span><span><b>第二层：</b>关键尺寸从数控程序的刀路直接解析计算，不靠网格</span><span>尺寸合格 = 落在公差带内，不是等于 CAD 名义值</span><span>仿真合格只说明程序编对了；车间能否达到看经济精度</span><span>受焊接、配做影响的部位在计划里标出，比对时排除</span></div>
 <h3>各加工方式用什么仿真</h3>
 <div class="rt-chips"><span>铣、钻：刀具去料仿真（CAMotics）</span><span>车：截面回转后做布尔运算</span><span>线切割：轮廓拉伸后做布尔运算</span><span>平面磨：平面偏移后做布尔运算</span></div>
 <p class="cap" style="margin-top:18px">系统分层见<a class="link" href="../">系统设计</a>；已有合成件结果见<a class="link" href="results/">结果库</a>。</p>
