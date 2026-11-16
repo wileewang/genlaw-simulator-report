@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-X0zGGfW9JGHAhs/VkA09R/Thq19pN13n670X5nxIodA='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-MNSX49X+dpM1WiqSOcEIpF6anUDp4TN2zMlrjL0owrY='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>开发进度 · GenLaw</title><meta name="description" content="GenLaw 五模块设计，以及加工准备、NC 生成、仿真检验的起始点与支持范围。">
 <meta name="color-scheme" content="light"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css?v=5b56718776"><link rel="stylesheet" href="assets/overview.css?v=ec4cecf825">
 <script src="assets/site.js?v=9e504ac0c0" defer></script></head><body>
@@ -75,6 +75,17 @@
 .sb-l-name{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:15px}
 .sb-l-name small,.sb-l-role,.sb-l-k{color:var(--muted);font-size:12.5px}
 .sb-l-role{margin:4px 0 0}
+.sb-ops{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:10px;font-size:13px;color:var(--muted)}
+.sb-ops[hidden]{display:none}
+.sb-ops button{padding:5px 13px;border:1px solid var(--blue);border-radius:6px;background:var(--paper);color:var(--blue);font:inherit;font-size:13px;cursor:pointer}
+.sb-ops button[data-go]{background:var(--blue);color:#fff}
+.sb-ops button:disabled{opacity:.55;cursor:default}
+.sb-ops button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.sb-ops .sb-op-ask{color:var(--ink);flex-basis:100%}
+.sb-ops label{display:flex;gap:6px;align-items:center;flex-basis:100%;color:var(--ink)}
+.sb-ops-all{margin:0 0 12px}
+.sb-pri{background:var(--blue-soft);color:var(--blue)}
+.sb-ops .sb-op-res{flex-basis:100%;overflow-wrap:anywhere}
 .sb-l-k{display:block;margin-bottom:2px}
 .sb-l-doing{margin:0;font-size:15px;line-height:1.65}
 .sb-l-last{margin:0}
@@ -140,13 +151,15 @@
     <div class="sb-say" id="sb-say" hidden><h3>其他要交代的事</h3><p>不属于上面任何一条的指示或问题，写在这里。</p>
 <div class="sb-thread" aria-live="polite"></div>
 <label class="sb-vh" for="sb-say-text">其他要交代的事</label><textarea id="sb-say-text" rows="3" placeholder="例如：先停下某件事、调整优先级、追问某个结论…"></textarea>
-<div class="sb-send"><button type="button" data-send>发给 Claude Code</button><span class="sb-note" role="status"></span></div></div></div>
+<div class="sb-send"><button type="button" data-send>发给 Claude Code</button><span class="sb-note" role="status"></span></div></div>
+    <details class="sb-fold" id="sb-oplog" hidden><summary>我用按钮发出的指示</summary><ol class="sb-rows"></ol></details></div>
 
     <div class="sb-zone" id="zone-now"><div class="sb-zone-head"><h2>二、现在的状态</h2><p>项目现在到哪了，各条开发线在做什么，各模块的进度，对外材料。</p></div>
     <section class="section" id="now-full"><div class="section-head"><h3>现状</h3><p>更新于 2026-11-16</p></div><div class="sb-now">环节三：并入修复后的两遍完整运行都是 33 个工步全部通过，产物逐字节相同；独立复核自己重跑的两遍也都是 33 步全部通过，两遍之间逐值相同；与修复前的旧结果相比判定全部相同，数值有最大约十万分之一毫米的变化（如实记为未严格保持）。这一阶段的独立复核收口，主线进入下一阶段（把计划格式的说明和检查工具、工步检查并入主线）。覆盖全部零件：19 个零件里 13 个的形状已推演到终点或阶段终点并与模型一致。新零件的模拟加工：铣削 12 个零件 82 个工步里通过 6 个，其余主要卡在两处——带曲面的工步和长轴类零件。长轴类零件“仿真算不完”的问题今天有了进展：加速办法通过了“加速前后结果逐字节相同”的验证，1 个长轴零件首次在时限内完整仿真，另 1 个仍超时。5 份因加工范围写窄而修订的计划，形状已重新推演（4 个零件得到新的目标形状，1 个零件因更早一步没有可用结果而未推演），原先记“缺刀具”的 6 个细长刀具工步按新计划重新选刀，只有 1 个选到了刀并完成仿真，但它的检查没能做完（比对用的参考在一处截面上无效，这个零件的模型自身带几何缺陷）；其余 5 个仍然缺刀，要问工艺专家实际的加工方式。车削和线切割 50 道工步跑完第二轮：27 道已仿真，其中 11 道与目标完全一致、15 道的差别都能归到已知原因（刀尖圆弧在内角留下的残料，或图纸公差带不含名义尺寸）；这一轮已收口，50 道工步按卡住的环节分：正式通过 4 道，已仿真但个别面的判定办法还没覆盖车削和线切割 10 道，已仿真但检查没算完 12 道，计划缺信息 7 道，缺刀具 3 道，程序不支持 8 道，输入模型有缺陷 3 道，未执行 3 道。等你定的事有 11 条，今天新增三条：开发额度本周只剩约五分之一（18 日晚重置）；提供的模型文件有不少自身带几何缺陷，其中 2 个零件已经影响到结果；进度页要不要换到单独的域名。</div></section>
-    <section class="section" id="lines"><div class="section-head"><h3>各条线现在在做什么</h3><p id="sb-probed">状态探测于 11-16 22:17；连接后每 5 分钟更新</p></div>
+    <section class="section" id="lines"><div class="section-head"><h3>各条线现在在做什么</h3><p id="sb-probed">状态探测于 11-16 22:26；连接后每 5 分钟更新</p></div>
     <p class="sb-quota" id="sb-quota">开发额度：本周剩 19%，11 月 18 日 19:25 重置</p>
-    <ol class="sb-lines"><li data-line="1-主线开发"><div><div class="sb-l-name"><b>主线开发</b><span class="sb-st" data-s="doing">运行中</span><small class="sb-el">已连续运行 1h 46m 18s</small></div><p class="sb-l-role">把修复、计划格式、工步检查并入主线</p></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">并入计划格式的说明和检查工具；格式资格验证两次都因验证工具自身的问题没过，修后在重跑</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 20:38 交回数值差异的归因核对</p></div></li><li data-line="2-主线复核"><div><div class="sb-l-name"><b>主线独立复核</b><span class="sb-st" data-s="later">空闲</span><small class="sb-el"></small></div><p class="sb-l-role">独立重跑并审查主线的每一次交付</p></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">待命，等主线开发的下一次正式交接</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 20:28 交回第一阶段的复核报告</p></div></li><li data-line="5-几何推演扩展"><div><div class="sb-l-name"><b>几何推演扩展</b><span class="sb-st" data-s="later">空闲</span><small class="sb-el"></small></div><p class="sb-l-role">把几何推演扩到新零件和第 1.1 版计划格式</p></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">待命（本轮任务已全部交回）</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 19:53 交回修订计划的重新推演和 23 步回归</p></div></li><li data-line="7-仿真扩展"><div><div class="sb-l-name"><b>铣削仿真扩展</b><span class="sb-st" data-s="later">空闲</span><small class="sb-el"></small></div><p class="sb-l-role">新零件铣削工步的数控程序生成、仿真和检查</p></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">待命（本轮已收口；额度重置后先定位 1 个长轴零件仿真超时的剩余原因）</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 22:11 交回 1 个工步的补做检查（仿真完成，检查不可用）</p></div></li><li data-line="8-车削线割"><div><div class="sb-l-name"><b>车削和线切割</b><span class="sb-st" data-s="later">空闲</span><small class="sb-el"></small></div><p class="sb-l-role">车削、线切割工步的数控程序生成、仿真和检查</p></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">待命（本轮已收口；额度重置后先做车削和线切割专用的面判定办法）</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 21:28 交回 2 个零件的整件连续运行和 50 道工步的缺口分析</p></div></li><li data-line="4-其余零件录入"><div><div class="sb-l-name"><b>其余零件的计划录入</b><span class="sb-st" data-s="later">空闲</span><small class="sb-el"></small></div><p class="sb-l-role">按工艺卡起草其余零件的结构化工艺计划</p></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">空闲（计划已全部起草，留着处理计划方面的追问）</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 中午 交回 5 份计划的修订</p></div></li><li data-line="10-中台开发"><div><div class="sb-l-name"><b>中台（本页的操作台功能）</b><span class="sb-st" data-s="doing">运行中</span><small class="sb-el"></small></div><p class="sb-l-role">进度页上的回复、状态和材料入口的开发与维护</p></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">首页重新编排成三个区，之后做操作按钮</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 22:04 交回各条线状态的改版</p></div></li></ol></section>
+    <div class="sb-ops sb-ops-all" id="sb-ops-all" hidden></div>
+    <ol class="sb-lines"><li data-line="1-主线开发"><div><div class="sb-l-name"><b>主线开发</b><span class="sb-st" data-s="doing">运行中</span><small class="sb-el">已连续运行 1h 55m 47s</small></div><p class="sb-l-role">把修复、计划格式、工步检查并入主线</p><div class="sb-ops" hidden></div></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">并入计划格式的说明和检查工具；格式资格验证两次都因验证工具自身的问题没过，修后在重跑</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 20:38 交回数值差异的归因核对</p></div></li><li data-line="2-主线复核"><div><div class="sb-l-name"><b>主线独立复核</b><span class="sb-st" data-s="later">空闲</span><small class="sb-el"></small></div><p class="sb-l-role">独立重跑并审查主线的每一次交付</p><div class="sb-ops" hidden></div></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">待命，等主线开发的下一次正式交接</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 20:28 交回第一阶段的复核报告</p></div></li><li data-line="5-几何推演扩展"><div><div class="sb-l-name"><b>几何推演扩展</b><span class="sb-st" data-s="later">空闲</span><small class="sb-el"></small></div><p class="sb-l-role">把几何推演扩到新零件和第 1.1 版计划格式</p><div class="sb-ops" hidden></div></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">待命（本轮任务已全部交回）</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 19:53 交回修订计划的重新推演和 23 步回归</p></div></li><li data-line="7-仿真扩展"><div><div class="sb-l-name"><b>铣削仿真扩展</b><span class="sb-st" data-s="later">空闲</span><small class="sb-el"></small></div><p class="sb-l-role">新零件铣削工步的数控程序生成、仿真和检查</p><div class="sb-ops" hidden></div></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">待命（本轮已收口；额度重置后先定位 1 个长轴零件仿真超时的剩余原因）</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 22:11 交回 1 个工步的补做检查（仿真完成，检查不可用）</p></div></li><li data-line="8-车削线割"><div><div class="sb-l-name"><b>车削和线切割</b><span class="sb-st" data-s="later">空闲</span><small class="sb-el"></small></div><p class="sb-l-role">车削、线切割工步的数控程序生成、仿真和检查</p><div class="sb-ops" hidden></div></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">待命（本轮已收口；额度重置后先做车削和线切割专用的面判定办法）</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 21:28 交回 2 个零件的整件连续运行和 50 道工步的缺口分析</p></div></li><li data-line="4-其余零件录入"><div><div class="sb-l-name"><b>其余零件的计划录入</b><span class="sb-st" data-s="later">空闲</span><small class="sb-el"></small></div><p class="sb-l-role">按工艺卡起草其余零件的结构化工艺计划</p><div class="sb-ops" hidden></div></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">空闲（计划已全部起草，留着处理计划方面的追问）</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 中午 交回 5 份计划的修订</p></div></li><li data-line="10-中台开发"><div><div class="sb-l-name"><b>中台（本页的操作台功能）</b><span class="sb-st" data-s="doing">运行中</span><small class="sb-el"></small></div><p class="sb-l-role">进度页上的回复、状态和材料入口的开发与维护</p><div class="sb-ops" hidden></div></div><div><span class="sb-l-k">现在在做</span><p class="sb-l-doing">首页重新编排成三个区，之后做操作按钮</p><p class="sb-l-live" hidden></p><details class="sb-raw" hidden><summary>看这条线自己写的最新一条记录（内部用语，术语多）</summary><p></p></details></div><div><span class="sb-l-k">最近一次交回</span><p class="sb-l-last">11-16 22:04 交回各条线状态的改版</p></div></li></ol></section>
     <section class="section" id="modules"><div class="section-head"><h3>模块进度</h3><p><a class="link" href="system/">系统设计 →</a></p></div><p class="sb-sum"><span><span class="sb-st" data-s="doing">开发中</span> 2 个</span><span><span class="sb-st" data-s="part">部分可用</span> 4 个</span><span><span class="sb-st" data-s="later">后置</span> 3 个</span></p>
     <ol class="sb-mods"><li><div class="sb-m-head"><span class="n">1</span><b>几何理解</b><span class="sb-st" data-s="later">后置</span></div><p class="sb-m-note">先用现成的 CAD 模型和人工录入的要求</p><p class="sb-m-meta">环节：一 · Agent · 11-13 更新</p></li><li><div class="sb-m-head"><span class="n">2</span><b>工艺规划</b><span class="sb-st" data-s="later">后置</span></div><p class="sb-m-note">先用人工录入的结构化工艺计划</p><p class="sb-m-meta">环节：二 · Agent · 11-13 更新</p></li><li><div class="sb-m-head"><span class="n">3</span><b>几何推演</b><span class="sb-st" data-s="part">部分可用</span></div><p class="sb-m-note">含面和特征编号。6 个零件 23 个工步通过独立复核；只支持平面、闭合轮廓、孔径替换、参数体这几种几何，任意曲面的留余量不支持</p><p class="sb-m-meta">环节：二 · 程序 · 11-13 更新</p></li><li><div class="sb-m-head"><span class="n">4</span><b>工步检查</b><span class="sb-st" data-s="part">部分可用</span></div><p class="sb-m-note">已验收，待并入。刀具必要条件：23 个工步里 21 步有刀可做、1 步没有合适的刀、1 步未定，与已知事实一致。图纸要求 119 条里能判 45 条，其余 74 条缺数据（轮廓精度、定位方式、专家限值）。装夹规则只有框架，限值等专家答复</p><p class="sb-m-meta">环节：二 · 规则加程序 · 11-15 更新</p></li><li><div class="sb-m-head"><span class="n">5</span><b>工艺卡生成</b><span class="sb-st" data-s="later">不在本线范围</span></div><p class="sb-m-note">本线不开发</p><p class="sb-m-meta">环节：二 · 程序 · 11-15 更新</p></li><li><div class="sb-m-head"><span class="n">6</span><b>数控程序生成</b><span class="sb-st" data-s="doing">开发中</span></div><p class="sb-m-note">原有 6 个零件的铣削程序生成已稳定，重复生成逐字节相同。新零件：铣削的平面、轮廓、孔类可生成；曲面用成形刀具法（球头刀直线或圆弧成形）刚有原型；车削和线切割有自己的生成器，50 道工步里 28 道已生成程序。螺纹、铰孔、倒角、带圆角立铣刀还不支持</p><p class="sb-m-meta">环节：三 · 程序加规则 · 11-16 更新</p></li><li><div class="sb-m-head"><span class="n">7</span><b>仿真与碰撞检查</b><span class="sb-st" data-s="doing">开发中</span></div><p class="sb-m-note">原有 6 个零件 33 个工步逐工步仿真可用，两遍运行结果逐字节相同；独立复核自己重跑的两遍也全部通过，且两遍之间逐值相同。新零件：铣削通过 6 个工步，另有 1 个已仿真但检查不可用；长轴类零件的仿真加速已通过“结果不变”的验证，2 个长轴零件里 1 个能在时限内算完。车削和线切割的独立仿真器已验证（9 类有解析答案的形状、11 种故意做错的程序全部判对），50 道里 27 道已仿真，4 道全部输出通过正式检查。快速移动撞料能查，夹具碰撞没做</p><p class="sb-m-meta">环节：三 · 程序 · 11-16 更新</p></li><li><div class="sb-m-head"><span class="n">8</span><b>比对</b><span class="sb-st" data-s="part">部分可用</span></div><p class="sb-m-note">逐工步和终点的逐面检查已通过独立复核。加工中才存在的窄面用补充检查，能发现约 0.3 mm 以上的偏差。CAD 模型不是成品时可按声明的排除区域比对</p><p class="sb-m-meta">环节：通用 · 程序 · 11-14 更新</p></li><li><div class="sb-m-head"><span class="n">9</span><b>调度与出错定位</b><span class="sb-st" data-s="part">部分可用</span></div><p class="sb-m-note">逐工步执行、状态保存、中间重启、失败归类已通过独立复核；出错定位可用</p><p class="sb-m-meta">环节：通用 · 程序 · 11-13 更新</p></li><li><div class="sb-m-head"><span class="n">接口</span><b>结构化工艺计划格式</b><span class="sb-st" data-s="done">第 1 版已发布</span></div><p class="sb-m-note">2026-11-15 发布。含格式说明、机器可检查的格式定义、样例、校验程序和交接说明。一位没参与过项目的读者只看说明，检查 3 次后写出了合格的计划。限制：几何层检查要在部署了本项目程序的机器上运行；面编号对模型的细节敏感</p><p class="sb-m-meta">环节：二、三 · 格式约定 · 11-15 更新</p></li><li><div class="sb-m-head"><span class="n">数据</span><b>加工资源库</b><span class="sb-st" data-s="part">部分可用</span></div><p class="sb-m-note">经济精度和余量表有；机床、刀具、切削参数是假设值，等问卷</p><p class="sb-m-meta">环节：全部 · 数据 · 11-13 更新</p></li></ol></section>
     <section class="section" id="materials"><div class="section-head"><h3>对外材料和内部页面</h3><p>含内部图纸和工艺卡，清单只在连接后显示</p></div>
@@ -168,7 +181,7 @@ const WEB='\n\n<!-- from:web -->',QUOTE='\n\n---\n针对：';
 // GitHub 的“列出 issue”接口对刚建的 issue 有几十秒延迟：本页刚建的先记在这里（这个浏览器里保留 10 分钟，各标签页共用），与接口结果合并
 const FRESH='genlaw-decisions-fresh',DRAFT='genlaw-decisions-draft:';let fresh=[];
 function loadFresh(){try{fresh=(JSON.parse(localStorage.getItem(FRESH))||[]).filter(i=>Date.now()-new Date(i.created_at)<6e5)}catch(e){fresh=[]}}
-function remember(i){loadFresh();fresh.push({number:i.number,title:i.title,body:i.body,state:i.state,created_at:i.created_at,closed_at:i.closed_at});
+function remember(i){loadFresh();fresh=fresh.filter(x=>x.number!==i.number);fresh.push({number:i.number,title:i.title,body:i.body,state:i.state,created_at:i.created_at,closed_at:i.closed_at});
   try{localStorage.setItem(FRESH,JSON.stringify(fresh))}catch(e){}}
 // 没发出去的草稿留在这个标签页里（刷新页面、手机切到后台再回来都不丢），发出或断开后删除
 const drafts=$$('textarea[id^=sb-]');
@@ -177,10 +190,10 @@ drafts.forEach(ta=>{try{ta.value=sessionStorage.getItem(DRAFT+ta.id)||''}catch(e
   ta.addEventListener('input',()=>{try{ta.value?sessionStorage.setItem(DRAFT+ta.id,ta.value):sessionStorage.removeItem(DRAFT+ta.id)}catch(e){}})});
 function dropDraft(ta){ta.value='';try{sessionStorage.removeItem(DRAFT+ta.id)}catch(e){}}
 
-async function call(path,body){
+async function call(path,body,method){
   const h={'Accept':'application/vnd.github+json','Authorization':'Bearer '+token,'X-GitHub-Api-Version':'2022-11-28'};
   if(body)h['Content-Type']='application/json';
-  const r=await fetch(API+path,{method:body?'POST':'GET',headers:h,body:body?JSON.stringify(body):undefined,cache:'no-store'});
+  const r=await fetch(API+path,{method:method||(body?'POST':'GET'),headers:h,body:body?JSON.stringify(body):undefined,cache:'no-store'});
   if(!r.ok){const e=new Error('HTTP '+r.status);e.status=r.status;
     // 限流（429，或 403 且额度用尽／要求稍后重试）是暂时的，不算令牌问题
     e.limited=r.status===429||(r.status===403&&(r.headers.get('x-ratelimit-remaining')==='0'||r.headers.get('retry-after')!==null));throw e}
@@ -209,7 +222,7 @@ function setConn(s){conn.dataset.s=s;
 const cons=$('#sb-materials'),consHint=cons?cons.innerHTML:'',linesBody=$('#lines .sb-lines'),linesPublic=linesBody?linesBody.innerHTML:'',
   pubText={};['#sb-quota','#sb-probed'].forEach(k=>{const e=$(k);if(e)pubText[k]=e.textContent});
 // 把从私有仓库取来的内容全部从页面上拿掉，回到公开页原样
-function wipe(){$$('.sb-thread').forEach(t=>t.textContent='');$$('.sb-state').forEach(t=>t.textContent='');
+function wipe(){opIssues=[];liveLines={};['#sb-ops-all','#sb-oplog'].forEach(k=>{const e=$(k);if(e)e.hidden=true});$$('.sb-thread').forEach(t=>t.textContent='');$$('.sb-state').forEach(t=>t.textContent='');
   $$('[data-state]').forEach(x=>x.dataset.state='');if(linesBody)linesBody.innerHTML=linesPublic;
   for(const k in pubText)$(k).textContent=pubText[k];if(cons)cons.innerHTML=consHint;
   const tm=$('#todo-materials'),tn=$('#sb-todo-n');if(tm)tm.hidden=true;if(tn)tn.textContent=tn.dataset.n}
@@ -219,7 +232,10 @@ function renderConsole(d){
   const q=$('#sb-quota');if(q&&d.quota)q.textContent='开发额度：本周剩 '+d.quota.left+'%'+(d.quota.resets_cn?'，'+d.quota.resets_cn+' 重置':'');
   const pt=$('#sb-probed'),late=d.probed_epoch?Math.floor((Date.now()/1000-d.probed_epoch)/60):0;
   if(pt&&d.probed_at)pt.textContent='状态探测于 '+d.probed_at.slice(5)+(late>=20?'，已 '+late+' 分钟没有更新（后台的状态探测可能停了）':'；每 5 分钟更新');
+  liveLines=d.lines||{};
   $$('li[data-line]').forEach(tr=>{const r=(d.lines||{})[tr.dataset.line];if(!r)return;
+    let pz=$('.sb-paused',tr);if(r.paused&&!pz){pz=document.createElement('span');pz.className='sb-st sb-paused';pz.dataset.s='todo';pz.textContent='已暂停';$('.sb-st',tr).after(pz)}else if(!r.paused&&pz)pz.remove();
+    let pr=$('.sb-pri',tr);const lv={high:'优先',low:'靠后'}[r.priority];if(pr)pr.remove();if(lv){pr=document.createElement('span');pr.className='sb-st sb-pri';pr.textContent=lv;($('.sb-paused',tr)||$('.sb-st',tr)).after(pr)}
     const st=$('.sb-st',tr),L=STATE[r.state]||['later','未探测'];st.dataset.s=L[0];st.textContent=L[1];
     $('.sb-el',tr).textContent=r.elapsed?'已连续运行 '+r.elapsed:'';
     // 说明文字以私有仓库里的为准（Claude Code 改了说明后不必等下次部署）
@@ -249,10 +265,64 @@ function renderConsole(d){
     t.textContent=m.date||'—';a.href='#sb-m-'+m.id;a.className='link';a.textContent=m.title;box.append(a);
     if(m.status){const s=document.createElement('span');s.className='sb-mst';s.textContent=m.status;box.append(' ',s)}
     seeMaterial('M:'+m.id+':ready',box);li.append(t,box);todo.append(li)});
+  renderOps();
   $('#todo-materials').hidden=!ready.length;$('#sb-todo-mats-n').textContent=ready.length||'';tn.textContent=+tn.dataset.n+ready.length;
 }
 async function loadConsole(){if(!cons)return;
   try{const t=token,i=await call('/issues/'+cons.dataset.console);if(token!==t)return;const m=/```json\n([\s\S]*?)\n```/.exec(i.body||'');if(m)renderConsole(JSON.parse(m[1]))}catch(e){}}
+
+// ---- 常用操作：按钮只在私有仓库里新建一条带标记的指示，由 Claude Code 执行；页面不碰任何开发会话 ----
+// 每个操作：verb 按钮和状态里用的说法；ask 行内确认的问句；text 写进指示正文的那句话；sure 需要先勾选才能确认的话（高影响的操作）
+const LEVEL={high:'优先',normal:'正常',low:'靠后'},HOLD='它会做完手上这一步后停下，不中断正在跑的计算。';
+const OPS={
+  'line.pause':{verb:()=>'暂停',ask:n=>'确认暂停“'+n+'”？'+HOLD,text:n=>'暂停“'+n+'”这条线（做完手上这一步后停下，不派新活，不中断正在跑的计算）。'},
+  'line.resume':{verb:()=>'恢复',ask:n=>'确认恢复“'+n+'”？',text:n=>'恢复“'+n+'”这条线。'},
+  'line.priority':{verb:v=>'设为'+LEVEL[v],ask:(n,v)=>'确认把“'+n+'”的优先级设为“'+LEVEL[v]+'”？额度或机器紧张时按优先级保。',text:(n,v)=>'把“'+n+'”这条线的优先级设为“'+LEVEL[v]+'”。'},
+  'all.pause':{verb:()=>'全部暂停',ask:()=>'确认暂停全部开发线？每条线都会做完手上这一步后停下，不中断正在跑的计算。',text:()=>'暂停全部开发线（各自做完手上这一步后停下，不派新活，不中断正在跑的计算）。',sure:'我确定要全部暂停'},
+  'all.resume':{verb:()=>'全部恢复',ask:()=>'确认恢复全部开发线？',text:()=>'恢复全部开发线。'}};
+const marker=(re,s)=>{const m=re.exec(s||'');if(!m)return null;try{return JSON.parse(m[1])}catch(e){return null}};
+const opOf=i=>marker(/<!-- op:(\{.*?\}) -->/,i.body);
+const verbOf=op=>OPS[op.op].verb(op.value);
+const resultOf=x=>{const res=x.cs.map(c=>({c,r:marker(/<!-- op-result:(\{.*?\}) -->/,c.body)})).filter(y=>y.r).pop(),v='“'+verbOf(x.op)+'”';
+  return !res?(x.i.state==='open'?'等待执行':v+'已撤回'):res.r.status==='done'?v+'已执行（'+fmt(res.c.created_at)+'）：'+clean(res.c.body):v+'没有执行：'+clean(res.c.body)};
+let opIssues=[],liveLines={};
+function opBtn(text,fn,go){const b=document.createElement('button');b.type='button';b.textContent=text;if(go)b.dataset.go='';b.addEventListener('click',fn);return b}
+function opSpan(cls,text){const s=document.createElement('span');s.className=cls;s.textContent=text;return s}
+// 一个对象（一条线、全部开发线…）的操作区：有未执行的指示时显示“等待执行〔撤回〕”，否则显示可点的按钮和最近一次的结果
+function opBox(box,target,name,family,offers){if(!box||box.dataset.busy)return;
+  const mine=opIssues.filter(x=>x.op.target===target&&family.indexOf(x.op.op)>=0);
+  const pend=mine.find(x=>x.i.state==='open'),prev=mine.find(x=>x.i.state!=='open'&&Date.now()-new Date(x.i.closed_at||x.i.created_at)<864e5);
+  box.textContent='';box.hidden=false;
+  if(pend){const late=Date.now()-new Date(pend.i.created_at)>6e5;
+    box.append(opSpan('sb-op-wait','已发出“'+verbOf(pend.op)+'”，等待执行'+(late?'。Claude Code 可能不在线，指示已保存，上线后处理':'')),
+      opBtn('撤回',e=>undoOp(box,pend.i,e.currentTarget)));return}
+  offers.forEach(o=>box.append(opBtn(OPS[o.op].verb(o.value),()=>askOp(box,o,target,name))));
+  if(prev)box.append(opSpan('sb-op-res',resultOf(prev)))}
+function renderOps(){if(!token)return;
+  const keys=$$('li[data-line]').map(li=>li.dataset.line),anyPaused=keys.some(k=>(liveLines[k]||{}).paused);
+  opBox($('#sb-ops-all'),'all','全部开发线',['all.pause','all.resume'],[{op:'all.pause'}].concat(anyPaused?[{op:'all.resume'}]:[]));
+  $$('li[data-line]').forEach(li=>{const key=li.dataset.line,r=liveLines[key]||{},level=LEVEL[r.priority]?r.priority:'normal';
+    opBox($('.sb-ops',li),key,$('.sb-l-name b',li).textContent,['line.pause','line.resume','line.priority'],
+      [{op:r.paused?'line.resume':'line.pause'}].concat(['high','normal','low'].filter(v=>v!==level).map(v=>({op:'line.priority',value:v}))))});
+  // 我用按钮发出的指示：最近 10 个和各自的结果
+  const log=$('#sb-oplog');if(log){const ol=$('ol',log),list=opIssues.filter(x=>OPS[x.op.op]).slice(0,10);ol.textContent='';
+    list.forEach(x=>{const li=document.createElement('li'),t=document.createElement('time'),box=document.createElement('div'),b=document.createElement('b');
+      t.textContent=fmt(x.i.created_at).split(' ')[0];b.textContent=clean(x.i.body);box.append(b,opSpan('sb-mnote',resultOf(x)));li.append(t,box);ol.append(li)});
+    log.hidden=!list.length;$('summary',log).textContent='我用按钮发出的指示（最近 '+list.length+' 个）'}}
+function askOp(box,o,target,name){box.dataset.busy='1';box.textContent='';const def=OPS[o.op];
+  const end=msg=>{clearTimeout(timer);delete box.dataset.busy;renderOps();if(msg)box.append(opSpan('sb-op-res',msg))};
+  const timer=setTimeout(end,+(conn.dataset.confirmMs||(def.sure?20000:10000)));
+  const go=opBtn('确认',async e=>{clearTimeout(timer);e.currentTarget.disabled=true;const op={v:1,op:o.op,target:target,label:name,at:new Date().toISOString()};if(o.value)op.value=o.value;
+    try{remember(await call('/issues',{title:'操作：'+def.verb(o.value)+(target==='all'?'':'“'+name+'”'),body:def.text(name,o.value)+'\n\n<!-- op:'+JSON.stringify(op)+' -->'+WEB}));
+      delete box.dataset.busy;await refresh()}
+    catch(err){end('没有发出（'+(denied(err)?'令牌无效或权限不够':'连不上 GitHub')+'），请再试一次。')}},true);
+  box.append(opSpan('sb-op-ask',def.ask(name,o.value)));
+  if(def.sure){const l=document.createElement('label'),c=document.createElement('input');c.type='checkbox';go.disabled=true;c.addEventListener('change',()=>{go.disabled=!c.checked});l.append(c,def.sure);box.append(l)}
+  box.append(go,opBtn('取消',()=>end()))}
+async function undoOp(box,issue,btn){btn.disabled=true;box.dataset.busy='1';
+  try{await call('/issues/'+issue.number+'/comments',{body:'撤回这个操作。\n\n<!-- op-cancel -->'+WEB});
+    const shut=await call('/issues/'+issue.number,{state:'closed'},'PATCH');remember(shut);delete box.dataset.busy;await refresh()}
+  catch(err){delete box.dataset.busy;renderOps();box.append(opSpan('sb-op-res','没有撤回成功，请再试一次。'))}}
 
 let ordered=false;
 async function refresh(){
@@ -264,16 +334,18 @@ async function refresh(){
     if(token!==t)return;                // 等待期间用户断开或换了令牌
     const by={};cs.reverse().forEach(c=>{const n=c.issue_url.split('/').pop();(by[n]=by[n]||[]).push(c)});
     const seen=new Set(is.map(i=>i.number));
-    const real=fresh.filter(i=>!seen.has(i.number)).concat(is).filter(i=>!i.pull_request).sort((a,b)=>b.number-a.number),recent=i=>i.state==='open'||Date.now()-new Date(i.closed_at)<3*864e5;
+    const shut={};fresh.forEach(f=>{if(f.state==='closed')shut[f.number]=f});
+    const real=fresh.filter(i=>!seen.has(i.number)).concat(is.map(i=>shut[i.number]&&i.state==='open'?Object.assign({},i,{state:'closed',closed_at:shut[i.number].closed_at}):i)).filter(i=>!i.pull_request).sort((a,b)=>b.number-a.number),recent=i=>i.state==='open'||Date.now()-new Date(i.closed_at)<3*864e5;
     const first=i=>({body:i.body||i.title,created_at:i.created_at});
     $$('.sb-ask[data-issue]').forEach(li=>fill(li,by[li.dataset.issue]||[]));
     for(const k in gIssue)delete gIssue[k];
     real.slice().reverse().forEach(i=>{const m=/<!-- delegated:(G\d+) -->/.exec(i.body||'');if(m&&recent(i))gIssue[m[1]]=i});
     $$('li[data-gid]').forEach(li=>{const i=gIssue[li.dataset.gid];fill(li,i?[first(i)].concat(by[i.number]||[]):[])});
-    if(say){const list=[];real.filter(i=>!/<!-- (item:|delegated:|console-data)/.test(i.body||'')&&recent(i)).slice(0,5).reverse()
+    if(say){const list=[];real.filter(i=>!/<!-- (item:|delegated:|console-data|op:)/.test(i.body||'')&&recent(i)).slice(0,5).reverse()
       .forEach(i=>{list.push(first(i));(by[i.number]||[]).forEach(c=>list.push(c))});fill(say,list)}
     if(!ordered){ordered=true;const ol=$('#pending .sb-list');$$('.sb-ask[data-state=waiting]',ol).forEach(li=>ol.append(li))}
     $$('.sb-fold').forEach(f=>{if($('.sb-msg',f))f.open=true});
+    opIssues=real.map(i=>({i,op:opOf(i),cs:by[i.number]||[]})).filter(x=>x.op);renderOps();
     setConn('ok');
   }catch(e){if(token!==t)return;
     if(!denied(e)){setConn('net');return}
