@@ -1,0 +1,209 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>genlaw 周报 2026-11-23</title><style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1c2430;--mute:#667085;--line:#dfe3ea;--ok:#12805c;--okbg:#e3f5ee;--warn:#b25e09;--warnbg:#fdf0dc;
+--bad:#b42318;--badbg:#fde8e6;--idle:#667085;--idlebg:#eceff3;--run:#175cd3;--runbg:#e3edfd;--acc:#e8590c}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#12161c;--card:#1a2029;--ink:#e6e9ee;--mute:#98a2b3;--line:#2c3542;
+--okbg:#12362b;--ok:#57c9a1;--warnbg:#3b2a12;--warn:#f0a94e;--badbg:#3d1a17;--bad:#f2857b;--idlebg:#262d38;--idle:#98a2b3;--runbg:#16294b;--run:#84adff}}
+:root[data-theme=dark]{--bg:#12161c;--card:#1a2029;--ink:#e6e9ee;--mute:#98a2b3;--line:#2c3542;--okbg:#12362b;--ok:#57c9a1;--warnbg:#3b2a12;--warn:#f0a94e;
+--badbg:#3d1a17;--bad:#f2857b;--idlebg:#262d38;--idle:#98a2b3;--runbg:#16294b;--run:#84adff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}h1{font-size:26px;margin:0 0 4px}h2{font-size:19px;margin:38px 0 12px;padding-top:6px;border-top:1px solid var(--line)}
+h3{font-size:16px;margin:0 0 6px}.sub{color:var(--mute);font-size:13px}.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:12px 0}
+.lead{font-size:17px;font-weight:600;margin:14px 0 6px}ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0}.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.kpi b{display:block;font-size:22px}.kpi span{color:var(--mute);font-size:12.5px}
+.b{display:inline-block;border-radius:999px;padding:1px 9px;font-size:12.5px;white-space:nowrap}.ok{background:var(--okbg);color:var(--ok)}.near{background:var(--okbg);color:var(--ok);opacity:.85}
+.warn{background:var(--warnbg);color:var(--warn)}.bad{background:var(--badbg);color:var(--bad)}.idle,.wait{background:var(--idlebg);color:var(--idle)}.run{background:var(--runbg);color:var(--run)}
+table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top;font-size:14px}th{color:var(--mute);font-weight:500;font-size:13px}
+.path{position:relative;margin:8px 0 0 10px;padding-left:26px;border-left:2px solid var(--line)}.node{position:relative;margin:0 0 18px}
+.node:before{content:"";position:absolute;left:-34px;top:16px;width:14px;height:14px;border-radius:50%;background:var(--card);border:3px solid var(--run)}
+.node.stage:before{border-color:var(--acc);width:16px;height:16px;left:-35px}.node.verdict:before{border-radius:3px;transform:rotate(45deg);border-color:var(--ok)}
+.node.turn:before{border-color:var(--warn)}.when{color:var(--mute);font-size:12.5px}.tasks{margin:8px 0 0}.task{display:flex;gap:8px;align-items:baseline;padding:4px 0;border-top:1px dashed var(--line)}
+.task .t{flex:1}.task .m{color:var(--mute);font-size:12.5px;white-space:nowrap}details{margin-top:8px}summary{cursor:pointer;color:var(--run);font-size:13.5px}pre.note{white-space:pre-wrap;font:inherit;font-size:13.5px;margin:8px 0 0;color:var(--ink)}
+.mx td.c{text-align:center;cursor:pointer;min-width:92px}.mx td.c small{display:block;color:var(--mute);font-size:11.5px}.mx td.c.ok{background:var(--okbg)}.mx td.c.warn{background:var(--warnbg)}.mx td.c.idle{background:var(--idlebg)}.mx td.c.bad{background:var(--badbg)}
+.hdv{display:grid;grid-template-columns:330px 1fr;gap:14px;margin-top:10px}@media(max-width:900px){.hdv{grid-template-columns:1fr}}
+.hdv-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.hdv-tab{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:5px 12px;cursor:pointer;font-size:14px}
+.hdv-tab.on{border-color:var(--acc);color:var(--acc);font-weight:600}.hdv-steps{display:flex;flex-direction:column;gap:8px;max-height:640px;overflow:auto}
+.hdv-step{text-align:left;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 11px;cursor:pointer;font:inherit}
+.hdv-step.on{border-color:var(--acc);box-shadow:0 0 0 2px rgba(232,89,12,.18)}.hdv-step span{display:block}.hdv-badge{display:inline-block!important;border-radius:999px;padding:0 8px;font-size:12px;float:right}
+.hdv-step-no{font-weight:600;font-size:13.5px}.hdv-step-how{color:var(--mute);font-size:12.5px}.hdv-step-text{font-size:13.5px;margin-top:3px}
+.hdv-stage{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}#hdv-canvas{display:block;width:100%;height:470px;background:linear-gradient(#eef1f5,#dfe4ea)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) #hdv-canvas{background:linear-gradient(#202733,#151a22)}}:root[data-theme=dark] #hdv-canvas{background:linear-gradient(#202733,#151a22)}
+.hdv-bar{display:flex;gap:10px;align-items:center;padding:8px 12px;border-top:1px solid var(--line);flex-wrap:wrap}.hdv-bar button,.hdv-bar select{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:7px;padding:4px 12px;font:inherit;cursor:pointer}
+.hdv-bar input[type=range]{flex:1;min-width:160px}#hdv-now{color:var(--mute);font-size:13px;min-width:150px}
+#hdv-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 16px;padding:12px 14px;margin:0;border-top:1px solid var(--line)}#hdv-facts dt{color:var(--mute);font-size:12.5px}#hdv-facts dd{margin:0;font-size:14px}
+#hdv-card{padding:12px 14px;border-top:1px solid var(--line);font-size:14px}#hdv-card p{margin:4px 0 0}.hdv-req{color:var(--mute)}#hdv-note{padding:0 14px 10px;color:var(--warn);font-size:13.5px}
+.foot{color:var(--mute);font-size:12.5px;margin-top:30px}
+</style></head><body><div class="wrap">
+<h1>GenLaw 工艺仿真系统 开发周报（第一期，2026-11-22 到 2026-11-23）</h1>
+<div class="sub">11-22 00:00 到 11-23 16:35　·　11-23 16:37 生成　·　经过和数字由程序从任务单、交回单、评审单和流水生成</div>
+<div class="lead">含数控程序生成和加工仿真的完整链在现行源码上重新跑起来了：六件零件共 23 个工步在标准制造链上真跑了两轮，固定块支承板I型、II型、III型阶段一的九步全部通过，两轮结果相同；最大的一件没做成的事是补充比对方法还没有恢复，拱形肋板II型因此停在第二步，没有从毛坯走到成品。</div>
+<ul><li>这一期定下了第一个阶段“完整链重新跑起来，完整回归立起来”，一共十条过关标准；按开发逐批的汇合判断（最近一次在 11-23 16:24，状态与前一次相同），第 3、4、5 条到了，第 7、8、9 条在标准制造链上基本到了，第 1、2、6 条都卡在同一件事上：补充比对方法没有恢复。</li><li>完整链原先在入口校验引擎构建清单时就退出。查实重新编译引擎现在做不成之后，用户同意改用“保留原引擎、另存一份构建清单”的做法，清单 16 条全部通过校验，完整链重新能启动（交回单 R0022、R0023）。</li><li>固定块支承板I型、II型、III型的阶段一共九步，都是同一次运行里从毛坯连续真仿真，结论全部通过，重合度（IoU）0.9993 到 0.9997；第二轮重跑的结论、重合度和数控程序的 SHA-256 与第一轮完全相同（交回单 R0023、R0024、R0030）。</li><li>拱形肋板II型六步里只有第一步通过；第二步真仿真做了，重合度 0.99907 与历史相同，但有 10 个圆柱面用现有比对方法判不出来；后四步没执行，因为前一步没通过，系统停下不拿目标形状接着做（交回单 R0024）。拱形板II型的情况相同，第二步有 24 个面判不出来（交回单 R0025）。</li><li>补充比对方法的恢复有进展但没有落位：探针引擎的原件找到了，与历史清单逐字节相同；14 个资格用例在执行者副本里重做，与历史逐项一致；带新资格配置跑拱形肋板II型时又查出源码里两处读路径没有跟上文件搬迁，正在试修（交回单 R0026、R0035）。</li><li>不退步的核对做了大半：全量测试 919 项，失败 45 项全部在 51 个已知失败里，新增失败 0；G0、G1、G2 和 G3 的入口共 11 个全部通过（交回单 R0031、R0032）；G4 的五个阶段没有跑成，原因是执行环境的隔离规则，不在零件和判据上（交回单 R0038）。</li></ul>
+<div class="kpis"><div class="kpi"><b>20</b><span>张任务通过</span></div><div class="kpi"><b>18</b><span>次合进主线</span></div><div class="kpi"><b>41</b><span>次独立评审（退回 21 次）</span></div><div class="kpi"><b>13</b><span>件事由人决定</span></div><div class="kpi"><b>8</b><span>条新经验</span></div><div class="kpi"><b>38 分</b><span>任务从派出到通过（中位）</span></div></div>
+<h2>一、进度路径</h2><div class="sub">一条往前长的线：定目标 → 排一批并行的任务 → 都做完后对照目标判断 → 没到再排一批；遇到阻力就拐弯，拐弯处写明原因。</div><div class="path">
+<div class="node stage"><div class="card"><div class="when">阶段 M0001　11-23 11:13 定　<span class="b run">进行中</span></div><h3>完整链重新跑起来，完整回归立起来：含数控程序生成和加工仿真的完整链在现行源码上重新跑起来，并立起一个端到端的完整回归，作为后面所有阶段“不退步”的基准。</h3>
+<table><tr><th style="width:44%">过关标准</th><th style="width:92px">现在</th><th>依据</th></tr>
+<tr><td>1. 完整链入口在现行源码上能启动：引擎构建清单、补充方法配置、资源清单的校验在主副本和执行者副本里都通过。</td><td><span class="b bad">卡住</span></td><td>开发的判断是“到了一半”：引擎构建清单 16 条在主副本和执行者副本都通过，资源清单通过（交回单 R0023）；补充方法配置的校验还过不了，只在执行者副本的试验里走到资格门通过，没有正式落位（交回单 R0035，汇合判断 11-23 16:24）。</td></tr>
+<tr><td>2. 拱形肋板II型（P05）在同一次连续运行里从毛坯真仿真走到成品，每步的逐面比对、尺寸结论、IoU 按现有口径通过，没有“按目标形状接续”的切削工步。</td><td><span class="b bad">卡住</span></td><td>拱形肋板II型六步里只有第一步通过，第二步有 10 个圆柱面判不出来，后四步没执行（交回单 R0024）。这 10 个面与历史上靠补充方法判过的面逐个相同，所以这一条要等补充方法恢复；带补充方法的试跑正在做，还没有结果（汇合判断 11-23 16:24）。</td></tr>
+<tr><td>3. 固定块支承板I型、II型、III型（P09、P10、P11）的阶段一同样按第 2 条通过；阶段二等客户数值，只登记，整件不算通过。</td><td><span class="b ok">到了</span></td><td>固定块支承板I型、II型、III型阶段一共九步，同一次运行里从毛坯连续真仿真，结论全部通过，重合度 0.9993 到 0.9997，没有按目标形状接续的工步；第二轮重跑与第一轮完全相同（交回单 R0023、R0024、R0030）。阶段二等客户数值，只登记，整件不算通过。</td></tr>
+<tr><td>4. 拱形板II型（P04）在回归里跑，结果标明“不算通过的零件”。</td><td><span class="b ok">到了</span></td><td>拱形板II型已在回归里跑，并标明是不算通过的零件（交回单 R0025）。它在标准制造链上第一步通过，第二步有 24 个面判不出来，后四步没执行；带补充方法的结果还没有。</td></tr>
+<tr><td>5. 半环（P17）在回归里跑，照实登记跑到哪一步、卡在哪；它通过与否不是这一阶段的过关条件。</td><td><span class="b ok">到了</span></td><td>半环已照实登记：第一步在准备阶段就判为不支持（缺够半径、够伸长的立铣刀，三处空间圆边的数控程序生成没有开发），后一步因前一步没过没有执行，与历史记录一致，第二轮与第一轮相同（交回单 R0025、R0030）。</td></tr>
+<tr><td>6. 上面各件逐步的结论和集中整理之前的记录一致；不一致的逐条写明原因。</td><td><span class="b bad">卡住</span></td><td>六件 23 步里 13 步与集中整理之前的记录一致，10 步不一致；不一致的原因都写明并经评审核过，全部是没带补充方法（2 步是比对时直接判不出，8 步是被前一步挡住）。这 10 步要等补充方法恢复后重跑才算对上（对照表见交回单 R0025，评审单 V0024）。</td></tr>
+<tr><td>7. 同样的输入跑两遍，汇总和数控程序的 SHA-256 一致。</td><td><span class="b near">基本到了</span></td><td>开发的判断是“标准制造链上基本到了，差一个尾巴”：六件在一条命令里重跑，23 步的结论、重合度原值、数控程序 SHA-256 与上一轮全部相同，不设容差（交回单 R0030）。尾巴是汇总里每件的输出目录总字节数六件都不同，对比工具的总结论因此是不一致；原因只查到一部分（输出文件里写了输出目录的绝对路径），经过两批还没有收掉（汇合判断 11-23 16:24）。带补充方法的两轮对比还没做。</td></tr>
+<tr><td>8. 完整回归是一条命令，跑完给出逐件逐步的“通过 / 不通过”汇总，已合并进 `heimdall` 分支。</td><td><span class="b near">基本到了</span></td><td>标准制造链到了：六件在一条命令里跑完并给出逐件逐步汇总，驱动脚本和两轮对比工具已合并进主线（交回单 R0023、R0030）；带补充方法的跑法还没有。</td></tr>
+<tr><td>9. 现有各门（G0 到 G4）保持通过；测试在 51 个已知失败之外不新增失败。</td><td><span class="b near">基本到了</span></td><td>开发的判断是“到了大半”：全量测试 919 项，失败 45 项全部在 51 个已知失败里，新增失败 0（交回单 R0031）；G0、G1、G2 和 G3 的入口共 11 个全部通过（交回单 R0032）。G4 的五个阶段没有跑成：准备做成了，控制阶段启动时被执行环境的隔离规则拦住，计算没有开始，已照实登记进主线（交回单 R0038、R0040）。</td></tr>
+<tr><td>10. 数控程序、加工仿真、生产批准状态保持 false；判据和已封存证据没有改动。</td><td><span class="b near">基本到了</span></td><td>每一批的改动范围评审都核过，没有改判据、计划、期望表、各门和封存证据，汇总里生产批准状态为 false（评审单 V0022 到 V0025、V0029 到 V0031、V0034、V0037、V0038）。开发写明阶段收尾时还要整体再核一次，这一次还没做。</td></tr>
+</table>
+</div></div>
+<div class="node"><div class="card"><div class="when">第 B0001 批　排出 11-22 23:11　人批准 11-23 09:33　做完 11-23 09:51</div><h3>查清完整链为什么启动不了，并把几种修法实际试一遍（只试，不发布、不改主线）</h3><div class="sub">查实引擎构建清单 16 条里只有构建脚本一条对不上，重新编译引擎在编译之前就退出；试出第三种做法（保留原引擎、另存一份构建清单），用它把固定块支承板I型三个工步跑通，重合度 0.99955、0.99956、0.99952，与集中整理前的记录一致（交回单 R0022）。</div><div class="tasks">
+<div class="task"><span class="b ok">通过</span><span class="t">T0019　查清并验证：怎样让含数控程序生成和加工仿真的完整链在现行源码上重新启动（引擎构建清单和现行构建脚本对不上）</span><span class="m">17 分钟　证据 R0022</span></div>
+</div></div></div>
+<div class="node verdict"><div class="card"><div class="when">汇合判断　11-23 09:55　<span class="b run">没到，接着做下一批</span></div><details><summary>对照过关标准逐条的判断（原文）</summary><pre class="note">这一批没有挂阶段（第一个阶段的阶段单还没记进系统），按批次计划里写的“做完是什么样”逐项判断，证据都是 T0019 的交回单 R0022、评审单 V0021（通过）和报告 evidence/R0022/00-engine-build-rebind.md。
+1. 完整链入口要校验的每条绑定现在过不过：到了。步进状态引擎构建清单 16 条里 15 条通过，只有构建脚本 build_step.py 一条摘要不符（归档的是旧版，现行脚本因包改名差两行导入语句）；资源清单通过。补充方法这条线缺得多：探针构建清单 26 条里 2 条摘要不符、7 条缺文件（含探针二进制），资格记录在读旧文件时缺文件。
+2. 用现行脚本重建的引擎二进制和归档的是否逐字节一致：没有得到答案，这本身是结论。现行步进状态构建脚本和探针构建脚本各试一次，都在编译之前退出（缺检查点里的编译命令回执，一个源文件在仓库内的路径也没有），没有新二进制可比。重建不是改两行就能成，报告估 2 到 4 个工作日。
+3. 两种修法各要改什么、要不要重新核验：到了，并多出第三种。重建并发布（2 到 4 个工作日）；在迁址配置里登记旧脚本原像（现有规则不能直接登记，要改迁址规则、封存配置链和克隆准备命令的校验值，1 到 2 个工作日）；另存一份步进状态构建清单（16 个摘要一个不变，只把构建脚本那一条指到归档里的旧脚本，引擎二进制还是原来那一个，不动任何封存配置，半天到一天）。
+4. 固定块支承板I型（P09）越过这一步之后实际跑到了哪：到了。用第三种做法，不带补充方法配置的标准制造链 7 分钟跑完、退出 0，三个工步都生成了数控程序、真仿真、结论 passed（IoU 0.99955、0.99956、0.99952），和集中整理前的三条记录一致；末步和原 CAD 比对 passed，整件要求汇总 indeterminate。带历史补充方法配置的那次在资格校验处退出。
+离目标：完整链第一次在现行源码上跑通了一件，但只在执行者副本里、清单放在临时位置，没进主线；其余五件没跑；补充方法（登记范围是拱形板II型（P04）和拱形肋板II型（P05））没恢复，这两件不带补充方法能不能过还不知道。
+接着做：下一批把这份清单放到稳定位置（要人点头）、重派完整回归重做之一，再把其余五件在标准制造链上真跑一遍，看哪些工步离不开补充方法。</pre></details></div></div>
+<div class="node"><div class="card"><div class="when">第 B0002 批　排出 11-23 09:59　人批准 11-23 10:10　做完 11-23 11:47</div><h3>把“保留原引擎、另存一份构建清单”的做法放进主线，六件零件在现行源码上全部真跑一遍</h3><div class="sub">三件固定块支承板九步全部通过；拱形肋板II型和拱形板II型都只过了第一步，从第二步起离不开补充方法；半环第一步在准备阶段判为不支持。六件 23 步与历史对照，13 步一致，10 步不一致，原因全部是没带补充方法（交回单 R0023、R0024、R0025）。</div><div class="tasks">
+<div class="task"><span class="b ok">通过</span><span class="t">T0020　完整回归重做之一（重派）：把保留原引擎的步进状态构建清单放进仓库，完整回归驱动脚本改用它，并用固定块支承板I型（P09）真跑一遍整条链</span><span class="m">14 分钟　提交 c28542352b　证据 R0023</span></div>
+<div class="task"><span class="b ok">通过</span><span class="t">T0021　完整回归重做之二：固定块支承板II型（P10）、固定块支承板III型（P11）、拱形肋板II型（P05）在标准制造链上真跑一遍并登记</span><span class="m">51 分钟　提交 31b889828f　证据 R0024</span></div>
+<div class="task"><span class="b ok">通过</span><span class="t">T0022　完整回归重做之三：拱形板II型（P04）、半环（P17）在标准制造链上真跑一遍并登记，汇成六件 23 步和历史的对照表</span><span class="m">31 分钟　提交 ddae477216　证据 R0025</span></div>
+</div></div></div>
+<div class="node verdict"><div class="card"><div class="when">汇合判断　11-23 11:49　<span class="b run">没到，接着做下一批</span></div><details><summary>对照过关标准逐条的判断（原文）</summary><pre class="note">这一批建的时候阶段单还没记进系统，所以没挂阶段；阶段 M0001 已在 11-23 11:13 记上，这里按它的十条过关标准逐条判断。证据：交回单 R0023（任务 T0020，评审 V0022）、R0024（任务 T0021，评审 V0023）、R0025（任务 T0022，评审 V0024），三张都已合并进主线（c285423、31b8898、ddae477）。
+1. 完整链入口能启动、三种校验在主副本和执行者副本都通过：到了一半。步进状态引擎构建清单 16 条在执行者副本和主副本（只读核对）都是 16/16 通过，资源清单通过（R0023 自检第 2、5 条）。补充方法配置没过：资格校验第一步就缺文件（R0023 环境问题第 2 条；R0022 报告：探针构建清单 26 条里 2 条摘要不符、7 条缺文件，含探针二进制）。
+2. 拱形肋板II型（P05）从毛坯连续真仿真走到成品：没到。六步里只有 SU1-ST1 通过；SU1-ST2 真仿真做了、IoU 0.99907 和历史相同，但比对有 10 个圆柱面判不出来，结论是 unsupported；后四步因为前一步没过而没有执行（R0024）。这 10 个面和历史上靠补充方法判过的面逐个相同，所以这一条离不开补充方法。
+3. 固定块支承板I型、II型、III型（P09、P10、P11）阶段一：到了。九步都是同一次运行里从毛坯连续真仿真、结论 passed，IoU 0.9993 到 0.9997，没有按目标形状接续的工步；整件登记为只算阶段一（R0023 自检第 6 条，R0024 自检第 5 条）。
+4. 拱形板II型（P04）在回归里跑并标明不算通过的零件：登记到了（R0025 自检第 5 条）。它这次的结果和拱形肋板II型（P05）同样：首步通过，SU1-ST2 有 24 个面判不出来，后四步没执行。
+5. 半环（P17）照实登记：到了。SU1-ST1 在准备阶段就是 unsupported（缺够半径、够伸长的立铣刀，三处空间圆边的数控程序生成没有开发），SU2-ST2 因前一步没过没有执行，和历史记录一致（R0025，评审 V0024 第 5 条）。
+6. 逐步结论和集中整理之前一致、不一致的写明原因：23 步里 13 步一致，10 步不一致，原因都写明并核过，全部是没带补充方法（2 步是比对时直接判不出，8 步是被前一步挡住），别的原因 0 步（对照表 docs/dev/full-regression/standard-chain-vs-history.md，评审 V0024 第 3、4 条）。原因写明了，但这 10 步要等补充方法恢复后重跑才算真正对上。另外被挡住的 8 步在标准制造链上自己能不能过没有测到。
+7. 同样输入跑两遍 SHA-256 一致：没做。只有旁证：固定块支承板I型（P09）五份合并数控程序的 SHA-256 在 T0019 和 T0020 两次运行里相同（R0023 自检第 7 条）。
+8. 完整回归是一条命令、给出逐件逐步汇总、已合并：基本到了。驱动脚本 tools/run_full_regression.py 和期望表已在主线，一条命令可以指定任意几件；但六件还没有在一次命令里一起跑过，带补充方法的跑法也还没有。
+9. 各门（G0 到 G4）保持通过、测试不新增失败：没验。只跑过相关的 43 项测试（35 过，8 项在 51 个已知失败里，R0023 自检第 8 条），全量测试和各门在现行主线上没有重跑。
+10. 生产批准状态保持 false、判据和封存证据没改：三张的改动范围都核过，没有改判据、计划、期望表、资源库（V0022 到 V0024）；汇总里 manufacturing_approval 为 false。阶段收尾时还要整体再核一次。
+离目标：十条里第 3、4、5 条到了，第 8 条基本到了；第 1、2、6 条都卡在同一件事上——补充方法没恢复；第 7、9 条还没开始。
+接着做：下一批分两路。一路不用等人：验同样输入跑两遍是否一致（先做三件固定块支承板）、在现行主线上重跑各门和全量测试。另一路是恢复补充方法，它缺探针引擎的二进制，找不回就要重新编译并重做资格核验，属于发布新构建，按授权范围要人先定，放进批次计划里请人定。</pre></details></div></div>
+<div class="node"><div class="card"><div class="when">第 B0003 批　排出 11-23 11:55　人批准 11-23 12:51　做完 11-23 15:04</div><h3>查清补充方法怎样恢复，同时验证重复运行是否一致、测试和各门有没有退步</h3><div class="sub">探针引擎原件找到，与历史清单逐字节相同，但历史资格记录引用的文件有 11 条在本机找不到原件，要重做资格核验（交回单 R0026）。六件重跑一轮，结论、重合度、数控程序 SHA-256 与上一轮全部相同，只有输出目录总字节数不同（交回单 R0030）。全量测试新增失败 0；G0 到 G3 的入口共 11 个全部通过（交回单 R0031、R0032）。</div><div class="tasks">
+<div class="task"><span class="b ok">通过</span><span class="t">T0023　查清并试做：恢复补充方法要补齐哪些文件，探针引擎能不能在执行者副本里重新编译出来（只试，不发布）</span><span class="m">16 分钟　证据 R0026</span></div>
+<div class="task"><span class="b ok">通过</span><span class="t">T0024　六件在一条命令里把标准制造链再跑一遍，和上一轮逐步对比结论、IoU 和数控程序的 SHA-256（验“同样的输入跑两遍结果一致”）</span><span class="m">退回 3 次　94 分钟　提交 dd2289347f　证据 R0030</span></div>
+<div class="task"><span class="b ok">通过</span><span class="t">T0025　在现行主线上把全量测试跑一遍，和已知失败清单逐项对比，登记有没有新增失败</span><span class="m">106 分钟　提交 4cc788efba　证据 R0031</span></div>
+<div class="task"><span class="b ok">通过</span><span class="t">T0026　在现行主线上重跑 G0、G1、G2 和 G3 的八个入口，逐个和集中整理时封存的结果对照并登记</span><span class="m">132 分钟　提交 21b2a6a8ea　证据 R0032</span></div>
+</div></div></div>
+<div class="node verdict"><div class="card"><div class="when">汇合判断　11-23 15:09　<span class="b run">没到，接着做下一批</span></div><details><summary>对照过关标准逐条的判断（原文）</summary><pre class="note">对照阶段 M0001 的十条过关标准逐条判断。证据：交回单 R0026（任务 T0023，评审 V0025，报告 evidence/R0026/00-supplementary-recovery.md）、R0030（任务 T0024，评审 V0029，已合并 dd22893）、R0031（任务 T0025，评审 V0030，已合并 4cc788e）、R0032（任务 T0026，评审 V0031，已合并 21b2a6a）。
+1. 完整链入口三种校验在主副本和执行者副本都通过：还是到了一半，但路查清了。引擎构建清单 16/16、资源清单通过（上一批已到）。补充方法配置仍过不了，R0026 查清了 29 条缺件：17 条能从本机别处原样找回，其中探针引擎二进制在仓库外的执行工作线目录里找到了原件，SHA-256 和历史清单的期望值相同；另在执行者副本里重新编译了一次，步进状态引擎和探针都和原件逐字节一致；两个零误差对照共 1,492 个点的查询结果和历史逐值相同。但历史预注册的 19 条里有 11 条在本机找不到原件（8 条要重做、3 条没查清），所以历史资格记录不能原样沿用，要重做资格核验。
+2. 拱形肋板II型（P05）从毛坯连续真仿真走到成品：没到，等补充方法（同上一批）。
+3. 固定块支承板I型、II型、III型（P09、P10、P11）阶段一：到了，并且第二轮重跑九步结论、IoU、数控程序 SHA-256 和第一轮完全相同（R0030）。
+4. 拱形板II型（P04）在回归里跑并标明不算通过的零件：登记到了；带补充方法的结果还没有。
+5. 半环（P17）照实登记：到了，第二轮和第一轮相同。
+6. 逐步结论和集中整理之前一致：没变，23 步里 13 步一致，10 步等补充方法恢复后重跑。
+7. 同样输入跑两遍结果一致：标准制造链上基本到了，差一个尾巴。六件在一条命令里重跑（R0030），和上一轮比：23 步的结论、IoU 原值、数控程序 SHA-256、是否真仿真、是否从毛坯连续全部相同，不设容差；拱形肋板II型（P05）和拱形板II型（P04）第二步没记进汇总的 8 份数控程序也逐份相同。尾巴是汇总里每件的 output_bytes（输出目录总字节数）六件都不同，这个字段不在事先报给人的“去掉的字段”里，所以对比工具的总结论是不一致；原因只查到一部分（输出文件里写了输出目录的绝对路径），没有逐文件查完。带补充方法的两轮对比还没做。
+8. 完整回归是一条命令、给出逐件逐步汇总、已合并：标准制造链到了（六件一条命令跑完，对比工具 tools/compare_full_regression_runs.py 也已在主线）；带补充方法的跑法还没有。
+9. 各门保持通过、测试不新增失败：到了大半。全量测试 919 项，失败 45 项全部在 51 个已知失败里，新增失败 0，另有 6 个已知失败这次通过了（R0031）。G0、G1、G2 和 G3 的八个入口共 11 个全部通过：10 个和封存结果逐字节相同或按原判据逐项成立，G3 的第 1.1 版控制入口只有已登记的 20 个计时值不同（R0032）。G4 的五个阶段还没重跑。
+10. 生产批准状态保持 false、判据和封存证据没改：四张的改动范围都核过（V0025、V0029、V0030、V0031），没有改判据、计划、期望表、门和资源库；T0023 没有提交、没有发布，试编出的二进制只在副本输出目录里。阶段收尾时还要整体再核一次。
+离目标：第 3、4、5 条到了，第 7、8、9 条在标准制造链上基本到了；第 1、2、6 条仍卡在补充方法，但已经从“不知道能不能恢复”变成“探针有原件，只差重做资格核验”。
+接着做：下一批三张。一、在执行者副本里把重做资格核验试通（14 个资格用例重跑，再带新配置把拱形肋板II型（P05）六步连续跑一遍），同时查清新资格记录怎样才能跨副本使用——资格记录按绝对路径绑定源码，在一个副本里做出来的记录换个副本就对不上，这是正式落位前必须先定的；只试，不发布。二、重跑 G4 的五个阶段。三、把两轮运行的输出逐文件比一遍，查清 output_bytes 为什么不同。方向和 output_bytes 的口径放进批次计划请人定。</pre></details></div></div>
+<div class="node"><div class="card"><div class="when">第 B0004 批　排出 11-23 15:12　人批准 11-23 15:13　做完 11-23 16:01</div><h3>在执行者副本里试着重做补充方法的资格核验，重跑 G4，查输出目录总字节数为什么两轮不同</h3><div class="sub">三张任务都没有通过、都拆小重做，但留下了可用的事实：14 个资格用例与历史逐项一致，带新配置跑拱形肋板II型时查出两处读路径缺陷（交回单 R0035）；G4 被执行环境的隔离规则拦住，计算没有开始（交回单 R0038）；两轮的原始输出目录已被清理，六件里 0 件能完整比，从归档能确认的部分没有发现制造结果不同的证据，但下不了全部相同的结论（交回单 R0039）。</div><div class="tasks">
+<div class="task"><span class="b idle">拆开重做</span><span class="t">T0027　试通：用找回的原探针引擎在执行者副本里重做补充方法的 14 个资格用例，再带新资格配置把拱形肋板II型（P05）六步连续跑一遍，并查清新资格记录怎样跨副本使用（只试，不发布，不提交）</span><span class="m">拆成 T0030　证据 R0035</span></div>
+<div class="task"><span class="b idle">拆开重做</span><span class="t">T0028　在现行主线上重跑 G4 的五个阶段（控制、五件、比较、全产物、逐行归因），逐个和集中整理时封存的结果对照并登记</span><span class="m">拆成 T0031、T0032　证据 R0038</span></div>
+<div class="task"><span class="b idle">拆开重做</span><span class="t">T0029　把六件标准制造链两轮运行的输出目录逐文件比一遍，查清汇总里每件的输出目录总字节数（`output_bytes`）为什么两轮不同</span><span class="m">退回 5 次　拆成 T0033　证据 R0039</span></div>
+</div></div></div>
+<div class="node verdict"><div class="card"><div class="when">汇合判断　11-23 16:02　<span class="b run">没到，接着做下一批</span></div><details><summary>对照过关标准逐条的判断（原文）</summary><pre class="note">对照阶段 M0001 的十条过关标准逐条判断。这一批三张都没有通过、都拆分了，但各自留下了可用的事实。证据：交回单 R0035（任务 T0027，评审 V0034）、R0038（任务 T0028，评审 V0037）、R0039（任务 T0029，评审 V0038）。
+1. 完整链入口三种校验在主副本和执行者副本都通过：还是到了一半。引擎构建清单、资源清单已通过（前两批）。补充方法这条线在试验里走通了九成：探针构建清单 26 条全部核过，14 个资格用例和历史逐项一致（合计 437 秒），资格门通过（R0035）；但只是执行者副本里的试验，没有正式落位。另查实资格记录按绝对路径绑定，换个副本用不了，每个副本要各自重做一遍资格。
+2. 拱形肋板II型（P05）从毛坯连续真仿真走到成品：没到。带新资格配置跑时第一步真仿真做完、原方法 11 个面都过，但补充查询准备阶段退出，原因查实是集中整理搬文件后源码里两处读路径没跟上（R0035，V0034 第 5 条）。已拆出任务 T0030 在副本里试修并接着跑，在做。
+3. 固定块支承板I型、II型、III型（P09、P10、P11）阶段一：到了（前两批，没有变化）。
+4. 拱形板II型（P04）在回归里跑并标明不算通过的零件：登记到了；带补充方法的结果等任务 T0030。
+5. 半环（P17）照实登记：到了（没有变化）。
+6. 逐步结论和集中整理之前一致：没变，23 步里 13 步一致，10 步等补充方法恢复后重跑。
+7. 同样输入跑两遍结果一致：标准制造链上结论、IoU、数控程序 SHA-256 全部相同（上一批）；输出目录总字节数这个尾巴没有收掉。任务 T0029 发现两轮的原始输出目录都已随任务结束被清理，六件里 0 件能完整比；从归档能确认的是：重合的 26 个文件 10 个逐字节相同、16 个的字节差全部来自绝对路径长度，66 个数控程序摘要、23 步比对值、10 个材料表面网格摘要两轮相同，没有发现制造结果不同的证据，但下不了全部相同的结论（R0039，V0038 第 2、3 条）。它的对比工具按文件类型逐类枚举，评审五次退回，已改思路拆成任务 T0033（不认文件类型的通用逐文件对比工具，在做）；真正查清要现跑两轮，已建任务 T0034 并作为批次 B0005 发给人批。
+8. 完整回归是一条命令、给出逐件逐步汇总、已合并：标准制造链到了；带补充方法的跑法还没有（没有变化）。
+9. 各门保持通过、测试不新增失败：G0 到 G3 和全量测试已到（上一批）；G4 没有跑成。准备做成了（运行时冻结成功，门环境 7,113 项、原参考 865 项绑定摘要重算一致），但控制阶段启动时执行者沙箱不让连副本的 tmux socket，计算没有开始，后四个阶段没有执行，已照实登记（R0038，V0037 核实登记属实）。换执行环境的事调度已发卡片 C0020 请人定；任务 T0031 把登记落主线，任务 T0032 真跑、等 C0020 的答复。
+10. 生产批准状态保持 false、判据和封存证据没改：三张的改动范围评审都核过，没有改门、判据、封存证据（V0034、V0037 第 6 条、V0038 第 6 条）；T0027 没有提交、没有发布，T0028、T0029 的提交没有进主线。阶段收尾时还要整体再核一次。
+离目标：和上一批相比，第 1、2 条从“资格能不能重做不知道”推进到“资格重做成了，只差两处读路径缺陷”；第 7、9 条各自的尾巴都没收掉，原因都不在零件和判据上，一个是原始目录被清理、一个是执行环境。
+接着做：在途的四张——任务 T0030（试修并带补充方法跑拱形肋板II型（P05）、拱形板II型（P04））、T0031（G4 登记落主线）、T0032（G4 真跑，等人答 C0020）、T0033（通用对比工具）；批次 B0005 的任务 T0034（四件等长目录名跑两轮并逐文件比）等人批。任务 T0030 出结果后，下一批请人批补充方法正式落位（补丁进主线、资格记录的跨副本做法、带补充方法六件跑两遍）。</pre></details></div></div>
+<div class="node"><div class="card"><div class="when">第 B0005 批　排出 11-23 16:01　人批准 11-23 16:02　做完 11-23 16:24</div><h3>把四件零件的标准制造链重新各跑两轮，逐文件比对两轮的完整输出目录</h3><div class="sub">唯一的任务没有执行就取消了：它依赖的逐文件对比工具经评审两轮退回后也取消了。这一批没有带来新的证据，十条过关标准的状态与上一批相同。</div><div class="tasks">
+<div class="task"><span class="b idle">取消</span><span class="t">T0034　四件标准制造链在同一个副本里用等长的输出目录名各跑两轮，两轮的完整输出目录逐文件比一遍，查清每件的输出目录总字节数（`output_bytes`）两轮同不同、差在哪些文件、有没有制造结果本身的差异</span><span class="m"></span></div>
+</div></div></div>
+<div class="node verdict"><div class="card"><div class="when">汇合判断　11-23 16:24　<span class="b run">没到，接着做下一批</span></div><details><summary>对照过关标准逐条的判断（原文）</summary><pre class="note">这一批唯一的任务 T0034（四件标准制造链跑两轮并逐文件比）没有执行就取消了，所以这一批没有带来新的证据，十条过关标准的状态和批次 B0004 的汇合判断相同。取消的原因：它依赖的任务 T0033（通用目录逐文件对比工具）跳数到了上限 8/8，评审 V0040、V0041 两轮退回的都是真实输出里没有的极端输入，T0033 已取消；T0034 的依赖随之对不上，由内容相同、依赖改成 T0036 的任务 T0037 接替。
+逐条：
+1. 完整链入口三种校验：没变，到了一半。引擎构建清单、资源清单通过（R0023）；补充方法在执行者副本里试通到资格门（R0035），没有正式落位，等任务 T0030。
+2. 拱形肋板II型（P05）从毛坯连续真仿真走到成品：没到，等任务 T0030（在做）。
+3. 固定块支承板I型、II型、III型（P09、P10、P11）阶段一：到了（R0023、R0024、R0030）。
+4. 拱形板II型（P04）在回归里跑并标明不算通过的零件：登记到了（R0025）；带补充方法的结果等任务 T0030。
+5. 半环（P17）照实登记：到了（R0025、R0030）。
+6. 逐步结论和集中整理之前一致：没变，23 步里 13 步一致，10 步等补充方法恢复后重跑。
+7. 同样输入跑两遍结果一致：没变。标准制造链上结论、IoU、数控程序 SHA-256 全部相同（R0030）；输出目录总字节数这个尾巴没有收掉，这一批本来要收它，没跑成。对比工具已有一版评审核实过核心保证（任何字节差异都会被列出，V0041 第 1、3、4、5 条），没有合并。
+8. 完整回归是一条命令：标准制造链到了；带补充方法的跑法还没有。
+9. 各门保持通过、测试不新增失败：G0 到 G3 和全量测试已到（R0031、R0032）；G4 没跑成的登记已落主线（任务 T0031，R0040，合并 b76c166）；G4 真跑是任务 T0032，人在卡片 C0020 选了用另一种执行者小试一次，还没派。
+10. 生产批准状态保持 false、判据和封存证据没改：这一批没有任何提交，没有变化；阶段收尾时整体再核一次。
+离目标：和上一批相比没有前进，也没有后退。
+接着做：批次 B0006 已发给人批（卡片 C0023）——任务 T0036 把对比工具收尾合并（适用范围写死、补三处、其余极端输入列成已知限制，因为跳数到上限所以请人点头），任务 T0037 接着跑四件两轮并逐文件比。在途的还有任务 T0030、T0032。</pre></details></div></div>
+<div class="node"><div class="card"><div class="when">第 B0006 批　排出 11-23 16:24　人批准 11-23 16:25</div><h3>把目录逐文件对比工具的适用范围定死、补三处后合并，再接着做四件零件两轮运行的逐文件比对</h3><div class="sub">正在做：对比工具的收尾在评审中（交回单 R0043，还没有评审结论），四件两轮比对的任务还没有派出。</div><div class="tasks">
+<div class="task"><span class="b warn">返工中</span><span class="t">T0036　通用目录逐文件对比工具收尾：在已评审过的版本上补三处（写不出完整报告一律退出 2、占位符按 JSON 解码后的内容查冲突、帮助里列出已知限制），定死适用范围后合并进主线</span><span class="m">退回 1 次　证据 R0043</span></div>
+<div class="task"><span class="b wait">排队</span><span class="t">T0037　四件标准制造链在同一个副本里用等长的输出目录名各跑两轮，两轮的完整输出目录逐文件比一遍，查清每件的输出目录总字节数（`output_bytes`）两轮同不同、差在哪些文件、有没有制造结果本身的差异</span><span class="m"></span></div>
+</div></div></div>
+</div>
+<div class="card"><h3>卡在哪</h3><ul><li>补充比对方法（只对登记过的圆柱面生效的一种补充比对方法）没有恢复，过关标准第 1、2、6 条都卡在这里。历史资格记录引用的文件有 11 条在本机找不到原件，不能原样沿用，只能重做资格核验；重做在执行者副本里已试到资格门通过，但带新配置跑拱形肋板II型时在补充查询准备阶段退出，原因是集中整理搬文件后源码里两处读路径没有跟上，正在副本里试修（交回单 R0026、R0035）。</li><li>资格记录按绝对路径绑定源码，在一个副本里做出来的记录换一个副本就对不上，每个副本要各自重做一遍资格；正式落位的做法还没有定（交回单 R0035）。</li><li>“同样的输入跑两遍结果一致”还差输出目录总字节数这一项没有查清：前两轮的原始输出目录已随任务结束被清理，要重新跑两轮才能逐文件比；用来比的工具还在评审中。</li><li>G4 的五个阶段没有跑成：控制阶段启动时执行环境不让连接所需的会话接口，计算没有开始。用户已选定先用另一种执行者小试一次，这张任务还没有派出。</li></ul></div>
+<div class="card"><h3>风险</h3><ul><li>同一处反复卡住：目录逐文件对比工具从第一张任务起评审已经退回 7 次，任务链的接续次数到了上限 8，按规矩停下来请用户点头后才继续；过关标准第 7 条的这个尾巴经过两批没有收掉。</li><li>这一期评审退回 21 次、通过 20 次，退回和通过的次数接近。</li><li>运行的原始输出目录会随任务结束被系统清理，事后想补做对比时原件已经不在（这一期六件里 0 件能完整比），要靠重跑。</li><li>执行环境的限制两次挡住了工作：G4 重跑被隔离规则拦住；资格记录按绝对路径绑定，不能跨副本使用。</li><li>外部材料没有到：这一期向用户要材料的卡片里，有两张的答复是“没有这个材料”（已批准的引擎构建及配套配置、五件新增车削件的补充材料）；产品档案记着专家答复只回来第一批的 44 条，第二、三、四批共 157 问还没有答复。</li></ul></div>
+<div class="card"><h3>下一步</h3><ul><li>在执行者副本里修掉补充方法准备阶段的两处读路径缺陷，重做 14 个资格用例，再带新资格配置把拱形肋板II型和拱形板II型各六步连续跑一遍（正在做，只试，不提交、不发布）。</li><li>上面这件出结果后，开发打算下一批请用户批补充方法正式落位：补丁进主线、资格记录的跨副本做法、带补充方法六件跑两遍。</li><li>目录逐文件对比工具收尾合并后，把四件零件的标准制造链在同一个副本里各跑两轮，逐文件比完整输出目录，查清输出目录总字节数两轮同不同、差在哪些文件。</li><li>换一种执行者小试 G4 的控制阶段，能连上就把五个阶段真跑一遍，把主线里“没跑成”的登记换成实际结果。</li><li>阶段收尾时整体再核一次生产批准状态、判据和封存证据没有改动。</li></ul></div>
+<div class="card"><h3>等人定的事</h3><ul><li>截至 11-23 16:35，系统里没有等用户答复的卡片；这一期用户在卡片上定了 13 件事，都已答复。</li><li>补充方法正式落位涉及的做法，开发打算在试跑出结果后放进下一批的批次计划请用户定，现在还没有发出。</li><li>产品档案里记着要等人去要的外部输入：客户配做值、受控版图纸、正确模型。</li></ul></div>
+<h2>二、运行成果：仿真验收</h2>
+<div class="sub">每个零件按工艺卡片的工序一步步做：生成数控程序 → 仿真引擎真实切削 → 和这一步的目标形状逐面比对。下面先是总表，再是每一步的加工过程重放。</div>
+<div class="card"><table class="mx"><tr><th>零件</th><th>第 1 步</th><th>第 2 步</th><th>第 3 步</th><th>第 4 步</th><th>第 5 步</th><th>第 6 步</th></tr>
+<tr><td><b>拱形板Ⅱ型</b><br><span class="sub">CHL-RVI-DR32G10A　证据 R0025</span></td>
+<td class="c ok" onclick="HDViewer.selectPart('P04','SU1-ST1');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">通过<small>工序 10-1　重合度 0.9998</small></td>
+<td class="c warn" onclick="HDViewer.selectPart('P04','SU1-ST2');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">判不出<small>工序 10-2　重合度 0.9995</small></td>
+<td class="c idle" onclick="HDViewer.selectPart('P04','SU1-ST3');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">没执行<small>工序 10-3　</small></td>
+<td class="c idle" onclick="HDViewer.selectPart('P04','SU2-ST4');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">没执行<small>工序 10-4　</small></td>
+<td class="c idle" onclick="HDViewer.selectPart('P04','SU3-ST5');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">没执行<small>工序 15-1　</small></td>
+<td class="c idle" onclick="HDViewer.selectPart('P04','SU4-ST6');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">没执行<small>工序 15-2　</small></td>
+</tr>
+<tr><td><b>拱形肋板Ⅱ型</b><br><span class="sub">CHL-RVI-DR32G20A　证据 R0024</span></td>
+<td class="c ok" onclick="HDViewer.selectPart('P05','SU1-ST1');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">通过<small>工序 10-1　重合度 0.9991</small></td>
+<td class="c warn" onclick="HDViewer.selectPart('P05','SU1-ST2');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">判不出<small>工序 10-2　重合度 0.9991</small></td>
+<td class="c idle" onclick="HDViewer.selectPart('P05','SU1-ST3');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">没执行<small>工序 10-3　</small></td>
+<td class="c idle" onclick="HDViewer.selectPart('P05','SU2-ST4');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">没执行<small>工序 10-4　</small></td>
+<td class="c idle" onclick="HDViewer.selectPart('P05','SU3-ST5');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">没执行<small>工序 15-1　</small></td>
+<td class="c idle" onclick="HDViewer.selectPart('P05','SU4-ST6');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">没执行<small>工序 15-2　</small></td>
+</tr>
+<tr><td><b>固定块支承板Ⅱ型</b><br><span class="sub">CHL-RVI-DR3J000A　证据 R0024</span></td>
+<td class="c ok" onclick="HDViewer.selectPart('P10','SU1-ST1');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">通过<small>工序 10-1　重合度 0.9997</small></td>
+<td class="c ok" onclick="HDViewer.selectPart('P10','SU2-ST2');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">通过<small>工序 10-1　重合度 0.9994</small></td>
+<td class="c ok" onclick="HDViewer.selectPart('P10','SU3-ST3');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">通过<small>工序 10-2　重合度 0.9993</small></td>
+<td></td><td></td><td></td></tr>
+<tr><td><b>固定块支承板Ⅲ型</b><br><span class="sub">CHL-RVI-DR3K000A　证据 R0024</span></td>
+<td class="c ok" onclick="HDViewer.selectPart('P11','SU1-ST1');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">通过<small>工序 10-1　重合度 0.9996</small></td>
+<td class="c ok" onclick="HDViewer.selectPart('P11','SU2-ST2');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">通过<small>工序 10-1　重合度 0.9993</small></td>
+<td class="c ok" onclick="HDViewer.selectPart('P11','SU3-ST3');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">通过<small>工序 10-2　重合度 0.9993</small></td>
+<td></td><td></td><td></td></tr>
+<tr><td><b>半环</b><br><span class="sub">CHL-RVI-DR3F000A　证据 R0025</span></td>
+<td class="c warn" onclick="HDViewer.selectPart('P17','SU1-ST1');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">判不出<small>工序 10-1　</small></td>
+<td class="c idle" onclick="HDViewer.selectPart('P17','SU2-ST2');document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">没执行<small>工序 10-2　</small></td>
+<td></td><td></td><td></td><td></td></tr>
+</table><p class="sub">点一格看这一步的加工过程。“通过”指这一步真实仿真后逐面比对全部符合；“判不出”指有的面现有比对方法不支持；“没执行”指前一步没通过，系统停下，不拿目标形状接着往下做。所有结论只表示软件仿真验收，不代表生产批准。</p></div>
+<div id="viewer"><div class="hdv-tabs" id="hdv-parts"></div><h3 id="hdv-part-title"></h3><div class="sub" id="hdv-part-meta"></div><div class="hdv"><div class="hdv-steps" id="hdv-steps"></div><div class="hdv-stage"><canvas id="hdv-canvas"></canvas><div class="hdv-bar"><button id="hdv-play">播放</button><button id="hdv-replay">从头放</button><select id="hdv-speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select><input type="range" id="hdv-scrub" min="0" max="1000" value="0"><span id="hdv-now"></span></div><div id="hdv-card"></div><dl id="hdv-facts"></dl><div id="hdv-note"></div></div></div><p class="sub">动画按那次运行里仿真引擎实际走的刀路重放，材料去除是简化显示（平底或锥形刀、高度图），用来看清每一步切了哪里；结论、重合度和逐面比对来自仿真引擎和比对程序，不是动画算出来的。可以拖动旋转、滚轮缩放。</p></div>
+<h2>三、这段时间由人决定的事</h2><div class="card"><table><tr><th style="width:96px">时间</th><th>问题</th><th style="width:34%">决定</th></tr>
+<tr><td>11-22 15:19</td><td>请 hub 汇总转询受控版本的 P30、P35 图纸及匹配卡，P27 的配做流转卡附表与 P28 的端口实测值，以及 P32 镀前、镀后尺寸的验收口径。<br><span class="sub">要材料，调度提出</span></td><td>不要写P30 P35这种简写 用全零件名称</td></tr>
+<tr><td>11-22 22:08</td><td>请确认 T0017 应使用哪组通过当前副本绑定校验的引擎构建及补充方法配置，以便继续运行固定块支承板I型（P09）？<br><span class="sub">提问，调度提出</span></td><td>A：提供当前副本可用的已批准构建和匹配输入</td></tr>
+<tr><td>11-22 22:09</td><td>落实 D0002，请提供已批准且适用于 T0017 副本的引擎构建清单、匹配的补充方法配置和资源清单，或提供副本正式绑定已修复的核验记录。<br><span class="sub">要材料，调度提出</span></td><td>没有这个材料</td></tr>
+<tr><td>11-22 23:14</td><td>T0017 选了 A，但“已批准的新构建”现在没人有，需要开一张开发任务<br><span class="sub">问题，调度提出</span></td><td>A：让开发新开一张任务，重新生成并核验和现行源码匹配的引擎构建（产物走发布流程，发布后选择文件和校验 SHA 怎么改再问你）；T0017 受阻等它</td></tr>
+<tr><td>11-22 23:14</td><td>五件新增车削件的补充材料（这张卡片可以直接回复上传文件，替换 C0005）：<br><span class="sub">要材料，开发提出</span></td><td>没有这个材料</td></tr>
+<tr><td>11-23 09:33</td><td>批次计划：完整回归重做的第一张任务（T0017）受阻：含加工仿真的完整链在入口校验引擎构建清单时就退出，集中整理之后没有一份能用的<br><span class="sub">批次计划，开发提出</span></td><td>同意，开始做</td></tr>
+<tr><td>11-23 09:35</td><td>T0019 排不上：重计算资源被受阻的 T0017 占着，互相等<br><span class="sub">问题，调度提出</span></td><td>A：取消 T0017（驱动脚本、测试、文档在分支 hd/T0017 上保留，不删）；T0019 立刻派出；T0019 出结论后由开发把完整回归重做之一作为新任务重派</td></tr>
+<tr><td>11-23 10:10</td><td>请你定一件事：同意用“保留原引擎、另存一份构建清单”的做法让完整链重新跑起来，并把这份清单放进代码仓库。同意这一批就是同意这件事（细节见“拿不准的”第 1 条）<br><span class="sub">批次计划，开发提出</span></td><td>同意，开始做</td></tr>
+<tr><td>11-23 12:51</td><td>这一批不需要你做大的决定，同意就可以开工；有两件小事请顺带看一眼（“拿不准的”第 1、2 条）。<br><span class="sub">批次计划，开发提出</span></td><td>同意，开始做</td></tr>
+<tr><td>11-23 15:13</td><td>请你定一件事：补充方法（只对登记过的圆柱面生效的那种补充比对方法）走“重做资格核验”这条路，不再等历史原件。同意这一批就是同意按这个方向试；这一批只在执行者副本<br><span class="sub">批次计划，开发提出</span></td><td>同意，开始做</td></tr>
+<tr><td>11-23 15:51</td><td>G4 真跑需要放宽执行者隔离（tmux socket），请你定<br><span class="sub">问题，调度提出</span></td><td>A：用 Claude Code 执行者试跑 G4 控制阶段（它的沙箱规则不同，先小试一次看能不能连 socket；不放宽任何配置，试不通再回到 B/C）</td></tr>
+<tr><td>11-23 16:02</td><td>请你批一件事：为了查清“两轮运行里每件的输出目录总字节数为什么不同”，要把四件零件的标准制造链重新各跑两轮（重计算约 40 分钟）。上一批（B0004）里我说这<br><span class="sub">批次计划，开发提出</span></td><td>同意，开始做</td></tr>
+<tr><td>11-23 16:25</td><td>请你定一件事：目录逐文件对比工具（用来逐文件比两轮制造链的输出目录）不再追极端输入，把它的适用范围写死、补三处小毛病后合并。同意这一批就是同意这个做法。<br><span class="sub">批次计划，开发提出</span></td><td>同意，开始做</td></tr>
+</table></div>
+<h2>四、新收的经验</h2><div class="card"><ul><li>第 1 条（lessons-coverage-review）：汇总在用工步时同时核对执行状态和处置</li><li>第 2 条（lessons-coverage-review）：仿真报告出现“第二层”时先定位实际判定</li><li>第 3 条（lessons-source-files）：枚举扫描件时排除同名的 AppleDouble 元数据</li><li>第 4 条（lessons-coverage-review）：判断现行能力时复核 README 中“本轮未做”的时间范围</li><li>第 5 条（lessons-regression-inputs）：重跑完整制造链前分别核对引擎绑定和补充方法资格</li><li>第 6 条（lessons-coverage-review）：通过数下降时沿前序依赖定位首个变化工步</li><li>第 7 条（lessons-source-files）：查找历史构建回执时核对 Git 对象和 bundle</li><li>第 8 条（lessons-regression-comparison）：交回重复运行对比前验证必比字段及原值精度</li></ul></div>
+<h2>读这份报告要知道的</h2><div class="card"><ul><li>“通过”只指软件仿真验收（真实仿真后和这一步的目标形状逐面比对符合），不是生产批准；数控程序、加工仿真和生产批准状态都保持 false。</li><li>这是第一期，时间段从 2026-11-22 正式启动算起，到 2026-11-23 16:35。十条过关标准的状态以开发 11-23 16:24 的汇合判断和它引用的交回单、评审单为准；之后还在做的任务没有结果，这里不作推断。</li><li>本期所有逐步结论都来自“标准制造链”，也就是不带补充方法配置的制造链；带补充方法的结果这一期一份也没有。</li><li>固定块支承板I型、II型、III型只算阶段一通过；阶段二等客户数值，整件不算通过。拱形板II型的原模型是中间状态，留在回归里但不算通过的零件。半环通过与否不是这一阶段的过关条件。</li><li>这个阶段只含主链已有的固定 Z 向三轴铣和第 1 版计划；车削、线割、多方向铣削和磨削在后面的阶段，这一期没有涉及。</li><li>没执行的工步不是失败：前一步没通过时系统停下，不拿目标形状接着做。</li><li>网页里按数控刀路重放的验收展示由程序生成，这一期包含拱形板II型、拱形肋板II型、固定块支承板II型、固定块支承板III型和半环，没有包含固定块支承板I型；程序没有给出没包含的原因。固定块支承板I型的结果见上面的文字和交回单 R0023、R0030。</li><li>11-22 当天还做了代码现状摸底、主仓库之外工作目录的盘点、20 件零件逐件到了哪一层的盘点、新增零件的筛查和专家答复 44 条的影响研究，这些任务不在批次里，都已通过评审，结论在产品档案里，本报告没有展开。</li></ul></div>
+<div class="foot">由 Heimdall 生成。同目录下 digest.md 是这段时间的完整摘要（文字版），digest.json 是给程序用的同一份内容。</div></div>
+<script src="vendor/three.min.js"></script><script src="vendor/OrbitControls.js"></script>
+<script src="data/P04.js"></script>
+<script src="data/P05.js"></script>
+<script src="data/P10.js"></script>
+<script src="data/P11.js"></script>
+<script src="data/P17.js"></script>
+<script src="viewer.js"></script><script>HDViewer.init({index:[{"id": "P04", "name": "拱形板Ⅱ型", "drawing_no": "CHL-RVI-DR32G10A", "report": "R0025", "steps": [{"id": "SU1-ST1", "status": "passed", "status_zh": "通过", "iou": 0.9997871357719321, "simulated": true, "continuous": true, "card_step": "10-1", "moves": 37}, {"id": "SU1-ST2", "status": "unsupported", "status_zh": "判不出", "iou": 0.9994647951744712, "simulated": true, "continuous": false, "card_step": "10-2", "moves": 5195}, {"id": "SU1-ST3", "status": "dependency_failed", "status_zh": "没执行", "iou": null, "simulated": false, "continuous": false, "card_step": "10-3", "moves": 0}, {"id": "SU2-ST4", "status": "dependency_failed", "status_zh": "没执行", "iou": null, "simulated": false, "continuous": false, "card_step": "10-4", "moves": 0}, {"id": "SU3-ST5", "status": "dependency_failed", "status_zh": "没执行", "iou": null, "simulated": false, "continuous": false, "card_step": "15-1", "moves": 0}, {"id": "SU4-ST6", "status": "dependency_failed", "status_zh": "没执行", "iou": null, "simulated": false, "continuous": false, "card_step": "15-2", "moves": 0}]}, {"id": "P05", "name": "拱形肋板Ⅱ型", "drawing_no": "CHL-RVI-DR32G20A", "report": "R0024", "steps": [{"id": "SU1-ST1", "status": "passed", "status_zh": "通过", "iou": 0.9990520162844223, "simulated": true, "continuous": true, "card_step": "10-1", "moves": 16}, {"id": "SU1-ST2", "status": "unsupported", "status_zh": "判不出", "iou": 0.9990689291262972, "simulated": true, "continuous": false, "card_step": "10-2", "moves": 2488}, {"id": "SU1-ST3", "status": "dependency_failed", "status_zh": "没执行", "iou": null, "simulated": false, "continuous": false, "card_step": "10-3", "moves": 0}, {"id": "SU2-ST4", "status": "dependency_failed", "status_zh": "没执行", "iou": null, "simulated": false, "continuous": false, "card_step": "10-4", "moves": 0}, {"id": "SU3-ST5", "status": "dependency_failed", "status_zh": "没执行", "iou": null, "simulated": false, "continuous": false, "card_step": "15-1", "moves": 0}, {"id": "SU4-ST6", "status": "dependency_failed", "status_zh": "没执行", "iou": null, "simulated": false, "continuous": false, "card_step": "15-2", "moves": 0}]}, {"id": "P10", "name": "固定块支承板Ⅱ型", "drawing_no": "CHL-RVI-DR3J000A", "report": "R0024", "steps": [{"id": "SU1-ST1", "status": "passed", "status_zh": "通过", "iou": 0.9996941148601016, "simulated": true, "continuous": true, "card_step": "10-1", "moves": 127}, {"id": "SU2-ST2", "status": "passed", "status_zh": "通过", "iou": 0.9993909228635733, "simulated": true, "continuous": true, "card_step": "10-1", "moves": 498}, {"id": "SU3-ST3", "status": "passed", "status_zh": "通过", "iou": 0.999275271705661, "simulated": true, "continuous": true, "card_step": "10-2", "moves": 47798}]}, {"id": "P11", "name": "固定块支承板Ⅲ型", "drawing_no": "CHL-RVI-DR3K000A", "report": "R0024", "steps": [{"id": "SU1-ST1", "status": "passed", "status_zh": "通过", "iou": 0.9996457166859811, "simulated": true, "continuous": true, "card_step": "10-1", "moves": 127}, {"id": "SU2-ST2", "status": "passed", "status_zh": "通过", "iou": 0.9993142203146508, "simulated": true, "continuous": true, "card_step": "10-1", "moves": 498}, {"id": "SU3-ST3", "status": "passed", "status_zh": "通过", "iou": 0.9993300096718503, "simulated": true, "continuous": true, "card_step": "10-2", "moves": 47678}]}, {"id": "P17", "name": "半环", "drawing_no": "CHL-RVI-DR3F000A", "report": "R0025", "steps": [{"id": "SU1-ST1", "status": "unsupported", "status_zh": "判不出", "iou": null, "simulated": false, "continuous": false, "card_step": "10-1", "moves": 0}, {"id": "SU2-ST2", "status": "dependency_failed", "status_zh": "没执行", "iou": null, "simulated": false, "continuous": false, "card_step": "10-2", "moves": 0}]}]});</script>
+</body></html>
