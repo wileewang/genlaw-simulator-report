@@ -85,7 +85,7 @@ tr:last-child td{border-bottom:0}
 </head>
 <body>
 <div class="wrap">
-  <header><h1 id="title">Heimdall 运行看板</h1><span class="sub" id="range" style="margin:0"></span><span class="fresh" id="fresh"><span class="dot"></span><span>正在读数据…</span></span></header>
+  <header><h1 id="title">Heimdall 运行看板</h1><span class="sub" id="range" style="margin:0"></span><a id="plink" class="pill" style="display:none;text-decoration:none" href="#">进度路径（阶段、批次、汇合判断）→</a><span class="fresh" id="fresh"><span class="dot"></span><span>正在读数据…</span></span></header>
   <div id="app"></div>
 </div>
 <div id="tip"></div>
@@ -137,6 +137,9 @@ function render() {
   document.getElementById('title').textContent = 'Heimdall 运行看板 · ' + D.project;
   document.title = 'Heimdall 运行看板 · ' + D.project;
   document.getElementById('range').textContent = '从 ' + dhm(D.first_event) + ' 开始运行';
+  var pl = document.getElementById('plink');
+  pl.style.display = D.progress ? '' : 'none';
+  if (D.progress) pl.href = D.progress;
 
   // 现在
   var now = [];
