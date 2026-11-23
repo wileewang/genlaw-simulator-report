@@ -24,9 +24,8 @@ svg path{fill:none;stroke:var(--rail);stroke-width:2}.fork b{font-weight:600}.ta
 .merge.open .dot{border-style:dashed;border-color:var(--mut)}.merge{font-size:14px}.rev{color:var(--turn);font-size:14px}.rev .dot{left:10px;border-color:var(--turn)}
 .end{color:var(--mut);font-size:13px}.end .dot{left:10px;border-style:dashed}
 </style></head><body><main>
-<h1>进度图 · genlaw</h1><div class="sub">2026-11-23 19:49 由 hub 从单子和流水生成，每分钟自动刷新</div>
+<h1>进度图 · genlaw</h1><div class="sub">2026-11-23 20:36 由 hub 从单子和流水生成，每分钟自动刷新</div>
 <div class="sum"><span class="pill">通过 <b>22</b></span><span class="pill">在做 <b>1</b></span><span class="pill">在等 <b>1</b></span><span class="pill">受阻 <b>0</b></span><span class="pill">取消或拆分 <b>13</b></span></div>
-<div class="ask"><h2>等你定的</h2><ul><li><span class="id">C0033</span>问题：G4 真跑卡在选择框近 2 小时，让我关掉会话重开吗？（关于 T0032）</li></ul></div>
 <div class="row stage"><span class="dot"></span><h2><span class="id"></span>还没有定阶段时做的事</h2></div>
 <div class="row fork"><svg viewBox="0 0 26 24"><path d="M1 0 C1 16 25 8 25 24"/></svg><span class="id"></span><b>11-22 13:38 排的 12 张（当时还没有批次）</b></div>
 <div class="row lane task dropped"><span class="dot"></span><span class="id">T0001</span><span class="t">摸底：把结构化工艺计划格式和几何推演的代码现状写成文档</span><span class="st">取消或拆分</span></div>
@@ -84,7 +83,7 @@ svg path{fill:none;stroke:var(--rail);stroke-width:2}.fork b{font-weight:600}.ta
 <div class="row fork"><svg viewBox="0 0 26 24"><path d="M1 0 C1 16 25 8 25 24"/></svg><span class="id"></span><b>11-23 15:40 排的 5 张（当时还没有批次）</b></div>
 <div class="row lane task passed"><span class="dot"></span><span class="id">T0030</span><span class="t">试修并试通：在执行者副本里修掉补充方法准备阶段的两处读路径缺陷，重做 14 个资格用例，再带新资格配置把拱形肋板II型（P05）和拱形板II型（P04）各六步连续跑一遍（只试，改动做成补丁，不提交、不发布）</span><span class="st">通过</span></div>
 <div class="row lane task passed"><span class="dot"></span><span class="id">T0031</span><span class="t">把重跑 G4 五个阶段这一次尝试的登记落进主线：副本里重跑 G4 的做法，以及“控制阶段启动被拒、后四个阶段没有执行”的记录（内容任务 T0028 已做完并经评审核实，这一张只拣提交，不重跑、不改内容）</span><span class="st">通过</span></div>
-<div class="row lane task running"><span class="dot"></span><span class="id">T0032</span><span class="t">在能连上副本隔离 tmux socket 的执行环境里，真跑 G4 的五个阶段（控制、五件、比较、全产物、逐行归因），逐个和集中整理时封存的结果对照，把主线里“没跑成”的登记换成实际结果</span><span class="st">在做</span><div class="note you">? 等你：<span class="id">C0033</span>问题：G4 真跑卡在选择框近 2 小时，让我关掉会话重开吗？</div></div>
+<div class="row lane task waiting"><span class="dot"></span><span class="id">T0032</span><span class="t">在能连上副本隔离 tmux socket 的执行环境里，真跑 G4 的五个阶段（控制、五件、比较、全产物、逐行归因），逐个和集中整理时封存的结果对照，把主线里“没跑成”的登记换成实际结果</span><span class="st">在等</span></div>
 <div class="row lane task dropped"><span class="dot"></span><span class="id">T0033</span><span class="t">写一个不认文件类型的通用目录逐文件对比工具：两次运行的输出目录按相对路径对齐，每个文件落进“相同、换掉路径根后相同、仍然不同、只在一边有”之一，不同的照实列出差在哪（替掉任务 T0029 里按文件类型和原因逐类枚举的做法）</span><span class="st">取消或拆分 · 被退回 2 次</span></div>
 <div class="row lane task dropped"><span class="dot"></span><span class="id">T0035</span><span class="t">通用目录逐文件对比工具收尾：在已评审过的版本上补三处（写不出完整报告一律退出 2、占位符按 JSON 解码后的内容查冲突、帮助里列出已知限制），定死适用范围后合并进主线</span><span class="st">取消或拆分</span></div>
 <div class="row lane end"><span class="dot" style="left:34px"></span>这一批还在进行</div>
@@ -188,6 +187,6 @@ svg path{fill:none;stroke:var(--rail);stroke-width:2}.fork b{font-weight:600}.ta
 
 离阶段目标还差（和上一批相同）：补充方法正式落位、带补充方法六件跑两遍并对比、G4 真跑、收尾整体核一次。</div></div>
 <div class="row lane task passed"><span class="dot"></span><span class="id">T0036</span><span class="t">通用目录逐文件对比工具收尾：在已评审过的版本上补三处（写不出完整报告一律退出 2、占位符按 JSON 解码后的内容查冲突、帮助里列出已知限制），定死适用范围后合并进主线</span><span class="st">通过 · 被退回 5 次</span></div>
-<div class="row lane task waiting"><span class="dot"></span><span class="id">T0037</span><span class="t">四件标准制造链在同一个副本里用等长的输出目录名各跑两轮，两轮的完整输出目录逐文件比一遍，查清每件的输出目录总字节数（`output_bytes`）两轮同不同、差在哪些文件、有没有制造结果本身的差异</span><span class="st">在等</span></div>
+<div class="row lane task running"><span class="dot"></span><span class="id">T0037</span><span class="t">四件标准制造链在同一个副本里用等长的输出目录名各跑两轮，两轮的完整输出目录逐文件比一遍，查清每件的输出目录总字节数（`output_bytes`）两轮同不同、差在哪些文件、有没有制造结果本身的差异</span><span class="st">在做</span></div>
 <div class="row lane end"><span class="dot" style="left:34px"></span>这一批还在进行</div>
 <div class="row end"><span class="dot"></span>（往下继续长）</div></main></body></html>
