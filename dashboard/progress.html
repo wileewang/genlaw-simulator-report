@@ -32,11 +32,34 @@ summary:before{content:"▶";font-size:10px;color:var(--mut);flex:none;width:12p
 .gl td:first-child{white-space:nowrap;font-weight:600}#tip{position:fixed;display:none;background:var(--fg);color:var(--card);font-size:12.5px;padding:6px 9px;border-radius:6px;max-width:340px;z-index:9;line-height:1.5}
 @media (max-width:640px){.batch{margin-left:20px}.why,.none{margin-left:30px}.note{margin-left:22px}}
 </style></head><body><main>
-<h1>进度图 · genlaw</h1><div class="sub">2026-11-26 10:00 由 hub 从单子和流水生成，页面每两分钟自己刷新</div>
+<h1>进度图 · genlaw</h1><div class="sub">2026-11-26 11:45 由 hub 从单子和流水生成，页面每两分钟自己刷新</div>
 <div class="bar"><span class="btn" id="openall">全部展开</span><span class="btn" id="closeall">全部收起</span><a class="btn" id="dash" href="dashboard/index.html">运行看板 →</a><span class="tag">通过 98</span><span class="tag">在做 0</span><span class="tag">在等 0</span><span class="tag">受阻 0</span><span class="tag">取消或拆分 40</span></div>
-<div class="route"><a href="#M0001" class=""><b>M0001</b> 完整链重新跑起来，完整回归立起来<small>已通过 · 验收清单 10/10</small></a><a href="#M0002" class="cur"><b>M0002</b> 新版结构化工艺计划接上主链<small>进行中 · 验收清单 1/7</small></a><a href="#M0003" class=""><b>M0003</b> 使用文档补齐<small>已通过 · 验收清单 7/7</small></a><a href="#M0004" class=""><b>M0004</b> 模块接口和基本测试<small>已通过 · 验收清单 6/6</small></a></div>
+<div class="route"><a href="#M0001" class=""><b>M0001</b> 完整链重新跑起来，完整回归立起来<small>已通过 · 验收清单 10/10</small></a><a href="#M0002" class="cur"><b>M0002</b> 新版结构化工艺计划接上主链<small>进行中 · 验收清单 1/7</small></a><a href="#M0003" class=""><b>M0003</b> 使用文档补齐<small>已通过 · 验收清单 7/7</small></a><a href="#M0004" class=""><b>M0004</b> 模块接口和基本测试<small>已通过 · 验收清单 6/6</small></a><a href="#M0005" class="cur"><b>M0005</b> 给同事的接入包<small>进行中 · 验收清单 0/6</small></a></div>
 <div class="box"><h2>现在卡在哪</h2><ul><li><a href="#M0002-4">M0002 第 4 项</a>　给拱形肋板I型（P22）写第 1.1 版结构化工艺计划。做完的标志：工艺卡上的切削工序都照实写进了…：等人提供 P22 现场装夹信息（C0077）</li></ul></div>
 <div class="box you"><h2>等你的事</h2><ul><li><span class="id">C0062</span> 要材料：设备表格之外还缺的三样：刀具表；加工中心的主轴最高转速、最大进给和数控系统；工艺卡上写“三轴加工中心”的工序实际用哪一台。</li><li><span class="id">C0077</span> 要材料：拱形肋板I型（P22，图号 CHL-RVI-DR32F20A，工艺文件 HTJC/GY(WH)M2024-220）在工序 10、15 上的现场装夹信息：来料实际尺寸、垫板和编程原点、两次铣厚度面的基面和螺钉头避让包络。</li></ul></div>
+<details class="stage" id="M0005" open><summary><span class="id">M0005</span><span class="t">给同事的接入包</span><span class="tag run">进行中</span><span class="tag">验收清单 0/6</span></summary>
+<div class="goal">给同事的接入包：同事负责环节一和环节二，拿到代码仓库后，只看接入包就知道要交给我们什么（第 1.1 版结构化工艺计划）、写计划时怎么调用我们的几何推演拿到每步形状和特征编号、交来的计划怎么自己先验收。
+
+人 11-26 定：环节一、环节二交给同事；两边的接口是结构化工艺计划，按第 1.1 版交；我们已有的几何推演给同事用。人会把代码仓库直接分享给同事。</div>
+<details class="item todo" id="M0005-1"><summary><span class="mk">☐</span><span class="n">1</span><span class="t">写接入说明。做完的标志：`docs/` 下有一份写给环节一、二开发者的接入说明，写清分工（谁做哪几个模块）、交接的东西（第 1.1 版结构化工艺计划，以及我们<span class="term" tabindex="0" data-tip="主仓库里从结构化工艺计划一路做到比对结果的那条完整流程：读计划、推出每步目标形状、生成数控程序、模拟切削、比对">主链</span>收到后自己推每步形状）、交付和验收的步骤、两边约定改动时怎么通知；仓库首页链接过去；说明里的每条命令照着敲能得到说明里写的结果。</span><span class="tag ">未开始</span></summary>
+<div class="none">还没有批次针对这一项。</div>
+</details>
+<details class="item todo" id="M0005-2"><summary><span class="mk">☐</span><span class="n">2</span><span class="t">写第 1.1 版计划的编写约定。做完的标志：面向写计划一方，写明哪些字段必填、装夹和工步怎么写、工步怎么引用当前形状上的面和特征（引用的编号从哪来）、哪些写法现在<span class="term" tabindex="0" data-tip="主仓库里从结构化工艺计划一路做到比对结果的那条完整流程：读计划、推出每步目标形状、生成数控程序、模拟切削、比对">主链</span>能一路跑到仿真、哪些只能跑到几何推演；配一份不含客户数据的完整示例计划，示例通过第 1.1 版格式检查；约定和格式定义（JSON Schema）一致，不一致的地方逐条列出。</span><span class="tag ">未开始</span></summary>
+<div class="none">还没有批次针对这一项。</div>
+</details>
+<details class="item todo" id="M0005-3"><summary><span class="mk">☐</span><span class="n">3</span><span class="t">写几何推演的对外调用方法。做完的标志：写明写计划过程中怎么调用几何推演——给一份写到第 N 步的计划和零件三维模型，拿到第 N 步之后的目标形状（STEP 文件）和特征编号，用于写第 N+1 步；配合成零件样例，只用仓库里的东西和装好的引擎就能跑；照着跑，输出和说明一致；推不出的情况报什么原因写清楚。</span><span class="tag ">未开始</span></summary>
+<div class="none">还没有批次针对这一项。</div>
+</details>
+<details class="item todo" id="M0005-4"><summary><span class="mk">☐</span><span class="n">4</span><span class="t">做验收命令。做完的标志：一条命令收同事交来的一份第 1.1 版计划（加三维模型），依次做格式检查、几何推演，以及<span class="term" tabindex="0" data-tip="主仓库里从结构化工艺计划一路做到比对结果的那条完整流程：读计划、推出每步目标形状、生成数控程序、模拟切削、比对">主链</span>现在能做的后续步骤，输出一份报告：每个工步走到哪一层、停在哪、原因是什么；在合成样例上跑通，并各给一个格式不合格和推演推不出的例子，报告给出的原因正确。</span><span class="tag ">未开始</span></summary>
+<div class="none">还没有批次针对这一项。</div>
+</details>
+<details class="item todo" id="M0005-5"><summary><span class="mk">☐</span><span class="n">5</span><span class="t">分享前隐私清点。做完的标志：列出代码仓库（含 Git 历史）里所有带客户信息的文件，包括零件名称、图号、工艺文件号、客户工艺卡内容和数值，逐个写明在哪、是什么，交人决定怎么处理；接入包里新写的东西不含客户信息，进仓库前通过隐私检查（`tools/check_sample_privacy.py`）。</span><span class="tag ">未开始</span></summary>
+<div class="none">还没有批次针对这一项。</div>
+</details>
+<details class="item todo" id="M0005-6"><summary><span class="mk">☐</span><span class="n">6</span><span class="t">照着做一遍、收尾。做完的标志：由没有参与写接入包的独立验证者，只凭接入说明，用合成零件写一份第 1.1 版计划（至少三个工步、后面的工步引用前面推出的面），逐步调用几何推演，再用验收命令验收，卡住的地方逐条记下，改完再走直到走通；全部测试除了已知会失败的 51 个不出现新的失败；整套检查重新运行，原有零件的结论不变。</span><span class="tag ">未开始</span></summary>
+<div class="none">还没有批次针对这一项。</div>
+</details>
+</details>
 <details class="stage" id="M0004"><summary><span class="id">M0004</span><span class="t">模块接口和基本测试</span><span class="tag ok">已通过</span><span class="tag">验收清单 6/6</span></summary>
 <div class="goal">模块接口和基本测试：把系统设计写进代码仓库；九个模块都抽象出来，每个都有定好的输入输出和一套样例（还没实现的模块也一样）；有代码的模块再配一个基本测试，方便以后在这个基础上开发。
 
