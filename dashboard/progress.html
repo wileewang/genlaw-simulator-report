@@ -32,11 +32,28 @@ summary:before{content:"▶";font-size:10px;color:var(--mut);flex:none;width:12p
 .gl td:first-child{white-space:nowrap;font-weight:600}#tip{position:fixed;display:none;background:var(--fg);color:var(--card);font-size:12.5px;padding:6px 9px;border-radius:6px;max-width:340px;z-index:9;line-height:1.5}
 @media (max-width:640px){.batch{margin-left:20px}.why,.none{margin-left:30px}.note{margin-left:22px}}
 </style></head><body><main>
-<h1>进度图 · genlaw</h1><div class="sub">2026-11-26 19:30 由 hub 从单子和流水生成，页面每两分钟自己刷新</div>
+<h1>进度图 · genlaw</h1><div class="sub">2026-11-26 19:45 由 hub 从单子和流水生成，页面每两分钟自己刷新</div>
 <div class="bar"><span class="btn" id="openall">全部展开</span><span class="btn" id="closeall">全部收起</span><a class="btn" id="dash" href="dashboard/index.html">运行看板 →</a><span class="tag">通过 117</span><span class="tag">在做 3</span><span class="tag">在等 0</span><span class="tag">受阻 0</span><span class="tag">取消或拆分 43</span></div>
-<div class="route"><a href="#M0001" class=""><b>M0001</b> 完整链重新跑起来，完整回归立起来<small>已通过 · 验收清单 10/10</small></a><a href="#M0002" class="cur"><b>M0002</b> 新版结构化工艺计划接上主链<small>进行中 · 验收清单 1/7</small></a><a href="#M0003" class=""><b>M0003</b> 使用文档补齐<small>已通过 · 验收清单 7/7</small></a><a href="#M0004" class=""><b>M0004</b> 模块接口和基本测试<small>已通过 · 验收清单 6/6</small></a><a href="#M0005" class="cur"><b>M0005</b> 给同事的接入包<small>进行中 · 验收清单 3/6</small></a></div>
+<div class="route"><a href="#M0001" class=""><b>M0001</b> 完整链重新跑起来，完整回归立起来<small>已通过 · 验收清单 10/10</small></a><a href="#M0002" class="cur"><b>M0002</b> 新版结构化工艺计划接上主链<small>进行中 · 验收清单 1/7</small></a><a href="#M0003" class=""><b>M0003</b> 使用文档补齐<small>已通过 · 验收清单 7/7</small></a><a href="#M0004" class=""><b>M0004</b> 模块接口和基本测试<small>已通过 · 验收清单 6/6</small></a><a href="#M0005" class="cur"><b>M0005</b> 给同事的接入包<small>进行中 · 验收清单 3/6</small></a><a href="#M0006" class="cur"><b>M0006</b> 通读和精简<small>进行中 · 验收清单 0/4</small></a></div>
 <div class="box"><h2>现在卡在哪</h2><ul><li><a href="#M0002-4">M0002 第 4 项</a>　给拱形肋板I型（P22）写第 1.1 版结构化工艺计划。做完的标志：工艺卡上的切削工序都照实写进了…：等人提供 P22 现场装夹信息（C0077）</li></ul></div>
 <div class="box you"><h2>等你的事</h2><ul><li><span class="id">C0062</span> 要材料：设备表格之外还缺的三样：刀具表；加工中心的主轴最高转速、最大进给和数控系统；工艺卡上写“三轴加工中心”的工序实际用哪一台。</li><li><span class="id">C0077</span> 要材料：拱形肋板I型（P22，图号 CHL-RVI-DR32F20A，工艺文件 HTJC/GY(WH)M2024-220）在工序 10、15 上的现场装夹信息：来料实际尺寸、垫板和编程原点、两次铣厚度面的基面和螺钉头避让包络。</li></ul></div>
+<details class="stage" id="M0006" open><summary><span class="id">M0006</span><span class="t">通读和精简</span><span class="tag run">进行中</span><span class="tag">验收清单 0/4</span></summary>
+<div class="goal">通读和精简：开发把整个 genlaw 仓库、genlaw-store 资料库和 engines/ 亲手通读一遍，产出一页 README、一页项目地图（含资料库地图）和一份精简清单，让项目保持精简、人能读懂、能自己上手跑。
+
+人 11-26 定：genlaw 现在先不开新<span class="term" tabindex="0" data-tip="一组一起排的任务">批次</span>，手上的任务做完就收；接下来第一件事是这次通读（原话：“目标是让项目保持精简、我能读懂、能自己上手跑”）。</div>
+<details class="item todo" id="M0006-1"><summary><span class="mk">☐</span><span class="n">1</span><span class="t">通读并写项目地图（开发亲手做）。做完的标志：代码仓库每个顶层目录（含 `engines/` 下每个子目录）和 `~/genlaw-store` 每个顶层目录都读过，`project-map.md` 里各有一段，写明做什么、在哪、怎么测（一条命令）、现在还用不用；资料库那一节另写明谁在用、哪些是冻结证据不能动。</span><span class="tag ">未开始</span></summary>
+<div class="none">还没有批次针对这一项。</div>
+</details>
+<details class="item todo" id="M0006-2"><summary><span class="mk">☐</span><span class="n">2</span><span class="t">精简清单（开发亲手做）。做完的标志：一份清单，分三类逐条列出——重复或已不用的代码（写明和谁重复、有没有地方还在调用）、该合并或删除的文档（写明理由）、`engines/` 里哪些还在用哪些不用（写明依据，例如被哪个现行入口引用）；每条给出建议（删、合并、留）和删了会影响什么；只列不动手。</span><span class="tag ">未开始</span></summary>
+<div class="none">还没有批次针对这一项。</div>
+</details>
+<details class="item todo" id="M0006-3"><summary><span class="mk">☐</span><span class="n">3</span><span class="t">README 草稿（开发亲手做）。做完的标志：`drafts/developer/` 下一份 README 草稿，中文，一到两屏读完，说清这是什么、现在能做什么和不能做什么、怎么跑起一个示例；示例用仓库里不含客户数据的合成零件，从一份新拷贝的代码出发能跑到比对结论；细节链接到现有文档，不在首页展开。</span><span class="tag ">未开始</span></summary>
+<div class="none">还没有批次针对这一项。</div>
+</details>
+<details class="item todo" id="M0006-4"><summary><span class="mk">☐</span><span class="n">4</span><span class="t">提交进仓库并照着走一遍（一张执行者任务）。做完的标志：README 替换仓库首页，项目地图以不含内部工作记录和客户信息的版本放进仓库，进仓库前通过隐私检查；由没有参与写的独立验证者只凭新 README 在一份新拷贝的代码上把示例跑起来，再按项目地图里每块的测试命令各跑一次，命令和结果与文档一致，卡住的地方逐条记下并改到走通；全部测试除了已知会失败的 51 个不出现新的失败。</span><span class="tag ">未开始</span></summary>
+<div class="none">还没有批次针对这一项。</div>
+</details>
+</details>
 <details class="stage" id="M0005" open><summary><span class="id">M0005</span><span class="t">给同事的接入包</span><span class="tag run">进行中</span><span class="tag">验收清单 3/6</span></summary>
 <div class="goal">给同事的接入包：同事负责环节一和环节二，拿到代码仓库后，只看接入包就知道要交给我们什么（第 1.1 版结构化工艺计划）、写计划时怎么调用我们的几何推演拿到每步形状和特征编号、交来的计划怎么自己先验收。
 
